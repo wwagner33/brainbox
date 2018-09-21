@@ -14,6 +14,8 @@ import Connection from "./figures/Connection"
 import SimulationEditPolicy from "./SimulationEditPolicy"
 import MarkdownDialog from "./dialog/MarkdownDialog"
 import CodeDialog from "./dialog/CodeDialog"
+import WebUSBHelpDialog from "./dialog/WebUSBHelpDialog"
+
 import hardware from "./hardware"
 
 import imgConnectionStatusNeutral from "../images/status_index.svg"
@@ -172,6 +174,11 @@ export default draw2d.Canvas.extend({
     $("#canvas_zoom_out").on("click", function () {
       setZoom(_this.getZoom() * 0.8)
     })
+
+    $("#statusWebUSB .help-link").on("click", function () {
+      new WebUSBHelpDialog().show()
+    })
+
 
     hardware.arduino.on("disconnect", this.hardwareChanged.bind(this))
     hardware.arduino.on("connect", this.hardwareChanged.bind(this))

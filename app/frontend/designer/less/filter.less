@@ -42,7 +42,6 @@
     }
   }
 
-
   & label > input:checked + span{ /* (CHECKED) IMAGE STYLES */
     color:@tintColor !important;
   }
@@ -53,13 +52,13 @@
   top:@toolbarHeight;
   right:0;
   bottom:0;
-  width:200px;
+  width:@filterPaneWidth;
 
   padding:0;
   margin:0;
   border-radius:0;
   border:0;
-  background-color: #282a30;
+  background-color: @filterPaneBackground;
 
   .form-control{
     height:25px;
@@ -85,8 +84,6 @@
   .panel-default {
     margin: 0;
     border-radius: 0;
-    margin: 0;
-    border-radius: 0;
     background-color: fade(@tintColor, 2%);
     border: 0;
     border-top: 1px solid #303030;
@@ -94,11 +91,10 @@
     margin-top: 3px;
   }
 
-
   .panetitle {
     position: fixed;
     height: @filterPaneTitleHeight;
-    width: 200px;
+    width: @filterPaneWidth;
     top:@toolbarHeight;
     border-bottom: 1px solid #222222;
     border-top: 1px solid #111111;
@@ -120,7 +116,7 @@
   position:absolute;
   bottom:0;
   right:0;
-  width:200px;
+  width:@filterPaneWidth;
   height:30px;
 }
 
@@ -128,7 +124,7 @@
   position:fixed;
   top:@toolbarHeight+30;
   bottom:30px;
-  width:200px;
+  width:@filterPaneWidth;
   border:0;
   padding:0;
   overflow-y: auto;

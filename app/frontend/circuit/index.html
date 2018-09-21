@@ -202,7 +202,7 @@
                           <span>WebUSB</span>
                           <span class="connected">connected</span>
                           <span class="disconnected">disconnected</span>
-                          <span class="notSupported">Chrome with<br>HTTPS required</span>
+                          <span class="notSupported">Not Supported - <a class="help-link" href="#">why?</a></span>
                         </label>
 
                         <label class="statusIndicator" id="statusRaspi" >
@@ -518,6 +518,39 @@
       <div class="modal-body">
         <div class="html">
 
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn  btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+  Help file of a single shape element
+ -->
+<div id="webUSBHelpDialog" class="modal fade" tabindex="-1">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="media-heading">Introduction to WebUSB</h4>
+      </div>
+      <div class="modal-body">
+        <div class="html">
+          <h4>To use the <a href="https://wicg.github.io/webusb/" target="_blank">WebUSB</a> feature some prerequisists
+            must be fullfilled</h4>
+          <ul>
+            <li>Technically WebUSB is an open standard. But <b>only Chrome</b> implements this specification at the moment,
+              so end-users may need to switch browser to use this feature.</li>
+            <li>
+              Because this API is a powerful new feature added to the Web, Chrome aims to make it available only to
+              secure contexts. This means you'll need to <b>use HTTPS</b> if you run <b>brainbox</b> on your own raspberry or desktop computer.
+            </li>
+            <li>During development you'll be able to interact with WebUSB through <b>http://localhost/...</b></li>
+          </ul>
+          <br>
+          Check if all of the conditions are fulfilled.
         </div>
       </div>
       <div class="modal-footer">

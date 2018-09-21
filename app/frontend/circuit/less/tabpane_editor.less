@@ -48,8 +48,8 @@ rect.Raft{
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color:rgba(28, 155, 171, 0.05);
-  border-radius:8px;
+  background-color:fadeout(@toolbarBackground,70%);
+  border-radius:5px;
 
   button {
     background-color:transparent;
@@ -59,9 +59,9 @@ rect.Raft{
     padding-right:10px;
     border:1px solid transparent;
     outline:none;
-  }
-  button:hover {
-    border:1px solid @tintColorEdit  !important;
+    &:hover {
+      border:1px solid @tintColorEdit;
+    }
   }
 }
 
