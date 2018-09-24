@@ -10,7 +10,7 @@
 
 #probe_window
 {
-  background: #009DAC;
+  background: @probeWindowBackground;
   bottom: 0;
   height:0;
   color: white;
@@ -26,12 +26,13 @@
 }
 
 #probe_window_stick{
-  font-size: 34px;
   position: absolute;
-  right: 50%;
-  top: -43px;
+  top: -30px;
   cursor: pointer;
-  color:black;
+  color: black;
+  width: 100%;
+  border-bottom: 2px solid @probeWindowBackground;
+  text-align: center;
 }
 
 #probeSortable{
