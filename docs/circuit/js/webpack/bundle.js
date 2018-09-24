@@ -3081,6 +3081,11 @@ exports.default = draw2d.SetFigure.extend({
   },
 
   showTooltip: function showTooltip() {
+    // don't show any tooltips if the simulation is running
+    if (this.canvas.simulate === true) {
+      return;
+    }
+
     this.tooltip = $('<div class="draw2d_tooltip">' + this.NAME + '</div>').appendTo('body').hide().fadeIn(1000);
     this.positionTooltip();
   },
