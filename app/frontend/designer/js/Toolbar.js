@@ -16,7 +16,7 @@ import conf from "./Configuration"
 export default class Toolbar {
 
   constructor(app, elementId, view) {
-    this.html = $("#" + elementId)
+    this.html = $(elementId)
     this.view = view
     this.app = app
 
@@ -39,7 +39,7 @@ export default class Toolbar {
       buttonGroup = $("<div id='fileOperationGroup' class='group'></div>")
       this.html.append(buttonGroup)
 
-      this.openButton = $('<img  id="fileOpen" data-toggle="tooltip" title="Load File <span class=\'highlight\'> [ Ctrl+O ]</span>" class="icon" src="./images/toolbar_download.svg"></img>')
+      this.openButton = $('<div class="image-button" id="fileOpen" data-toggle="tooltip" title="Load File <span class=\'highlight\'> [ Ctrl+O ]</span>" ><img src="./images/toolbar_download.svg"/><div>Open</div></div>')
       buttonGroup.append(this.openButton)
       this.openButton.on("click", () => {
         this.openButton.tooltip("hide")
@@ -50,7 +50,7 @@ export default class Toolbar {
         return false
       })
 
-      this.saveButton = $('<img id="fileSave" data-toggle="tooltip" title="Save File <span class=\'highlight\'> [ Ctrl+S ]</span>" class="icon" src="./images/toolbar_upload.svg"/>')
+      this.saveButton = $('<div class="image-button"  id="fileSave" data-toggle="tooltip" title="Save File <span class=\'highlight\'> [ Ctrl+S ]</span>"  ><img src="./images/toolbar_upload.svg"/><div>Save</div></div>')
       buttonGroup.append(this.saveButton)
       this.saveButton.on("click", () => {
         this.saveButton.tooltip("hide")
@@ -67,9 +67,9 @@ export default class Toolbar {
     //
     buttonGroup = $('<div class="group"></div>')
     this.html.append(buttonGroup)
-    this.undoButton = $('<img id="editUndo" data-toggle="tooltip" title="Undo <span class=\'highlight\'> [ Ctrl+Z ]</span>" class="icon disabled"  src="./images/toolbar_undo.svg"/>')
+    this.undoButton = $('<div class="image-button" id="editUndo" data-toggle="tooltip" title="Undo <span class=\'highlight\'> [ Ctrl+Z ]</span>"  ><img class="icon disabled"  src="./images/toolbar_undo.svg"/><div>Undo</div></div>')
     buttonGroup.append(this.undoButton)
-    $("#toolbar").delegate("#editUndo:not(.disabled)", "click", () => {
+    this.html .delegate("#editUndo:not(.disabled)", "click", () => {
       this.view.getCommandStack().undo()
     })
     Mousetrap.bindGlobal("ctrl+z", () => {
@@ -80,9 +80,9 @@ export default class Toolbar {
 
     // Inject the REDO Button and the callback
     //
-    this.redoButton = $('<img id="editRedo" data-toggle="tooltip" title="Redo <span class=\'highlight\'> [ Ctrl+Y ]</span>"  class="icon disabled" src="./images/toolbar_redo.svg"/>')
+    this.redoButton = $('<div class="image-button" id="editRedo" data-toggle="tooltip" title="Redo <span class=\'highlight\'> [ Ctrl+Y ]</span>"  ><img  class="icon disabled" src="./images/toolbar_redo.svg"/><div>Redo</div></div>')
     buttonGroup.append(this.redoButton)
-    $("#toolbar").delegate("#editRedo:not(.disabled)", "click", () => {
+    this.html .delegate("#editRedo:not(.disabled)", "click", () => {
       this.view.getCommandStack().redo()
     })
     Mousetrap.bindGlobal("ctrl+y", () => {
@@ -92,9 +92,9 @@ export default class Toolbar {
 
     // Inject the DELETE Button
     //
-    this.deleteButton = $('<img  id="editDelete" data-toggle="tooltip" title="Delete <span class=\'highlight\'> [ Del ]</span>" class="icon disabled" src="./images/toolbar_delete.svg"/>')
+    this.deleteButton = $('<div class="image-button" id="editDelete" data-toggle="tooltip" title="Delete <span class=\'highlight\'> [ Del ]</span>"  ><img class="icon disabled" src="./images/toolbar_delete.svg"/><div>Delete</div></div>')
     buttonGroup.append(this.deleteButton)
-    $("#toolbar").delegate("#editDelete:not(.disabled)", "click", function () {
+    this.html .delegate("#editDelete:not(.disabled)", "click", function () {
       view.getCommandStack().startTransaction(draw2d.Configuration.i18n.command.deleteShape)
       view.getSelection().each(function (index, figure) {
         let cmd = figure.createCommand(new draw2d.command.CommandType(draw2d.command.CommandType.DELETE))
@@ -114,7 +114,7 @@ export default class Toolbar {
     buttonGroup = $('<div class="group"></div>')
     this.html.append(buttonGroup)
 
-    this.selectButton = $('<img id="editSelect" data-toggle="tooltip" title="Select mode <span class=\'highlight\'> [ spacebar ]</span>" class="icon" src="./images/toolbar_select.svg"/>')
+    this.selectButton = $('<div class="image-button" id="editSelect" data-toggle="tooltip" title="Select mode <span class=\'highlight\'> [ spacebar ]</span>" ><img src="./images/toolbar_select.svg"/><div>Select</div></div>')
     buttonGroup.append(this.selectButton)
     this.selectButton.on("click", () => {
       this.view.installEditPolicy(new SelectionToolPolicy())
@@ -126,7 +126,7 @@ export default class Toolbar {
 
     this.shapeButton = $(
       '<label id="tool_shape" class="dropdown" >' +
-      '    <img data-toggle="dropdown"  id="tool_shape_image" class="icon" src="./images/toolbar_insert.svg">' +
+      '    <div class="image-button" data-toggle="dropdown"  id="tool_shape_image" ><img  src="./images/toolbar_insert.svg"><div>Add</div></div>' +
       '    <ul class="dropdown-menu" role="menu" >' +
       '       <li class="tool_shape_entry policyRectangleToolPolicy" data-toggle="tooltip" title="Rectangle <span class=\'highlight\'> [ R ]</span>"><a href="#"><img  src="./images/toolbar_rectangle.svg">Rectangle</a></li>' +
       '       <li class="tool_shape_entry policyCircleToolPolicy"    data-toggle="tooltip" title="Circle <span class=\'highlight\'> [ C ]</span>">   <a href="#"><img  src="./images/toolbar_circle.svg">Circle</a></li>' +
@@ -195,9 +195,9 @@ export default class Toolbar {
       return false
     })
 
-    this.unionButton = $('<img id="toolUnion" data-toggle="tooltip" class="disabled icon" title="Polygon Union <span class=\'highlight\'> [ U ]</span>" src="./images/toolbar_geo_union.svg"/>')
+    this.unionButton = $('<div class="image-button disabled" id="toolUnion" data-toggle="tooltip" title="Polygon Union <span class=\'highlight\'> [ U ]</span>" ><img src="./images/toolbar_geo_union.svg"/><div>Union</div></div>')
     buttonGroup.append(this.unionButton)
-    $("#toolbar").delegate("#toolUnion:not(.disabled)", "click", () => {
+    this.html.delegate("#toolUnion:not(.disabled)", "click", () => {
       let selection = this.view.getSelection().getAll()
       let p = new GeoUnionToolPolicy()
       p.executed = () => {
@@ -211,9 +211,9 @@ export default class Toolbar {
       return false
     })
 
-    this.differenceButton = $('<img id="toolDifference" data-toggle="tooltip" class="disabled icon" title="Polygon Difference <span class=\'highlight\'> [ D ]</span>" src="./images/toolbar_geo_subtract.svg"/>')
+    this.differenceButton = $('<div class="image-button disabled" id="toolDifference" data-toggle="tooltip"  title="Polygon Difference <span class=\'highlight\'> [ D ]</span>" ><img src="./images/toolbar_geo_subtract.svg"/><div>Subtract</div></div>')
     buttonGroup.append(this.differenceButton)
-    $("#toolbar").delegate("#toolDifference:not(.disabled)", "click", () => {
+    this.html.delegate("#toolDifference:not(.disabled)", "click", () => {
       this.view.installEditPolicy(new GeoDifferenceToolPolicy())
     })
     Mousetrap.bindGlobal(["D", "d"], () => {
@@ -221,9 +221,9 @@ export default class Toolbar {
       return false
     })
 
-    this.intersectionButton = $('<img id="toolIntersection" data-toggle="tooltip" class="disabled icon" title="Polygon Intersection <span class=\'highlight\'> [ I ]</span>" src="./images/toolbar_geo_intersect.svg"/>')
+    this.intersectionButton = $('<div class="image-button disabled" id="toolIntersection" data-toggle="tooltip" title="Polygon Intersection <span class=\'highlight\'> [ I ]</span>" ><img src="./images/toolbar_geo_intersect.svg"/><div>Intersect</div></div>')
     buttonGroup.append(this.intersectionButton)
-    $("#toolbar").delegate("#toolIntersection:not(.disabled)", "click", () => {
+    this.html.delegate("#toolIntersection:not(.disabled)", "click", () => {
       this.view.installEditPolicy(new GeoIntersectionToolPolicy())
     })
     Mousetrap.bindGlobal(["I", "i"], () => {
@@ -234,7 +234,7 @@ export default class Toolbar {
 
     buttonGroup = $('<div class="group" style="float:right"></div>')
     this.html.append(buttonGroup)
-    this.testButton = $('<img  data-toggle="tooltip" title="Test your shape" class="icon"  src="./images/toolbar_element_test.svg"/>')
+    this.testButton = $('<div class="image-button" data-toggle="tooltip" title="Test your shape"><img src="./images/toolbar_element_test.svg"/><div>Test</div></div>')
     buttonGroup.append(this.testButton)
     this.testButton.on("click", () => {
       // if any error happens during the shape code create/execute -> goto the the JS editor
@@ -247,13 +247,13 @@ export default class Toolbar {
       }
     })
 
-    this.codeButton = $('<img data-toggle="tooltip" title="Edit JavaScript code</span>" class="icon"  src="./images/toolbar_element_js.svg"/>')
+    this.codeButton = $('<div class="image-button" data-toggle="tooltip" title="Edit JavaScript code</span>"><img src="./images/toolbar_element_js.svg"/><div>Code</div></div>')
     buttonGroup.append(this.codeButton)
     this.codeButton.on("click", () => {
       new FigureCodeEdit().show()
     })
 
-    this.markdownButton = $('<img class="icon" data-toggle="tooltip" title="Write documentation for your shape</span>" src="./images/toolbar_element_doc.svg"/>')
+    this.markdownButton = $('<div class="image-button" data-toggle="tooltip" title="Write documentation for your shape</span>"><img src="./images/toolbar_element_doc.svg"/><div>Doku</div></div>')
     buttonGroup.append(this.markdownButton)
     this.markdownButton.on("click", () => {
       new FigureMarkdownEdit().show()

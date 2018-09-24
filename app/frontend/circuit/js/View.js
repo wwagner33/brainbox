@@ -247,12 +247,10 @@ export default draw2d.Canvas.extend({
     // of the Delete Button
     //
     this.on("select", function (emitter, event) {
-      if (event.figure === null) {
-        $("#editDelete").addClass("disabled")
-      }
-      else {
         $("#editDelete").removeClass("disabled")
-      }
+    })
+    this.on("unselect", function (emitter, event) {
+        $("#editDelete").addClass("disabled")
     })
 
     this.on("contextmenu", function (emitter, event) {

@@ -1,4 +1,3 @@
-@import "colors.less";
 
 
 body {
@@ -61,20 +60,20 @@ body {
           .palette {
             position:absolute;
             height: 100%;
-            width: @paletteWidth;
+            width: @leftPaneWidth;
             padding: 0;
 
             #filter{
               top: 90px;
               position: absolute;
               font-size: 20px;
-              width: (@paletteWidth)-5;
+              width: (@leftPaneWidth)-5;
               left: 2px;
             }
 
             #paletteElementsScroll {
               position: absolute;
-              width: @paletteWidth - 2px;
+              width: @leftPaneWidth - 2px;
               margin: 0;
               padding: 0;
               top: 150px;
@@ -87,7 +86,7 @@ body {
                 padding: 0;
                 overflow: hidden;
                 .mix {
-                  height: @paletteWidth/2;
+                  height: @leftPaneWidth/2;
                   border: 1px solid #f0f0f0;
                   /* to avoid doubling the border of the grid */
                   margin: -1px 0 0 -1px;
@@ -95,40 +94,24 @@ body {
               }
             }
           }
-          .toolbar {
-            position:absolute;
-            height:@toolbarHeight;
-            right: 0;
-            top:0;
-            left: @paletteWidth;
-            .icon{
-              width:@toolbarHeight - 10;
-              height:@toolbarHeight - 10;
-              margin:5px;
-              padding:0px;
-            }
-          }
           .content {
             position:absolute;
-            right: 0px;
+            right: 0;
             top:@toolbarHeight;
-            bottom:0px;
-            left: @paletteWidth;
+            bottom:0;
+            left: @leftPaneWidth;
             overflow: scroll;
-
             .canvas {
                 width:6000px;
                 height:6000px;
             }
           }
+        }
       }
-      }
-
       .active {
         display: block;
       }
     }
-
   }
 }
 
