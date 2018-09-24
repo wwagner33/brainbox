@@ -5,6 +5,7 @@ export default class ProbeWindow {
 
   constructor(canvas) {
     this.canvas = canvas
+    this.visible = false
 
     // the tick function if the oszi goes from left to the right
     //
@@ -50,39 +51,17 @@ export default class ProbeWindow {
     this.yScale = d3.scaleLinear().domain([0, 5]).range([this.channelHeight, 0])
 
     $("#probe_window_stick").on("click", () => {
-      this.stick = !this.stick
-      if (this.stick) {
-        $("#probe_window_stick").addClass("ion-ios-eye").removeClass("ion-ios-eye-outline")
-      }
-      else {
-        $("#probe_window_stick").addClass("ion-ios-eye-outline").removeClass("ion-ios-eye")
-      }
-
-      // try to hide the window if the simulation isn't running.
-      if (!this.stick && !this.canvas.isSimulationRunning()) {
+      if (this.visible) {
         this.hide()
       }
+      else {
+        this.show()
+      }
     })
-
-    if (this.stick) {
-      $("#probe_window_stick").addClass("ion-ios-eye").removeClass("ion-ios-eye-outline")
-      this.show(true)
-    }
   }
 
-  set stick(v) {
-    Locstor.setItem("stickWindow", v)
-  }
 
-  get stick() {
-    return Locstor.getItem("stickWindow", false) === "true"
-  }
-
-  show(force) {
-    if (!force && this.stick) {
-      return
-    }
-
+  show() {
     let _this = this
     let probes = []
 
@@ -122,24 +101,22 @@ export default class ProbeWindow {
       update: function (event, ui) {
         let lis = $("#probeSortable li")
         $.each(lis, function (index, li) {
-          probeEntry = _this.probes.find(function (entry) {
+          let probeEntry = _this.probes.find(function (entry) {
             return entry.probe.id === li.attributes.id.value
           })
           probeEntry.probe.setIndex(index)
         })
       }
     })
+    this.visible = true
   }
 
   hide() {
-    if (this.stick) {
-      return
-    }
-
     $("#probe_window").animate({height: '0'}, 300)
-    $("#draw2dCanvasWrapper").animate({bottom: '0'}, 300, function () {
+    $("#draw2dCanvasWrapper").animate({bottom: '0'}, 300, () => {
       $("#probeSortable").remove()
     })
+    this.visible = false
   }
 
   resize() {
@@ -161,7 +138,7 @@ export default class ProbeWindow {
   }
 
   removeProbe(probeFigure) {
-    this.probes = $.grep(this.probes, entry => entry.probe != probeFigure)
+    this.probes = $.grep(this.probes, entry => entry.probe !== probeFigure)
     $("#" + probeFigure.id).remove()
     this.resize()
     if (this.probes.length > 0)
@@ -189,7 +166,7 @@ export default class ProbeWindow {
         return _this.yScale(d)
       })
       .curve(d3.curveStepBefore)
-   //   .interpolate("step-before")
+    //   .interpolate("step-before")
 
     vis.selectAll("path")
       .data([data])
@@ -238,7 +215,7 @@ export default class ProbeWindow {
       }
       $replaceWith.blur(fire)
       $replaceWith.keypress(function (e) {
-        if (e.which == 13) {
+        if (e.which === 13) {
           fire()
         }
       })

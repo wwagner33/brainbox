@@ -450,7 +450,7 @@ export default draw2d.Canvas.extend({
     $("#paletteElementsOverlay").height($("#paletteElements").height())
     this.slider.slider("setValue", 100)
 
-    this.probeWindow.show()
+  //  this.probeWindow.show()
   },
 
   simulationStop: function () {
@@ -468,7 +468,7 @@ export default draw2d.Canvas.extend({
       $(".editBase").fadeIn("slow")
     })
     $("#paletteElementsOverlay").fadeOut("fast")
-    this.probeWindow.hide()
+//    this.probeWindow.hide()
   },
 
   _calculate: function () {
