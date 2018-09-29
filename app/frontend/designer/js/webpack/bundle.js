@@ -3967,11 +3967,9 @@ exports.default = shape_designer.filter.FillColorFilter = function (_Filter) {
   function FillColorFilter() {
     _classCallCheck(this, FillColorFilter);
 
-    var _this = _possibleConstructorReturn(this, (FillColorFilter.__proto__ || Object.getPrototypeOf(FillColorFilter)).call(this));
+    var _this = _possibleConstructorReturn(this, (FillColorFilter.__proto__ || Object.getPrototypeOf(FillColorFilter)).call(this, "shape_designer.filter.FillColorFilter"));
 
-    _this.NAME = "shape_designer.filter.FillColorFilter";
     _this.colorPicker = null;
-    _this.cssScope = _this.NAME.replace(/[.]/g, "_");
     return _this;
   }
 
@@ -4040,9 +4038,9 @@ var Filter = function () {
   function Filter(name) {
     _classCallCheck(this, Filter);
 
-    this.name = name;
+    this.NAME = name;
     this.colorPicker = null;
-    this.cssScope = this.name.replace(/[.]/g, "_");
+    this.cssScope = this.NAME.replace(/[.]/g, "_");
     this.containerId = this.cssScope + "_container";
   }
 
@@ -4127,11 +4125,9 @@ exports.default = shape_designer.filter.FontColorFilter = function (_Filter) {
   function FontColorFilter() {
     _classCallCheck(this, FontColorFilter);
 
-    var _this = _possibleConstructorReturn(this, (FontColorFilter.__proto__ || Object.getPrototypeOf(FontColorFilter)).call(this));
+    var _this = _possibleConstructorReturn(this, (FontColorFilter.__proto__ || Object.getPrototypeOf(FontColorFilter)).call(this, "shape_designer.filter.FontColorFilter"));
 
-    _this.NAME = "shape_designer.filter.FontColorFilter";
     _this.colorPicker = null;
-    _this.cssScope = _this.NAME.replace(/[.]/g, "_");
     return _this;
   }
 
@@ -4213,11 +4209,7 @@ exports.default = shape_designer.filter.FontSizeFilter = function (_Filter) {
   function FontSizeFilter() {
     _classCallCheck(this, FontSizeFilter);
 
-    var _this = _possibleConstructorReturn(this, (FontSizeFilter.__proto__ || Object.getPrototypeOf(FontSizeFilter)).call(this));
-
-    _this.NAME = "shape_designer.filter.FontSizeFilter";
-    _this.cssScope = _this.NAME.replace(/[.]/g, "_");
-    return _this;
+    return _possibleConstructorReturn(this, (FontSizeFilter.__proto__ || Object.getPrototypeOf(FontSizeFilter)).call(this, "shape_designer.filter.FontSizeFilter"));
   }
 
   _createClass(FontSizeFilter, [{
@@ -4309,16 +4301,14 @@ exports.default = shape_designer.filter.LinearGradientFilter = function (_Filter
   function LinearGradientFilter() {
     _classCallCheck(this, LinearGradientFilter);
 
-    var _this = _possibleConstructorReturn(this, (LinearGradientFilter.__proto__ || Object.getPrototypeOf(LinearGradientFilter)).call(this));
+    var _this = _possibleConstructorReturn(this, (LinearGradientFilter.__proto__ || Object.getPrototypeOf(LinearGradientFilter)).call(this, "shape_designer.filter.LinearGradientFilter"));
 
-    _this.NAME = "shape_designer.filter.LinearGradientFilter";
     _this.colorPicker1 = null;
     _this.colorPicker2 = null;
 
     _this.startColor = "#f0f0f0";
     _this.endColor = "#3f3f3f";
     _this.angle = 0;
-    _this.cssScope = _this.NAME.replace(/[.]/g, "_");
     return _this;
   }
 

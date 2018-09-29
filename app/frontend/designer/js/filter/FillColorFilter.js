@@ -4,10 +4,8 @@ import jscolor from "../widget/jscolor/jscolor"
 export default shape_designer.filter.FillColorFilter = class FillColorFilter extends Filter {
 
   constructor() {
-    super()
-    this.NAME = "shape_designer.filter.FillColorFilter"
+    super("shape_designer.filter.FillColorFilter")
     this.colorPicker = null
-    this.cssScope = this.NAME.replace(/[.]/g, "_")
   }
 
   insertPane(figure, $parent) {

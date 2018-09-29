@@ -5,10 +5,8 @@ import Filter from "./Filter"
 export default shape_designer.filter.FontColorFilter = class FontColorFilter extends Filter {
 
   constructor() {
-    super()
-    this.NAME = "shape_designer.filter.FontColorFilter"
+    super("shape_designer.filter.FontColorFilter")
     this.colorPicker = null
-    this.cssScope = this.NAME.replace(/[.]/g, "_")
   }
 
   insertPane(figure, $parent) {

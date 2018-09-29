@@ -3,9 +3,7 @@ import Filter from "./Filter"
 export default shape_designer.filter.FontSizeFilter = class FontSizeFilter extends Filter {
 
   constructor() {
-    super()
-    this.NAME = "shape_designer.filter.FontSizeFilter"
-    this.cssScope = this.NAME.replace(/[.]/g, "_")
+    super("shape_designer.filter.FontSizeFilter")
   }
 
   insertPane(figure, $parent) {

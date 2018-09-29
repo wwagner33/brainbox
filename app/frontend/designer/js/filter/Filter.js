@@ -1,9 +1,9 @@
 export default class Filter {
 
   constructor(name) {
-    this.name = name
+    this.NAME = name
     this.colorPicker = null
-    this.cssScope = this.name.replace(/[.]/g, "_")
+    this.cssScope = this.NAME.replace(/[.]/g, "_")
     this.containerId= this.cssScope+"_container"
   }
 
