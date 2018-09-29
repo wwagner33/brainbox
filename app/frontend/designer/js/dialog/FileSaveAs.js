@@ -27,7 +27,7 @@ export default class FileSaveAs {
       $("#githubFileSaveAsDialog .okButton").prop("disabled", false)
       this.fetchPathContent(storage, storage.currentDir)
 
-      $("#githubFileSaveAsDialog .githubFilePreview").attr("src", imageDataUrl)
+      $("#githubFileSaveAsDialog .filePreview").attr("src", imageDataUrl)
       $("#githubFileSaveAsDialog .githubFileName").val(storage.currentFile)
 
       $('#githubFileSaveAsDialog').off('shown.bs.modal').on('shown.bs.modal', (event) =>{
@@ -85,8 +85,8 @@ export default class FileSaveAs {
             return this.type === "dir" ? "fa fa-folder-o" : "fa fa-file-o"
           }
         })
-        $("#githubFileSaveAsDialog .githubNavigation").html($(output))
-        $("#githubFileSaveAsDialog .githubNavigation").scrollTop(0)
+        $("#githubFileSaveAsDialog .list-group").html($(output))
+        $("#githubFileSaveAsDialog .list-group").scrollTop(0)
 
         //we are in a folder. Create of a file is possible now
         //

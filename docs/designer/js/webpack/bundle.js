@@ -252,7 +252,7 @@ var Application = function () {
     this.view = new _View2.default(this, "canvas");
     this.toolbar = new _Toolbar2.default(this, ".toolbar", this.view);
     this.layer = new _Layer2.default(this, "layer_elements", this.view);
-    this.filter = new _FilterPane2.default(this, "filter_actions", this.view);
+    this.filter = new _FilterPane2.default(this, "#filter .filter_actions", this.view);
 
     this.view.installEditPolicy(new _SelectionToolPolicy2.default());
 
@@ -411,7 +411,7 @@ var FilterPane = function () {
     _classCallCheck(this, FilterPane);
 
     this.DEFAULT_LABEL = "Properties";
-    this.html = $("#" + elementId);
+    this.html = $(elementId);
     this.view = view;
     this.currentFigure = null;
 
@@ -1954,7 +1954,7 @@ var FileOpen = function () {
   _createClass(FileOpen, [{
     key: "show",
     value: function show(storage, view) {
-      $('#githubFileSelectDialog').modal('show');
+      $('#fileOpenDialog').modal('show');
       this.fetchPathContent(storage, storage.currentDir, view);
     }
   }, {
@@ -1985,8 +1985,8 @@ var FileOpen = function () {
           }
         });
 
-        $("#githubFileSelectDialog .githubNavigation").html($(output));
-        $("#githubFileSelectDialog .githubNavigation").scrollTop(0);
+        $("#fileOpenDialog .list-group").html($(output));
+        $("#fileOpenDialog .list-group").scrollTop(0);
 
         $(".githubPath[data-type='dir']").on("click", function (event) {
           _this.fetchPathContent(storage, $(event.currentTarget).data("path"), view);
@@ -1995,7 +1995,7 @@ var FileOpen = function () {
         $('.githubPath*[data-draw2d="true"][data-type="file"]').on("click", function (event) {
           var path = $(event.currentTarget).data("path");
           storage.loadFile(path).then(function (content) {
-            $('#githubFileSelectDialog').modal('hide');
+            $('#fileOpenDialog').modal('hide');
             storage.currentFile = path;
             view.clear();
             new draw2d.io.json.Reader().unmarshal(view, content);
@@ -2068,25 +2068,25 @@ var FileSave = function () {
     value: function show(storage, canvas) {
 
       new draw2d.io.png.Writer().marshal(canvas, function (imageDataUrl) {
-        $("#githubSaveFileDialog .githubFilePreview").attr("src", imageDataUrl);
-        $("#githubSaveFileDialog .githubFileName").val(storage.currentFile ? storage.currentFile : "NewDocument" + _Configuration2.default.fileSuffix);
+        $("#fileSaveDialog .filePreview").attr("src", imageDataUrl);
+        $("#fileSaveDialog .githubFileName").val(storage.currentFile ? storage.currentFile : "NewDocument" + _Configuration2.default.fileSuffix);
 
-        $('#githubSaveFileDialog').on('shown.bs.modal', function (event) {
+        $('#fileSaveDialog').on('shown.bs.modal', function (event) {
           $(event.currentTarget).find('input:first').focus();
         });
-        $("#githubSaveFileDialog").modal("show");
+        $("#fileSaveDialog").modal("show");
         Mousetrap.pause();
 
         // Button: Commit to GitHub
         //
-        $("#githubSaveFileDialog .okButton").off('click').on("click", function () {
+        $("#fileSaveDialog .okButton").off('click').on("click", function () {
           Mousetrap.unpause();
           var writer = new draw2d.io.json.Writer();
           writer.marshal(canvas, function (json) {
-            var newName = $("#githubSaveFileDialog .githubFileName").val();
+            var newName = $("#fileSaveDialog .githubFileName").val();
             storage.saveFile(json, imageDataUrl, newName).then(function () {
               storage.currentFile = newName;
-              $('#githubSaveFileDialog').modal('hide');
+              $('#fileSaveDialog').modal('hide');
             });
           });
         });
@@ -2163,7 +2163,7 @@ var FileSaveAs = function () {
         $("#githubFileSaveAsDialog .okButton").prop("disabled", false);
         _this.fetchPathContent(storage, storage.currentDir);
 
-        $("#githubFileSaveAsDialog .githubFilePreview").attr("src", imageDataUrl);
+        $("#githubFileSaveAsDialog .filePreview").attr("src", imageDataUrl);
         $("#githubFileSaveAsDialog .githubFileName").val(storage.currentFile);
 
         $('#githubFileSaveAsDialog').off('shown.bs.modal').on('shown.bs.modal', function (event) {
@@ -2211,8 +2211,8 @@ var FileSaveAs = function () {
             return this.type === "dir" ? "fa fa-folder-o" : "fa fa-file-o";
           }
         });
-        $("#githubFileSaveAsDialog .githubNavigation").html($(output));
-        $("#githubFileSaveAsDialog .githubNavigation").scrollTop(0);
+        $("#githubFileSaveAsDialog .list-group").html($(output));
+        $("#githubFileSaveAsDialog .list-group").scrollTop(0);
 
         //we are in a folder. Create of a file is possible now
         //
@@ -3818,11 +3818,7 @@ exports.default = shape_designer.filter.BlurFilter = function (_Filter) {
   function BlurFilter() {
     _classCallCheck(this, BlurFilter);
 
-    var _this = _possibleConstructorReturn(this, (BlurFilter.__proto__ || Object.getPrototypeOf(BlurFilter)).call(this));
-
-    _this.NAME = "shape_designer.filter.BlurFilter";
-    _this.cssScope = _this.NAME.replace(/[.]/g, "_");
-    return _this;
+    return _possibleConstructorReturn(this, (BlurFilter.__proto__ || Object.getPrototypeOf(BlurFilter)).call(this, "shape_designer.filter.BlurFilter"));
   }
 
   _createClass(BlurFilter, [{
@@ -3897,11 +3893,7 @@ exports.default = shape_designer.filter.FanoutFilter = function (_Filter) {
   function FanoutFilter() {
     _classCallCheck(this, FanoutFilter);
 
-    var _this = _possibleConstructorReturn(this, (FanoutFilter.__proto__ || Object.getPrototypeOf(FanoutFilter)).call(this));
-
-    _this.NAME = "shape_designer.filter.FanoutFilter";
-    _this.cssScope = _this.NAME.replace(/[.]/g, "_");
-    return _this;
+    return _possibleConstructorReturn(this, (FanoutFilter.__proto__ || Object.getPrototypeOf(FanoutFilter)).call(this, "shape_designer.filter.FanoutFilter"));
   }
 
   _createClass(FanoutFilter, [{
@@ -4045,8 +4037,13 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Filter = function () {
-  function Filter() {
+  function Filter(name) {
     _classCallCheck(this, Filter);
+
+    this.name = name;
+    this.colorPicker = null;
+    this.cssScope = this.name.replace(/[.]/g, "_");
+    this.containerId = this.cssScope + "_container";
   }
 
   /**
@@ -4454,11 +4451,7 @@ exports.default = shape_designer.filter.OpacityFilter = function (_Filter) {
   function OpacityFilter() {
     _classCallCheck(this, OpacityFilter);
 
-    var _this = _possibleConstructorReturn(this, (OpacityFilter.__proto__ || Object.getPrototypeOf(OpacityFilter)).call(this));
-
-    _this.NAME = "shape_designer.filter.OpacityFilter";
-    _this.cssScope = _this.NAME.replace(/[.]/g, "_");
-    return _this;
+    return _possibleConstructorReturn(this, (OpacityFilter.__proto__ || Object.getPrototypeOf(OpacityFilter)).call(this, "shape_designer.filter.OpacityFilter"));
   }
 
   _createClass(OpacityFilter, [{
@@ -4540,11 +4533,9 @@ exports.default = shape_designer.filter.OutlineStrokeFilter = function (_Filter)
   function OutlineStrokeFilter() {
     _classCallCheck(this, OutlineStrokeFilter);
 
-    var _this = _possibleConstructorReturn(this, (OutlineStrokeFilter.__proto__ || Object.getPrototypeOf(OutlineStrokeFilter)).call(this));
+    var _this = _possibleConstructorReturn(this, (OutlineStrokeFilter.__proto__ || Object.getPrototypeOf(OutlineStrokeFilter)).call(this, "shape_designer.filter.OutlineStrokeFilter"));
 
-    _this.NAME = "shape_designer.filter.OutlineStrokeFilter";
     _this.colorPicker = null;
-    _this.cssScope = _this.NAME.replace(/[.]/g, "_");
     return _this;
   }
 
@@ -4553,9 +4544,10 @@ exports.default = shape_designer.filter.OutlineStrokeFilter = function (_Filter)
     value: function insertPane(figure, $parent) {
       var _this2 = this;
 
-      $parent.append('<div id="' + this.cssScope + '_conainer" class="panel panel-default">' + ' <div class="panel-heading filter-heading" data-toggle="collapse" data-target="#outlinestroke_width_panel">' + '     Outline Stroke' + '    <img id="button_remove_OutlineStrokeFilter" class="icon pull-right" src="./images/dialog_close.svg"/>' + '</div>' + ' <div class="panel-body collapse in" id="outlinestroke_width_panel">' + '   <div class="form-group">' + '      <div class="input-group" ></div> ' + // required to ensure the correct width of the siblings
+      $parent.append('<div id="' + this.containerId + '" class="panel panel-default">' + ' <div class="panel-heading filter-heading" data-toggle="collapse" data-target="#outlinestroke_width_panel">' + '     Outline Stroke' + '    <img id="button_remove_OutlineStrokeFilter" class="icon pull-right" src="./images/dialog_close.svg"/>' + '</div>' + ' <div class="panel-body collapse in" id="outlinestroke_width_panel">' + '   <div class="form-group">' + '      <div class="input-group" ></div> ' + // required to ensure the correct width of the siblings
       '       <input id="filter_outlinestroke" type="text" value="' + figure.getOutlineStroke() + '" name="filter_outlinestroke" class="mousetrap-pause form-control" />' + '       <div class="input-group">' + '          <span class="input-group-addon">#</span>' + '          <input id="filter_outlinestroke_color" type="text" value="" name="outlinestroke-color" class="mousetrap-pause form-control color"/>' + '       </div>' + '   </div>' + ' </div>' + '</div>');
-      inlineSVG.init({ svgSelector: "#" + this.cssScope + "_container img.svg" });
+
+      inlineSVG.init({ svgSelector: "#" + this.containerId + " img.svg" });
 
       $("input[name='filter_outlinestroke']").TouchSpin({
         min: 0,
@@ -4577,8 +4569,8 @@ exports.default = shape_designer.filter.OutlineStrokeFilter = function (_Filter)
       $("#button_remove_OutlineStrokeFilter").on("click", function () {
         figure.removeFilter(_this2);
         figure.setOutlineStroke(0);
-        $("#outlinestroke_filter_conainer").animate({ "height": "0", "opacity": 0, "margin-bottom": 0 }, 500, function () {
-          $('#outlinestroke_filter_conainer').remove();
+        $("#" + _this2.containerId).animate({ "height": "0", "opacity": 0, "margin-bottom": 0 }, 500, function () {
+          $('#' + _this2.containerId).remove();
         });
       });
     }
@@ -4640,12 +4632,7 @@ exports.default = shape_designer.filter.PortDirectionFilter = function (_Filter)
   function PortDirectionFilter() {
     _classCallCheck(this, PortDirectionFilter);
 
-    var _this2 = _possibleConstructorReturn(this, (PortDirectionFilter.__proto__ || Object.getPrototypeOf(PortDirectionFilter)).call(this));
-
-    _this2.NAME = "shape_designer.filter.PortDirectionFilter";
-    _this2.type = 0;
-    _this2.cssScope = _this2.NAME.replace(/[.]/g, "_");
-    return _this2;
+    return _possibleConstructorReturn(this, (PortDirectionFilter.__proto__ || Object.getPrototypeOf(PortDirectionFilter)).call(this, "shape_designer.filter.PortDirectionFilter"));
   }
 
   _createClass(PortDirectionFilter, [{
@@ -4727,12 +4714,7 @@ exports.default = shape_designer.filter.PortTypeFilter = function (_Filter) {
   function PortTypeFilter() {
     _classCallCheck(this, PortTypeFilter);
 
-    var _this2 = _possibleConstructorReturn(this, (PortTypeFilter.__proto__ || Object.getPrototypeOf(PortTypeFilter)).call(this));
-
-    _this2.NAME = "shape_designer.filter.PortTypeFilter";
-    _this2.type = 0;
-    _this2.cssScope = _this2.NAME.replace(/[.]/g, "_");
-    return _this2;
+    return _possibleConstructorReturn(this, (PortTypeFilter.__proto__ || Object.getPrototypeOf(PortTypeFilter)).call(this, "shape_designer.filter.PortTypeFilter"));
   }
 
   _createClass(PortTypeFilter, [{
@@ -4810,12 +4792,7 @@ exports.default = shape_designer.filter.PositionFilter = function (_Filter) {
   function PositionFilter() {
     _classCallCheck(this, PositionFilter);
 
-    var _this = _possibleConstructorReturn(this, (PositionFilter.__proto__ || Object.getPrototypeOf(PositionFilter)).call(this));
-
-    _this.NAME = "shape_designer.filter.PositionFilter";
-    _this.block = false;
-    _this.cssScope = _this.NAME.replace(/[.]/g, "_");
-    return _this;
+    return _possibleConstructorReturn(this, (PositionFilter.__proto__ || Object.getPrototypeOf(PositionFilter)).call(this, "shape_designer.filter.PositionFilter"));
   }
 
   _createClass(PositionFilter, [{
@@ -4922,11 +4899,7 @@ exports.default = shape_designer.filter.RadiusFilter = function (_Filter) {
   function RadiusFilter() {
     _classCallCheck(this, RadiusFilter);
 
-    var _this = _possibleConstructorReturn(this, (RadiusFilter.__proto__ || Object.getPrototypeOf(RadiusFilter)).call(this));
-
-    _this.NAME = "shape_designer.filter.RadiusFilter";
-    _this.cssScope = _this.NAME.replace(/[.]/g, "_");
-    return _this;
+    return _possibleConstructorReturn(this, (RadiusFilter.__proto__ || Object.getPrototypeOf(RadiusFilter)).call(this, "shape_designer.filter.RadiusFilter"));
   }
 
   _createClass(RadiusFilter, [{
@@ -5003,12 +4976,7 @@ exports.default = shape_designer.filter.SizeFilter = function (_Filter) {
   function SizeFilter() {
     _classCallCheck(this, SizeFilter);
 
-    var _this = _possibleConstructorReturn(this, (SizeFilter.__proto__ || Object.getPrototypeOf(SizeFilter)).call(this));
-
-    _this.NAME = "shape_designer.filter.SizeFilter";
-    _this.block = false;
-    _this.cssScope = _this.NAME.replace(/[.]/g, "_");
-    return _this;
+    return _possibleConstructorReturn(this, (SizeFilter.__proto__ || Object.getPrototypeOf(SizeFilter)).call(this, "shape_designer.filter.SizeFilter"));
   }
 
   _createClass(SizeFilter, [{
@@ -5117,12 +5085,7 @@ exports.default = shape_designer.filter.StrokeFilter = function (_Filter) {
   function StrokeFilter() {
     _classCallCheck(this, StrokeFilter);
 
-    var _this = _possibleConstructorReturn(this, (StrokeFilter.__proto__ || Object.getPrototypeOf(StrokeFilter)).call(this));
-
-    _this.NAME = "shape_designer.filter.StrokeFilter";
-    _this.colorPicker = null;
-    _this.cssScope = _this.NAME.replace(/[.]/g, "_");
-    return _this;
+    return _possibleConstructorReturn(this, (StrokeFilter.__proto__ || Object.getPrototypeOf(StrokeFilter)).call(this, "shape_designer.filter.StrokeFilter"));
   }
 
   _createClass(StrokeFilter, [{
@@ -5222,16 +5185,13 @@ exports.default = shape_designer.filter.TextLinearGradientFilter = function (_Fi
   function TextLinearGradientFilter() {
     _classCallCheck(this, TextLinearGradientFilter);
 
-    var _this = _possibleConstructorReturn(this, (TextLinearGradientFilter.__proto__ || Object.getPrototypeOf(TextLinearGradientFilter)).call(this));
+    var _this = _possibleConstructorReturn(this, (TextLinearGradientFilter.__proto__ || Object.getPrototypeOf(TextLinearGradientFilter)).call(this, "shape_designer.filter.TextLinearGradientFilter"));
 
-    _this.NAME = "shape_designer.filter.TextLinearGradientFilter";
     _this.colorPicker1 = null;
     _this.colorPicker2 = null;
-
     _this.startColor = "#f0f0f0";
     _this.endColor = "#3f3f3f";
     _this.angle = 0;
-    _this.cssScope = _this.NAME.replace(/[.]/g, "_");
     return _this;
   }
 
@@ -10806,7 +10766,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "#modal-background {\n  display: block;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: black;\n  opacity: 0.1;\n  -webkit-opacity: 0.1;\n  -moz-opacity: 0.1;\n  filter: alpha(opacity=10);\n  z-index: 1000;\n}\n.modal-dialog {\n  border-radius: 2px;\n  box-shadow: 2px 2px 5px 0 #222;\n}\n.modal-content {\n  border-radius: 2px !important;\n}\n/***BOOTSTRAP****/\n.btn {\n  border-radius: 0px !important;\n}\n.tooltip-inner {\n  border-radius: 0px !important;\n  padding: 10px !important;\n  padding-top: 5px !important;\n  padding-bottom: 5px !important;\n  font-family: 'Roboto', sans-serif !important;\n  font-weight: 300 !important;\n  font-size: 14px !important;\n  color: #b0b0b0 !important;\n}\n/********/\n.blackgradient {\n  background: none repeat scroll 0 0 #303030;\n}\nbody {\n  overflow: hidden;\n  font-family: 'Roboto', sans-serif !important;\n  font-weight: 300;\n}\ninput {\n  background: none repeat scroll 0 0 #f8f8f8;\n  border-color: #C6C6C6 #DADADA #EAEAEA;\n  border-radius: 4px 4px 4px 4px;\n  -moz-box-sizing: border-box;\n  padding-left: 7px;\n  border-style: solid ;\n  border-width: 1px;\n  vertical-align: middle;\n  height: 25px;\n  font-size: 14px;\n  line-height: 25px;\n}\n.input-block-level {\n  display: block;\n  width: 100%;\n  min-height: 28px;\n}\n.control-label {\n  font-family: 'Roboto', sans-serif;\n  font-weight: 300;\n}\n/******************************************************************\n * Einstellungen der PropertyViews im Editmodus der \"Form\".\n ******************************************************************/\n.palette_node_element {\n  width: 48px;\n  height: 48px;\n  cursor: move;\n  margin: 10px auto 10px auto;\n  align: center;\n}\n#tool_shape .tool_shape_entry {\n  text-align: left;\n}\n.tooltip {\n  z-index: 1000000;\n}\n/* Effects */\n.overlay-scale {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 10000;\n  visibility: hidden;\n  opacity: 0;\n  -webkit-transform: scale(0.9);\n  transform: scale(0.9);\n  -webkit-transition: all 0.4s;\n  transition: all 0.4s;\n}\n.overlay-scale.open {\n  visibility: visible;\n  opacity: 1;\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  -webkit-transition: all 0.4s;\n  transition: all 0.4s;\n}\n.readonly-highlight {\n  background-color: rgba(50, 43, 168, 0.5);\n  opacity: 0.2;\n  color: darkblue;\n  position: absolute;\n}\n#canvas {\n  padding: 0;\n  margin: 0;\n  border: 0;\n  position: absolute;\n  top: 60px;\n  right: 200px;\n  left: 220px;\n  bottom: 0;\n  overflow: scroll;\n  background-color: #FFFFFF;\n}\n#canvas_zoom {\n  position: fixed;\n  bottom: 20px;\n  right: 270px;\n  background-color: rgba(178, 226, 242, 0.3);\n  border-radius: 5px;\n}\n#canvas_zoom button {\n  background-color: transparent;\n  font-weight: 300;\n  padding: 5px;\n  padding-left: 10px;\n  padding-right: 10px;\n  border: 1px solid transparent;\n  outline: none;\n}\n#canvas_zoom button:hover {\n  border: 1px solid #C21B7A;\n}\n#canvas_config {\n  position: fixed;\n  width: 40px;\n  top: 65px;\n  left: 225px;\n  cursor: pointer;\n  border: 1px solid transparent;\n  background-color: rgba(178, 226, 242, 0.3);\n}\n#canvas_config:hover {\n  border: 1px solid #C21B7A !important;\n}\n#canvas_config:hover {\n  color: #C21B7A;\n}\n#canvas_config_items {\n  position: fixed;\n  top: 90px;\n  left: 225px;\n  cursor: pointer;\n  padding: 10px;\n  white-space: nowrap;\n  min-width: 250px;\n}\n.toolbar {\n  margin: 0;\n  padding-top: 0;\n  padding-right: 10px;\n  top: 0;\n  right: 0;\n  left: 220px;\n  height: 60px;\n  overflow: visible;\n  z-index: 1000 !important;\n  position: absolute;\n  background-color: #B2E2F2;\n  border: none !important;\n}\n.toolbar * {\n  outline: none;\n}\n.toolbar .group {\n  padding-right: 20px;\n  display: inline-block;\n  vertical-align: top;\n}\n.toolbar .group .image-button {\n  display: inline-block;\n}\n.toolbar .group .image-button img {\n  margin: 5px;\n  margin-bottom: 0;\n  padding: 0;\n  width: 40px;\n  height: 40px;\n  position: relative;\n  display: inline-block;\n  text-align: center;\n  color: #777;\n  font-size: 45px;\n  transition: all 0.5s;\n}\n.toolbar .group .image-button div {\n  color: rgba(0, 0, 0, 0.5);\n  text-align: center;\n  font-size: 10px;\n}\n.toolbar .group .image-button.disabled {\n  opacity: 0.2;\n}\n.toolbar .group .image-button:not(.disabled) img {\n  cursor: pointer;\n}\n.toolbar .group .image-button:not(.disabled) img:hover {\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n}\n.layer-name-prompt .modal-title {\n  font-weight: 100;\n}\n.layer-name-prompt .modal-footer {\n  border: 0;\n}\n.layer-name-prompt .modal-header {\n  border-bottom: 3px solid #C21B7A;\n}\n.layer-name-prompt input {\n  outline: none !important;\n  -webkit-box-shadow: inset !important;\n  box-shadow: inset !important;\n  background-color: rgba(0, 0, 0, 0.02) !important;\n  border-radius: 1px !important;\n}\n.layer-name-prompt input:focus {\n  border: 1px solid #C21B7A;\n}\n.layer-name-prompt .btn-primary {\n  background-color: #C21B7A;\n  border: 0;\n}\n.layer-name-prompt .btn-primary:hover {\n  background-color: #95155e;\n}\n#layer {\n  padding: 0;\n  margin: 0;\n  border: 0;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  width: 220px;\n  background-color: #ffffff;\n  text-align: center;\n  box-shadow: 5px 0 20px -3px rgba(31, 73, 125, 0.3);\n  z-index: 10000;\n}\n#layer .title {\n  left: 10px;\n  right: 0px;\n  top: 10px;\n  position: absolute;\n}\n#layer .title img {\n  padding-right: 20px;\n  position: absolute;\n  left: 10px;\n}\n#layer .title div {\n  position: absolute;\n  left: 90px;\n}\n#layer .title div h1 {\n  font-size: 25px;\n  font-weight: 200;\n  line-height: 45px;\n  margin: 0;\n  padding: 0;\n  text-align: left;\n}\n#layer .title div h2 {\n  font-size: 15px;\n  font-weight: 200;\n  margin: 0;\n  padding: 0;\n  text-align: left;\n}\n#layer .panetitle {\n  position: fixed;\n  height: 30px;\n  width: 220px;\n  top: 90px;\n  border-bottom: 1px solid #222222;\n  font-weight: 500;\n  font-size: 12px;\n  padding: 4px 4px 4px 20px;\n  letter-spacing: 5px;\n  text-align: left;\n  color: #C21B7A;\n  box-shadow: 0 4px 2px -2px rgba(31, 73, 125, 0.3);\n}\n#layer #layer_elements {\n  padding: 0;\n  margin: 0;\n  border: 0;\n  position: fixed;\n  top: 120px;\n  left: 0;\n  bottom: 0;\n  width: 220px;\n  overflow: auto;\n}\n#layer #layer_elements .layerElement {\n  background-color: #fafafa;\n  color: black;\n  cursor: move;\n  font-weight: 400;\n  font-size: 12px;\n  letter-spacing: 1px;\n  padding: 4px 4px 4px 20px;\n  text-align: left;\n  border: 1px solid transparent;\n  border-bottom: 1px solid #222222;\n}\n#layer #layer_elements .layerElement[data-visibility=\"false\"] {\n  opacity: 0.5;\n  font-style: italic;\n}\n#layer #layer_elements .layerElement .icon {\n  cursor: pointer;\n  padding-right: 4px;\n  width: 20px;\n  height: 20px;\n}\n#layer #layer_elements .layerElement .icon * {\n  stroke: black !important;\n}\n#layer #layer_elements .layerElement .icon:hover * {\n  stroke: #C21B7A !important;\n}\n#layer #layer_elements .layerSelectedElement {\n  background-color: #f5f5f5;\n  color: black;\n  border-style: dotted;\n  border-width: 1px;\n  border-color: #C21B7A;\n  font-weight: 600;\n}\n#code_overlay {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: white;\n  z-index: 10000;\n}\n#code_close {\n  position: fixed;\n  right: 40px;\n  top: 10px;\n  width: 32px;\n  height: 32px;\n  z-index: 10000;\n  cursor: pointer;\n  font-size: 50px;\n}\n#code_close:hover {\n  color: #C21B7A;\n}\n#test_run {\n  position: fixed;\n  right: 90px;\n  top: 10px;\n  width: 32px;\n  height: 32px;\n  z-index: 10000;\n  cursor: pointer;\n  font-size: 50px;\n}\n#test_run:hover {\n  color: #C21B7A;\n}\n#export_overlay {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: white;\n}\n#export_close {\n  position: fixed;\n  right: 40px;\n  top: 10px;\n  width: 32px;\n  height: 32px;\n  z-index: 10000;\n  cursor: pointer;\n  font-size: 50px;\n}\n#export_close:hover {\n  color: #C21B7A;\n}\n#export_clipboard {\n  position: fixed;\n  right: 100px;\n  top: 10px;\n  width: 32px;\n  height: 32px;\n  z-index: 10000;\n  cursor: pointer;\n  font-size: 50px;\n}\n#export_clipboard:hover {\n  color: #C21B7A;\n}\n#test_info {\n  position: absolute;\n  color: black;\n  z-index: 20000;\n  top: 20px;\n  left: 20px;\n  border: 1px solid lightgray;\n  padding: 7px;\n  background-color: white;\n  border-radius: 2px;\n}\n#test_canvas {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: white;\n  z-index: 10000;\n}\n#test_close {\n  position: fixed;\n  right: 40px;\n  top: 10px;\n  width: 32px;\n  height: 32px;\n  z-index: 10000;\n  cursor: pointer;\n  font-size: 50px;\n}\n#test_close:hover {\n  color: #C21B7A;\n}\n#test_clipboard {\n  position: fixed;\n  right: 100px;\n  top: 10px;\n  width: 32px;\n  height: 32px;\n  z-index: 10000;\n  cursor: pointer;\n  font-size: 50px;\n}\n#test_clipboard:hover {\n  color: #C21B7A;\n}\n.portDirectionOption {\n  height: 60px;\n  text-align: center;\n}\n.portDirectionOption label > input {\n  /* HIDE RADIO */\n  display: none;\n}\n.portDirectionOption label > input + span {\n  /* IMAGE STYLES */\n  cursor: pointer;\n  color: gray !important;\n  padding-right: 5px;\n}\n.portDirectionOption label > input:checked + span {\n  /* (CHECKED) IMAGE STYLES */\n  color: #C21B7A !important;\n}\n.portTypeOption {\n  height: 65px;\n  padding-left: 60px;\n}\n.portTypeOption label > input {\n  /* HIDE RADIO */\n  display: none;\n}\n.portTypeOption label > input + span {\n  /* IMAGE STYLES */\n  cursor: pointer;\n  color: gray !important;\n  padding-right: 5px;\n  font-weight: 100;\n  font-size: 14px;\n}\n.portTypeOption label > input + span:before {\n  padding-right: 10px;\n}\n.portTypeOption label > input:checked + span {\n  /* (CHECKED) IMAGE STYLES */\n  color: #C21B7A !important;\n}\n#filter {\n  position: absolute;\n  top: 60px;\n  right: 0;\n  bottom: 0;\n  width: 250px;\n  padding: 0;\n  margin: 0;\n  border-radius: 0;\n  border: 0;\n  background-color: #282a30;\n}\n#filter .form-control {\n  height: 25px;\n}\n#filter .btn {\n  padding-left: 5px;\n  padding-right: 5px;\n  padding-top: 1px;\n  padding-bottom: 2px;\n}\n#filter .input-group-addon {\n  padding: 0;\n  padding-left: 5px;\n  padding-right: 5px;\n  color: rgba(0, 0, 0, 0.3);\n  background-color: white;\n  border-left: 0;\n  border-radius: 0;\n  font-weight: 100;\n  text-transform: lowercase;\n  font-size: 12px;\n}\n#filter .panel-default {\n  margin: 0;\n  border-radius: 0;\n  background-color: rgba(194, 27, 122, 0.02);\n  border: 0;\n  border-top: 1px solid #303030;\n  border-bottom: 1px solid #202525;\n  margin-top: 3px;\n}\n#filter .panetitle {\n  position: fixed;\n  height: 30px;\n  width: 250px;\n  top: 60px;\n  border-bottom: 1px solid #222222;\n  border-top: 1px solid #111111;\n  font-weight: 500;\n  font-size: 12px;\n  padding-top: 5px;\n  letter-spacing: 5px;\n  text-align: center;\n  color: #C21B7A;\n}\n#filter_toolbar {\n  overflow: visible;\n  border: 0;\n  padding: 3px;\n  padding-left: 10px;\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 250px;\n  height: 30px;\n}\n#filter_actions {\n  position: fixed;\n  top: 90px;\n  bottom: 30px;\n  width: 250px;\n  border: 0;\n  padding: 0;\n  overflow-y: auto;\n}\n#filter_actions .panel-body {\n  padding: 7px;\n  padding-top: 0;\n}\n#filter_actions .form-group {\n  margin-bottom: 2px !important;\n}\n#filter_actions .form-group > .input-group {\n  margin-bottom: 10px;\n}\n#filter_actions .form-group > .input-group:last-child {\n  margin-bottom: 0px;\n}\n#filter_actions .icon {\n  color: #26B4A8;\n  padding: 0;\n  top: -4px;\n  color: rgba(255, 255, 255, 0.25);\n}\n#filter_actions .icon:hover {\n  color: #C21B7A;\n}\n#filter_actions .filter-heading {\n  color: #DDDDDD !important;\n  font-size: 12px;\n  padding-right: 10px !important;\n  padding-top: 1px !important;\n  padding-bottom: 0 !important;\n  background-color: transparent !important;\n  background-image: none !important;\n  border: 0 !important;\n  margin-top: 4px;\n  cursor: pointer;\n  font-weight: 300;\n}\n#filter_actions .filter-heading .icon {\n  width: 15px;\n}\n#filter_actions .filter-heading .icon * {\n  stroke: white !important;\n}\n#FigureMarkdownEdit .header {\n  width: 100%;\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  display: inline-block;\n  height: 60px;\n  background-color: white;\n  overflow: hidden;\n}\n#FigureMarkdownEdit .header .left {\n  width: 50%;\n  display: inline-block;\n  height: 60px;\n  font-size: 20px;\n  padding: 6px;\n  color: #CC4F5A;\n  background-color: rgba(0, 0, 0, 0.1);\n  vertical-align: top;\n}\n#FigureMarkdownEdit .header .left small {\n  font-size: 16px;\n}\n#FigureMarkdownEdit .header .right {\n  width: 50%;\n  display: inline-block;\n  height: 60px;\n  font-size: 20px;\n  padding: 6px;\n  color: #CC4F5A;\n  background-color: rgba(0, 0, 0, 0.05);\n  vertical-align: top;\n}\n#FigureMarkdownEdit .source {\n  width: 50%;\n  display: inline-block;\n  font-family: Menlo, Monaco, Consolas, \"Courier New\", monospace;\n  font-size: 13px;\n  padding: 2px;\n  top: 60px;\n  bottom: 0px;\n  position: absolute;\n}\n#FigureMarkdownEdit .preview {\n  width: 50%;\n  display: inline-block;\n  top: 0px;\n  left: 50%;\n  position: absolute;\n  background-color: white;\n  padding: 30px;\n  overflow: auto;\n  top: 60px;\n  bottom: 0px;\n}\n#FigureMarkdownEdit .preview img {\n  max-width: 35%;\n}\n#FigureMarkdownEdit .preview table {\n  font-family: Arial, Helvetica, sans-serif;\n  color: #666;\n  font-size: 12px;\n  text-shadow: 1px 1px 0px #fff;\n  background: #eaebec;\n  margin: 20px;\n  margin-left: 0;\n  border: #ccc 1px solid;\n  -moz-border-radius: 3px;\n  -webkit-border-radius: 3px;\n  border-radius: 3px;\n  -moz-box-shadow: 0 1px 2px #d1d1d1;\n  -webkit-box-shadow: 0 1px 2px #d1d1d1;\n  box-shadow: 0 1px 2px #d1d1d1;\n}\n#FigureMarkdownEdit .preview table th {\n  padding: 21px 25px 22px 25px;\n  border-top: 1px solid #fafafa;\n  border-bottom: 1px solid #e0e0e0;\n}\n#FigureMarkdownEdit .preview table th:first-child {\n  text-align: left;\n  padding-left: 20px;\n}\n#FigureMarkdownEdit .preview table tr:first-child th:first-child {\n  -moz-border-radius-topleft: 3px;\n  -webkit-border-top-left-radius: 3px;\n  border-top-left-radius: 3px;\n}\n#FigureMarkdownEdit .preview table tr:first-child th:last-child {\n  -moz-border-radius-topright: 3px;\n  -webkit-border-top-right-radius: 3px;\n  border-top-right-radius: 3px;\n}\n#FigureMarkdownEdit .preview table tr {\n  text-align: center;\n  padding-left: 20px;\n}\n#FigureMarkdownEdit .preview table tr td:first-child {\n  text-align: left;\n  padding-left: 20px;\n  border-left: 0;\n}\n#FigureMarkdownEdit .preview table tr td {\n  padding: 18px;\n  border-top: 1px solid #ffffff;\n  border-bottom: 1px solid #e0e0e0;\n  border-left: 1px solid #e0e0e0;\n}\n#FigureMarkdownEdit .preview tbody tr:nth-child(odd) {\n  background: #fafafa;\n}\n#FigureMarkdownEdit .preview tbody tr:nth-child(even) {\n  background: #f3f3f3;\n}\n#FigureMarkdownEdit .preview table tr:last-child td {\n  border-bottom: 0;\n}\n#FigureMarkdownEdit .preview table tr:last-child td:first-child {\n  -moz-border-radius-bottomleft: 3px;\n  -webkit-border-bottom-left-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n#FigureMarkdownEdit .preview table tr:last-child td:last-child {\n  -moz-border-radius-bottomright: 3px;\n  -webkit-border-bottom-right-radius: 3px;\n  border-bottom-right-radius: 3px;\n}\n.btn-primary {\n  background-color: #C21B7A;\n}\n.githubFileDialog .githubNavigation *[data-draw2d=\"true\"] {\n  font-weight: bold;\n  color: #C21B7A;\n}\n.githubFileDialog .githubNavigation .glyphicon,\n.githubFileDialog .githubNavigation .fa {\n  font-size: 20px;\n  padding-right: 10px;\n  color: #C21B7A;\n}\n.githubFileDialog .githubNavigation a.list-group-item:hover {\n  text-decoration: underline;\n}\n.githubFileDialog .githubNavigation *[data-draw2d=\"false\"][data-type=\"file\"] {\n  color: gray;\n  cursor: default;\n  text-decoration: none !important;\n}\n.githubFileDialog .githubNavigation *[data-draw2d=\"false\"][data-type=\"file\"] .fa {\n  color: gray;\n}\n#githubFileSelectDialog .githubNavigation {\n  height: 300px;\n  overflow: scroll;\n}\n#githubSaveFileDialog .githubFilePreview {\n  max-width: 200px;\n  max-height: 200px;\n}\n#githubFileSaveAsDialog .githubFilePreview {\n  max-width: 200px;\n  max-height: 200px;\n}\n#githubFileSaveAsDialog .githubNavigation {\n  height: 250px;\n  overflow: scroll;\n}\n#breadcrumb {\n  position: absolute;\n  right: 0px;\n  padding: 5px;\n  font-size: 15px;\n  color: rgba(0, 0, 0, 0.2);\n  padding-right: 25px;\n}\n#breadcrumb .separator {\n  padding: 5px;\n}\n#breadcrumb .filename {\n  font-weight: 500;\n}\n#breadcrumb .icon {\n  font-size: 22px;\n  padding-left: 10px;\n  top: 4px;\n  position: relative;\n  color: black;\n  cursor: pointer;\n}\n#breadcrumb .icon:hover {\n  color: #C21B7A;\n}\n.ui-anglepicker {\n  width: 52px;\n  height: 52px;\n  background: #dbdbdb;\n  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RiZGJkYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjIwJSIgc3RvcC1jb2xvcj0iI2UxZTFkZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmOGY4ZjMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);\n  background: -moz-linear-gradient(top, #dbdbdb 0%, #e1e1de 20%, #f8f8f3 100%);\n  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dbdbdb), color-stop(20%, #e1e1de), color-stop(100%, #f8f8f3));\n  background: -webkit-linear-gradient(top, #dbdbdb 0%, #e1e1de 20%, #f8f8f3 100%);\n  background: -o-linear-gradient(top, #dbdbdb 0%, #e1e1de 20%, #f8f8f3 100%);\n  background: -ms-linear-gradient(top, #dbdbdb 0%, #e1e1de 20%, #f8f8f3 100%);\n  background: linear-gradient(to bottom, #dbdbdb 0%, #e1e1de 20%, #f8f8f3 100%);\n  border: 2px solid #666;\n  -moz-box-shadow: inset 0 2px 3px white, inset 0 -1px 2px #fffef8;\n  -webkit-box-shadow: inset 0 2px 3px white, inset 0 -1px 2px #fffef8;\n  box-shadow: inset 0 2px 3px white, inset 0 -1px 2px #fffef8;\n  -moz-border-radius: 50%;\n  -webkit-border-radius: 50%;\n  border-radius: 50%;\n  position: relative;\n  display: inline-block;\n}\n.ui-anglepicker-pointer {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  width: 50%;\n  margin: -2px 0 0 -2px;\n  -moz-transform-origin: 2px 2px;\n  -webkit-transform-origin: 2px 2px;\n  -ms-transform-origin: 2px 2px;\n  -o-transform-origin: 2px 2px;\n  transform-origin: 2px 2px;\n}\n.ui-anglepicker:hover,\n.ui-anglepicker.ui-anglepicker-dragging {\n  border-color: #494949;\n}\n.ui-anglepicker-dragging .ui-anglepicker-dot,\n.ui-anglepicker-dragging .ui-anglepicker-line,\n.ui-anglepicker:hover .ui-anglepicker-dot,\n.ui-anglepicker:hover .ui-anglepicker-line {\n  background: #494949;\n}\n.ui-anglepicker-dot {\n  height: 4px;\n  width: 4px;\n  position: absolute;\n  background: #838383;\n  -moz-border-radius: 50%;\n  -webkit-border-radius: 50%;\n  border-radius: 50%;\n}\n.ui-anglepicker-line {\n  margin-top: 1.5px;\n  margin-right: -2px;\n  height: 1px;\n  background: #838383;\n}\n", ""]);
+exports.push([module.i, ".toolbar {\n  margin: 0;\n  padding-top: 0;\n  padding-right: 10px;\n  top: 0;\n  right: 0;\n  left: 220px;\n  height: 60px;\n  overflow: visible;\n  z-index: 1000 !important;\n  position: absolute;\n  background-color: #B2E2F2;\n  border: none !important;\n}\n.toolbar * {\n  outline: none;\n}\n.toolbar .group {\n  padding-right: 20px;\n  display: inline-block;\n  vertical-align: top;\n}\n.toolbar .group .image-button {\n  display: inline-block;\n}\n.toolbar .group .image-button img {\n  margin: 5px;\n  margin-bottom: 0;\n  padding: 0;\n  width: 40px;\n  height: 40px;\n  position: relative;\n  display: inline-block;\n  text-align: center;\n  color: #777;\n  font-size: 45px;\n  transition: all 0.5s;\n}\n.toolbar .group .image-button div {\n  color: rgba(0, 0, 0, 0.5);\n  text-align: center;\n  font-size: 10px;\n}\n.toolbar .group .image-button.disabled {\n  opacity: 0.2;\n}\n.toolbar .group .image-button:not(.disabled) img {\n  cursor: pointer;\n}\n.toolbar .group .image-button:not(.disabled) img:hover {\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n}\n.modal-backdrop.in {\n  opacity: 0.7;\n  background-color: black;\n  transition: opacity 0.4s linear;\n}\n.fileDialog .modal-content {\n  border-radius: 2px;\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n}\n.fileDialog .modal-content .list-group *[data-draw2d=\"true\"] {\n  font-weight: bold;\n  color: #C21B7A;\n}\n.fileDialog .modal-content .list-group .glyphicon,\n.fileDialog .modal-content .list-group .fa {\n  font-size: 20px;\n  padding-right: 10px;\n  color: #C21B7A;\n}\n.fileDialog .modal-content .list-group a.list-group-item:hover {\n  text-decoration: underline;\n}\n.fileDialog .modal-content .list-group *[data-draw2d=\"false\"][data-type=\"file\"] {\n  color: gray;\n  cursor: default;\n  text-decoration: none !important;\n}\n.fileDialog .modal-content .list-group *[data-draw2d=\"false\"][data-type=\"file\"] .fa {\n  color: gray;\n}\n#fileOpenDialog .list-group {\n  height: 60%;\n  overflow: scroll;\n}\n#fileSaveDialog .filePreview {\n  max-width: 200px;\n  max-height: 200px;\n}\n#githubFileSaveAsDialog .filePreview {\n  max-width: 200px;\n  max-height: 200px;\n}\n#githubFileSaveAsDialog .list-group {\n  height: 250px;\n  overflow: scroll;\n}\n/***BOOTSTRAP****/\n.btn {\n  border-radius: 0 !important;\n}\n.tooltip-inner {\n  border-radius: 0 !important;\n  padding: 10px !important;\n  padding-top: 5px !important;\n  padding-bottom: 5px !important;\n  font-family: 'Roboto', sans-serif !important;\n  font-weight: 300 !important;\n  font-size: 14px !important;\n  color: #b0b0b0 !important;\n}\n/********/\nbody {\n  overflow: hidden;\n  font-family: 'Roboto', sans-serif !important;\n  font-weight: 300;\n}\ninput {\n  background: none repeat scroll 0 0 #f8f8f8;\n  border-color: #C6C6C6 #DADADA #EAEAEA;\n  border-radius: 4px 4px 4px 4px;\n  -moz-box-sizing: border-box;\n  padding-left: 7px;\n  border-style: solid ;\n  border-width: 1px;\n  vertical-align: middle;\n  height: 25px;\n  font-size: 14px;\n  line-height: 25px;\n}\n.input-block-level {\n  display: block;\n  width: 100%;\n  min-height: 28px;\n}\n.control-label {\n  font-family: 'Roboto', sans-serif;\n  font-weight: 300;\n}\n/******************************************************************\n * Einstellungen der PropertyViews im Editmodus der \"Form\".\n ******************************************************************/\n.palette_node_element {\n  width: 48px;\n  height: 48px;\n  cursor: move;\n  margin: 10px auto 10px auto;\n}\n#tool_shape .tool_shape_entry {\n  text-align: left;\n}\n.tooltip {\n  z-index: 1000000;\n}\n/* Effects */\n.overlay-scale {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 10000;\n  visibility: hidden;\n  opacity: 0;\n  -webkit-transform: scale(0.9);\n  transform: scale(0.9);\n  -webkit-transition: all 0.4s;\n  transition: all 0.4s;\n}\n.overlay-scale.open {\n  visibility: visible;\n  opacity: 1;\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  -webkit-transition: all 0.4s;\n  transition: all 0.4s;\n}\n.readonly-highlight {\n  background-color: rgba(50, 43, 168, 0.5);\n  opacity: 0.2;\n  color: darkblue;\n  position: absolute;\n}\n#canvas {\n  padding: 0;\n  margin: 0;\n  border: 0;\n  position: absolute;\n  top: 60px;\n  right: 200px;\n  left: 220px;\n  bottom: 0;\n  overflow: scroll;\n  background-color: #FFFFFF;\n}\n#canvas_zoom {\n  position: fixed;\n  bottom: 20px;\n  right: 270px;\n  background-color: rgba(178, 226, 242, 0.3);\n  border-radius: 5px;\n}\n#canvas_zoom button {\n  background-color: transparent;\n  font-weight: 300;\n  padding: 5px;\n  padding-left: 10px;\n  padding-right: 10px;\n  border: 1px solid transparent;\n  outline: none;\n}\n#canvas_zoom button:hover {\n  border: 1px solid #C21B7A;\n}\n#canvas_config {\n  position: fixed;\n  width: 40px;\n  top: 65px;\n  left: 225px;\n  cursor: pointer;\n  border: 1px solid transparent;\n  background-color: rgba(178, 226, 242, 0.3);\n}\n#canvas_config:hover {\n  border: 1px solid #C21B7A !important;\n}\n#canvas_config:hover {\n  color: #C21B7A;\n}\n#canvas_config_items {\n  position: fixed;\n  top: 90px;\n  left: 225px;\n  cursor: pointer;\n  padding: 10px;\n  white-space: nowrap;\n  min-width: 250px;\n}\n.layer-name-prompt .modal-title {\n  font-weight: 100;\n}\n.layer-name-prompt .modal-footer {\n  border: 0;\n}\n.layer-name-prompt .modal-header {\n  border-bottom: 3px solid #C21B7A;\n}\n.layer-name-prompt input {\n  outline: none !important;\n  -webkit-box-shadow: inset !important;\n  box-shadow: inset !important;\n  background-color: rgba(0, 0, 0, 0.02) !important;\n  border-radius: 1px !important;\n}\n.layer-name-prompt input:focus {\n  border: 1px solid #C21B7A;\n}\n.layer-name-prompt .btn-primary {\n  background-color: #C21B7A;\n  border: 0;\n}\n.layer-name-prompt .btn-primary:hover {\n  background-color: #95155e;\n}\n#layer {\n  padding: 0;\n  margin: 0;\n  border: 0;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  width: 220px;\n  background-color: #ffffff;\n  text-align: center;\n  box-shadow: 5px 0 20px -3px rgba(31, 73, 125, 0.3);\n  z-index: 1;\n}\n#layer .title {\n  left: 10px;\n  right: 0px;\n  top: 10px;\n  position: absolute;\n}\n#layer .title img {\n  padding-right: 20px;\n  position: absolute;\n  left: 10px;\n}\n#layer .title div {\n  position: absolute;\n  left: 90px;\n}\n#layer .title div h1 {\n  font-size: 25px;\n  font-weight: 200;\n  line-height: 45px;\n  margin: 0;\n  padding: 0;\n  text-align: left;\n}\n#layer .title div h2 {\n  font-size: 15px;\n  font-weight: 200;\n  margin: 0;\n  padding: 0;\n  text-align: left;\n}\n#layer .panetitle {\n  position: fixed;\n  height: 30px;\n  width: 220px;\n  top: 90px;\n  border-bottom: 1px solid #222222;\n  font-weight: 500;\n  font-size: 12px;\n  padding: 4px 4px 4px 20px;\n  letter-spacing: 5px;\n  text-align: left;\n  color: #C21B7A;\n  box-shadow: 0 4px 2px -2px rgba(31, 73, 125, 0.3);\n}\n#layer #layer_elements {\n  padding: 0;\n  margin: 0;\n  border: 0;\n  position: fixed;\n  top: 120px;\n  left: 0;\n  bottom: 0;\n  width: 220px;\n  overflow: auto;\n}\n#layer #layer_elements .layerElement {\n  background-color: #fafafa;\n  color: black;\n  cursor: move;\n  font-weight: 400;\n  font-size: 12px;\n  letter-spacing: 1px;\n  padding: 4px 4px 4px 20px;\n  text-align: left;\n  border: 1px solid transparent;\n  border-bottom: 1px solid #222222;\n}\n#layer #layer_elements .layerElement[data-visibility=\"false\"] {\n  opacity: 0.5;\n  font-style: italic;\n}\n#layer #layer_elements .layerElement .icon {\n  cursor: pointer;\n  padding-right: 4px;\n  width: 20px;\n  height: 20px;\n}\n#layer #layer_elements .layerElement .icon * {\n  stroke: black !important;\n}\n#layer #layer_elements .layerElement .icon:hover * {\n  stroke: #C21B7A !important;\n}\n#layer #layer_elements .layerSelectedElement {\n  background-color: #f5f5f5;\n  color: black;\n  border-style: dotted;\n  border-width: 1px;\n  border-color: #C21B7A;\n  font-weight: 600;\n}\n#code_overlay {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: white;\n  z-index: 10000;\n}\n#code_close {\n  position: fixed;\n  right: 40px;\n  top: 10px;\n  width: 32px;\n  height: 32px;\n  z-index: 10000;\n  cursor: pointer;\n  font-size: 50px;\n}\n#code_close:hover {\n  color: #C21B7A;\n}\n#test_run {\n  position: fixed;\n  right: 90px;\n  top: 10px;\n  width: 32px;\n  height: 32px;\n  z-index: 10000;\n  cursor: pointer;\n  font-size: 50px;\n}\n#test_run:hover {\n  color: #C21B7A;\n}\n#test_info {\n  position: absolute;\n  color: black;\n  z-index: 20000;\n  top: 20px;\n  left: 20px;\n  border: 1px solid lightgray;\n  padding: 7px;\n  background-color: white;\n  border-radius: 2px;\n}\n#test_canvas {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: white;\n  z-index: 10000;\n}\n#test_close {\n  position: fixed;\n  right: 40px;\n  top: 10px;\n  width: 32px;\n  height: 32px;\n  z-index: 10000;\n  cursor: pointer;\n  font-size: 50px;\n}\n#test_close:hover {\n  color: #C21B7A;\n}\n#test_clipboard {\n  position: fixed;\n  right: 100px;\n  top: 10px;\n  width: 32px;\n  height: 32px;\n  z-index: 10000;\n  cursor: pointer;\n  font-size: 50px;\n}\n#test_clipboard:hover {\n  color: #C21B7A;\n}\n.portDirectionOption {\n  height: 60px;\n  text-align: center;\n}\n.portDirectionOption label > input {\n  /* HIDE RADIO */\n  display: none;\n}\n.portDirectionOption label > input + span {\n  /* IMAGE STYLES */\n  cursor: pointer;\n  color: gray !important;\n  padding-right: 5px;\n}\n.portDirectionOption label > input:checked + span {\n  /* (CHECKED) IMAGE STYLES */\n  color: #C21B7A !important;\n}\n.portTypeOption {\n  height: 65px;\n  padding-left: 60px;\n}\n.portTypeOption label > input {\n  /* HIDE RADIO */\n  display: none;\n}\n.portTypeOption label > input + span {\n  /* IMAGE STYLES */\n  cursor: pointer;\n  color: gray !important;\n  padding-right: 5px;\n  font-weight: 100;\n  font-size: 14px;\n}\n.portTypeOption label > input + span:before {\n  padding-right: 10px;\n}\n.portTypeOption label > input:checked + span {\n  /* (CHECKED) IMAGE STYLES */\n  color: #C21B7A !important;\n}\n#filter {\n  position: absolute;\n  top: 60px;\n  right: 0;\n  bottom: 0;\n  width: 250px;\n  padding: 0;\n  margin: 0;\n  border-radius: 0;\n  border: 0;\n  background-color: #282a30;\n}\n#filter .filter_header {\n  background: none repeat scroll 0 0 #303030;\n  position: fixed;\n  height: 30px;\n  width: 250px;\n  top: 60px;\n  border-bottom: 1px solid #222222;\n  border-top: 1px solid #111111;\n  font-weight: 500;\n  font-size: 12px;\n  padding-top: 5px;\n  letter-spacing: 5px;\n  text-align: center;\n  color: #C21B7A;\n}\n#filter .filter_toolbar {\n  overflow: visible;\n  border: 0;\n  padding: 3px;\n  padding-left: 10px;\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 250px;\n  height: 30px;\n  background: none repeat scroll 0 0 #303030;\n}\n#filter .filter_actions {\n  position: fixed;\n  top: 90px;\n  bottom: 30px;\n  width: 250px;\n  border: 0;\n  padding: 0;\n  overflow-y: auto;\n}\n#filter .filter_actions .panel-body {\n  padding: 7px;\n  padding-top: 0;\n}\n#filter .filter_actions .form-group {\n  margin-bottom: 2px !important;\n}\n#filter .filter_actions .form-group > .input-group {\n  margin-bottom: 10px;\n}\n#filter .filter_actions .form-group > .input-group:last-child {\n  margin-bottom: 0px;\n}\n#filter .filter_actions .icon {\n  color: #26B4A8;\n  padding: 0;\n  top: -4px;\n  color: rgba(255, 255, 255, 0.25);\n}\n#filter .filter_actions .icon:hover {\n  color: #C21B7A;\n}\n#filter .filter_actions .filter-heading {\n  color: #DDDDDD !important;\n  font-size: 12px;\n  padding-right: 10px !important;\n  padding-top: 1px !important;\n  padding-bottom: 0 !important;\n  background-color: transparent !important;\n  background-image: none !important;\n  border: 0 !important;\n  margin-top: 4px;\n  cursor: pointer;\n  font-weight: 300;\n}\n#filter .filter_actions .filter-heading .icon {\n  width: 15px;\n}\n#filter .filter_actions .filter-heading .icon * {\n  stroke: white !important;\n}\n#filter .form-control {\n  height: 25px;\n}\n#filter .btn {\n  padding-left: 5px;\n  padding-right: 5px;\n  padding-top: 1px;\n  padding-bottom: 2px;\n}\n#filter .input-group-addon {\n  padding: 0;\n  padding-left: 5px;\n  padding-right: 5px;\n  color: rgba(0, 0, 0, 0.3);\n  background-color: white;\n  border-left: 0;\n  border-radius: 0;\n  font-weight: 100;\n  text-transform: lowercase;\n  font-size: 12px;\n}\n#filter .panel-default {\n  margin: 0;\n  border-radius: 0;\n  background-color: rgba(194, 27, 122, 0.02);\n  border: 0;\n  border-top: 1px solid #303030;\n  border-bottom: 1px solid #202525;\n  margin-top: 3px;\n}\n#FigureMarkdownEdit .header {\n  width: 100%;\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  display: inline-block;\n  height: 60px;\n  background-color: white;\n  overflow: hidden;\n}\n#FigureMarkdownEdit .header .left {\n  width: 50%;\n  display: inline-block;\n  height: 60px;\n  font-size: 20px;\n  padding: 6px;\n  color: #CC4F5A;\n  background-color: rgba(0, 0, 0, 0.1);\n  vertical-align: top;\n}\n#FigureMarkdownEdit .header .left small {\n  font-size: 16px;\n}\n#FigureMarkdownEdit .header .right {\n  width: 50%;\n  display: inline-block;\n  height: 60px;\n  font-size: 20px;\n  padding: 6px;\n  color: #CC4F5A;\n  background-color: rgba(0, 0, 0, 0.05);\n  vertical-align: top;\n}\n#FigureMarkdownEdit .source {\n  width: 50%;\n  display: inline-block;\n  font-family: Menlo, Monaco, Consolas, \"Courier New\", monospace;\n  font-size: 13px;\n  padding: 2px;\n  top: 60px;\n  bottom: 0px;\n  position: absolute;\n}\n#FigureMarkdownEdit .preview {\n  width: 50%;\n  display: inline-block;\n  top: 0px;\n  left: 50%;\n  position: absolute;\n  background-color: white;\n  padding: 30px;\n  overflow: auto;\n  top: 60px;\n  bottom: 0px;\n}\n#FigureMarkdownEdit .preview img {\n  max-width: 35%;\n}\n#FigureMarkdownEdit .preview table {\n  font-family: Arial, Helvetica, sans-serif;\n  color: #666;\n  font-size: 12px;\n  text-shadow: 1px 1px 0px #fff;\n  background: #eaebec;\n  margin: 20px;\n  margin-left: 0;\n  border: #ccc 1px solid;\n  -moz-border-radius: 3px;\n  -webkit-border-radius: 3px;\n  border-radius: 3px;\n  -moz-box-shadow: 0 1px 2px #d1d1d1;\n  -webkit-box-shadow: 0 1px 2px #d1d1d1;\n  box-shadow: 0 1px 2px #d1d1d1;\n}\n#FigureMarkdownEdit .preview table th {\n  padding: 21px 25px 22px 25px;\n  border-top: 1px solid #fafafa;\n  border-bottom: 1px solid #e0e0e0;\n}\n#FigureMarkdownEdit .preview table th:first-child {\n  text-align: left;\n  padding-left: 20px;\n}\n#FigureMarkdownEdit .preview table tr:first-child th:first-child {\n  -moz-border-radius-topleft: 3px;\n  -webkit-border-top-left-radius: 3px;\n  border-top-left-radius: 3px;\n}\n#FigureMarkdownEdit .preview table tr:first-child th:last-child {\n  -moz-border-radius-topright: 3px;\n  -webkit-border-top-right-radius: 3px;\n  border-top-right-radius: 3px;\n}\n#FigureMarkdownEdit .preview table tr {\n  text-align: center;\n  padding-left: 20px;\n}\n#FigureMarkdownEdit .preview table tr td:first-child {\n  text-align: left;\n  padding-left: 20px;\n  border-left: 0;\n}\n#FigureMarkdownEdit .preview table tr td {\n  padding: 18px;\n  border-top: 1px solid #ffffff;\n  border-bottom: 1px solid #e0e0e0;\n  border-left: 1px solid #e0e0e0;\n}\n#FigureMarkdownEdit .preview tbody tr:nth-child(odd) {\n  background: #fafafa;\n}\n#FigureMarkdownEdit .preview tbody tr:nth-child(even) {\n  background: #f3f3f3;\n}\n#FigureMarkdownEdit .preview table tr:last-child td {\n  border-bottom: 0;\n}\n#FigureMarkdownEdit .preview table tr:last-child td:first-child {\n  -moz-border-radius-bottomleft: 3px;\n  -webkit-border-bottom-left-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n#FigureMarkdownEdit .preview table tr:last-child td:last-child {\n  -moz-border-radius-bottomright: 3px;\n  -webkit-border-bottom-right-radius: 3px;\n  border-bottom-right-radius: 3px;\n}\n.ui-anglepicker {\n  width: 52px;\n  height: 52px;\n  background: #dbdbdb;\n  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RiZGJkYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjIwJSIgc3RvcC1jb2xvcj0iI2UxZTFkZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmOGY4ZjMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);\n  background: -moz-linear-gradient(top, #dbdbdb 0%, #e1e1de 20%, #f8f8f3 100%);\n  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dbdbdb), color-stop(20%, #e1e1de), color-stop(100%, #f8f8f3));\n  background: -webkit-linear-gradient(top, #dbdbdb 0%, #e1e1de 20%, #f8f8f3 100%);\n  background: -o-linear-gradient(top, #dbdbdb 0%, #e1e1de 20%, #f8f8f3 100%);\n  background: -ms-linear-gradient(top, #dbdbdb 0%, #e1e1de 20%, #f8f8f3 100%);\n  background: linear-gradient(to bottom, #dbdbdb 0%, #e1e1de 20%, #f8f8f3 100%);\n  border: 2px solid #666;\n  -moz-box-shadow: inset 0 2px 3px white, inset 0 -1px 2px #fffef8;\n  -webkit-box-shadow: inset 0 2px 3px white, inset 0 -1px 2px #fffef8;\n  box-shadow: inset 0 2px 3px white, inset 0 -1px 2px #fffef8;\n  -moz-border-radius: 50%;\n  -webkit-border-radius: 50%;\n  border-radius: 50%;\n  position: relative;\n  display: inline-block;\n}\n.ui-anglepicker-pointer {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  width: 50%;\n  margin: -2px 0 0 -2px;\n  -moz-transform-origin: 2px 2px;\n  -webkit-transform-origin: 2px 2px;\n  -ms-transform-origin: 2px 2px;\n  -o-transform-origin: 2px 2px;\n  transform-origin: 2px 2px;\n}\n.ui-anglepicker:hover,\n.ui-anglepicker.ui-anglepicker-dragging {\n  border-color: #494949;\n}\n.ui-anglepicker-dragging .ui-anglepicker-dot,\n.ui-anglepicker-dragging .ui-anglepicker-line,\n.ui-anglepicker:hover .ui-anglepicker-dot,\n.ui-anglepicker:hover .ui-anglepicker-line {\n  background: #494949;\n}\n.ui-anglepicker-dot {\n  height: 4px;\n  width: 4px;\n  position: absolute;\n  background: #838383;\n  -moz-border-radius: 50%;\n  -webkit-border-radius: 50%;\n  border-radius: 50%;\n}\n.ui-anglepicker-line {\n  margin-top: 1.5px;\n  margin-right: -2px;\n  height: 1px;\n  background: #838383;\n}\n", ""]);
 
 // exports
 

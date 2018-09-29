@@ -21,7 +21,7 @@ export default class FileOpen {
    * @since 4.0.0
    */
   show(storage, view) {
-    $('#githubFileSelectDialog').modal('show')
+    $('#fileOpenDialog').modal('show')
     this.fetchPathContent(storage, storage.currentDir, view)
   }
 
@@ -62,8 +62,8 @@ export default class FileOpen {
         }
       })
 
-      $("#githubFileSelectDialog .githubNavigation").html($(output))
-      $("#githubFileSelectDialog .githubNavigation").scrollTop(0)
+      $("#fileOpenDialog .list-group").html($(output))
+      $("#fileOpenDialog .list-group").scrollTop(0)
 
 
       $(".githubPath[data-type='dir']").on("click", (event) => {
@@ -74,7 +74,7 @@ export default class FileOpen {
         let path = $(event.currentTarget).data("path")
         storage.loadFile(path)
           .then((content) => {
-            $('#githubFileSelectDialog').modal('hide')
+            $('#fileOpenDialog').modal('hide')
             storage.currentFile = path
             view.clear()
             new draw2d.io.json.Reader().unmarshal(view, content)

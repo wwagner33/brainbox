@@ -3,9 +3,7 @@ import Filter from "./Filter"
 export default shape_designer.filter.RadiusFilter = class RadiusFilter extends Filter {
 
   constructor() {
-    super()
-    this.NAME = "shape_designer.filter.RadiusFilter"
-    this.cssScope = this.NAME.replace(/[.]/g, "_")
+    super("shape_designer.filter.RadiusFilter")
   }
 
   insertPane(figure, $parent) {

@@ -3,7 +3,7 @@ export default class FilterPane {
 
   constructor(app, elementId, view) {
     this.DEFAULT_LABEL = "Properties"
-    this.html = $("#" + elementId)
+    this.html = $(elementId)
     this.view = view
     this.currentFigure = null
 

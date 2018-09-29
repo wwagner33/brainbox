@@ -91,9 +91,9 @@
     </div>
 
    <div id="filter" class="navbar-default">
-       <div id="filter_actions" ></div>
-       <div id="filter_header" class="highlight panetitle blackgradient">Properties</div>
-       <div id="filter_toolbar" class="blackgradient" >
+       <div class="filter_actions" ></div>
+       <div class="highlight filter_header">Properties</div>
+       <div class="filter_toolbar" >
 
         <div class="btn-group dropup">
             <button id="add_filter_button" class="disabled btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
@@ -112,7 +112,7 @@
   #
   #
 -->
-<div id="githubSaveFileDialog" class="modal fade githubFileDialog" tabindex="-1">
+<div id="fileSaveDialog" class="modal fade fileDialog" tabindex="-1">
     <div class="modal-dialog ">
         <div class="modal-content">
             <div class="modal-header">
@@ -122,7 +122,7 @@
                 <div class="media">
                     <div class="media-left media-middle">
                         <a href="#">
-                            <img class="media-object githubFilePreview" src="">
+                            <img class="media-object filePreview" src="">
                         </a>
                     </div>
                     <div class="media-body">
@@ -200,7 +200,7 @@
      # GitHub File select/open dialog
      #
      -->
-<div id="githubFileSelectDialog" class="modal fade githubFileDialog" tabindex="-1">
+<div id="fileOpenDialog" class="modal fade fileDialog" tabindex="-1">
     <div class="modal-dialog ">
         <div class="modal-content">
             <div class="modal-header">
@@ -209,7 +209,7 @@
             <div class="modal-body">
 
 
-                <div class="list-group githubNavigation">
+                <div class="list-group">
                     <!-- FileList here -->
                 </div>
 
@@ -228,7 +228,7 @@
      # FileSaveAs Dialog
      #
      -->
-   <div id="githubFileSaveAsDialog" class="modal fade githubFileDialog" tabindex="-1">
+   <div id="githubFileSaveAsDialog" class="modal fade fileDialog" tabindex="-1">
        <div class="modal-dialog ">
            <div class="modal-content">
                <div class="modal-header">
@@ -236,7 +236,7 @@
                </div>
                <div class="modal-body">
 
-                   <div class="list-group githubNavigation">
+                   <div class="list-group">
                        <!-- FileList here -->
                    </div>
 
@@ -244,7 +244,7 @@
                    <div class="media">
                        <div class="media-left media-middle">
                            <a href="#">
-                               <img class="media-object githubFilePreview" src="">
+                               <img class="media-object filePreview" src="">
                            </a>
                        </div>
                        <div class="media-body">

@@ -55,7 +55,7 @@ export default class Application {
     this.view = new View(this, "canvas")
     this.toolbar = new Toolbar(this, ".toolbar", this.view)
     this.layer = new Layer(this, "layer_elements", this.view)
-    this.filter = new FilterPane(this, "filter_actions", this.view)
+    this.filter = new FilterPane(this, "#filter .filter_actions", this.view)
 
     this.view.installEditPolicy(new SelectionToolPolicy())
 

@@ -22,26 +22,26 @@ export default class FileSave {
   show(storage, canvas) {
 
     new draw2d.io.png.Writer().marshal(canvas, imageDataUrl => {
-      $("#githubSaveFileDialog .githubFilePreview").attr("src", imageDataUrl)
-      $("#githubSaveFileDialog .githubFileName").val(storage.currentFile?storage.currentFile:"NewDocument"+conf.fileSuffix)
+      $("#fileSaveDialog .filePreview").attr("src", imageDataUrl)
+      $("#fileSaveDialog .githubFileName").val(storage.currentFile?storage.currentFile:"NewDocument"+conf.fileSuffix)
 
-      $('#githubSaveFileDialog').on('shown.bs.modal', (event) => {
+      $('#fileSaveDialog').on('shown.bs.modal', (event) => {
         $(event.currentTarget).find('input:first').focus()
       })
-      $("#githubSaveFileDialog").modal("show")
+      $("#fileSaveDialog").modal("show")
       Mousetrap.pause()
 
       // Button: Commit to GitHub
       //
-      $("#githubSaveFileDialog .okButton").off('click').on("click", () => {
+      $("#fileSaveDialog .okButton").off('click').on("click", () => {
         Mousetrap.unpause()
         let writer = new draw2d.io.json.Writer()
         writer.marshal(canvas, json => {
-          let newName = $("#githubSaveFileDialog .githubFileName").val()
+          let newName = $("#fileSaveDialog .githubFileName").val()
           storage.saveFile(json, imageDataUrl, newName)
             .then(() => {
               storage.currentFile = newName
-              $('#githubSaveFileDialog').modal('hide')
+              $('#fileSaveDialog').modal('hide')
             });
         })
       })

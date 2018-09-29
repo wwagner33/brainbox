@@ -3,9 +3,7 @@ import Filter from "./Filter"
 export default shape_designer.filter.OpacityFilter = class OpacityFilter extends Filter {
 
   constructor() {
-    super()
-    this.NAME = "shape_designer.filter.OpacityFilter"
-    this.cssScope = this.NAME.replace(/[.]/g, "_")
+    super("shape_designer.filter.OpacityFilter")
   }
 
   insertPane(figure, $parent) {

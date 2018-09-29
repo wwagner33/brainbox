@@ -5,10 +5,7 @@ import Filter from "./Filter"
 export default shape_designer.filter.StrokeFilter = class StrokeFilter extends Filter {
 
   constructor() {
-    super()
-    this.NAME = "shape_designer.filter.StrokeFilter"
-    this.colorPicker = null
-    this.cssScope = this.NAME.replace(/[.]/g, "_")
+    super("shape_designer.filter.StrokeFilter")
   }
 
   insertPane(figure, $parent) {

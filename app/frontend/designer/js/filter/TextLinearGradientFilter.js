@@ -6,15 +6,12 @@ import "../widget/ui.anglepicker"
 export default shape_designer.filter.TextLinearGradientFilter = class TextLinearGradientFilter extends Filter {
 
   constructor() {
-    super()
-    this.NAME = "shape_designer.filter.TextLinearGradientFilter"
+    super("shape_designer.filter.TextLinearGradientFilter")
     this.colorPicker1 = null
     this.colorPicker2 = null
-
     this.startColor = "#f0f0f0"
     this.endColor = "#3f3f3f"
     this.angle = 0
-    this.cssScope = this.NAME.replace(/[.]/g, "_")
   }
 
   insertPane(figure, $parent) {

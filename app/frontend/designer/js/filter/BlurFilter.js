@@ -4,9 +4,7 @@ import Filter from "./Filter"
 export default shape_designer.filter.BlurFilter = class BlurFilter extends Filter {
 
   constructor() {
-    super()
-    this.NAME = "shape_designer.filter.BlurFilter"
-    this.cssScope = this.NAME.replace(/[.]/g, "_")
+    super("shape_designer.filter.BlurFilter")
   }
 
   insertPane(figure, $parent) {

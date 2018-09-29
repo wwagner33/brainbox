@@ -3,9 +3,7 @@ import Filter from "./Filter"
 export default shape_designer.filter.FanoutFilter = class FanoutFilter extends Filter {
 
   constructor() {
-    super()
-    this.NAME = "shape_designer.filter.FanoutFilter"
-    this.cssScope = this.NAME.replace(/[.]/g, "_")
+    super("shape_designer.filter.FanoutFilter")
   }
 
   insertPane(figure, $parent) {

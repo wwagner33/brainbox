@@ -3,10 +3,7 @@ import Filter from "./Filter"
 export default shape_designer.filter.PositionFilter = class PositionFilter extends Filter {
 
   constructor() {
-    super()
-    this.NAME = "shape_designer.filter.PositionFilter"
-    this.block = false
-    this.cssScope = this.NAME.replace(/[.]/g, "_")
+    super("shape_designer.filter.PositionFilter")
   }
 
   insertPane(figure, $parent) {

@@ -3,10 +3,7 @@ import Filter from "./Filter"
 export default shape_designer.filter.PortTypeFilter = class PortTypeFilter extends Filter {
 
   constructor() {
-    super()
-    this.NAME = "shape_designer.filter.PortTypeFilter"
-    this.type = 0
-    this.cssScope = this.NAME.replace(/[.]/g, "_")
+    super("shape_designer.filter.PortTypeFilter")
   }
 
   insertPane(figure, $parent) {
