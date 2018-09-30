@@ -22,27 +22,27 @@ export default class FileSave {
    */
   show(canvas) {
     Mousetrap.pause()
-    $("#githubSaveFileDialog .githubFileName").val(storage.currentFile)
+    $("#fileSaveDialog .githubFileName").val(storage.currentFile)
 
-    $('#githubSaveFileDialog').off('shown.bs.modal').on('shown.bs.modal', (event) => {
+    $('#fileSaveDialog').off('shown.bs.modal').on('shown.bs.modal', (event) => {
       $(event.currentTarget).find('input:first').focus()
     })
-    $("#githubSaveFileDialog").modal("show")
+    $("#fileSaveDialog").modal("show")
 
     // Button: Commit to GitHub
     //
-    $("#githubSaveFileDialog .okButton").off("click").on("click", () => {
+    $("#fileSaveDialog .okButton").off("click").on("click", () => {
       canvas.setCurrentSelection(null)
       new draw2d.io.png.Writer().marshal(canvas, imageDataUrl => {
         let writer = new draw2d.io.json.Writer()
         writer.marshal(canvas, json => {
-          let name = $("#githubSaveFileDialog .githubFileName").val()
+          let name = $("#fileSaveDialog .githubFileName").val()
           name = storage.sanitize(name)
           storage.saveFile(json, imageDataUrl, name)
             .then(function () {
               Mousetrap.unpause()
               storage.currentFile = name
-              $('#githubSaveFileDialog').modal('hide')
+              $('#fileSaveDialog').modal('hide')
           })
         })
       }, canvas.getBoundingBox().scale(10, 10))

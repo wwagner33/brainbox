@@ -8,7 +8,7 @@ export default shape_designer.filter.RadiusFilter = class RadiusFilter extends F
 
   insertPane(figure, $parent) {
 
-    $parent.append('<div id="' + this.cssScope + '_container" class="panel panel-default">' +
+    $parent.append('<div id="' + this.containerId + '" class="panel panel-default">' +
       ' <div class="panel-heading filter-heading" data-toggle="collapse" data-target="#radius_panel">' +
       '    Corner Radius' +
       '    <span id="button_remove_RadiusFilter"><img class="svg icon pull-right" src="./images/dialog_close.svg"/></span>' +
@@ -22,7 +22,7 @@ export default shape_designer.filter.RadiusFilter = class RadiusFilter extends F
       '   </div>' +
       ' </div>' +
       '</div>')
-    inlineSVG.init({svgSelector:"#"+this.cssScope + "_container img.svg"})
+    inlineSVG.init({svgSelector:"#"+this.containerId + " img.svg"})
 
     $("#filter_radius").TouchSpin({
       min: 0,
@@ -38,8 +38,8 @@ export default shape_designer.filter.RadiusFilter = class RadiusFilter extends F
     $("#button_remove_RadiusFilter").on("click", () => {
       figure.removeFilter(this)
       figure.setRadius(0)
-      $("#radius_container").animate({"height": "0", "opacity": 0, "margin-bottom": 0}, 500, () => {
-        $('#radius_container').remove()
+      $("#"+this.containerId).animate({"height": "0", "opacity": 0, "margin-bottom": 0}, 500, () => {
+        $('#'+this.containerId).remove()
       })
     })
   }

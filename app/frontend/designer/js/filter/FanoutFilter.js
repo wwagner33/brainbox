@@ -7,7 +7,7 @@ export default shape_designer.filter.FanoutFilter = class FanoutFilter extends F
   }
 
   insertPane(figure, $parent) {
-    $parent.append('<div id="' + this.cssScope + '_container" class="panel panel-default">' +
+    $parent.append('<div id="' + this.containerId + '" class="panel panel-default">' +
       ' <div class="panel-heading filter-heading" data-toggle="collapse" data-target="#' + this.cssScope + '_width_panel">' +
       '     Maximal fan out' +
       '</div>' +
@@ -19,7 +19,7 @@ export default shape_designer.filter.FanoutFilter = class FanoutFilter extends F
       '   </div>' +
       ' </div>' +
       '</div>')
-    inlineSVG.init({svgSelector:"#"+this.cssScope + "_container img.svg"})
+    inlineSVG.init({svgSelector:"#"+this.containerId + " img.svg"})
 
     $("input[name='filter_" + this.cssScope + "_fanout']").TouchSpin({
       min: 0,

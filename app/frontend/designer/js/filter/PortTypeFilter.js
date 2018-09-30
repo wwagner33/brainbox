@@ -9,7 +9,7 @@ export default shape_designer.filter.PortTypeFilter = class PortTypeFilter exten
   insertPane(figure, $parent) {
     var _this = this
     var type = figure.getInputType()
-    $parent.append('<div id="' + this.cssScope + '_container" class="panel panel-default">' +
+    $parent.append('<div id="' + this.containerId + '" class="panel panel-default">' +
       ' <div class="panel-heading filter-heading" data-toggle="collapse" data-target="#' + this.cssScope + '_panel">' +
       '     Port Type' +
       '</div>' +
@@ -36,7 +36,7 @@ export default shape_designer.filter.PortTypeFilter = class PortTypeFilter exten
       '   </div>' +
       ' </div>' +
       '</div>')
-    inlineSVG.init({svgSelector:"#"+this.cssScope + "_container img.svg"})
+    inlineSVG.init({svgSelector:"#"+this.containerId + " img.svg"})
 
     $("#" + _this.cssScope + "_panel .portTypeOption input").on("change", (event) => {
       figure.setInputType($(event.currentTarget).data("type"))

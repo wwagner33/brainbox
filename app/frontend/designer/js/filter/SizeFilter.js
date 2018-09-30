@@ -8,7 +8,7 @@ export default shape_designer.filter.SizeFilter = class SizeFilter extends Filte
 
   insertPane(figure, $parent) {
 
-    $parent.append('<div id="' + this.cssScope + '_container" class="panel panel-default">' +
+    $parent.append('<div id="' + this.containerId + '" class="panel panel-default">' +
       ' <div class="panel-heading filter-heading" data-toggle="collapse" data-target="#size_width_panel">' +
       '     Size' +
       ' </div>' +
@@ -20,7 +20,7 @@ export default shape_designer.filter.SizeFilter = class SizeFilter extends Filte
       '   </div>' +
       ' </div>' +
       '</div>')
-    inlineSVG.init({svgSelector:"#"+this.cssScope + "_container img.svg"})
+    inlineSVG.init({svgSelector:"#"+this.containerId + " img.svg"})
 
     $("#filter_width").TouchSpin({
       min: 0,

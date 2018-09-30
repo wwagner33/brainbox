@@ -9,7 +9,7 @@ export default shape_designer.filter.StrokeFilter = class StrokeFilter extends F
   }
 
   insertPane(figure, $parent) {
-    $parent.append('<div id="' + this.cssScope + '_container" class="panel panel-default">' +
+    $parent.append('<div id="' + this.containerId + '" class="panel panel-default">' +
       ' <div class="panel-heading filter-heading" data-toggle="collapse" data-target="#' + this.cssScope + '_width_panel">' +
       '     Stroke' +
       '    <span id="button_remove_' + this.cssScope + '"><img  class="svg icon pull-right" src="./images/dialog_close.svg"/></span>' +
@@ -26,7 +26,7 @@ export default shape_designer.filter.StrokeFilter = class StrokeFilter extends F
       '   </div>' +
       ' </div>' +
       '</div>')
-    inlineSVG.init({svgSelector:"#"+this.cssScope + "_container img.svg"})
+    inlineSVG.init({svgSelector:"#"+this.containerId + " img.svg"})
 
     $("input[name='filter_" + this.cssScope + "_width']").TouchSpin({
       min: 0,
@@ -48,8 +48,8 @@ export default shape_designer.filter.StrokeFilter = class StrokeFilter extends F
     $("#button_remove_" + this.cssScope).on("click", () => {
       figure.removeFilter(this)
       figure.setStroke(0)
-      $("#" + this.cssScope + "_container").animate({"height": "0", "opacity": 0, "margin-bottom": 0}, 500, () => {
-        $('#' + this.cssScope + '_container').remove()
+      $("#" + this.containerId ).animate({"height": "0", "opacity": 0, "margin-bottom": 0}, 500, () => {
+        $('#' + this.containerId).remove()
       })
     })
   }

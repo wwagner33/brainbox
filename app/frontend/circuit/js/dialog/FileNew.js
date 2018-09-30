@@ -18,15 +18,15 @@ export default class FileNew {
    * @since 4.0.0
    */
   show() {
-    $("#githubNewFileDialog .githubFileName").val("NewDocument")
-    $('#githubNewFileDialog').on('shown.bs.modal', function () {
+    $("#fileNewDialog .githubFileName").val("NewDocument")
+    $('#fileNewDialog').on('shown.bs.modal', function () {
       $(this).find('input:first').focus()
     })
-    $("#githubNewFileDialog").modal("show")
+    $("#fileNewDialog").modal("show")
 
-    $("#githubNewFileDialog .okButton").on("click", function () {
-      var name = $("#githubNewFileDialog .githubFileName").val()
-      $('#githubNewFileDialog').modal('hide')
+    $("#fileNewDialog .okButton").on("click", function () {
+      var name = $("#fileNewDialog .githubFileName").val()
+      $('#fileNewDialog').modal('hide')
       app.fileNew(undefined, name)
     })
   }

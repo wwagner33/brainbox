@@ -9,7 +9,7 @@ export default shape_designer.filter.PortDirectionFilter = class PortDirectionFi
   insertPane(figure, $parent) {
     var _this = this
     var dir = figure.getConnectionDirection()
-    $parent.append('<div id="' + this.cssScope + '_container" class="panel panel-default">' +
+    $parent.append('<div id="' + this.containerId + '" class="panel panel-default">' +
       ' <div class="panel-heading filter-heading" data-toggle="collapse" data-target="#' + this.cssScope + '_panel">' +
       '     Connection Direction' +
       '</div>' +
@@ -52,7 +52,7 @@ export default shape_designer.filter.PortDirectionFilter = class PortDirectionFi
       '   </div>' +
       ' </div>' +
       '</div>')
-    inlineSVG.init({svgSelector:"#"+this.cssScope + "_container img.svg"})
+    inlineSVG.init({svgSelector:"#"+this.containerId + " img.svg"})
 
     $("#" + _this.cssScope + "_panel .portDirectionOption input").on("change", (event) => {
       figure.setConnectionDirection($(event.currentTarget).data("dir"))

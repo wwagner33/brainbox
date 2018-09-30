@@ -8,7 +8,7 @@ export default shape_designer.filter.OpacityFilter = class OpacityFilter extends
 
   insertPane(figure, $parent) {
 
-    $parent.append('<div id="' + this.cssScope + '_container" class="panel panel-default">' +
+    $parent.append('<div id="' + this.containerId + '" class="panel panel-default">' +
       ' <div class="panel-heading filter-heading" data-toggle="collapse" data-target="#opacity_panel">' +
       '    Opacity' +
       '    <span id="button_remove_OpacityFilter"><img  class="svg icon pull-right" src="./images/dialog_close.svg"/></span>' +
@@ -22,7 +22,7 @@ export default shape_designer.filter.OpacityFilter = class OpacityFilter extends
       '   </div>' +
       ' </div>' +
       '</div>')
-    inlineSVG.init({svgSelector:"#"+this.cssScope + "_container img.svg"})
+    inlineSVG.init({svgSelector:"#"+this.containerId + " img.svg"})
 
     $("#filter_opacity").TouchSpin({
       min: 0,
@@ -39,8 +39,8 @@ export default shape_designer.filter.OpacityFilter = class OpacityFilter extends
     $("#button_remove_OpacityFilter").on("click", () => {
       figure.removeFilter(this)
       figure.setAlpha(1)
-      $("#opacity_container").animate({"height": "0", "opacity": 0, "margin-bottom": 0}, 500, () => {
-        $('#opacity_container').remove()
+      $("#"+this.containerId).animate({"height": "0", "opacity": 0, "margin-bottom": 0}, 500, () => {
+        $('#'+this.containerId).remove()
       })
     })
   }

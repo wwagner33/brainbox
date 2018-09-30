@@ -11,7 +11,7 @@ export default shape_designer.filter.FontColorFilter = class FontColorFilter ext
 
   insertPane(figure, $parent) {
 
-    $parent.append('<div id="' + this.cssScope + '_container" class="panel panel-default">' +
+    $parent.append('<div id="' + this.containerId + '" class="panel panel-default">' +
       ' <div class="panel-heading filter-heading" data-toggle="collapse" data-target="#color_fill_panel">' +
       '    Font Color' +
       '    <span id="button_remove_FillColorFilter"><img class="svg icon pull-right" src="./images/dialog_close.svg"/></span>' +
@@ -27,7 +27,7 @@ export default shape_designer.filter.FontColorFilter = class FontColorFilter ext
       '    </div>' +
       ' </div>' +
       '</div>')
-    inlineSVG.init({svgSelector:"#"+this.cssScope + "_container img.svg"})
+    inlineSVG.init({svgSelector:"#"+this.containerId + " img.svg"})
 
     var picker = this.colorPicker = new jscolor.color(document.getElementById('filter_color_fill'), {})
     this.colorPicker.fromString(figure.getFontColor().hash())
@@ -38,8 +38,8 @@ export default shape_designer.filter.FontColorFilter = class FontColorFilter ext
     $("#button_remove_FillColorFilter").on("click", () => {
       figure.removeFilter(this)
       figure.setFontColor(null)
-      $("#fill_color_container").animate({"height": "0", "opacity": 0, "margin-bottom": 0}, 500, () => {
-        $('#fill_color_container').remove()
+      $("#"+this.containerId).animate({"height": "0", "opacity": 0, "margin-bottom": 0}, 500, () => {
+        $('#'+this.containerId).remove()
       })
     })
   }
