@@ -2597,11 +2597,25 @@ exports.default = shape_designer.figure.ExtLabel = draw2d.shape.basic.Label.exte
     return this;
   },
 
+  /*
+    setPosition: function(x, y) {
+      if (x instanceof draw2d.geo.Point) {
+        return this._super(
+          parseFloat(x.x.toFixed(1)),
+          parseFloat(x.y.toFixed(1)))
+      }
+  
+      return this._super(
+        parseFloat(x.toFixed(1)),
+        parseFloat(y.toFixed(1)))
+    },
+  */
+
   /**
-   * @method
-   * Trigger the repaint of the element.
-   *
-   */
+  * @method
+  * Trigger the repaint of the element.
+  *
+  */
   repaint: function repaint(attributes) {
     if (this.shape === null) {
       return;

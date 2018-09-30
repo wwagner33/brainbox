@@ -1,3 +1,4 @@
+
 export default shape_designer.figure.ExtLabel = draw2d.shape.basic.Label.extend({
 
   NAME: "shape_designer.figure.ExtLabel",
@@ -63,8 +64,21 @@ export default shape_designer.figure.ExtLabel = draw2d.shape.basic.Label.extend(
     return this
   },
 
+/*
+  setPosition: function(x, y) {
+    if (x instanceof draw2d.geo.Point) {
+      return this._super(
+        parseFloat(x.x.toFixed(1)),
+        parseFloat(x.y.toFixed(1)))
+    }
 
-  /**
+    return this._super(
+      parseFloat(x.toFixed(1)),
+      parseFloat(y.toFixed(1)))
+  },
+*/
+
+    /**
    * @method
    * Trigger the repaint of the element.
    *
