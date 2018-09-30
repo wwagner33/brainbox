@@ -13,6 +13,7 @@ import FigureMarkdownEdit from "./dialog/FigureMarkdownEdit"
 import FigureTest from "./dialog/FigureTest"
 import conf from "./Configuration"
 
+
 export default class Toolbar {
 
   constructor(app, elementId, view) {
@@ -128,11 +129,11 @@ export default class Toolbar {
       '<label id="tool_shape" class="dropdown" >' +
       '    <div class="image-button" data-toggle="dropdown"  id="tool_shape_image" ><img  src="./images/toolbar_insert.svg"><div>Add</div></div>' +
       '    <ul class="dropdown-menu" role="menu" >' +
-      '       <li class="tool_shape_entry policyRectangleToolPolicy" data-toggle="tooltip" title="Rectangle <span class=\'highlight\'> [ R ]</span>"><a href="#"><img  src="./images/toolbar_rectangle.svg">Rectangle</a></li>' +
-      '       <li class="tool_shape_entry policyCircleToolPolicy"    data-toggle="tooltip" title="Circle <span class=\'highlight\'> [ C ]</span>">   <a href="#"><img  src="./images/toolbar_circle.svg">Circle</a></li>' +
-      '       <li class="tool_shape_entry policyLineToolPolicy"      data-toggle="tooltip" title="Line <span class=\'highlight\'> [ L ]</span>">     <a href="#"><img  src="./images/toolbar_line.svg">Line</a></li>' +
-      '       <li class="tool_shape_entry policyTextToolPolicy"      data-toggle="tooltip" title="Text <span class=\'highlight\'> [ T ]</span>">     <a href="#"><img  src="./images/toolbar_text.svg">Text</a></li>' +
-      '       <li class="tool_shape_entry policyPortToolPolicy"      data-toggle="tooltip" title="Port <span class=\'highlight\'> [ P ]</span>">     <a href="#"><img  src="./images/toolbar_rectangle.svg">Port</a></li>' +
+      '       <li class="tool_shape_entry policyRectangleToolPolicy" ><a href="#"><img  src="./images/toolbar_rectangle.svg"><span class="tool_label">Rectangle</span><span class="tool_shortcut">R</span></a></li>' +
+      '       <li class="tool_shape_entry policyCircleToolPolicy"    ><a href="#"><img  src="./images/toolbar_circle.svg"><span class="tool_label">Circle</span><span class="tool_shortcut">C</span></a></li>' +
+      '       <li class="tool_shape_entry policyLineToolPolicy"      ><a href="#"><img  src="./images/toolbar_line.svg"><span class="tool_label">Line</span><span class="tool_shortcut">L</span></a></li>' +
+      '       <li class="tool_shape_entry policyTextToolPolicy"      ><a href="#"><img  src="./images/toolbar_text.svg"><span class="tool_label">Text</span><span class="tool_shortcut">T</span></a></li>' +
+      '       <li class="tool_shape_entry policyPortToolPolicy"      ><a href="#"><img  src="./images/toolbar_rectangle.svg"><span class="tool_label">Port</span><span class="tool_shortcut">P</span></a></li>' +
       '    </ul>' +
       '</label>'
     )
