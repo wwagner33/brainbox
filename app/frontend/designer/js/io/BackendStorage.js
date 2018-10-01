@@ -21,6 +21,12 @@ export default class BackendStorage{
 
   set currentFile(name){
     this.fileName=name;
+
+    let url = window.location.href.split('?')[0] + '?file=' + name
+    history.pushState(
+      { id: 'editor', file: name },
+      'Brainbox Designer ' + name,
+      url)
   }
 
   getFiles(path){

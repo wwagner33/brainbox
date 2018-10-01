@@ -316,22 +316,38 @@ var Application = function () {
     //
     var file = this.getParam("file");
     if (file) {
-      this.storage.loadFile(file).then(function (content) {
-        _this.view.clear();
-        var reader = new draw2d.io.json.Reader();
-        reader.unmarshal(_this.view, content);
-        _this.getConfiguration();
-        _this.storage.fileName = file;
-        _this.view.getCommandStack().markSaveLocation();
-        _this.view.centerDocument();
-        return content;
-      });
+      this._load(file);
     } else {
       this.fileNew();
     }
+
+    // listen on the history object to load files
+    //
+    window.addEventListener('popstate', function (event) {
+      if (event.state && event.state.id === 'editor') {
+        // Render new content for the hompage
+        _this._load(event.state.file);
+      }
+    });
   }
 
   _createClass(Application, [{
+    key: "_load",
+    value: function _load(file) {
+      var _this2 = this;
+
+      this.storage.loadFile(file).then(function (content) {
+        _this2.view.clear();
+        var reader = new draw2d.io.json.Reader();
+        reader.unmarshal(_this2.view, content);
+        _this2.getConfiguration();
+        _this2.storage.fileName = file;
+        _this2.view.getCommandStack().markSaveLocation();
+        _this2.view.centerDocument();
+        return content;
+      });
+    }
+  }, {
     key: "getParam",
     value: function getParam(name) {
       name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -350,7 +366,6 @@ var Application = function () {
           return null;
         }
       }
-
       return results[1];
     }
   }, {
@@ -2068,6 +2083,7 @@ var FileOpen = function () {
             view.centerDocument();
             return content;
           });
+          event.preventDefault();
         });
       });
     }
@@ -5563,7 +5579,7 @@ var BackendStorage = function () {
   }
 
   _createClass(BackendStorage, [{
-    key: "getFiles",
+    key: 'getFiles',
     value: function getFiles(path) {
       return $.ajax({
         url: _Configuration2.default.backend.file.list,
@@ -5597,7 +5613,7 @@ var BackendStorage = function () {
       });
     }
   }, {
-    key: "saveFile",
+    key: 'saveFile',
     value: function saveFile(json, imageDataUrl, fileName) {
       return $.ajax({
         url: _Configuration2.default.backend.file.save,
@@ -5620,7 +5636,7 @@ var BackendStorage = function () {
      */
 
   }, {
-    key: "loadFile",
+    key: 'loadFile',
     value: function loadFile(fileName) {
       return $.ajax({
         url: _Configuration2.default.backend.file.get(fileName),
@@ -5639,7 +5655,7 @@ var BackendStorage = function () {
       });
     }
   }, {
-    key: "dirname",
+    key: 'dirname',
     value: function dirname(path) {
       if (path === undefined || path === null || path.length === 0) return null;
 
@@ -5653,7 +5669,7 @@ var BackendStorage = function () {
       return path === "" ? null : path + "/";
     }
   }, {
-    key: "basename",
+    key: 'basename',
     value: function basename(path) {
       if (path === null || path === "" || path === undefined) {
         return null;
@@ -5661,17 +5677,20 @@ var BackendStorage = function () {
       return path.split(/[\\/]/).pop();
     }
   }, {
-    key: "currentDir",
+    key: 'currentDir',
     get: function get() {
       return this.dirname(this.dirname());
     }
   }, {
-    key: "currentFile",
+    key: 'currentFile',
     get: function get() {
       return this.basename(this.fileName);
     },
     set: function set(name) {
       this.fileName = name;
+
+      var url = window.location.href.split('?')[0] + '?file=' + name;
+      history.pushState({ id: 'editor', file: name }, 'Brainbox Designer ' + name, url);
     }
   }]);
 
@@ -5679,7 +5698,7 @@ var BackendStorage = function () {
 }();
 
 exports.default = BackendStorage;
-module.exports = exports["default"];
+module.exports = exports['default'];
 
 /***/ }),
 

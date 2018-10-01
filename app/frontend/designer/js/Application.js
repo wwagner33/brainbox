@@ -64,23 +64,35 @@ export default class Application {
     //
     let file = this.getParam("file")
     if (file) {
-      this.storage.loadFile(file)
-        .then((content) => {
-          this.view.clear()
-          let reader = new draw2d.io.json.Reader()
-          reader.unmarshal(this.view, content)
-          this.getConfiguration()
-          this.storage.fileName = file
-          this.view.getCommandStack().markSaveLocation()
-          this.view.centerDocument()
-          return content
-      })
+      this._load(file)
     }
     else {
       this.fileNew()
     }
+
+    // listen on the history object to load files
+    //
+    window.addEventListener('popstate', (event) => {
+      if (event.state && event.state.id === 'editor') {
+        // Render new content for the hompage
+        this._load(event.state.file)
+      }
+    })
   }
 
+  _load(file){
+     this.storage.loadFile(file)
+      .then((content) => {
+        this.view.clear()
+        let reader = new draw2d.io.json.Reader()
+        reader.unmarshal(this.view, content)
+        this.getConfiguration()
+        this.storage.fileName = file
+        this.view.getCommandStack().markSaveLocation()
+        this.view.centerDocument()
+        return content
+      })
+  }
 
   getParam(name) {
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]")
@@ -99,7 +111,6 @@ export default class Application {
         return null
       }
     }
-
     return results[1]
   }
 

@@ -140,6 +140,7 @@ function runServer() {
     console.log('|------------------------------------------------------------|');
     console.log('| System is up and running. Copy the URL below and open this |');
     console.log('| in your browser: http://' + address + ':' + port + '/                |');
+    console.log('|                  http://localhost:' + port + '/                    |');
     console.log('+------------------------------------------------------------+');
   });
 }

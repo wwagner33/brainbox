@@ -83,6 +83,7 @@ export default class FileOpen {
             view.centerDocument()
             return content
           })
+        event.preventDefault()
       })
     })
   }
