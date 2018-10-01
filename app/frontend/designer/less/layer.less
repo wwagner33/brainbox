@@ -107,10 +107,43 @@
       font-weight: 400;
       font-size: 12px;
       letter-spacing: 1px;
-      padding: 4px 4px 4px 20px;
+      padding: 4px 4px 4px 5px;
       text-align: left;
       border: 1px solid transparent;
       border-bottom: 1px solid #222222;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        float: left;
+        margin-right: 5px;
+      }
+
+      &.ExtLine::before {
+        background: url("../images/layer_line.svg") no-repeat;
+        background-size: cover;
+      }
+      &.PolyRect::before {
+        background: url("../images/layer_rect.svg") no-repeat;
+        background-size: cover;
+      }
+
+      &.PolyCircle::before {
+        background: url("../images/layer_circle.svg") no-repeat;
+        background-size: cover;
+      }
+
+      &.ExtLabel::before {
+        background: url("../images/layer_text.svg") no-repeat;
+        background-size: cover;
+      }
+
+      &.ExtPort::before {
+        background: url("../images/layer_port.svg") no-repeat;
+        background-size: cover;
+      }
 
       &[data-visibility="false"]{
         opacity: 0.5;

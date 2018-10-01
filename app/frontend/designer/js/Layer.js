@@ -42,14 +42,15 @@ export default class Layer {
     let figures = this.view.getExtFigures()
     figures.each((i, figure) => {
       this.html.append(
-        '<div class="layerElement" data-figure="' + figure.id + '"  data-visibility="' + figure.isVisible() + '" id="layerElement_' + figure.id + '" >' +
+        '<div class="layerElement '+this.figureToCSS(figure)+'" data-figure="' + figure.id + '"  data-visibility="' + figure.isVisible() + '" id="layerElement_' + figure.id + '" >' +
         figure.getUserData().name +
-        '<span data-figure="' + figure.id + '"  data-toggle="tooltip" title="Toggle Visibility of the Layer"  class="layer_visibility pull-right"><img class="icon svg" src="'+ (figure.isVisible() ? './images/layer_visible.svg' : './images/layer_hidden.svg') + '"/></span>' +
+        '<span data-figure="' + figure.id + '"  data-toggle="tooltip" title="Toggle Visibility of the Layer"  class="layer_visibility pull-right"><img class="icon svg" src="' + (figure.isVisible() ? './images/layer_visible.svg' : './images/layer_hidden.svg') + '"/></span>' +
         '<span data-figure="' + figure.id + '"  data-toggle="tooltip" title="Edit Name of Layer" class="layer_edit pull-right" ><img class="icon svg" src="./images/layer_edit.svg"/></span>' +
         '</div>')
     }, true)
 
-    inlineSVG.init();
+    inlineSVG.init()
+
     $('*[data-toggle="tooltip"]').tooltip({
       placement: "bottom",
       container: "body",
@@ -93,12 +94,12 @@ export default class Layer {
       let figure = this.view.getExtFigure($(event.currentTarget).data("figure"))
       figure.setVisible(!figure.isVisible())
       this.view.setCurrentSelection(null)
-      $(event.currentTarget).html('<img class="icon svg" src="'+ (figure.isVisible() ? './images/layer_visible.svg' : './images/layer_hidden.svg') + '"/>')
+      $(event.currentTarget).html('<img class="icon svg" src="' + (figure.isVisible() ? './images/layer_visible.svg' : './images/layer_hidden.svg') + '"/>')
       inlineSVG.init()
 
       // set the "data" with attr and not with "data()". Otherwise the css selector won't work
       //
-      $(event.currentTarget).parent().attr({"data-visibility":figure.isVisible()})
+      $(event.currentTarget).parent().attr({"data-visibility": figure.isVisible()})
 
       this.ripple(figure)
       return false
@@ -123,20 +124,29 @@ export default class Layer {
     })
   }
 
-  ripple(figure){
+  ripple(figure) {
     let rect = figure.getBoundingBox()
     let p = rect.getCenter()
-        var circle = this.view.paper.circle(p.x, p.y, Math.max(3,rect.w/4), Math.max(3,rect.h/4)).attr({fill: null, stroke:"#d0d0ff"});
-        var anim = Raphael.animation(
-          {
-            transform: "s6",
-            opacity:0.0,
-            "stroke-width":5
-          },
-          500,
-          "linear",
-          function(){circle.remove()}
-        );
-        circle.animate(anim);
+    let circle = this.view.paper.circle(p.x, p.y, Math.max(3, rect.w / 4), Math.max(3, rect.h / 4)).attr({
+      fill: null,
+      stroke: "#d0d0ff"
+    })
+    let anim = Raphael.animation(
+      {
+        transform: "s6",
+        opacity: 0.0,
+        "stroke-width": 5
+      },
+      500,
+      "linear",
+      function () {
+        circle.remove()
+      }
+    )
+    circle.animate(anim)
+  }
+
+  figureToCSS(figure){
+    return figure.NAME.split(".").slice(-1)[0]
   }
 }
