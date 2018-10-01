@@ -2650,6 +2650,7 @@ var FileOpen = function () {
             view.getCommandStack().markSaveLocation();
             view.centerDocument();
           });
+          event.preventDefault();
         });
       });
     }

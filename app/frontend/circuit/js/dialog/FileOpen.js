@@ -84,6 +84,7 @@ export default class FileOpen {
             view.getCommandStack().markSaveLocation()
             view.centerDocument()
           })
+        event.preventDefault()
       })
     })
   }
