@@ -60,7 +60,6 @@
   "dependencies": {
     "body-parser": "1.18.3",
     "bootstrap-toggle": "^2.2.2",
-    "draw2d": "1.0.12",
     "express": "4.16.3",
     "glob": "7.0.3",
     "handlebars": "4.0.11",

@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
 
-# find -name '*.rar' -exec unrar x {} \;
+# find ./app/shapes/ -name '*.shape' -exec ./regenrate.sh {} \;
 
 
-/Users/d023280/Documents/workspace/brainbox/node_modules/phantomjs/lib/phantom/bin/phantomjs  /Users/d023280/Documents/workspace/brainbox/app/shape2code/converter.js $1 /Users/d023280/Documents/workspace/brainbox/app/shape2code/ /Users/d023280/Documents/workspace/brainbox/app/shapes/
+shapeFile=$(cd "$(dirname "$1")"; pwd)/$(basename "$1")
+
+echo "=========================================================================="
+echo $shapeFile
+# echo /Users/d023280/Documents/workspace/brainbox/node_modules/phantomjs/lib/phantom/bin/phantomjs  /Users/d023280/Documents/workspace/brainbox/app/shape2code/converter.js $shapeFile /Users/d023280/Documents/workspace/brainbox/app/shape2code/ /Users/d023280/Documents/workspace/brainbox/app/shapes/
+
+/Users/d023280/Documents/workspace/brainbox/node_modules/phantomjs/lib/phantom/bin/phantomjs  /Users/d023280/Documents/workspace/brainbox/app/shape2code/converter.js $shapeFile /Users/d023280/Documents/workspace/brainbox/app/shape2code/ /Users/d023280/Documents/workspace/brainbox/app/shapes/

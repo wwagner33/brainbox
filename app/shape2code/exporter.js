@@ -1,42 +1,42 @@
 var json=[
   {
     "type": "shape_designer.figure.PolyRect",
-    "id": "d5eed864-f9ab-239f-6b6b-6d500ff0b2b4",
-    "x": 7960,
-    "y": 7946,
-    "width": 80,
-    "height": 108,
+    "id": "d937ec12-7bfe-0617-565c-447e72f00431",
+    "x": 7951.5,
+    "y": 7981.5,
+    "width": 97,
+    "height": 37,
     "alpha": 1,
     "angle": 0,
     "userData": {
       "baseClass": "draw2d.SetFigure",
-      "code": "/**\n * by 'Draw2D Shape Designer'\n *\n * Custom JS code to tweak the standard behaviour of the generated\n * shape. add your custome code and event handler here.\n *\n *\n */\ntestShape = testShape.extend({\n\n    init: function(attr, setter, getter){\n        this._super(attr, setter, getter);\n        this.attr({resizeable:false});\n        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());\n\n         // your special code here\n         this.last_t=false;\n         this.counter=0;\n    },\n\n    /**\n     *  Called by the simulator for every calculation\n     *  loop\n     *  @required\n     **/\n    calculate:function()\n    {\n        var t = this.getInputPort(0).getValue();\n\n        var rising = this.last_t===false && t===true; \n        if(rising===true){\n            var a = this.getOutputPort(\"out_a\");\n            var b = this.getOutputPort(\"out_b\");\n            var c = this.getOutputPort(\"out_c\");\n            var d = this.getOutputPort(\"out_d\");\n            a.setValue(!!(this.counter & 1));\n            b.setValue(!!(this.counter & 2));\n            c.setValue(!!(this.counter & 4));\n            d.setValue(!!(this.counter & 8));\n            this.counter= (this.counter+1)%10;\n        }\n        this.last_t = t;\n    },\n\n\n    /**\n     *  Called if the simulation mode is starting\n     *  @required\n     **/\n    onStart:function()\n    {\n    },\n\n    /**\n     *  Called if the simulation mode is stopping\n     *  @required\n     **/\n    onStop:function()\n    {\n    }\n});",
-      "name": "Rectangle",
-      "markdown": "# BCD Counter\n\n\nBCD = **B**inary **C**oded **D**ecimal = Counts from 0 to 9 and then repeats.\n\n\n\nA binary coded decimal (BCD) is a serial digital counter that counts\nten digits. And it resets for every new clock input. As it can go \nthrough 10 unique combinations of output, it is also called as \n `Decade counter` . A BCD counter can count 0000, 0001, 0010, \n1000, 1001, 1010, 1011, 1110, 1111, 0000, and 0001 and so on."
+      "code": "/**\n * by 'Draw2D Shape Designer'\n *\n * Custom JS code to tweak the standard behaviour of the generated\n * shape. add your custome code and event handler here.\n *\n *\n */\ntestShape = testShape.extend({\n\n    init: function(attr, setter, getter){\n         this._super(attr, setter, getter);\n\n        this.attr({\n            resizeable:false,\n            \"userData.elementId\":this.id\n        });\n         this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());\n         \n         this.value = 0;\n         var _this = this;\n         this.callback = function( msg){\n             if(msg.elementId !== _this.attr(\"userData.elementId\")){\n                return;\n             }\n             _this.value = msg.value;\n             _this.getOutputPort(0).setValue(_this.value);\n            if(_this.value === 1){\n                _this.layerAttr(\"circle\",{fill:\"#C21B7A\"});\n            }\n            else{\n                _this.layerAttr(\"circle\",{fill:\"#f0f0f0\"});\n            }\n         }\n    },\n    \n    calculate: function()\n    {\n    },\n    \n    onStart: function()\n    {\n        socket.on(\"mqtt:message\", this.callback);\n        this.callback({value:this.value})\n    },\n\n    onStop:function()\n    {\n        socket.off(\"mqtt:message\", this.callback);\n    },\n\n    getParameterSettings: function()\n    {\n        return [\n        {\n            name:\"elementId\",\n            label:\"Element Id\",\n            property:{\n                type: \"string\"\n        }\n        \n        }];\n    }\n    \n});",
+      "name": "circle",
+      "markdown": "# MQTT Message Receiver\n\nThis element can receive public message sent from [HiveMQ](http://www.hivemq.com/demos/websocket-client/).\nHiveMQ is a public available MQTT server. Do not use them for productive or private\nmessage. All messages are public and can be subscribed by anyone and anyone can\nsend you a message.\n\n## Connect\nGo to the [HiveMQ](http://www.hivemq.com/demos/websocket-client/) web socket client and press the `connect` button.\n\n## Topic\nThe topic is a kind of `channel` in MQTT. For this element the topic is always \n`freegroup/brainbox`\n\n## Message\nThe element checks if the message.elementId is related to the element.elementId.\nIf yes take the value and send them to the output port.\n\nSet the `value` to `1` if you want the the output port goes high.\n\n```\n{\n \"value\":0,\n \"elementId\":\"yourElementId\"\n}\n```"
     },
     "cssClass": "shape_designer_figure_PolyRect",
     "ports": [],
-    "bgColor": "#FFFFFF",
+    "bgColor": "#919191",
     "color": "#303030",
     "stroke": 1,
-    "radius": 3,
+    "radius": 5,
     "dasharray": null,
     "vertices": [
       {
-        "x": 7960,
-        "y": 7946
+        "x": 8048.5,
+        "y": 8018.5
       },
       {
-        "x": 8040,
-        "y": 7946
+        "x": 7951.5,
+        "y": 8018.5
       },
       {
-        "x": 8040,
-        "y": 8054
+        "x": 7951.5,
+        "y": 7981.5
       },
       {
-        "x": 7960,
-        "y": 8054
+        "x": 8048.5,
+        "y": 7981.5
       }
     ],
     "blur": 0,
@@ -59,300 +59,18 @@ var json=[
     ]
   },
   {
-    "type": "shape_designer.figure.ExtLabel",
-    "id": "09da8af5-a3ba-04d9-c6e7-f5619e30f121",
-    "x": 7964.033331298828,
-    "y": 7975,
-    "width": 36.21666717529297,
-    "height": 22,
-    "alpha": 1,
-    "angle": 0,
-    "userData": {
-      "name": "Label"
-    },
-    "cssClass": "shape_designer_figure_ExtLabel",
-    "ports": [],
-    "bgColor": "none",
-    "color": "#1B1B1B",
-    "stroke": 0,
-    "radius": 0,
-    "dasharray": null,
-    "text": "BCD -",
-    "outlineStroke": 0,
-    "outlineColor": "none",
-    "fontSize": 14,
-    "fontColor": "#080808",
-    "fontFamily": null,
-    "editor": "LabelInplaceEditor",
-    "filters": [
-      {
-        "name": "shape_designer.filter.PositionFilter"
-      },
-      {
-        "name": "shape_designer.filter.FontSizeFilter"
-      },
-      {
-        "name": "shape_designer.filter.FontColorFilter"
-      }
-    ]
-  },
-  {
-    "type": "shape_designer.figure.ExtLabel",
-    "id": "ffd6786f-b999-95dc-19fb-74355dc2e69d",
-    "x": 7963.033331298828,
-    "y": 7989.6,
-    "width": 44.75,
-    "height": 22,
-    "alpha": 1,
-    "angle": 0,
-    "userData": {
-      "name": "Label"
-    },
-    "cssClass": "shape_designer_figure_ExtLabel",
-    "ports": [],
-    "bgColor": "none",
-    "color": "#1B1B1B",
-    "stroke": 0,
-    "radius": 0,
-    "dasharray": null,
-    "text": "Counter",
-    "outlineStroke": 0,
-    "outlineColor": "none",
-    "fontSize": 14,
-    "fontColor": "#080808",
-    "fontFamily": null,
-    "editor": "LabelInplaceEditor",
-    "filters": [
-      {
-        "name": "shape_designer.filter.PositionFilter"
-      },
-      {
-        "name": "shape_designer.filter.FontSizeFilter"
-      },
-      {
-        "name": "shape_designer.filter.FontColorFilter"
-      }
-    ]
-  },
-  {
-    "type": "shape_designer.figure.PolyRect",
-    "id": "ce91a191-8b7b-dc27-d6b6-15dd18bb01ca",
-    "x": 7960,
-    "y": 7957,
-    "width": 18,
-    "height": 17,
-    "alpha": 1,
-    "angle": 0,
-    "userData": {
-      "name": "Rectangle"
-    },
-    "cssClass": "shape_designer_figure_PolyRect",
-    "ports": [],
-    "bgColor": "#FFFFFF",
-    "color": "#303030",
-    "stroke": 1,
-    "radius": 0,
-    "dasharray": null,
-    "vertices": [
-      {
-        "x": 7960,
-        "y": 7957
-      },
-      {
-        "x": 7978,
-        "y": 7965.742857142854
-      },
-      {
-        "x": 7960,
-        "y": 7974
-      }
-    ],
-    "blur": 0,
-    "filters": [
-      {
-        "name": "shape_designer.filter.PositionFilter"
-      },
-      {
-        "name": "shape_designer.filter.SizeFilter"
-      },
-      {
-        "name": "shape_designer.filter.StrokeFilter"
-      },
-      {
-        "name": "shape_designer.filter.FillColorFilter"
-      }
-    ]
-  },
-  {
     "type": "shape_designer.figure.ExtPort",
-    "id": "3b9db0ed-1ba2-a98a-51cb-3a4f5af3550f",
-    "x": 7954.033331298828,
-    "y": 7960.5,
+    "id": "f4d5683a-7c42-8771-5df4-e4e9da5b8b46",
+    "x": 8041.3852480000005,
+    "y": 7995.5,
     "width": 10,
     "height": 10,
     "alpha": 1,
     "angle": 0,
     "userData": {
-      "name": "input_t",
-      "type": "Input",
-      "direction": 3,
-      "fanout": 1
-    },
-    "cssClass": "shape_designer_figure_ExtPort",
-    "ports": [],
-    "bgColor": "#1C9BAB",
-    "color": "#1B1B1B",
-    "stroke": 1,
-    "dasharray": null,
-    "filters": [
-      {
-        "name": "shape_designer.filter.PositionFilter"
-      },
-      {
-        "name": "shape_designer.filter.FanoutFilter"
-      },
-      {
-        "name": "shape_designer.filter.PortDirectionFilter"
-      },
-      {
-        "name": "shape_designer.filter.PortTypeFilter"
-      },
-      {
-        "name": "shape_designer.filter.FillColorFilter"
-      }
-    ]
-  },
-  {
-    "type": "shape_designer.figure.ExtPort",
-    "id": "4f83a764-63b8-7620-b479-a555e7c8f0d0",
-    "x": 8034.680000000001,
-    "y": 7956,
-    "width": 10,
-    "height": 10,
-    "alpha": 1,
-    "angle": 0,
-    "userData": {
-      "name": "out_a",
+      "name": "Port",
       "type": "Output",
-      "direction": 1,
-      "fanout": 20
-    },
-    "cssClass": "shape_designer_figure_ExtPort",
-    "ports": [],
-    "bgColor": "#1C9BAB",
-    "color": "#1B1B1B",
-    "stroke": 1,
-    "dasharray": null,
-    "filters": [
-      {
-        "name": "shape_designer.filter.PositionFilter"
-      },
-      {
-        "name": "shape_designer.filter.FanoutFilter"
-      },
-      {
-        "name": "shape_designer.filter.PortDirectionFilter"
-      },
-      {
-        "name": "shape_designer.filter.PortTypeFilter"
-      },
-      {
-        "name": "shape_designer.filter.FillColorFilter"
-      }
-    ]
-  },
-  {
-    "type": "shape_designer.figure.ExtPort",
-    "id": "543ba80d-b7f4-44a2-0588-734259ce1aa9",
-    "x": 8035.680000000001,
-    "y": 7981,
-    "width": 10,
-    "height": 10,
-    "alpha": 1,
-    "angle": 0,
-    "userData": {
-      "name": "out_b",
-      "type": "Output",
-      "direction": 1,
-      "fanout": 20
-    },
-    "cssClass": "shape_designer_figure_ExtPort",
-    "ports": [],
-    "bgColor": "#1C9BAB",
-    "color": "#1B1B1B",
-    "stroke": 1,
-    "dasharray": null,
-    "filters": [
-      {
-        "name": "shape_designer.filter.PositionFilter"
-      },
-      {
-        "name": "shape_designer.filter.FanoutFilter"
-      },
-      {
-        "name": "shape_designer.filter.PortDirectionFilter"
-      },
-      {
-        "name": "shape_designer.filter.PortTypeFilter"
-      },
-      {
-        "name": "shape_designer.filter.FillColorFilter"
-      }
-    ]
-  },
-  {
-    "type": "shape_designer.figure.ExtPort",
-    "id": "9606e121-295b-5ec7-bcfa-b4ee534f4142",
-    "x": 8035.680000000001,
-    "y": 8006,
-    "width": 10,
-    "height": 10,
-    "alpha": 1,
-    "angle": 0,
-    "userData": {
-      "name": "out_c",
-      "type": "Output",
-      "direction": 1,
-      "fanout": 20
-    },
-    "cssClass": "shape_designer_figure_ExtPort",
-    "ports": [],
-    "bgColor": "#1C9BAB",
-    "color": "#1B1B1B",
-    "stroke": 1,
-    "dasharray": null,
-    "filters": [
-      {
-        "name": "shape_designer.filter.PositionFilter"
-      },
-      {
-        "name": "shape_designer.filter.FanoutFilter"
-      },
-      {
-        "name": "shape_designer.filter.PortDirectionFilter"
-      },
-      {
-        "name": "shape_designer.filter.PortTypeFilter"
-      },
-      {
-        "name": "shape_designer.filter.FillColorFilter"
-      }
-    ]
-  },
-  {
-    "type": "shape_designer.figure.ExtPort",
-    "id": "5eedda0c-72c9-32eb-a653-fa2c22609619",
-    "x": 8036.680000000001,
-    "y": 8031,
-    "width": 10,
-    "height": 10,
-    "alpha": 1,
-    "angle": 0,
-    "userData": {
-      "name": "out_d",
-      "type": "Output",
-      "direction": 1,
-      "fanout": 25
+      "direction": 1
     },
     "cssClass": "shape_designer_figure_ExtPort",
     "ports": [],
@@ -380,11 +98,11 @@ var json=[
   },
   {
     "type": "shape_designer.figure.ExtLabel",
-    "id": "52e7f5ae-8cfa-054d-5fa5-d642c0839c2f",
-    "x": 8019.017706298828,
-    "y": 7951,
-    "width": 29.760000228881836,
-    "height": 22,
+    "id": "dda95266-c917-46e8-cc39-f538d0d43f73",
+    "x": 7966.109375,
+    "y": 7986,
+    "width": 44.109375,
+    "height": 21,
     "alpha": 1,
     "angle": 0,
     "userData": {
@@ -397,125 +115,11 @@ var json=[
     "stroke": 0,
     "radius": 0,
     "dasharray": null,
-    "text": "A",
+    "text": "HiveMQ",
     "outlineStroke": 0,
     "outlineColor": "none",
-    "fontSize": 10,
-    "fontColor": "#080808",
-    "fontFamily": null,
-    "editor": "LabelInplaceEditor",
-    "filters": [
-      {
-        "name": "shape_designer.filter.PositionFilter"
-      },
-      {
-        "name": "shape_designer.filter.FontSizeFilter"
-      },
-      {
-        "name": "shape_designer.filter.FontColorFilter"
-      }
-    ]
-  },
-  {
-    "type": "shape_designer.figure.ExtLabel",
-    "id": "9ba647d0-d381-6054-3a88-a2d1729afd03",
-    "x": 8019.017706298828,
-    "y": 7976.5,
-    "width": 29.760000228881836,
-    "height": 22,
-    "alpha": 1,
-    "angle": 0,
-    "userData": {
-      "name": "Label"
-    },
-    "cssClass": "shape_designer_figure_ExtLabel",
-    "ports": [],
-    "bgColor": "none",
-    "color": "#1B1B1B",
-    "stroke": 0,
-    "radius": 0,
-    "dasharray": null,
-    "text": "B",
-    "outlineStroke": 0,
-    "outlineColor": "none",
-    "fontSize": 10,
-    "fontColor": "#080808",
-    "fontFamily": null,
-    "editor": "LabelInplaceEditor",
-    "filters": [
-      {
-        "name": "shape_designer.filter.PositionFilter"
-      },
-      {
-        "name": "shape_designer.filter.FontSizeFilter"
-      },
-      {
-        "name": "shape_designer.filter.FontColorFilter"
-      }
-    ]
-  },
-  {
-    "type": "shape_designer.figure.ExtLabel",
-    "id": "4383cbe5-c972-dc30-b5fc-f2ba855839a5",
-    "x": 8019.017706298828,
-    "y": 8000.5,
-    "width": 29.760000228881836,
-    "height": 22,
-    "alpha": 1,
-    "angle": 0,
-    "userData": {
-      "name": "Label"
-    },
-    "cssClass": "shape_designer_figure_ExtLabel",
-    "ports": [],
-    "bgColor": "none",
-    "color": "#1B1B1B",
-    "stroke": 0,
-    "radius": 0,
-    "dasharray": null,
-    "text": "C",
-    "outlineStroke": 0,
-    "outlineColor": "none",
-    "fontSize": 10,
-    "fontColor": "#080808",
-    "fontFamily": null,
-    "editor": "LabelInplaceEditor",
-    "filters": [
-      {
-        "name": "shape_designer.filter.PositionFilter"
-      },
-      {
-        "name": "shape_designer.filter.FontSizeFilter"
-      },
-      {
-        "name": "shape_designer.filter.FontColorFilter"
-      }
-    ]
-  },
-  {
-    "type": "shape_designer.figure.ExtLabel",
-    "id": "b4d73868-0dfd-060d-7dfb-a9216147df63",
-    "x": 8019.017706298828,
-    "y": 8025.5,
-    "width": 29.760000228881836,
-    "height": 22,
-    "alpha": 1,
-    "angle": 0,
-    "userData": {
-      "name": "Label"
-    },
-    "cssClass": "shape_designer_figure_ExtLabel",
-    "ports": [],
-    "bgColor": "none",
-    "color": "#1B1B1B",
-    "stroke": 0,
-    "radius": 0,
-    "dasharray": null,
-    "text": "D",
-    "outlineStroke": 0,
-    "outlineColor": "none",
-    "fontSize": 10,
-    "fontColor": "#080808",
+    "fontSize": 16,
+    "fontColor": "#FFF824",
     "fontFamily": null,
     "editor": "LabelInplaceEditor",
     "filters": [
@@ -531,7 +135,7 @@ var json=[
     ]
   }
 ];
-var pkg='draw2d_circuit_counter_BCDCounter';
+var pkg='HiveMQ';
 app.fileNew();
 
 var reader = new draw2d.io.json.Reader();

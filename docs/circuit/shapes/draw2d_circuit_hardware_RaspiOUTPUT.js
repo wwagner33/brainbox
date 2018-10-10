@@ -202,22 +202,22 @@ var draw2d_circuit_hardware_RaspiOUTPUT = CircuitFigure.extend({
        shape.data("name","Rectangle");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M81.5 51.5L80.5,52.5Q78.66341705219929,53.156003191998934 77.5, 54.5L76.5,56.5');
+       shape = this.canvas.paper.path('M81.77637705219786 51.47225227999843L80.21989705219858,52.31412773599868Q78.66341705219929,53.156003191998934 77.46355549750086, 54.75610701661679L76.11878524419626,56.549457272001746');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M81.5 51.5L80.5,52.5Q78.66341705219929,53.156003191998934 77.5, 54.5L76.5,56.5');
+       shape = this.canvas.paper.path('M81.77637705219786 51.47225227999843L80.21989705219858,52.31412773599868Q78.66341705219929,53.156003191998934 77.46355549750086, 54.75610701661679L76.11878524419626,56.549457272001746');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M65.5 55.5L64.5,53.5Q63.0351782041962,51.90872203999788 60.5, 50.5L58.5,49.5');
+       shape = this.canvas.paper.path('M65.30534524419636 55.04527500000131L64.17026172419628,53.4769985199996Q63.0351782041962,51.90872203999788 60.96057058819497, 50.47466328799874L58.88596297219374,49.04060453599959');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M65.5 55.5L64.5,53.5Q63.0351782041962,51.90872203999788 60.5, 50.5L58.5,49.5');
+       shape = this.canvas.paper.path('M65.30534524419636 55.04527500000131L64.17026172419628,53.4769985199996Q63.0351782041962,51.90872203999788 60.96057058819497, 50.47466328799874L58.88596297219374,49.04060453599959');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        

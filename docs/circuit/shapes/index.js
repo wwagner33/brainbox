@@ -515,7 +515,7 @@ var ArduinoLed = CircuitFigure.extend({
      this._super( $.extend({stroke:0, bgColor:null, width:30,height:32},attr), setter, getter);
      var port;
      // Port
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator(-3.3333333333333335, 51.5625));
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator(-2.3333333333327273, 50));
      port.setConnectionDirection(3);
      port.setBackgroundColor("#1C9BAB");
      port.setName("Port");
@@ -545,22 +545,22 @@ var ArduinoLed = CircuitFigure.extend({
        shape.data("name","circle");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M5.5 5.5L15.5,16.5L24.5,27.5');
+       shape = this.canvas.paper.path('M5.3521000000100685 4.786000000009153L25.33820000000196,27.5058999999992');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M5.5 5.5L15.5,16.5L24.5,27.5');
+       shape = this.canvas.paper.path('M5.3521000000100685 4.786000000009153L25.33820000000196,27.5058999999992');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M25.5 5.5L5.5,27.5');
+       shape = this.canvas.paper.path('M25.94430000000102 5.062700000001314L5.283199999999852,27.963700000000244');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M25.5 5.5L5.5,27.5');
+       shape = this.canvas.paper.path('M25.94430000000102 5.062700000001314L5.283199999999852,27.963700000000244');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
@@ -1874,22 +1874,22 @@ var draw2d_circuit_display_Led = CircuitFigure.extend({
        shape.data("name","circle");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M5.5 5.5L15.5,16.5L24.5,27.5');
+       shape = this.canvas.paper.path('M5.522100000000137 5.682400000001508L15.138100000001941,16.496800000000803L24.754100000001927,27.31119999999919');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M5.5 5.5L15.5,16.5L24.5,27.5');
+       shape = this.canvas.paper.path('M5.522100000000137 5.682400000001508L15.138100000001941,16.496800000000803L24.754100000001927,27.31119999999919');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M25.5 5.5L5.5,27.5');
+       shape = this.canvas.paper.path('M25.94430000000102 5.062700000001314L5.283199999999852,27.963700000000244');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M25.5 5.5L5.5,27.5');
+       shape = this.canvas.paper.path('M25.94430000000102 5.062700000001314L5.283199999999852,27.963700000000244');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
@@ -2012,12 +2012,12 @@ var draw2d_circuit_flipflop_DFlipFlop = CircuitFigure.extend({
        shape.data("name","Rectangle");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M27.5 36.5L35.5,36.5');
+       shape = this.canvas.paper.path('M27.847999999999956 36.49839999999767L35.374799999999595,36.49839999999767');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M27.5 36.5L35.5,36.5');
+       shape = this.canvas.paper.path('M27.847999999999956 36.49839999999767L35.374799999999595,36.49839999999767');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
@@ -2160,12 +2160,12 @@ var draw2d_circuit_flipflop_JKFlipFlop = CircuitFigure.extend({
        shape.data("name","Label");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M26.5 45.5L33.5,45.5');
+       shape = this.canvas.paper.path('M26.3479999999995 45.555679999995846L33.874799999999595,45.555679999995846');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M26.5 45.5L33.5,45.5');
+       shape = this.canvas.paper.path('M26.3479999999995 45.555679999995846L33.874799999999595,45.555679999995846');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
@@ -2315,12 +2315,12 @@ var draw2d_circuit_flipflop_SRFlipFlop = CircuitFigure.extend({
        shape.data("name","Label");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M26.5 45.5L33.5,45.5');
+       shape = this.canvas.paper.path('M26.347999999999956 45.555679999995846L33.874799999999595,45.555679999995846');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M26.5 45.5L33.5,45.5');
+       shape = this.canvas.paper.path('M26.347999999999956 45.555679999995846L33.874799999999595,45.555679999995846');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
@@ -2451,12 +2451,12 @@ var draw2d_circuit_flipflop_TFlipFlop = CircuitFigure.extend({
        shape.data("name","Rectangle");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M26.5 35.5L33.5,35.5');
+       shape = this.canvas.paper.path('M26.347999999999956 35.99839999999767L33.874799999999595,35.99839999999767');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M26.5 35.5L33.5,35.5');
+       shape = this.canvas.paper.path('M26.347999999999956 35.99839999999767L33.874799999999595,35.99839999999767');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
@@ -3289,22 +3289,22 @@ var draw2d_circuit_hardware_RaspiGPIO = CircuitFigure.extend({
        shape.data("name","Label");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M65.5 38.5L63.5,39.5Q62.057292052200864,40.156003191998934 60.5, 41.5L59.5,43.5');
+       shape = this.canvas.paper.path('M65.17025205219943 38.47225227999843L63.61377205220015,39.31412773599868Q62.057292052200864,40.156003191998934 60.85743049750244, 41.75610701661679L59.51266024419783,43.549457272001746');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M65.5 38.5L63.5,39.5Q62.057292052200864,40.156003191998934 60.5, 41.5L59.5,43.5');
+       shape = this.canvas.paper.path('M65.17025205219943 38.47225227999843L63.61377205220015,39.31412773599868Q62.057292052200864,40.156003191998934 60.85743049750244, 41.75610701661679L59.51266024419783,43.549457272001746');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M48.5 42.5L47.5,40.5Q46.42905320419777,38.90872203999788 44.5, 37.5L42.5,36.5');
+       shape = this.canvas.paper.path('M48.69922024419793 42.04527500000131L47.56413672419785,40.4769985199996Q46.42905320419777,38.90872203999788 44.35444558819654, 37.47466328799874L42.27983797219531,36.04060453599959');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M48.5 42.5L47.5,40.5Q46.42905320419777,38.90872203999788 44.5, 37.5L42.5,36.5');
+       shape = this.canvas.paper.path('M48.69922024419793 42.04527500000131L47.56413672419785,40.4769985199996Q46.42905320419777,38.90872203999788 44.35444558819654, 37.47466328799874L42.27983797219531,36.04060453599959');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
@@ -3569,22 +3569,22 @@ var draw2d_circuit_hardware_RaspiINPUT = CircuitFigure.extend({
        shape.data("name","Label");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M53.5 48.5L52.5,49.5Q50.75089205219956,50.156003191998934 49.5, 51.5L48.5,53.5');
+       shape = this.canvas.paper.path('M53.863852052198126 48.47225227999843L52.30737205219884,49.31412773599868Q50.75089205219956,50.156003191998934 49.55103049750114, 51.75610701661679L48.20626024419653,53.549457272001746');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M53.5 48.5L52.5,49.5Q50.75089205219956,50.156003191998934 49.5, 51.5L48.5,53.5');
+       shape = this.canvas.paper.path('M53.863852052198126 48.47225227999843L52.30737205219884,49.31412773599868Q50.75089205219956,50.156003191998934 49.55103049750114, 51.75610701661679L48.20626024419653,53.549457272001746');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M37.5 52.5L36.5,50.5Q35.12265320419647,48.90872203999788 33.5, 47.5L30.5,46.5');
+       shape = this.canvas.paper.path('M37.39282024419663 52.04527500000131L36.25773672419655,50.4769985199996Q35.12265320419647,48.90872203999788 33.04804558819524, 47.47466328799874L30.973437972194006,46.04060453599959');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M37.5 52.5L36.5,50.5Q35.12265320419647,48.90872203999788 33.5, 47.5L30.5,46.5');
+       shape = this.canvas.paper.path('M37.39282024419663 52.04527500000131L36.25773672419655,50.4769985199996Q35.12265320419647,48.90872203999788 33.04804558819524, 47.47466328799874L30.973437972194006,46.04060453599959');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
@@ -3852,22 +3852,22 @@ var draw2d_circuit_hardware_RaspiOUTPUT = CircuitFigure.extend({
        shape.data("name","Rectangle");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M81.5 51.5L80.5,52.5Q78.66341705219929,53.156003191998934 77.5, 54.5L76.5,56.5');
+       shape = this.canvas.paper.path('M81.77637705219786 51.47225227999843L80.21989705219858,52.31412773599868Q78.66341705219929,53.156003191998934 77.46355549750086, 54.75610701661679L76.11878524419626,56.549457272001746');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M81.5 51.5L80.5,52.5Q78.66341705219929,53.156003191998934 77.5, 54.5L76.5,56.5');
+       shape = this.canvas.paper.path('M81.77637705219786 51.47225227999843L80.21989705219858,52.31412773599868Q78.66341705219929,53.156003191998934 77.46355549750086, 54.75610701661679L76.11878524419626,56.549457272001746');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M65.5 55.5L64.5,53.5Q63.0351782041962,51.90872203999788 60.5, 50.5L58.5,49.5');
+       shape = this.canvas.paper.path('M65.30534524419636 55.04527500000131L64.17026172419628,53.4769985199996Q63.0351782041962,51.90872203999788 60.96057058819497, 50.47466328799874L58.88596297219374,49.04060453599959');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M65.5 55.5L64.5,53.5Q63.0351782041962,51.90872203999788 60.5, 50.5L58.5,49.5');
+       shape = this.canvas.paper.path('M65.30534524419636 55.04527500000131L64.17026172419628,53.4769985199996Q63.0351782041962,51.90872203999788 60.96057058819497, 50.47466328799874L58.88596297219374,49.04060453599959');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
@@ -3988,12 +3988,12 @@ var draw2d_circuit_pulse_10hz = CircuitFigure.extend({
        shape.data("name","Label");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M6.5 41.5L13.5,41.5L13.5,28.5L24.5,28.5L24.5,41.5L30.5,41.5');
+       shape = this.canvas.paper.path('M6.119575000000623 41.67239999999947L13.426774999999907,41.67239999999947L13.426774999999907,28.884799999999814L24.387574999999742,28.884799999999814L24.387574999999742,41.21569999999974L30.324674999999843,41.21569999999974');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M6.5 41.5L13.5,41.5L13.5,28.5L24.5,28.5L24.5,41.5L30.5,41.5');
+       shape = this.canvas.paper.path('M6.119575000000623 41.67239999999947L13.426774999999907,41.67239999999947L13.426774999999907,28.884799999999814L24.387574999999742,28.884799999999814L24.387574999999742,41.21569999999974L30.324674999999843,41.21569999999974');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
@@ -4100,12 +4100,12 @@ var draw2d_circuit_pulse_50hz = CircuitFigure.extend({
        shape.data("name","Label");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M3.5 41.5L10.5,41.5L10.5,30.5L22.5,30.5L22.5,40.5L28.5,40.5');
+       shape = this.canvas.paper.path('M3.393662499999664 41.239300000000185L10.575662499999908,41.239300000000185L10.575662499999908,30.979299999999967L22.066862499999843,30.979299999999967L22.066862499999843,40.828899999999976L28.6332625,40.828899999999976');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M3.5 41.5L10.5,41.5L10.5,30.5L22.5,30.5L22.5,40.5L28.5,40.5');
+       shape = this.canvas.paper.path('M3.393662499999664 41.239300000000185L10.575662499999908,41.239300000000185L10.575662499999908,30.979299999999967L22.066862499999843,30.979299999999967L22.066862499999843,40.828899999999976L28.6332625,40.828899999999976');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
@@ -4213,82 +4213,82 @@ var draw2d_circuit_pulse_Delay = CircuitFigure.extend({
        shape.data("name","Label");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M3.5 18.5L7.5,18.5L10.5,18.5L10.5,5.5L40.5,5.5L40.5,17.5L74.5,17.5');
+       shape = this.canvas.paper.path('M3.502237499998955 18.776879999997618L7.155837499998597,18.776879999997618L10.809437499999149,18.776879999997618L10.80943749999824,5.006239999996978L40.60790533999989,5.1582835199978945L40.7756774999998,17.992499999997563L74.82772149999892,17.533747999996194');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M3.5 18.5L7.5,18.5L10.5,18.5L10.5,5.5L40.5,5.5L40.5,17.5L74.5,17.5');
+       shape = this.canvas.paper.path('M3.502237499998955 18.776879999997618L7.155837499998597,18.776879999997618L10.809437499999149,18.776879999997618L10.80943749999824,5.006239999996978L40.60790533999989,5.1582835199978945L40.7756774999998,17.992499999997563L74.82772149999892,17.533747999996194');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M2.5 60.5L35.5,60.5L35.5,47.5L50.5,47.5L65.5,47.5L65.5,60.5L78.5,60.5');
+       shape = this.canvas.paper.path('M2.7763174999963667 60.522479999995994L35.81032965999748,60.698116479995406L35.642557499997565,47.40719999999601L50.62567749999744,47.243359999995846L65.60879749999731,47.07951999999568L65.60879749999731,60.249280799996086L78.49271349999617,60.00024399999529');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M2.5 60.5L35.5,60.5L35.5,47.5L50.5,47.5L65.5,47.5L65.5,60.5L78.5,60.5');
+       shape = this.canvas.paper.path('M2.7763174999963667 60.522479999995994L35.81032965999748,60.698116479995406L35.642557499997565,47.40719999999601L50.62567749999744,47.243359999995846L65.60879749999731,47.07951999999568L65.60879749999731,60.249280799996086L78.49271349999617,60.00024399999529');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M9.5 30.5L9.5,46.5');
+       shape = this.canvas.paper.path('M9.586228750001283 30.218550000001414L9.91390875000252,46.930230000002666');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M9.5 30.5L9.5,46.5');
+       shape = this.canvas.paper.path('M9.586228750001283 30.218550000001414L9.91390875000252,46.930230000002666');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#FF0569","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M32.5 38.5L28.5,45.5');
+       shape = this.canvas.paper.path('M32.75262875000226 38.50094999999965L28.574708750000354,45.873749999997926');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M32.5 38.5L28.5,45.5');
+       shape = this.canvas.paper.path('M32.75262875000226 38.50094999999965L28.574708750000354,45.873749999997926');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#FF0569","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M9.5 38.5L32.5,38.5');
+       shape = this.canvas.paper.path('M9.171028750002733 38.167670000003454L32.763988749999044,38.495350000001054');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M9.5 38.5L32.5,38.5');
+       shape = this.canvas.paper.path('M9.171028750002733 38.167670000003454L32.763988749999044,38.495350000001054');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#FF0569","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M26.5 30.5L32.5,37.5');
+       shape = this.canvas.paper.path('M26.418204481202338 30.914574268800607L32.574708750000354,37.373749999997926');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M26.5 30.5L32.5,37.5');
+       shape = this.canvas.paper.path('M26.418204481202338 30.914574268800607L32.574708750000354,37.373749999997926');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#FF0569","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M10.5 20.5L10.5,28.5');
+       shape = this.canvas.paper.path('M10.916348593882503 20.631087969915825L10.654204593882241,28.347951969915812');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M10.5 20.5L10.5,28.5');
+       shape = this.canvas.paper.path('M10.916348593882503 20.631087969915825L10.654204593882241,28.347951969915812');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#A8A8A8","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M35.5 45.5L35.5,27.5');
+       shape = this.canvas.paper.path('M35.63980459388222 45.23755196991533L35.80781268348346,27.62475196991545');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M35.5 45.5L35.5,27.5');
+       shape = this.canvas.paper.path('M35.63980459388222 45.23755196991533L35.80781268348346,27.62475196991545');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#C9C9C9","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
@@ -4423,22 +4423,22 @@ var draw2d_circuit_switch_HighLow = CircuitFigure.extend({
        shape.data("name","Circle");
        
        // high_shadow
-       shape = this.canvas.paper.path('M39.5 22.5L13.5,11.5');
+       shape = this.canvas.paper.path('M39.298300000000836 22.446912500003236L13.857399999999416,11.09151250000059');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","high_shadow");
        
        // high
-       shape = this.canvas.paper.path('M39.5 22.5L13.5,11.5');
+       shape = this.canvas.paper.path('M39.298300000000836 22.446912500003236L13.857399999999416,11.09151250000059');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","high");
        
        // low_shadow
-       shape = this.canvas.paper.path('M38.5 22.5L13.5,32.5');
+       shape = this.canvas.paper.path('M38.75319999999738 22.708312500000375L13.644500000000335,32.351312499998585');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","low_shadow");
        
        // low
-       shape = this.canvas.paper.path('M38.5 22.5L13.5,32.5');
+       shape = this.canvas.paper.path('M38.75319999999738 22.708312500000375L13.644500000000335,32.351312499998585');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","low");
        
@@ -4713,12 +4713,12 @@ var draw2d_circuit_switch_PushButton = CircuitFigure.extend({
        shape.data("name","high");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M30.5 23.5L37.5,23.5L45.5,23.5');
+       shape = this.canvas.paper.path('M30.043224999999893 23.936999999999443L37.69952499999954,23.936999999999443L45.35582499999964,23.936999999999443');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M30.5 23.5L37.5,23.5L45.5,23.5');
+       shape = this.canvas.paper.path('M30.043224999999893 23.936999999999443L37.69952499999954,23.936999999999443L45.35582499999964,23.936999999999443');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
@@ -4832,82 +4832,82 @@ var draw2d_circuit_timer_Delay = CircuitFigure.extend({
        shape.data("name","Label");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M9.5 20.5L9.5,48.5');
+       shape = this.canvas.paper.path('M9.916348593882503 20.631087969915825L9.981884593883478,48.33643196991761');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M9.5 20.5L9.5,48.5');
+       shape = this.canvas.paper.path('M9.916348593882503 20.631087969915825L9.981884593883478,48.33643196991761');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#A8A8A8","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M35.5 57.5L35.5,27.5');
+       shape = this.canvas.paper.path('M35.98444459388338 57.68939196991232L35.41100459388326,27.297071969915123');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M35.5 57.5L35.5,27.5');
+       shape = this.canvas.paper.path('M35.98444459388338 57.68939196991232L35.41100459388326,27.297071969915123');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#C9C9C9","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // pulseline_top_shadow
-       shape = this.canvas.paper.path('M4.5 19.5L9.5,19.5Q11.309437499999149,19.776879999997618 11.5, 17.5L11.5,8.5Q11.30943749999824,6.006239999996978 13.5, 6.5L39.5,6.5Q41.2756774999998,6.333919999997306 41.5, 8.5L41.5,16.5Q41.2756774999998,18.992499999997563 43.5, 19.5L75.5,19.5');
+       shape = this.canvas.paper.path('M4.002237499998955 19.776879999997618L9.309437499999149,19.776879999997618Q11.309437499999149,19.776879999997618 11.309437499999017, 17.776879999997618L11.30943749999837,8.006239999996978Q11.30943749999824,6.006239999996978 13.30931793710452, 6.0281086368907495L39.27579706289352,6.312051363103535Q41.2756774999998,6.333919999997306 41.2756774999998, 8.333919999997306L41.2756774999998,16.992499999997563Q41.2756774999998,18.992499999997563 43.275583463722825, 19.011894232776932L75.06557749999865,19.32017999999698');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","pulseline_top_shadow");
        
        // pulseline_top
-       shape = this.canvas.paper.path('M4.5 19.5L9.5,19.5Q11.309437499999149,19.776879999997618 11.5, 17.5L11.5,8.5Q11.30943749999824,6.006239999996978 13.5, 6.5L39.5,6.5Q41.2756774999998,6.333919999997306 41.5, 8.5L41.5,16.5Q41.2756774999998,18.992499999997563 43.5, 19.5L75.5,19.5');
+       shape = this.canvas.paper.path('M4.002237499998955 19.776879999997618L9.309437499999149,19.776879999997618Q11.309437499999149,19.776879999997618 11.309437499999017, 17.776879999997618L11.30943749999837,8.006239999996978Q11.30943749999824,6.006239999996978 13.30931793710452, 6.0281086368907495L39.27579706289352,6.312051363103535Q41.2756774999998,6.333919999997306 41.2756774999998, 8.333919999997306L41.2756774999998,16.992499999997563Q41.2756774999998,18.992499999997563 43.275583463722825, 19.011894232776932L75.06557749999865,19.32017999999698');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","pulseline_top");
        
        // pulseline_bottom_shadow
-       shape = this.canvas.paper.path('M3.5 59.5L33.5,59.5Q35.642557499997565,59.194799999995666 35.5, 57.5L35.5,48.5Q35.642557499997565,46.40719999999601 37.5, 46.5L63.5,46.5Q65.60879749999731,46.07951999999568 65.5, 48.5L65.5,56.5Q65.60879749999731,58.73809999999594 67.5, 58.5L78.5,58.5');
+       shape = this.canvas.paper.path('M3.1039974999966944 59.194799999995666L33.642557499997565,59.194799999995666Q35.642557499997565,59.194799999995666 35.642557499997565, 57.194799999995666L35.642557499997565,48.40719999999601Q35.642557499997565,46.40719999999601 37.64243793710385, 46.38533136310224L63.608917062891024,46.10138863688945Q65.60879749999731,46.07951999999568 65.60879749999731, 48.07951999999568L65.60879749999731,56.73809999999594Q65.60879749999731,58.73809999999594 67.60879749999731, 58.738099999995804L78.75485749999643,58.73809999999503');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","pulseline_bottom_shadow");
        
        // pulseline_bottom
-       shape = this.canvas.paper.path('M3.5 59.5L33.5,59.5Q35.642557499997565,59.194799999995666 35.5, 57.5L35.5,48.5Q35.642557499997565,46.40719999999601 37.5, 46.5L63.5,46.5Q65.60879749999731,46.07951999999568 65.5, 48.5L65.5,56.5Q65.60879749999731,58.73809999999594 67.5, 58.5L78.5,58.5');
+       shape = this.canvas.paper.path('M3.1039974999966944 59.194799999995666L33.642557499997565,59.194799999995666Q35.642557499997565,59.194799999995666 35.642557499997565, 57.194799999995666L35.642557499997565,48.40719999999601Q35.642557499997565,46.40719999999601 37.64243793710385, 46.38533136310224L63.608917062891024,46.10138863688945Q65.60879749999731,46.07951999999568 65.60879749999731, 48.07951999999568L65.60879749999731,56.73809999999594Q65.60879749999731,58.73809999999594 67.60879749999731, 58.738099999995804L78.75485749999643,58.73809999999503');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","pulseline_bottom");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M11.5 33.5L11.5,42.5');
+       shape = this.canvas.paper.path('M11.086228750001283 33.84501399999499L11.41390875000252,42.430230000002666');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M11.5 33.5L11.5,42.5');
+       shape = this.canvas.paper.path('M11.086228750001283 33.84501399999499L11.41390875000252,42.430230000002666');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#FF0569","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M33.5 38.5L30.5,42.5');
+       shape = this.canvas.paper.path('M33.25262875000226 38.00094999999965L30.385428749999846,42.22802200000024');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M33.5 38.5L30.5,42.5');
+       shape = this.canvas.paper.path('M33.25262875000226 38.00094999999965L30.385428749999846,42.22802200000024');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#FF0569","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M29.5 34.5L33.5,37.5');
+       shape = this.canvas.paper.path('M29.60130075000143 34.49864599999819L33.074708750000354,37.873749999997926');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M29.5 34.5L33.5,37.5');
+       shape = this.canvas.paper.path('M29.60130075000143 34.49864599999819L33.074708750000354,37.873749999997926');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#FF0569","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M11.5 38.5L33.5,38.5');
+       shape = this.canvas.paper.path('M11.171028750002733 38.167670000003454L33.12558875000104,38.495350000001054');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M11.5 38.5L33.5,38.5');
+       shape = this.canvas.paper.path('M11.171028750002733 38.167670000003454L33.12558875000104,38.495350000001054');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#FF0569","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        

@@ -150,35 +150,28 @@ export default draw2d.Canvas.extend({
     })
 
 
-    let setZoom = function (newZoom) {
-      let bb = _this.getBoundingBox().getCenter()
+    let setZoom =  (newZoom) => {
+      let bb = this.getBoundingBox().getCenter()
       let c = $("#draw2dCanvasWrapper")
-      _this.setZoom(newZoom)
-      _this.scrollTo((bb.y / newZoom - c.height() / 2), (bb.x / newZoom - c.width() / 2))
+      this.setZoom(newZoom)
+      this.scrollTo((bb.y / newZoom - c.height() / 2), (bb.x / newZoom - c.width() / 2))
     }
 
     //  ZoomIn Button and the callbacks
     //
-    $("#canvas_zoom_in").on("click", function () {
-      setZoom(_this.getZoom() * 1.2)
+    $("#canvas_zoom_in").on("click", () => {
+      setZoom(this.getZoom() * 1.2)
     })
 
     // OneToOne Button
     //
-    $("#canvas_zoom_normal").on("click", function () {
-      setZoom(1.0)
-    })
+    $("#canvas_zoom_normal").on("click", ()=>setZoom(1.0))
 
     //ZoomOut Button and the callback
     //
-    $("#canvas_zoom_out").on("click", function () {
-      setZoom(_this.getZoom() * 0.8)
-    })
+    $("#canvas_zoom_out").on("click", ()=>setZoom(_this.getZoom()*0.8))
 
-    $("#statusWebUSB .help-link").on("click", function () {
-      new WebUSBHelpDialog().show()
-    })
-
+    $("#statusWebUSB .help-link").on("click", ()=>new WebUSBHelpDialog().show())
 
     hardware.arduino.on("disconnect", this.hardwareChanged.bind(this))
     hardware.arduino.on("connect", this.hardwareChanged.bind(this))
@@ -449,8 +442,6 @@ export default draw2d.Canvas.extend({
     $("#paletteElementsOverlay").fadeIn("fast")
     $("#paletteElementsOverlay").height($("#paletteElements").height())
     this.slider.slider("setValue", 100)
-
-  //  this.probeWindow.show()
   },
 
   simulationStop: function () {
@@ -468,7 +459,6 @@ export default draw2d.Canvas.extend({
       $(".editBase").fadeIn("slow")
     })
     $("#paletteElementsOverlay").fadeOut("fast")
-//    this.probeWindow.hide()
   },
 
   _calculate: function () {
@@ -536,7 +526,7 @@ export default draw2d.Canvas.extend({
 
     // Det the status of top button for the pulldown menu.
     //
-    if (arduinoRequired === false && raspiRequired == false) {
+    if (arduinoRequired === false && raspiRequired === false) {
       $("#editConnections").attr("src", imgConnectionStatusNeutral)
     }
     else {
@@ -583,9 +573,7 @@ export default draw2d.Canvas.extend({
 
   reloadFromCache: function () {
     new draw2d.io.json.Writer().marshal(this, json => {
-      //this.clear();
       draw2d.Canvas.prototype.clear.call(this)
-
       new draw2d.io.json.Reader().unmarshal(this, json)
     })
   },

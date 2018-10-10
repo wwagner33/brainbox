@@ -60,12 +60,12 @@ var draw2d_circuit_switch_PushButton = CircuitFigure.extend({
        shape.data("name","high");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M30.5 23.5L37.5,23.5L45.5,23.5');
+       shape = this.canvas.paper.path('M30.043224999999893 23.936999999999443L37.69952499999954,23.936999999999443L45.35582499999964,23.936999999999443');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M30.5 23.5L37.5,23.5L45.5,23.5');
+       shape = this.canvas.paper.path('M30.043224999999893 23.936999999999443L37.69952499999954,23.936999999999443L45.35582499999964,23.936999999999443');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        

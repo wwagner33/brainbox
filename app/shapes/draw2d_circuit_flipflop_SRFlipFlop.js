@@ -83,12 +83,12 @@ var draw2d_circuit_flipflop_SRFlipFlop = CircuitFigure.extend({
        shape.data("name","Label");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M26.5 45.5L33.5,45.5');
+       shape = this.canvas.paper.path('M26.347999999999956 45.555679999995846L33.874799999999595,45.555679999995846');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M26.5 45.5L33.5,45.5');
+       shape = this.canvas.paper.path('M26.347999999999956 45.555679999995846L33.874799999999595,45.555679999995846');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        

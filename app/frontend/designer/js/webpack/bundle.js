@@ -338,6 +338,7 @@ var Application = function () {
 
       this.storage.loadFile(file).then(function (content) {
         _this2.view.clear();
+        _this2.view.centerDocument();
         var reader = new draw2d.io.json.Reader();
         reader.unmarshal(_this2.view, content);
         _this2.getConfiguration();

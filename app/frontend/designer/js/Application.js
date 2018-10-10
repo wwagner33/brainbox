@@ -84,6 +84,7 @@ export default class Application {
      this.storage.loadFile(file)
       .then((content) => {
         this.view.clear()
+        this.view.centerDocument()
         let reader = new draw2d.io.json.Reader()
         reader.unmarshal(this.view, content)
         this.getConfiguration()

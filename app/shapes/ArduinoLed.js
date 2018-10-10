@@ -15,7 +15,7 @@ var ArduinoLed = CircuitFigure.extend({
      this._super( $.extend({stroke:0, bgColor:null, width:30,height:32},attr), setter, getter);
      var port;
      // Port
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator(-3.3333333333333335, 51.5625));
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator(-2.3333333333327273, 50));
      port.setConnectionDirection(3);
      port.setBackgroundColor("#1C9BAB");
      port.setName("Port");
@@ -45,22 +45,22 @@ var ArduinoLed = CircuitFigure.extend({
        shape.data("name","circle");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M5.5 5.5L15.5,16.5L24.5,27.5');
+       shape = this.canvas.paper.path('M5.3521000000100685 4.786000000009153L25.33820000000196,27.5058999999992');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M5.5 5.5L15.5,16.5L24.5,27.5');
+       shape = this.canvas.paper.path('M5.3521000000100685 4.786000000009153L25.33820000000196,27.5058999999992');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M25.5 5.5L5.5,27.5');
+       shape = this.canvas.paper.path('M25.94430000000102 5.062700000001314L5.283199999999852,27.963700000000244');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M25.5 5.5L5.5,27.5');
+       shape = this.canvas.paper.path('M25.94430000000102 5.062700000001314L5.283199999999852,27.963700000000244');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        

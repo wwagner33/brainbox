@@ -3,10 +3,9 @@ import FigureConfigDialog from "./dialog/FigureConfigDialog"
 
 export default draw2d.policy.canvas.BoundingboxSelectionPolicy.extend({
 
-
   init: function () {
     this._super()
-    this.mouseMoveProxy = $.proxy(this._onMouseMoveCallback, this)
+    this.mouseMoveProxy = this._onMouseMoveCallback.bind(this)
     this.configIcon = null
   },
 
@@ -82,42 +81,38 @@ export default draw2d.policy.canvas.BoundingboxSelectionPolicy.extend({
     }
 
     let hit = null
-    let _this = this
 
-    emitter.getFigures().each(function (index, figure) {
+    emitter.getFigures().each( (index, figure) =>{
       if (figure.hitTest(event.x, event.y, 30)) {
         hit = figure
         return false
       }
     })
 
-    if (hit !== null && hit.getParameterSettings().length > 0) {
+    if (hit !== null && hit.getParameterSettings && hit.getParameterSettings().length > 0) {
       let pos = hit.getBoundingBox().getTopLeft()
       pos = emitter.fromCanvasToDocumentCoordinate(pos.x, pos.y)
       pos.y -= 30
 
-      if (_this.configIcon === null) {
-        _this.configIcon = $("<div class='ion-gear-a' id='configMenuIcon'></div>")
-        $("body").append(_this.configIcon)
-        //  FigureConfigDialog.hide();
-        _this.configIcon.on("click", function () {
+      if (this.configIcon === null) {
+        this.configIcon = $("<div class='ion-gear-a' id='configMenuIcon'></div>")
+        $("body").append(this.configIcon)
+        this.configIcon.on("click", function () {
           FigureConfigDialog.show(hit, pos)
-          _this.configFigure = hit
-          if (_this.configIcon !== null) {
-            _this.configIcon.remove()
-            _this.configIcon = null
+          this.configFigure = hit
+          if (this.configIcon !== null) {
+            this.configIcon.remove()
+            this.configIcon = null
           }
         })
       }
-      _this.configIcon.css({top: pos.y, left: pos.x, position: 'absolute'})
+      this.configIcon.css({top: pos.y, left: pos.x, position: 'absolute'})
     }
     else {
-      if (_this.configIcon !== null) {
-        let x = _this.configIcon
-        _this.configIcon = null
-        x.fadeOut(500, function () {
-          x.remove()
-        })
+      if (this.configIcon !== null) {
+        let x = this.configIcon
+        this.configIcon = null
+        x.fadeOut(500, () => x.remove())
       }
     }
   }

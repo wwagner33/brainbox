@@ -60,6 +60,7 @@ class Application {
     $("#appHelp").on("click", () => {
       $("#leftTabStrip .gitbook").click()
     })
+
     $("#appAbout").on("click", () => {
       $("#leftTabStrip .about").click()
     })

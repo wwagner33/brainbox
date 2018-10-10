@@ -23,11 +23,10 @@ export default class Palette
 
             data.forEach(function (element){
                 element.basename = element.name.split("_").pop();
-                element.filePath = element.filePath;
             });
 
-            var tmpl = Hogan.compile($("#shapeTemplate").html());
-            var html = tmpl.render({
+            let tmpl = Hogan.compile($("#shapeTemplate").html());
+            let html = tmpl.render({
                 shapesUrl :conf.shapes.url,
                 shapes: data
             });
@@ -39,9 +38,9 @@ export default class Palette
                 if(event.keyCode===27){
                     $('#filter').val("");
                 }
-                var val = this.value.toLowerCase();
+                let val = this.value.toLowerCase();
                 $grid.shuffle('shuffle', function ($el, shuffle) {
-                    var text = $.trim($el.data("name")).toLowerCase();
+                    let text = $.trim($el.data("name")).toLowerCase();
                     if(text==="_request_")
                         return true;
                     return text.indexOf(val) !== -1;
@@ -53,12 +52,10 @@ export default class Palette
             //
             $(".draw2d_droppable").draggable({
                 appendTo:"body",
-              //  stack:"body",
-              //  zIndex: 27000,
                 helper:"clone",
                 drag: function(event, ui){
                     event = app.view._getEvent(event);
-                    var pos = app.view.fromDocumentToCanvasCoordinate(event.clientX, event.clientY);
+                    let pos = app.view.fromDocumentToCanvasCoordinate(event.clientX, event.clientY);
                     app.view.onDrag(ui.draggable, pos.getX(), pos.getY(), event.shiftKey, event.ctrlKey);
                 },
                 stop: function(e, ui){
@@ -78,7 +75,7 @@ export default class Palette
 
             // add the "+" to the palette
             //
-            var requestUrl =conf.issues.url+'?title=Request for shape&body='+encodeURIComponent("Please add the description of the shape you request.\nWe try to implement it as soon as possible...");
+            let requestUrl =conf.issues.url+'?title=Request for shape&body='+encodeURIComponent("Please add the description of the shape you request.\nWe try to implement it as soon as possible...");
             $("#paletteElements").append(
              '  <div data-name="_request_" class="mix col-md-6 pallette_item">'+
              '  <a href="'+requestUrl+'" target="_blank">'+
@@ -86,7 +83,7 @@ export default class Palette
              '       <div class="icon ion-ios-plus-outline"></div>'+
              '       <div >Request a Shape</div>'+
              '   </div>'+
-             '   </a>  '+
+             '   </a>'+
              '  </div>');
 
         //    $("#paletteElements").append("<div>++</div>");

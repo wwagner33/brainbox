@@ -234,6 +234,7 @@ var Application = function () {
     $("#appHelp").on("click", function () {
       $("#leftTabStrip .gitbook").click();
     });
+
     $("#appAbout").on("click", function () {
       $("#leftTabStrip .about").click();
     });
@@ -722,90 +723,90 @@ module.exports = exports["default"];
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 exports.default = draw2d.policy.canvas.DropInterceptorPolicy.extend({
 
-    NAME: "draw2d.policy.canvas.DropInterceptorPolicy",
+  NAME: "draw2d.policy.canvas.DropInterceptorPolicy",
 
-    /**
-     * @constructor
-     *
-     */
-    init: function init(attr, setter, getter) {
-        this._super(attr, setter, getter);
-    },
+  /**
+   * @constructor
+   *
+   */
+  init: function init(attr, setter, getter) {
+    this._super(attr, setter, getter);
+  },
 
-    /**
-     * @method
-     * Called if the user want connect a port with any kind draw2d.Figure.<br>
-     * Return a non <b>null</b> value if the interceptor accept the connect event.<br>
-     * <br>
-     * It is possible to delegate the drop event to another figure if the policy
-     * returns another figure. This is usefull if a figure want to accept a port
-     * drop event and delegates this drop event to another port.<br>
-     *
-     *
-     * @param {draw2d.Figure} connectInquirer the figure who wants connect
-     * @param {draw2d.Figure} connectIntent the potential connect target
-     *
-     * @return {draw2d.Figure} the calculated connect intent or <b>null</b> if the interceptor uses the veto right
-     */
-    delegateTarget: function delegateTarget(connectInquirer, connectIntent) {
-        // we allow that a figure with a special class is droppable to a connection
-        //
-        if (connectInquirer instanceof draw2d.shape.node.Node && connectIntent instanceof draw2d.Connection) {
-            if (connectInquirer.getInputPorts().getSize() > 0 && connectInquirer.getOutputPorts().getSize() > 0) {
-                return connectIntent;
-            }
-        }
-
-        // a composite accept any kind of figures exceptional ports
-        //
-        if (!(connectInquirer instanceof draw2d.Port) && connectIntent instanceof draw2d.shape.composite.StrongComposite) {
-            return connectIntent;
-        }
-
-        // Ports accepts only Ports as DropTarget
-        //
-        if (!(connectIntent instanceof draw2d.Port) || !(connectInquirer instanceof draw2d.Port)) {
-            return null;
-        }
-
-        // consider the max possible connections for this port
-        //
-        if (connectIntent.getConnections().getSize() >= connectIntent.getMaxFanOut()) {
-            return null;
-        }
-
-        // It is not allowed to connect two output ports
-        if (connectInquirer instanceof draw2d.OutputPort && connectIntent instanceof draw2d.OutputPort) {
-            return null;
-        }
-
-        // It is not allowed to connect two input ports
-        if (connectInquirer instanceof draw2d.InputPort && connectIntent instanceof draw2d.InputPort) {
-            return null;
-        }
-
-        // It is not possible to create a loop back connection at the moment.
-        // Reason: no connection router implemented for this case
-        if (connectInquirer instanceof draw2d.Port && connectIntent instanceof draw2d.Port) {}
-        //    if(connectInquirer === connectIntent){
-        //       return null;
-        // }
-
-
-        // redirect the dragEnter handling to the hybrid port
-        //
-        if (connectInquirer instanceof draw2d.Port && connectIntent instanceof draw2d.shape.node.Hub) {
-            return connectIntent.getHybridPort(0);
-        }
-
-        // return the connectTarget determined by the framework or delegate it to another
-        // figure.
+  /**
+   * @method
+   * Called if the user want connect a port with any kind draw2d.Figure.<br>
+   * Return a non <b>null</b> value if the interceptor accept the connect event.<br>
+   * <br>
+   * It is possible to delegate the drop event to another figure if the policy
+   * returns another figure. This is usefull if a figure want to accept a port
+   * drop event and delegates this drop event to another port.<br>
+   *
+   *
+   * @param {draw2d.Figure} connectInquirer the figure who wants connect
+   * @param {draw2d.Figure} connectIntent the potential connect target
+   *
+   * @return {draw2d.Figure} the calculated connect intent or <b>null</b> if the interceptor uses the veto right
+   */
+  delegateTarget: function delegateTarget(connectInquirer, connectIntent) {
+    // we allow that a figure with a special class is droppable to a connection
+    //
+    if (connectInquirer instanceof draw2d.shape.node.Node && connectIntent instanceof draw2d.Connection) {
+      if (connectInquirer.getInputPorts().getSize() > 0 && connectInquirer.getOutputPorts().getSize() > 0) {
         return connectIntent;
+      }
     }
+
+    // a composite accept any kind of figures exceptional ports
+    //
+    if (!(connectInquirer instanceof draw2d.Port) && connectIntent instanceof draw2d.shape.composite.StrongComposite) {
+      return connectIntent;
+    }
+
+    // Ports accepts only Ports as DropTarget
+    //
+    if (!(connectIntent instanceof draw2d.Port) || !(connectInquirer instanceof draw2d.Port)) {
+      return null;
+    }
+
+    // consider the max possible connections for this port
+    //
+    if (connectIntent.getConnections().getSize() >= connectIntent.getMaxFanOut()) {
+      return null;
+    }
+
+    // It is not allowed to connect two output ports
+    if (connectInquirer instanceof draw2d.OutputPort && connectIntent instanceof draw2d.OutputPort) {
+      return null;
+    }
+
+    // It is not allowed to connect two input ports
+    if (connectInquirer instanceof draw2d.InputPort && connectIntent instanceof draw2d.InputPort) {
+      return null;
+    }
+
+    // It is not possible to create a loop back connection at the moment.
+    // Reason: no connection router implemented for this case
+    if (connectInquirer instanceof draw2d.Port && connectIntent instanceof draw2d.Port) {}
+    //    if(connectInquirer === connectIntent){
+    //       return null;
+    // }
+
+
+    // redirect the dragEnter handling to the hybrid port
+    //
+    if (connectInquirer instanceof draw2d.Port && connectIntent instanceof draw2d.shape.node.Hub) {
+      return connectIntent.getHybridPort(0);
+    }
+
+    // return the connectTarget determined by the framework or delegate it to another
+    // figure.
+    return connectIntent;
+  }
 
 });
 module.exports = exports["default"];
@@ -840,7 +841,7 @@ exports.default = draw2d.policy.canvas.BoundingboxSelectionPolicy.extend({
 
   init: function init() {
     this._super();
-    this.mouseMoveProxy = $.proxy(this._onMouseMoveCallback, this);
+    this.mouseMoveProxy = this._onMouseMoveCallback.bind(this);
     this.configIcon = null;
   },
 
@@ -915,7 +916,6 @@ exports.default = draw2d.policy.canvas.BoundingboxSelectionPolicy.extend({
     }
 
     var hit = null;
-    var _this = this;
 
     emitter.getFigures().each(function (index, figure) {
       if (figure.hitTest(event.x, event.y, 30)) {
@@ -924,31 +924,30 @@ exports.default = draw2d.policy.canvas.BoundingboxSelectionPolicy.extend({
       }
     });
 
-    if (hit !== null && hit.getParameterSettings().length > 0) {
+    if (hit !== null && hit.getParameterSettings && hit.getParameterSettings().length > 0) {
       var pos = hit.getBoundingBox().getTopLeft();
       pos = emitter.fromCanvasToDocumentCoordinate(pos.x, pos.y);
       pos.y -= 30;
 
-      if (_this.configIcon === null) {
-        _this.configIcon = $("<div class='ion-gear-a' id='configMenuIcon'></div>");
-        $("body").append(_this.configIcon);
-        //  FigureConfigDialog.hide();
-        _this.configIcon.on("click", function () {
+      if (this.configIcon === null) {
+        this.configIcon = $("<div class='ion-gear-a' id='configMenuIcon'></div>");
+        $("body").append(this.configIcon);
+        this.configIcon.on("click", function () {
           _FigureConfigDialog2.default.show(hit, pos);
-          _this.configFigure = hit;
-          if (_this.configIcon !== null) {
-            _this.configIcon.remove();
-            _this.configIcon = null;
+          this.configFigure = hit;
+          if (this.configIcon !== null) {
+            this.configIcon.remove();
+            this.configIcon = null;
           }
         });
       }
-      _this.configIcon.css({ top: pos.y, left: pos.x, position: 'absolute' });
+      this.configIcon.css({ top: pos.y, left: pos.x, position: 'absolute' });
     } else {
-      if (_this.configIcon !== null) {
-        var x = _this.configIcon;
-        _this.configIcon = null;
+      if (this.configIcon !== null) {
+        var x = this.configIcon;
+        this.configIcon = null;
         x.fadeOut(500, function () {
-          x.remove();
+          return x.remove();
         });
       }
     }
@@ -1223,7 +1222,6 @@ function Palette() {
 
         data.forEach(function (element) {
             element.basename = element.name.split("_").pop();
-            element.filePath = element.filePath;
         });
 
         var tmpl = _hogan2.default.compile($("#shapeTemplate").html());
@@ -1251,8 +1249,6 @@ function Palette() {
         //
         $(".draw2d_droppable").draggable({
             appendTo: "body",
-            //  stack:"body",
-            //  zIndex: 27000,
             helper: "clone",
             drag: function drag(event, ui) {
                 event = app.view._getEvent(event);
@@ -1274,7 +1270,7 @@ function Palette() {
         // add the "+" to the palette
         //
         var requestUrl = _Configuration2.default.issues.url + '?title=Request for shape&body=' + encodeURIComponent("Please add the description of the shape you request.\nWe try to implement it as soon as possible...");
-        $("#paletteElements").append('  <div data-name="_request_" class="mix col-md-6 pallette_item">' + '  <a href="' + requestUrl + '" target="_blank">' + '    <div class="request">' + '       <div class="icon ion-ios-plus-outline"></div>' + '       <div >Request a Shape</div>' + '   </div>' + '   </a>  ' + '  </div>');
+        $("#paletteElements").append('  <div data-name="_request_" class="mix col-md-6 pallette_item">' + '  <a href="' + requestUrl + '" target="_blank">' + '    <div class="request">' + '       <div class="icon ion-ios-plus-outline"></div>' + '       <div >Request a Shape</div>' + '   </div>' + '   </a>' + '  </div>');
 
         //    $("#paletteElements").append("<div>++</div>");
     });
@@ -1866,32 +1862,32 @@ exports.default = draw2d.Canvas.extend({
     });
 
     var setZoom = function setZoom(newZoom) {
-      var bb = _this.getBoundingBox().getCenter();
+      var bb = _this2.getBoundingBox().getCenter();
       var c = $("#draw2dCanvasWrapper");
-      _this.setZoom(newZoom);
-      _this.scrollTo(bb.y / newZoom - c.height() / 2, bb.x / newZoom - c.width() / 2);
+      _this2.setZoom(newZoom);
+      _this2.scrollTo(bb.y / newZoom - c.height() / 2, bb.x / newZoom - c.width() / 2);
     };
 
     //  ZoomIn Button and the callbacks
     //
     $("#canvas_zoom_in").on("click", function () {
-      setZoom(_this.getZoom() * 1.2);
+      setZoom(_this2.getZoom() * 1.2);
     });
 
     // OneToOne Button
     //
     $("#canvas_zoom_normal").on("click", function () {
-      setZoom(1.0);
+      return setZoom(1.0);
     });
 
     //ZoomOut Button and the callback
     //
     $("#canvas_zoom_out").on("click", function () {
-      setZoom(_this.getZoom() * 0.8);
+      return setZoom(_this.getZoom() * 0.8);
     });
 
     $("#statusWebUSB .help-link").on("click", function () {
-      new _WebUSBHelpDialog2.default().show();
+      return new _WebUSBHelpDialog2.default().show();
     });
 
     _hardware2.default.arduino.on("disconnect", this.hardwareChanged.bind(this));
@@ -2150,8 +2146,6 @@ exports.default = draw2d.Canvas.extend({
     $("#paletteElementsOverlay").fadeIn("fast");
     $("#paletteElementsOverlay").height($("#paletteElements").height());
     this.slider.slider("setValue", 100);
-
-    //  this.probeWindow.show()
   },
 
   simulationStop: function simulationStop() {
@@ -2169,7 +2163,6 @@ exports.default = draw2d.Canvas.extend({
       $(".editBase").fadeIn("slow");
     });
     $("#paletteElementsOverlay").fadeOut("fast");
-    //    this.probeWindow.hide()
   },
 
   _calculate: function _calculate() {
@@ -2243,7 +2236,7 @@ exports.default = draw2d.Canvas.extend({
 
     // Det the status of top button for the pulldown menu.
     //
-    if (arduinoRequired === false && raspiRequired == false) {
+    if (arduinoRequired === false && raspiRequired === false) {
       $("#editConnections").attr("src", _status_index2.default);
     } else {
       var error = raspiRequired === true && raspiConnected === false || arduinoRequired === true && arduinoConnected === false;
@@ -2287,9 +2280,7 @@ exports.default = draw2d.Canvas.extend({
     var _this3 = this;
 
     new draw2d.io.json.Writer().marshal(this, function (json) {
-      //this.clear();
       draw2d.Canvas.prototype.clear.call(_this3);
-
       new draw2d.io.json.Reader().unmarshal(_this3, json);
     });
   },

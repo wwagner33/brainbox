@@ -72,12 +72,12 @@ var draw2d_circuit_flipflop_TFlipFlop = CircuitFigure.extend({
        shape.data("name","Rectangle");
        
        // Line_shadow
-       shape = this.canvas.paper.path('M26.5 35.5L33.5,35.5');
+       shape = this.canvas.paper.path('M26.347999999999956 35.99839999999767L33.874799999999595,35.99839999999767');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line_shadow");
        
        // Line
-       shape = this.canvas.paper.path('M26.5 35.5L33.5,35.5');
+       shape = this.canvas.paper.path('M26.347999999999956 35.99839999999767L33.874799999999595,35.99839999999767');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
