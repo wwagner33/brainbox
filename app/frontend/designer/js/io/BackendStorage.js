@@ -16,7 +16,7 @@ export default class BackendStorage{
   }
 
   get currentFile(){
-    return this.basename(this.fileName)
+    return this.fileName
   }
 
   set currentFile(name){

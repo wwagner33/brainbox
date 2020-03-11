@@ -287,7 +287,7 @@
 {{#shapes}}
     <div  data-name='{{name}}'  data-file='{{filePath}}' class="mix col-md-6 pallette_item">
       <div class="glow">
-          <img data-shape="{{name}}" class="draw2d_droppable" src="{{shapesUrl}}{{name}}.png"/>
+          <img data-shape="{{name}}" data-file='{{filePath}}' class="draw2d_droppable" src="{{shapesUrl}}{{image}}"/>
           <div>{{basename}}</div>
        </div>
     </div>

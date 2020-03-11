@@ -2065,7 +2065,8 @@ var FileOpen = function () {
     key: "show",
     value: function show(storage, view) {
       $('#fileOpenDialog').modal('show');
-      this.fetchPathContent(storage, storage.currentDir, view);
+      this.currentDir = storage.currentDir;
+      this.fetchPathContent(storage, this.currentDir, view);
     }
   }, {
     key: "fetchPathContent",
@@ -2074,16 +2075,16 @@ var FileOpen = function () {
 
       storage.getFiles(newPath).then(function (files) {
         files = files.filter(function (file) {
-          return file.name.endsWith(_Configuration2.default.fileSuffix);
+          return file.name.endsWith(_Configuration2.default.fileSuffix) || file.type === 'dir';
         });
-        var compiled = _hogan2.default.compile("\n               {{^rootDir}}     \n               <a href=\"#\" class=\"list-group-item githubPath\" data-type=\"dir\" data-path=\"{{parentPath}}\" >\n                   <span class=\"glyphicon glyphicon-menu-left\"></span>\n                   ..\n               </a>\n               {{/rootDir}}\n               {{#files}}\n                 <a href=\"#\" data-draw2d=\"{{draw2d}}\" class=\"list-group-item githubPath text-nowrap\" data-type=\"{{type}}\" data-path=\"{{currentDir}}{{name}}\" data-id=\"{{id}}\">\n                    <span class=\"glyphicon {{icon}}\"></span>\n                    {{{name}}}\n                 </a>\n               {{/files}}\n          ");
+        var compiled = _hogan2.default.compile("\n           {{^rootDir}}     \n           <a href=\"#\" class=\"list-group-item githubPath\" data-type=\"dir\" data-path=\"{{parentPath}}\" >\n               <span class=\"glyphicon glyphicon-menu-left\"></span>\n               ..\n           </a>\n           {{/rootDir}}\n           {{#files}}\n             <a href=\"#\" data-draw2d=\"{{draw2d}}\" class=\"list-group-item githubPath text-nowrap\" data-type=\"{{type}}\" data-path=\"{{currentDir}}{{name}}\" data-id=\"{{id}}\">\n                <span class=\"glyphicon {{icon}}\"></span>\n                {{{name}}}\n             </a>\n           {{/files}}\n          ");
 
         var parentPath = storage.dirname(newPath);
         var output = compiled.render({
           parentPath: parentPath,
-          currentDir: storage.currentDir,
+          currentDir: _this.currentDir,
           files: files,
-          rootDir: newPath === null,
+          rootDir: newPath === null || newPath.length === 0,
           draw2d: function draw2d() {
             return this.name.endsWith(_Configuration2.default.fileSuffix);
           },
@@ -2098,10 +2099,16 @@ var FileOpen = function () {
         $("#fileOpenDialog .list-group").html($(output));
         $("#fileOpenDialog .list-group").scrollTop(0);
 
+        // Load the content of an directory
+        //
         $(".githubPath[data-type='dir']").on("click", function (event) {
-          _this.fetchPathContent(storage, $(event.currentTarget).data("path"), view);
+          var path = $(event.currentTarget).data("path");
+          _this.currentDir = path;
+          _this.fetchPathContent(storage, path, view);
         });
 
+        // Load the user selected File
+        //
         $('.githubPath*[data-draw2d="true"][data-type="file"]').on("click", function (event) {
           var path = $(event.currentTarget).data("path");
           storage.loadFile(path).then(function (content) {
@@ -5715,7 +5722,7 @@ var BackendStorage = function () {
   }, {
     key: 'currentFile',
     get: function get() {
-      return this.basename(this.fileName);
+      return this.fileName;
     },
     set: function set(name) {
       this.fileName = name;

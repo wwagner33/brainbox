@@ -58,8 +58,7 @@ $(window).load(function () {
   //
   for(var k in global) window[k]=global[k];
 
-  socket = io(
-    {
+  socket = io({
       path: '/socket.io'
     })
 

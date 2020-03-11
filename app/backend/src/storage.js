@@ -4,7 +4,6 @@ const path = require('path')
 
 const brainDirHOME = process.env.HOME + "/.brainbox/"
 const brainDirUserHOME = brainDirHOME + "brain/"
-const shapeDirUserHOME = brainDirHOME + "shapes/"
 
 
 /**
@@ -20,7 +19,6 @@ try {
 
   ensure(brainDirHOME)
   ensure(brainDirUserHOME)
-  ensure(shapeDirUserHOME)
 }
 catch (e) {
   console.log(e)
@@ -29,9 +27,9 @@ catch (e) {
 
 module.exports = {
   brainDirUserHOME: brainDirUserHOME,
-  shapeDirUserHOME: shapeDirUserHOME,
 
   listFiles: function (baseDir, subDir, res) {
+    console.log(baseDir, subDir)
     glob(baseDir + subDir + "*", {}, function (er, files) {
       res.setHeader('Content-Type', 'application/json')
       res.send(JSON.stringify({

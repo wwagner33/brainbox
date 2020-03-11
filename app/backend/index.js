@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 const arduino = require("./src/comm/arduino");
 const storage= require("./src/storage.js");
 const shapeDirApp = path.normalize(__dirname + '/../shapes/')
-const shape2CodeDir = path.normalize(__dirname + '/../shape2code/')
+const shape2CodeDir = path.normalize(__dirname + '/../converter/')
 
 
 // Determine the IP:PORT to use for the http server
@@ -98,7 +98,7 @@ function runServer() {
       //
       let binPath = phantomjs.path
       let childArgs = [
-        path.normalize(__dirname+'/../shape2code/converter.js'),
+        path.normalize(__dirname+'/../converter/index.js'),
         path.normalize(shapeDirApp + req.body.filePath),
         shape2CodeDir,
         shapeDirApp
@@ -114,18 +114,6 @@ function runServer() {
       console.log(binPath, ...childArgs)
       childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
         if(err) throw err
-        let pattern = (shapeDirApp + req.body.filePath).replace(".shape",".*")
-        glob(pattern, {}, function (er, files) {
-          files.forEach( file =>{
-            // copy the file from the installation directory to the USERHOME directory.
-            // Files didn't get lost on upgrade or deinstall/reinstall process
-            //
-            fs.copyFile(file ,file.replace(shapeDirApp, storage.shapeDirUserHOME), (err) => {
-              if (err) throw err;
-            })
-          })
-        })
-
         io.sockets.emit("shape:generated", {
           filePath: req.body.filePath,
           imagePath: req.body.filePath.replace(".shape",".png"),

@@ -262,9 +262,10 @@ export default draw2d.Canvas.extend({
         let x = event.x
         let y = event.y
 
-        let pathToMD = conf.shapes.url + figure.NAME + ".md"
-        let pathToCustom = conf.shapes.url + figure.NAME + ".custom"
-        let pathToDesign = conf.designer.url + "?timestamp=" + new Date().getTime() + "&file=" + figure.NAME + ".shape"
+        let baseName = figure.attr("userData.file").replace(/\.shape$/, "")
+        let pathToMD = conf.shapes.url + baseName + ".md"
+        let pathToCustom = conf.shapes.url + baseName + ".custom"
+        let pathToDesign = conf.designer.url + "?timestamp=" + new Date().getTime() + "&file=" + baseName + ".shape"
         let items = {
           "label": {name: "Attach Label", icon: "x ion-ios-pricetag-outline"},
           "delete": {name: "Delete", icon: "x ion-ios-close-outline"},
@@ -404,7 +405,11 @@ export default draw2d.Canvas.extend({
    **/
   onDrop: function (droppedDomNode, x, y, shiftKey, ctrlKey) {
     let type = $(droppedDomNode).data("shape")
+    let file = $(droppedDomNode).data("file")
+    console.log(file)
     let figure = eval("new " + type + "();") // jshint ignore:line
+    figure.attr("userData.file",file)
+
     // create a command for the undo/redo support
     let command = new draw2d.command.CommandAdd(this, figure, x, y)
     this.getCommandStack().execute(command)
