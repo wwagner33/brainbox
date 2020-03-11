@@ -7519,7 +7519,8 @@ _packages2.default.Canvas = Class.extend(
    * @since 5.8.0
    **/
   scrollTo: function scrollTo(top, left) {
-    this.getScrollArea().scrollTop(top).scrollLeft(left);
+    this.getScrollArea().scrollTop(top);
+    this.getScrollArea().scrollLeft(left);
 
     return this;
   },
@@ -25720,9 +25721,6 @@ _packages2.default.layout.locator.Locator = Class.extend(
 
     this.setterWhitelist = (0, _extend2.default)({}, setter);
     this.getterWhitelist = (0, _extend2.default)({}, getter);
-
-    // propagate the attr to the new instance
-    this.attr(attr);
   },
 
   /**

@@ -7,7 +7,7 @@ export default draw2d.Canvas.extend({
     this.app = app
     this.grid = new draw2d.policy.canvas.ShowGridEditPolicy(20)
 
-    this.setScrollArea("#" + id)
+    this.setScrollArea("#draw2dCanvasWrapper")
 
     this.installEditPolicy(this.grid)
     this.installEditPolicy(new draw2d.policy.canvas.FadeoutDecorationPolicy())
@@ -63,15 +63,17 @@ export default draw2d.Canvas.extend({
       return false
     })
 
-    let zoom = new draw2d.policy.canvas.WheelZoomPolicy()
-    this.installEditPolicy(zoom)
+    // this.installEditPolicy(new draw2d.policy.canvas.WheelZoomPolicy())
 
     let setZoom = (newZoom) => {
+      console.log("zooom...")
       let bb = this.getBoundingBox().getCenter()
-      let c = $("#canvas")
+      let c = $("#draw2dCanvasWrapper")
       this.setZoom(newZoom)
-      c.scrollTop((bb.y / newZoom - c.height() / 2))
-      c.scrollLeft((bb.x / newZoom - c.width() / 2))
+      this.scrollTo((bb.y / newZoom - c.height() / 2), (bb.x / newZoom - c.width() / 2))
+
+      // c.scrollTop((bb.y / newZoom - c.height() / 2))
+      // c.scrollLeft((bb.x / newZoom - c.width() / 2))
     }
 
     // Inject the ZoomIn Button and the callbacks
@@ -219,7 +221,7 @@ export default draw2d.Canvas.extend({
 
   centerView: function(){
     let bb = this.getBoundingBox().getCenter()
-    let c = $("#canvas")
+    let c = $("#draw2dCanvasWrapper")
     c.scrollTop((bb.y / this.getZoom() - c.height() / 2))
     c.scrollLeft((bb.x /this.getZoom() - c.width() / 2))
   },
@@ -241,7 +243,37 @@ export default draw2d.Canvas.extend({
       f.translate(dx, dy)
     })
     this.centerView()
-  }
+  },
 
+
+  /**
+   * @method
+   * Transforms a document coordinate to canvas coordinate.
+   *
+   * @param {Number} x the x coordinate relative to the window
+   * @param {Number} y the y coordinate relative to the window
+   *
+   * @returns {draw2d.geo.Point} The coordinate in relation to the canvas [0,0] position
+   */
+  fromDocumentToCanvasCoordinate: function (x, y) {
+    return new draw2d.geo.Point(
+      (x - this.getAbsoluteX()) * this.zoomFactor,
+      (y - this.getAbsoluteY()) * this.zoomFactor)
+  },
+
+  /**
+   * @method
+   * Transforms a canvas coordinate to document coordinate.
+   *
+   * @param {Number} x the x coordinate in the canvas
+   * @param {Number} y the y coordinate in the canvas
+   *
+   * @returns {draw2d.geo.Point} the coordinate in relation to the document [0,0] position
+   */
+  fromCanvasToDocumentCoordinate: function (x, y) {
+    return new draw2d.geo.Point(
+      ((x * (1 / this.zoomFactor)) + this.getAbsoluteX()),
+      ((y * (1 / this.zoomFactor)) + this.getAbsoluteY()))
+  }
 })
 

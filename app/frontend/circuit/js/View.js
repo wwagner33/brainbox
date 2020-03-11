@@ -247,7 +247,7 @@ export default draw2d.Canvas.extend({
     })
 
     this.on("contextmenu", function (emitter, event) {
-      let figure = _this.getBestFigure(event.x, event.y)
+      var figure = _this.getBestFigure(event.x, event.y)
 
       // a connectionprovides its own context menu
       //

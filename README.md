@@ -71,7 +71,7 @@ YARN runs on Node.js, so if you don't have npm installed already, go ahead and i
 ### Install dependencies with npm
 
 ```
-npm install
+yarn install
 ```
 
 ### Run the backend server

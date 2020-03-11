@@ -15,31 +15,31 @@ var draw2d_circuit_counter_BCDCounter = CircuitFigure.extend({
      this._super( $.extend({stroke:0, bgColor:null, width:80,height:108},attr), setter, getter);
      var port;
      // input_t
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator(-1.2083358764652985, 18.055555555555557));
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.2083358764652985, y: 18.055555555555557 }));
      port.setConnectionDirection(3);
      port.setBackgroundColor("#1C9BAB");
      port.setName("input_t");
      port.setMaxFanOut(1);
      // out_a
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator(99.6000000000015, 13.88888888888889));
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 99.6000000000015, y: 13.88888888888889 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#1C9BAB");
      port.setName("out_a");
      port.setMaxFanOut(20);
      // out_b
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator(100.8500000000015, 37.03703703703704));
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 100.8500000000015, y: 37.03703703703704 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#1C9BAB");
      port.setName("out_b");
      port.setMaxFanOut(20);
      // out_c
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator(100.8500000000015, 60.18518518518518));
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 100.8500000000015, y: 60.18518518518518 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#1C9BAB");
      port.setName("out_c");
      port.setMaxFanOut(20);
      // out_d
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator(102.1000000000015, 83.33333333333333));
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 102.1000000000015, y: 83.33333333333333 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#1C9BAB");
      port.setName("out_d");
@@ -65,7 +65,7 @@ var draw2d_circuit_counter_BCDCounter = CircuitFigure.extend({
        
        // Rectangle
        shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,105Q80,108 77, 108L3,108Q0,108 0, 105L0,3');
-       shape.attr({"stroke":"#303030","stroke-width":1,"fill":"#FFFFFF","dasharray":null,"opacity":1});
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Rectangle");
        
        // Label
@@ -80,7 +80,7 @@ var draw2d_circuit_counter_BCDCounter = CircuitFigure.extend({
        
        // Rectangle
        shape = this.canvas.paper.path('M0 11L18 19.74285714285361L0 28Z');
-       shape.attr({"stroke":"#303030","stroke-width":1,"fill":"#FFFFFF","dasharray":null,"opacity":1});
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Rectangle");
        
        // Label

@@ -7519,7 +7519,8 @@ _packages2.default.Canvas = Class.extend(
    * @since 5.8.0
    **/
   scrollTo: function scrollTo(top, left) {
-    this.getScrollArea().scrollTop(top).scrollLeft(left);
+    this.getScrollArea().scrollTop(top);
+    this.getScrollArea().scrollLeft(left);
 
     return this;
   },
@@ -25720,9 +25721,6 @@ _packages2.default.layout.locator.Locator = Class.extend(
 
     this.setterWhitelist = (0, _extend2.default)({}, setter);
     this.getterWhitelist = (0, _extend2.default)({}, getter);
-
-    // propagate the attr to the new instance
-    this.attr(attr);
   },
 
   /**
@@ -26784,26 +26782,17 @@ _packages2.default.layout.locator.XYRelPortLocator = _packages2.default.layout.l
    * @param {Number} yPercentage the y coordinate in percent of the port relative to the top of the parent
    */
   init: function init(attr, setter, getter) {
-    // legacy code handling
-    // new draw2d.layout.locator.XYRelPortLocator(10,30)
-    if (typeof attr === "number" && typeof setter === "number") {
-      this.x = attr;
-      this.y = setter;
-      this._super();
-    }
-    // new constructor
-    // new draw2d.layout.locator.XYRelPortLocator({x:10, y:30}})
-    else {
-        this.x = 0;
-        this.y = 0;
-        this._super(attr, (0, _extend2.default)({
-          x: this.setX,
-          y: this.setY
-        }, setter), (0, _extend2.default)({
-          x: this.getX,
-          y: this.getY
-        }, getter));
-      }
+
+    this.x = 0;
+    this.y = 0;
+
+    this._super(attr, (0, _extend2.default)({
+      x: this.setX,
+      y: this.setY
+    }, setter), (0, _extend2.default)({
+      x: this.getX,
+      y: this.getY
+    }, getter));
   },
 
   /**
@@ -30211,7 +30200,7 @@ _packages2.default.policy.canvas.CoronaDecorationPolicy = _packages2.default.pol
     this._super(canvas);
     canvas.getFigures().each(function (i, figure) {
       figure.getPorts().each(function (i, p) {
-        return p.setAlpha(0.0);
+        return p.setVisible(false);
       });
     });
   },
@@ -30228,6 +30217,7 @@ _packages2.default.policy.canvas.CoronaDecorationPolicy = _packages2.default.pol
           p.setAlpha(p.__origAlpha);
           delete p.__origAlpha;
         }
+        p.setVisible(true);
       });
     });
   },
@@ -30277,10 +30267,15 @@ _packages2.default.policy.canvas.CoronaDecorationPolicy = _packages2.default.pol
             var dist = figure.getBoundingBox().getDistance(new _packages2.default.geo.Point(x, y));
             var alpha = 1 - 100 / (_this.diameterToBeVisible - _this.diameterToBeFullVisible) * dist / 100.0;
             p.setAlpha(alpha);
+            p.setVisible(true);
           });
         } else {
           figure.getPorts().each(function (i, p) {
-            p.setAlpha(0.0);
+            if (p.__origAlpha) {
+              p.setAlpha(p.__origAlpha);
+              delete p.__origAlpha;
+            }
+            p.setVisible(false);
           });
         }
       }
@@ -31625,23 +31620,23 @@ _packages2.default.policy.canvas.ShowDotEditPolicy = _packages2.default.policy.c
    * @param {draw2d.util.Color|String} [dotColor] the color for the dots.
    */
   init: function init(dotDistance, dotRadius, dotColor) {
-    var _this = this;
-
     this._super();
 
     this.dotDistance = dotDistance ? dotDistance : this.DOT_DISTANCE;
     this.dotRadius = dotRadius ? dotRadius : this.DOT_RADIUS;
     this.dotColor = new _packages2.default.util.Color(dotColor ? dotColor : this.DOT_COLOR);
-    this.onZoomCallback = function (emitterFigure, zoomData) {
-      _this.setGrid(1 / zoomData.value);
-    };
   },
 
   onInstall: function onInstall(canvas) {
+    var _this = this;
+
     this._super(canvas);
 
     this.oldBg = this.canvas.html.css("background");
     this.setGrid(1 / canvas.getZoom());
+    this.onZoomCallback = function (emitterFigure, zoomData) {
+      _this.setGrid(1 / zoomData.value);
+    };
     canvas.on("zoom", this.onZoomCallback);
   },
 
@@ -31651,10 +31646,6 @@ _packages2.default.policy.canvas.ShowDotEditPolicy = _packages2.default.policy.c
     canvas.off(this.onZoomCallback);
   },
 
-  /**
-   * @private
-   * @param {Number} zoom 
-   */
   setGrid: function setGrid(zoom) {
     var bgColor = "#FFFFFF";
     var dotColor = this.dotColor.rgba();
@@ -31713,23 +31704,37 @@ _packages2.default.policy.canvas.ShowGridEditPolicy = _packages2.default.policy.
 
   GRID_COLOR: "#f0f0f0",
   GRID_WIDTH: 20,
-  GRID_STOKE: 1,
 
   /**
    * Creates a new constraint policy for snap to grid
    *
    * @param {Number} [grid] the grid width of the canvas
    */
-  init: function init(gridDistance, gridStroke, gridColor) {
-    var _this = this;
+  init: function init(grid) {
+    this.color = new _packages2.default.util.Color(this.GRID_COLOR);
+    this.zoom = 1;
+    this.svg = null;
 
-    this.gridWidth = gridDistance || this.GRID_WIDTH;
-    this.gridStroke = gridStroke || this.GRID_STOKE;
-    this.gridColor = new _packages2.default.util.Color(gridColor || this.GRID_COLOR);
     this._super();
-    this.onZoomCallback = function (emitterFigure, zoomData) {
-      _this.setGrid(1 / zoomData.value);
-    };
+
+    if (typeof grid === "number") {
+      this.grid = grid;
+    } else {
+      this.grid = this.GRID_WIDTH;
+    }
+  },
+
+  onInstall: function onInstall(canvas) {
+    this._super(canvas);
+    this.zoom = canvas.getZoom();
+    this.setGrid(this.grid);
+  },
+
+  onUninstall: function onUninstall(canvas) {
+    this._super(canvas);
+    if (this.svg !== null) {
+      this.svg.remove();
+    }
   },
 
   /**
@@ -31740,41 +31745,46 @@ _packages2.default.policy.canvas.ShowGridEditPolicy = _packages2.default.policy.
    * @since 5.0.3
    */
   setGridColor: function setGridColor(color) {
-    this.gridColor = new _packages2.default.util.Color(color);
-    this.setGrid(1 / this.canvas.getZoom());
-  },
-
-  onInstall: function onInstall(canvas) {
-    this._super(canvas);
-
-    this.oldBg = this.canvas.html.css("background");
-    this.setGrid(1 / canvas.getZoom());
-    canvas.on("zoom", this.onZoomCallback);
-  },
-
-  onUninstall: function onUninstall(canvas) {
-    this._super(canvas);
-
-    $(canvas.paper.canvas).css({ "background": this.oldBg });
-    canvas.off(this.onZoomCallback);
+    this.color = new _packages2.default.util.Color(color);
+    this.setGrid(this.grid);
   },
 
   /**
-   * @private
-   * @param {Number} zoom 
+   *
+   * Set a new grid width/height
+   *
+   * @param {Number} grid
+   * @since 5.0.3
    */
-  setGrid: function setGrid(zoom) {
-    var bgColor = "#FFFFFF";
-    var color = this.gridColor.rgba();
+  setGrid: function setGrid(grid) {
+    this.grid = grid;
 
-    var background = " linear-gradient(to right,  " + color + " " + this.gridStroke + "px, transparent " + this.gridStroke + "px),\n      linear-gradient(to bottom, " + color + " " + this.gridStroke + "px, " + bgColor + "  " + this.gridStroke + "px)";
-    var backgroundSize = this.gridWidth * zoom + "px " + this.gridWidth * zoom + "px";
+    if (this.canvas != null) {
+      if (this.svg !== null) {
+        this.svg.remove();
+      }
 
-    $(this.canvas.paper.canvas).css({
-      "background": background,
-      "background-size": backgroundSize
-    });
+      var r = this.canvas.paper;
+      var d = this.grid,
+          i = void 0;
+      var w = r.width;
+      var h = r.height;
+      var props = { stroke: this.color.rgba() };
+      r.setStart();
+      // horizontal
+      for (var _i = d + 0.5; _i < h; _i += d) {
+        r.path([["M", 0, _i], ["L", w, _i]]).attr(props);
+      }
+      // vertical
+      for (var _i2 = d + 0.5; _i2 < w; _i2 += d) {
+        r.path([["M", _i2, 0], ["L", _i2, h]]).attr(props);
+      }
+      this.svg = r.setFinish();
+
+      this.svg.toBack();
+    }
   }
+
 });
 
 /***/ }),

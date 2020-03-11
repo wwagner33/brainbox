@@ -98,10 +98,10 @@ page.open('http://localhost:7400/designer', function(status) {
           },
           success: function () {
             try {
-              var jsCode     = page.evaluate(function() {return  code});
+              var jsCode     = page.evaluate(function()  { return  code});
               var customCode = page.evaluate(function () { return customCode; });
               var markdown   = page.evaluate(function () { return markdown;});
-              var img        = page.evaluate(function () {return img; });
+              var img        = page.evaluate(function () { return img; });
 
               var pngFilePath      = file.replace(".shape", ".png");
               var jsFilePath       = file.replace(".shape", ".js");

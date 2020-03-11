@@ -15,25 +15,25 @@ var draw2d_circuit_alu_HalfAdder = CircuitFigure.extend({
      this._super( $.extend({stroke:0, bgColor:null, width:70,height:65},attr), setter, getter);
      var port;
      // output_s
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator(101.17942857142874, 21.634615384615387));
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 101.17942857142874, y: 21.634615384615387 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
      port.setName("output_s");
      port.setMaxFanOut(20);
      // output_c
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator(102.60800000000017, 82.11430769230692));
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 102.60800000000017, y: 82.11430769230692 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
      port.setName("output_c");
      port.setMaxFanOut(20);
      // input_a
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator(-1.3188571428573985, 20.096153846153847));
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.3188571428573985, y: 20.096153846153847 }));
      port.setConnectionDirection(3);
      port.setBackgroundColor("#37B1DE");
      port.setName("input_a");
      port.setMaxFanOut(20);
      // input_b
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator(-2.747428571428827, 83.46153846153847));
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -2.747428571428827, y: 83.46153846153847 }));
      port.setConnectionDirection(3);
      port.setBackgroundColor("#37B1DE");
      port.setName("input_b");
@@ -59,7 +59,7 @@ var draw2d_circuit_alu_HalfAdder = CircuitFigure.extend({
        
        // Rectangle
        shape = this.canvas.paper.path('M0,5.14010000000053Q0,4.14010000000053 1, 4.14010000000053L69,4.14010000000053Q70,4.14010000000053 70, 5.14010000000053L70,63.14010000000053Q70,64.14010000000053 69, 64.14010000000053L1,64.14010000000053Q0,64.14010000000053 0, 63.14010000000053L0,5.14010000000053');
-       shape.attr({"stroke":"#303030","stroke-width":1,"fill":"#FFFFFF","dasharray":null,"opacity":1});
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Rectangle");
        
        // Label

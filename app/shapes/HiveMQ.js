@@ -15,7 +15,7 @@ var HiveMQ = CircuitFigure.extend({
      this._super( $.extend({stroke:0, bgColor:null, width:97,height:37},attr), setter, getter);
      var port;
      // Port
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator(97.81984329896957, 51.35135135135135));
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 97.81984329896957, y: 51.35135135135135 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#1C9BAB");
      port.setName("Port");
@@ -41,7 +41,7 @@ var HiveMQ = CircuitFigure.extend({
        
        // circle
        shape = this.canvas.paper.path('M97,32Q97,37 92, 37L5,37Q0,37 0, 32L0,5Q0,0 5, 0L92,0Q97,0 97, 5L97,32');
-       shape.attr({"stroke":"#303030","stroke-width":1,"fill":"#919191","dasharray":null,"opacity":1});
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(145,145,145,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","circle");
        
        // Label

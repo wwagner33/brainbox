@@ -111,12 +111,15 @@ function runServer() {
         filePath: req.body.filePath
       });
 
-      console.log(binPath, childArgs[0], childArgs[1],childArgs[2],childArgs[3])
+      console.log(binPath, ...childArgs)
       childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
         if(err) throw err
         let pattern = (shapeDirApp + req.body.filePath).replace(".shape",".*")
         glob(pattern, {}, function (er, files) {
           files.forEach( file =>{
+            // copy the file from the installation directory to the USERHOME directory.
+            // Files didn't get lost on upgrade or deinstall/reinstall process
+            //
             fs.copyFile(file ,file.replace(shapeDirApp, storage.shapeDirUserHOME), (err) => {
               if (err) throw err;
             })

@@ -15,49 +15,49 @@ var draw2d_circuit_switch_HighLowArray = CircuitFigure.extend({
      this._super( $.extend({stroke:0, bgColor:null, width:20,height:160},attr), setter, getter);
      var port;
      // port01
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator(120, 6.24381249999999));
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 120, y: 6.24381249999999 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
      port.setName("port01");
      port.setMaxFanOut(20);
      // port02
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator(120, 19.375));
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 120, y: 19.375 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
      port.setName("port02");
      port.setMaxFanOut(20);
      // port03
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator(120, 31.25));
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 120, y: 31.25 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
      port.setName("port03");
      port.setMaxFanOut(20);
      // port04
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator(120, 43.75));
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 120, y: 43.75 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
      port.setName("port04");
      port.setMaxFanOut(20);
      // port05
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator(120, 56.122437500000046));
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 120, y: 56.122437500000046 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
      port.setName("port05");
      port.setMaxFanOut(20);
      // port06
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator(120, 68.72787499999959));
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 120, y: 68.72787499999959 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
      port.setName("port06");
      port.setMaxFanOut(20);
      // port07
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator(120, 81.1621875000003));
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 120, y: 81.1621875000003 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
      port.setName("port07");
      port.setMaxFanOut(20);
      // port08
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator(120, 93.93256250000036));
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 120, y: 93.93256250000036 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
      port.setName("port08");
@@ -83,42 +83,42 @@ var draw2d_circuit_switch_HighLowArray = CircuitFigure.extend({
        
        // rect01
        shape = this.canvas.paper.path('M20 20L0 20L0 0L20 0Z');
-       shape.attr({"stroke":"#303030","stroke-width":1,"fill":"#FFFFFF","dasharray":null,"opacity":1});
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","rect01");
        
        // rect02
        shape = this.canvas.paper.path('M20 40L0 40L0 20L20 20Z');
-       shape.attr({"stroke":"#303030","stroke-width":1,"fill":"#FFFFFF","dasharray":null,"opacity":1});
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","rect02");
        
        // rect03
        shape = this.canvas.paper.path('M20 60L0 60L0 40L20 40Z');
-       shape.attr({"stroke":"#303030","stroke-width":1,"fill":"#FFFFFF","dasharray":null,"opacity":1});
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","rect03");
        
        // rect04
        shape = this.canvas.paper.path('M20 80L0 80L0 60L20 60Z');
-       shape.attr({"stroke":"#303030","stroke-width":1,"fill":"#FFFFFF","dasharray":null,"opacity":1});
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","rect04");
        
        // rect05
        shape = this.canvas.paper.path('M20 100L0 100L0 80L20 80Z');
-       shape.attr({"stroke":"#303030","stroke-width":1,"fill":"#FFFFFF","dasharray":null,"opacity":1});
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","rect05");
        
        // rect06
        shape = this.canvas.paper.path('M20 120L0 120L0 100L20 100Z');
-       shape.attr({"stroke":"#303030","stroke-width":1,"fill":"#FFFFFF","dasharray":null,"opacity":1});
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","rect06");
        
        // rect07
        shape = this.canvas.paper.path('M20 140L0 140L0 120L20 120Z');
-       shape.attr({"stroke":"#303030","stroke-width":1,"fill":"#FFFFFF","dasharray":null,"opacity":1});
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","rect07");
        
        // rect08
        shape = this.canvas.paper.path('M20 160L0 160L0 140L20 140Z');
-       shape.attr({"stroke":"#303030","stroke-width":1,"fill":"#FFFFFF","dasharray":null,"opacity":1});
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","rect08");
        
 
