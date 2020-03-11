@@ -1,36 +1,37 @@
 #!/usr/bin/env node
 // Load the http module to create an http server.
-const express = require('express');
-const fs = require('fs');
-const app = express();
-const http = require('http').Server(app);
-const path = require('path');
+const express = require('express')
+const fs = require('fs')
+const app = express()
+const http = require('http').Server(app)
+const path = require('path')
 const childProcess = require('child_process')
 const phantomjs = require('phantomjs')
-const bodyParser = require('body-parser');
-const glob = require("glob");
+const bodyParser = require('body-parser')
+const axios = require('axios')
+const unzip = require('unzip')
 
-
-const io = require('./src/comm/websocket').connect(http, { path: '/socket.io'});
-const mqtt = require('./src/comm/hive-mqtt').connect(io, "freegroup/brainbox");
-const raspi = require("./src/comm/raspi").connect(io);
+const io = require('./src/comm/websocket').connect(http, { path: '/socket.io'})
+const mqtt = require('./src/comm/hive-mqtt').connect(io, "freegroup/brainbox")
+const raspi = require("./src/comm/raspi").connect(io)
 
 // Tell the bodyparser middleware to accept more data
 app.use(bodyParser.json({limit: '50mb'}));
-app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}))
 
 // application specific configuration settings
 //
-const arduino = require("./src/comm/arduino");
-const storage= require("./src/storage.js");
+const arduino = require("./src/comm/arduino")
+const storage= require("./src/storage.js")
+const update= require("./src/update.js")
 const shapeDirApp = path.normalize(__dirname + '/../shapes/')
 const shape2CodeDir = path.normalize(__dirname + '/../converter/')
 
 
 // Determine the IP:PORT to use for the http server
 //
-const address = require("./src/network");
-const port = 7400;
+const address = require("./src/network")
+const port = 7400
 
 
 // =======================================================================
@@ -76,6 +77,29 @@ function runServer() {
     });
   });
 
+  // =================================================================
+  // Handle update files
+  //
+  // =================================================================
+  app.get('/backend/updates/shapes', (req, res) => update.getLatestShapeRelease(res))
+  app.post('/backend/updates/shapes', async (req, res) => {
+    const file = 'test.zip'
+    const writer = fs.createWriteStream(file)
+    const response = await axios({
+      url: req.body.url,
+      method: 'GET',
+      responseType: 'stream'
+    })
+    response.data.pipe(writer)
+    writer.on('finish', () => {
+      fs.createReadStream(file).pipe(unzip.Extract({ path: shapeDirApp }));
+      io.sockets.emit("shape:updated", {});
+      console.log('Shape files updated')
+    })
+    writer.on('error', () => {
+      console.log("Error during shape file updates")
+    })
+  })
 
   // =================================================================
   // Handle shape files
@@ -111,7 +135,6 @@ function runServer() {
         filePath: req.body.filePath
       });
 
-      console.log(binPath, ...childArgs)
       childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
         if(err) throw err
         io.sockets.emit("shape:generated", {

@@ -2,6 +2,7 @@
 import "../less/index.less"
 import "font-awesome/css/font-awesome.css"
 import "./dialog/PopConfirm"
+import UpdateSuccessDialog from "./dialog/UpdateSuccessDialog"
 
 //require('webpack-jquery-ui/css');  //ommit, if you don't want to load basic css theme
 
@@ -33,7 +34,6 @@ if (!jQuery.browser) {
     browser[matched.browser] = true
     browser.version = matched.version
   }
-// Chrome is Webkit, but Webkit is also Safari.
   if (browser.chrome) {
     browser.webkit = true
   } else if (browser.webkit) {
@@ -49,6 +49,10 @@ $(window).load(function () {
   socket = io(
   {
     path: '/socket.io'
+  })
+
+  socket.on("shape:updated", () => {
+    new UpdateSuccessDialog().show()
   })
 
   // remove the fileOpen/Save stuff if we run in a "serverless" mode. e.g. on gh-pages
@@ -70,6 +74,13 @@ $(window).load(function () {
 
   let global = require("./global")
   for(let k in global) window[k]=global[k];
+
+
+  // export all required classes for deserialize JSON with "eval"
+  // "eval" code didn't sees imported class or code
+  //
+  let addonScreen = require("./view/AddonScreen")
+  $("#leftTabStrip .addon").click(addonScreen.onShow)
 
   // we must load the "shape/index.js" in the global scope.
   $.getScript(conf.shapes.url+"index.js",function(){

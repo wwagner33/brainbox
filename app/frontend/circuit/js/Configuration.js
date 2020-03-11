@@ -26,8 +26,13 @@ export default {
   designer: {
     url: "../designer/"
   },
+  updates: {
+    url: "../backend/updates",
+    shapes: "../backend/updates/shapes"
+  },
   shapes: {
-    url: "./shapes/"
+    url: "./shapes/",
+    version: "0.0.0" // updated during after loading from the index.json file
   },
   color: {
     high: "#C21B7A",

@@ -263,6 +263,7 @@ export default draw2d.Canvas.extend({
         let y = event.y
 
         let baseName = figure.attr("userData.file").replace(/\.shape$/, "")
+        let version = figure.VERSION
         let pathToMD = conf.shapes.url + baseName + ".md"
         let pathToCustom = conf.shapes.url + baseName + ".custom"
         let pathToDesign = conf.designer.url + "?timestamp=" + new Date().getTime() + "&file=" + baseName + ".shape"
@@ -305,7 +306,7 @@ export default draw2d.Canvas.extend({
                 break
               case "help":
                 $.get(pathToMD, function (content) {
-                  new MarkdownDialog().show(content)
+                  new MarkdownDialog().show(content, version)
                 })
                 break
               case "delete":

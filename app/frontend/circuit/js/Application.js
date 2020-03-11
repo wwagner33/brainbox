@@ -163,8 +163,6 @@ class Application {
   }
 
 
-
-
   getParam(name) {
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]")
     let regexS = "[\\?&]" + name + "=([^&#]*)"

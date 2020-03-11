@@ -29,7 +29,6 @@ module.exports = {
   brainDirUserHOME: brainDirUserHOME,
 
   listFiles: function (baseDir, subDir, res) {
-    console.log(baseDir, subDir)
     glob(baseDir + subDir + "*", {}, function (er, files) {
       res.setHeader('Content-Type', 'application/json')
       res.send(JSON.stringify({
