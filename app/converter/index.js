@@ -11,7 +11,7 @@ var page = webPage.create();
 var file = system.args[1]
 var shape2CodeDir = system.args[2]
 var shapeDir = system.args[3]
-
+var version = system.env["VERSION"] || "local-version";
 
 function fileToPackage(file) {
   return file
@@ -141,6 +141,7 @@ page.open('http://localhost:7400/designer', function (status) {
                 // replace the generated "testShape" with the real figure name
                 //
                 jsCode = jsCode.replace(/testShape/g, pkg);
+                jsCode = jsCode.replace(/\$\{VERSION\}/g, version);
                 customCode = customCode.replace(/testShape/g, pkg);
 
                 fs.write(jsFilePath, jsCode);
