@@ -116,6 +116,9 @@ export default class Application {
   }
 
   fileNew(shapeTemplate) {
+    console.log(this)
+    console.log(this.view)
+    console.log(this.storage)
     this.view.clear()
     this.storage.currentFile = null
     this.documentConfiguration = $.extend({}, this.documentConfigurationTempl)
