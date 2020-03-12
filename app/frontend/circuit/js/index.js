@@ -1,9 +1,11 @@
-
 import "../less/index.less"
 import "font-awesome/css/font-awesome.css"
 import "./dialog/PopConfirm"
 import UpdateSuccessDialog from "./dialog/UpdateSuccessDialog"
 import Split from 'split.js'
+import TreeView from 'js-treeview'
+
+require('js-treeview/dist/treeview.min.css')
 
 //require('webpack-jquery-ui/css');  //ommit, if you don't want to load basic css theme
 
@@ -48,9 +50,9 @@ import conf from './Configuration'
 
 $(window).load(function () {
   socket = io(
-  {
-    path: '/socket.io'
-  })
+    {
+      path: '/socket.io'
+    })
 
   socket.on("shape:updated", () => {
     new UpdateSuccessDialog().show()
@@ -70,11 +72,11 @@ $(window).load(function () {
     //
     conf.backend.file.list = path => `../brain/index.json`
     conf.backend.file.get = file => `../brain/${file}`
-    conf.backend.file.image =  ()=> `../brain/img`
+    conf.backend.file.image = () => `../brain/img`
   });
 
   let global = require("./global")
-  for(let k in global) window[k]=global[k];
+  for (let k in global) window[k] = global[k];
 
 
   // export all required classes for deserialize JSON with "eval"
@@ -84,7 +86,7 @@ $(window).load(function () {
   $("#leftTabStrip .addon").click(addonScreen.onShow)
 
   // we must load the "shape/index.js" in the global scope.
-  $.getScript(conf.shapes.url+"index.js",function(){
+  $.getScript(conf.shapes.url + "index.js", function () {
 
     // export all required classes for deserialize JSON with "eval"
     // "eval" code didn't sees imported class or code
@@ -92,10 +94,10 @@ $(window).load(function () {
     app = require("./Application")
     require("./hardware").init(socket)
     inlineSVG.init()
-  }).fail(function(){
-    if(arguments[0].readyState==0){
+  }).fail(function () {
+    if (arguments[0].readyState == 0) {
       //script failed to load
-    }else{
+    } else {
       //script loaded but failed to parse
       alert(arguments[2].toString());
     }
@@ -108,6 +110,5 @@ $(window).load(function () {
     cursor: 'row-resize',
     direction: 'vertical'
   })
-
 
 });

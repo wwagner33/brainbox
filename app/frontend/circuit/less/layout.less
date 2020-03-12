@@ -70,6 +70,44 @@ body {
               padding: 0;
               top: 0;
               bottom: 0;
+              #shapeTree{
+                padding: 10px;
+                overflow-x: hidden;
+                position: absolute;
+                top: 64px;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                overflow-y: scroll;
+
+
+                .tree-leaf {
+                  .tree-expando {
+                    line-height: 10px;
+                    width: 12px;
+                    height: 12px;
+                    &.hidden{
+                      display: block !important;
+                      visibility: hidden !important;
+                    }
+                  }
+                  .tree-leaf-content{
+                    cursor: pointer;
+                    transition: all 0.7s;
+                    &.tree-child-leaves{
+                      transition: all 0.7s;
+                    }
+                    &:hover{
+                      background-color: rgba(243, 245, 246, 0.69);
+                      transition: all 0.7s;
+                    }
+                    &.selected{
+                      transition: all 0.4s;
+                      background-color: #f3f5f6;
+                    }
+                  }
+                }
+              }
             }
             #paletteElementsScroll {
               position: relative;

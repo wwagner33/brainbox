@@ -22,7 +22,6 @@ class UpdateManager {
       if (typeof response === "string")
         response = JSON.parse(response)
 
-      console.log(response)
       return response
     })
   }

@@ -1,5 +1,6 @@
 import conf from "./Configuration"
 import Hogan from "hogan.js";
+import TreeView from "js-treeview";
 
 /**
  *
@@ -15,13 +16,9 @@ export default class Palette {
    * @param {String} canvasId the id of the DOM element to use as paint container
    */
   constructor() {
-    let $grid = $("#paletteElements");
 
-    $.getJSON(conf.shapes.url + "index.json", function (data) {
+    $.getJSON(conf.shapes.url + "index.json", (data) => {
       conf.shapes.version = data[0].version
-      data.forEach(function (element) {
-        element.basename = element.name.split("_").pop();
-      });
 
       let tmpl = Hogan.compile($("#shapeTemplate").html());
       let html = tmpl.render({
@@ -31,19 +28,7 @@ export default class Palette {
 
       $("#paletteElements").html(html);
 
-      // Advanced filtering
-      $('#filter').on('keyup change', function (event) {
-        if (event.keyCode === 27) {
-          $('#filter').val("");
-        }
-        let val = this.value.toLowerCase();
-        $grid.shuffle('shuffle', function ($el, shuffle) {
-          let text = $.trim($el.data("name")).toLowerCase();
-          if (text === "_request_")
-            return true;
-          return text.indexOf(val) !== -1;
-        });
-      });
+      this.buildTree(data)
 
 
       // Create the jQuery-Draggable for the palette -> canvas drag&drop interaction
@@ -96,4 +81,77 @@ export default class Palette {
       $("div[data-file='" + msg.filePath + "'] img").attr({src: conf.shapes.url + msg.imagePath + "?timestamp=" + new Date().getTime()})
     });
   }
+
+  buildTree(data) {
+    let tree = []
+    data.forEach(element => {
+      tree.push(element.basedir.split("/"))
+    })
+
+    function arrangeIntoTree(paths) {
+      var tree = [];
+
+      for (var i = 0; i < paths.length; i++) {
+        var path = paths[i];
+        var currentLevel = tree;
+        var rootPath = null
+        for (var j = 0; j < path.length; j++) {
+          var part = path[j];
+          var existingPath = findWhere(currentLevel, 'name', part);
+          rootPath = rootPath? rootPath+"/"+part:part
+          if (existingPath) {
+            currentLevel = existingPath.children;
+          } else {
+            var newPart = {
+              name: part,
+              path: rootPath,
+              children: []
+            }
+
+            currentLevel.push(newPart);
+            currentLevel = newPart.children;
+          }
+        }
+      }
+      return tree;
+
+      function findWhere(array, key, value) {
+        let t = 0
+        while (t < array.length && array[t][key] !== value) {
+          t++
+        }
+
+        if (t < array.length) {
+          return array[t]
+        } else {
+          return false
+        }
+      }
+    }
+
+    tree = arrangeIntoTree(tree)
+    //
+    // Create tree
+    //
+
+    new TreeView(tree, 'shapeTree');
+    $(".tree-leaf-content").on("click", (event) => {
+      $(".tree-leaf-content").removeClass("selected")
+      let target = $(event.currentTarget)
+      target.addClass("selected")
+      let path = target.data("item").path
+      let $grid = $("#paletteElements");
+
+      $grid.shuffle('shuffle', function ($el, shuffle) {
+        let text = $.trim($el.data("path")).toLowerCase();
+        if (text === "_request_")
+          return true;
+
+        return text.startsWith(path);
+      });
+
+      return false
+    })
+  }
+
 }

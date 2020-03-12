@@ -1015,6 +1015,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _Configuration = __webpack_require__(/*! ./Configuration */ "./app/frontend/circuit/js/Configuration.js");
 
 var _Configuration2 = _interopRequireDefault(_Configuration);
@@ -1022,6 +1024,10 @@ var _Configuration2 = _interopRequireDefault(_Configuration);
 var _hogan = __webpack_require__(/*! hogan.js */ "./node_modules/hogan.js/lib/hogan.js");
 
 var _hogan2 = _interopRequireDefault(_hogan);
+
+var _jsTreeview = __webpack_require__(/*! js-treeview */ "./node_modules/js-treeview/index.js");
+
+var _jsTreeview2 = _interopRequireDefault(_jsTreeview);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1034,83 +1040,146 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * @author Andreas Herz
  */
 
-var Palette =
-/**
- * @constructor
- *
- * @param {String} canvasId the id of the DOM element to use as paint container
- */
-function Palette() {
-  _classCallCheck(this, Palette);
+var Palette = function () {
+  /**
+   * @constructor
+   *
+   * @param {String} canvasId the id of the DOM element to use as paint container
+   */
+  function Palette() {
+    var _this = this;
 
-  var $grid = $("#paletteElements");
+    _classCallCheck(this, Palette);
 
-  $.getJSON(_Configuration2.default.shapes.url + "index.json", function (data) {
-    _Configuration2.default.shapes.version = data[0].version;
-    data.forEach(function (element) {
-      element.basename = element.name.split("_").pop();
-    });
+    $.getJSON(_Configuration2.default.shapes.url + "index.json", function (data) {
+      _Configuration2.default.shapes.version = data[0].version;
 
-    var tmpl = _hogan2.default.compile($("#shapeTemplate").html());
-    var html = tmpl.render({
-      shapesUrl: _Configuration2.default.shapes.url,
-      shapes: data
-    });
-
-    $("#paletteElements").html(html);
-
-    // Advanced filtering
-    $('#filter').on('keyup change', function (event) {
-      if (event.keyCode === 27) {
-        $('#filter').val("");
-      }
-      var val = this.value.toLowerCase();
-      $grid.shuffle('shuffle', function ($el, shuffle) {
-        var text = $.trim($el.data("name")).toLowerCase();
-        if (text === "_request_") return true;
-        return text.indexOf(val) !== -1;
+      var tmpl = _hogan2.default.compile($("#shapeTemplate").html());
+      var html = tmpl.render({
+        shapesUrl: _Configuration2.default.shapes.url,
+        shapes: data
       });
+
+      $("#paletteElements").html(html);
+
+      _this.buildTree(data);
+
+      // Create the jQuery-Draggable for the palette -> canvas drag&drop interaction
+      //
+      $(".draw2d_droppable").draggable({
+        appendTo: "body",
+        helper: "clone",
+        drag: function drag(event, ui) {
+          event = app.view._getEvent(event);
+          var pos = app.view.fromDocumentToCanvasCoordinate(event.clientX, event.clientY);
+          app.view.onDrag(ui.draggable, pos.getX(), pos.getY(), event.shiftKey, event.ctrlKey);
+        },
+        stop: function stop(e, ui) {},
+        start: function start(e, ui) {
+          $(ui.helper).addClass("shadow");
+        }
+      });
+
+      $('.draw2d_droppable').on('mouseover', function () {
+        $(this).parent().addClass('glowBorder');
+      }).on('mouseout', function () {
+        $(this).parent().removeClass('glowBorder');
+      });
+
+      // add the "+" to the palette
+      //
+      var requestUrl = _Configuration2.default.issues.url + '?title=Request for shape&body=' + encodeURIComponent("Please add the description of the shape you request.\nWe try to implement it as soon as possible...");
+      $("#paletteElements").append('  <div data-name="_request_" class="mix col-md-6 pallette_item">' + '  <a href="' + requestUrl + '" target="_blank">' + '    <div class="request">' + '       <div class="icon ion-ios-plus-outline"></div>' + '       <div >Request a Shape</div>' + '   </div>' + '   </a>' + '  </div>');
+
+      //    $("#paletteElements").append("<div>++</div>");
     });
 
-    // Create the jQuery-Draggable for the palette -> canvas drag&drop interaction
-    //
-    $(".draw2d_droppable").draggable({
-      appendTo: "body",
-      helper: "clone",
-      drag: function drag(event, ui) {
-        event = app.view._getEvent(event);
-        var pos = app.view.fromDocumentToCanvasCoordinate(event.clientX, event.clientY);
-        app.view.onDrag(ui.draggable, pos.getX(), pos.getY(), event.shiftKey, event.ctrlKey);
-      },
-      stop: function stop(e, ui) {},
-      start: function start(e, ui) {
-        $(ui.helper).addClass("shadow");
+    socket.on("shape:generating", function (msg) {
+      $("div[data-file='" + msg.filePath + "'] ").addClass("spinner");
+    });
+
+    socket.on("shape:generated", function (msg) {
+      $("div[data-file='" + msg.filePath + "'] ").removeClass("spinner");
+      $("div[data-file='" + msg.filePath + "'] img").attr({ src: _Configuration2.default.shapes.url + msg.imagePath + "?timestamp=" + new Date().getTime() });
+    });
+  }
+
+  _createClass(Palette, [{
+    key: "buildTree",
+    value: function buildTree(data) {
+      var tree = [];
+      data.forEach(function (element) {
+        tree.push(element.basedir.split("/"));
+      });
+
+      function arrangeIntoTree(paths) {
+        var tree = [];
+
+        for (var i = 0; i < paths.length; i++) {
+          var path = paths[i];
+          var currentLevel = tree;
+          var rootPath = null;
+          for (var j = 0; j < path.length; j++) {
+            var part = path[j];
+            var existingPath = findWhere(currentLevel, 'name', part);
+            rootPath = rootPath ? rootPath + "/" + part : part;
+            if (existingPath) {
+              currentLevel = existingPath.children;
+            } else {
+              var newPart = {
+                name: part,
+                path: rootPath,
+                children: []
+              };
+
+              currentLevel.push(newPart);
+              currentLevel = newPart.children;
+            }
+          }
+        }
+        return tree;
+
+        function findWhere(array, key, value) {
+          var t = 0;
+          while (t < array.length && array[t][key] !== value) {
+            t++;
+          }
+
+          if (t < array.length) {
+            return array[t];
+          } else {
+            return false;
+          }
+        }
       }
-    });
 
-    $('.draw2d_droppable').on('mouseover', function () {
-      $(this).parent().addClass('glowBorder');
-    }).on('mouseout', function () {
-      $(this).parent().removeClass('glowBorder');
-    });
+      tree = arrangeIntoTree(tree);
+      //
+      // Create tree
+      //
 
-    // add the "+" to the palette
-    //
-    var requestUrl = _Configuration2.default.issues.url + '?title=Request for shape&body=' + encodeURIComponent("Please add the description of the shape you request.\nWe try to implement it as soon as possible...");
-    $("#paletteElements").append('  <div data-name="_request_" class="mix col-md-6 pallette_item">' + '  <a href="' + requestUrl + '" target="_blank">' + '    <div class="request">' + '       <div class="icon ion-ios-plus-outline"></div>' + '       <div >Request a Shape</div>' + '   </div>' + '   </a>' + '  </div>');
+      new _jsTreeview2.default(tree, 'shapeTree');
+      $(".tree-leaf-content").on("click", function (event) {
+        $(".tree-leaf-content").removeClass("selected");
+        var target = $(event.currentTarget);
+        target.addClass("selected");
+        var path = target.data("item").path;
+        var $grid = $("#paletteElements");
 
-    //    $("#paletteElements").append("<div>++</div>");
-  });
+        $grid.shuffle('shuffle', function ($el, shuffle) {
+          var text = $.trim($el.data("path")).toLowerCase();
+          if (text === "_request_") return true;
 
-  socket.on("shape:generating", function (msg) {
-    $("div[data-file='" + msg.filePath + "'] ").addClass("spinner");
-  });
+          return text.startsWith(path);
+        });
 
-  socket.on("shape:generated", function (msg) {
-    $("div[data-file='" + msg.filePath + "'] ").removeClass("spinner");
-    $("div[data-file='" + msg.filePath + "'] img").attr({ src: _Configuration2.default.shapes.url + msg.imagePath + "?timestamp=" + new Date().getTime() });
-  });
-};
+        return false;
+      });
+    }
+  }]);
+
+  return Palette;
+}();
 
 exports.default = Palette;
 module.exports = exports["default"];
@@ -1938,7 +2007,7 @@ exports.default = draw2d.Canvas.extend({
   onDrop: function onDrop(droppedDomNode, x, y, shiftKey, ctrlKey) {
     var type = $(droppedDomNode).data("shape");
     var file = $(droppedDomNode).data("file");
-    console.log(file);
+
     var figure = eval("new " + type + "();"); // jshint ignore:line
     figure.attr("userData.file", file);
 
@@ -4202,7 +4271,6 @@ exports.default = {
           usbPort.onReceive = function (data) {
             var textDecoder = new TextDecoder();
             var txt = textDecoder.decode(data);
-            console.log('-', txt);
           };
           usbPort.onReceiveError = function (error) {
             usbPort = null;
@@ -4292,11 +4360,17 @@ var _split = __webpack_require__(/*! split.js */ "./node_modules/split.js/dist/s
 
 var _split2 = _interopRequireDefault(_split);
 
+var _jsTreeview = __webpack_require__(/*! js-treeview */ "./node_modules/js-treeview/index.js");
+
+var _jsTreeview2 = _interopRequireDefault(_jsTreeview);
+
 var _Configuration = __webpack_require__(/*! ./Configuration */ "./app/frontend/circuit/js/Configuration.js");
 
 var _Configuration2 = _interopRequireDefault(_Configuration);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+__webpack_require__(/*! js-treeview/dist/treeview.min.css */ "./node_modules/js-treeview/dist/treeview.min.css");
 
 //require('webpack-jquery-ui/css');  //ommit, if you don't want to load basic css theme
 
@@ -4631,7 +4705,6 @@ var UpdateManager = function () {
         //
         if (typeof response === "string") response = JSON.parse(response);
 
-        console.log(response);
         return response;
       });
     }
@@ -10423,6 +10496,25 @@ exports.push([module.i, ".pln{color:#000}@media screen{.str{color:#080}.kwd{colo
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/js-treeview/dist/treeview.min.css":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/js-treeview/dist/treeview.min.css ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".tree-leaf{position:relative}.tree-leaf .tree-child-leaves{display:block;margin-left:15px}.tree-leaf .hidden{display:none;visibility:hidden}.tree-leaf .tree-expando{background:#ddd;border-radius:3px;cursor:pointer;float:left;height:10px;line-height:10px;position:relative;text-align:center;top:5px;width:10px}.tree-leaf .tree-expando:hover{background:#aaa}.tree-leaf .tree-leaf-text{cursor:pointer;float:left;margin-left:5px}.tree-leaf .tree-leaf-text:hover{color:#00f}.tree-leaf .tree-leaf-content:after,.tree-leaf .tree-leaf-content:before{content:\" \";display:table}.tree-leaf .tree-leaf-content:after{clear:both}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./app/frontend/circuit/less/index.less":
 /*!***************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/less-loader/dist/cjs.js!./app/frontend/circuit/less/index.less ***!
@@ -10435,7 +10527,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".toolbar {\n  margin: 0;\n  padding-top: 0;\n  padding-right: 10px;\n  top: 0;\n  right: 0;\n  left: 250px;\n  height: 60px;\n  overflow: visible;\n  z-index: 1000 !important;\n  position: absolute;\n  background-color: #B2E2F2;\n  border: none !important;\n}\n.toolbar * {\n  outline: none;\n}\n.toolbar .group {\n  padding-right: 20px;\n  display: inline-block;\n  vertical-align: top;\n}\n.toolbar .group .image-button {\n  display: inline-block;\n}\n.toolbar .group .image-button img {\n  margin: 5px;\n  margin-bottom: 0;\n  padding: 0;\n  width: 40px;\n  height: 40px;\n  position: relative;\n  display: inline-block;\n  text-align: center;\n  color: #777;\n  font-size: 45px;\n  transition: all 0.5s;\n}\n.toolbar .group .image-button div {\n  color: rgba(0, 0, 0, 0.5);\n  text-align: center;\n  font-size: 10px;\n}\n.toolbar .group .image-button.disabled {\n  opacity: 0.2;\n}\n.toolbar .group .image-button:not(.disabled) img {\n  cursor: pointer;\n}\n.toolbar .group .image-button:not(.disabled) img:hover {\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n}\n.modal-backdrop.in {\n  opacity: 0.7;\n  background-color: black;\n  transition: opacity 0.4s linear;\n}\n.genericDialog .modal-content {\n  border-radius: 4px;\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n  background-color: #ffffff;\n}\n.genericDialog .modal-content .modal-header {\n  border-bottom: 0;\n  font-weight: 400;\n  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);\n}\n.genericDialog .modal-content .modal-body {\n  padding: 1px;\n  min-height: 120px;\n}\n.genericDialog .modal-content .modal-body .form-control {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  box-sizing: border-box;\n  border-radius: 4px;\n  margin: 0;\n  padding: 0;\n  color: #4D4D4D;\n  display: inline-block;\n  font: inherit;\n  border: 1px solid #DFDFDF;\n  box-shadow: none;\n  height: 24px;\n  padding: 0 3px;\n}\n.genericDialog .modal-content .modal-body .form-control:focus {\n  background-color: #f5f5f5;\n}\n.genericDialog .modal-content .modal-body .list-group {\n  overflow-y: auto;\n  overflow-x: auto;\n}\n.genericDialog .modal-content .modal-body .list-group *[data-draw2d=\"true\"] {\n  font-weight: bold;\n  color: #C21B7A;\n}\n.genericDialog .modal-content .modal-body .list-group .glyphicon,\n.genericDialog .modal-content .modal-body .list-group .fa {\n  font-size: 20px;\n  padding-right: 10px;\n  color: #C21B7A;\n}\n.genericDialog .modal-content .modal-body .list-group .list-group-item {\n  background-color: transparent;\n  font-weight: 300;\n}\n.genericDialog .modal-content .modal-body .list-group .list-group-item:hover {\n  text-decoration: underline;\n}\n.genericDialog .modal-content .modal-body .list-group *[data-draw2d=\"false\"][data-type=\"file\"] {\n  color: gray;\n  cursor: default;\n  text-decoration: none !important;\n}\n.genericDialog .modal-content .modal-body .list-group *[data-draw2d=\"false\"][data-type=\"file\"] .fa {\n  color: gray;\n}\n.genericDialog .modal-content .modal-footer {\n  background-color: transparent;\n  border-top: 0;\n}\n.genericDialog .modal-content .modal-footer .btn {\n  border: 0;\n  text-transform: uppercase;\n  background-color: transparent;\n  color: #C21B7A;\n  transition: all 0.5s;\n}\n.genericDialog .modal-content .modal-footer .btn:hover {\n  background-color: rgba(194, 27, 122, 0.04);\n  transition: all 0.5s;\n}\n.genericDialog .modal-content .modal-footer .btn-primary {\n  font-weight: bold;\n}\n#githubNewFileDialog .filePreview {\n  font-size: 115px;\n  color: #C21B7A;\n}\n#fileOpenDialog .list-group {\n  height: 60%;\n}\n#fileSaveDialog .filePreview {\n  max-width: 200px;\n  max-height: 200px;\n}\n#fileSaveDialog .modal-body .media {\n  padding: 20px;\n}\n#githubFileSaveAsDialog .filePreview {\n  max-width: 200px;\n  max-height: 200px;\n}\n#githubFileSaveAsDialog .list-group {\n  height: 250px;\n}\n#canvas_zoom {\n  position: fixed;\n  bottom: 20px;\n  right: 20px;\n  background-color: rgba(178, 226, 242, 0.3);\n  border-radius: 5px;\n}\n#canvas_zoom button {\n  background-color: transparent;\n  font-weight: 300;\n  padding: 5px;\n  padding-left: 10px;\n  padding-right: 10px;\n  border: 1px solid transparent;\n  outline: none;\n  transition: all 0.5s;\n}\n#canvas_zoom button:hover {\n  border: 1px solid #C21B7A;\n}\nbody {\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n}\nbody #layout {\n  width: 100%;\n  height: 100%;\n  padding: 0;\n  margin: 0;\n}\nbody #layout .nav-tabs {\n  float: left;\n  border-bottom: 0;\n}\nbody #layout .nav-tabs li {\n  float: none;\n  margin: 0;\n}\nbody #layout .nav-tabs li a {\n  margin-right: 0;\n  border: 0;\n}\nbody #layout #leftTabStrip {\n  height: 100%;\n  position: absolute;\n  width: 60px;\n  padding-top: 60px;\n  overflow: hidden;\n}\nbody #layout #leftTabStrip .leftTab {\n  border-radius: 0 !important;\n  width: 60px;\n  height: 60px;\n}\nbody #layout .tab-content {\n  position: relative;\n  margin-left: 60px;\n  height: 100%;\n}\nbody #layout .tab-content .tab-pane {\n  display: none;\n  padding: 0;\n  height: 100%;\n  position: relative;\n}\nbody #layout .tab-content .tab-pane .workspace .palette {\n  position: absolute;\n  height: 100%;\n  width: 250px;\n  padding: 0;\n}\nbody #layout .tab-content .tab-pane .workspace .palette #paletteElementsFilter {\n  position: relative;\n  margin: 0;\n  padding: 0;\n  top: 0;\n  bottom: 0;\n}\nbody #layout .tab-content .tab-pane .workspace .palette #paletteElementsScroll {\n  position: relative;\n  width: 248px;\n  margin: 0;\n  padding: 0;\n  top: 0;\n  bottom: 0;\n  overflow: auto;\n}\nbody #layout .tab-content .tab-pane .workspace .palette #paletteElementsScroll #paletteElements {\n  position: absolute;\n  width: 100%;\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n}\nbody #layout .tab-content .tab-pane .workspace .palette #paletteElementsScroll #paletteElements .mix {\n  height: 125px;\n  border: 1px solid #f0f0f0;\n  /* to avoid doubling the border of the grid */\n  margin: -1px 0 0 -1px;\n}\nbody #layout .tab-content .tab-pane .workspace .content {\n  position: absolute;\n  right: 0;\n  top: 60px;\n  bottom: 0;\n  left: 250px;\n  overflow: scroll;\n}\nbody #layout .tab-content .tab-pane .workspace .content .canvas {\n  width: 6000px;\n  height: 6000px;\n}\nbody #layout .tab-content .active {\n  display: block;\n}\n.nav-tabs > li.active > a,\n.nav-tabs > li.active > a:hover,\n.nav-tabs > li.active > a:focus {\n  border: 0;\n}\n/* CSS from the cool website: http://cssarrowplease.com/ */\n.draw2d_tooltip {\n  position: absolute;\n  background: #88b7d5;\n  padding: 10px;\n  border-radius: 6px;\n}\n.draw2d_tooltip:after,\n.draw2d_tooltip:before {\n  bottom: 100%;\n  border: solid transparent;\n  content: \" \";\n  height: 0;\n  width: 0;\n  position: absolute;\n  pointer-events: none;\n}\n.draw2d_tooltip:after {\n  border-color: rgba(136, 183, 213, 0);\n  border-bottom-color: #88b7d5;\n  border-width: 4px;\n  left: 50%;\n  margin-left: -4px;\n}\n#codePreviewDialog .prettyprint {\n  max-height: 250px;\n  overflow: scroll;\n  border-radius: 0;\n}\n#markdownDialog .version {\n  opacity: 0.6;\n}\n#markdownDialog .html {\n  padding: 20px;\n}\n#markdownDialog .html table {\n  font-family: Arial, Helvetica, sans-serif;\n  color: #666;\n  font-size: 12px;\n  text-shadow: 1px 1px 0px #fff;\n  background: #eaebec;\n  margin: 20px;\n  margin-left: 0;\n  border: #ccc 1px solid;\n  -moz-border-radius: 3px;\n  -webkit-border-radius: 3px;\n  border-radius: 3px;\n  -moz-box-shadow: 0 1px 2px #d1d1d1;\n  -webkit-box-shadow: 0 1px 2px #d1d1d1;\n  box-shadow: 0 1px 2px #d1d1d1;\n}\n#markdownDialog .html table th {\n  padding: 21px 25px 22px 25px;\n  border-top: 1px solid #fafafa;\n  border-bottom: 1px solid #e0e0e0;\n}\n#markdownDialog .html table th:first-child {\n  text-align: left;\n  padding-left: 20px;\n}\n#markdownDialog .html table tr:first-child th:first-child {\n  -moz-border-radius-topleft: 3px;\n  -webkit-border-top-left-radius: 3px;\n  border-top-left-radius: 3px;\n}\n#markdownDialog .html table tr:first-child th:last-child {\n  -moz-border-radius-topright: 3px;\n  -webkit-border-top-right-radius: 3px;\n  border-top-right-radius: 3px;\n}\n#markdownDialog .html table tr {\n  text-align: center;\n  padding-left: 20px;\n}\n#markdownDialog .html table tr td:first-child {\n  text-align: left;\n  padding-left: 20px;\n  border-left: 0;\n}\n#markdownDialog .html table tr td {\n  padding: 18px;\n  border-top: 1px solid #ffffff;\n  border-bottom: 1px solid #e0e0e0;\n  border-left: 1px solid #e0e0e0;\n}\n#markdownDialog .html tbody tr:nth-child(odd) {\n  background: #fafafa;\n}\n#markdownDialog .html tbody tr:nth-child(even) {\n  background: #f3f3f3;\n}\n#markdownDialog .html table tr:last-child td {\n  border-bottom: 0;\n}\n#markdownDialog .html table tr:last-child td:first-child {\n  -moz-border-radius-bottomleft: 3px;\n  -webkit-border-bottom-left-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n#markdownDialog .html table tr:last-child td:last-child {\n  -moz-border-radius-bottomright: 3px;\n  -webkit-border-bottom-right-radius: 3px;\n  border-bottom-right-radius: 3px;\n}\n#webUSBHelpDialog .modal-body {\n  min-height: 310px;\n}\n#webUSBHelpDialog .modal-body .html {\n  padding: 20px;\n  max-height: 310px;\n  overflow: auto;\n  border-radius: 0;\n}\n.confirm-dialog-btn-confirm {\n  background-color: #C71D3D;\n}\n.context-menu-list {\n  margin: 0;\n  padding: 0;\n  min-width: 120px;\n  max-width: 250px;\n  display: inline-block;\n  position: absolute;\n  list-style-type: none;\n  border: 1px solid #DDD;\n  background: white;\n  border-left: 2px solid #C21B7A;\n  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);\n  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);\n  -ms-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);\n  -o-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);\n  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);\n  font-size: 15px;\n  white-space: nowrap;\n}\n.context-menu-item {\n  padding: 5px 5px 5px 24px;\n  position: relative;\n  -webkit-user-select: none;\n  -moz-user-select: -moz-none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.context-menu-separator {\n  padding-bottom: 0;\n  border-bottom: 1px solid #DDD;\n}\n.context-menu-item > label > input,\n.context-menu-item > label > textarea {\n  -webkit-user-select: text;\n  -moz-user-select: text;\n  -ms-user-select: text;\n  user-select: text;\n}\n.context-menu-item.hover {\n  cursor: pointer;\n  background-color: #C21B7A;\n  color: white;\n}\n.context-menu-item.disabled {\n  color: #666;\n}\n.context-menu-input.hover,\n.context-menu-item.disabled.hover {\n  cursor: default;\n  background-color: #EEE;\n}\n.context-menu-submenu:after {\n  content: \">\";\n  color: #666;\n  position: absolute;\n  top: 0;\n  right: 3px;\n  z-index: 1;\n}\n/* icons\n    #protip:\n    In case you want to use sprites for icons (which I would suggest you do) have a look at\n    http://css-tricks.com/13224-pseudo-spriting/ to get an idea of how to implement\n    .context-menu-item.icon:before {}\n */\n.context-menu-item.icon {\n  min-height: 18px;\n}\n.context-menu-item.icon:before {\n  position: relative;\n  left: -15px;\n  font-size: 19px;\n}\n/* vertically align inside labels */\n.context-menu-input > label > * {\n  vertical-align: top;\n}\n/* position checkboxes and radios as icons */\n.context-menu-input > label > input[type=\"checkbox\"],\n.context-menu-input > label > input[type=\"radio\"] {\n  margin-left: -17px;\n}\n.context-menu-input > label > span {\n  margin-left: 5px;\n}\n.context-menu-input > label,\n.context-menu-input > label > input[type=\"text\"],\n.context-menu-input > label > textarea,\n.context-menu-input > label > select {\n  display: block;\n  width: 100%;\n  box-sizing: border-box;\n}\n.context-menu-input > label > textarea {\n  height: 100px;\n}\n.context-menu-item > .context-menu-list {\n  display: none;\n  /* re-positioned by js */\n  right: -5px;\n  top: 5px;\n}\n.context-menu-item.hover > .context-menu-list {\n  display: block;\n}\n.context-menu-accesskey {\n  text-decoration: underline;\n}\n#probe_hint {\n  display: block;\n  padding: 30px;\n  color: white;\n  font-size: 20px;\n  font-weight: 100;\n}\n#probe_window {\n  background: #009DAC;\n  bottom: 0;\n  height: 0;\n  color: white;\n  position: absolute;\n  right: 0;\n  left: 250px;\n}\n#probe_window span {\n  font-size: 45px;\n  vertical-align: middle;\n  padding-right: 10px;\n}\n#probe_window_stick {\n  position: absolute;\n  top: -30px;\n  cursor: pointer;\n  color: black;\n  width: 100%;\n  border-bottom: 2px solid #009DAC;\n  text-align: center;\n}\n#probeSortable {\n  padding-left: 0;\n}\n#probeSortable li {\n  list-style-type: none;\n  padding-top: 10px;\n  padding-left: 0;\n}\n#probeSortable li path {\n  stroke: white;\n}\n#probeSortable li div {\n  cursor: pointer;\n  display: inline-block;\n  padding-left: 10px;\n  padding-right: 10px;\n  position: absolute;\n  background: rgba(0, 157, 172, 0.8);\n}\n#probeSortable li:nth-child(even) {\n  background: #04A9B9;\n}\n#probeSortable li:nth-child(even) div {\n  background: rgba(4, 169, 185, 0.5);\n}\n#probeSortable .inplaceEdit {\n  background: rgba(255, 255, 255, 0.1);\n}\nellipse.draw2d_shape_basic_LineStartResizeHandle,\nellipse.draw2d_shape_basic_LineEndResizeHandle,\nrect.draw2d_policy_line_OrthogonalSelectionFeedbackPolicy_ResizeHandle {\n  fill: #C21B7A;\n}\nellipse.draw2d_InputPort,\nellipse.DecoratedInputPort,\nellipse.draw2d_OutputPort {\n  fill: #C71D3D;\n}\n.vertical-text {\n  transform: rotate(-90deg);\n  white-space: nowrap;\n  top: 200px;\n  left: 20px;\n  font-size: 50px;\n  color: white;\n}\n#layout #leftTabStrip {\n  background-color: #C71D3D;\n}\n#layout #leftTabStrip:after {\n  content: \"BrainBox\";\n  -webkit-transform: rotate(-90deg) translate(-90px, -60px);\n  -moz-transform: rotate(-90deg) translate(-90px, -60px);\n  -ms-transform: rotate(-90deg) translate(-90px, -60px);\n  transform: rotate(-90deg) translate(-90px, -60px);\n  font-size: 50px;\n  color: white;\n  white-space: nowrap;\n  opacity: 0.4;\n}\n#layout #leftTabStrip li.active a:hover {\n  background-color: white;\n}\n#layout #leftTabStrip li.active svg path[stroke] {\n  stroke: #C71D3D !important;\n}\n#layout #leftTabStrip li.active svg rect[stroke] {\n  stroke: #C71D3D !important;\n}\n#layout #leftTabStrip li.active svg g[stroke] {\n  stroke: #C71D3D !important;\n}\n#layout #leftTabStrip li.active svg line[stroke] {\n  stroke: #C71D3D !important;\n}\n#layout #leftTabStrip li.active svg circle[stroke] {\n  stroke: #C71D3D !important;\n}\n#layout #leftTabStrip li.active svg rect[stroke] {\n  stroke: #C71D3D !important;\n}\n#layout #leftTabStrip li.active svg rect[fill] {\n  fill: #C71D3D !important;\n}\n#layout #leftTabStrip li.active svg circle[fill] {\n  fill: #C71D3D !important;\n}\n#layout #leftTabStrip li a {\n  padding: 4px;\n}\n#layout #leftTabStrip li a:hover {\n  background-color: rgba(0, 0, 0, 0.1);\n}\n#layout #leftTabStrip li a svg path[stroke] {\n  stroke: white !important;\n}\n#layout #leftTabStrip li a svg path[stroke] {\n  stroke: white !important;\n}\n#layout #leftTabStrip li a svg line[stroke] {\n  stroke: white !important;\n}\n#layout #leftTabStrip li a svg circle[stroke] {\n  stroke: white !important;\n}\n#layout #leftTabStrip li a svg g[stroke] {\n  stroke: white !important;\n}\n#layout #leftTabStrip li a svg rect[stroke] {\n  stroke: white !important;\n}\n#layout #leftTabStrip li a svg rect[fill] {\n  fill: white !important;\n}\n#layout #leftTabStrip li a svg circle[fill] {\n  fill: white !important;\n}\n.shadow {\n  border: 1px solid #C21B7A;\n  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);\n  background-color: white;\n}\n.ui-draggable-dragging {\n  z-index: 10000;\n}\ntext.highlightOnHover:hover {\n  cursor: pointer;\n  font-weight: bold;\n}\nellipse.highlightOnHover:hover {\n  cursor: pointer;\n}\nrect.Raft {\n  fill: rgba(28, 155, 171, 0.1);\n}\n#configMenuIcon {\n  font-size: 25px;\n  cursor: pointer;\n  opacity: 0.3;\n}\n#configMenuIcon:hover {\n  opacity: 1;\n  color: #C21B7A;\n}\n#paletteElementsOverlay {\n  bottom: 0;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  background-color: rgba(255, 255, 255, 0.7);\n  display: none;\n}\n#figureConfigDialog {\n  display: none;\n  background-color: white;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  padding: 10px;\n  margin-left: 30px;\n  border-left: 3px solid #C21B7A;\n  border-radius: 4px;\n}\n#figureConfigDialog .header {\n  font-size: 16px;\n  font-weight: 600;\n  padding-bottom: 15px;\n}\n#figureConfigDialog .figureAddLabel {\n  font-size: 12px;\n  font-weight: 200;\n  cursor: pointer;\n}\n#figureConfigDialog .figureAddLabel:hover {\n  color: #C21B7A;\n}\n#figureConfigDialog:after {\n  content: '';\n  display: block;\n  position: absolute;\n  left: -20px;\n  top: 10px;\n  width: 0;\n  height: 0;\n  border-right: 10px solid #C21B7A;\n  border-top: 10px solid transparent;\n  border-left: 10px solid transparent;\n  border-bottom: 10px solid transparent;\n}\n.pallette_item {\n  text-align: center;\n}\n/*\n@keyframes spinner {\n  to {transform: rotate(360deg);}\n}\n\n.spinner:before {\n  content: '';\n  box-sizing: border-box;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  width: 20px;\n  height: 20px;\n  margin-top: -10px;\n  margin-left: -10px;\n  border-radius: 50%;\n  border: 2px solid transparent;\n  border-top-color: #07d;\n  border-bottom-color: #07d;\n  animation: spinner .8s ease infinite;\n}\n*/\n@keyframes spinner {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.spinner:before {\n  content: '';\n  box-sizing: border-box;\n  position: absolute;\n  top: 35%;\n  left: 50%;\n  width: 30px;\n  height: 30px;\n  margin-top: -15px;\n  margin-left: -15px;\n  border-radius: 50%;\n  border: 2px solid #ccc;\n  border-top-color: #07d;\n  animation: spinner 0.6s linear infinite;\n}\n.workspace .palette {\n  box-shadow: 5px 0 20px -3px rgba(31, 73, 125, 0.3), -6px 0 20px -4px rgba(31, 73, 125, 0.3);\n  border-right: 1px solid rgba(74, 74, 74, 0.5);\n  border-left: 1px solid rgba(74, 74, 74, 0.5);\n}\n.workspace .palette .title img {\n  padding-right: 20px;\n  position: absolute;\n  left: 10px;\n  top: 10px;\n  height: 40px;\n}\n.workspace .palette .title div {\n  position: absolute;\n  left: 60px;\n  top: 10px;\n}\n.workspace .palette .title div h1 {\n  font-size: 15px;\n  font-weight: 200;\n  line-height: 25px;\n  margin: 0;\n  padding: 0;\n  text-align: left;\n}\n.workspace .palette .title div h2 {\n  font-size: 10px;\n  font-weight: 200;\n  margin: 0;\n  padding: 0;\n  text-align: left;\n  letter-spacing: 4px;\n}\n.workspace .palette .pallette_item {\n  padding: 0px;\n}\n.workspace .palette .pallette_item > div {\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  border: 1px solid transparent;\n}\n.workspace .palette .pallette_item > div img {\n  position: absolute;\n  top: 0px;\n  bottom: 0;\n  margin: auto;\n  left: 50%;\n  transform: translate(-50%, -10px);\n}\n.workspace .palette .pallette_item > div div {\n  position: absolute;\n  padding-bottom: 2px;\n  width: 100%;\n  bottom: 0;\n  padding-top: 2px;\n  background-color: rgba(0, 0, 0, 0.05);\n  cursor: default;\n}\n.workspace .palette .pallette_item .glowBorder {\n  border: 1px solid #C21B7A;\n}\n.workspace .palette .draw2d_droppable {\n  cursor: move;\n  max-height: 80px;\n}\n.workspace .palette .request {\n  font-size: 10px;\n  color: #C21B7A;\n}\n.workspace .palette .request .icon {\n  cursor: pointer;\n  font-size: 75px;\n  margin-top: 10px;\n  margin-bottom: 10px;\n}\n.workspace .content .canvas {\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.nav-tabs > li.active > a,\n.nav-tabs > li.active > a:hover,\n.nav-tabs > li.active > a:focus {\n  border: 0;\n}\n#files {\n  overflow-y: scroll;\n  padding: 30px !important;\n  box-shadow: -6px 0 20px -4px rgba(31, 73, 125, 0.3);\n}\n#files .teaser {\n  margin-bottom: 30px;\n  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.4) 70%, #fff 100%), radial-gradient(ellipse at center, rgba(247, 249, 250, 0.7) 0%, rgba(247, 249, 250, 0) 60%), linear-gradient(to bottom, rgba(247, 249, 250, 0) 0%, #f7f9fa 100%);\n}\n#files .teaser .title {\n  color: #C21B7A;\n  font-weight: 200;\n  font-size: 4vw;\n  white-space: nowrap;\n  margin-bottom: 10px;\n}\n#files .teaser .title img {\n  padding-right: 40px;\n  height: 100px;\n}\n#files .teaser .slogan {\n  font-size: 2vw;\n  font-weight: 200;\n  color: #34495e;\n}\n#files .deleteIcon {\n  position: absolute;\n  right: 24px;\n  width: 24px;\n  color: #C21B7A;\n  top: 8px;\n  cursor: pointer;\n  border: 1px solid black;\n  border-radius: 50%;\n  background-color: rgba(255, 0, 0, 0.5);\n}\n#files .deleteIcon:hover {\n  background-color: rgba(255, 0, 0, 0.9);\n}\n#files .thumb .thumbnail {\n  cursor: pointer;\n}\n#files .thumb .media-body {\n  padding-top: 20px;\n  padding-left: 20px;\n}\n#files .thumb .filenameInplaceEdit {\n  font-size: 18px;\n  color: #C21B7A;\n  margin-top: 5px;\n}\n#files .thumb h4 {\n  font-size: 18px;\n  color: #C21B7A;\n}\n#files .thumbAdd {\n  color: #C21B7A;\n  color: #0078f2;\n  border: 1px solid rgba(0, 120, 242, 0.33);\n  border-radius: 6px;\n  cursor: pointer;\n  transition: all 1s;\n  -webkit-transition: all 1s;\n}\n#files .thumbAdd div {\n  font-size: 160px;\n  text-align: center;\n}\n#files .thumbAdd h4 {\n  text-align: center;\n}\n#files .thumbAdd:hover {\n  border: 1px solid #0078f2;\n  transition: all 1s;\n  -webkit-transition: all 1s;\n}\n#home {\n  box-shadow: -6px 0 20px -4px rgba(31, 73, 125, 0.3);\n  padding: 40px !important;\n  overflow: auto;\n  background-size: cover;\n}\n#home .branding {\n  color: #C21B7A;\n}\n#home .hacksterProjectCard {\n  border: 1px solid black;\n}\n#home .paragraph h3 {\n  color: #C21B7A;\n  padding-top: 45px;\n}\n#home .paragraph .block {\n  padding-bottom: 30px;\n}\n#home .teaser {\n  margin-bottom: 30px;\n  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.4) 70%, #fff 100%), radial-gradient(ellipse at center, rgba(247, 249, 250, 0.7) 0%, rgba(247, 249, 250, 0) 60%), linear-gradient(to bottom, rgba(247, 249, 250, 0) 0%, #f7f9fa 100%);\n}\n#home .teaser .title {\n  color: #C21B7A;\n  font-weight: 200;\n  font-size: 4vw;\n  white-space: nowrap;\n  margin-bottom: 10px;\n}\n#home .teaser .title img {\n  padding-right: 40px;\n  height: 100px;\n}\n#home .teaser .slogan {\n  font-size: 2vw;\n  font-weight: 200;\n  color: #34495e;\n}\n#home .introText {\n  font-size: 20px;\n  font-weight: 200;\n  color: #34495e;\n}\n#home footer {\n  text-align: center;\n  margin-top: 100px;\n  color: #C21B7A;\n}\n#home footer a {\n  color: #C21B7A;\n  text-decoration: underline;\n}\n#addon {\n  box-shadow: -6px 0 20px -4px rgba(31, 73, 125, 0.3);\n  padding: 40px !important;\n  overflow: auto;\n  background-size: cover;\n}\n#addon .branding {\n  color: #C21B7A;\n}\n#addon .btn {\n  border: 0;\n  text-transform: uppercase;\n  background-color: transparent;\n  color: #C21B7A;\n  transition: all 0.5s;\n}\n#addon .btn:hover {\n  background-color: rgba(194, 27, 122, 0.04);\n  transition: all 0.5s;\n}\n#addon .paragraph h3 {\n  color: #C21B7A;\n  padding-top: 45px;\n}\n#addon .paragraph .block {\n  padding-bottom: 30px;\n}\n#addon .teaser {\n  margin-bottom: 30px;\n  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.4) 70%, #fff 100%), radial-gradient(ellipse at center, rgba(247, 249, 250, 0.7) 0%, rgba(247, 249, 250, 0) 60%), linear-gradient(to bottom, rgba(247, 249, 250, 0) 0%, #f7f9fa 100%);\n}\n#addon .teaser .title {\n  color: #C21B7A;\n  font-weight: 200;\n  font-size: 4vw;\n  white-space: nowrap;\n  margin-bottom: 10px;\n}\n#addon .teaser .title img {\n  padding-right: 40px;\n  height: 100px;\n}\n#addon .teaser .slogan {\n  font-size: 2vw;\n  font-weight: 200;\n  color: #34495e;\n}\n#addon .introText {\n  font-size: 20px;\n  font-weight: 200;\n  color: #34495e;\n}\n#addon footer {\n  text-align: center;\n  margin-top: 100px;\n  color: #C21B7A;\n}\n#addon footer a {\n  color: #C21B7A;\n  text-decoration: underline;\n}\n.raspiConnection {\n  color: red !important;\n  border: 1px solid red;\n  padding: 10px;\n  border-radius: 5px;\n}\n.drop {\n  display: block;\n  position: absolute;\n  background: #CCC;\n  border-radius: 100%;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  pointer-events: none;\n  width: 100%;\n  height: 100%;\n}\n.drop:before {\n  display: block;\n  position: absolute;\n  content: \"\";\n  background-color: #EEE;\n  border-radius: 100%;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n}\n.slider-handle {\n  border-radius: 50%;\n  background-color: #C71D3D;\n}\n#simulationBaseTimer {\n  width: 200px;\n}\n.simulationBase label {\n  display: block;\n  opacity: 0.5;\n  font-size: 10px;\n}\n.toolbar .group .form-horizontal {\n  text-align: center;\n  display: flex;\n}\n.toolbar .group .form-horizontal .statusIndicator {\n  margin: 20px;\n}\n.toolbar .group .form-horizontal .statusIndicator img {\n  display: block;\n  cursor: pointer;\n  margin: auto;\n}\n.toolbar .group .form-horizontal .statusIndicator img:hover {\n  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);\n}\n.toolbar .group .form-horizontal .statusIndicator span {\n  font-size: 0.8em;\n  text-align: center;\n  width: 100%;\n  display: inline-block;\n  white-space: nowrap;\n}\n.toolbar .group .form-horizontal .statusIndicator .notSupported {\n  display: none;\n  font-weight: bold;\n}\n.toolbar .group .form-horizontal .statusIndicator .connected {\n  display: block;\n}\n.toolbar .group .form-horizontal .statusIndicator .disconnected {\n  display: none;\n}\n.toolbar .group .form-horizontal .statusIndicator.disabled img {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n.toolbar .group .form-horizontal .statusIndicator.disabled img:hover {\n  box-shadow: none;\n}\n.toolbar .group .form-horizontal .statusIndicator.disabled span {\n  opacity: 0.5;\n}\n.toolbar .group .form-horizontal .statusIndicator.disabled .notSupported {\n  display: block;\n}\n.toolbar .group .form-horizontal .statusIndicator.disabled .connected {\n  display: none;\n}\n.toolbar .group .form-horizontal .statusIndicator.disabled .disconnected {\n  display: none;\n}\n.toolbar .group .form-horizontal .statusIndicator.error:not(.disabled) span {\n  color: red;\n  font-weight: bold;\n}\n.toolbar .group .form-horizontal .statusIndicator.error:not(.disabled) .notSupported {\n  display: none;\n}\n.toolbar .group .form-horizontal .statusIndicator.error:not(.disabled) .connected {\n  display: none;\n}\n.toolbar .group .form-horizontal .statusIndicator.error:not(.disabled) .disconnected {\n  display: block;\n}\n#simulationStartStop {\n  position: absolute;\n  right: 30px;\n  top: 30px;\n  z-index: 1000;\n  display: inline-block;\n  width: 4em;\n  height: 4em;\n  background-color: #FFF;\n  color: #9e9e9e;\n  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);\n  border-radius: 2em;\n  overflow: hidden;\n  transform: translateZ(0);\n  transition: all 500ms ease;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\n#simulationStartStop:hover {\n  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);\n}\n#simulationStartStop:active {\n  -webkit-transform: scale(1.1, 1.1);\n  transform: scale(1.1, 1.1);\n}\n#simulationStartStop:focus {\n  outline: 0;\n  border: none;\n  color: rgba(0, 0, 0, 0);\n}\n#simulationStartStop > span {\n  display: block;\n  position: relative;\n  width: 2em;\n  height: 2em;\n  transition: all 500ms ease;\n  overflow: hidden;\n  margin: 1em;\n}\n#simulationStartStop > span > span {\n  display: block;\n  background-color: #C71D3D;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 2em;\n  height: 2em;\n  transition: all 500ms ease;\n  border: 1px solid transparent;\n}\n#simulationStartStop.play > span {\n  -webkit-transform: translate(1em, 0) scale(1.6, 1);\n  transform: translate(1em, 0) scale(1.6, 1);\n}\n#simulationStartStop.play > span > span {\n  -webkit-transform: rotate(-45deg) translate(-1em, -1em) scale(1, 1);\n  transform: rotate(-45deg) translate(-1em, -1em) scale(1, 1);\n  background-color: #C71D3D;\n}\n#simulationStartStop.pause > span > span {\n  -webkit-transform: scale(0.4, 1) translate(-1.6em, 0);\n  transform: scale(0.4, 1) translate(-1.6em, 0);\n}\n#simulationStartStop.pause > span > span.s3 {\n  -webkit-transform: scale(0.4, 1) translate(1.6em, 0);\n  transform: scale(0.4, 1) translate(1.6em, 0);\n}\n.gutter {\n  background-color: #eee;\n  background-repeat: no-repeat;\n  background-position: 50%;\n}\n.gutter.gutter-vertical {\n  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');\n}\n.gutter.gutter-horizontal {\n  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');\n}\n.split {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.split,\n.gutter.gutter-horizontal {\n  float: left;\n}\n.split {\n  overflow-y: auto;\n  overflow-x: hidden;\n}\n", ""]);
+exports.push([module.i, ".toolbar {\n  margin: 0;\n  padding-top: 0;\n  padding-right: 10px;\n  top: 0;\n  right: 0;\n  left: 250px;\n  height: 60px;\n  overflow: visible;\n  z-index: 1000 !important;\n  position: absolute;\n  background-color: #B2E2F2;\n  border: none !important;\n}\n.toolbar * {\n  outline: none;\n}\n.toolbar .group {\n  padding-right: 20px;\n  display: inline-block;\n  vertical-align: top;\n}\n.toolbar .group .image-button {\n  display: inline-block;\n}\n.toolbar .group .image-button img {\n  margin: 5px;\n  margin-bottom: 0;\n  padding: 0;\n  width: 40px;\n  height: 40px;\n  position: relative;\n  display: inline-block;\n  text-align: center;\n  color: #777;\n  font-size: 45px;\n  transition: all 0.5s;\n}\n.toolbar .group .image-button div {\n  color: rgba(0, 0, 0, 0.5);\n  text-align: center;\n  font-size: 10px;\n}\n.toolbar .group .image-button.disabled {\n  opacity: 0.2;\n}\n.toolbar .group .image-button:not(.disabled) img {\n  cursor: pointer;\n}\n.toolbar .group .image-button:not(.disabled) img:hover {\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n}\n.modal-backdrop.in {\n  opacity: 0.7;\n  background-color: black;\n  transition: opacity 0.4s linear;\n}\n.genericDialog .modal-content {\n  border-radius: 4px;\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n  background-color: #ffffff;\n}\n.genericDialog .modal-content .modal-header {\n  border-bottom: 0;\n  font-weight: 400;\n  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);\n}\n.genericDialog .modal-content .modal-body {\n  padding: 1px;\n  min-height: 120px;\n}\n.genericDialog .modal-content .modal-body .form-control {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  box-sizing: border-box;\n  border-radius: 4px;\n  margin: 0;\n  padding: 0;\n  color: #4D4D4D;\n  display: inline-block;\n  font: inherit;\n  border: 1px solid #DFDFDF;\n  box-shadow: none;\n  height: 24px;\n  padding: 0 3px;\n}\n.genericDialog .modal-content .modal-body .form-control:focus {\n  background-color: #f5f5f5;\n}\n.genericDialog .modal-content .modal-body .list-group {\n  overflow-y: auto;\n  overflow-x: auto;\n}\n.genericDialog .modal-content .modal-body .list-group *[data-draw2d=\"true\"] {\n  font-weight: bold;\n  color: #C21B7A;\n}\n.genericDialog .modal-content .modal-body .list-group .glyphicon,\n.genericDialog .modal-content .modal-body .list-group .fa {\n  font-size: 20px;\n  padding-right: 10px;\n  color: #C21B7A;\n}\n.genericDialog .modal-content .modal-body .list-group .list-group-item {\n  background-color: transparent;\n  font-weight: 300;\n}\n.genericDialog .modal-content .modal-body .list-group .list-group-item:hover {\n  text-decoration: underline;\n}\n.genericDialog .modal-content .modal-body .list-group *[data-draw2d=\"false\"][data-type=\"file\"] {\n  color: gray;\n  cursor: default;\n  text-decoration: none !important;\n}\n.genericDialog .modal-content .modal-body .list-group *[data-draw2d=\"false\"][data-type=\"file\"] .fa {\n  color: gray;\n}\n.genericDialog .modal-content .modal-footer {\n  background-color: transparent;\n  border-top: 0;\n}\n.genericDialog .modal-content .modal-footer .btn {\n  border: 0;\n  text-transform: uppercase;\n  background-color: transparent;\n  color: #C21B7A;\n  transition: all 0.5s;\n}\n.genericDialog .modal-content .modal-footer .btn:hover {\n  background-color: rgba(194, 27, 122, 0.04);\n  transition: all 0.5s;\n}\n.genericDialog .modal-content .modal-footer .btn-primary {\n  font-weight: bold;\n}\n#githubNewFileDialog .filePreview {\n  font-size: 115px;\n  color: #C21B7A;\n}\n#fileOpenDialog .list-group {\n  height: 60%;\n}\n#fileSaveDialog .filePreview {\n  max-width: 200px;\n  max-height: 200px;\n}\n#fileSaveDialog .modal-body .media {\n  padding: 20px;\n}\n#githubFileSaveAsDialog .filePreview {\n  max-width: 200px;\n  max-height: 200px;\n}\n#githubFileSaveAsDialog .list-group {\n  height: 250px;\n}\n#canvas_zoom {\n  position: fixed;\n  bottom: 20px;\n  right: 20px;\n  background-color: rgba(178, 226, 242, 0.3);\n  border-radius: 5px;\n}\n#canvas_zoom button {\n  background-color: transparent;\n  font-weight: 300;\n  padding: 5px;\n  padding-left: 10px;\n  padding-right: 10px;\n  border: 1px solid transparent;\n  outline: none;\n  transition: all 0.5s;\n}\n#canvas_zoom button:hover {\n  border: 1px solid #C21B7A;\n}\nbody {\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n}\nbody #layout {\n  width: 100%;\n  height: 100%;\n  padding: 0;\n  margin: 0;\n}\nbody #layout .nav-tabs {\n  float: left;\n  border-bottom: 0;\n}\nbody #layout .nav-tabs li {\n  float: none;\n  margin: 0;\n}\nbody #layout .nav-tabs li a {\n  margin-right: 0;\n  border: 0;\n}\nbody #layout #leftTabStrip {\n  height: 100%;\n  position: absolute;\n  width: 60px;\n  padding-top: 60px;\n  overflow: hidden;\n}\nbody #layout #leftTabStrip .leftTab {\n  border-radius: 0 !important;\n  width: 60px;\n  height: 60px;\n}\nbody #layout .tab-content {\n  position: relative;\n  margin-left: 60px;\n  height: 100%;\n}\nbody #layout .tab-content .tab-pane {\n  display: none;\n  padding: 0;\n  height: 100%;\n  position: relative;\n}\nbody #layout .tab-content .tab-pane .workspace .palette {\n  position: absolute;\n  height: 100%;\n  width: 250px;\n  padding: 0;\n}\nbody #layout .tab-content .tab-pane .workspace .palette #paletteElementsFilter {\n  position: relative;\n  margin: 0;\n  padding: 0;\n  top: 0;\n  bottom: 0;\n}\nbody #layout .tab-content .tab-pane .workspace .palette #paletteElementsFilter #shapeTree {\n  padding: 10px;\n  overflow-x: hidden;\n  position: absolute;\n  top: 64px;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  overflow-y: scroll;\n}\nbody #layout .tab-content .tab-pane .workspace .palette #paletteElementsFilter #shapeTree .tree-leaf .tree-expando {\n  line-height: 10px;\n  width: 12px;\n  height: 12px;\n}\nbody #layout .tab-content .tab-pane .workspace .palette #paletteElementsFilter #shapeTree .tree-leaf .tree-expando.hidden {\n  display: block !important;\n  visibility: hidden !important;\n}\nbody #layout .tab-content .tab-pane .workspace .palette #paletteElementsFilter #shapeTree .tree-leaf .tree-leaf-content {\n  cursor: pointer;\n  transition: all 0.7s;\n}\nbody #layout .tab-content .tab-pane .workspace .palette #paletteElementsFilter #shapeTree .tree-leaf .tree-leaf-content.tree-child-leaves {\n  transition: all 0.7s;\n}\nbody #layout .tab-content .tab-pane .workspace .palette #paletteElementsFilter #shapeTree .tree-leaf .tree-leaf-content:hover {\n  background-color: rgba(243, 245, 246, 0.69);\n  transition: all 0.7s;\n}\nbody #layout .tab-content .tab-pane .workspace .palette #paletteElementsFilter #shapeTree .tree-leaf .tree-leaf-content.selected {\n  transition: all 0.4s;\n  background-color: #f3f5f6;\n}\nbody #layout .tab-content .tab-pane .workspace .palette #paletteElementsScroll {\n  position: relative;\n  width: 248px;\n  margin: 0;\n  padding: 0;\n  top: 0;\n  bottom: 0;\n  overflow: auto;\n}\nbody #layout .tab-content .tab-pane .workspace .palette #paletteElementsScroll #paletteElements {\n  position: absolute;\n  width: 100%;\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n}\nbody #layout .tab-content .tab-pane .workspace .palette #paletteElementsScroll #paletteElements .mix {\n  height: 125px;\n  border: 1px solid #f0f0f0;\n  /* to avoid doubling the border of the grid */\n  margin: -1px 0 0 -1px;\n}\nbody #layout .tab-content .tab-pane .workspace .content {\n  position: absolute;\n  right: 0;\n  top: 60px;\n  bottom: 0;\n  left: 250px;\n  overflow: scroll;\n}\nbody #layout .tab-content .tab-pane .workspace .content .canvas {\n  width: 6000px;\n  height: 6000px;\n}\nbody #layout .tab-content .active {\n  display: block;\n}\n.nav-tabs > li.active > a,\n.nav-tabs > li.active > a:hover,\n.nav-tabs > li.active > a:focus {\n  border: 0;\n}\n/* CSS from the cool website: http://cssarrowplease.com/ */\n.draw2d_tooltip {\n  position: absolute;\n  background: #88b7d5;\n  padding: 10px;\n  border-radius: 6px;\n}\n.draw2d_tooltip:after,\n.draw2d_tooltip:before {\n  bottom: 100%;\n  border: solid transparent;\n  content: \" \";\n  height: 0;\n  width: 0;\n  position: absolute;\n  pointer-events: none;\n}\n.draw2d_tooltip:after {\n  border-color: rgba(136, 183, 213, 0);\n  border-bottom-color: #88b7d5;\n  border-width: 4px;\n  left: 50%;\n  margin-left: -4px;\n}\n#codePreviewDialog .prettyprint {\n  max-height: 250px;\n  overflow: scroll;\n  border-radius: 0;\n}\n#markdownDialog .version {\n  opacity: 0.6;\n}\n#markdownDialog .html {\n  padding: 20px;\n}\n#markdownDialog .html table {\n  font-family: Arial, Helvetica, sans-serif;\n  color: #666;\n  font-size: 12px;\n  text-shadow: 1px 1px 0px #fff;\n  background: #eaebec;\n  margin: 20px;\n  margin-left: 0;\n  border: #ccc 1px solid;\n  -moz-border-radius: 3px;\n  -webkit-border-radius: 3px;\n  border-radius: 3px;\n  -moz-box-shadow: 0 1px 2px #d1d1d1;\n  -webkit-box-shadow: 0 1px 2px #d1d1d1;\n  box-shadow: 0 1px 2px #d1d1d1;\n}\n#markdownDialog .html table th {\n  padding: 21px 25px 22px 25px;\n  border-top: 1px solid #fafafa;\n  border-bottom: 1px solid #e0e0e0;\n}\n#markdownDialog .html table th:first-child {\n  text-align: left;\n  padding-left: 20px;\n}\n#markdownDialog .html table tr:first-child th:first-child {\n  -moz-border-radius-topleft: 3px;\n  -webkit-border-top-left-radius: 3px;\n  border-top-left-radius: 3px;\n}\n#markdownDialog .html table tr:first-child th:last-child {\n  -moz-border-radius-topright: 3px;\n  -webkit-border-top-right-radius: 3px;\n  border-top-right-radius: 3px;\n}\n#markdownDialog .html table tr {\n  text-align: center;\n  padding-left: 20px;\n}\n#markdownDialog .html table tr td:first-child {\n  text-align: left;\n  padding-left: 20px;\n  border-left: 0;\n}\n#markdownDialog .html table tr td {\n  padding: 18px;\n  border-top: 1px solid #ffffff;\n  border-bottom: 1px solid #e0e0e0;\n  border-left: 1px solid #e0e0e0;\n}\n#markdownDialog .html tbody tr:nth-child(odd) {\n  background: #fafafa;\n}\n#markdownDialog .html tbody tr:nth-child(even) {\n  background: #f3f3f3;\n}\n#markdownDialog .html table tr:last-child td {\n  border-bottom: 0;\n}\n#markdownDialog .html table tr:last-child td:first-child {\n  -moz-border-radius-bottomleft: 3px;\n  -webkit-border-bottom-left-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n#markdownDialog .html table tr:last-child td:last-child {\n  -moz-border-radius-bottomright: 3px;\n  -webkit-border-bottom-right-radius: 3px;\n  border-bottom-right-radius: 3px;\n}\n#webUSBHelpDialog .modal-body {\n  min-height: 310px;\n}\n#webUSBHelpDialog .modal-body .html {\n  padding: 20px;\n  max-height: 310px;\n  overflow: auto;\n  border-radius: 0;\n}\n.confirm-dialog-btn-confirm {\n  background-color: #C71D3D;\n}\n.context-menu-list {\n  margin: 0;\n  padding: 0;\n  min-width: 120px;\n  max-width: 250px;\n  display: inline-block;\n  position: absolute;\n  list-style-type: none;\n  border: 1px solid #DDD;\n  background: white;\n  border-left: 2px solid #C21B7A;\n  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);\n  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);\n  -ms-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);\n  -o-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);\n  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);\n  font-size: 15px;\n  white-space: nowrap;\n}\n.context-menu-item {\n  padding: 5px 5px 5px 24px;\n  position: relative;\n  -webkit-user-select: none;\n  -moz-user-select: -moz-none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.context-menu-separator {\n  padding-bottom: 0;\n  border-bottom: 1px solid #DDD;\n}\n.context-menu-item > label > input,\n.context-menu-item > label > textarea {\n  -webkit-user-select: text;\n  -moz-user-select: text;\n  -ms-user-select: text;\n  user-select: text;\n}\n.context-menu-item.hover {\n  cursor: pointer;\n  background-color: #C21B7A;\n  color: white;\n}\n.context-menu-item.disabled {\n  color: #666;\n}\n.context-menu-input.hover,\n.context-menu-item.disabled.hover {\n  cursor: default;\n  background-color: #EEE;\n}\n.context-menu-submenu:after {\n  content: \">\";\n  color: #666;\n  position: absolute;\n  top: 0;\n  right: 3px;\n  z-index: 1;\n}\n/* icons\n    #protip:\n    In case you want to use sprites for icons (which I would suggest you do) have a look at\n    http://css-tricks.com/13224-pseudo-spriting/ to get an idea of how to implement\n    .context-menu-item.icon:before {}\n */\n.context-menu-item.icon {\n  min-height: 18px;\n}\n.context-menu-item.icon:before {\n  position: relative;\n  left: -15px;\n  font-size: 19px;\n}\n/* vertically align inside labels */\n.context-menu-input > label > * {\n  vertical-align: top;\n}\n/* position checkboxes and radios as icons */\n.context-menu-input > label > input[type=\"checkbox\"],\n.context-menu-input > label > input[type=\"radio\"] {\n  margin-left: -17px;\n}\n.context-menu-input > label > span {\n  margin-left: 5px;\n}\n.context-menu-input > label,\n.context-menu-input > label > input[type=\"text\"],\n.context-menu-input > label > textarea,\n.context-menu-input > label > select {\n  display: block;\n  width: 100%;\n  box-sizing: border-box;\n}\n.context-menu-input > label > textarea {\n  height: 100px;\n}\n.context-menu-item > .context-menu-list {\n  display: none;\n  /* re-positioned by js */\n  right: -5px;\n  top: 5px;\n}\n.context-menu-item.hover > .context-menu-list {\n  display: block;\n}\n.context-menu-accesskey {\n  text-decoration: underline;\n}\n#probe_hint {\n  display: block;\n  padding: 30px;\n  color: white;\n  font-size: 20px;\n  font-weight: 100;\n}\n#probe_window {\n  background: #009DAC;\n  bottom: 0;\n  height: 0;\n  color: white;\n  position: absolute;\n  right: 0;\n  left: 250px;\n}\n#probe_window span {\n  font-size: 45px;\n  vertical-align: middle;\n  padding-right: 10px;\n}\n#probe_window_stick {\n  position: absolute;\n  top: -30px;\n  cursor: pointer;\n  color: black;\n  width: 100%;\n  border-bottom: 2px solid #009DAC;\n  text-align: center;\n}\n#probeSortable {\n  padding-left: 0;\n}\n#probeSortable li {\n  list-style-type: none;\n  padding-top: 10px;\n  padding-left: 0;\n}\n#probeSortable li path {\n  stroke: white;\n}\n#probeSortable li div {\n  cursor: pointer;\n  display: inline-block;\n  padding-left: 10px;\n  padding-right: 10px;\n  position: absolute;\n  background: rgba(0, 157, 172, 0.8);\n}\n#probeSortable li:nth-child(even) {\n  background: #04A9B9;\n}\n#probeSortable li:nth-child(even) div {\n  background: rgba(4, 169, 185, 0.5);\n}\n#probeSortable .inplaceEdit {\n  background: rgba(255, 255, 255, 0.1);\n}\nellipse.draw2d_shape_basic_LineStartResizeHandle,\nellipse.draw2d_shape_basic_LineEndResizeHandle,\nrect.draw2d_policy_line_OrthogonalSelectionFeedbackPolicy_ResizeHandle {\n  fill: #C21B7A;\n}\nellipse.draw2d_InputPort,\nellipse.DecoratedInputPort,\nellipse.draw2d_OutputPort {\n  fill: #C71D3D;\n}\n.vertical-text {\n  transform: rotate(-90deg);\n  white-space: nowrap;\n  top: 200px;\n  left: 20px;\n  font-size: 50px;\n  color: white;\n}\n#layout #leftTabStrip {\n  background-color: #C71D3D;\n}\n#layout #leftTabStrip:after {\n  content: \"BrainBox\";\n  -webkit-transform: rotate(-90deg) translate(-90px, -60px);\n  -moz-transform: rotate(-90deg) translate(-90px, -60px);\n  -ms-transform: rotate(-90deg) translate(-90px, -60px);\n  transform: rotate(-90deg) translate(-90px, -60px);\n  font-size: 50px;\n  color: white;\n  white-space: nowrap;\n  opacity: 0.4;\n}\n#layout #leftTabStrip li.active a:hover {\n  background-color: white;\n}\n#layout #leftTabStrip li.active svg path[stroke] {\n  stroke: #C71D3D !important;\n}\n#layout #leftTabStrip li.active svg rect[stroke] {\n  stroke: #C71D3D !important;\n}\n#layout #leftTabStrip li.active svg g[stroke] {\n  stroke: #C71D3D !important;\n}\n#layout #leftTabStrip li.active svg line[stroke] {\n  stroke: #C71D3D !important;\n}\n#layout #leftTabStrip li.active svg circle[stroke] {\n  stroke: #C71D3D !important;\n}\n#layout #leftTabStrip li.active svg rect[stroke] {\n  stroke: #C71D3D !important;\n}\n#layout #leftTabStrip li.active svg rect[fill] {\n  fill: #C71D3D !important;\n}\n#layout #leftTabStrip li.active svg circle[fill] {\n  fill: #C71D3D !important;\n}\n#layout #leftTabStrip li a {\n  padding: 4px;\n}\n#layout #leftTabStrip li a:hover {\n  background-color: rgba(0, 0, 0, 0.1);\n}\n#layout #leftTabStrip li a svg path[stroke] {\n  stroke: white !important;\n}\n#layout #leftTabStrip li a svg path[stroke] {\n  stroke: white !important;\n}\n#layout #leftTabStrip li a svg line[stroke] {\n  stroke: white !important;\n}\n#layout #leftTabStrip li a svg circle[stroke] {\n  stroke: white !important;\n}\n#layout #leftTabStrip li a svg g[stroke] {\n  stroke: white !important;\n}\n#layout #leftTabStrip li a svg rect[stroke] {\n  stroke: white !important;\n}\n#layout #leftTabStrip li a svg rect[fill] {\n  fill: white !important;\n}\n#layout #leftTabStrip li a svg circle[fill] {\n  fill: white !important;\n}\n.shadow {\n  border: 1px solid #C21B7A;\n  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);\n  background-color: white;\n}\n.ui-draggable-dragging {\n  z-index: 10000;\n}\ntext.highlightOnHover:hover {\n  cursor: pointer;\n  font-weight: bold;\n}\nellipse.highlightOnHover:hover {\n  cursor: pointer;\n}\nrect.Raft {\n  fill: rgba(28, 155, 171, 0.1);\n}\n#configMenuIcon {\n  font-size: 25px;\n  cursor: pointer;\n  opacity: 0.3;\n}\n#configMenuIcon:hover {\n  opacity: 1;\n  color: #C21B7A;\n}\n#paletteElementsOverlay {\n  bottom: 0;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  background-color: rgba(255, 255, 255, 0.7);\n  display: none;\n}\n#figureConfigDialog {\n  display: none;\n  background-color: white;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  padding: 10px;\n  margin-left: 30px;\n  border-left: 3px solid #C21B7A;\n  border-radius: 4px;\n}\n#figureConfigDialog .header {\n  font-size: 16px;\n  font-weight: 600;\n  padding-bottom: 15px;\n}\n#figureConfigDialog .figureAddLabel {\n  font-size: 12px;\n  font-weight: 200;\n  cursor: pointer;\n}\n#figureConfigDialog .figureAddLabel:hover {\n  color: #C21B7A;\n}\n#figureConfigDialog:after {\n  content: '';\n  display: block;\n  position: absolute;\n  left: -20px;\n  top: 10px;\n  width: 0;\n  height: 0;\n  border-right: 10px solid #C21B7A;\n  border-top: 10px solid transparent;\n  border-left: 10px solid transparent;\n  border-bottom: 10px solid transparent;\n}\n.pallette_item {\n  text-align: center;\n}\n@keyframes spinner {\n  to {\n    transform: rotate(360deg);\n  }\n}\n.spinner:before {\n  content: '';\n  box-sizing: border-box;\n  position: absolute;\n  top: 35%;\n  left: 50%;\n  width: 30px;\n  height: 30px;\n  margin-top: -15px;\n  margin-left: -15px;\n  border-radius: 50%;\n  border: 2px solid #ccc;\n  border-top-color: #07d;\n  animation: spinner 0.6s linear infinite;\n}\n.workspace .palette {\n  box-shadow: 5px 0 20px -3px rgba(31, 73, 125, 0.3), -6px 0 20px -4px rgba(31, 73, 125, 0.3);\n  border-right: 1px solid rgba(74, 74, 74, 0.5);\n  border-left: 1px solid rgba(74, 74, 74, 0.5);\n}\n.workspace .palette .title img {\n  padding-right: 20px;\n  position: absolute;\n  left: 10px;\n  top: 10px;\n  height: 40px;\n}\n.workspace .palette .title div {\n  position: absolute;\n  left: 60px;\n  top: 10px;\n}\n.workspace .palette .title div h1 {\n  font-size: 15px;\n  font-weight: 200;\n  line-height: 25px;\n  margin: 0;\n  padding: 0;\n  text-align: left;\n}\n.workspace .palette .title div h2 {\n  font-size: 10px;\n  font-weight: 200;\n  margin: 0;\n  padding: 0;\n  text-align: left;\n  letter-spacing: 4px;\n}\n.workspace .palette .pallette_item {\n  padding: 0px;\n}\n.workspace .palette .pallette_item > div {\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  border: 1px solid transparent;\n}\n.workspace .palette .pallette_item > div img {\n  position: absolute;\n  top: 0px;\n  bottom: 0;\n  margin: auto;\n  left: 50%;\n  transform: translate(-50%, -10px);\n}\n.workspace .palette .pallette_item > div div {\n  position: absolute;\n  padding-bottom: 2px;\n  width: 100%;\n  bottom: 0;\n  padding-top: 2px;\n  background-color: rgba(0, 0, 0, 0.05);\n  cursor: default;\n}\n.workspace .palette .pallette_item .glowBorder {\n  border: 1px solid #C21B7A;\n}\n.workspace .palette .draw2d_droppable {\n  cursor: move;\n  max-height: 80px;\n}\n.workspace .palette .request {\n  font-size: 10px;\n  color: #C21B7A;\n}\n.workspace .palette .request .icon {\n  cursor: pointer;\n  font-size: 75px;\n  margin-top: 10px;\n  margin-bottom: 10px;\n}\n.workspace .content .canvas {\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.nav-tabs > li.active > a,\n.nav-tabs > li.active > a:hover,\n.nav-tabs > li.active > a:focus {\n  border: 0;\n}\n#files {\n  overflow-y: scroll;\n  padding: 30px !important;\n  box-shadow: -6px 0 20px -4px rgba(31, 73, 125, 0.3);\n}\n#files .teaser {\n  margin-bottom: 30px;\n  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.4) 70%, #fff 100%), radial-gradient(ellipse at center, rgba(247, 249, 250, 0.7) 0%, rgba(247, 249, 250, 0) 60%), linear-gradient(to bottom, rgba(247, 249, 250, 0) 0%, #f7f9fa 100%);\n}\n#files .teaser .title {\n  color: #C21B7A;\n  font-weight: 200;\n  font-size: 4vw;\n  white-space: nowrap;\n  margin-bottom: 10px;\n}\n#files .teaser .title img {\n  padding-right: 40px;\n  height: 100px;\n}\n#files .teaser .slogan {\n  font-size: 2vw;\n  font-weight: 200;\n  color: #34495e;\n}\n#files .deleteIcon {\n  position: absolute;\n  right: 24px;\n  width: 24px;\n  color: #C21B7A;\n  top: 8px;\n  cursor: pointer;\n  border: 1px solid black;\n  border-radius: 50%;\n  background-color: rgba(255, 0, 0, 0.5);\n}\n#files .deleteIcon:hover {\n  background-color: rgba(255, 0, 0, 0.9);\n}\n#files .thumb .thumbnail {\n  cursor: pointer;\n}\n#files .thumb .media-body {\n  padding-top: 20px;\n  padding-left: 20px;\n}\n#files .thumb .filenameInplaceEdit {\n  font-size: 18px;\n  color: #C21B7A;\n  margin-top: 5px;\n}\n#files .thumb h4 {\n  font-size: 18px;\n  color: #C21B7A;\n}\n#files .thumbAdd {\n  color: #C21B7A;\n  color: #0078f2;\n  border: 1px solid rgba(0, 120, 242, 0.33);\n  border-radius: 6px;\n  cursor: pointer;\n  transition: all 1s;\n  -webkit-transition: all 1s;\n}\n#files .thumbAdd div {\n  font-size: 160px;\n  text-align: center;\n}\n#files .thumbAdd h4 {\n  text-align: center;\n}\n#files .thumbAdd:hover {\n  border: 1px solid #0078f2;\n  transition: all 1s;\n  -webkit-transition: all 1s;\n}\n#home {\n  box-shadow: -6px 0 20px -4px rgba(31, 73, 125, 0.3);\n  padding: 40px !important;\n  overflow: auto;\n  background-size: cover;\n}\n#home .branding {\n  color: #C21B7A;\n}\n#home .hacksterProjectCard {\n  border: 1px solid black;\n}\n#home .paragraph h3 {\n  color: #C21B7A;\n  padding-top: 45px;\n}\n#home .paragraph .block {\n  padding-bottom: 30px;\n}\n#home .teaser {\n  margin-bottom: 30px;\n  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.4) 70%, #fff 100%), radial-gradient(ellipse at center, rgba(247, 249, 250, 0.7) 0%, rgba(247, 249, 250, 0) 60%), linear-gradient(to bottom, rgba(247, 249, 250, 0) 0%, #f7f9fa 100%);\n}\n#home .teaser .title {\n  color: #C21B7A;\n  font-weight: 200;\n  font-size: 4vw;\n  white-space: nowrap;\n  margin-bottom: 10px;\n}\n#home .teaser .title img {\n  padding-right: 40px;\n  height: 100px;\n}\n#home .teaser .slogan {\n  font-size: 2vw;\n  font-weight: 200;\n  color: #34495e;\n}\n#home .introText {\n  font-size: 20px;\n  font-weight: 200;\n  color: #34495e;\n}\n#home footer {\n  text-align: center;\n  margin-top: 100px;\n  color: #C21B7A;\n}\n#home footer a {\n  color: #C21B7A;\n  text-decoration: underline;\n}\n#addon {\n  box-shadow: -6px 0 20px -4px rgba(31, 73, 125, 0.3);\n  padding: 40px !important;\n  overflow: auto;\n  background-size: cover;\n}\n#addon .branding {\n  color: #C21B7A;\n}\n#addon .btn {\n  border: 0;\n  text-transform: uppercase;\n  background-color: transparent;\n  color: #C21B7A;\n  transition: all 0.5s;\n}\n#addon .btn:hover {\n  background-color: rgba(194, 27, 122, 0.04);\n  transition: all 0.5s;\n}\n#addon .paragraph h3 {\n  color: #C21B7A;\n  padding-top: 45px;\n}\n#addon .paragraph .block {\n  padding-bottom: 30px;\n}\n#addon .teaser {\n  margin-bottom: 30px;\n  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.4) 70%, #fff 100%), radial-gradient(ellipse at center, rgba(247, 249, 250, 0.7) 0%, rgba(247, 249, 250, 0) 60%), linear-gradient(to bottom, rgba(247, 249, 250, 0) 0%, #f7f9fa 100%);\n}\n#addon .teaser .title {\n  color: #C21B7A;\n  font-weight: 200;\n  font-size: 4vw;\n  white-space: nowrap;\n  margin-bottom: 10px;\n}\n#addon .teaser .title img {\n  padding-right: 40px;\n  height: 100px;\n}\n#addon .teaser .slogan {\n  font-size: 2vw;\n  font-weight: 200;\n  color: #34495e;\n}\n#addon .introText {\n  font-size: 20px;\n  font-weight: 200;\n  color: #34495e;\n}\n#addon footer {\n  text-align: center;\n  margin-top: 100px;\n  color: #C21B7A;\n}\n#addon footer a {\n  color: #C21B7A;\n  text-decoration: underline;\n}\n.raspiConnection {\n  color: red !important;\n  border: 1px solid red;\n  padding: 10px;\n  border-radius: 5px;\n}\n.drop {\n  display: block;\n  position: absolute;\n  background: #CCC;\n  border-radius: 100%;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  pointer-events: none;\n  width: 100%;\n  height: 100%;\n}\n.drop:before {\n  display: block;\n  position: absolute;\n  content: \"\";\n  background-color: #EEE;\n  border-radius: 100%;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n}\n.slider-handle {\n  border-radius: 50%;\n  background-color: #C71D3D;\n}\n#simulationBaseTimer {\n  width: 200px;\n}\n.simulationBase label {\n  display: block;\n  opacity: 0.5;\n  font-size: 10px;\n}\n.toolbar .group .form-horizontal {\n  text-align: center;\n  display: flex;\n}\n.toolbar .group .form-horizontal .statusIndicator {\n  margin: 20px;\n}\n.toolbar .group .form-horizontal .statusIndicator img {\n  display: block;\n  cursor: pointer;\n  margin: auto;\n}\n.toolbar .group .form-horizontal .statusIndicator img:hover {\n  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);\n}\n.toolbar .group .form-horizontal .statusIndicator span {\n  font-size: 0.8em;\n  text-align: center;\n  width: 100%;\n  display: inline-block;\n  white-space: nowrap;\n}\n.toolbar .group .form-horizontal .statusIndicator .notSupported {\n  display: none;\n  font-weight: bold;\n}\n.toolbar .group .form-horizontal .statusIndicator .connected {\n  display: block;\n}\n.toolbar .group .form-horizontal .statusIndicator .disconnected {\n  display: none;\n}\n.toolbar .group .form-horizontal .statusIndicator.disabled img {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n.toolbar .group .form-horizontal .statusIndicator.disabled img:hover {\n  box-shadow: none;\n}\n.toolbar .group .form-horizontal .statusIndicator.disabled span {\n  opacity: 0.5;\n}\n.toolbar .group .form-horizontal .statusIndicator.disabled .notSupported {\n  display: block;\n}\n.toolbar .group .form-horizontal .statusIndicator.disabled .connected {\n  display: none;\n}\n.toolbar .group .form-horizontal .statusIndicator.disabled .disconnected {\n  display: none;\n}\n.toolbar .group .form-horizontal .statusIndicator.error:not(.disabled) span {\n  color: red;\n  font-weight: bold;\n}\n.toolbar .group .form-horizontal .statusIndicator.error:not(.disabled) .notSupported {\n  display: none;\n}\n.toolbar .group .form-horizontal .statusIndicator.error:not(.disabled) .connected {\n  display: none;\n}\n.toolbar .group .form-horizontal .statusIndicator.error:not(.disabled) .disconnected {\n  display: block;\n}\n#simulationStartStop {\n  position: absolute;\n  right: 30px;\n  top: 30px;\n  z-index: 1000;\n  display: inline-block;\n  width: 4em;\n  height: 4em;\n  background-color: #FFF;\n  color: #9e9e9e;\n  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);\n  border-radius: 2em;\n  overflow: hidden;\n  transform: translateZ(0);\n  transition: all 500ms ease;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\n#simulationStartStop:hover {\n  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);\n}\n#simulationStartStop:active {\n  -webkit-transform: scale(1.1, 1.1);\n  transform: scale(1.1, 1.1);\n}\n#simulationStartStop:focus {\n  outline: 0;\n  border: none;\n  color: rgba(0, 0, 0, 0);\n}\n#simulationStartStop > span {\n  display: block;\n  position: relative;\n  width: 2em;\n  height: 2em;\n  transition: all 500ms ease;\n  overflow: hidden;\n  margin: 1em;\n}\n#simulationStartStop > span > span {\n  display: block;\n  background-color: #C71D3D;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 2em;\n  height: 2em;\n  transition: all 500ms ease;\n  border: 1px solid transparent;\n}\n#simulationStartStop.play > span {\n  -webkit-transform: translate(1em, 0) scale(1.6, 1);\n  transform: translate(1em, 0) scale(1.6, 1);\n}\n#simulationStartStop.play > span > span {\n  -webkit-transform: rotate(-45deg) translate(-1em, -1em) scale(1, 1);\n  transform: rotate(-45deg) translate(-1em, -1em) scale(1, 1);\n  background-color: #C71D3D;\n}\n#simulationStartStop.pause > span > span {\n  -webkit-transform: scale(0.4, 1) translate(-1.6em, 0);\n  transform: scale(0.4, 1) translate(-1.6em, 0);\n}\n#simulationStartStop.pause > span > span.s3 {\n  -webkit-transform: scale(0.4, 1) translate(1.6em, 0);\n  transform: scale(0.4, 1) translate(1.6em, 0);\n}\n.gutter {\n  background-color: #eee;\n  background-repeat: no-repeat;\n  background-position: 50%;\n}\n.gutter.gutter-vertical {\n  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');\n}\n.gutter.gutter-horizontal {\n  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');\n}\n.split {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.split,\n.gutter.gutter-horizontal {\n  float: left;\n}\n.split {\n  overflow-y: auto;\n  overflow-x: hidden;\n}\n", ""]);
 
 // exports
 
@@ -41004,6 +41096,317 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 	return init(function () {});
 }));
+
+
+/***/ }),
+
+/***/ "./node_modules/js-treeview/dist/treeview.min.css":
+/*!********************************************************!*\
+  !*** ./node_modules/js-treeview/dist/treeview.min.css ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../css-loader!./treeview.min.css */ "./node_modules/css-loader/index.js!./node_modules/js-treeview/dist/treeview.min.css");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
+/***/ "./node_modules/js-treeview/index.js":
+/*!*******************************************!*\
+  !*** ./node_modules/js-treeview/index.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./src/treeview */ "./node_modules/js-treeview/src/treeview.js");
+
+
+/***/ }),
+
+/***/ "./node_modules/js-treeview/src/treeview.js":
+/*!**************************************************!*\
+  !*** ./node_modules/js-treeview/src/treeview.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function (define) {
+  'use strict';
+
+  (function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+      define(factory);
+    } else if (true) {
+      module.exports = factory();
+    } else {}
+  }(window, function () {
+    return (function () {
+
+      /** List of events supported by the tree view */
+      var events = [
+        'expand',
+        'expandAll',
+        'collapse',
+        'collapseAll',
+        'select'
+      ];
+
+	  /**
+	   * A utilite function to check to see if something is a DOM object
+	   * @param {object} Object to test
+	   * @returns {boolean} If the object is a DOM object
+	   */
+	  function isDOMElement(obj) {
+        try {
+          return obj instanceof HTMLElement;
+        } catch (e) {
+          // Some browsers don't support using the HTMLElement so some extra
+          // checks are needed.
+            return typeof obj === 'object' && obj.nodeType === 1 && typeof obj.style === 'object' && typeof obj.ownerDocument === 'object';
+        }
+	  }
+
+      /**
+       * A forEach that will work with a NodeList and generic Arrays
+       * @param {array|NodeList} arr The array to iterate over
+       * @param {function} callback Function that executes for each element. First parameter is element, second is index
+       * @param {object} The context to execute callback with
+       */
+      function forEach(arr, callback, scope) {
+        var i, len = arr.length;
+        for (i = 0; i < len; i += 1) {
+          callback.call(scope, arr[i], i);
+        }
+      }
+
+      /**
+       * Emit an event from the tree view
+       * @param {string} name The name of the event to emit
+       */
+      function emit(instance, name) {
+        var args = [].slice.call(arguments, 2);
+        if (events.indexOf(name) > -1) {
+          if (instance.handlers[name] && instance.handlers[name] instanceof Array) {
+            forEach(instance.handlers[name], function (handle) {
+              window.setTimeout(function () {
+                handle.callback.apply(handle.context, args);
+              }, 0);
+            });
+          }
+        } else {
+          throw new Error(name + ' event cannot be found on TreeView.');
+        }
+      }
+
+      /**
+       * Renders the tree view in the DOM
+       */
+      function render(self) {
+        var container = isDOMElement(self.node) ? self.node : document.getElementById(self.node);
+        var leaves = [], click;
+        var renderLeaf = function (item) {
+          var leaf = document.createElement('div');
+          var content = document.createElement('div');
+          var text = document.createElement('div');
+          var expando = document.createElement('div');
+
+          leaf.setAttribute('class', 'tree-leaf');
+          content.setAttribute('class', 'tree-leaf-content');
+          content.setAttribute('data-item', JSON.stringify(item));
+          text.setAttribute('class', 'tree-leaf-text');
+          text.textContent = item.name;
+          expando.setAttribute('class', 'tree-expando ' + (item.expanded ? 'expanded' : ''));
+          expando.textContent = item.expanded ? '-' : '+';
+          content.appendChild(expando);
+          content.appendChild(text);
+          leaf.appendChild(content);
+          if (item.children && item.children.length > 0) {
+            var children = document.createElement('div');
+            children.setAttribute('class', 'tree-child-leaves');
+            forEach(item.children, function (child) {
+              var childLeaf = renderLeaf(child);
+              children.appendChild(childLeaf);
+            });
+            if (!item.expanded) {
+              children.classList.add('hidden');
+            }
+            leaf.appendChild(children);
+          } else {
+            expando.classList.add('hidden');
+          }
+          return leaf;
+        };
+
+        forEach(self.data, function (item) {
+          leaves.push(renderLeaf.call(self, item));
+        });
+        container.innerHTML = leaves.map(function (leaf) {
+          return leaf.outerHTML;
+        }).join('');
+
+        click = function (e) {
+          var parent = (e.target || e.currentTarget).parentNode;
+          var data = JSON.parse(parent.getAttribute('data-item'));
+          var leaves = parent.parentNode.querySelector('.tree-child-leaves');
+          if (leaves) {
+            if (leaves.classList.contains('hidden')) {
+              self.expand(parent, leaves);
+            } else {
+              self.collapse(parent, leaves);
+            }
+          } else {
+            emit(self, 'select', {
+              target: e,
+              data: data
+            });
+          }
+        };
+
+        forEach(container.querySelectorAll('.tree-leaf-text'), function (node) {
+          node.onclick = click;
+        });
+        forEach(container.querySelectorAll('.tree-expando'), function (node) {
+          node.onclick = click;
+        });
+      }
+
+      /**
+       * @constructor
+       * @property {object} handlers The attached event handlers
+       * @property {object} data The JSON object that represents the tree structure
+       * @property {DOMElement} node The DOM element to render the tree in
+       */
+      function TreeView(data, node) {
+        this.handlers = {};
+        this.node = node;
+        this.data = data;
+        render(this);
+      }
+
+      /**
+       * Expands a leaflet by the expando or the leaf text
+       * @param {DOMElement} node The parent node that contains the leaves
+       * @param {DOMElement} leaves The leaves wrapper element
+       */
+      TreeView.prototype.expand = function (node, leaves, skipEmit) {
+        var expando = node.querySelector('.tree-expando');
+        expando.textContent = '-';
+        leaves.classList.remove('hidden');
+        if (skipEmit) { return; }
+        emit(this, 'expand', {
+          target: node,
+          leaves: leaves
+        });
+      };
+
+      TreeView.prototype.expandAll = function () {
+        var self = this;
+        var nodes = document.getElementById(self.node).querySelectorAll('.tree-expando');
+        forEach(nodes, function (node) {
+          var parent = node.parentNode;
+          var leaves = parent.parentNode.querySelector('.tree-child-leaves');
+          if (parent && leaves && parent.hasAttribute('data-item')) {
+            self.expand(parent, leaves, true);
+          }
+        });
+        emit(this, 'expandAll', {});
+      };
+
+      /**
+       * Collapses a leaflet by the expando or the leaf text
+       * @param {DOMElement} node The parent node that contains the leaves
+       * @param {DOMElement} leaves The leaves wrapper element
+       */
+      TreeView.prototype.collapse = function (node, leaves, skipEmit) {
+        var expando = node.querySelector('.tree-expando');
+        expando.textContent = '+';
+        leaves.classList.add('hidden');
+        if (skipEmit) { return; }
+        emit(this, 'collapse', {
+          target: node,
+          leaves: leaves
+        });
+      };
+
+      /**
+       */
+      TreeView.prototype.collapseAll = function () {
+        var self = this;
+        var nodes = document.getElementById(self.node).querySelectorAll('.tree-expando');
+        forEach(nodes, function (node) {
+          var parent = node.parentNode;
+          var leaves = parent.parentNode.querySelector('.tree-child-leaves');
+          if (parent && leaves && parent.hasAttribute('data-item')) {
+            self.collapse(parent, leaves, true);
+          }
+        });
+        emit(this, 'collapseAll', {});
+      };
+
+      /**
+       * Attach an event handler to the tree view
+       * @param {string} name Name of the event to attach
+       * @param {function} callback The callback to execute on the event
+       * @param {object} scope The context to call the callback with
+       */
+      TreeView.prototype.on = function (name, callback, scope) {
+        if (events.indexOf(name) > -1) {
+          if (!this.handlers[name]) {
+            this.handlers[name] = [];
+          }
+          this.handlers[name].push({
+            callback: callback,
+            context: scope
+          });
+        } else {
+          throw new Error(name + ' is not supported by TreeView.');
+        }
+      };
+
+      /**
+       * Deattach an event handler from the tree view
+       * @param {string} name Name of the event to deattach
+       * @param {function} callback The function to deattach
+       */
+      TreeView.prototype.off = function (name, callback) {
+        var index, found = false;
+        if (this.handlers[name] instanceof Array) {
+          this.handlers[name].forEach(function (handle, i) {
+            index = i;
+            if (handle.callback === callback && !found) {
+              found = true;
+            }
+          });
+          if (found) {
+            this.handlers[name].splice(index, 1);
+          }
+        }
+      };
+
+      return TreeView;
+    }());
+  }));
+}(window.define));
 
 
 /***/ }),

@@ -407,7 +407,7 @@ export default draw2d.Canvas.extend({
   onDrop: function (droppedDomNode, x, y, shiftKey, ctrlKey) {
     let type = $(droppedDomNode).data("shape")
     let file = $(droppedDomNode).data("file")
-    console.log(file)
+
     let figure = eval("new " + type + "();") // jshint ignore:line
     figure.attr("userData.file",file)
 

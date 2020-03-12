@@ -115,7 +115,7 @@ export default {
         usbPort.onReceive = data => {
           let textDecoder = new TextDecoder()
           let txt = textDecoder.decode(data)
-          console.log('-', txt)
+
         }
         usbPort.onReceiveError = error => {
           usbPort = null;

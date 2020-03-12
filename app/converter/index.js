@@ -16,7 +16,7 @@ var version = system.env["VERSION"] || "local-version";
 function fileToPackage(file) {
   return file
     .replace(shapeDir, "")
-    .replace(".shape", "")
+    .replace(/\.shape$/g, "")
     .replace(/\//g, "_");
 }
 
@@ -53,11 +53,15 @@ function concatFiles(dirname) {
     if (/\.(js)$/.test(filename)) {
       var relativePath = filename.replace(dirname, "")
       var basenamePath = relativePath.replace(".js", "")
-      var name = basenamePath.replace(/\//g , "_");
-      var tags = name.split("_");
+      var name = basenamePath.replace(/\//g , "_")
+      var basename = relativePath.split('/').pop()
+      var tags = name.split("_")
       list.push({
         name: name,
         tags: tags,
+        version: version,
+        basename: basename,
+        basedir: relativePath.substring(0, relativePath.lastIndexOf('/')),
         filePath: basenamePath + ".shape",
         image: basenamePath + ".png"
       });
