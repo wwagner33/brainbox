@@ -183,23 +183,48 @@
 
     <div class="tab-pane active" id="editor">
       <div class="workspace">
+
         <div class="palette ">
-          <div class="title">
+
+          <div id="paletteElementsFilter" class="title">
             <a href="https://freegroup.github.io/brainbox/" target="_blank"><img src="./images/favicon_64x64.svg"/></a>
             <div>
               <h1>Brainbox</h1>
               <h2>Simulator</h2>
             </div>
+
+            <ul id="myUL">
+              <li><span class="caret">Beverages</span>
+                <ul class="nested">
+                  <li>Water</li>
+                  <li>Coffee</li>
+                  <li><span class="caret">Tea</span>
+                    <ul class="nested">
+                      <li>Black Tea</li>
+                      <li>White Tea</li>
+                      <li><span class="caret">Green Tea</span>
+                        <ul class="nested">
+                          <li>Sencha</li>
+                          <li>Gyokuro</li>
+                          <li>Matcha</li>
+                          <li>Pi Lo Chun</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
           </div>
 
-          <input type="text" id="filter" placeholder="Filter..." autofocus>
           <div id="paletteElementsScroll">
             <div id="paletteElements" class="row">
-
             </div>
             <div id="paletteElementsOverlay"></div>
           </div>
         </div>
+
         <div class="toolbar">
             <span class="group" id="editorgroup_fileoperations">
                 <span class="image-button"  id="editorFileOpen">

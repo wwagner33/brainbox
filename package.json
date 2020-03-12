@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "autolinker": "^3.13.0",
-    "babel-cli": "^6.26.3",
+    "babel-cli": "7.0.0-beta.3",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^7.0.0-beta.3",
@@ -81,6 +81,7 @@
     "sanitize-filename": "^1.6.1",
     "serialport": "7.0.2",
     "socket.io": "2.1.1",
+    "split.js": "^1.5.11",
     "system": "2.0.1",
     "unzip": "^0.1.11",
     "webpage": "0.3.0"

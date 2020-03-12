@@ -3,6 +3,7 @@ import "../less/index.less"
 import "font-awesome/css/font-awesome.css"
 import "./dialog/PopConfirm"
 import UpdateSuccessDialog from "./dialog/UpdateSuccessDialog"
+import Split from 'split.js'
 
 //require('webpack-jquery-ui/css');  //ommit, if you don't want to load basic css theme
 
@@ -99,5 +100,14 @@ $(window).load(function () {
       alert(arguments[2].toString());
     }
   });
+
+  Split(['#paletteElementsFilter', '#paletteElementsScroll'], {
+    gutterSize: 10,
+    sizes: [40, 60],
+    minSize: 200,
+    cursor: 'row-resize',
+    direction: 'vertical'
+  })
+
 
 });
