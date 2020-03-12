@@ -6,7 +6,7 @@
  */
 import Palette from "./Palette"
 import View from "./View"
-import Files from "./Files"
+import Files from "./view/FilesScreen"
 import FileOpen from "./dialog/FileOpen"
 import FileSave from "./dialog/FileSave"
 import storage from './io/BackendStorage'

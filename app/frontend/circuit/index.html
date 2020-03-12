@@ -89,7 +89,7 @@
     <div class="tab-pane" id="home">
       <div class="row hidden-xs teaser">
         <div class="col-sm-8 col-md-8">
-          <div class="title"><img src="./images/favicon_64x64.svg"/>BrainBox</div>
+          <div class="title"><img src="./images/navigation_index.svg"/>BrainBox</div>
           <div class="slogan">
             Brainbox is a free and open source digital logic circuit design and simulation software
           </div>
@@ -156,9 +156,14 @@
     </div>
 
     <div class="tab-pane" id="files">
-      <div class="container">
-        <div class="row">
+      <div class="row hidden-xs teaser">
+        <div class="col-sm-8 col-md-8">
+          <div class="title"><img src="./images/navigation_file.svg"/>Load a Circuit</div>
+
         </div>
+      </div>
+
+      <div class="fileList">
       </div>
     </div>
 
@@ -319,7 +324,7 @@
 <ul class="list-group col-lg-10 col-md-10 col-xs-10 ">
 {{#files}}
   <li class="list-group-item"  data-name="{{name}}">
-    <div class="media">
+    <div class="media thumb">
        <a class="thumbnail media-left" data-name="{{name}}">
         <div style="width: 64px; height: 64px">
           <img style="width:100%; height:auto;"  data-name="{{name}}"  src="{{path}}{{name}}">

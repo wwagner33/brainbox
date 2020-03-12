@@ -1,7 +1,7 @@
-import conf from "./Configuration"
-import FileNew from "./dialog/FileNew"
+import conf from "../Configuration"
+import FileNew from "../dialog/FileNew"
 import Hogan from "hogan.js"
-import storage from "./io/BackendStorage"
+import storage from "../io/BackendStorage"
 
 /**
  *
@@ -36,9 +36,9 @@ export default class Files {
         files: files
       })
 
-      $("#files .container > .row").html($(output))
+      $("#files .fileList").html($(output))
 
-      $("#files .container .deleteIcon").on("click", (event) => {
+      $("#files .fileList .deleteIcon").on("click", (event) => {
         let $el = $(event.currentTarget)
         let name = $el.data("name")
         storage.deleteFile(name).then(() => {
