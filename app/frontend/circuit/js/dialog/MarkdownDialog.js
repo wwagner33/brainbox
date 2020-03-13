@@ -1,4 +1,5 @@
 import {Remarkable, utils} from "remarkable"
+import conf from "../Configuration";
 
 export default class MarkdownDialog {
 
@@ -13,12 +14,21 @@ export default class MarkdownDialog {
     }
   }
 
-  show(markdown, version) {
+  show(figure, markdown) {
+    let version = figure.VERSION
     let markdownParser = new Remarkable('full', this.defaults)
     markdownParser.inline.validateLink = this.validateLink
     $('#markdownDialog .html').html(markdownParser.render(markdown))
     $('#markdownDialog .version').html(version)
     $('#markdownDialog').modal('show')
+    $("#markdownDialog .editButton").off("click").on("click", () => {
+      let baseName = figure.attr("userData.file").replace(/\.shape$/, "")
+      let pathToDesign = conf.designer.url
+        + "?timestamp=" + new Date().getTime()
+        + "&file=" + baseName + ".shape"
+        + "&tutorial=markdown"
+      window.open(pathToDesign, "designer")
+    })
   }
 
   validateLink(url) {

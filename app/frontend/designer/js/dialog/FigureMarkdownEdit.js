@@ -1,4 +1,4 @@
-import Remarkable from "remarkable"
+import {Remarkable, utils} from "remarkable"
 
 export default class FigureMarkdownEdit {
 
@@ -12,7 +12,6 @@ export default class FigureMarkdownEdit {
       xhtmlOut: false,          // Use '/' to close single tags (<br />)
       breaks: false,            // Convert '\n' in paragraphs into <br>
       langPrefix: 'language-',  // CSS language prefix for fenced blocks
-      linkify: true,            // autoconvert URL-like texts to links
       linkTarget: '_blank',     // set target to open link in
       typographer: true         // Enable smartypants and other sweet transforms
     }
@@ -22,12 +21,12 @@ export default class FigureMarkdownEdit {
    */
   show() {
     Mousetrap.pause()
-    var _this = this
     this.mdHtml = new Remarkable('full', this.defaults)
+    this.mdHtml.inline.validateLink = this.validateLink
 
-    var markdown = shape_designer.app.getConfiguration("markdown")
+    let markdown = shape_designer.app.getConfiguration("markdown")
     markdown = markdown ? markdown : "# Header \n## Subheader \nbe nice and write a help file for your new \ncreated ***DigitalTrainingStudion*** shape. \n\n  - point 1\n  - point 2\n  - point 3"
-    var splash = $(
+    let splash = $(
       '<div id="FigureMarkdownEdit" class="overlay-scale">' +
       '<pre class="source full-height">' +
       markdown +
@@ -46,9 +45,9 @@ export default class FigureMarkdownEdit {
     // zufrieden.
     $("body").append(splash)
 
-    var removeDialog = function () {
+    let removeDialog = () => {
       Mousetrap.unpause()
-      shape_designer.app.setConfiguration({markdown: _this.editor.getValue()})
+      shape_designer.app.setConfiguration({markdown: this.editor.getValue()})
       splash.removeClass("open")
       setTimeout(function () {
         splash.remove()
@@ -56,15 +55,15 @@ export default class FigureMarkdownEdit {
     }
 
     $("#test_close").on("click", removeDialog)
-    setTimeout(function () {
+    setTimeout( () => {
       splash.addClass("open")
     }, 100)
 
 
     // Inject line numbers for sync scroll.
     //
-    this.mdHtml.renderer.rules.paragraph_open = function (tokens, idx) {
-      var line
+    this.mdHtml.renderer.rules.paragraph_open =  (tokens, idx) =>{
+      let line
       if (tokens[idx].lines && tokens[idx].level === 0) {
         line = tokens[idx].lines[0]
         return '<p class="line" data-line="' + line + '">'
@@ -72,8 +71,8 @@ export default class FigureMarkdownEdit {
       return '<p>'
     }
 
-    this.mdHtml.renderer.rules.heading_open = function (tokens, idx) {
-      var line
+    this.mdHtml.renderer.rules.heading_open =  (tokens, idx) =>{
+      let line
       if (tokens[idx].lines && tokens[idx].level === 0) {
         line = tokens[idx].lines[0]
         return '<h' + tokens[idx].hLevel + ' class="line" data-line="' + line + '">'
@@ -84,17 +83,16 @@ export default class FigureMarkdownEdit {
     this.$preview = $("#FigureMarkdownEdit .preview")
     this.$source = $('#FigureMarkdownEdit .source')
 
-    var editor = ace.edit(this.$source[0]),
-      session = editor.getSession()
+    let editor = ace.edit(this.$source[0]),session = editor.getSession()
     this.editor = editor
     editor.moveCursorTo(5, 0)
     editor.focus()
 
     session.setMode("ace/mode/markdown")
 
-    session.on('changeScrollTop', _this._debounce($.proxy(_this.syncScroll, _this), 50, false))
+    session.on('changeScrollTop', this._debounce($.proxy(this.syncScroll, this), 50, false))
 
-    editor.keyBinding.addKeyboardHandler({handleKeyboard: _this._debounce($.proxy(_this.updateResult, _this), 300, false)})
+    editor.keyBinding.addKeyboardHandler({handleKeyboard: this._debounce($.proxy(this.updateResult, this), 300, false)})
 
     this.updateResult()
   }
@@ -201,6 +199,17 @@ export default class FigureMarkdownEdit {
     this.$preview.stop(true).animate({
       scrollTop: posTo
     }, 400, 'linear')
+  }
+
+  validateLink(url) {
+    let BAD_PROTOCOLS = [ 'vbscript', 'javascript', 'file'];
+    let str = url.trim().toLowerCase();
+    // Care about digital entities "javascript&#x3A;alert(1)"
+    str = utils.replaceEntities(str);
+    if (str.indexOf(':') !== -1 && BAD_PROTOCOLS.indexOf(str.split(':')[0]) !== -1) {
+      return false;
+    }
+    return true;
   }
 
   // Returns a function, that, as long as it continues to be invoked, will not

@@ -235,7 +235,7 @@ export default class Toolbar {
 
     buttonGroup = $('<div class="group" style="float:right"></div>')
     this.html.append(buttonGroup)
-    this.testButton = $('<div class="image-button" data-toggle="tooltip" title="Test your shape"><img src="./images/toolbar_element_test.svg"/><div>Test</div></div>')
+    this.testButton = $('<div class="image-button" id="editTest" data-toggle="tooltip" title="Test your shape"><img src="./images/toolbar_element_test.svg"/><div>Test</div></div>')
     buttonGroup.append(this.testButton)
     this.testButton.on("click", () => {
       // if any error happens during the shape code create/execute -> goto the the JS editor
@@ -248,15 +248,15 @@ export default class Toolbar {
       }
     })
 
-    this.codeButton = $('<div class="image-button" data-toggle="tooltip" title="Edit JavaScript code</span>"><img src="./images/toolbar_element_js.svg"/><div>Code</div></div>')
+    this.codeButton = $('<div class="image-button" id="editCode" data-toggle="tooltip" title="Edit JavaScript code</span>"><img src="./images/toolbar_element_js.svg"/><div>Code</div></div>')
     buttonGroup.append(this.codeButton)
     this.codeButton.on("click", () => {
       new FigureCodeEdit().show()
     })
 
-    this.markdownButton = $('<div class="image-button" data-toggle="tooltip" title="Write documentation for your shape</span>"><img src="./images/toolbar_element_doc.svg"/><div>Doku</div></div>')
+    this.markdownButton = $('<div class="image-button" id="editDoc" data-toggle="tooltip" title="Write documentation for your shape</span>"><img src="./images/toolbar_element_doc.svg"/><div>Doku</div></div>')
     buttonGroup.append(this.markdownButton)
-    this.markdownButton.on("click", () => {
+    $(document).on("click", "#editDoc", () => {
       new FigureMarkdownEdit().show()
     })
 

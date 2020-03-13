@@ -16,6 +16,26 @@ import FileSaveAs from "./dialog/FileSaveAs"
  * @author Andreas Herz
  */
 
+/**
+ * wait asyn that an DOM element is present
+ * Usage: checkElement("<selector>").then(function(){alert("element found")})
+ *
+ * @returns {Promise<any>}
+ */
+function rafAsync() {
+  return new Promise(resolve => {
+    requestAnimationFrame(resolve); //faster than set time out
+  });
+}
+function checkElement(selector) {
+  if (document.querySelector(selector) === null) {
+    return rafAsync().then(() => checkElement(selector));
+  } else {
+    return Promise.resolve(true);
+  }
+}
+
+
 export default class Application {
   /**
    * @constructor
@@ -78,6 +98,43 @@ export default class Application {
         this._load(event.state.file)
       }
     })
+
+    // check if the user has added a "file" parameter. In this case we load the shape from
+    // the draw2d.shape github repository
+    //
+    let tutorial = this.getParam("tutorial")
+    if(tutorial) {
+      this.checkForTutorialMode()
+    }
+  }
+
+  checkForTutorialMode() {
+    let tutorial = this.getParam("tutorial")
+    if (!tutorial || tutorial === '') {
+      return
+    }
+
+    switch (tutorial) {
+      case "markdown":
+        checkElement("#editDoc").then( ()=>{
+          let anno = new Anno([
+            {
+              target: '#editDoc',
+              content: 'Click here to edit the documentation of the shape.',
+              position: 'left'
+            },
+            {
+              target: '#fileSave',
+              content: "..and don't forget to save your changes afterwards.",
+              position: 'right'
+            },
+          ])
+          anno.show()
+        })
+        break
+      default:
+        break
+    }
   }
 
   _load(file){
