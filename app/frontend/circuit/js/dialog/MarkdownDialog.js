@@ -14,20 +14,24 @@ export default class MarkdownDialog {
     }
   }
 
-  show(figure, markdown) {
-    let version = figure.VERSION
-    let markdownParser = new Remarkable('full', this.defaults)
-    markdownParser.inline.validateLink = this.validateLink
-    $('#markdownDialog .html').html(markdownParser.render(markdown))
-    $('#markdownDialog .version').html(version)
-    $('#markdownDialog').modal('show')
-    $("#markdownDialog .editButton").off("click").on("click", () => {
-      let baseName = figure.attr("userData.file").replace(/\.shape$/, "")
-      let pathToDesign = conf.designer.url
-        + "?timestamp=" + new Date().getTime()
-        + "&file=" + baseName + ".shape"
-        + "&tutorial=markdown"
-      window.open(pathToDesign, "designer")
+  show(figure) {
+    let baseName = figure.attr("userData.file").replace(/\.shape$/, "")
+    let pathToMD = conf.shapes.url + baseName + ".md"
+    $.get(pathToMD, function (content) {
+      let version = figure.VERSION
+      let markdownParser = new Remarkable('full', this.defaults)
+      markdownParser.inline.validateLink = this.validateLink
+      $('#markdownDialog .html').html(markdownParser.render(content))
+      $('#markdownDialog .version').html(version)
+      $('#markdownDialog').modal('show')
+      $("#markdownDialog .editButton").off("click").on("click", () => {
+        let baseName = figure.attr("userData.file").replace(/\.shape$/, "")
+        let pathToDesign = conf.designer.url
+          + "?timestamp=" + new Date().getTime()
+          + "&file=" + baseName + ".shape"
+          + "&tutorial=markdown"
+        window.open(pathToDesign, "designer")
+      })
     })
   }
 

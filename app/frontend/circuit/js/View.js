@@ -13,6 +13,7 @@ import conf from "./Configuration"
 import Connection from "./figures/Connection"
 import SimulationEditPolicy from "./SimulationEditPolicy"
 import MarkdownDialog from "./dialog/MarkdownDialog"
+import DesignerDialog from "./dialog/DesignerDialog"
 import CodeDialog from "./dialog/CodeDialog"
 import WebUSBHelpDialog from "./dialog/WebUSBHelpDialog"
 
@@ -49,7 +50,7 @@ export default draw2d.Canvas.extend({
 
     let router = new ConnectionRouter()
     router.abortRoutingOnFirstVertexNode = false
-    let createConnection = this.createConnection = function (sourcePort, targetPort) {
+    let createConnection = this.createConnection =  (sourcePort, targetPort) => {
       let c = new Connection({
         color: "#000000",
         router: router,
@@ -247,9 +248,9 @@ export default draw2d.Canvas.extend({
     })
 
     this.on("contextmenu", function (emitter, event) {
-      var figure = _this.getBestFigure(event.x, event.y)
+      let figure = _this.getBestFigure(event.x, event.y)
 
-      // a connectionprovides its own context menu
+      // a connection provides its own context menu
       //
       if (figure instanceof draw2d.Connection) {
         return
@@ -262,33 +263,22 @@ export default draw2d.Canvas.extend({
         let x = event.x
         let y = event.y
 
-        let baseName = figure.attr("userData.file").replace(/\.shape$/, "")
-        let pathToMD = conf.shapes.url + baseName + ".md"
-        let pathToCustom = conf.shapes.url + baseName + ".custom"
-        let pathToDesign = conf.designer.url + "?timestamp=" + new Date().getTime() + "&file=" + baseName + ".shape"
         let items = {
-          "label": {name: "Attach Label", icon: "x ion-ios-pricetag-outline"},
+          "label":  {name: "Attach Label", icon: "x ion-ios-pricetag-outline"},
           "delete": {name: "Delete", icon: "x ion-ios-close-outline"},
           "sep1": "---------",
           "design": {name: "Edit Shape", icon: "x ion-ios-compose-outline"},
-          "code": {name: "Show Custom Code", icon: "x ion-code"},
-          "help": {name: "Info", icon: "x ion-ios-information-outline"}
+          "code":   {name: "Show JS Code", icon: "x ion-code"},
+          "help":   {name: "Description", icon: "x ion-ios-information-outline"}
         }
 
         $.contextMenu({
           selector: 'body',
-          events:
-            {
-              hide: function () {
-                $.contextMenu('destroy')
-              }
-            },
+          events: { hide: () => { $.contextMenu('destroy')} },
           callback: $.proxy(function (key, options) {
             switch (key) {
               case "code":
-                $.get(pathToCustom, function (content) {
-                  new CodeDialog().show(content)
-                })
+                new CodeDialog().show(figure)
                 break
               case "label":
                 let text = prompt("Label")
@@ -301,16 +291,13 @@ export default draw2d.Canvas.extend({
                 }
                 break
               case "design":
-                window.open(pathToDesign, "designer")
+                new DesignerDialog().show(figure)
                 break
               case "help":
-                $.get(pathToMD, function (content) {
-                  new MarkdownDialog().show(figure, content)
-                })
+                new MarkdownDialog().show(figure)
                 break
               case "delete":
-                let cmd = new draw2d.command.CommandDelete(figure)
-                _this.getCommandStack().execute(cmd)
+                _this.getCommandStack().execute( new draw2d.command.CommandDelete(figure))
                 break
               default:
                 break
@@ -320,14 +307,13 @@ export default draw2d.Canvas.extend({
           x: x,
           y: y,
           items: items
-
         })
       }
     })
 
     // hide the figure configuration dialog if the user clicks inside the canvas
     //
-    this.on("click", function () {
+    this.on("click", () => {
       $("#figureConfigDialog").hide()
     })
 

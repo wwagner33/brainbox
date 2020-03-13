@@ -371,7 +371,7 @@ var Application = function () {
       switch (tutorial) {
         case "markdown":
           checkElement("#editDoc").then(function () {
-            var anno = new Anno([{
+            new Anno([{
               target: '#editDoc',
               content: 'Click here to edit the documentation of the shape.',
               position: 'left'
@@ -379,8 +379,41 @@ var Application = function () {
               target: '#fileSave',
               content: "..and don't forget to save your changes afterwards.",
               position: 'right'
-            }]);
-            anno.show();
+            }]).show();
+          });
+          break;
+        case "code":
+          checkElement("#editCode").then(function () {
+            new Anno([{
+              target: '#editCode',
+              content: 'Click here to edit the code of the shape.',
+              position: 'left'
+            }, {
+              target: '#editTest',
+              content: '...you can test the shape here...',
+              position: 'left'
+            }, {
+              target: '#fileSave',
+              content: "..and don't forget to save your changes afterwards.",
+              position: 'right'
+            }]).show();
+          });
+          break;
+        case "design":
+          checkElement("#tool_shape").then(function () {
+            new Anno([{
+              target: '#tool_shape',
+              content: 'Add rect, circles or lines to the shape..',
+              position: 'left'
+            }, {
+              target: '#editTest',
+              content: '...you preview and can test the shape here...',
+              position: 'left'
+            }, {
+              target: '#fileSave',
+              content: "..and don't forget to save your changes afterwards.",
+              position: 'right'
+            }]).show();
           });
           break;
         default:
