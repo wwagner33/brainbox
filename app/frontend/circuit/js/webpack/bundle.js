@@ -910,6 +910,8 @@ exports.default = draw2d.policy.canvas.BoundingboxSelectionPolicy.extend({
   },
 
   _onMouseMoveCallback: function _onMouseMoveCallback(emitter, event) {
+    var _this = this;
+
     // there is no benefit to show decorations during Drag&Drop of an shape
     //
     if (this.mouseMovedDuringMouseDown === true) {
@@ -935,14 +937,14 @@ exports.default = draw2d.policy.canvas.BoundingboxSelectionPolicy.extend({
       pos.y -= 30;
 
       if (this.configIcon === null) {
-        this.configIcon = $("<div class='ion-gear-a' id='configMenuIcon'></div>");
+        this.configIcon = $("<div class='fa fa-cog' id='configMenuIcon'></div>");
         $("body").append(this.configIcon);
         this.configIcon.on("click", function () {
           _FigureConfigDialog2.default.show(hit, pos);
-          this.configFigure = hit;
-          if (this.configIcon !== null) {
-            this.configIcon.remove();
-            this.configIcon = null;
+          _this.configFigure = hit;
+          if (_this.configIcon !== null) {
+            _this.configIcon.remove();
+            _this.configIcon = null;
           }
         });
       }
@@ -1053,7 +1055,6 @@ var Palette = function () {
 
     $.getJSON(_Configuration2.default.shapes.url + "index.json", function (data) {
       _Configuration2.default.shapes.version = data[0].version;
-      console.log("sessting version to ", _Configuration2.default.shapes.version);
       var tmpl = _hogan2.default.compile($("#shapeTemplate").html());
       var html = tmpl.render({
         shapesUrl: _Configuration2.default.shapes.url,
@@ -1081,17 +1082,15 @@ var Palette = function () {
       });
 
       $('.draw2d_droppable').on('mouseover', function () {
-        $(this).parent().addClass('glowBorder');
+        $(_this).parent().addClass('glowBorder');
       }).on('mouseout', function () {
-        $(this).parent().removeClass('glowBorder');
+        $(_this).parent().removeClass('glowBorder');
       });
 
       // add the "+" to the palette
       //
       var requestUrl = _Configuration2.default.issues.url + '?title=Request for shape&body=' + encodeURIComponent("Please add the description of the shape you request.\nWe try to implement it as soon as possible...");
       $("#paletteElements").append('  <div data-name="_request_" class="mix col-md-6 pallette_item">' + '  <a href="' + requestUrl + '" target="_blank">' + '    <div class="request">' + '       <div class="icon ion-ios-plus-outline"></div>' + '       <div >Request a Shape</div>' + '   </div>' + '   </a>' + '  </div>');
-
-      //    $("#paletteElements").append("<div>++</div>");
     });
 
     socket.on("shape:generating", function (msg) {

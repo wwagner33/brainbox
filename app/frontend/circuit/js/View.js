@@ -151,7 +151,7 @@ export default draw2d.Canvas.extend({
     })
 
 
-    let setZoom =  (newZoom) => {
+    let setZoom = (newZoom) => {
       let bb = this.getBoundingBox().getCenter()
       let c = $("#draw2dCanvasWrapper")
       this.setZoom(newZoom)
@@ -240,10 +240,10 @@ export default draw2d.Canvas.extend({
     // Register a Selection listener for the state hnadling
     // of the Delete Button
     //
-    this.on("select", function (emitter, event) {
+    this.on("select", (emitter, event) => {
         $("#editDelete").removeClass("disabled")
     })
-    this.on("unselect", function (emitter, event) {
+    this.on("unselect", (emitter, event) => {
         $("#editDelete").addClass("disabled")
     })
 

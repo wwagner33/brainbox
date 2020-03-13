@@ -19,14 +19,13 @@ export default class Palette {
 
     $.getJSON(conf.shapes.url + "index.json", (data) => {
       conf.shapes.version = data[0].version
-      console.log("sessting version to ",  conf.shapes.version)
       let tmpl = Hogan.compile($("#shapeTemplate").html());
       let html = tmpl.render({
         shapesUrl: conf.shapes.url,
         shapes: data
-      });
+      })
 
-      $("#paletteElements").html(html);
+      $("#paletteElements").html(html)
 
       this.buildTree(data)
 
@@ -37,24 +36,24 @@ export default class Palette {
         appendTo: "body",
         helper: "clone",
         drag: function (event, ui) {
-          event = app.view._getEvent(event);
-          let pos = app.view.fromDocumentToCanvasCoordinate(event.clientX, event.clientY);
-          app.view.onDrag(ui.draggable, pos.getX(), pos.getY(), event.shiftKey, event.ctrlKey);
+          event = app.view._getEvent(event)
+          let pos = app.view.fromDocumentToCanvasCoordinate(event.clientX, event.clientY)
+          app.view.onDrag(ui.draggable, pos.getX(), pos.getY(), event.shiftKey, event.ctrlKey)
         },
         stop: function (e, ui) {
         },
         start: function (e, ui) {
-          $(ui.helper).addClass("shadow");
+          $(ui.helper).addClass("shadow")
         }
-      });
+      })
 
       $('.draw2d_droppable')
-        .on('mouseover', function () {
-          $(this).parent().addClass('glowBorder');
+        .on('mouseover', () => {
+          $(this).parent().addClass('glowBorder')
         })
-        .on('mouseout', function () {
-          $(this).parent().removeClass('glowBorder');
-        });
+        .on('mouseout', () => {
+          $(this).parent().removeClass('glowBorder')
+        })
 
       // add the "+" to the palette
       //
@@ -67,19 +66,17 @@ export default class Palette {
         '       <div >Request a Shape</div>' +
         '   </div>' +
         '   </a>' +
-        '  </div>');
+        '  </div>')
+    })
 
-      //    $("#paletteElements").append("<div>++</div>");
-    });
-
-    socket.on("shape:generating", function (msg) {
+    socket.on("shape:generating", (msg) => {
       $("div[data-file='" + msg.filePath + "'] ").addClass("spinner")
-    });
+    })
 
-    socket.on("shape:generated", function (msg) {
+    socket.on("shape:generated", (msg) => {
       $("div[data-file='" + msg.filePath + "'] ").removeClass("spinner")
       $("div[data-file='" + msg.filePath + "'] img").attr({src: conf.shapes.url + msg.imagePath + "?timestamp=" + new Date().getTime()})
-    });
+    })
   }
 
   buildTree(data) {
@@ -89,31 +86,31 @@ export default class Palette {
     })
 
     function arrangeIntoTree(paths) {
-      var tree = [];
+      let tree = []
 
-      for (var i = 0; i < paths.length; i++) {
-        var path = paths[i];
-        var currentLevel = tree;
-        var rootPath = null
-        for (var j = 0; j < path.length; j++) {
-          var part = path[j];
-          var existingPath = findWhere(currentLevel, 'name', part);
+      for (let i = 0; i < paths.length; i++) {
+        let path = paths[i]
+        let currentLevel = tree
+        let rootPath = null
+        for (let j = 0; j < path.length; j++) {
+          let part = path[j]
+          let existingPath = findWhere(currentLevel, 'name', part)
           rootPath = rootPath? rootPath+"/"+part:part
           if (existingPath) {
-            currentLevel = existingPath.children;
+            currentLevel = existingPath.children
           } else {
-            var newPart = {
+            let newPart = {
               name: part,
               path: rootPath,
               children: []
             }
 
-            currentLevel.push(newPart);
-            currentLevel = newPart.children;
+            currentLevel.push(newPart)
+            currentLevel = newPart.children
           }
         }
       }
-      return tree;
+      return tree
 
       function findWhere(array, key, value) {
         let t = 0
@@ -145,9 +142,9 @@ export default class Palette {
       $grid.shuffle('shuffle', function ($el, shuffle) {
         let text = $.trim($el.data("path")).toLowerCase();
         if (text === "_request_")
-          return true;
+          return true
 
-        return text.startsWith(path);
+        return text.startsWith(path)
       });
 
       return false
