@@ -19,7 +19,7 @@ export default class Palette {
 
     $.getJSON(conf.shapes.url + "index.json", (data) => {
       conf.shapes.version = data[0].version
-
+      console.log("sessting version to ",  conf.shapes.version)
       let tmpl = Hogan.compile($("#shapeTemplate").html());
       let html = tmpl.render({
         shapesUrl: conf.shapes.url,

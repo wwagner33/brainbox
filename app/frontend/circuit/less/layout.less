@@ -71,6 +71,7 @@ body {
               top: 0;
               bottom: 0;
               #shapeTree{
+                box-shadow: inset 0 5px 5px -5px rgba(0, 0, 0, 0.26);
                 padding: 10px;
                 overflow-x: hidden;
                 position: absolute;
@@ -80,6 +81,13 @@ body {
                 right: 0;
                 overflow-y: scroll;
 
+                &::-webkit-scrollbar {
+                  width: 5px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                  background: #666;
+                }
 
                 .tree-leaf {
                   .tree-expando {
@@ -117,6 +125,13 @@ body {
               top: 0;
               bottom: 0;
               overflow: auto;
+              box-shadow: inset 0 5px 5px -5px rgba(0, 0, 0, 0.26);
+              &::-webkit-scrollbar {
+                width: 5px;
+              }
+              &::-webkit-scrollbar-thumb {
+                background: #666;
+              }
               #paletteElements {
                 position: absolute;
                 width: 100%;

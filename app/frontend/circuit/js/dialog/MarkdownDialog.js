@@ -4,13 +4,13 @@ export default class MarkdownDialog {
 
   constructor() {
     this.defaults = {
-      html: true,         // Enable HTML tags in source
+      html: true,             // Enable HTML tags in source
       xhtmlOut: false,        // Use '/' to close single tags (<br />)
-      breaks: false,        // Convert '\n' in paragraphs into <br>
-      langPrefix: 'language-',  // CSS language prefix for fenced blocks
-      linkify: true,         // autoconvert URL-like texts to links
-      linkTarget: '_blank',     // set target to open link in
-      typographer: true          // Enable smartypants and other sweet transforms
+      breaks: false,          // Convert '\n' in paragraphs into <br>
+      langPrefix: 'language-',// CSS language prefix for fenced blocks
+      linkify: true,          // autoconvert URL-like texts to links
+      linkTarget: '_blank',   // set target to open link in
+      typographer: true       // Enable smartypants and other sweet transforms
     }
   }
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Load the http module to create an http server.
 const express = require('express')
-const fs = require('fs')
+const fs = require('fs-extra')
 const app = express()
 const http = require('http').Server(app)
 const path = require('path')
@@ -92,8 +92,10 @@ function runServer() {
     })
     response.data.pipe(writer)
     writer.on('finish', () => {
-      fs.createReadStream(file).pipe(unzip.Extract({ path: shapeDirApp }));
-      io.sockets.emit("shape:updated", {});
+      fs.removeSync(shapeDirApp)
+      fs.mkdirSync(shapeDirApp)
+      fs.createReadStream(file).pipe(unzip.Extract({ path: shapeDirApp }))
+      io.sockets.emit("shape:updated", {})
       console.log('Shape files updated')
     })
     writer.on('error', () => {
@@ -111,6 +113,10 @@ function runServer() {
   app.post('/backend/shape/delete', (req, res) => storage.deleteFile(shapeDirApp,     req.body.filePath, res))
   app.post('/backend/shape/rename', (req, res) => storage.renameFile(shapeDirApp,     req.body.from, req.body.to, res))
   app.post('/backend/shape/save',   (req, res) => {
+    let dir = require('path').dirname(shapeDirApp + req.body.filePath)
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir)
+    }
     fs.writeFile(shapeDirApp + req.body.filePath, req.body.content,  (err) =>{
       if(err) throw err
 
@@ -121,9 +127,11 @@ function runServer() {
       // create the js/png/md async to avoid a blocked UI
       //
       let binPath = phantomjs.path
+      let converterPath = path.normalize(__dirname+'/../converter/index.js')
+      let shapefilePath = path.normalize(shapeDirApp + req.body.filePath)
       let childArgs = [
-        path.normalize(__dirname+'/../converter/index.js'),
-        path.normalize(shapeDirApp + req.body.filePath),
+        converterPath,
+        shapefilePath,
         shape2CodeDir,
         shapeDirApp
       ]
@@ -142,6 +150,9 @@ function runServer() {
           imagePath: req.body.filePath.replace(".shape",".png"),
           jsPath: req.body.filePath.replace(".shape",".js")
         });
+
+        // commit the shape to the connected github backend
+        update.commitShape(req.body.filePath, shapefilePath, req.body.commitMessage)
       })
     });
   });

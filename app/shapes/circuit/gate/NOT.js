@@ -7,7 +7,7 @@
 var circuit_gate_NOT = CircuitFigure.extend({
 
    NAME: "circuit_gate_NOT",
-   VERSION: "1.0.11",
+   VERSION: "1.0.21",
 
    init:function(attr, setter, getter)
    {

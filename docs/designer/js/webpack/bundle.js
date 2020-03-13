@@ -2188,6 +2188,7 @@ var FileSave = function () {
       new draw2d.io.png.Writer().marshal(canvas, function (imageDataUrl) {
         $("#fileSaveDialog .filePreview").attr("src", imageDataUrl);
         $("#fileSaveDialog .githubFileName").val(storage.currentFile ? storage.currentFile : "NewDocument" + _Configuration2.default.fileSuffix);
+        $("#fileSaveDialog .githubCommitMessage").val('commit message');
 
         $('#fileSaveDialog').on('shown.bs.modal', function (event) {
           $(event.currentTarget).find('input:first').focus();
@@ -2202,7 +2203,8 @@ var FileSave = function () {
           var writer = new draw2d.io.json.Writer();
           writer.marshal(canvas, function (json) {
             var newName = $("#fileSaveDialog .githubFileName").val();
-            storage.saveFile(json, imageDataUrl, newName).then(function () {
+            var commitMessage = $("#fileSaveDialog .githubCommitMessage").val();
+            storage.saveFile(json, imageDataUrl, newName, commitMessage).then(function () {
               storage.currentFile = newName;
               $('#fileSaveDialog').modal('hide');
             });
@@ -5652,7 +5654,7 @@ var BackendStorage = function () {
     }
   }, {
     key: 'saveFile',
-    value: function saveFile(json, imageDataUrl, fileName) {
+    value: function saveFile(json, imageDataUrl, fileName, commitMessage) {
       return $.ajax({
         url: _Configuration2.default.backend.file.save,
         method: "POST",
@@ -5660,6 +5662,7 @@ var BackendStorage = function () {
           withCredentials: true
         },
         data: {
+          commitMessage: commitMessage,
           filePath: fileName,
           content: JSON.stringify({ draw2d: json, image: imageDataUrl }, undefined, 2)
         }

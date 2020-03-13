@@ -10,13 +10,12 @@ const brainDirUserHOME = brainDirHOME + "brain/"
  * Ensure that the required storage folder exists
  *
  */
-try {
-  function ensure(dirToEnsure) {
-    if (!fs.existsSync(dirToEnsure)) {
-      fs.mkdirSync(dirToEnsure)
-    }
+function ensure(dirToEnsure) {
+  if (!fs.existsSync(dirToEnsure)) {
+    fs.mkdirSync(dirToEnsure)
   }
-
+}
+try {
   ensure(brainDirHOME)
   ensure(brainDirUserHOME)
 }
@@ -69,7 +68,7 @@ module.exports = {
       let contents = fs.readFileSync(file)
       let json = JSON.parse(contents)
       let base64data = json.image.replace(/^data:image\/png;base64,/, '')
-      let img = new Buffer(base64data, 'base64')
+      let img = Buffer.from(base64data, 'base64')
       res.writeHead(200, {
         'Content-Type': 'image/png',
         'Content-Length': img.length

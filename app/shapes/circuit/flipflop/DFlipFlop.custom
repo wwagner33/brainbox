@@ -6,7 +6,7 @@
  *
  *
  */
-circuit_flipflop_drDFlipFlop = circuit_flipflop_drDFlipFlop.extend({
+circuit_flipflop_DFlipFlop = circuit_flipflop_DFlipFlop.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);

@@ -65,7 +65,7 @@ export default class BackendStorage{
       })
   }
 
-  saveFile(json, imageDataUrl, fileName){
+  saveFile(json, imageDataUrl, fileName, commitMessage){
     return $.ajax({
         url: conf.backend.file.save,
         method: "POST",
@@ -73,6 +73,7 @@ export default class BackendStorage{
           withCredentials: true
         },
         data: {
+          commitMessage: commitMessage,
           filePath: fileName,
           content: JSON.stringify({draw2d: json, image: imageDataUrl}, undefined, 2)
         }

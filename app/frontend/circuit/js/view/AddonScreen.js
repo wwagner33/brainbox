@@ -1,7 +1,6 @@
-import update from "../io/UpdateManager"
 import Hogan from 'hogan.js'
-import conf from "../Configuration";
-import storage from "../io/BackendStorage";
+import conf from '../Configuration'
+import axios from 'axios'
 
 class AddonScreen {
 
@@ -9,23 +8,38 @@ class AddonScreen {
   }
 
   onShow() {
-    update.getUpdates().then( content => {
-      let tmpl = Hogan.compile($("#updateTemplate").html());
-      if(conf.shapes.version === content.tag_name){
-        tmpl = Hogan.compile($("#uptodateTemplate").html());
-      }
+    axios.get(conf.updates.shapes)
+      .then( response => {
+       // happens in "serverless" mode on the gh-pages/docs installation
+        //
+        if (typeof response === "string")
+          response = JSON.parse(response)
+        else
+          response = response.data
 
-      let html = tmpl.render({
-        current_version: conf.shapes.version,
-        update: content
-      });
+        let tmpl = Hogan.compile($("#updateTemplate").html());
+        if(conf.shapes.version === response.tag_name){
+          tmpl = Hogan.compile($("#uptodateTemplate").html());
+        }
 
-      $("#addon .content").html(html);
-      $("#addon .installButton").click(event =>{
-        let element = $(event.target)
-        element.append("<i class=\"fa fa-spinner fa-spin\"></i>")
-        screen.onSelect(element.data("url"))
+        let html = tmpl.render({
+          current_version: conf.shapes.version,
+          update: response
+        });
+
+        $("#addon .content").html(html);
+        $("#addon .installButton").click(event =>{
+          let element = $(event.target)
+          element.append("<i class=\"fa fa-spinner fa-spin\"></i>")
+          screen.onSelect(element.data("url"))
+        })
       })
+      .catch( error => {
+        let  tmpl = Hogan.compile($("#uptodateTemplate").html());
+        let html = tmpl.render({
+          current_version: conf.shapes.version
+        });
+        $("#addon .content").html(html);
     })
   }
 

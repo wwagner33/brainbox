@@ -6,7 +6,7 @@
  *
  *
  */
-circuit_arduino_Arduino = circuit_arduino_Arduino.extend({
+circuit_hardware_arduino_Arduino = circuit_hardware_arduino_Arduino.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);

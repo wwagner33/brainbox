@@ -6,7 +6,7 @@
  *
  *
  */
-circuit_arduino_Led = circuit_arduino_Led.extend({
+circuit_hardware_arduino_Led = circuit_hardware_arduino_Led.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);

@@ -24,6 +24,7 @@ export default class FileSave {
     new draw2d.io.png.Writer().marshal(canvas, imageDataUrl => {
       $("#fileSaveDialog .filePreview").attr("src", imageDataUrl)
       $("#fileSaveDialog .githubFileName").val(storage.currentFile?storage.currentFile:"NewDocument"+conf.fileSuffix)
+      $("#fileSaveDialog .githubCommitMessage").val('commit message')
 
       $('#fileSaveDialog').on('shown.bs.modal', (event) => {
         $(event.currentTarget).find('input:first').focus()
@@ -38,7 +39,8 @@ export default class FileSave {
         let writer = new draw2d.io.json.Writer()
         writer.marshal(canvas, json => {
           let newName = $("#fileSaveDialog .githubFileName").val()
-          storage.saveFile(json, imageDataUrl, newName)
+          let commitMessage = $("#fileSaveDialog .githubCommitMessage").val()
+          storage.saveFile(json, imageDataUrl, newName, commitMessage)
             .then(() => {
               storage.currentFile = newName
               $('#fileSaveDialog').modal('hide')

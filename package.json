@@ -59,10 +59,12 @@
     "yargs": "^10.0.3"
   },
   "dependencies": {
+    "@octokit/rest": "^17.1.0",
     "axios": "^0.19.2",
     "body-parser": "1.18.3",
     "bootstrap-toggle": "^2.2.2",
     "express": "4.16.3",
+    "fs-extra": "^8.1.0",
     "glob": "7.0.3",
     "handlebars": "4.0.11",
     "intro.js": "^2.9.3",
@@ -83,6 +85,7 @@
     "socket.io": "2.1.1",
     "split.js": "^1.5.11",
     "system": "2.0.1",
+    "tslib": "^1.11.1",
     "unzip": "^0.1.11",
     "webpage": "0.3.0"
   },
