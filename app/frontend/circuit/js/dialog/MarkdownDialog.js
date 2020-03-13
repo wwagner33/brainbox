@@ -29,6 +29,13 @@ export default class MarkdownDialog {
         let pathToDesign = conf.designer.url
           + "?timestamp=" + new Date().getTime()
           + "&file=" + baseName + ".shape"
+        window.open(pathToDesign, "designer")
+      })
+      $("#markdownDialog .editButtonGuided").off("click").on("click", () => {
+        let baseName = figure.attr("userData.file").replace(/\.shape$/, "")
+        let pathToDesign = conf.designer.url
+          + "?timestamp=" + new Date().getTime()
+          + "&file=" + baseName + ".shape"
           + "&tutorial=markdown"
         window.open(pathToDesign, "designer")
       })
