@@ -7,7 +7,7 @@
 var circuit_gate_AND = CircuitFigure.extend({
 
    NAME: "circuit_gate_AND",
-   VERSION: "1.0.21",
+   VERSION: "1.0.23",
 
    init:function(attr, setter, getter)
    {
@@ -59,7 +59,7 @@ var circuit_gate_AND = CircuitFigure.extend({
        
        // Label
        shape = this.canvas.paper.text(0,0,'&');
-       shape.attr({"x":9.5,"y":20,"text-anchor":"start","text":"&","font-family":"\"Arial\"","font-size":20,"stroke":"none","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":9.5,"y":20,"text-anchor":"start","text":"&","font-family":"\"Arial\"","font-size":20,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
 

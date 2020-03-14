@@ -2,30 +2,8 @@ const fs = require('fs')
 const glob = require("glob")
 const path = require('path')
 
-const brainDirHOME = process.env.HOME + "/.brainbox/"
-const brainDirUserHOME = brainDirHOME + "brain/"
-
-
-/**
- * Ensure that the required storage folder exists
- *
- */
-function ensure(dirToEnsure) {
-  if (!fs.existsSync(dirToEnsure)) {
-    fs.mkdirSync(dirToEnsure)
-  }
-}
-try {
-  ensure(brainDirHOME)
-  ensure(brainDirUserHOME)
-}
-catch (e) {
-  console.log(e)
-}
-
 
 module.exports = {
-  brainDirUserHOME: brainDirUserHOME,
 
   listFiles: function (baseDir, subDir, res) {
     glob(baseDir + subDir + "*", {}, function (er, files) {

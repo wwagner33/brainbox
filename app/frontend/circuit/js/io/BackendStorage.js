@@ -1,7 +1,7 @@
 import conf from '../Configuration'
+import axios from 'axios'
 
 let sanitize = require("sanitize-filename")
-
 
 class BackendStorage {
 
@@ -64,18 +64,11 @@ class BackendStorage {
   }
 
   saveFile(json, imageDataUrl, fileName) {
-    return $.ajax({
-        url: conf.backend.file.save,
-        method: "POST",
-        xhrFields: {
-          withCredentials: true
-        },
-        data: {
-          filePath: fileName,
-          content: JSON.stringify({draw2d: json, image: imageDataUrl}, undefined, 2)
-        }
-      }
-    )
+    let data = {
+      filePath: fileName,
+      content: JSON.stringify({draw2d: json, image: imageDataUrl}, undefined, 2)
+    }
+    return axios.post(conf.backend.file.save, data)
   }
 
   /**
@@ -93,12 +86,12 @@ class BackendStorage {
     })
       .then((content) => {
         // happens in the serverless mode
-        if(typeof content === "string")
+        if (typeof content === "string")
           content = JSON.parse(content)
 
         if (content.draw2d)
           return content.draw2d
-        
+
         return content
       })
   }

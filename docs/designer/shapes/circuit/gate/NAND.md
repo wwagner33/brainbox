@@ -1,6 +1,5 @@
 # NAND Gate
 
-## Description
 In digital electronics, a **NAND** gate (NOT-AND) is a logic gate which produces 
 an output which is false only if all its inputs are true; thus its output is 
 complement to that of an AND gate. A LOW (0) output results only if all the 

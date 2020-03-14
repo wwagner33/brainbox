@@ -38,6 +38,7 @@ export default class FileSave {
         writer.marshal(canvas, json => {
           let name = $("#fileSaveDialog .githubFileName").val()
           name = storage.sanitize(name)
+
           storage.saveFile(json, imageDataUrl, name)
             .then(function () {
               Mousetrap.unpause()

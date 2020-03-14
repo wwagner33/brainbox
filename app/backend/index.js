@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Load the http module to create an http server.
+
 const express = require('express')
 const fs = require('fs-extra')
 const app = express()
@@ -24,14 +24,24 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}))
 const arduino = require("./src/comm/arduino")
 const storage= require("./src/storage.js")
 const update= require("./src/update.js")
-const shapeDirApp = path.normalize(__dirname + '/../shapes/')
-const shape2CodeDir = path.normalize(__dirname + '/../converter/')
+
+const brainboxHomeDir = process.env.HOME + "/.brainbox/"
+const shapeAppDir = path.normalize(__dirname + '/../shapes/')
+const brainsAppDir = path.normalize(__dirname + '/../brains/')
+const converterDir = path.normalize(__dirname + '/../converter/')
+const brainsHomeDir = brainboxHomeDir + "brains/"
+
+
+// Ensure that the required storage folder exists
+//
+if (!fs.existsSync(brainboxHomeDir)) {fs.mkdirSync(brainboxHomeDir)}
+if (!fs.existsSync(brainsHomeDir)) {fs.mkdirSync(brainsHomeDir)}
 
 
 // Determine the IP:PORT to use for the http server
 //
 const address = require("./src/network")
-const port = 7400
+const port = process.env.BRAINBOX_PORT || 7400
 
 
 // =======================================================================
@@ -53,7 +63,7 @@ function runServer() {
   // provide the  WebApp with this very simple
   // HTTP server. Good enough for an private raspi access
   //
-  app.use('/circuit/shapes', express.static(shapeDirApp));
+  app.use('/circuit/shapes', express.static(shapeAppDir));
   app.use(express.static(__dirname + '/../frontend'));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
@@ -63,19 +73,27 @@ function runServer() {
   // Handle brain files
   //
   // =================================================================
-  app.get('/backend/brain/list',    (req, res) => storage.listFiles(storage.brainDirUserHOME,      req.query.path,     res));
-  app.get('/backend/brain/get',     (req, res) => storage.getJSONFile(storage.brainDirUserHOME,    req.query.filePath, res));
-  app.get('/backend/brain/image',   (req, res) => storage.getBase64Image(storage.brainDirUserHOME, req.query.filePath, res));
-  app.post('/backend/brain/delete', (req, res) => storage.deleteFile(storage.brainDirUserHOME,     req.body.filePath, res));
-  app.post('/backend/brain/rename', (req, res) => storage.renameFile(storage.brainDirUserHOME,     req.body.from, req.body.to, res));
+  app.get('/backend/brain/list',    (req, res) => storage.listFiles(brainsHomeDir,      req.query.path,     res))
+  app.get('/backend/brain/get',     (req, res) => storage.getJSONFile(brainsHomeDir,    req.query.filePath, res))
+  app.get('/backend/brain/image',   (req, res) => storage.getBase64Image(brainsHomeDir, req.query.filePath, res))
+  app.post('/backend/brain/delete', (req, res) => storage.deleteFile(brainsHomeDir,     req.body.filePath, res))
+  app.post('/backend/brain/rename', (req, res) => storage.renameFile(brainsHomeDir,     req.body.from, req.body.to, res))
   app.post('/backend/brain/save',   (req, res) => {
-    fs.writeFile(storage.brainDirUserHOME + req.body.filePath, req.body.content,  (err) =>{
+    fs.writeFile(brainsHomeDir + req.body.filePath, req.body.content,  (err) =>{
       res.send('true');
       io.sockets.emit("brain:generated", {
         filePath: req.body.filePath
-      });
-    });
-  });
+      })
+    })
+  })
+
+  // =================================================================
+  // Handle EXAMPLE brain files
+  //
+  // =================================================================
+  app.get('/backend/demo/list',  (req, res) => storage.listFiles(brainsAppDir,      req.query.path,     res))
+  app.get('/backend/demo/get',   (req, res) => storage.getJSONFile(brainsAppDir,    req.query.filePath, res))
+  app.get('/backend/demo/image', (req, res) => storage.getBase64Image(brainsAppDir, req.query.filePath, res))
 
   // =================================================================
   // Handle update files
@@ -92,11 +110,10 @@ function runServer() {
     })
     response.data.pipe(writer)
     writer.on('finish', () => {
-      fs.removeSync(shapeDirApp)
-      fs.mkdirSync(shapeDirApp)
-      fs.createReadStream(file).pipe(unzip.Extract({ path: shapeDirApp }))
+      fs.removeSync(shapeAppDir)
+      fs.mkdirSync(shapeAppDir)
+      fs.createReadStream(file).pipe(unzip.Extract({ path: shapeAppDir }))
       io.sockets.emit("shape:updated", {})
-      console.log('Shape files updated')
     })
     writer.on('error', () => {
       console.log("Error during shape file updates")
@@ -107,17 +124,17 @@ function runServer() {
   // Handle shape files
   //
   // =================================================================
-  app.get('/backend/shape/list',    (req, res) => storage.listFiles(shapeDirApp,      req.query.path,     res))
-  app.get('/backend/shape/get',     (req, res) => storage.getJSONFile(shapeDirApp,    req.query.filePath, res))
-  app.get('/backend/shape/image',   (req, res) => storage.getBase64Image(shapeDirApp, req.query.filePath, res))
-  app.post('/backend/shape/delete', (req, res) => storage.deleteFile(shapeDirApp,     req.body.filePath, res))
-  app.post('/backend/shape/rename', (req, res) => storage.renameFile(shapeDirApp,     req.body.from, req.body.to, res))
+  app.get('/backend/shape/list',    (req, res) => storage.listFiles(shapeAppDir,      req.query.path,     res))
+  app.get('/backend/shape/get',     (req, res) => storage.getJSONFile(shapeAppDir,    req.query.filePath, res))
+  app.get('/backend/shape/image',   (req, res) => storage.getBase64Image(shapeAppDir, req.query.filePath, res))
+  app.post('/backend/shape/delete', (req, res) => storage.deleteFile(shapeAppDir,     req.body.filePath, res))
+  app.post('/backend/shape/rename', (req, res) => storage.renameFile(shapeAppDir,     req.body.from, req.body.to, res))
   app.post('/backend/shape/save',   (req, res) => {
-    let dir = require('path').dirname(shapeDirApp + req.body.filePath)
+    let dir = require('path').dirname(shapeAppDir + req.body.filePath)
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir)
     }
-    fs.writeFile(shapeDirApp + req.body.filePath, req.body.content,  (err) =>{
+    fs.writeFile(shapeAppDir + req.body.filePath, req.body.content,  (err) =>{
       if(err) throw err
 
       // file is saved...fine
@@ -128,12 +145,12 @@ function runServer() {
       //
       let binPath = phantomjs.path
       let converterPath = path.normalize(__dirname+'/../converter/index.js')
-      let shapefilePath = path.normalize(shapeDirApp + req.body.filePath)
+      let shapefilePath = path.normalize(shapeAppDir + req.body.filePath)
       let childArgs = [
         converterPath,
         shapefilePath,
-        shape2CodeDir,
-        shapeDirApp
+        converterDir,
+        shapeAppDir
       ]
 
       // inform the browser that the processing of the

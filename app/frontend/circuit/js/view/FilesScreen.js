@@ -36,9 +36,9 @@ export default class Files {
         files: files
       })
 
-      $("#files .fileList").html($(output))
+      $("#userBrainFiles").html($(output))
 
-      $("#files .fileList .deleteIcon").on("click", (event) => {
+      $("#userBrainFiles .deleteIcon").on("click", (event) => {
         let $el = $(event.currentTarget)
         let name = $el.data("name")
         storage.deleteFile(name).then(() => {
@@ -54,7 +54,7 @@ export default class Files {
       })
 
 
-      $("#files .list-group-item h4").on("click", (event) => {
+      $("#userBrainFiles .list-group-item h4").on("click", (event) => {
         Mousetrap.pause()
         let $el = $(event.currentTarget)
         let name = $el.closest(".list-group-item").data("name")
@@ -99,7 +99,7 @@ export default class Files {
         })
       })
 
-      $("#files .list-group-item .thumbnail").on("click", (event) => {
+      $("#userBrainFiles .list-group-item .thumbnail").on("click", (event) => {
         let $el = $(event.currentTarget)
         let parent = $el.closest(".list-group-item")
         let name = parent.data("name")
@@ -116,7 +116,31 @@ export default class Files {
           })
       })
 
-      $("#files .thumbAdd").on("click", () => {
+      $('#material-tabs').each(function() {
+        let $active, $content, $links = $(this).find('a');
+        $active = $($links[0]);
+        $active.addClass('active');
+        $content = $($active[0].hash);
+        $links.not($active).each(() => {
+          $(this.hash).hide()
+        })
+
+        $(this).on('click', 'a', function(e) {
+          $active.removeClass('active')
+          $content.hide()
+
+          $active = $(this)
+          $content = $(this.hash)
+
+          $active.addClass('active')
+          $content.show()
+
+          e.preventDefault()
+        })
+      })
+
+
+      $("#userBrainFiles .thumbAdd").on("click", () => {
         new FileNew().show()
       })
 
