@@ -14,10 +14,15 @@ export default {
     file: {
       list:   path       => `../backend/brain/list?path=${path}`,
       get:    file       => `../backend/brain/get?filePath=${file}`,
-      image:  ()         => `../backend/brain/image?filePath=`,
+      image:  file       => `../backend/brain/image?filePath=${file}`,
       del:     `../backend/brain/delete`,
       rename:  `../backend/brain/rename`,
       save:     `../backend/brain/save`
+    },
+    demo:{
+      list:   path       => `../backend/demo/list?path=${path}`,
+      get:    file       => `../backend/demo/get?filePath=${file}`,
+      image:  file       => `../backend/demo/image?filePath=${file}`
     }
   },
   issues: {

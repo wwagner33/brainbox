@@ -340,18 +340,30 @@
 </script>
 
 <script id="filesTemplate" type="text/x-jsrender">
+<div>Folder: {{folder}}</div>
 <ul class="list-group col-lg-10 col-md-10 col-xs-10 ">
 {{#files}}
-  <li class="list-group-item"  data-name="{{name}}">
+  <li class="list-group-item"  data-type="{{type}}" data-name="{{folder}}{{name}}">
     <div class="media thumb">
-       <a class="thumbnail media-left" data-name="{{name}}">
-        <div style="width: 64px; height: 64px">
-          <img style="width:100%; height:auto;"  data-name="{{name}}"  src="{{path}}{{name}}">
-        </div>
-      </a>
+       {{#dir}}
+          <a class="media-left" data-name="{{name}}">
+          <div style="width: 64px; height: 64px">
+            <img style="width:100%; height:100%; object-fit: contain"  src="./images/folder.svg">
+          </div>
+          </a>
+       {{/dir}}
+       {{^dir}}
+          <a class="thumbnail media-left" data-name="{{name}}">
+          <div style="width: 64px; height: 64px">
+            <img style="width:100%; height:100%; object-fit: contain" src="{{image}}">
+          </div>
+          </a>
+       {{/dir}}
       <div class="media-body">
         <h4 class="media-heading">{{title}}</h4>
-        <img class="deleteIcon svg"  data-toggle="confirmation"  data-name="{{name}}" src="./images/toolbar_delete.svg"/>
+        {{^readonly}}
+          <img class="deleteIcon svg "  data-toggle="confirmation"  data-name="{{name}}" src="./images/toolbar_delete.svg"/>
+        {{/readonly}}
       </div>
     </div>
   </li>
@@ -369,7 +381,6 @@
 <div class="paragraph">
   <h3>Current Shape files Version</h3>
   You current version of the shape files are <b>{{current_version}}</b>
-
 
   <h3>Available Updates</h3>
   <b>{{update.tag_name}}</b> {{#update.assets}}

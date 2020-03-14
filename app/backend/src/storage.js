@@ -13,7 +13,8 @@ module.exports = {
           let isDir = fs.lstatSync(f).isDirectory()
           return {
             name: path.basename(f) + (isDir ? "/" : ""),
-            type: isDir ? "dir" : "file"
+            type: isDir ? "dir" : "file",
+            dir: isDir
           }
         })
       }))

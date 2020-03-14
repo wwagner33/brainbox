@@ -30,19 +30,26 @@ class BackendStorage {
     }, 'Brainbox Simulator | ' + name, window.location.href.split('?')[0] + '?file=' + name)
   }
 
-  getFiles(path) {
-    return $.ajax({
-      url: conf.backend.file.list(path),
-      xhrFields: {
-        withCredentials: true
-      }
-    }).then((response) => {
-      // happens in "serverless" mode on the gh-pages/docs installation
-      //
-      if (typeof response === "string")
-        response = JSON.parse(response)
+  getFiles(path){
+    return this.__getFiles( conf.backend.file.list(path))
+  }
+
+  getDemos(path){
+    return this.__getFiles( conf.backend.demo.list(path))
+  }
+
+  __getFiles(path) {
+    return axios.get(path)
+      .then((response) => {
+        // happens in "serverless" mode on the gh-pages/docs installation
+        //
+        if (typeof response === "string")
+          response = JSON.parse(response).data
+        else
+          response = response.data
 
       let files = response.files
+
       // sort the result
       // Directories are always on top
       //
@@ -63,6 +70,7 @@ class BackendStorage {
     })
   }
 
+
   saveFile(json, imageDataUrl, fileName) {
     let data = {
       filePath: fileName,
@@ -71,28 +79,33 @@ class BackendStorage {
     return axios.post(conf.backend.file.save, data)
   }
 
-  /**
+  loadFile(fileName) {
+    return this.__loadFile(conf.backend.file.get(fileName))
+  }
+
+  loadDemo(fileName) {
+    return this.__loadFile(conf.backend.demo.get(fileName))
+  }
+    /**
    * Load the file content of the given path
    *
    * @param fileName
    * @returns {*}
    */
-  loadFile(fileName) {
-    return $.ajax({
-      url: conf.backend.file.get(fileName),
-      xhrFields: {
-        withCredentials: true
-      }
-    })
-      .then((content) => {
-        // happens in the serverless mode
-        if (typeof content === "string")
-          content = JSON.parse(content)
+  __loadFile(url) {
+    return axios.get(url)
+      .then((response) => {
+        // happens in "serverless" mode on the gh-pages/docs installation
+        //
+        if (typeof response === "string")
+          response = JSON.parse(response).data
+        else
+          response = response.data
 
-        if (content.draw2d)
-          return content.draw2d
+        if (response.draw2d)
+          return response.draw2d
 
-        return content
+        return response
       })
   }
 
