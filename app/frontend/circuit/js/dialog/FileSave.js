@@ -1,5 +1,6 @@
 
 import storage from "../io/BackendStorage"
+import writer from '../io/Writer'
 
 export default class FileSave {
 
@@ -20,9 +21,9 @@ export default class FileSave {
    *
    * @since 4.0.0
    */
-  show(canvas) {
+  show(canvas, defaultFileName) {
     Mousetrap.pause()
-    $("#fileSaveDialog .githubFileName").val(storage.currentFile)
+    $("#fileSaveDialog .githubFileName").val(defaultFileName)
 
     $('#fileSaveDialog').off('shown.bs.modal').on('shown.bs.modal', (event) => {
       $(event.currentTarget).find('input:first').focus()
@@ -33,20 +34,16 @@ export default class FileSave {
     //
     $("#fileSaveDialog .okButton").off("click").on("click", () => {
       canvas.setCurrentSelection(null)
-      new draw2d.io.png.Writer().marshal(canvas, imageDataUrl => {
-        let writer = new draw2d.io.json.Writer()
-        writer.marshal(canvas, json => {
-          let name = $("#fileSaveDialog .githubFileName").val()
-          name = storage.sanitize(name)
-
-          storage.saveFile(json, imageDataUrl, name)
-            .then(function () {
-              Mousetrap.unpause()
-              storage.currentFile = name
-              $('#fileSaveDialog').modal('hide')
+      writer.marshal(canvas, json => {
+        let name = $("#fileSaveDialog .githubFileName").val()
+        name = storage.sanitize(name)
+        storage.saveFile(json, name)
+          .then(function () {
+            Mousetrap.unpause()
+            app.fileName = name
+            $('#fileSaveDialog').modal('hide')
           })
-        })
-      }, canvas.getBoundingBox().scale(10, 10))
+      })
     })
   }
 }

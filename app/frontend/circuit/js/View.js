@@ -327,7 +327,9 @@ export default draw2d.Canvas.extend({
       .slider({
         id: "simulationBaseTimerSlider"
       })
-      .on("slide", function (event) {
+      .on("slide", (event) => {
+        //       Slider   timerBase
+        //        A,B       a,b
         // min = 50     => 100ms
         // norm= 100    => 10ms ticks
         // max = 500    =>  2ms ticks
@@ -335,19 +337,35 @@ export default draw2d.Canvas.extend({
         // To map between the different intervals
         // [A, B] --> [a, b]
         // use this formula
-        // (val - A)*(b-a)/(B-A) + a
-
+        //                   (val - A)*(b-a)
+        // timerbase = b -  ----------------
+        //                      (B-A) + a
+        //
         if (event.value < 100) {
-          _this.timerBase = parseInt(100 - ((event.value - 50) * (100 - 10) / (100 - 50) + 10))
+          this.timerBase = parseInt(100 - ((event.value - 50) * (100 - 10) / (100 - 50) + 10))
         }
         else {
-          _this.timerBase = parseInt(11 - ((event.value - 100) * (10 - 2) / (500 - 100) + 2))
+          this.timerBase = parseInt(11 - ((event.value - 100) * (10 - 2) / (500 - 100) + 2))
         }
       })
   },
 
   isSimulationRunning: function () {
     return this.simulate
+  },
+
+
+  getTimerBase: function (){
+    return this.timerBase
+  },
+
+  setTimerBase: function( timerBase ){
+    this.timerBase = timerBase
+
+    if(this.timerBase>10)
+       this.slider.slider("setValue", - ((timerBase-100)* ((100 - 50) + 10))/(100 - 10)+50)
+    else
+       this.slider.slider("setValue", (((-(timerBase-11)-2)*(500 - 100))/ (10 - 2))+100)
   },
 
   /**
@@ -432,7 +450,7 @@ export default draw2d.Canvas.extend({
     })
     $("#paletteElementsOverlay").fadeIn("fast")
     $("#paletteElementsOverlay").height($("#paletteElements").height())
-    this.slider.slider("setValue", 100)
+    //this.slider.slider("setValue", 100)
   },
 
   simulationStop: function () {

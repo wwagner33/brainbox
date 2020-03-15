@@ -45,8 +45,9 @@ circuit_flipflop_JKFlipFlop = circuit_flipflop_JKFlipFlop.extend({
             }
             // toggle
             else if(j===true && k===true){
-                q.setValue( !q.getValue());
-                q_.setValue( q.getValue());
+                var v = q.getValue();
+                q.setValue( !v);
+                q_.setValue( v);
             }
         }
         this.last_t = t;

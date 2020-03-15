@@ -155,7 +155,7 @@ export default {
     }
 
     get connected(){
-      return socket.connected
+      return socket && socket.connected
     }
   }
 

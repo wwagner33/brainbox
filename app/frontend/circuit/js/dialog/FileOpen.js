@@ -29,6 +29,7 @@ export default class FileOpen {
 
   fetchPathContent(newPath, view) {
     storage.getFiles(newPath).then((files) => {
+      files = files.filter( file => file.name.endsWith(conf.fileSuffix) || file.type === "dir")
 
       let compiled = Hogan.compile(
         `
@@ -50,7 +51,7 @@ export default class FileOpen {
       let parentPath = storage.dirname(newPath)
       let output = compiled.render({
         parentPath: parentPath,
-        currentDir: storage.currentDir,
+        currentDir: newPath,
         files: files,
         rootDir: newPath === null,
         draw2d: function () {
@@ -72,18 +73,11 @@ export default class FileOpen {
         this.fetchPathContent($(event.currentTarget).data("path"), view)
       })
 
-
       $('.githubPath*[data-draw2d="true"][data-type="file"]').on("click", (event) => {
         let path = $(event.currentTarget).data("path")
-        storage.loadFile(path)
-          .then((content) => {
-            $('#fileOpenDialog').modal('hide')
-            storage.currentFile = path
-            view.clear()
-            new draw2d.io.json.Reader().unmarshal(view, content)
-            view.getCommandStack().markSaveLocation()
-            view.centerDocument()
-          })
+        app.historyFile(path)
+        app.load(conf.backend.file.get(path))
+        $('#fileOpenDialog').modal('hide')
         event.preventDefault()
       })
     })

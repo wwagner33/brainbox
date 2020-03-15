@@ -179,6 +179,10 @@ var _Configuration = __webpack_require__(/*! ./Configuration */ "./app/frontend/
 
 var _Configuration2 = _interopRequireDefault(_Configuration);
 
+var _Reader = __webpack_require__(/*! ./io/Reader */ "./app/frontend/circuit/js/io/Reader.js");
+
+var _Reader2 = _interopRequireDefault(_Reader);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -259,80 +263,77 @@ var Application = function () {
     // check if the user has added a "file" parameter. In this case we load the shape from
     // the draw2d.shape github repository
     //
-    var tutorial = this.getParam("tutorial");
-    if (tutorial) {
-      this.checkForTutorialMode();
-    } else {
-      var file = this.getParam("file");
-      if (file) {
-        $("#leftTabStrip .editor").click();
-        this._load(file).then(function () {
-          _this.checkForTutorialMode();
-        });
-      }
+    var file = this.getParam("file");
+    if (file) {
+      $("#leftTabStrip .editor").click();
+      this.load(_Configuration2.default.backend.file.get(file));
+    }
+
+    // check if the user has added a "file" parameter. In this case we load the shape from
+    // the draw2d.shape github repository
+    //
+    var demo = this.getParam("demo");
+    if (demo) {
+      $("#leftTabStrip .editor").click();
+      this.load(_Configuration2.default.backend.demo.get(demo));
     }
 
     // listen on the history object to load files
     //
     window.onpopstate = function (event) {
       if (history.state && history.state.id === 'editor') {
-        // Render new content for the hompage
+        // Render new content for the homepage
         $("#leftTabStrip .editor").click();
-        _this._load(history.state.file);
+        _this.load(history.state.file);
       }
     };
   }
 
   _createClass(Application, [{
-    key: "_load",
-    value: function _load(file) {
+    key: "load",
+    value: function load(file) {
       var _this2 = this;
 
-      return _BackendStorage2.default.loadFile(file).then(function (content) {
-        _BackendStorage2.default.currentFile = file;
+      this.view.clear();
+      $("#leftTabStrip .editor").click();
+      return _BackendStorage2.default.loadUrl(file).then(function (content) {
         _this2.view.clear();
-        new draw2d.io.json.Reader().unmarshal(_this2.view, content);
+        _Reader2.default.unmarshal(_this2.view, content);
         _this2.view.getCommandStack().markSaveLocation();
         _this2.view.centerDocument();
+
+        // check if a tutorial exists for the named file and load/activate them
+        //
+        _BackendStorage2.default.loadUrl(file.replace(_Configuration2.default.fileSuffix, ".guide")).then(function (content) {
+          if (typeof content === "string") {
+            content = JSON.parse(content);
+          }
+          $(content.screen).click();
+          checkElement("#paletteElementsScroll").then(function () {
+            var anno = new Anno(content.steps);
+            anno.show();
+          });
+        }).catch(function (error) {
+          // ignore 404 HTTP error silently
+        });
         return content;
       });
     }
   }, {
-    key: "dump",
-    value: function dump() {
-      var writer = new draw2d.io.json.Writer();
-      writer.marshal(this.view, function (json) {
-        console.log(JSON.stringify(json, undefined, 2));
-      });
+    key: "historyDemo",
+    value: function historyDemo(file) {
+      history.pushState({
+        id: 'editor',
+        file: name
+      }, 'Brainbox Simulator | ' + name, window.location.href.split('?')[0] + '?demo=' + file);
     }
   }, {
-    key: "checkForTutorialMode",
-    value: function checkForTutorialMode() {
-      var tutorial = this.getParam("tutorial");
-      if (!tutorial || tutorial === '') {
-        return;
-      }
-
-      switch (tutorial) {
-        case "pairWebUSB":
-          $("#leftTabStrip .editor").click();
-          this._load("tutorial_pairWebUSB.brain").then(function () {
-            checkElement("#paletteElementsScroll").then(function () {
-              var anno = new Anno([{
-                target: '#editConnections',
-                content: 'Click here to pair your USB device...'
-              }, {
-                target: "#simulationStartStop",
-                position: 'left',
-                content: '..and press start to see how the LED is blinking.<br>' + 'Check the buildin LED of the connected Arduino on the USB port'
-              }]);
-              anno.show();
-            });
-          });
-          break;
-        default:
-          break;
-      }
+    key: "historyFile",
+    value: function historyFile(file) {
+      history.pushState({
+        id: 'editor',
+        file: name
+      }, 'Brainbox Simulator | ' + name, window.location.href.split('?')[0] + '?file=' + file);
     }
   }, {
     key: "getParam",
@@ -366,9 +367,9 @@ var Application = function () {
       }
 
       if (fileName) {
-        _BackendStorage2.default.currentFile = _BackendStorage2.default.sanitize(fileName);
+        this.fileName = _BackendStorage2.default.sanitize(fileName);
       } else {
-        _BackendStorage2.default.currentFile = "CircuitDiagram" + _Configuration2.default.fileSuffix;
+        this.fileName = "MyNewBrain" + _Configuration2.default.fileSuffix;
       }
       this.view.centerDocument();
     }
@@ -1284,7 +1285,8 @@ var ProbeWindow = function () {
   _createClass(ProbeWindow, [{
     key: "show",
     value: function show() {
-      var _this = this;
+      var _this3 = this;
+
       var probes = [];
 
       this.resize();
@@ -1308,7 +1310,7 @@ var ProbeWindow = function () {
       $("#probe_window").append('<ul id="probeSortable"></ul>');
 
       probes.forEach(function (probe) {
-        _this.addProbe(probe);
+        return _this3.addProbe(probe);
       });
 
       if (probes.length > 0) $("#probe_hint").hide();else $("#probe_hint").show();
@@ -1318,7 +1320,7 @@ var ProbeWindow = function () {
         update: function update(event, ui) {
           var lis = $("#probeSortable li");
           $.each(lis, function (index, li) {
-            var probeEntry = _this.probes.find(function (entry) {
+            var probeEntry = _this3.probes.find(function (entry) {
               return entry.probe.id === li.attributes.id.value;
             });
             probeEntry.probe.setIndex(index);
@@ -1339,14 +1341,14 @@ var ProbeWindow = function () {
   }, {
     key: "resize",
     value: function resize() {
-      var _this3 = this;
+      var _this4 = this;
 
       this.channelWidth = $("#probe_window").width();
       this.xScale = d3.scaleLinear().domain([0, this.channelBufferSize - 1]).range([0, this.channelWidth]);
       this.yScale = d3.scaleLinear().domain([0, 5]).range([this.channelHeight, 0]);
 
       this.probes.forEach(function (entry) {
-        entry.svg.attr("width", _this3.channelWidth);
+        return entry.svg.attr("width", _this4.channelWidth);
       });
     }
   }, {
@@ -1945,6 +1947,8 @@ exports.default = draw2d.Canvas.extend({
     this.slider = $('#simulationBaseTimer').slider({
       id: "simulationBaseTimerSlider"
     }).on("slide", function (event) {
+      //       Slider   timerBase
+      //        A,B       a,b
       // min = 50     => 100ms
       // norm= 100    => 10ms ticks
       // max = 500    =>  2ms ticks
@@ -1952,18 +1956,30 @@ exports.default = draw2d.Canvas.extend({
       // To map between the different intervals
       // [A, B] --> [a, b]
       // use this formula
-      // (val - A)*(b-a)/(B-A) + a
-
+      //                   (val - A)*(b-a)
+      // timerbase = b -  ----------------
+      //                      (B-A) + a
+      //
       if (event.value < 100) {
-        _this.timerBase = parseInt(100 - ((event.value - 50) * (100 - 10) / (100 - 50) + 10));
+        _this2.timerBase = parseInt(100 - ((event.value - 50) * (100 - 10) / (100 - 50) + 10));
       } else {
-        _this.timerBase = parseInt(11 - ((event.value - 100) * (10 - 2) / (500 - 100) + 2));
+        _this2.timerBase = parseInt(11 - ((event.value - 100) * (10 - 2) / (500 - 100) + 2));
       }
     });
   },
 
   isSimulationRunning: function isSimulationRunning() {
     return this.simulate;
+  },
+
+  getTimerBase: function getTimerBase() {
+    return this.timerBase;
+  },
+
+  setTimerBase: function setTimerBase(timerBase) {
+    this.timerBase = timerBase;
+
+    if (this.timerBase > 10) this.slider.slider("setValue", -((timerBase - 100) * (100 - 50 + 10)) / (100 - 10) + 50);else this.slider.slider("setValue", (-(timerBase - 11) - 2) * (500 - 100) / (10 - 2) + 100);
   },
 
   /**
@@ -2048,7 +2064,7 @@ exports.default = draw2d.Canvas.extend({
     });
     $("#paletteElementsOverlay").fadeIn("fast");
     $("#paletteElementsOverlay").height($("#paletteElements").height());
-    this.slider.slider("setValue", 100);
+    //this.slider.slider("setValue", 100)
   },
 
   simulationStop: function simulationStop() {
@@ -2446,71 +2462,6 @@ module.exports = exports["default"];
 
 /***/ }),
 
-/***/ "./app/frontend/circuit/js/dialog/FileNew.js":
-/*!***************************************************!*\
-  !*** ./app/frontend/circuit/js/dialog/FileNew.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var FileNew = function () {
-
-  /**
-   * @constructor
-   *
-   */
-  function FileNew() {
-    _classCallCheck(this, FileNew);
-  }
-
-  /**
-   * @method
-   *
-   * Open the file picker and load the selected file.<br>
-   *
-   * @param {Function} successCallback callback method if the user select a file and the content is loaded
-   * @param {Function} errorCallback method to call if any error happens
-   *
-   * @since 4.0.0
-   */
-
-
-  _createClass(FileNew, [{
-    key: "show",
-    value: function show() {
-      $("#fileNewDialog .githubFileName").val("NewDocument");
-      $('#fileNewDialog').on('shown.bs.modal', function () {
-        $(this).find('input:first').focus();
-      });
-      $("#fileNewDialog").modal("show");
-
-      $("#fileNewDialog .okButton").on("click", function () {
-        var name = $("#fileNewDialog .githubFileName").val();
-        $('#fileNewDialog').modal('hide');
-        app.fileNew(undefined, name);
-      });
-    }
-  }]);
-
-  return FileNew;
-}();
-
-exports.default = FileNew;
-module.exports = exports["default"];
-
-/***/ }),
-
 /***/ "./app/frontend/circuit/js/dialog/FileOpen.js":
 /*!****************************************************!*\
   !*** ./app/frontend/circuit/js/dialog/FileOpen.js ***!
@@ -2577,13 +2528,16 @@ var FileOpen = function () {
       var _this = this;
 
       _BackendStorage2.default.getFiles(newPath).then(function (files) {
+        files = files.filter(function (file) {
+          return file.name.endsWith(_Configuration2.default.fileSuffix) || file.type === "dir";
+        });
 
         var compiled = _hogan2.default.compile("\n               {{^rootDir}}     \n               <a href=\"#\" class=\"list-group-item githubPath\" data-type=\"dir\" data-path=\"{{parentPath}}\" >\n                   <span class=\"glyphicon glyphicon-menu-left\"></span>\n                   ..\n               </a>\n               {{/rootDir}}\n               {{#files}}\n                 <a href=\"#\" data-draw2d=\"{{draw2d}}\" class=\"list-group-item githubPath text-nowrap\" data-type=\"{{type}}\" data-path=\"{{currentDir}}{{name}}\" data-id=\"{{id}}\">\n                    <span class=\"glyphicon {{icon}}\"></span>\n                    {{{name}}}\n                 </a>\n               {{/files}}\n          ");
 
         var parentPath = _BackendStorage2.default.dirname(newPath);
         var output = compiled.render({
           parentPath: parentPath,
-          currentDir: _BackendStorage2.default.currentDir,
+          currentDir: newPath,
           files: files,
           rootDir: newPath === null,
           draw2d: function draw2d() {
@@ -2606,14 +2560,9 @@ var FileOpen = function () {
 
         $('.githubPath*[data-draw2d="true"][data-type="file"]').on("click", function (event) {
           var path = $(event.currentTarget).data("path");
-          _BackendStorage2.default.loadFile(path).then(function (content) {
-            $('#fileOpenDialog').modal('hide');
-            _BackendStorage2.default.currentFile = path;
-            view.clear();
-            new draw2d.io.json.Reader().unmarshal(view, content);
-            view.getCommandStack().markSaveLocation();
-            view.centerDocument();
-          });
+          app.historyFile(path);
+          app.load(_Configuration2.default.backend.file.get(path));
+          $('#fileOpenDialog').modal('hide');
           event.preventDefault();
         });
       });
@@ -2648,6 +2597,10 @@ var _BackendStorage = __webpack_require__(/*! ../io/BackendStorage */ "./app/fro
 
 var _BackendStorage2 = _interopRequireDefault(_BackendStorage);
 
+var _Writer = __webpack_require__(/*! ../io/Writer */ "./app/frontend/circuit/js/io/Writer.js");
+
+var _Writer2 = _interopRequireDefault(_Writer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2676,9 +2629,9 @@ var FileSave = function () {
 
   _createClass(FileSave, [{
     key: "show",
-    value: function show(canvas) {
+    value: function show(canvas, defaultFileName) {
       Mousetrap.pause();
-      $("#fileSaveDialog .githubFileName").val(_BackendStorage2.default.currentFile);
+      $("#fileSaveDialog .githubFileName").val(defaultFileName);
 
       $('#fileSaveDialog').off('shown.bs.modal').on('shown.bs.modal', function (event) {
         $(event.currentTarget).find('input:first').focus();
@@ -2689,19 +2642,15 @@ var FileSave = function () {
       //
       $("#fileSaveDialog .okButton").off("click").on("click", function () {
         canvas.setCurrentSelection(null);
-        new draw2d.io.png.Writer().marshal(canvas, function (imageDataUrl) {
-          var writer = new draw2d.io.json.Writer();
-          writer.marshal(canvas, function (json) {
-            var name = $("#fileSaveDialog .githubFileName").val();
-            name = _BackendStorage2.default.sanitize(name);
-
-            _BackendStorage2.default.saveFile(json, imageDataUrl, name).then(function () {
-              Mousetrap.unpause();
-              _BackendStorage2.default.currentFile = name;
-              $('#fileSaveDialog').modal('hide');
-            });
+        _Writer2.default.marshal(canvas, function (json) {
+          var name = $("#fileSaveDialog .githubFileName").val();
+          name = _BackendStorage2.default.sanitize(name);
+          _BackendStorage2.default.saveFile(json, name).then(function () {
+            Mousetrap.unpause();
+            app.fileName = name;
+            $('#fileSaveDialog').modal('hide');
           });
-        }, canvas.getBoundingBox().scale(10, 10));
+        });
       });
     }
   }]);
@@ -4425,7 +4374,7 @@ exports.default = {
     }, {
       key: "connected",
       get: function get() {
-        return socket.connected;
+        return socket && socket.connected;
       }
     }]);
 
@@ -4613,9 +4562,6 @@ var BackendStorage = function () {
    */
   function BackendStorage() {
     _classCallCheck(this, BackendStorage);
-
-    this.fileName = "";
-    Object.preventExtensions(this);
   }
 
   _createClass(BackendStorage, [{
@@ -4634,9 +4580,8 @@ var BackendStorage = function () {
       return _axios2.default.get(path).then(function (response) {
         // happens in "serverless" mode on the gh-pages/docs installation
         //
-        if (typeof response === "string") response = JSON.parse(response).data;else response = response.data;
-
-        var files = response.files;
+        var files = [];
+        if (typeof response === "string") files = JSON.parse(response).data.files;else files = response.data.files;
 
         // sort the result
         // Directories are always on top
@@ -4657,41 +4602,40 @@ var BackendStorage = function () {
     }
   }, {
     key: 'saveFile',
-    value: function saveFile(json, imageDataUrl, fileName) {
+    value: function saveFile(json, fileName) {
       var data = {
         filePath: fileName,
-        content: JSON.stringify({ draw2d: json, image: imageDataUrl }, undefined, 2)
+        content: JSON.stringify(json, undefined, 2)
       };
       return _axios2.default.post(_Configuration2.default.backend.file.save, data);
     }
   }, {
     key: 'loadFile',
     value: function loadFile(fileName) {
-      return this.__loadFile(_Configuration2.default.backend.file.get(fileName));
+      return this.loadUrl(_Configuration2.default.backend.file.get(fileName));
     }
   }, {
     key: 'loadDemo',
     value: function loadDemo(fileName) {
-      return this.__loadFile(_Configuration2.default.backend.demo.get(fileName));
+      return this.loadUrl(_Configuration2.default.backend.demo.get(fileName));
     }
+
     /**
-    * Load the file content of the given path
-    *
-    * @param fileName
-    * @returns {*}
-    */
+     * Load the file content of the given path
+     *
+     * @param fileName
+     * @returns {*}
+     */
 
   }, {
-    key: '__loadFile',
-    value: function __loadFile(url) {
+    key: 'loadUrl',
+    value: function loadUrl(url) {
       return _axios2.default.get(url).then(function (response) {
         // happens in "serverless" mode on the gh-pages/docs installation
         //
-        if (typeof response === "string") response = JSON.parse(response).data;else response = response.data;
+        if (typeof response === "string") return JSON.parse(response).data;
 
-        if (response.draw2d) return response.draw2d;
-
-        return response;
+        return response.data;
       });
     }
   }, {
@@ -4740,23 +4684,6 @@ var BackendStorage = function () {
       }
       return path.split(/[\\/]/).pop();
     }
-  }, {
-    key: 'currentDir',
-    get: function get() {
-      return this.dirname(this.dirname());
-    }
-  }, {
-    key: 'currentFile',
-    get: function get() {
-      return this.basename(this.fileName);
-    },
-    set: function set(name) {
-      this.fileName = name;
-      history.pushState({
-        id: 'editor',
-        file: name
-      }, 'Brainbox Simulator | ' + name, window.location.href.split('?')[0] + '?file=' + name);
-    }
   }]);
 
   return BackendStorage;
@@ -4765,6 +4692,108 @@ var BackendStorage = function () {
 var storage = new BackendStorage();
 exports.default = storage;
 module.exports = exports['default'];
+
+/***/ }),
+
+/***/ "./app/frontend/circuit/js/io/Reader.js":
+/*!**********************************************!*\
+  !*** ./app/frontend/circuit/js/io/Reader.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+
+var Reader = draw2d.io.json.Reader.extend({
+
+    init: function init() {
+        this._super();
+    },
+
+    unmarshal: function unmarshal(view, fileData) {
+        // new JSON format with draw2d&image content
+        this._super(view, fileData.draw2d);
+
+        // restore the UI state
+        //
+        if (fileData.view) {
+            var state = fileData.view;
+            if (state.timerBase) {
+                view.setTimerBase(state.timerBase);
+            }
+            if (state.probeWindow) {
+                view.probeWindow.show();
+            }
+        }
+    },
+
+    createFigureFromType: function createFigureFromType(type) {
+        // patch object types from older versions of JSON
+        if (type === "draw2d.Connection") {
+            type = "Connection";
+        }
+
+        return this._super(type);
+    }
+});
+
+var reader = new Reader();
+exports.default = reader;
+module.exports = exports["default"];
+
+/***/ }),
+
+/***/ "./app/frontend/circuit/js/io/Writer.js":
+/*!**********************************************!*\
+  !*** ./app/frontend/circuit/js/io/Writer.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/**
+ * The Writer is responsible to convert the circuit into a self contained
+ * JSON with a preview image and the state of the UI.
+ *
+ */
+var Writer = draw2d.io.json.Writer.extend({
+
+  init: function init() {
+    this._super();
+  },
+
+  marshal: function marshal(canvas, callback) {
+    new draw2d.io.png.Writer().marshal(canvas, function (imageDataUrl) {
+      var writer = new draw2d.io.json.Writer();
+      writer.marshal(canvas, function (json) {
+        var data = {
+          draw2d: json,
+          image: imageDataUrl,
+          view: {
+            timerBase: canvas.timerBase,
+            probeWindow: canvas.probeWindow.visible
+          }
+        };
+        callback(data);
+      });
+    }, canvas.getBoundingBox().scale(10, 10));
+  }
+});
+
+var writer = new Writer();
+exports.default = writer;
+module.exports = exports["default"];
 
 /***/ }),
 
@@ -5187,10 +5216,6 @@ var _Configuration = __webpack_require__(/*! ../Configuration */ "./app/frontend
 
 var _Configuration2 = _interopRequireDefault(_Configuration);
 
-var _FileNew = __webpack_require__(/*! ../dialog/FileNew */ "./app/frontend/circuit/js/dialog/FileNew.js");
-
-var _FileNew2 = _interopRequireDefault(_FileNew);
-
 var _hogan = __webpack_require__(/*! hogan.js */ "./node_modules/hogan.js/lib/hogan.js");
 
 var _hogan2 = _interopRequireDefault(_hogan);
@@ -5257,6 +5282,9 @@ var Files = function () {
       //
       function loadDemos(path) {
         _BackendStorage2.default.getDemos(path).then(function (files) {
+          files = files.filter(function (file) {
+            return file.name.endsWith(_Configuration2.default.fileSuffix) || file.type === "dir";
+          });
           files = files.map(function (file) {
             return _extends({}, file, {
               readonly: true,
@@ -5289,13 +5317,10 @@ var Files = function () {
             var $el = $(event.currentTarget);
             var name = $el.data("name");
             $el.addClass("spinner");
-            _BackendStorage2.default.loadDemo(name).then(function (content) {
-              $("#leftTabStrip .editor").click();
-              app.view.clear();
-              new draw2d.io.json.Reader().unmarshal(app.view, content);
-              app.view.getCommandStack().markSaveLocation();
-              app.view.centerDocument();
+            var file = _Configuration2.default.backend.demo.get(name);
+            app.load(file).then(function () {
               $el.removeClass("spinner");
+              app.historyDemo(name);
             });
           });
         });
@@ -5306,6 +5331,9 @@ var Files = function () {
       //
       function loadFiles(path) {
         _BackendStorage2.default.getFiles(path).then(function (files) {
+          files = files.filter(function (file) {
+            return file.name.endsWith(_Configuration2.default.fileSuffix) || file.type === "dir";
+          });
           files = files.map(function (file) {
             return _extends({}, file, {
               readonly: false,
@@ -5406,13 +5434,9 @@ var Files = function () {
             var parent = $el.closest(".list-group-item");
             var name = parent.data("name");
             parent.addClass("spinner");
-            _BackendStorage2.default.loadFile(name).then(function (content) {
-              $("#leftTabStrip .editor").click();
-              _BackendStorage2.default.currentFile = name;
-              app.view.clear();
-              new draw2d.io.json.Reader().unmarshal(app.view, content);
-              app.view.getCommandStack().markSaveLocation();
-              app.view.centerDocument();
+            var file = _Configuration2.default.backend.file.get(name);
+            app.historyFile(name);
+            app.load(file).then(function () {
               parent.removeClass("spinner");
             });
           });
@@ -5426,7 +5450,7 @@ var Files = function () {
         if (preview.length === 0) {
           _this.render();
         } else {
-          $("a[data-name='" + msg.filePath + "'] img").attr({ src: _Configuration2.default.backend.file.image() + msg.filePath + "&timestamp=" + new Date().getTime() });
+          $("a[data-name='" + msg.filePath + "'] img").attr({ src: _Configuration2.default.backend.file.image(msg.filePath) + "&timestamp=" + new Date().getTime() });
         }
       });
     }

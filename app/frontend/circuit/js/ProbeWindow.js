@@ -62,34 +62,27 @@ export default class ProbeWindow {
 
 
   show() {
-    let _this = this
     let probes = []
 
     this.resize()
 
     // get all probes from the canvas and add them to the window
     //
-    this.canvas.getLines().each(function (i, line) {
+    this.canvas.getLines().each( (i, line) =>{
       let probe = line.getProbeFigure()
       if (probe !== null) {
         probes.push(probe)
       }
     })
 
-
     // sort the probes by the "index" attribute
     //
-    probes.sort(function (a, b) {
-      return a.index - b.index
-    })
+    probes.sort( (a, b) =>  a.index - b.index)
 
     $("#probeSortable").remove()
     $("#probe_window").append('<ul id="probeSortable"></ul>')
 
-
-    probes.forEach(function (probe) {
-      _this.addProbe(probe)
-    })
+    probes.forEach( (probe) => this.addProbe(probe))
 
     if (probes.length > 0)
       $("#probe_hint").hide()
@@ -98,10 +91,10 @@ export default class ProbeWindow {
     $("#probe_window").show().animate({height: '200px'}, 300)
     $("#draw2dCanvasWrapper").animate({bottom: '200px'}, 300)
     $("#probeSortable").sortable({
-      update: function (event, ui) {
+      update: (event, ui) => {
         let lis = $("#probeSortable li")
-        $.each(lis, function (index, li) {
-          let probeEntry = _this.probes.find(function (entry) {
+        $.each(lis, (index, li) => {
+          let probeEntry = this.probes.find( (entry) => {
             return entry.probe.id === li.attributes.id.value
           })
           probeEntry.probe.setIndex(index)
@@ -124,9 +117,7 @@ export default class ProbeWindow {
     this.xScale = d3.scaleLinear().domain([0, this.channelBufferSize - 1]).range([0, this.channelWidth])
     this.yScale = d3.scaleLinear().domain([0, 5]).range([this.channelHeight, 0])
 
-    this.probes.forEach((entry) => {
-      entry.svg.attr("width", this.channelWidth)
-    })
+    this.probes.forEach((entry) => entry.svg.attr("width", this.channelWidth))
   }
 
   tick(intervalTime) {

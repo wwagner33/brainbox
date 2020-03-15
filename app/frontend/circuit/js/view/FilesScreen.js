@@ -1,5 +1,4 @@
 import conf from "../Configuration"
-import FileNew from "../dialog/FileNew"
 import Hogan from "hogan.js"
 import storage from "../io/BackendStorage"
 
@@ -23,14 +22,16 @@ export default class Files {
 
   render() {
 
-    $('#material-tabs').each(function() {
+    $('#material-tabs').each(function () {
       let $active, $content, $links = $(this).find('a');
       $active = $($links[0]);
       $active.addClass('active');
       $content = $($active[0].hash);
-      $links.not($active).each( function() { $(this.hash).hide() })
+      $links.not($active).each(function () {
+        $(this.hash).hide()
+      })
 
-      $(this).on('click', 'a', function(e) {
+      $(this).on('click', 'a', function (e) {
         $active.removeClass('active')
         $content.hide()
 
@@ -48,19 +49,20 @@ export default class Files {
     //
     function loadDemos(path) {
       storage.getDemos(path).then((files) => {
+        files = files.filter(file => file.name.endsWith(conf.fileSuffix) || file.type === "dir")
         files = files.map(file => {
           return {
             ...file,
             readonly: true,
             folder: path,
             title: file.name.replace(conf.fileSuffix, ""),
-            image: conf.backend.demo.image(path+file.name)
+            image: conf.backend.demo.image(path + file.name)
           }
         })
-        if(path.length !== 0) {
+        if (path.length !== 0) {
           files.unshift({
             name: storage.dirname(path),
-            folder:"", // important. Otherwise Hogan makes a lookup fallback to the root element
+            folder: "", // important. Otherwise Hogan makes a lookup fallback to the root element
             type: "dir",
             dir: true,
             readonly: true,
@@ -81,15 +83,11 @@ export default class Files {
           let $el = $(event.currentTarget)
           let name = $el.data("name")
           $el.addClass("spinner")
-          storage.loadDemo(name)
-            .then((content) => {
-              $("#leftTabStrip .editor").click()
-              app.view.clear()
-              new draw2d.io.json.Reader().unmarshal(app.view, content)
-              app.view.getCommandStack().markSaveLocation()
-              app.view.centerDocument()
-              $el.removeClass("spinner")
-            })
+          let file = conf.backend.demo.get(name)
+          app.load(file).then(() => {
+            $el.removeClass("spinner")
+            app.historyDemo(name)
+          })
         })
       })
     }
@@ -99,19 +97,20 @@ export default class Files {
     //
     function loadFiles(path) {
       storage.getFiles(path).then((files) => {
+        files = files.filter(file => file.name.endsWith(conf.fileSuffix) || file.type === "dir")
         files = files.map(file => {
           return {
             ...file,
             readonly: false,
             folder: path,
             title: file.name.replace(conf.fileSuffix, ""),
-            image: conf.backend.file.image(path+file.name)
+            image: conf.backend.file.image(path + file.name)
           }
         })
-        if(path.length !== 0) {
+        if (path.length !== 0) {
           files.unshift({
             name: storage.dirname(path),
-            folder:"", // important. Otherwise Hogan makes a lookup fallback to the root element
+            folder: "", // important. Otherwise Hogan makes a lookup fallback to the root element
             type: "dir",
             dir: true,
             readonly: true,
@@ -199,16 +198,11 @@ export default class Files {
           let parent = $el.closest(".list-group-item")
           let name = parent.data("name")
           parent.addClass("spinner")
-          storage.loadFile(name)
-            .then((content) => {
-              $("#leftTabStrip .editor").click()
-              storage.currentFile = name
-              app.view.clear()
-              new draw2d.io.json.Reader().unmarshal(app.view, content)
-              app.view.getCommandStack().markSaveLocation()
-              app.view.centerDocument()
-              parent.removeClass("spinner")
-            })
+          let file = conf.backend.file.get(name)
+          app.historyFile(name)
+          app.load(file).then(() => {
+            parent.removeClass("spinner")
+          })
         })
       })
     }
@@ -219,9 +213,8 @@ export default class Files {
       let preview = $("a[data-name='" + msg.filePath + "'] img")
       if (preview.length === 0) {
         this.render()
-      }
-      else {
-        $("a[data-name='" + msg.filePath + "'] img").attr({src: conf.backend.file.image()  + msg.filePath + "&timestamp=" + new Date().getTime()})
+      } else {
+        $("a[data-name='" + msg.filePath + "'] img").attr({src: conf.backend.file.image(msg.filePath) + "&timestamp=" + new Date().getTime()})
       }
     })
 

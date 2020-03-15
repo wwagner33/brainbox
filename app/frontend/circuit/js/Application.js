@@ -11,7 +11,7 @@ import FileOpen from "./dialog/FileOpen"
 import FileSave from "./dialog/FileSave"
 import storage from './io/BackendStorage'
 import conf from "./Configuration"
-
+import reader from "./io/Reader"
 
 /**
  * wait asyn that an DOM element is present
@@ -85,83 +85,76 @@ class Application {
     // check if the user has added a "file" parameter. In this case we load the shape from
     // the draw2d.shape github repository
     //
-    let tutorial = this.getParam("tutorial")
-    if(tutorial) {
-        this.checkForTutorialMode()
+    let file = this.getParam("file")
+    if (file) {
+      $("#leftTabStrip .editor").click()
+      this.load(conf.backend.file.get(file))
     }
-    else{
-      let file = this.getParam("file")
-      if (file) {
-        $("#leftTabStrip .editor").click()
-        this._load(file).then(() => {
-          this.checkForTutorialMode()
-        })
-      }
+
+    // check if the user has added a "file" parameter. In this case we load the shape from
+    // the draw2d.shape github repository
+    //
+    let demo = this.getParam("demo")
+    if (demo) {
+      $("#leftTabStrip .editor").click()
+      this.load(conf.backend.demo.get(demo))
     }
 
     // listen on the history object to load files
     //
     window.onpopstate = (event) => {
       if (history.state && history.state.id === 'editor') {
-        // Render new content for the hompage
+        // Render new content for the homepage
         $("#leftTabStrip .editor").click()
-        this._load(history.state.file)
+        this.load(history.state.file)
       }
     }
   }
 
-  _load(file) {
-    return storage.loadFile(file)
+  load(file) {
+    this.view.clear()
+    $("#leftTabStrip .editor").click()
+    return storage.loadUrl(file)
       .then((content) => {
-        storage.currentFile = file
         this.view.clear()
-        new draw2d.io.json.Reader().unmarshal(this.view, content)
+        reader.unmarshal(this.view, content)
         this.view.getCommandStack().markSaveLocation()
         this.view.centerDocument()
+
+        // check if a tutorial exists for the named file and load/activate them
+        //
+        storage.loadUrl(file.replace(conf.fileSuffix, ".guide"))
+          .then( content => {
+            if(typeof content === "string"){
+              content = JSON.parse(content)
+            }
+            $(content.screen).click()
+            checkElement("#paletteElementsScroll").then( ()=>{
+                let anno = new Anno(content.steps)
+                anno.show()
+            })
+          })
+          .catch( error => {
+            // ignore 404 HTTP error silently
+          })
         return content
       })
   }
 
-  dump() {
-    let writer = new draw2d.io.json.Writer()
-    writer.marshal(this.view, function (json) {
-      console.log(JSON.stringify(json, undefined, 2))
-    })
+
+  historyDemo(file){
+    history.pushState({
+      id: 'editor',
+      file: name
+    }, 'Brainbox Simulator | ' + name, window.location.href.split('?')[0] + '?demo=' + file)
   }
 
-
-  checkForTutorialMode() {
-    let tutorial = this.getParam("tutorial")
-    if (!tutorial || tutorial === '') {
-      return
-    }
-
-    switch (tutorial) {
-      case "pairWebUSB":
-        $("#leftTabStrip .editor").click()
-        this._load("tutorial_pairWebUSB.brain").then(()=>{
-          checkElement("#paletteElementsScroll").then( ()=>{
-            let anno = new Anno([
-              {
-                target: '#editConnections',
-                content: 'Click here to pair your USB device...'
-              },
-              {
-                target: "#simulationStartStop",
-                position: 'left',
-                content: '..and press start to see how the LED is blinking.<br>'+
-                  'Check the buildin LED of the connected Arduino on the USB port'
-              }
-            ])
-            anno.show()
-          })
-        })
-        break
-      default:
-        break
-    }
+  historyFile(file){
+    history.pushState({
+      id: 'editor',
+      file: name
+    }, 'Brainbox Simulator | ' + name, window.location.href.split('?')[0] + '?file=' + file)
   }
-
 
   getParam(name) {
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]")
@@ -193,10 +186,10 @@ class Application {
     }
 
     if (fileName) {
-      storage.currentFile = storage.sanitize(fileName)
+      this.fileName = storage.sanitize(fileName)
     }
     else {
-      storage.currentFile = "CircuitDiagram" + conf.fileSuffix
+      this.fileName = "MyNewBrain" + conf.fileSuffix
     }
     this.view.centerDocument()
   }

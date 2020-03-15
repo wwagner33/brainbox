@@ -17,7 +17,7 @@ export default {
       image:  file       => `../backend/brain/image?filePath=${file}`,
       del:     `../backend/brain/delete`,
       rename:  `../backend/brain/rename`,
-      save:     `../backend/brain/save`
+      save:    `../backend/brain/save`
     },
     demo:{
       list:   path       => `../backend/demo/list?path=${path}`,

@@ -10,24 +10,6 @@ class BackendStorage {
    *
    */
   constructor() {
-    this.fileName = ""
-    Object.preventExtensions(this)
-  }
-
-  get currentDir() {
-    return this.dirname(this.dirname())
-  }
-
-  get currentFile() {
-    return this.basename(this.fileName)
-  }
-
-  set currentFile(name) {
-    this.fileName = name
-    history.pushState({
-      id: 'editor',
-      file: name
-    }, 'Brainbox Simulator | ' + name, window.location.href.split('?')[0] + '?file=' + name)
   }
 
   getFiles(path){
@@ -43,12 +25,11 @@ class BackendStorage {
       .then((response) => {
         // happens in "serverless" mode on the gh-pages/docs installation
         //
+        let files = []
         if (typeof response === "string")
-          response = JSON.parse(response).data
+          files = JSON.parse(response).data.files
         else
-          response = response.data
-
-      let files = response.files
+          files = response.data.files
 
       // sort the result
       // Directories are always on top
@@ -71,41 +52,37 @@ class BackendStorage {
   }
 
 
-  saveFile(json, imageDataUrl, fileName) {
+  saveFile(json, fileName) {
     let data = {
       filePath: fileName,
-      content: JSON.stringify({draw2d: json, image: imageDataUrl}, undefined, 2)
+      content: JSON.stringify(json, undefined, 2)
     }
     return axios.post(conf.backend.file.save, data)
   }
 
   loadFile(fileName) {
-    return this.__loadFile(conf.backend.file.get(fileName))
+    return this.loadUrl(conf.backend.file.get(fileName))
   }
 
   loadDemo(fileName) {
-    return this.__loadFile(conf.backend.demo.get(fileName))
+    return this.loadUrl(conf.backend.demo.get(fileName))
   }
-    /**
+
+  /**
    * Load the file content of the given path
    *
    * @param fileName
    * @returns {*}
    */
-  __loadFile(url) {
+   loadUrl(url) {
     return axios.get(url)
       .then((response) => {
         // happens in "serverless" mode on the gh-pages/docs installation
         //
         if (typeof response === "string")
-          response = JSON.parse(response).data
-        else
-          response = response.data
+          return JSON.parse(response).data
 
-        if (response.draw2d)
-          return response.draw2d
-
-        return response
+        return response.data
       })
   }
 
