@@ -67,17 +67,6 @@ export default shape_designer.FigureWriter = draw2d.io.Writer.extend({
           name: figure.getUserData().name
         })
       } else if ((figure instanceof shape_designer.figure.ExtLine)) {
-        // drop shadow
-        shapes.push({
-          constructor: "this.canvas.paper.path('" + figure.svgPathString + "')",
-          attr: JSON.stringify($.extend({}, attr, {
-            "stroke-width": attr["stroke-width"] + figure.getOutlineStroke(),
-            "stroke": figure.getOutlineColor().hash()
-          })),
-          extra: figure.getBlur() === 0 ? "" : "shape.blur(" + figure.getBlur() + ");\n",
-          name: figure.getUserData().name + "_shadow"
-        })
-
         // the line itself
         shapes.push({
           constructor: "this.canvas.paper.path('" + figure.svgPathString + "')",

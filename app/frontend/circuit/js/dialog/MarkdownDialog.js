@@ -1,5 +1,6 @@
 import {Remarkable, utils} from "remarkable"
 import conf from "../Configuration";
+import CircuitFigure from "../figures/CircuitFigure";
 
 export default class MarkdownDialog {
 
@@ -23,7 +24,16 @@ export default class MarkdownDialog {
       markdownParser.inline.validateLink = this.validateLink
       $('#markdownDialog .html').html(markdownParser.render(content))
       $('#markdownDialog .version').html(version)
+      if(figure instanceof CircuitFigure){
+        $('#markdownDialog .editButton').show()
+      }
+      else{
+        $('#markdownDialog .editButton').hide()
+      }
+
+
       $('#markdownDialog').modal('show')
+
       $("#markdownDialog .editButton").off("click").on("click", () => {
         let baseName = figure.attr("userData.file").replace(/\.shape$/, "")
         let pathToDesign = conf.designer.url
@@ -31,6 +41,7 @@ export default class MarkdownDialog {
           + "&file=" + baseName + ".shape"
         window.open(pathToDesign, "designer")
       })
+
       $("#markdownDialog .editButtonGuided").off("click").on("click", () => {
         let baseName = figure.attr("userData.file").replace(/\.shape$/, "")
         let pathToDesign = conf.designer.url

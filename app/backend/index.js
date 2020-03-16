@@ -79,7 +79,6 @@ function runServer() {
   app.post('/backend/brain/delete', (req, res) => storage.deleteFile(brainsHomeDir,     req.body.filePath, res))
   app.post('/backend/brain/rename', (req, res) => storage.renameFile(brainsHomeDir,     req.body.from, req.body.to, res))
   app.post('/backend/brain/save',   (req, res) => {
-    console.log("save....")
     fs.writeFile(brainsHomeDir + req.body.filePath, req.body.content,  (err) =>{
       res.send('true');
       console.log("brain:generated")

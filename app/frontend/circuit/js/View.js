@@ -263,13 +263,33 @@ export default draw2d.Canvas.extend({
         let x = event.x
         let y = event.y
 
-        let items = {
-          "label":  {name: "Attach Label", icon: "x ion-ios-pricetag-outline"},
-          "delete": {name: "Delete", icon: "x ion-ios-close-outline"},
-          "sep1": "---------",
-          "design": {name: "Edit Shape", icon: "x ion-ios-compose-outline"},
-          "code":   {name: "Show JS Code", icon: "x ion-code"},
-          "help":   {name: "Description", icon: "x ion-ios-information-outline"}
+        let items = {}
+
+        if(figure instanceof CircuitFigure) {
+          items = {
+            "label": {name: "Attach Label", icon: "x ion-ios-pricetag-outline"},
+            "delete": {name: "Delete", icon: "x ion-ios-close-outline"},
+            "sep1": "---------",
+            "design": {name: "Edit Shape", icon: "x ion-ios-compose-outline"},
+            "code": {name: "Show JS Code", icon: "x ion-code"},
+            "help": {name: "Description", icon: "x ion-ios-information-outline"}
+          }
+        }
+        else if (figure instanceof draw2d.shape.basic.Label){
+          items = {
+            "delete": {name: "Delete", icon: "x ion-ios-close-outline"}
+          }
+        }
+        else if (figure instanceof draw2d.Port){
+          return
+        }
+        else{
+          items = {
+            "label": {name: "Attach Label", icon: "x ion-ios-pricetag-outline"},
+            "help": {name: "Description", icon: "x ion-ios-information-outline"},
+            "sep1": "---------",
+            "delete": {name: "Delete", icon: "x ion-ios-close-outline"}
+          }
         }
 
         $.contextMenu({

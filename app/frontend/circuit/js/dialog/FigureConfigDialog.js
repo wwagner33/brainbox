@@ -1,10 +1,10 @@
 //"private" variables
 import Hogan from "hogan.js"
 
-var currentFigure = null
+let currentFigure = null
 
 //"public" stuff
-var dialog = null
+let dialog = null
 
 export default dialog= new class FigureConfigDialog {
   constructor(){
@@ -14,11 +14,11 @@ export default dialog= new class FigureConfigDialog {
     Mousetrap.pause()
     currentFigure = figure
 
-    var settings = figure.getParameterSettings().slice(0)
-    $.each(settings, function (i, el) {
+    let settings = figure.getParameterSettings().slice(0)
+    settings.forEach((el) => {
       el.value = currentFigure.attr("userData." + el.name)
     })
-    var compiled = Hogan.compile(
+    let compiled = Hogan.compile(
       '  <div class="header">Object Configuration</div>   ' +
       '  {{#settings}}               ' +
       '         <div class="form-group">' +
@@ -28,7 +28,7 @@ export default dialog= new class FigureConfigDialog {
       '  {{/settings}}                  ' +
       '<button class="submit">Ok</button> '
     )
-    var output = compiled.render({
+    let output = compiled.render({
       settings: settings
     })
 
@@ -45,8 +45,8 @@ export default dialog= new class FigureConfigDialog {
       this.hide()
     })
 
-    $.each(settings, (index, setting) =>{
-      var figureValue = currentFigure.attr("userData." + setting.name)
+    settings.forEach((setting) =>{
+      let figureValue = currentFigure.attr("userData." + setting.name)
       $('#figureConfigDialog select[data-name="' + setting.name + '"] option[value="' + figureValue + '"]').attr('selected', 'selected')
     })
   }
@@ -56,8 +56,8 @@ export default dialog= new class FigureConfigDialog {
     if (currentFigure !== null) {
       $("#figureConfigDialog input, #figureConfigDialog select").each(function (i, element) {
         element = $(element)
-        var value = element.val()
-        var name = element.data("name")
+        let value = element.val()
+        let name = element.data("name")
 
         currentFigure.attr("userData." + name, value)
       })

@@ -24,6 +24,7 @@ circuit_switch_HighLow = circuit_switch_HighLow.extend({
         });
 
         this.on("added",function(){
+            console.log(_this.value)
             _this.layerShow("low" , !_this.value);
             _this.layerShow("high",  _this.value);
             _this.getOutputPort(0).setValue(_this.value);

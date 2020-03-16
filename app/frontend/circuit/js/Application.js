@@ -53,7 +53,7 @@ class Application {
     })
 
     $("#fileSave, #editorFileSave").on("click", () => {
-      new FileSave().show(this.view)
+      new FileSave().show(this.view, this.fileName)
     })
 
 
@@ -85,10 +85,10 @@ class Application {
     // check if the user has added a "file" parameter. In this case we load the shape from
     // the draw2d.shape github repository
     //
-    let file = this.getParam("file")
-    if (file) {
+    this.fileName = this.getParam("file")
+    if (this.fileName) {
       $("#leftTabStrip .editor").click()
-      this.load(conf.backend.file.get(file))
+      this.load(conf.backend.file.get(this.fileName))
     }
 
     // check if the user has added a "file" parameter. In this case we load the shape from
@@ -141,7 +141,6 @@ class Application {
       })
   }
 
-
   historyDemo(file){
     history.pushState({
       id: 'editor',
@@ -150,6 +149,7 @@ class Application {
   }
 
   historyFile(file){
+    this.fileName = file
     history.pushState({
       id: 'editor',
       file: name
@@ -186,7 +186,7 @@ class Application {
     }
 
     if (fileName) {
-      this.fileName = storage.sanitize(fileName)
+      this.fileName = storage.sanitize(fileName)+conf.fileSuffix
     }
     else {
       this.fileName = "MyNewBrain" + conf.fileSuffix

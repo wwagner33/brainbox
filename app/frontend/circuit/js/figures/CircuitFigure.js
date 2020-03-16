@@ -206,6 +206,8 @@ export default draw2d.SetFigure.extend({
   getPersistentAttributes: function () {
     let memento = this._super()
 
+    memento.value = this.value
+
     // add all decorations to the memento
     //
     memento.labels = []
@@ -227,6 +229,10 @@ export default draw2d.SetFigure.extend({
    */
   setPersistentAttributes: function (memento) {
     this._super(memento)
+
+    if(typeof memento.value !== "undefined"){
+      this.value = memento.value
+    }
 
     // remove all decorations created in the constructor of this element
     //

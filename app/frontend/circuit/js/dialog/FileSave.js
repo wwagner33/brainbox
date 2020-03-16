@@ -36,7 +36,8 @@ export default class FileSave {
       canvas.setCurrentSelection(null)
       writer.marshal(canvas, json => {
         let name = $("#fileSaveDialog .githubFileName").val()
-        name = storage.sanitize(name)
+        // to forbid path in the file names you must uncomment this line
+        // name = storage.sanitize(name)
         storage.saveFile(json, name)
           .then(function () {
             Mousetrap.unpause()

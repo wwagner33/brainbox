@@ -119,7 +119,6 @@ class BackendStorage {
     file = file.replace(conf.fileSuffix, "")
     // I don't like dots in the name to
     file = file.replace(RegExp("[.]", "g"), "_")
-    file = file + conf.fileSuffix
     return file
   }
 

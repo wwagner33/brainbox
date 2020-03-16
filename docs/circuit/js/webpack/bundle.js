@@ -232,7 +232,7 @@ var Application = function () {
     });
 
     $("#fileSave, #editorFileSave").on("click", function () {
-      new _FileSave2.default().show(_this.view);
+      new _FileSave2.default().show(_this.view, _this.fileName);
     });
 
     $("#appHelp").on("click", function () {
@@ -263,10 +263,10 @@ var Application = function () {
     // check if the user has added a "file" parameter. In this case we load the shape from
     // the draw2d.shape github repository
     //
-    var file = this.getParam("file");
-    if (file) {
+    this.fileName = this.getParam("file");
+    if (this.fileName) {
       $("#leftTabStrip .editor").click();
-      this.load(_Configuration2.default.backend.file.get(file));
+      this.load(_Configuration2.default.backend.file.get(this.fileName));
     }
 
     // check if the user has added a "file" parameter. In this case we load the shape from
@@ -330,6 +330,7 @@ var Application = function () {
   }, {
     key: "historyFile",
     value: function historyFile(file) {
+      this.fileName = file;
       history.pushState({
         id: 'editor',
         file: name
@@ -367,7 +368,7 @@ var Application = function () {
       }
 
       if (fileName) {
-        this.fileName = _BackendStorage2.default.sanitize(fileName);
+        this.fileName = _BackendStorage2.default.sanitize(fileName) + _Configuration2.default.fileSuffix;
       } else {
         this.fileName = "MyNewBrain" + _Configuration2.default.fileSuffix;
       }
@@ -1885,14 +1886,31 @@ exports.default = draw2d.Canvas.extend({
         var x = event.x;
         var y = event.y;
 
-        var items = {
-          "label": { name: "Attach Label", icon: "x ion-ios-pricetag-outline" },
-          "delete": { name: "Delete", icon: "x ion-ios-close-outline" },
-          "sep1": "---------",
-          "design": { name: "Edit Shape", icon: "x ion-ios-compose-outline" },
-          "code": { name: "Show JS Code", icon: "x ion-code" },
-          "help": { name: "Description", icon: "x ion-ios-information-outline" }
-        };
+        var items = {};
+
+        if (figure instanceof CircuitFigure) {
+          items = {
+            "label": { name: "Attach Label", icon: "x ion-ios-pricetag-outline" },
+            "delete": { name: "Delete", icon: "x ion-ios-close-outline" },
+            "sep1": "---------",
+            "design": { name: "Edit Shape", icon: "x ion-ios-compose-outline" },
+            "code": { name: "Show JS Code", icon: "x ion-code" },
+            "help": { name: "Description", icon: "x ion-ios-information-outline" }
+          };
+        } else if (figure instanceof draw2d.shape.basic.Label) {
+          items = {
+            "delete": { name: "Delete", icon: "x ion-ios-close-outline" }
+          };
+        } else if (figure instanceof draw2d.Port) {
+          return;
+        } else {
+          items = {
+            "label": { name: "Attach Label", icon: "x ion-ios-pricetag-outline" },
+            "help": { name: "Description", icon: "x ion-ios-information-outline" },
+            "sep1": "---------",
+            "delete": { name: "Delete", icon: "x ion-ios-close-outline" }
+          };
+        }
 
         $.contextMenu({
           selector: 'body',
@@ -2410,7 +2428,7 @@ exports.default = dialog = new (function () {
       currentFigure = figure;
 
       var settings = figure.getParameterSettings().slice(0);
-      $.each(settings, function (i, el) {
+      settings.forEach(function (el) {
         el.value = currentFigure.attr("userData." + el.name);
       });
       var compiled = _hogan2.default.compile('  <div class="header">Object Configuration</div>   ' + '  {{#settings}}               ' + '         <div class="form-group">' + '           <label for="figure_property_{{name}}">{{label}}</label>' + '           <input type="text" class="form-control" id="figure_property_{{name}}" data-name="{{name}}" value="{{value}}" placeholder="{{label}}">' + '         </div>                  ' + '  {{/settings}}                  ' + '<button class="submit">Ok</button> ');
@@ -2431,7 +2449,7 @@ exports.default = dialog = new (function () {
         _this.hide();
       });
 
-      $.each(settings, function (index, setting) {
+      settings.forEach(function (setting) {
         var figureValue = currentFigure.attr("userData." + setting.name);
         $('#figureConfigDialog select[data-name="' + setting.name + '"] option[value="' + figureValue + '"]').attr('selected', 'selected');
       });
@@ -2644,7 +2662,8 @@ var FileSave = function () {
         canvas.setCurrentSelection(null);
         _Writer2.default.marshal(canvas, function (json) {
           var name = $("#fileSaveDialog .githubFileName").val();
-          name = _BackendStorage2.default.sanitize(name);
+          // to forbid path in the file names you must uncomment this line
+          // name = storage.sanitize(name)
           _BackendStorage2.default.saveFile(json, name).then(function () {
             Mousetrap.unpause();
             app.fileName = name;
@@ -2685,6 +2704,10 @@ var _Configuration = __webpack_require__(/*! ../Configuration */ "../../app/fron
 
 var _Configuration2 = _interopRequireDefault(_Configuration);
 
+var _CircuitFigure = __webpack_require__(/*! ../figures/CircuitFigure */ "../../app/frontend/circuit/js/figures/CircuitFigure.js");
+
+var _CircuitFigure2 = _interopRequireDefault(_CircuitFigure);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2714,12 +2737,20 @@ var MarkdownDialog = function () {
         markdownParser.inline.validateLink = this.validateLink;
         $('#markdownDialog .html').html(markdownParser.render(content));
         $('#markdownDialog .version').html(version);
+        if (figure instanceof _CircuitFigure2.default) {
+          $('#markdownDialog .editButton').show();
+        } else {
+          $('#markdownDialog .editButton').hide();
+        }
+
         $('#markdownDialog').modal('show');
+
         $("#markdownDialog .editButton").off("click").on("click", function () {
           var baseName = figure.attr("userData.file").replace(/\.shape$/, "");
           var pathToDesign = _Configuration2.default.designer.url + "?timestamp=" + new Date().getTime() + "&file=" + baseName + ".shape";
           window.open(pathToDesign, "designer");
         });
+
         $("#markdownDialog .editButtonGuided").off("click").on("click", function () {
           var baseName = figure.attr("userData.file").replace(/\.shape$/, "");
           var pathToDesign = _Configuration2.default.designer.url + "?timestamp=" + new Date().getTime() + "&file=" + baseName + ".shape" + "&tutorial=markdown";
@@ -3191,6 +3222,8 @@ exports.default = draw2d.SetFigure.extend({
   getPersistentAttributes: function getPersistentAttributes() {
     var memento = this._super();
 
+    memento.value = this.value;
+
     // add all decorations to the memento
     //
     memento.labels = [];
@@ -3212,6 +3245,10 @@ exports.default = draw2d.SetFigure.extend({
    */
   setPersistentAttributes: function setPersistentAttributes(memento) {
     this._super(memento);
+
+    if (typeof memento.value !== "undefined") {
+      this.value = memento.value;
+    }
 
     // remove all decorations created in the constructor of this element
     //
@@ -4673,7 +4710,6 @@ var BackendStorage = function () {
       file = file.replace(_Configuration2.default.fileSuffix, "");
       // I don't like dots in the name to
       file = file.replace(RegExp("[.]", "g"), "_");
-      file = file + _Configuration2.default.fileSuffix;
       return file;
     }
   }, {
@@ -5378,6 +5414,7 @@ var Files = function () {
             Mousetrap.pause();
             var $el = $(event.currentTarget);
             var name = $el.closest(".list-group-item").data("name");
+            var type = $el.closest(".list-group-item").data("type");
             var $replaceWith = $('<input type="input" class="filenameInplaceEdit" value="' + name.replace(_Configuration2.default.fileSuffix, "") + '" />');
             $el.hide();
             $el.after($replaceWith);
@@ -5390,8 +5427,9 @@ var Files = function () {
               Mousetrap.unpause();
               var newName = $replaceWith.val();
               if (newName !== "") {
-                // get the value and post them here
-                newName = _BackendStorage2.default.sanitize(newName);
+                if (type !== "dir") {
+                  newName = _BackendStorage2.default.sanitize(newName) + _Configuration2.default.fileSuffix;
+                }
                 $.ajax({
                   url: _Configuration2.default.backend.file.rename,
                   method: "POST",

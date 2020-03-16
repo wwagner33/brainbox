@@ -141,6 +141,7 @@ export default class Files {
           Mousetrap.pause()
           let $el = $(event.currentTarget)
           let name = $el.closest(".list-group-item").data("name")
+          let type = $el.closest(".list-group-item").data("type")
           let $replaceWith = $('<input type="input" class="filenameInplaceEdit" value="' + name.replace(conf.fileSuffix, "") + '" />')
           $el.hide()
           $el.after($replaceWith)
@@ -153,8 +154,9 @@ export default class Files {
             Mousetrap.unpause()
             let newName = $replaceWith.val()
             if (newName !== "") {
-              // get the value and post them here
-              newName = storage.sanitize(newName)
+              if(type !=="dir") {
+                newName = storage.sanitize(newName) + conf.fileSuffix
+              }
               $.ajax({
                   url: conf.backend.file.rename,
                   method: "POST",
