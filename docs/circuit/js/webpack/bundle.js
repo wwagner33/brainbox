@@ -938,7 +938,8 @@ exports.default = draw2d.policy.canvas.BoundingboxSelectionPolicy.extend({
     var hit = null;
 
     emitter.getFigures().each(function (index, figure) {
-      if (figure.hitTest(event.x, event.y, 30)) {
+      if (figure.hitTest(event.x, event.y, 40)) {
+
         hit = figure;
         return false;
       }
@@ -2430,11 +2431,10 @@ exports.default = dialog = new (function () {
       var settings = figure.getParameterSettings().slice(0);
       settings.forEach(function (el) {
         el.value = currentFigure.attr("userData." + el.name);
+        el.textarea = el.property.type === "longtext";
       });
-      var compiled = _hogan2.default.compile('  <div class="header">Object Configuration</div>   ' + '  {{#settings}}               ' + '         <div class="form-group">' + '           <label for="figure_property_{{name}}">{{label}}</label>' + '           <input type="text" class="form-control" id="figure_property_{{name}}" data-name="{{name}}" value="{{value}}" placeholder="{{label}}">' + '         </div>                  ' + '  {{/settings}}                  ' + '<button class="submit">Ok</button> ');
-      var output = compiled.render({
-        settings: settings
-      });
+      var compiled = _hogan2.default.compile('  <div class="header">Object Configuration</div>   ' + '  {{#settings}}               ' + '         <div class="form-group">' + '           <label for="figure_property_{{name}}">{{label}}</label>' + '           {{#textarea}}' + '             <textarea type="text" class="form-control" id="figure_property_{{name}}" data-name="{{name}}" placeholder="{{label}}">{{value}}</textarea>' + '           {{/textarea}}          ' + '           {{^textarea}}' + '             <input type="text" class="form-control" id="figure_property_{{name}}" data-name="{{name}}" value="{{value}}" placeholder="{{label}}">' + '          {{/textarea}}           ' + '         </div>                   ' + '  {{/settings}}                   ' + '<button class="submit">Ok</button> ');
+      var output = compiled.render({ settings: settings });
 
       $("#figureConfigDialog").html(output);
       $("#figureConfigDialog").show().css({ top: pos.y, left: pos.x, position: 'absolute' });
@@ -2459,7 +2459,7 @@ exports.default = dialog = new (function () {
     value: function hide() {
       Mousetrap.unpause();
       if (currentFigure !== null) {
-        $("#figureConfigDialog input, #figureConfigDialog select").each(function (i, element) {
+        $("#figureConfigDialog textarea, #figureConfigDialog input, #figureConfigDialog select").each(function (i, element) {
           element = $(element);
           var value = element.val();
           var name = element.data("name");
@@ -2611,6 +2611,10 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _Configuration = __webpack_require__(/*! ../Configuration */ "../../app/frontend/circuit/js/Configuration.js");
+
+var _Configuration2 = _interopRequireDefault(_Configuration);
+
 var _BackendStorage = __webpack_require__(/*! ../io/BackendStorage */ "../../app/frontend/circuit/js/io/BackendStorage.js");
 
 var _BackendStorage2 = _interopRequireDefault(_BackendStorage);
@@ -2663,7 +2667,8 @@ var FileSave = function () {
         _Writer2.default.marshal(canvas, function (json) {
           var name = $("#fileSaveDialog .githubFileName").val();
           // to forbid path in the file names you must uncomment this line
-          // name = storage.sanitize(name)
+          name = name.replace(_Configuration2.default.fileSuffix, "");
+          name = name + _Configuration2.default.fileSuffix;
           _BackendStorage2.default.saveFile(json, name).then(function () {
             Mousetrap.unpause();
             app.fileName = name;

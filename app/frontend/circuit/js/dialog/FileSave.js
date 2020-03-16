@@ -1,3 +1,4 @@
+import conf from "../Configuration"
 
 import storage from "../io/BackendStorage"
 import writer from '../io/Writer'
@@ -37,7 +38,8 @@ export default class FileSave {
       writer.marshal(canvas, json => {
         let name = $("#fileSaveDialog .githubFileName").val()
         // to forbid path in the file names you must uncomment this line
-        // name = storage.sanitize(name)
+        name = name.replace(conf.fileSuffix, "")
+        name = name + conf.fileSuffix
         storage.saveFile(json, name)
           .then(function () {
             Mousetrap.unpause()
