@@ -54,19 +54,6 @@ export default class Palette {
         .on('mouseout', () => {
           $(this).parent().removeClass('glowBorder')
         })
-
-      // add the "+" to the palette
-      //
-      let requestUrl = conf.issues.url + '?title=Request for shape&body=' + encodeURIComponent("Please add the description of the shape you request.\nWe try to implement it as soon as possible...");
-      $("#paletteElements").append(
-        '  <div data-name="_request_" class="mix col-md-6 pallette_item">' +
-        '  <a href="' + requestUrl + '" target="_blank">' +
-        '    <div class="request">' +
-        '       <div class="icon ion-ios-plus-outline"></div>' +
-        '       <div >Request a Shape</div>' +
-        '   </div>' +
-        '   </a>' +
-        '  </div>')
     })
 
     socket.on("shape:generating", (msg) => {
@@ -132,22 +119,29 @@ export default class Palette {
     //
 
     new TreeView(tree, 'shapeTree');
+    $("#paletteElements").shuffle()
     $(".tree-leaf-content").on("click", (event) => {
-      $(".tree-leaf-content").removeClass("selected")
-      let target = $(event.currentTarget)
-      target.addClass("selected")
-      let path = target.data("item").path
-      let $grid = $("#paletteElements");
+      try {
+        console.log("click")
+        $(".tree-leaf-content").removeClass("selected")
+        let target = $(event.currentTarget)
+        target.addClass("selected")
+        let path = target.data("item").path
+        let $grid = $("#paletteElements");
 
-      $grid.shuffle('shuffle', function ($el, shuffle) {
-        let text = $.trim($el.data("path")).toLowerCase();
-        if (text === "_request_")
-          return true
+        $grid.shuffle('shuffle', function ($el, shuffle) {
+          let text = $.trim($el.data("path")).toLowerCase();
+          if (text === "_request_")
+            return true
 
-        return text.startsWith(path)
-      });
+          return text.startsWith(path)
+        });
 
-      return false
+        return false
+      }
+      catch(e){
+        console.log(e)
+      }
     })
   }
 

@@ -607,7 +607,11 @@ export default draw2d.Canvas.extend({
     })
   },
 
+
+
   centerDocument: function () {
+    this.setZoom(1.0)
+
     let c = $("#draw2dCanvasWrapper")
     if (this.getFigures().getSize() > 0) {
       // get the bounding box of the document and translate the complete document
