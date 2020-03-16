@@ -76,7 +76,7 @@
     "mqtt": "^2.18.3",
     "n": "2.1.0",
     "node-ttl": "0.0.5",
-    "phantomjs-prebuilt": "^2.1.16",
+    "phantomjs": "2.1.7",
     "prettify": "0.1.7",
     "prompt": "1.0.0",
     "request": "^2.88.2",
