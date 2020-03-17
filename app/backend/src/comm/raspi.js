@@ -35,7 +35,7 @@ module.exports = {
     socketio.on('connection', socket => {
       socket.on('gpio:set',  msg => {
         let pin = pins[msg.pin]
-        pin.writeSync(msg.value)
+        pin.writeSync(msg.value?1:0)
       })
     })
 

@@ -96,7 +96,7 @@ module.exports = {
       fs.writeFileSync(jsFilePath, jsCode, 'utf8');
       fs.writeFileSync(customFilePath, customCode, 'utf8');
       fs.writeFileSync(markdownFilePath, markdown, 'utf8');
-      fs.writeFileSync(pngFilePath, new Buffer(img, 'base64'), 'binary');
+      fs.writeFileSync(pngFilePath, Buffer.from(img, 'base64'), 'binary');
 
       browser.close()
 

@@ -25,7 +25,7 @@ export default {
     socket = s
     // GPIO from RasperyPi
     //
-    socket.on("gpo:change", msg =>{
+    socket.on("gpio:change", msg =>{
       values[msg.pin] = !!parseInt(msg.value)
     })
 
@@ -144,7 +144,7 @@ export default {
 
   raspi:  new class extends EventEmitter{
     set(pin, value) {
-      socket.emit('raspi:set', {
+      socket.emit('gpio:set', {
         pin: pin,
         value: value
       })
