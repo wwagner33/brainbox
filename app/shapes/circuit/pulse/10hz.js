@@ -7,16 +7,16 @@
 var circuit_pulse_10hz = CircuitFigure.extend({
 
    NAME: "circuit_pulse_10hz",
-   VERSION: "1.0.41_71",
+   VERSION: "1.0.42_75",
 
    init:function(attr, setter, getter)
    {
      var _this = this;
 
-     this._super( $.extend({stroke:0, bgColor:null, width:37.328125,height:49.5},attr), setter, getter);
+     this._super( $.extend({stroke:0, bgColor:null, width:34.1875,height:49.5},attr), setter, getter);
      var port;
      // Port
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 94.22352448723316, y: 69.67272727272601 }));
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 102.87934186471664, y: 69.67272727272601 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#1C9BAB");
      port.setName("Port");
@@ -26,7 +26,7 @@ var circuit_pulse_10hz = CircuitFigure.extend({
    createShapeElement : function()
    {
       var shape = this._super();
-      this.originalWidth = 37.328125;
+      this.originalWidth = 34.1875;
       this.originalHeight= 49.5;
       return shape;
    },
@@ -36,7 +36,7 @@ var circuit_pulse_10hz = CircuitFigure.extend({
        this.canvas.paper.setStart();
        var shape = null;
        // BoundingBox
-       shape = this.canvas.paper.path("M0,0 L37.328125,0 L37.328125,49.5 L0,49.5");
+       shape = this.canvas.paper.path("M0,0 L34.1875,0 L34.1875,49.5 L0,49.5");
        shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
        shape.data("name","BoundingBox");
        
@@ -47,13 +47,8 @@ var circuit_pulse_10hz = CircuitFigure.extend({
        
        // Label
        shape = this.canvas.paper.text(0,0,'10Hz');
-       shape.attr({"x":4,"y":11,"text-anchor":"start","text":"10Hz","font-family":"\"Arial\"","font-size":11,"stroke":"none","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":4,"y":10.5,"text-anchor":"start","text":"10Hz","font-family":"\"Arial\"","font-size":11,"stroke":"none","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
-       
-       // Line_shadow
-       shape = this.canvas.paper.path('M6.119575000000623 41.67239999999947L13.426774999999907,41.67239999999947L13.426774999999907,28.884799999999814L24.387574999999742,28.884799999999814L24.387574999999742,41.21569999999974L30.324674999999843,41.21569999999974');
-       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Line_shadow");
        
        // Line
        shape = this.canvas.paper.path('M6.119575000000623 41.67239999999947L13.426774999999907,41.67239999999947L13.426774999999907,28.884799999999814L24.387574999999742,28.884799999999814L24.387574999999742,41.21569999999974L30.324674999999843,41.21569999999974');

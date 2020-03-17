@@ -5,6 +5,7 @@ const glob = require("glob")
 const thisDir = path.normalize(__dirname)
 const shapeAppDir = path.normalize(__dirname + '/../../../shapes/')
 const version =  process.env.VERSION || "local-version";
+const isPi = require('detect-rpi');
 
 function fileToPackage(file) {
   return file
@@ -61,9 +62,14 @@ module.exports = {
         "let json=" + json + ";\n" +
         "let pkg='" + pkg + "';\n" +
         code;
-        
-      const browser = await puppeteer.launch({args:['--no-sandbox'], executablePath:'chromium-browser'})
-      
+
+
+      let browser = null
+      if ( isPi())
+        browser = await puppeteer.launch({args:['--no-sandbox'], executablePath:'chromium-browser'})
+      else
+        browser = await puppeteer.launch()
+
       const page = await browser.newPage()
       await page.goto('http://localhost:7400/designer')
       await page.setViewport({width: 900, height: 1024})

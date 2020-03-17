@@ -143,10 +143,6 @@ function runServer() {
       //
       res.send('true');
 
-      // create the js/png/md async to avoid a blocked UI
-      //
-      let shapefilePath = path.normalize(shapeAppDir + req.body.filePath)
-      thumbnail(shapefilePath)
 
       // inform the browser that the processing of the
       // code generation is ongoing
@@ -155,11 +151,16 @@ function runServer() {
         filePath: req.body.filePath
       });
 
-      io.sockets.emit("shape:generated", {
-        filePath: req.body.filePath,
-        imagePath: req.body.filePath.replace(".shape",".png"),
-        jsPath: req.body.filePath.replace(".shape",".js")
-      });
+      // create the js/png/md async to avoid a blocked UI
+      //
+      let shapefilePath = path.normalize(shapeAppDir + req.body.filePath)
+      thumbnail(shapefilePath).then( ()=>{
+        io.sockets.emit("shape:generated", {
+          filePath: req.body.filePath,
+          imagePath: req.body.filePath.replace(".shape",".png"),
+          jsPath: req.body.filePath.replace(".shape",".js")
+        });
+      })
 
       // commit the shape to the connected github backend
       update.commitShape(req.body.filePath, shapefilePath, req.body.commitMessage)

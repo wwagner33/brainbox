@@ -7,68 +7,68 @@
 var circuit_hardware_raspi_RaspiINPUT = CircuitFigure.extend({
 
    NAME: "circuit_hardware_raspi_RaspiINPUT",
-   VERSION: "1.0.41_71",
+   VERSION: "local-version",
 
    init:function(attr, setter, getter)
    {
      var _this = this;
 
-     this._super( $.extend({stroke:0, bgColor:null, width:115.49609999999939,height:259.5},attr), setter, getter);
+     this._super( $.extend({stroke:0, bgColor:null, width:106.25999999999931,height:259.5},attr), setter, getter);
      var port;
-     // gpo_9
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 80.89762338295395, y: 27.028901734104174 }));
+     // gpio_9
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 87.92923019009974, y: 27.028901734104174 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
-     port.setName("gpo_9");
+     port.setName("gpio_9");
      port.setMaxFanOut(20);
-     // gpo_10
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 80.89762338295395, y: 36.80154142581888 }));
+     // gpio_10
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 87.92923019009974, y: 36.80154142581888 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
-     port.setName("gpo_10");
+     port.setName("gpio_10");
      port.setMaxFanOut(20);
-     // gpo_11
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 80.89762338295395, y: 45.96548169556837 }));
+     // gpio_11
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 87.92923019009974, y: 45.96548169556837 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
-     port.setName("gpo_11");
+     port.setName("gpio_11");
      port.setMaxFanOut(20);
-     // gpo_12
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 80.89762338295395, y: 55.202764932562395 }));
+     // gpio_12
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 87.92923019009974, y: 55.202764932562395 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
-     port.setName("gpo_12");
+     port.setName("gpio_12");
      port.setMaxFanOut(20);
-     // gpo_13
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 80.89762338295395, y: 63.99802504816965 }));
+     // gpio_13
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 87.92923019009974, y: 63.99802504816965 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
-     port.setName("gpo_13");
+     port.setName("gpio_13");
      port.setMaxFanOut(20);
-     // gpo_14
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 80.89762338295395, y: 73.60308285163777 }));
+     // gpio_14
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 87.92923019009974, y: 73.60308285163777 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
-     port.setName("gpo_14");
+     port.setName("gpio_14");
      port.setMaxFanOut(20);
-     // gpo_15
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 80.89762338295395, y: 83.00871868978798 }));
+     // gpio_15
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 87.92923019009974, y: 83.00871868978798 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
-     port.setName("gpo_15");
+     port.setName("gpio_15");
      port.setMaxFanOut(20);
-     // gpo_16
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 80.89762338295395, y: 91.9045568400768 }));
+     // gpio_16
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 87.92923019009974, y: 91.9045568400768 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
-     port.setName("gpo_16");
+     port.setName("gpio_16");
      port.setMaxFanOut(20);
    },
 
    createShapeElement : function()
    {
       var shape = this._super();
-      this.originalWidth = 115.49609999999939;
+      this.originalWidth = 106.25999999999931;
       this.originalHeight= 259.5;
       return shape;
    },
@@ -78,7 +78,7 @@ var circuit_hardware_raspi_RaspiINPUT = CircuitFigure.extend({
        this.canvas.paper.setStart();
        var shape = null;
        // BoundingBox
-       shape = this.canvas.paper.path("M0,0 L115.49609999999939,0 L115.49609999999939,259.5 L0,259.5");
+       shape = this.canvas.paper.path("M0,0 L106.25999999999931,0 L106.25999999999931,259.5 L0,259.5");
        shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
        shape.data("name","BoundingBox");
        
@@ -89,7 +89,7 @@ var circuit_hardware_raspi_RaspiINPUT = CircuitFigure.extend({
        
        // Label
        shape = this.canvas.paper.text(0,0,'Input GPIO');
-       shape.attr({"x":8.433599999999387,"y":21.0078125,"text-anchor":"start","text":"Input GPIO","font-family":"\"Arial\"","font-size":18,"stroke":"none","fill":"#BD2466","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":8.433599999999387,"y":20,"text-anchor":"start","text":"Input GPIO","font-family":"\"Arial\"","font-size":18,"stroke":"#000000","fill":"#BD2466","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
        // Circle
@@ -164,58 +164,48 @@ var circuit_hardware_raspi_RaspiINPUT = CircuitFigure.extend({
        
        // Label
        shape = this.canvas.paper.text(0,0,'9');
-       shape.attr({"x":70.67006024419516,"y":71.10027499999978,"text-anchor":"start","text":"9","font-family":"\"Arial\"","font-size":16,"stroke":"none","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":70.67006024419516,"y":70.10027499999978,"text-anchor":"start","text":"9","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
        // Label
        shape = this.canvas.paper.text(0,0,'10');
-       shape.attr({"x":65.57360637047532,"y":96.5,"text-anchor":"start","text":"10","font-family":"\"Arial\"","font-size":16,"stroke":"none","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":65.57360637047532,"y":95.5,"text-anchor":"start","text":"10","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
        // Label
        shape = this.canvas.paper.text(0,0,'11');
-       shape.attr({"x":66.57360637047532,"y":120.3588749999999,"text-anchor":"start","text":"11","font-family":"\"Arial\"","font-size":16,"stroke":"none","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":66.57360637047532,"y":119.3588749999999,"text-anchor":"start","text":"11","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
        // Label
        shape = this.canvas.paper.text(0,0,'12');
-       shape.attr({"x":66.67006024419516,"y":143.3588749999999,"text-anchor":"start","text":"12","font-family":"\"Arial\"","font-size":16,"stroke":"none","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":66.67006024419516,"y":142.3588749999999,"text-anchor":"start","text":"12","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
        // Label
        shape = this.canvas.paper.text(0,0,'13');
-       shape.attr({"x":66.67006024419516,"y":166.7332749999996,"text-anchor":"start","text":"13","font-family":"\"Arial\"","font-size":16,"stroke":"none","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":66.67006024419516,"y":165.7332749999996,"text-anchor":"start","text":"13","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
        // Label
        shape = this.canvas.paper.text(0,0,'14');
-       shape.attr({"x":66.57360637047532,"y":190.50137499999983,"text-anchor":"start","text":"14","font-family":"\"Arial\"","font-size":16,"stroke":"none","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":66.57360637047532,"y":189.50137499999983,"text-anchor":"start","text":"14","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
        // Label
        shape = this.canvas.paper.text(0,0,'15');
-       shape.attr({"x":67.57360637047532,"y":216.5,"text-anchor":"start","text":"15","font-family":"\"Arial\"","font-size":16,"stroke":"none","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":67.57360637047532,"y":215.5,"text-anchor":"start","text":"15","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
        // Label
        shape = this.canvas.paper.text(0,0,'16');
-       shape.attr({"x":67.57360637047532,"y":239.05374999999913,"text-anchor":"start","text":"16","font-family":"\"Arial\"","font-size":16,"stroke":"none","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":67.57360637047532,"y":238.05374999999913,"text-anchor":"start","text":"16","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
-       
-       // Line_shadow
-       shape = this.canvas.paper.path('M53.863852052198126 48.47225227999843L52.30737205219884,49.31412773599868Q50.75089205219956,50.156003191998934 49.55103049750114, 51.75610701661679L48.20626024419653,53.549457272001746');
-       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Line_shadow");
        
        // Line
        shape = this.canvas.paper.path('M53.863852052198126 48.47225227999843L52.30737205219884,49.31412773599868Q50.75089205219956,50.156003191998934 49.55103049750114, 51.75610701661679L48.20626024419653,53.549457272001746');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
-       
-       // Line_shadow
-       shape = this.canvas.paper.path('M37.39282024419663 52.04527500000131L36.25773672419655,50.4769985199996Q35.12265320419647,48.90872203999788 33.04804558819524, 47.47466328799874L30.973437972194006,46.04060453599959');
-       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"none","stroke-width":1,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Line_shadow");
        
        // Line
        shape = this.canvas.paper.path('M37.39282024419663 52.04527500000131L36.25773672419655,50.4769985199996Q35.12265320419647,48.90872203999788 33.04804558819524, 47.47466328799874L30.973437972194006,46.04060453599959');

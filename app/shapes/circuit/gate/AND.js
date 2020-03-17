@@ -7,28 +7,28 @@
 var circuit_gate_AND = CircuitFigure.extend({
 
    NAME: "circuit_gate_AND",
-   VERSION: "1.0.41_71",
+   VERSION: "1.0.42_75",
 
    init:function(attr, setter, getter)
    {
      var _this = this;
 
-     this._super( $.extend({stroke:0, bgColor:null, width:31.296875,height:40},attr), setter, getter);
+     this._super( $.extend({stroke:0, bgColor:null, width:30,height:40},attr), setter, getter);
      var port;
      // input01
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.5976035946080878, y: 22.5 }));
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.6666666666666667, y: 22.5 }));
      port.setConnectionDirection(3);
      port.setBackgroundColor("#1C9BAB");
      port.setName("input01");
      port.setMaxFanOut(20);
      // input02
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.5976035946080878, y: 77.5 }));
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.6666666666666667, y: 77.5 }));
      port.setConnectionDirection(3);
      port.setBackgroundColor("#1C9BAB");
      port.setName("input02");
      port.setMaxFanOut(20);
      // out
-     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 100.099850224663, y: 50 }));
+     port = this.createPort("output", new draw2d.layout.locator.XYRelPortLocator({x: 104.42708333333334, y: 50 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#1C9BAB");
      port.setName("out");
@@ -38,7 +38,7 @@ var circuit_gate_AND = CircuitFigure.extend({
    createShapeElement : function()
    {
       var shape = this._super();
-      this.originalWidth = 31.296875;
+      this.originalWidth = 30;
       this.originalHeight= 40;
       return shape;
    },
@@ -48,7 +48,7 @@ var circuit_gate_AND = CircuitFigure.extend({
        this.canvas.paper.setStart();
        var shape = null;
        // BoundingBox
-       shape = this.canvas.paper.path("M0,0 L31.296875,0 L31.296875,40 L0,40");
+       shape = this.canvas.paper.path("M0,0 L30,0 L30,40 L0,40");
        shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
        shape.data("name","BoundingBox");
        
@@ -59,7 +59,7 @@ var circuit_gate_AND = CircuitFigure.extend({
        
        // Label
        shape = this.canvas.paper.text(0,0,'&');
-       shape.attr({"x":9.5,"y":20,"text-anchor":"start","text":"&","font-family":"\"Arial\"","font-size":20,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":9.5,"y":19,"text-anchor":"start","text":"&","font-family":"\"Arial\"","font-size":20,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
 
