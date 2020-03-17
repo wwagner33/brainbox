@@ -6,7 +6,7 @@ const app = express()
 const http = require('http').Server(app)
 const path = require('path')
 const childProcess = require('child_process')
-const phantomjs = require('phantomjs')
+
 const bodyParser = require('body-parser')
 const axios = require('axios')
 const unzip = require('unzip')
@@ -14,6 +14,7 @@ const unzip = require('unzip')
 const io = require('./src/comm/websocket').connect(http, { path: '/socket.io'})
 const mqtt = require('./src/comm/hive-mqtt').connect(io, "freegroup/brainbox")
 const raspi = require("./src/comm/raspi").connect(io)
+const {thumbnail} = require("./src/converter/thumbnail")
 
 // Tell the bodyparser middleware to accept more data
 app.use(bodyParser.json({limit: '50mb'}));
@@ -144,15 +145,8 @@ function runServer() {
 
       // create the js/png/md async to avoid a blocked UI
       //
-      let binPath = phantomjs.path
-      let converterPath = path.normalize(__dirname+'/../converter/index.js')
       let shapefilePath = path.normalize(shapeAppDir + req.body.filePath)
-      let childArgs = [
-        converterPath,
-        shapefilePath,
-        converterDir,
-        shapeAppDir
-      ]
+      thumbnail(shapefilePath)
 
       // inform the browser that the processing of the
       // code generation is ongoing
@@ -161,28 +155,25 @@ function runServer() {
         filePath: req.body.filePath
       });
 
-      childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
-        if(err) throw err
-        io.sockets.emit("shape:generated", {
-          filePath: req.body.filePath,
-          imagePath: req.body.filePath.replace(".shape",".png"),
-          jsPath: req.body.filePath.replace(".shape",".js")
-        });
+      io.sockets.emit("shape:generated", {
+        filePath: req.body.filePath,
+        imagePath: req.body.filePath.replace(".shape",".png"),
+        jsPath: req.body.filePath.replace(".shape",".js")
+      });
 
-        // commit the shape to the connected github backend
-        update.commitShape(req.body.filePath, shapefilePath, req.body.commitMessage)
-      })
+      // commit the shape to the connected github backend
+      update.commitShape(req.body.filePath, shapefilePath, req.body.commitMessage)
+
     });
   });
 
 
   http.listen(port, function () {
-    console.log('using phantomJS for server side rendering of shape previews:', phantomjs.path)
     console.log('+------------------------------------------------------------+');
     console.log('| Welcome to brainbox - the begin of something awesome       |');
     console.log('|------------------------------------------------------------|');
     console.log('| System is up and running. Copy the URL below and open this |');
-    console.log('| in your browser: http://' + address + ':' + port + '/                |');
+    console.log('| in your browser: http://' + address + ':' + port + '/               |');
     console.log('|                  http://localhost:' + port + '/                    |');
     console.log('+------------------------------------------------------------+');
   });
