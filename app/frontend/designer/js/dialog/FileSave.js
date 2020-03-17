@@ -32,7 +32,7 @@ export default class FileSave {
       $("#fileSaveDialog").modal("show")
       Mousetrap.pause()
 
-      // Button: Commit to GitHub
+      // Save Button
       //
       $("#fileSaveDialog .okButton").off('click').on("click", () => {
         Mousetrap.unpause()
