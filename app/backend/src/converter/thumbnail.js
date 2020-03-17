@@ -37,7 +37,7 @@ function concatFiles(dirname) {
         filePath: basenamePath + ".shape",
         image: basenamePath + ".png"
       });
-      content += (fs.readFileSync(filename, 'utf-8') + "\n\n\n")
+      content += (fs.readFileSync(filename, 'utf8') + "\n\n\n")
     });
 
 
@@ -50,19 +50,20 @@ module.exports = {
 
   thumbnail: async (file) => {
     try {
-      let json = JSON.parse(fs.readFileSync(file));
+      let json = JSON.parse(fs.readFileSync(file,'utf8'));
       let pkg = fileToPackage(file);
 
       json = json.draw2d
       json = JSON.stringify(json, undefined, 2)
 
-      let code = fs.readFileSync(thisDir + "/template.js");
+      let code = fs.readFileSync(thisDir + "/template.js", 'utf8');
       let injectedCode =
         "let json=" + json + ";\n" +
         "let pkg='" + pkg + "';\n" +
         code;
-
-      const browser = await puppeteer.launch()
+        
+      const browser = await puppeteer.launch({args:['--no-sandbox'], executablePath:'chromium-browser'})
+      
       const page = await browser.newPage()
       await page.goto('http://localhost:7400/designer')
       await page.setViewport({width: 900, height: 1024})
@@ -86,10 +87,10 @@ module.exports = {
       jsCode = jsCode.replace(/\$\{VERSION\}/g, version);
       customCode = customCode.replace(/testShape/g, pkg);
 
-      fs.writeFileSync(jsFilePath, jsCode);
-      fs.writeFileSync(customFilePath, customCode);
-      fs.writeFileSync(markdownFilePath, markdown);
-      fs.writeFileSync(pngFilePath, new Buffer(img, 'base64'));
+      fs.writeFileSync(jsFilePath, jsCode, 'utf8');
+      fs.writeFileSync(customFilePath, customCode, 'utf8');
+      fs.writeFileSync(markdownFilePath, markdown, 'utf8');
+      fs.writeFileSync(pngFilePath, new Buffer(img, 'base64'), 'binary');
 
       browser.close()
 
