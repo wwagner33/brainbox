@@ -1170,7 +1170,6 @@ var Palette = function () {
       $("#paletteElements").shuffle();
       $(".tree-leaf-content").on("click", function (event) {
         try {
-          console.log("click");
           $(".tree-leaf-content").removeClass("selected");
           var target = $(event.currentTarget);
           target.addClass("selected");

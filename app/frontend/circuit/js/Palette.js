@@ -122,7 +122,6 @@ export default class Palette {
     $("#paletteElements").shuffle()
     $(".tree-leaf-content").on("click", (event) => {
       try {
-        console.log("click")
         $(".tree-leaf-content").removeClass("selected")
         let target = $(event.currentTarget)
         target.addClass("selected")

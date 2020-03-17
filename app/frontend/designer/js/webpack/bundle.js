@@ -461,9 +461,6 @@ var Application = function () {
   }, {
     key: "fileNew",
     value: function fileNew(shapeTemplate) {
-      console.log(this);
-      console.log(this.view);
-      console.log(this.storage);
       this.view.clear();
       this.storage.currentFile = null;
       this.documentConfiguration = $.extend({}, this.documentConfigurationTempl);
@@ -1367,7 +1364,6 @@ exports.default = draw2d.Canvas.extend({
     // this.installEditPolicy(new draw2d.policy.canvas.WheelZoomPolicy())
 
     var setZoom = function setZoom(newZoom) {
-      console.log("zooom...");
       var bb = _this.getBoundingBox().getCenter();
       var c = $("#draw2dCanvasWrapper");
       _this.setZoom(newZoom);
@@ -2294,7 +2290,7 @@ var FileSave = function () {
         $("#fileSaveDialog").modal("show");
         Mousetrap.pause();
 
-        // Button: Commit to GitHub
+        // Save Button
         //
         $("#fileSaveDialog .okButton").off('click').on("click", function () {
           Mousetrap.unpause();

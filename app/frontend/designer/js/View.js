@@ -66,7 +66,6 @@ export default draw2d.Canvas.extend({
     // this.installEditPolicy(new draw2d.policy.canvas.WheelZoomPolicy())
 
     let setZoom = (newZoom) => {
-      console.log("zooom...")
       let bb = this.getBoundingBox().getCenter()
       let c = $("#draw2dCanvasWrapper")
       this.setZoom(newZoom)
