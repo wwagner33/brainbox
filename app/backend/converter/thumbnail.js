@@ -49,10 +49,12 @@ function concatFiles(dirname) {
 
 module.exports = {
 
-  thumbnail: async (file) => {
+  thumbnail: async (path, file) => {
+    let shapefilePath = path.normalize(path + dir)
+
     try {
-      let json = JSON.parse(fs.readFileSync(file,'utf8'));
-      let pkg = fileToPackage(file);
+      let json = JSON.parse(fs.readFileSync(shapefilePath,'utf8'));
+      let pkg = fileToPackage(shapefilePath);
 
       json = json.draw2d
       json = JSON.stringify(json, undefined, 2)
@@ -82,10 +84,10 @@ module.exports = {
       let markdown = await page.evaluate(() => { return markdown; });
       let img = await page.evaluate(() => { return img;});
 
-      let pngFilePath = file.replace(/\.shape$/, ".png");
-      let jsFilePath = file.replace(/\.shape$/, ".js");
-      let customFilePath = file.replace(/\.shape$/, ".custom");
-      let markdownFilePath = file.replace(/\.shape$/, ".md");
+      let pngFilePath = shapefilePath.replace(/\.shape$/, ".png");
+      let jsFilePath = shapefilePath.replace(/\.shape$/, ".js");
+      let customFilePath = shapefilePath.replace(/\.shape$/, ".custom");
+      let markdownFilePath = shapefilePath.replace(/\.shape$/, ".md");
 
       // replace the generated "testShape" with the real figure name
       //

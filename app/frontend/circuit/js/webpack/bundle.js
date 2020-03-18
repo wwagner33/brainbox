@@ -4258,7 +4258,7 @@ exports.default = {
     socket = s;
     // GPIO from RasperyPi
     //
-    socket.on("gpo:change", function (msg) {
+    socket.on("gpio:change", function (msg) {
       values[msg.pin] = !!parseInt(msg.value);
     });
 
@@ -4405,7 +4405,7 @@ exports.default = {
     _createClass(_class2, [{
       key: "set",
       value: function set(pin, value) {
-        socket.emit('raspi:set', {
+        socket.emit('gpio:set', {
           pin: pin,
           value: value
         });
@@ -5420,8 +5420,9 @@ var Files = function () {
           $("#userBrainFiles .list-group-item h4").on("click", function (event) {
             Mousetrap.pause();
             var $el = $(event.currentTarget);
-            var name = $el.closest(".list-group-item").data("name");
-            var type = $el.closest(".list-group-item").data("type");
+            var parent = $el.closest(".list-group-item");
+            var name = parent.data("name");
+            var type = parent.data("type");
             var $replaceWith = $('<input type="input" class="filenameInplaceEdit" value="' + name.replace(_Configuration2.default.fileSuffix, "") + '" />');
             $el.hide();
             $el.after($replaceWith);
@@ -5449,7 +5450,7 @@ var Files = function () {
                   $replaceWith.remove();
                   $el.html(newName.replace(_Configuration2.default.fileSuffix, ""));
                   $el.show();
-                  $el.parent().parent().find("[data-name='" + name + "']").data("name", newName);
+                  parent.data("name", newName);
                 });
               } else {
                 // get the value and post them here
@@ -5491,11 +5492,11 @@ var Files = function () {
       loadFiles("");
 
       socket.on("brain:generated", function (msg) {
-        var preview = $("a[data-name='" + msg.filePath + "'] img");
+        var preview = $(".list-group-item[data-name='" + msg.filePath + "'] img");
         if (preview.length === 0) {
           _this.render();
         } else {
-          $("a[data-name='" + msg.filePath + "'] img").attr({ src: _Configuration2.default.backend.file.image(msg.filePath) + "&timestamp=" + new Date().getTime() });
+          $(".list-group-item[data-name='" + msg.filePath + "'] img").attr({ src: _Configuration2.default.backend.file.image(msg.filePath) + "&timestamp=" + new Date().getTime() });
         }
       });
     }

@@ -7,7 +7,7 @@
 var circuit_flipflop_JKRFlipFlop = CircuitFigure.extend({
 
    NAME: "circuit_flipflop_JKRFlipFlop",
-   VERSION: "1.0.41_71",
+   VERSION: "1.0.44_80",
 
    init:function(attr, setter, getter)
    {
@@ -104,11 +104,6 @@ var circuit_flipflop_JKRFlipFlop = CircuitFigure.extend({
        shape = this.canvas.paper.text(0,0,'CLR');
        shape.attr({"x":10,"y":59.11588749999919,"text-anchor":"start","text":"CLR","font-family":"\"Arial\"","font-size":9,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
-       
-       // Line_shadow
-       shape = this.canvas.paper.path('M28.44800000000123 45.555679999995846L33.574799999999414,45.555679999995846');
-       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"#000000","stroke-width":1,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Line_shadow");
        
        // Line
        shape = this.canvas.paper.path('M28.44800000000123 45.555679999995846L33.574799999999414,45.555679999995846');

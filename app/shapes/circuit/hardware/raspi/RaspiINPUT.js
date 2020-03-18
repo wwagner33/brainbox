@@ -7,7 +7,7 @@
 var circuit_hardware_raspi_RaspiINPUT = CircuitFigure.extend({
 
    NAME: "circuit_hardware_raspi_RaspiINPUT",
-   VERSION: "local-version",
+   VERSION: "1.0.44_80",
 
    init:function(attr, setter, getter)
    {
@@ -89,7 +89,7 @@ var circuit_hardware_raspi_RaspiINPUT = CircuitFigure.extend({
        
        // Label
        shape = this.canvas.paper.text(0,0,'Input GPIO');
-       shape.attr({"x":8.433599999999387,"y":20,"text-anchor":"start","text":"Input GPIO","font-family":"\"Arial\"","font-size":18,"stroke":"#000000","fill":"#BD2466","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":8.433599999999387,"y":20.0078125,"text-anchor":"start","text":"Input GPIO","font-family":"\"Arial\"","font-size":18,"stroke":"#000000","fill":"#BD2466","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
        // Circle

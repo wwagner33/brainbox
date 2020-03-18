@@ -28,7 +28,10 @@
   <script src="./lib/shufflejs/jquery.shuffle.modernizr.min.js"></script>
 
   <script src="./lib/draw2d.js"></script>
+
+  <!-- if deployed on gh-pages this is located in the /docs folder -->
   <script src="../socket.io/socket.io.js"></script>
+
   <SCRIPT src="./js/webpack/bundle.js"></SCRIPT>
 
   <style>
@@ -346,14 +349,14 @@
   <li class="list-group-item"  data-type="{{type}}" data-name="{{folder}}{{name}}">
     <div class="media thumb">
        {{#dir}}
-          <a class="media-left" data-name="{{name}}">
+          <a class="media-left">
           <div style="width: 64px; height: 64px">
             <img style="width:100%; height:100%; object-fit: contain"  src="./images/folder.svg">
           </div>
           </a>
        {{/dir}}
        {{^dir}}
-          <a class="thumbnail media-left" data-name="{{name}}">
+          <a class="thumbnail media-left">
           <div style="width: 64px; height: 64px">
             <img style="width:100%; height:100%; object-fit: contain" src="{{image}}">
           </div>
@@ -362,7 +365,7 @@
       <div class="media-body">
         <h4 class="media-heading">{{title}}</h4>
         {{^readonly}}
-          <img class="deleteIcon svg "  data-toggle="confirmation"  data-name="{{name}}" src="./images/toolbar_delete.svg"/>
+          <img class="deleteIcon svg" data-toggle="confirmation" src="./images/toolbar_delete.svg"/>
         {{/readonly}}
       </div>
     </div>

@@ -1,6 +1,8 @@
 const axios = require('axios')
-const fs = require('fs');
-const { Octokit } = require("@octokit/rest");
+const fs = require('fs-extra')
+const unzip = require('unzip')
+const { Octokit } = require("@octokit/rest")
+
 let octo = null
 
 const GITHUB_ORG = process.env.GITHUB_ORG || 'freegroup'
@@ -30,7 +32,29 @@ module.exports = {
       })
   },
 
-  commitShape: function(githubPath, localPath, commitMessage){
+  upgradeTo: async function(shapeAppDir, packageUrl, res){
+    const io = require('./comm/websocket').io
+
+    const file = 'test.zip'
+    const writer = fs.createWriteStream(file)
+    const response = await axios({
+      url: packageUrl,
+      method: 'GET',
+      responseType: 'stream'
+    })
+    response.data.pipe(writer)
+    writer.on('finish', () => {
+      fs.removeSync(shapeAppDir)
+      fs.mkdirSync(shapeAppDir)
+      fs.createReadStream(file).pipe(unzip.Extract({path: shapeAppDir}))
+      io.sockets.emit("shape:updated", {})
+    })
+    writer.on('error', () => {
+      console.log("Error during shape file updates")
+    })
+  },
+
+  commitShape: function(localPath, githubPath, commitMessage){
     if(GITHUB_TOKEN === null) {
       console.log('Upload of Shapes to the Repo is not possible due of missing GITHUB_TOKEN environment variable.')
       return

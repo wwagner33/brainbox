@@ -7,7 +7,7 @@ function io(){
 
         },
         on:function(event, callback){
-            // fake the successfull connection in the serverless enviroment
+            // fake the successful connection in the serverless enviroment
             //
             if(event==="connect"){
                 setTimeout(callback,5);

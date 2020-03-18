@@ -23,6 +23,7 @@ circuit_hardware_raspi_RaspiOUTPUT = circuit_hardware_raspi_RaspiOUTPUT.extend({
     {
         this.getInputPorts().each(function(index,port){
             if(port.hasChangedValue() && port.getConnections().getSize()>0){
+                console.log("set raspi gpio",port.getValue())
                 hardware.raspi.set(port.getName(), port.getValue());
             }
         });

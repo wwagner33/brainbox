@@ -140,8 +140,9 @@ export default class Files {
         $("#userBrainFiles .list-group-item h4").on("click", (event) => {
           Mousetrap.pause()
           let $el = $(event.currentTarget)
-          let name = $el.closest(".list-group-item").data("name")
-          let type = $el.closest(".list-group-item").data("type")
+          let parent = $el.closest(".list-group-item")
+          let name = parent.data("name")
+          let type = parent.data("type")
           let $replaceWith = $('<input type="input" class="filenameInplaceEdit" value="' + name.replace(conf.fileSuffix, "") + '" />')
           $el.hide()
           $el.after($replaceWith)
@@ -170,7 +171,7 @@ export default class Files {
                 $replaceWith.remove()
                 $el.html(newName.replace(conf.fileSuffix, ""))
                 $el.show()
-                $el.parent().parent().find("[data-name='" + name + "']").data("name", newName)
+                parent.data("name", newName)
               })
             } else {
               // get the value and post them here
@@ -212,11 +213,11 @@ export default class Files {
     loadFiles("")
 
     socket.on("brain:generated", msg => {
-      let preview = $("a[data-name='" + msg.filePath + "'] img")
+      let preview = $(".list-group-item[data-name='" + msg.filePath + "'] img")
       if (preview.length === 0) {
         this.render()
       } else {
-        $("a[data-name='" + msg.filePath + "'] img").attr({src: conf.backend.file.image(msg.filePath) + "&timestamp=" + new Date().getTime()})
+        $(".list-group-item[data-name='" + msg.filePath + "'] img").attr({src: conf.backend.file.image(msg.filePath) + "&timestamp=" + new Date().getTime()})
       }
     })
 
