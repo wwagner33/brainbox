@@ -20,12 +20,12 @@ circuit_digital_decoder_BCDto7Seg = circuit_digital_decoder_BCDto7Seg.extend({
      *  loop
      *  @required
      **/
-    calculate:function()
+    calculate:function(context)
     {
-        var e = (this.getInputPort("in_a").getValue()?1:0) +
-                (this.getInputPort("in_b").getValue()?2:0) +
-                (this.getInputPort("in_c").getValue()?4:0) +
-                (this.getInputPort("in_d").getValue()?8:0);
+        var e = (this.getInputPort("in_a").getBooleanValue()?1:0) +
+                (this.getInputPort("in_b").getBooleanValue()?2:0) +
+                (this.getInputPort("in_c").getBooleanValue()?4:0) +
+                (this.getInputPort("in_d").getBooleanValue()?8:0);
 
        this.getOutputPort("out_a").setValue( ((e!=1) &&(e!=4)&&(e!=6)&& (e<10)));
        this.getOutputPort("out_b").setValue( ((e!=5) &&(e!=6)&& (e<10)));
@@ -41,7 +41,7 @@ circuit_digital_decoder_BCDto7Seg = circuit_digital_decoder_BCDto7Seg.extend({
      *  Called if the simulation mode is starting
      *  @required
      **/
-    onStart:function()
+    onStart:function(context)
     {
     },
 
@@ -49,7 +49,7 @@ circuit_digital_decoder_BCDto7Seg = circuit_digital_decoder_BCDto7Seg.extend({
      *  Called if the simulation mode is stopping
      *  @required
      **/
-    onStop:function()
+    onStop:function(context)
     {
     }
 });

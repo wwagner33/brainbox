@@ -21,7 +21,7 @@ circuit_digital_gate_IEC60617_12_NOT = circuit_digital_gate_IEC60617_12_NOT.exte
         var i1 = this.getInputPort(0);
         var o1 = this.getOutputPort(0);
         
-        o1.setValue(!i1.getValue());
+        o1.setValue(!i1.getBooleanValue());
     }
 
 });

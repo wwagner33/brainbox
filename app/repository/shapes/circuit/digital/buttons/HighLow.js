@@ -7,7 +7,7 @@
 var circuit_digital_buttons_HighLow = CircuitFigure.extend({
 
    NAME: "circuit_digital_buttons_HighLow",
-   VERSION: "1.0.168_309",
+   VERSION: "1.0.182_354",
 
    init:function(attr, setter, getter)
    {
@@ -82,24 +82,22 @@ circuit_digital_buttons_HighLow = circuit_digital_buttons_HighLow.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);
-        var _this = this;
 
         this.attr({resizeable:false});
         this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
         
         this.value = false;
-        this.on("click",function(){            
-            _this.value = !_this.value;
-            _this.layerShow("low" , !_this.value, 100);
-            _this.layerShow("high",  _this.value, 100);
-            _this.getOutputPort(0).setValue(_this.value);
+        this.on("click",()=>{            
+            this.value = !this.value;
+            this.layerShow("low" , !this.value, 100);
+            this.layerShow("high",  this.value, 100);
+            this.getOutputPort(0).setValue(this.value);
         });
 
-        this.on("added",function(){
-            console.log(_this.value)
-            _this.layerShow("low" , !_this.value);
-            _this.layerShow("high",  _this.value);
-            _this.getOutputPort(0).setValue(_this.value);
+        this.on("added",()=>{
+            this.layerShow("low" , !this.value);
+            this.layerShow("high",  this.value);
+            this.getOutputPort(0).setValue(this.value);
         });
     },
     

@@ -25,17 +25,17 @@ circuit_digital_alu_FullAdder4Bit = circuit_digital_alu_FullAdder4Bit.extend({
         var input = [];
         var output = [];
         
-        input.push(this.getInputPort("input_a1").getValue());
-        input.push(this.getInputPort("input_b1").getValue());
-        input.push(this.getInputPort("input_c1").getValue());
-        input.push(this.getInputPort("input_d1").getValue());
+        input.push(this.getInputPort("input_a1").getBooleanValue());
+        input.push(this.getInputPort("input_b1").getBooleanValue());
+        input.push(this.getInputPort("input_c1").getBooleanValue());
+        input.push(this.getInputPort("input_d1").getBooleanValue());
         
-        input.push(this.getInputPort("input_a2").getValue());
-        input.push(this.getInputPort("input_b2").getValue());
-        input.push(this.getInputPort("input_c2").getValue());
-        input.push(this.getInputPort("input_d2").getValue());
+        input.push(this.getInputPort("input_a2").getBooleanValue());
+        input.push(this.getInputPort("input_b2").getBooleanValue());
+        input.push(this.getInputPort("input_c2").getBooleanValue());
+        input.push(this.getInputPort("input_d2").getBooleanValue());
  
-        input.push(this.getInputPort("input_cin").getValue());
+        input.push(this.getInputPort("input_cin").getBooleanValue());
  
         var carry = input[8];
        

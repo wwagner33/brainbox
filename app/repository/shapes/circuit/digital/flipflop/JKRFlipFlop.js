@@ -7,7 +7,7 @@
 var circuit_digital_flipflop_JKRFlipFlop = CircuitFigure.extend({
 
    NAME: "circuit_digital_flipflop_JKRFlipFlop",
-   VERSION: "1.0.168_309",
+   VERSION: "1.0.182_354",
 
    init:function(attr, setter, getter)
    {
@@ -134,12 +134,12 @@ circuit_digital_flipflop_JKRFlipFlop = circuit_digital_flipflop_JKRFlipFlop.exte
         this.last_t = false;
     },
     
-    calculate:function()
+    calculate:function(context)
     {
-        var j = this.getInputPort("input_j").getValue();
-        var k = this.getInputPort("input_k").getValue();
-        var t = this.getInputPort("input_t").getValue();
-        var r = this.getInputPort("input_r").getValue();
+        var j = this.getInputPort("input_j").getBooleanValue();
+        var k = this.getInputPort("input_k").getBooleanValue();
+        var t = this.getInputPort("input_t").getBooleanValue();
+        var r = this.getInputPort("input_r").getBooleanValue();
         
         var q = this.getOutputPort("output_q");
         var q_ = this.getOutputPort("output_q_not");
@@ -169,7 +169,7 @@ circuit_digital_flipflop_JKRFlipFlop = circuit_digital_flipflop_JKRFlipFlop.exte
             }
             // toggle
             else if(j===true && k===true){
-                var v = q.getValue();
+                var v = q.getBooleanValue();
                 q.setValue( !v);
                 q_.setValue( v);
             }

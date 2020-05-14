@@ -29,6 +29,11 @@ export default class AppSwitch {
                         <img src="../_common/images/app_lessons.svg"/>
                         <div>Lesson<br>Author</div>
                       </label>
+
+                      <label class="applicationSwitchDesigner image-button" >
+                        <img src="../_common/images/app_designer.svg"/>
+                        <div>Shape<br>Designer</div>
+                      </label>
                       
                       <label class="applicationSwitchUser image-button" >
                         <img src="../_common/images/app_user.svg"/>

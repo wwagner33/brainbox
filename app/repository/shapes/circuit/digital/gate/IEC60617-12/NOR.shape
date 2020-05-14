@@ -3,7 +3,7 @@
     {
       "type": "shape_designer.figure.PolyRect",
       "id": "c55dd135-15db-7c71-5efa-f6761c073e66",
-      "x": 7982.75,
+      "x": 7981.5,
       "y": 7980,
       "width": 30,
       "height": 40,
@@ -13,9 +13,11 @@
       "angle": 0,
       "userData": {
         "baseClass": "draw2d.SetFigure",
-        "code": "/**\n * by 'Draw2D Shape Designer'\n *\n * Custom JS code to tweak the standard behaviour of the generated\n * shape. add your custome code and event handler here.\n *\n *\n */\ntestShape = testShape.extend({\n\n    init: function(attr, setter, getter){\n        this._super(attr, setter, getter);\n\n        this.attr({resizeable:false});\n        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());\n\n    },\n    \n    calculate:function()\n    {\n        var i1 = this.getInputPort(0);\n        var i2 = this.getInputPort(1);\n        var o1 = this.getOutputPort(0);\n        \n        o1.setValue(!(i1.getValue() || i2.getValue()));\n    }\n});",
+        "code": "/**\n * by 'Draw2D Shape Designer'\n *\n * Custom JS code to tweak the standard behaviour of the generated\n * shape. add your custome code and event handler here.\n *\n *\n */\ntestShape = testShape.extend({\n\n    init: function(attr, setter, getter){\n        this._super(attr, setter, getter);\n\n        this.attr({resizeable:false});\n        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());\n\n    },\n    \n    calculate:function()\n    {\n        var i1 = this.getInputPort(0);\n        var i2 = this.getInputPort(1);\n        var o1 = this.getOutputPort(0);\n        \n        o1.setValue(!(i1.getBooleanValue() || i2.getBooleanValue()));\n    }\n});",
         "name": "Rectangle",
-        "markdown": "# NOR Gate\n\n## Description\nA **NOR** gate is logically an inverted OR gate. \nIt behaves according to the truth table on the bottom.\n\n\n**Therefore, the output is always 0 except when all the \ninputs are 0.**\n\n## Logic table\n\n| INPUT 1   | INPUT   |  OUTPUT    |\n|:---------:|:-------:|:----------:|\n| Low       | Low     |  `High`       |\n| `High`      | Low     |  Low       |\n| Low       | `High`    |  Low       |\n| `High`      | `High`    |  Low    |\n\n"
+        "markdown": "# NOR Gate\n\n## Description\nA **NOR** gate is logically an inverted OR gate. \nIt behaves according to the truth table on the bottom.\n\n\n**Therefore, the output is always 0 except when all the \ninputs are 0.**\n\n## Logic table\n\n| INPUT 1   | INPUT   |  OUTPUT    |\n|:---------:|:-------:|:----------:|\n| Low       | Low     |  `High`       |\n| `High`      | Low     |  Low       |\n| Low       | `High`    |  Low       |\n| `High`      | `High`    |  Low    |\n\n",
+        "type": "Output",
+        "direction": 1
       },
       "cssClass": "shape_designer_figure_PolyRect",
       "ports": [],
@@ -26,19 +28,19 @@
       "dasharray": null,
       "vertices": [
         {
-          "x": 7982.75,
+          "x": 7981.5,
           "y": 7980
         },
         {
-          "x": 8012.75,
+          "x": 8011.5,
           "y": 7980
         },
         {
-          "x": 8012.75,
+          "x": 8011.5,
           "y": 8020
         },
         {
-          "x": 7982.75,
+          "x": 7981.5,
           "y": 8020
         }
       ],
@@ -64,7 +66,7 @@
     {
       "type": "shape_designer.figure.ExtPort",
       "id": "592a8604-e0a9-8913-445d-621078e5ae97",
-      "x": 7977.25,
+      "x": 7976,
       "y": 7983,
       "width": 10,
       "height": 10,
@@ -104,7 +106,7 @@
     {
       "type": "shape_designer.figure.ExtPort",
       "id": "5fc48f01-fecb-0d5f-ed4f-81a4bc26ae63",
-      "x": 7976.75,
+      "x": 7975.5,
       "y": 8007,
       "width": 10,
       "height": 10,
@@ -144,7 +146,7 @@
     {
       "type": "shape_designer.figure.ExtPort",
       "id": "7c8a6215-ce17-6a10-c85b-b97fd0de466c",
-      "x": 8014.25,
+      "x": 8013,
       "y": 7995,
       "width": 10,
       "height": 10,
@@ -184,7 +186,7 @@
     {
       "type": "shape_designer.figure.ExtLabel",
       "id": "0a4705bb-c6fd-7a26-332f-6972e8683949",
-      "x": 7982.75,
+      "x": 7981.5,
       "y": 7985,
       "width": 30.350000381469727,
       "height": 23,
@@ -224,7 +226,7 @@
     {
       "type": "shape_designer.figure.PolyCircle",
       "id": "f1b01c4d-5bf3-d9d3-0cc3-12857f76229e",
-      "x": 8011.75,
+      "x": 8010.5,
       "y": 7996,
       "width": 8,
       "height": 8,
@@ -276,15 +278,15 @@
       "policy": "draw2d.policy.line.VertexSelectionFeedbackPolicy",
       "vertex": [
         {
-          "x": 7987.9085,
+          "x": 7986.6585,
           "y": 8006.2114
         },
         {
-          "x": 7992.54365,
+          "x": 7991.29365,
           "y": 8006.092549999999
         },
         {
-          "x": 7997.1788,
+          "x": 7995.9288,
           "y": 8005.9737
         }
       ],

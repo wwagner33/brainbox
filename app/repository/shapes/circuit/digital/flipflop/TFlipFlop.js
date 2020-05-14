@@ -7,7 +7,7 @@
 var circuit_digital_flipflop_TFlipFlop = CircuitFigure.extend({
 
    NAME: "circuit_digital_flipflop_TFlipFlop",
-   VERSION: "1.0.168_309",
+   VERSION: "1.0.182_354",
 
    init:function(attr, setter, getter)
    {
@@ -59,12 +59,12 @@ var circuit_digital_flipflop_TFlipFlop = CircuitFigure.extend({
        
        // Label
        shape = this.canvas.paper.text(0,0,'Q');
-       shape.attr({"x":26.78125,"y":10.6796875,"text-anchor":"start","text":"Q","font-family":"\"Arial\"","font-size":10,"stroke":"none","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":26.78125,"y":10.6796875,"text-anchor":"start","text":"Q","font-family":"\"Arial\"","font-size":10,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
        // Label
        shape = this.canvas.paper.text(0,0,'Q');
-       shape.attr({"x":26.28125,"y":41.873287499999606,"text-anchor":"start","text":"Q","font-family":"\"Arial\"","font-size":10,"stroke":"none","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":26.28125,"y":41.873287499999606,"text-anchor":"start","text":"Q","font-family":"\"Arial\"","font-size":10,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
        // Rectangle
@@ -101,9 +101,9 @@ circuit_digital_flipflop_TFlipFlop = circuit_digital_flipflop_TFlipFlop.extend({
         this.last_t = false;
     },
     
-    calculate:function()
+    calculate:function(context)
     {
-        var t = this.getInputPort("input_t").getValue();
+        var t = this.getInputPort("input_t").getBooleanValue();
         
         var q = this.getOutputPort("output_q");
         var q_ = this.getOutputPort("output_q_not");
@@ -111,7 +111,7 @@ circuit_digital_flipflop_TFlipFlop = circuit_digital_flipflop_TFlipFlop.extend({
         var rising = this.last_t===false && t===true; 
         
         if(rising===true){
-            var v = q.getValue();
+            var v = q.getBooleanValue();
             q.setValue(!v);
             q_.setValue(v)
         }

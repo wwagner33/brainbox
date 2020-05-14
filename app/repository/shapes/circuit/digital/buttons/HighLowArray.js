@@ -7,7 +7,7 @@
 var circuit_digital_buttons_HighLowArray = CircuitFigure.extend({
 
    NAME: "circuit_digital_buttons_HighLowArray",
-   VERSION: "1.0.168_309",
+   VERSION: "1.0.182_354",
 
    init:function(attr, setter, getter)
    {
@@ -149,8 +149,8 @@ circuit_digital_buttons_HighLowArray = circuit_digital_buttons_HighLowArray.exte
             var modh = h/8;
             var index = (event.relY/modh)|0;
             var port = emitter.getOutputPort(index);
-            port.setValue(!port.getValue());
-            emitter.layerAttr("rect0"+(index+1), {fill:port.getValue()?"#C21B7A":null});
+            port.setValue(!port.getBooleanValue());
+            emitter.layerAttr("rect0"+(index+1), {fill:port.getBooleanValue()?"#C21B7A":null});
         });
     },
     

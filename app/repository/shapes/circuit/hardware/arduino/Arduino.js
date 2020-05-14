@@ -7,7 +7,7 @@
 var circuit_hardware_arduino_Arduino = CircuitFigure.extend({
 
    NAME: "circuit_hardware_arduino_Arduino",
-   VERSION: "1.0.168_309",
+   VERSION: "1.0.182_354",
 
    init:function(attr, setter, getter)
    {
@@ -402,23 +402,13 @@ circuit_hardware_arduino_Arduino = circuit_hardware_arduino_Arduino.extend({
          this.attr({resizeable:false});
          this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
          
-         var _this= this;
-         this.onChangeCallback = function(emitter, event){
-            if(event.value){
-                _this.layerAttr("led_d13",{fill:"#33DE09"});
-            }
-            else{
-                _this.layerAttr("led_d13",{fill:"#f0f0f0"});
-            }
+
+         this.onChangeCallback = (emitter, event)=>{
+            this.layerAttr("led_d13",{fill: event.value?"#33DE09":"#f0f0f0"});
          }
 
-         this.onConnectedCallback = function(emitter, event){
-            if(hardware.arduino.connected){
-                _this.layerAttr("led_power",{fill:"#FF3C00"});
-            }
-            else{
-                _this.layerAttr("led_power",{fill:"#f0f0f0"});
-            }
+         this.onConnectedCallback = (emitter, event)=>{
+            this.layerAttr("led_power",{fill: hardware.arduino.connected?"#FF3C00":"#f0f0f0"});
          }
     },
     
@@ -445,7 +435,7 @@ circuit_hardware_arduino_Arduino = circuit_hardware_arduino_Arduino.extend({
                 
             }
             else {
-                hardware.arduino.set(index,!!other.getValue())
+                hardware.arduino.set(index,other.getBooleanValue())
             }
         }
     },

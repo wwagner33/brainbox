@@ -34,17 +34,17 @@ messaging_HiveMQ = messaging_HiveMQ.extend({
          }
     },
     
-    calculate: function()
+    calculate: function(context)
     {
     },
     
-    onStart: function()
+    onStart: function(context)
     {
         socket.on("mqtt:message", this.callback);
         this.callback({value:this.value})
     },
 
-    onStop:function()
+    onStop:function(context)
     {
         socket.off("mqtt:message", this.callback);
     },

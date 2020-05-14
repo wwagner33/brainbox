@@ -7,7 +7,7 @@
 var circuit_digital_timer_Delay = CircuitFigure.extend({
 
    NAME: "circuit_digital_timer_Delay",
-   VERSION: "1.0.168_309",
+   VERSION: "1.0.182_354",
 
    init:function(attr, setter, getter)
    {
@@ -53,7 +53,7 @@ var circuit_digital_timer_Delay = CircuitFigure.extend({
        
        // Label
        shape = this.canvas.paper.text(0,0,'Delay');
-       shape.attr({"x":39,"y":37.1796875,"text-anchor":"start","text":"Delay","font-family":"\"Arial\"","font-size":11,"stroke":"none","fill":"#D9D9D9","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":39,"y":37.1796875,"text-anchor":"start","text":"Delay","font-family":"\"Arial\"","font-size":11,"stroke":"#000000","fill":"#D9D9D9","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
        // Line
@@ -112,15 +112,13 @@ var circuit_digital_timer_Delay = CircuitFigure.extend({
 circuit_digital_timer_Delay = circuit_digital_timer_Delay.extend({
 
     init: function(attr, setter, getter){
-        var _this = this;
-        
         this._super(attr, setter, getter);
 
-        this.on("change:userData.delay",function(emitter, event){
+        this.on("change:userData.delay",(emitter, event)=>{
             var value = event.value;
-            _this.delayedValues = []; 
-            _this.delayedValues.length = parseInt(parseInt(value)/10);
-            _this.pointer=0;
+            this.delayedValues = []; 
+            this.delayedValues.length = parseInt(parseInt(value)/10);
+            this.pointer=0;
             
         });
         this.attr({
@@ -134,23 +132,23 @@ circuit_digital_timer_Delay = circuit_digital_timer_Delay.extend({
      * called every '10 [ms]' from the application.
      * 
      **/
-    calculate:function()
+    calculate:function(context)
     {
        this.getOutputPort(0).setValue(this.delayedValues[this.pointer]);
-       this.delayedValues[this.pointer] = this.getInputPort(0).getValue();
+       this.delayedValues[this.pointer] = this.getInputPort(0).getBooleanValue();
        this.pointer = (this.pointer+1)%this.delayedValues.length; 
     },
     
-    onStart:function()
+    onStart:function(context)
     {
         this.currentTimer=0;
     },
     
-    onStop:function()
+    onStop:function(context)
     {
     },
 
-    getParameterSettings: function()
+    getParameterSettings:function()
     {
         return [
         {

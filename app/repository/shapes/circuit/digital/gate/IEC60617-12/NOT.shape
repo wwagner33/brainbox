@@ -13,9 +13,11 @@
       "angle": 0,
       "userData": {
         "baseClass": "draw2d.SetFigure",
-        "code": "/**\n * by 'Draw2D Shape Designer'\n *\n * Custom JS code to tweak the standard behaviour of the generated\n * shape. add your custome code and event handler here.\n *\n *\n */\ntestShape = testShape.extend({\n\n    init: function(attr, setter, getter){\n        this._super(attr, setter, getter);\n\n        this.attr({resizeable:false});\n        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());\n\n    },\n    \n    calculate:function()\n    {\n        var i1 = this.getInputPort(0);\n        var o1 = this.getOutputPort(0);\n        \n        o1.setValue(!i1.getValue());\n    }\n\n});",
+        "code": "/**\n * by 'Draw2D Shape Designer'\n *\n * Custom JS code to tweak the standard behaviour of the generated\n * shape. add your custome code and event handler here.\n *\n *\n */\ntestShape = testShape.extend({\n\n    init: function(attr, setter, getter){\n        this._super(attr, setter, getter);\n\n        this.attr({resizeable:false});\n        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());\n\n    },\n    \n    calculate:function()\n    {\n        var i1 = this.getInputPort(0);\n        var o1 = this.getOutputPort(0);\n        \n        o1.setValue(!i1.getBooleanValue());\n    }\n\n});",
         "name": "Rectangle",
-        "markdown": "# NOT Gate\n\n## Description\nIn digital logic, an inverter or `NOT gate` is a logic \ngate which implements logical negation.\n\n\n## Logic table\n\n| INPUT   |  OUTPUT    |\n|:-------:|:----------:|\n| Low     |  `High`      |\n| `High`    |  Low       |\n\n"
+        "markdown": "# NOT Gate\n\n## Description\nIn digital logic, an inverter or `NOT gate` is a logic \ngate which implements logical negation.\n\n\n## Logic table\n\n| INPUT   |  OUTPUT    |\n|:-------:|:----------:|\n| Low     |  `High`      |\n| `High`    |  Low       |\n\n",
+        "type": "Output",
+        "direction": 1
       },
       "cssClass": "shape_designer_figure_PolyRect",
       "ports": [],
@@ -79,7 +81,7 @@
       },
       "cssClass": "shape_designer_figure_ExtPort",
       "ports": [],
-      "bgColor": "rgba(28,155,171,1)",
+      "bgColor": "rgba(55,177,222,1)",
       "color": "rgba(27,27,27,1)",
       "stroke": 1,
       "dasharray": null,
@@ -119,7 +121,7 @@
       },
       "cssClass": "shape_designer_figure_ExtPort",
       "ports": [],
-      "bgColor": "rgba(28,155,171,1)",
+      "bgColor": "rgba(55,177,222,1)",
       "color": "rgba(27,27,27,1)",
       "stroke": 1,
       "dasharray": null,
@@ -218,6 +220,5 @@
         }
       ]
     }
-  ],
-  "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAyCAYAAAAjrenXAAAExElEQVRoQ+2ZXUybVRjH/6djI1E2CRYkXV2yFpiAib1RkmHkYwaqsLFhGUsGghDaQjQxIQQdMDpWYog3oEnT2kQ+YlTkY27zYh/YFuNX4KY3sITBLgx0ZBZlfMysxfeYU6BsWSnvCwVs1nPZPu95fu//PO/zPOccgiAdJEi5EQLf6ZVbV3GFQpEHQEEIoUKhKKVCV9Jut9svC/Hj00FaWtplsVj8RkZGxgGRSCQSMqFQW47jOKvVOud0On8aHBxkYvEaT4ArFIqTcrm8vbe3N5LXDAEyUqlUsxMTE6V8lfcFrquoqDhfVVUldLm39AoGg4GazeYLdrv9Ap+JfIJrNJpGrVbL5/mA2RiNRphMJgau4zOpL/BGjUajC4HzkQ/AiuK6pzJUdKEY5xkmzOyp/jiDNlSCFnxLeXxxcRHNzc1ITU1FTk4O7yjf1RinlKK4uBh9fX2orq6GXq/fErhEIskjhCSzSSilIw6Hw9tBBqzkz8/Po66uDmaz2QO7GfC2trb2ubm5UUJIEsL25hJxzBJkCcvN3p2xWeq8x1G3q8rhcFzxgkskkvfJvnA1ltzJrJVNSExC0ZlClJaWbqiaxWKBWq3G1NSU11YI+MLCAlQqFZxO58M3s7JElOP2DtgG8SAqGgu5hcC+8OV5x0ZAv2t3Ube7wAN+UC6/ScSxL+NYTiwOyZaN/riDaPtvOCKOwjedHX7hY2JiwBTPzs5GSkoKmpqaBCleVlaGwzIZztXXP+bnol6P7l+HsJD/7trvY6MMfopIJJIvRK+8ehr5Rc/5oou41ocT8kNoaWlZF56pVV5eDqVSic7OTlRWVvIGHx4eRk1NDX602XzO/1pqKu4dy4NXUE+1+vQuOXhYNkc++mQ/1tvocP/imc/0+OFSP+Lj4zcMm46ODkHgLJs4pqfRqPPdzZ6rb8DXjr+Aoxlrvm9c+YdI38q7j/yiA/6I9l/vR21uNkpKSrYF/O70NM6vA17f0ICvpmaAo5lrvm8y8LPlHNKV/nc7g9fxoeIlz/JvNIQqPjQ0hNraWgxYrcJCRfp23n2c8q94BFM8J4tXhhEKzmjZxymTy/FxXd1j8Hp9M7p/+R3z7zyy0rdHQbvbHTxinMOzn1/E1f7tiXFGupoOZ2ZmHmYrlXs4jgu7YbHiQeTzmM89A4SvpMPbt0C7v3RRt+s0yyrmlaziM84jrvXjhPxFv1nlUZk2ozh73mQyobW1lRWgW54CtCfsOImJdUF2ZLUA/U3/nCbU7apkFXQlj8cPkOgXkn3l8YSoSHzb1blRaHv/3yy4r15FKpWeopR6Sj4hZGRycvLSqiPvRymVSj9AWJiGLi0lEUJIQmIizhYWeuJPyAgkuD+/AetVVp10dXVBo9F4igqroHwHCxWj0bil44ld6ceDFjwQ/fiuKB4QcK1Wy3ZBfMMzIHYBAd+Nc5VQjAfjoSc7qQ3FON8vN2hjPCDgarW6ke0bd3IYDAZ2tLGl8/GTcXFx7T09PTt6eVVQUDA7Pj7+nt1u/56PYD63bOnp6VfFYvHrmZmZkdt8WwiO42CxWGadTufPNpvtOB9oT5u7niG7NmQXtNsNzvxzHMcuaHkp/UQ/zvdN/y92O3qXGciXDoEHUk0+c/0HM1jOZveFkDsAAAAASUVORK5CYII="
+  ]
 }

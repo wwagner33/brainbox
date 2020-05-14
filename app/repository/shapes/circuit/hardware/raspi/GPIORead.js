@@ -7,7 +7,7 @@
 var circuit_hardware_raspi_GPIORead = CircuitFigure.extend({
 
    NAME: "circuit_hardware_raspi_GPIORead",
-   VERSION: "1.0.168_309",
+   VERSION: "1.0.182_354",
 
    init:function(attr, setter, getter)
    {
@@ -238,28 +238,11 @@ circuit_hardware_raspi_GPIORead = circuit_hardware_raspi_GPIORead.extend({
      *  loop
      *  @required
      **/
-    calculate:function()
+    calculate:function(context)
     {
         this.getOutputPorts().each(function(index,port){
             port.setValue(hardware.raspi.get(port.getName()));
         });
-    },
-
-
-    /**
-     *  Called if the simulation mode is starting
-     *  @required
-     **/
-    onStart:function()
-    {
-    },
-
-    /**
-     *  Called if the simulation mode is stopping
-     *  @required
-     **/
-    onStop:function()
-    {
     },
     
     getRequiredHardware: function(){

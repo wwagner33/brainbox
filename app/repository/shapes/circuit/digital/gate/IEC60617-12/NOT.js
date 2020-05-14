@@ -7,7 +7,7 @@
 var circuit_digital_gate_IEC60617_12_NOT = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_NOT",
-   VERSION: "1.0.168_309",
+   VERSION: "1.0.182_354",
 
    init:function(attr, setter, getter)
    {
@@ -89,7 +89,7 @@ circuit_digital_gate_IEC60617_12_NOT = circuit_digital_gate_IEC60617_12_NOT.exte
         var i1 = this.getInputPort(0);
         var o1 = this.getOutputPort(0);
         
-        o1.setValue(!i1.getValue());
+        o1.setValue(!i1.getBooleanValue());
     }
 
 });

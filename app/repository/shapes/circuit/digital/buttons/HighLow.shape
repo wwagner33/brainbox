@@ -13,9 +13,11 @@
       "angle": 0,
       "userData": {
         "baseClass": "draw2d.SetFigure",
-        "code": "/**\n * by 'Draw2D Shape Designer'\n *\n * Custom JS code to tweak the standard behaviour of the generated\n * shape. add your custome code and event handler here.\n *\n *\n */\ntestShape = testShape.extend({\n\n    init: function(attr, setter, getter){\n         this._super(attr, setter, getter);\n        var _this = this;\n\n        this.attr({resizeable:false});\n        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());\n        \n        this.value = false;\n        this.on(\"click\",function(){            \n            _this.value = !_this.value;\n            _this.layerShow(\"low\" , !_this.value, 100);\n            _this.layerShow(\"high\",  _this.value, 100);\n            _this.getOutputPort(0).setValue(_this.value);\n        });\n\n        this.on(\"added\",function(){\n            console.log(_this.value)\n            _this.layerShow(\"low\" , !_this.value);\n            _this.layerShow(\"high\",  _this.value);\n            _this.getOutputPort(0).setValue(_this.value);\n        });\n    },\n    \n    calculate: function()\n    {\n        // do nothing per default;\n    }\n\n});",
+        "code": "/**\n * by 'Draw2D Shape Designer'\n *\n * Custom JS code to tweak the standard behaviour of the generated\n * shape. add your custome code and event handler here.\n *\n *\n */\ntestShape = testShape.extend({\n\n    init: function(attr, setter, getter){\n         this._super(attr, setter, getter);\n\n        this.attr({resizeable:false});\n        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());\n        \n        this.value = false;\n        this.on(\"click\",()=>{            \n            this.value = !this.value;\n            this.layerShow(\"low\" , !this.value, 100);\n            this.layerShow(\"high\",  this.value, 100);\n            this.getOutputPort(0).setValue(this.value);\n        });\n\n        this.on(\"added\",()=>{\n            this.layerShow(\"low\" , !this.value);\n            this.layerShow(\"high\",  this.value);\n            this.getOutputPort(0).setValue(this.value);\n        });\n    },\n    \n    calculate: function()\n    {\n        // do nothing per default;\n    }\n\n});",
         "name": "Label",
-        "markdown": "# Push Button\n\ntoggles the output if the user press \nthe mouse button down in the simulation mode."
+        "markdown": "# Push Button\n\ntoggles the output if the user press \nthe mouse button down in the simulation mode.",
+        "type": "Output",
+        "direction": 1
       },
       "cssClass": "shape_designer_figure_ExtLabel",
       "ports": [],
@@ -219,6 +221,5 @@
         }
       ]
     }
-  ],
-  "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAA/CAYAAAC4nXvhAAAAhElEQVRoQ+3UQREAMAgEMfBvmh8mNnXQ2ww70bfRf4+P18orrnhkAdQjof+biiseWQD1SGjHDXXUIwugHgntqqOOemQB1COhXXXUUY8sgHoktKuOOuqRBVCPhHbVUUc9sgDqkdCuOuqoRxZAPRLaVUcd9cgCqEdCu+qoox5ZAPVIaFf9AOaQAEB5xJDqAAAAAElFTkSuQmCC"
+  ]
 }

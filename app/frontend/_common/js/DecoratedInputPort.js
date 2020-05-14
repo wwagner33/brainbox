@@ -42,6 +42,7 @@ export default draw2d.InputPort.extend({
 
     // a port can have a value. Useful for workflow engines or circuit diagrams
     this.setValue(true)
+    this.hasChanged = false
 
     this.installEditPolicy(growPolicy)
 
@@ -55,6 +56,16 @@ export default draw2d.InputPort.extend({
   },
 
   setValue: function (value) {
+    // convert boolean values to 5volt TTL pegel logic
+    //
+    if (typeof value === "boolean"){
+      value = value ? 5.0: 0.0
+    }
+    else if(value === null){
+      value = 0.0
+      debugger
+    }
+
     this.hasChanged = this.value !== value
     this._super(value)
   },
@@ -71,6 +82,16 @@ export default draw2d.InputPort.extend({
     return this.hasChangedValue() && !this.getValue()
   },
 
+  /**
+   * Converts power values (0-5 volt) to boolean logic (TRUE/FALSE)
+   * v <= 1.5volt  => FALSE
+   * v >  1.5volt  => TRUE
+   *
+   * normally v must be greater to 2.2v to be HIGH. But the software can'T handle undefined values right now.
+   */
+  getBooleanValue: function(){
+    return this.getValue()>1.5
+  },
 
   /**
    *

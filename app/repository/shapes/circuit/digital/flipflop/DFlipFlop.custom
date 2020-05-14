@@ -19,8 +19,8 @@ circuit_digital_flipflop_DFlipFlop = circuit_digital_flipflop_DFlipFlop.extend({
     
     calculate:function()
     {
-        var d = this.getInputPort("input_d").getValue();
-        var t = this.getInputPort("input_t").getValue();
+        var d = this.getInputPort("input_d").getBooleanValue();
+        var t = this.getInputPort("input_t").getBooleanValue();
         
         var q = this.getOutputPort("output_q");
         var q_ = this.getOutputPort("output_q_not");

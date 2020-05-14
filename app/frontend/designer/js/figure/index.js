@@ -2,7 +2,6 @@
 //
 export default [
   require("./ExtLabel"),
-  require("./DecoratedInputPort"),
   require("./ExtLine"),
   require("./ExtPolygon"),
   require("./ExtPort"),

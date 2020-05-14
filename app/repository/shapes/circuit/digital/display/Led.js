@@ -7,7 +7,7 @@
 var circuit_digital_display_Led = CircuitFigure.extend({
 
    NAME: "circuit_digital_display_Led",
-   VERSION: "1.0.168_309",
+   VERSION: "1.0.182_354",
 
    init:function(attr, setter, getter)
    {
@@ -71,19 +71,17 @@ var circuit_digital_display_Led = CircuitFigure.extend({
 circuit_digital_display_Led = circuit_digital_display_Led.extend({
 
     init: function(attr, setter, getter){
-         this._super(attr, setter, getter);
+        this._super(attr, setter, getter);
 
-         this.attr({resizeable:false});
-         this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+        this.attr({resizeable:false});
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
     },
     
     calculate: function()
     {
-        if(this.getInputPort(0).getValue()){
-            this.layerAttr("circle",{fill:"#C21B7A"});
-        }
-        else{
-            this.layerAttr("circle",{fill:"#f0f0f0"});
+        var port = this.getInputPort(0);
+        if(port.hasChangedValue()){
+            this.layerAttr("circle",{fill: port.getBooleanValue()?"#C21B7A":"#f0f0f0"});
         }
     }
 });

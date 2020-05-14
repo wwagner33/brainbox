@@ -3,78 +3,17 @@ export default draw2d.SetFigure.extend({
   NAME: "CircuitFigure",
 
   init: function (attr, setter, getter) {
-    this.tooltip = null
-    this.tooltipTimer = -1
-
     this._super($.extend({stroke: 0, bgColor: null, width: 30, height: 32}, attr), setter, getter)
 
     this.persistPorts = false
     this.zoomCallback = $.proxy(this.positionTooltip, this)
 
-    this.on("dragstart", () => {
-      this.hideTooltip(true)
-    })
-
-    this.on("mouseenter", () => {
-      this.tooltipTimer = window.setTimeout( () =>{
-        this.tooltipTimer = -1
-        this.showTooltip()
-      }, 500)
-    })
-
-    this.on("mouseleave", () => {
-      this.hideTooltip()
-    })
-
-    this.on("move", () => {
-      this.positionTooltip()
-    })
   },
 
   setCanvas: function (canvas) {
     if (this.canvas !== null) this.canvas.off(this.zoomCallback)
     this._super(canvas)
     if (this.canvas !== null) this.canvas.on("zoom", this.zoomCallback)
-  },
-
-  hideTooltip: function (fast) {
-    if (this.tooltipTimer !== -1) {
-      window.clearTimeout(this.tooltipTimer)
-      this.tooltipTimer = -1
-    }
-    else if (this.tooltip !== null) {
-      if (fast) {
-        this.tooltip.remove()
-      }
-      else {
-        this.tooltip.fadeOut(500, function () {
-          $(this).remove()
-        })
-      }
-      this.tooltip = null
-    }
-  },
-
-  showTooltip: function () {
-    this.tooltip = $('<div class="draw2d_tooltip">'+this.NAME+'</div>')
-      .appendTo('body')
-      .hide()
-      .fadeIn(1000)
-    this.positionTooltip()
-  },
-
-
-  positionTooltip: function () {
-    if (this.tooltip === null) {
-      return
-    }
-
-    let width = this.tooltip.outerWidth(true)
-    let pos = this.canvas.fromCanvasToDocumentCoordinate(
-      this.getAbsoluteX() + this.getWidth() / 2 - width / 2 + 8,
-      this.getAbsoluteY() + this.getHeight() + 10)
-
-    this.tooltip.css({'top': pos.y, 'left': pos.x})
   },
 
   applyAlpha: function () {

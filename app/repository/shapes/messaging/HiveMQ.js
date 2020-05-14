@@ -7,7 +7,7 @@
 var messaging_HiveMQ = CircuitFigure.extend({
 
    NAME: "messaging_HiveMQ",
-   VERSION: "1.0.168_309",
+   VERSION: "1.0.182_354",
 
    init:function(attr, setter, getter)
    {
@@ -91,17 +91,17 @@ messaging_HiveMQ = messaging_HiveMQ.extend({
          }
     },
     
-    calculate: function()
+    calculate: function(context)
     {
     },
     
-    onStart: function()
+    onStart: function(context)
     {
         socket.on("mqtt:message", this.callback);
         this.callback({value:this.value})
     },
 
-    onStop:function()
+    onStop:function(context)
     {
         socket.off("mqtt:message", this.callback);
     },

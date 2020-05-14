@@ -13,9 +13,11 @@
       "angle": 0,
       "userData": {
         "baseClass": "draw2d.SetFigure",
-        "code": "/**\n * by 'Draw2D Shape Designer'\n *\n * Custom JS code to tweak the standard behaviour of the generated\n * shape. add your custome code and event handler here.\n *\n *\n */\ntestShape = testShape.extend({\n\n    init: function(attr, setter, getter){\n        this._super(attr, setter, getter);\n\n        this.attr({resizeable:false});\n        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());\n\n    },\n    \n    calculate:function(context)\n    {\n        var i1 = this.getInputPort(0);\n        var i2 = this.getInputPort(1);\n        var o1 = this.getOutputPort(0);\n        \n        o1.setValue(i1.getValue() && i2.getValue());\n    }\n});",
+        "code": "/**\n * by 'Draw2D Shape Designer'\n *\n * Custom JS code to tweak the standard behaviour of the generated\n * shape. add your custome code and event handler here.\n *\n *\n */\ntestShape = testShape.extend({\n\n    init: function(attr, setter, getter){\n        this._super(attr, setter, getter);\n\n        this.attr({resizeable:false});\n        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());\n\n    },\n    \n    calculate:function(context)\n    {\n        var i1 = this.getInputPort(0);\n        var i2 = this.getInputPort(1);\n        var o1 = this.getOutputPort(0);\n        \n        o1.setValue(i1.getBooleanValue() && i2.getBooleanValue());\n    }\n});",
         "name": "Rectangle",
-        "markdown": "# AND Gate\n\nThe **AND** gate is a basic digital logic gate that implements logical conjunction - it behaves according to the truth table on the bottom.\n\nA HIGH output results only if both the inputs to the AND gate are HIGH. If neither or only one input to the AND gate is HIGH, a LOW output results. In another sense, the function of AND effectively finds the minimum between two binary digits, just as the OR function finds the maximum.\n\n\n**Therefore, the output is always 0 except when all the inputs are 1.**\n\n## Logic table\n\n| INPUT A   | INPUT B |  OUTPUT    |\n|:---------:|:-------:|:----------:|\n| Low       | Low     |  Low       |\n| `High`    | Low     |  Low       |\n| Low       | `High`  |  Low       |\n| `High`    | `High`  |  `High`    |\n\n"
+        "markdown": "# AND Gate\n\nThe **AND** gate is a basic digital logic gate that implements logical conjunction - it behaves according to the truth table on the bottom.\n\nA HIGH output results only if both the inputs to the AND gate are HIGH. If neither or only one input to the AND gate is HIGH, a LOW output results. In another sense, the function of AND effectively finds the minimum between two binary digits, just as the OR function finds the maximum.\n\n\n**Therefore, the output is always 0 except when all the inputs are 1.**\n\n## Logic table\n\n| INPUT A   | INPUT B |  OUTPUT    |\n|:---------:|:-------:|:----------:|\n| Low       | Low     |  Low       |\n| `High`    | Low     |  Low       |\n| Low       | `High`  |  Low       |\n| `High`    | `High`  |  `High`    |\n\n",
+        "type": "Output",
+        "direction": 1
       },
       "cssClass": "shape_designer_figure_PolyRect",
       "ports": [],
@@ -79,7 +81,7 @@
       },
       "cssClass": "shape_designer_figure_ExtPort",
       "ports": [],
-      "bgColor": "rgba(28,155,171,1)",
+      "bgColor": "rgba(55,177,222,1)",
       "color": "rgba(27,27,27,1)",
       "stroke": 1,
       "dasharray": null,
@@ -119,7 +121,7 @@
       },
       "cssClass": "shape_designer_figure_ExtPort",
       "ports": [],
-      "bgColor": "rgba(28,155,171,1)",
+      "bgColor": "rgba(55,177,222,1)",
       "color": "rgba(27,27,27,1)",
       "stroke": 1,
       "dasharray": null,
@@ -159,7 +161,7 @@
       },
       "cssClass": "shape_designer_figure_ExtPort",
       "ports": [],
-      "bgColor": "rgba(28,155,171,1)",
+      "bgColor": "rgba(55,177,222,1)",
       "color": "rgba(27,27,27,1)",
       "stroke": 1,
       "dasharray": null,
@@ -221,6 +223,5 @@
         }
       ]
     }
-  ],
-  "image": "data:image/png;base64,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"
+  ]
 }

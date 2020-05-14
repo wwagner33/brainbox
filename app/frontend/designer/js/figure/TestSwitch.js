@@ -5,16 +5,14 @@ export default shape_designer.figure.TestSwitch = draw2d.shape.basic.Label.exten
   init: function (attr, setter, getter) {
     this._super({text: "Low"}, setter, getter)
 
-    this.createPort("output")
-
-    var _this = this
+    this.addPort(new DecoratedOutputPort())
 
     this.value = false
-    this.on("click", function () {
-      _this.toggleValue()
-      _this.getOutputPort(0).setValue(_this.value)
-      _this.getOutputPort(0).getConnections().each(function (i, c) {
-        c.getTarget().setValue(_this.value)
+    this.on("click",  ()=> {
+      this.toggleValue()
+      this.getOutputPort(0).setValue(this.value)
+      this.getOutputPort(0).getConnections().each( (i, c) =>{
+        c.getTarget().setValue(this.value)
       })
     })
   },

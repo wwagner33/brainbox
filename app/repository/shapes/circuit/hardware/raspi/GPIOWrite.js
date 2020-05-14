@@ -7,7 +7,7 @@
 var circuit_hardware_raspi_GPIOWrite = CircuitFigure.extend({
 
    NAME: "circuit_hardware_raspi_GPIOWrite",
-   VERSION: "1.0.168_309",
+   VERSION: "1.0.182_354",
 
    init:function(attr, setter, getter)
    {
@@ -238,34 +238,16 @@ circuit_hardware_raspi_GPIOWrite = circuit_hardware_raspi_GPIOWrite.extend({
      *  loop
      *  @required
      **/
-    calculate:function()
+    calculate:function( context)
     {
         this.getInputPorts().each(function(index,port){
             if(port.hasChangedValue() && port.getConnections().getSize()>0){
-                console.log("set raspi gpio",port.getValue())
                 hardware.raspi.set(port.getName(), port.getValue());
             }
         });
         this.getOutputPorts().each(function(index,port){
             port.setValue(hardware.gpio.get(port.getName()));
         });
-    },
-
-
-    /**
-     *  Called if the simulation mode is starting
-     *  @required
-     **/
-    onStart:function()
-    {
-    },
-
-    /**
-     *  Called if the simulation mode is stopping
-     *  @required
-     **/
-    onStop:function()
-    {
     },
     
     getRequiredHardware: function(){

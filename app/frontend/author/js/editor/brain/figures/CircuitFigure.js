@@ -89,7 +89,6 @@ export default draw2d.SetFigure.extend({
     return []
   },
 
-
   getRequiredHardware: function () {
     return {
       raspi: false,

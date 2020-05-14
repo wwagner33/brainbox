@@ -15,14 +15,13 @@ circuit_digital_flipflop_SRFlipFlop = circuit_digital_flipflop_SRFlipFlop.extend
         this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
     },
     
-    calculate:function()
+    calculate:function(context)
     {
-        var s = !!this.getInputPort("input_s").getValue();
-        var r = !!this.getInputPort("input_r").getValue();
+        var s = !!this.getInputPort("input_s").getBooleanValue();
+        var r = !!this.getInputPort("input_r").getBooleanValue();
 
         var q = this.getOutputPort("output_q");
         var q_ = this.getOutputPort("output_q_not");
-        console.log(s,r);
         // do nothing
         if(s===false && r===false){
            

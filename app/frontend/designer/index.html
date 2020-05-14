@@ -268,48 +268,6 @@ testShape = testShape.extend({
 });
 </script>
 
-<script id="decoratedport-template" type="text/js-template">
-var DecoratedInputPort = draw2d.InputPort.extend({
-
-  init: function (attr, setter, getter) {
-    this.hasChanged = true
-    this._super(attr, setter, getter)
-    this.decoration = new shape_designer.figure.MarkerFigure()
-    this.add(this.decoration, new draw2d.layout.locator.LeftLocator({margin: 8}))
-    // a port can have a value. Useful for workflow engines or circuit diagrams
-    this.setValue(true)
-  },
-
-  useDefaultValue: function () {
-    this.decoration.setStick(true)
-  },
-
-  setValue: function (value) {
-    this.hasChanged = this.value !== value
-    this._super(value)
-  },
-
-  hasChangedValue: function () {
-    return this.hasChanged
-  },
-
-  hasRisingEdge: function () {
-    return this.hasChangedValue() && this.getValue()
-  },
-
-  hasFallingEdge: function () {
-    return this.hasChangedValue() && !this.getValue()
-  }
-})
-
-var DecoratedOutputPort = draw2d.OutputPort.extend({
-
-  init: function (attr, setter, getter) {
-     this._super(attr, setter, getter)
-  }
-})
-
-</script>
 
 <script id="shape-base-template" type="text/js-template">
 // Generated Code for the Draw2D touch HTML5 lib.

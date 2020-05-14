@@ -7,7 +7,7 @@
 var circuit_74LSXX_74LS90 = CircuitFigure.extend({
 
    NAME: "circuit_74LSXX_74LS90",
-   VERSION: "1.0.168_309",
+   VERSION: "1.0.182_354",
 
    init:function(attr, setter, getter)
    {
@@ -245,8 +245,8 @@ circuit_74LSXX_74LS90 = circuit_74LSXX_74LS90.extend({
      **/
     calculate:function( context)
     {
-        var t1 = this.getInputPort("pin_cka").getValue();
-        var t2 = this.getInputPort("pin_ckb").getValue();
+        var t1 = this.getInputPort("pin_cka").getBooleanValue();
+        var t2 = this.getInputPort("pin_ckb").getBooleanValue();
 
         var falling1 = this.last_t1===true && t1===false; 
         var falling2 = this.last_t2===true && t2===false; 

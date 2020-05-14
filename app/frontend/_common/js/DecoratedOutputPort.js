@@ -15,8 +15,19 @@ export default draw2d.OutputPort.extend({
     let circle = new draw2d.shape.basic.Circle({radius:2, stroke:0, bgColor: "#909090"})
     circle.hitTest = () => false
     this.add(circle, locator)
+    this.setValue(0.0)
   },
 
+  /**
+   * Converts power values (0-5 volt) to boolean logic (TRUE/FALSE)
+   * v <= 1.5volt  => FALSE
+   * v >  1.5volt  => TRUE
+   *
+   * normally v must be greater to 2.2v to be HIGH. But the software can'T handle undefined values right now.
+   */
+  getBooleanValue: function(){
+    return this.getValue()>1.5
+  },
 
   /**
    *
@@ -66,7 +77,6 @@ export default draw2d.OutputPort.extend({
     }
     return this
   }
-
 })
 
 
