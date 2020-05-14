@@ -648,10 +648,10 @@ var Dialog = function () {
     value: function show(conf, figure) {
       if (figure) {
         var baseName = figure.attr("userData.file").replace(/\.shape$/, "");
-        var pathToDesign = conf.designer.url + "?timestamp=" + new Date().getTime() + "&global=" + baseName + ".shape";
+        var pathToDesign = "../designer" + "?timestamp=" + new Date().getTime() + "&global=" + baseName + ".shape";
         window.open(pathToDesign, "designer");
       } else {
-        var _pathToDesign = conf.designer.url;
+        var _pathToDesign = "../designer";
         window.open(_pathToDesign, "designer");
       }
     }

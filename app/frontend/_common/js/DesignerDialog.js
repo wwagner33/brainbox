@@ -8,13 +8,13 @@ class Dialog {
   show(conf, figure) {
     if(figure){
       let baseName = figure.attr("userData.file").replace(/\.shape$/, "")
-      let pathToDesign = conf.designer.url
+      let pathToDesign = "../designer"
         + "?timestamp=" + new Date().getTime()
         + "&global=" + baseName + ".shape"
       window.open(pathToDesign, "designer")
     }
     else{
-      let pathToDesign = conf.designer.url
+      let pathToDesign = "../designer"
       window.open(pathToDesign, "designer")
     }
 
