@@ -7,7 +7,7 @@
 var circuit_digital_pulse_10hz = CircuitFigure.extend({
 
    NAME: "circuit_digital_pulse_10hz",
-   VERSION: "1.0.182_354",
+   VERSION: "1.0.185_357",
 
    init:function(attr, setter, getter)
    {
@@ -77,6 +77,7 @@ circuit_digital_pulse_10hz = circuit_digital_pulse_10hz.extend({
         this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
         
         this.currentTimer=0;
+        this.value = 0.0
     },
     
     calculate:function()
@@ -85,7 +86,7 @@ circuit_digital_pulse_10hz = circuit_digital_pulse_10hz.extend({
        // 10 ticks => 10Hz 
        this.currentTimer = (this.currentTimer+1)%10; 
        if(this.currentTimer===0){
-           this.value = !this.value;
+           this.value = 5.0-this.value;
            this.getOutputPort(0).setValue(this.value);
        }
     },

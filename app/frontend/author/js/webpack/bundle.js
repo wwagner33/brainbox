@@ -3815,7 +3815,6 @@ exports.default = draw2d.SetFigure.extend({
     this._super(attr, setter, getter);
 
     this.persistPorts = false;
-    this.zoomCallback = $.proxy(this.positionTooltip, this);
   },
 
   setCanvas: function setCanvas(canvas) {

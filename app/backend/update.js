@@ -29,6 +29,7 @@ module.exports = {
         res.send(response.data)
       })
       .catch( (error) => {
+        console.log(error)
         res.status(error.response.status).send('Something broke!')
       })
   },

@@ -6,8 +6,6 @@ export default draw2d.SetFigure.extend({
     this._super($.extend({stroke: 0, bgColor: null, width: 30, height: 32}, attr), setter, getter)
 
     this.persistPorts = false
-    this.zoomCallback = $.proxy(this.positionTooltip, this)
-
   },
 
   setCanvas: function (canvas) {
