@@ -191,7 +191,8 @@ export default draw2d.Canvas.extend({
 
     let isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)
     let isHTTPS = location.protocol === 'https:'
-    if (isChrome && isHTTPS) {
+    let isLocalhost = location.hostname ==="localhost"
+    if (isChrome && (isHTTPS || isLocalhost)) {
       $('#statusWebUSB').on("click", () => {
         if (hardware.arduino.connected) {
           hardware.arduino.disconnect()
@@ -542,7 +543,7 @@ export default draw2d.Canvas.extend({
       let outPort = line.getSource()
       let inPort = line.getTarget()
       inPort.setValue(outPort.getValue())
-      line.setColor(outPort.getValue() ? colors.high : colors.low)
+      line.setColor(outPort.getBooleanValue() ? colors.high : colors.low)
     })
 
     if (this.simulate === true) {

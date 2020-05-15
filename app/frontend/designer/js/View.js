@@ -147,6 +147,12 @@ export default draw2d.Canvas.extend({
     }
 
     this.figures.add(figure)
+    if (typeof y !== "undefined") {
+      figure.setPosition(x, y)
+    } else if (typeof x !== "undefined") {
+      figure.setPosition(x)
+    }
+
     figure.setCanvas(this)
 
     // to avoid drag&drop outside of this canvas

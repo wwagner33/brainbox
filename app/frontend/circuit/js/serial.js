@@ -65,6 +65,7 @@ export default class Serial {
 
   static requestPort() {
     if(!navigator || !navigator.usb ){
+      console.log("reject")
       return Promise.reject("No USB device detected to pair or Browser didn't support WebUSB")
     }
 

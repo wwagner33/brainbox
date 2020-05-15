@@ -22,8 +22,12 @@ else {
 module.exports = {
 
   getLatestShapeRelease: function (res) {
-
-    axios.get(`https://api.github.com/repos/${GITHUB_ORG}/${GITHUB_REPO}/releases/latest`)
+    let url = `https://api.github.com/repos/${GITHUB_ORG}/${GITHUB_REPO}/releases/latest`
+    let params =  { params:{}, headers: { } }
+    if(GITHUB_TOKEN !== null){
+      params.headers = {'Authorization': GITHUB_TOKEN}
+    }
+    axios.get(url,params)
       .then( (response) => {
         res.setHeader('Content-Type', 'application/json')
         res.send(response.data)
@@ -35,6 +39,10 @@ module.exports = {
   },
 
   upgradeTo: async function(shapeAppDir, packageUrl, res){
+    let params =  { params:{}, headers: { } }
+    if(GITHUB_TOKEN !== null){
+      params.headers = {'Authorization': GITHUB_TOKEN}
+    }
     const io = require('./comm/websocket').io
 
     const file = 'test.zip'
@@ -43,7 +51,7 @@ module.exports = {
       url: packageUrl,
       method: 'GET',
       responseType: 'stream'
-    })
+    },params)
     response.data.pipe(writer)
     writer.on('finish', () => {
       fs.removeSync(shapeAppDir)

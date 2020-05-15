@@ -3981,7 +3981,8 @@ exports.default = draw2d.Canvas.extend({
 
     var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
     var isHTTPS = location.protocol === 'https:';
-    if (isChrome && isHTTPS) {
+    var isLocalhost = location.hostname === "localhost";
+    if (isChrome && (isHTTPS || isLocalhost)) {
       $('#statusWebUSB').on("click", function () {
         if (_hardware2.default.arduino.connected) {
           _hardware2.default.arduino.disconnect();
@@ -4319,7 +4320,7 @@ exports.default = draw2d.Canvas.extend({
       var outPort = line.getSource();
       var inPort = line.getTarget();
       inPort.setValue(outPort.getValue());
-      line.setColor(outPort.getValue() ? _Colors2.default.high : _Colors2.default.low);
+      line.setColor(outPort.getBooleanValue() ? _Colors2.default.high : _Colors2.default.low);
     });
 
     if (this.simulate === true) {
@@ -5731,7 +5732,7 @@ exports.default = {
             console.log(e);
           });
         }
-        // or post it to the server. Maybe the server has an connected Arduino via serial port
+        // or post it to the server. Maybe the server itself (local pc) has an connected Arduino via serial port
         //
         else {
             socket.emit('arduino:set', { cmd: cmd });
@@ -5740,6 +5741,15 @@ exports.default = {
     }, {
       key: "get",
       value: function get(pin) {
+        var cmd = ["2/", // read
+        pin > 13 ? "1/" : "2/", // analog / digital
+        pin, // pin number
+        "/"].join("");
+
+        // https://github.com/arduino/ArduinoCore-avr/blob/master/variants/standard/pins_arduino.h#L56-L72
+        usbPort.send(new TextEncoder().encode(cmd)).catch(function (e) {
+          console.log(e);
+        });
         return values[pin];
       }
     }, {
@@ -5767,12 +5777,22 @@ exports.default = {
       value: function connectPort(port) {
         var _this4 = this;
 
+        var regex = /\d+\/\d+\//;
         port.connect().then(function () {
           usbPort = port;
           _this4.emit("connect");
           usbPort.onReceive = function (data) {
             var textDecoder = new TextDecoder();
             var txt = textDecoder.decode(data);
+            txt = txt.split("\n").filter(function (e) {
+              return e.match(regex);
+            });
+            txt.forEach(function (e) {
+              e = e.split("/");
+              var pin = parseInt(e[0]);
+              var value = parseInt(e[1]);
+              values[pin] = 5 / 1024 * parseInt(value);
+            });
           };
           usbPort.onReceiveError = function (error) {
             usbPort = null;
@@ -6165,6 +6185,7 @@ var Serial = function () {
     key: 'requestPort',
     value: function requestPort() {
       if (!navigator || !navigator.usb) {
+        console.log("reject");
         return Promise.reject("No USB device detected to pair or Browser didn't support WebUSB");
       }
 

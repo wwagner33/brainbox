@@ -25,14 +25,14 @@ export default {
     socket = s
     // GPIO from RasperyPi
     //
-    socket.on("gpio:change", msg =>{
+    socket.on("gpio:change", msg => {
       values[msg.pin] = !!parseInt(msg.value)
     })
 
-    socket.on('disconnect',  () => {
+    socket.on('disconnect', () => {
       this.raspi.emit("disconnect")
     })
-    socket.on('connect',  () => {
+    socket.on('connect', () => {
       this.raspi.emit("connect")
     })
 
@@ -45,7 +45,7 @@ export default {
     })
   },
 
-  arduino: new class extends EventEmitter{
+  arduino: new class extends EventEmitter {
     set(pin, value) {
       /*
        * 1 = Wright:
@@ -77,22 +77,34 @@ export default {
       // Either send the command via WebUSB to the connected Arduino
       //
       if (usbPort) {
-        usbPort.send(new TextEncoder().encode(cmd)).catch(function(e){
+        usbPort.send(new TextEncoder().encode(cmd)).catch(function (e) {
           console.log(e)
         })
       }
-      // or post it to the server. Maybe the server has an connected Arduino via serial port
+      // or post it to the server. Maybe the server itself (local pc) has an connected Arduino via serial port
       //
-      else{
+      else {
         socket.emit('arduino:set', {cmd})
       }
     }
 
     get(pin) {
+      let cmd = [
+        "2/",             // read
+        pin > 13 ? "1/" : "2/", // analog / digital
+        pin,              // pin number
+        "/"
+      ].join("")
+
+      // https://github.com/arduino/ArduinoCore-avr/blob/master/variants/standard/pins_arduino.h#L56-L72
+      usbPort.send(new TextEncoder().encode(cmd))
+        .catch((e) => {
+          console.log(e)
+        })
       return values[pin]
     }
 
-    disconnect(){
+    disconnect() {
       if (usbPort) {
         usbPort.disconnect()
         usbPort = null
@@ -101,21 +113,30 @@ export default {
     }
 
     connect() {
-      serial.requestPort().then(selectedPort => {
-        this.connectPort(selectedPort)
-      }).catch(error => {
-        this.emit("disconnect")
-      })
+      serial.requestPort()
+        .then(selectedPort => {
+          this.connectPort(selectedPort)
+        })
+        .catch(error => {
+          this.emit("disconnect")
+        })
     }
 
     connectPort(port) {
+      const regex = /\d+\/\d+\//
       port.connect().then(() => {
         usbPort = port
         this.emit("connect")
         usbPort.onReceive = data => {
           let textDecoder = new TextDecoder()
           let txt = textDecoder.decode(data)
-
+          txt = txt.split("\n").filter( e => e.match(regex))
+          txt.forEach( e => {
+            e = e.split("/")
+            let pin = parseInt(e[0])
+            let value = parseInt(e[1])
+            values[pin] = (5/1024)*parseInt(value)
+          })
         }
         usbPort.onReceiveError = error => {
           usbPort = null;
@@ -123,26 +144,26 @@ export default {
         }
       }, error => {
         let msg = error.message
-        switch(error.message){
+        switch (error.message) {
           case "Unable to claim interface.":
-            msg = "Unable to claim USB interface."+
-                  "<br>Maybe it is already paired by another browser window"
+            msg = "Unable to claim USB interface." +
+              "<br>Maybe it is already paired by another browser window"
             break;
           default:
             break;
         }
-        $.notify({ message: msg},{ type: 'danger'});
+        $.notify({message: msg}, {type: 'danger'});
         this.emit("disconnect")
       })
     }
 
-    get connected(){
-      return usbPort!==null
+    get connected() {
+      return usbPort !== null
     }
   },
 
 
-  raspi:  new class extends EventEmitter{
+  raspi: new class extends EventEmitter {
     set(pin, value) {
       socket.emit('gpio:set', {
         pin: pin,
@@ -150,11 +171,11 @@ export default {
       })
     }
 
-    get (pin) {
+    get(pin) {
       return values[pin]
     }
 
-    get connected(){
+    get connected() {
       return socket && socket.connected
     }
   }

@@ -6,26 +6,12 @@
       "74LSXX",
       "74LS90"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "74LS90.js",
     "displayName": "74LS90",
     "basedir": "circuit/74LSXX",
     "filePath": "circuit/74LSXX/74LS90.shape",
     "image": "circuit/74LSXX/74LS90.png"
-  },
-  {
-    "name": "circuit_diagram_Sparkline",
-    "tags": [
-      "circuit",
-      "diagram",
-      "Sparkline"
-    ],
-    "version": "1.0.185_357",
-    "basename": "Sparkline.js",
-    "displayName": "Sparkline",
-    "basedir": "circuit/diagram",
-    "filePath": "circuit/diagram/Sparkline.shape",
-    "image": "circuit/diagram/Sparkline.png"
   },
   {
     "name": "circuit_digital_alu_FullAdder",
@@ -35,7 +21,7 @@
       "alu",
       "FullAdder"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "FullAdder.js",
     "displayName": "FullAdder",
     "basedir": "circuit/digital/alu",
@@ -50,7 +36,7 @@
       "alu",
       "FullAdder4Bit"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "FullAdder4Bit.js",
     "displayName": "FullAdder4Bit",
     "basedir": "circuit/digital/alu",
@@ -65,7 +51,7 @@
       "buttons",
       "HighLow"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "HighLow.js",
     "displayName": "HighLow",
     "basedir": "circuit/digital/buttons",
@@ -80,7 +66,7 @@
       "buttons",
       "HighLowArray"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "HighLowArray.js",
     "displayName": "HighLowArray",
     "basedir": "circuit/digital/buttons",
@@ -95,7 +81,7 @@
       "buttons",
       "PushButton"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "PushButton.js",
     "displayName": "PushButton",
     "basedir": "circuit/digital/buttons",
@@ -110,7 +96,7 @@
       "counter",
       "BCDCounter"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "BCDCounter.js",
     "displayName": "BCDCounter",
     "basedir": "circuit/digital/counter",
@@ -125,7 +111,7 @@
       "decoder",
       "BCDto7Seg"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "BCDto7Seg.js",
     "displayName": "BCDto7Seg",
     "basedir": "circuit/digital/decoder",
@@ -140,7 +126,7 @@
       "display",
       "7Segment"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "7Segment.js",
     "displayName": "7Segment",
     "basedir": "circuit/digital/display",
@@ -155,7 +141,7 @@
       "display",
       "Led"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "Led.js",
     "displayName": "Led",
     "basedir": "circuit/digital/display",
@@ -170,7 +156,7 @@
       "flipflop",
       "DFlipFlop"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "DFlipFlop.js",
     "displayName": "DFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -185,7 +171,7 @@
       "flipflop",
       "JKFlipFlop"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "JKFlipFlop.js",
     "displayName": "JKFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -200,7 +186,7 @@
       "flipflop",
       "JKRFlipFlop"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "JKRFlipFlop.js",
     "displayName": "JKRFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -215,7 +201,7 @@
       "flipflop",
       "SRFlipFlop"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "SRFlipFlop.js",
     "displayName": "SRFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -230,7 +216,7 @@
       "flipflop",
       "TFlipFlop"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "TFlipFlop.js",
     "displayName": "TFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -246,7 +232,7 @@
       "DIN40700",
       "AND"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "AND.js",
     "displayName": "AND",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -262,7 +248,7 @@
       "DIN40700",
       "NAND"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "NAND.js",
     "displayName": "NAND",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -278,7 +264,7 @@
       "DIN40700",
       "NOR"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "NOR.js",
     "displayName": "NOR",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -294,7 +280,7 @@
       "DIN40700",
       "OR"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "OR.js",
     "displayName": "OR",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -310,7 +296,7 @@
       "DIN40700",
       "XNOR"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "XNOR.js",
     "displayName": "XNOR",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -326,7 +312,7 @@
       "DIN40700",
       "XOR"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "XOR.js",
     "displayName": "XOR",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -343,7 +329,7 @@
       "12",
       "AND"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "AND.js",
     "displayName": "AND",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -360,7 +346,7 @@
       "12",
       "NAND"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "NAND.js",
     "displayName": "NAND",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -377,7 +363,7 @@
       "12",
       "NOR"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "NOR.js",
     "displayName": "NOR",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -394,7 +380,7 @@
       "12",
       "NOT"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "NOT.js",
     "displayName": "NOT",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -411,7 +397,7 @@
       "12",
       "OR"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "OR.js",
     "displayName": "OR",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -428,7 +414,7 @@
       "12",
       "XNOR"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "XNOR.js",
     "displayName": "XNOR",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -445,7 +431,7 @@
       "12",
       "XOR"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "XOR.js",
     "displayName": "XOR",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -460,7 +446,7 @@
       "pulse",
       "10hz"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "10hz.js",
     "displayName": "10hz",
     "basedir": "circuit/digital/pulse",
@@ -475,7 +461,7 @@
       "pulse",
       "1hz"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "1hz.js",
     "displayName": "1hz",
     "basedir": "circuit/digital/pulse",
@@ -490,7 +476,7 @@
       "pulse",
       "50hz"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "50hz.js",
     "displayName": "50hz",
     "basedir": "circuit/digital/pulse",
@@ -505,7 +491,7 @@
       "pulse",
       "Delay"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "Delay.js",
     "displayName": "Delay",
     "basedir": "circuit/digital/pulse",
@@ -520,7 +506,7 @@
       "signals",
       "High"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "High.js",
     "displayName": "High",
     "basedir": "circuit/digital/signals",
@@ -535,7 +521,7 @@
       "signals",
       "Low"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "Low.js",
     "displayName": "Low",
     "basedir": "circuit/digital/signals",
@@ -550,7 +536,7 @@
       "signals",
       "SignalSource"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "SignalSource.js",
     "displayName": "SignalSource",
     "basedir": "circuit/digital/signals",
@@ -565,7 +551,7 @@
       "signals",
       "SignalTarget"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "SignalTarget.js",
     "displayName": "SignalTarget",
     "basedir": "circuit/digital/signals",
@@ -580,7 +566,7 @@
       "timer",
       "Delay"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "Delay.js",
     "displayName": "Delay",
     "basedir": "circuit/digital/timer",
@@ -595,7 +581,7 @@
       "arduino",
       "Arduino"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "Arduino.js",
     "displayName": "Arduino",
     "basedir": "circuit/hardware/arduino",
@@ -610,7 +596,7 @@
       "arduino",
       "Led"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "Led.js",
     "displayName": "Led",
     "basedir": "circuit/hardware/arduino",
@@ -625,7 +611,7 @@
       "raspi",
       "GPIORead"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "GPIORead.js",
     "displayName": "GPIORead",
     "basedir": "circuit/hardware/raspi",
@@ -640,7 +626,7 @@
       "raspi",
       "GPIOWrite"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "GPIOWrite.js",
     "displayName": "GPIOWrite",
     "basedir": "circuit/hardware/raspi",
@@ -648,12 +634,25 @@
     "image": "circuit/hardware/raspi/GPIOWrite.png"
   },
   {
+    "name": "diagram_Sparkline",
+    "tags": [
+      "diagram",
+      "Sparkline"
+    ],
+    "version": "2.0.19_378",
+    "basename": "Sparkline.js",
+    "displayName": "Sparkline",
+    "basedir": "diagram",
+    "filePath": "diagram/Sparkline.shape",
+    "image": "diagram/Sparkline.png"
+  },
+  {
     "name": "documentation_Markdown",
     "tags": [
       "documentation",
       "Markdown"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "Markdown.js",
     "displayName": "Markdown",
     "basedir": "documentation",
@@ -666,7 +665,7 @@
       "documentation",
       "Text"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "Text.js",
     "displayName": "Text",
     "basedir": "documentation",
@@ -674,12 +673,25 @@
     "image": "documentation/Text.png"
   },
   {
+    "name": "math_Median",
+    "tags": [
+      "math",
+      "Median"
+    ],
+    "version": "2.0.19_378",
+    "basename": "Median.js",
+    "displayName": "Median",
+    "basedir": "math",
+    "filePath": "math/Median.shape",
+    "image": "math/Median.png"
+  },
+  {
     "name": "messaging_HiveMQ",
     "tags": [
       "messaging",
       "HiveMQ"
     ],
-    "version": "1.0.185_357",
+    "version": "2.0.19_378",
     "basename": "HiveMQ.js",
     "displayName": "HiveMQ",
     "basedir": "messaging",

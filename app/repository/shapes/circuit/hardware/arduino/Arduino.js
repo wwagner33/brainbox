@@ -7,7 +7,7 @@
 var circuit_hardware_arduino_Arduino = CircuitFigure.extend({
 
    NAME: "circuit_hardware_arduino_Arduino",
-   VERSION: "1.0.185_357",
+   VERSION: "2.0.19_378",
 
    init:function(attr, setter, getter)
    {
@@ -86,6 +86,12 @@ var circuit_hardware_arduino_Arduino = CircuitFigure.extend({
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
      port.setName("port_d13");
+     port.setMaxFanOut(20);
+     // port_a0
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 95.2159805386089, y: 67.8435934628744 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("port_a0");
      port.setMaxFanOut(20);
    },
 
@@ -214,11 +220,6 @@ var circuit_hardware_arduino_Arduino = CircuitFigure.extend({
        // Circle
        shape = this.canvas.paper.ellipse();
        shape.attr({"rx":5,"ry":5,"cx":99.51462500000162,"cy":151,"stroke":"rgba(27,27,27,1)","stroke-width":1,"fill":"rgba(242,242,242,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Circle");
-       
-       // Circle
-       shape = this.canvas.paper.ellipse();
-       shape.attr({"rx":5,"ry":5,"cx":99.51462500000162,"cy":164,"stroke":"rgba(27,27,27,1)","stroke-width":1,"fill":"rgba(242,242,242,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Circle");
        
        // Circle
@@ -425,14 +426,16 @@ circuit_hardware_arduino_Arduino = circuit_hardware_arduino_Arduino.extend({
         this.propagate(11, this.getPort("port_d11"));
         this.propagate(12, this.getPort("port_d12"));
         this.propagate(13, this.getPort("port_d13"));
+        this.propagate(14, this.getPort("port_a0"));
     },
 
+    // eiter read or write....depends on the other side port of the connection
     propagate: function(index, port){
         if(!port.getConnections().isEmpty()){
             var con = port.getConnections().first();
             var other = con.getSource()===port?con.getTarget():con.getSource()
             if(other instanceof draw2d.InputPort){
-                
+                port.setValue(hardware.arduino.get(index))
             }
             else {
                 hardware.arduino.set(index,other.getBooleanValue())

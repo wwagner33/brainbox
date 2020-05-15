@@ -37,14 +37,16 @@ circuit_hardware_arduino_Arduino = circuit_hardware_arduino_Arduino.extend({
         this.propagate(11, this.getPort("port_d11"));
         this.propagate(12, this.getPort("port_d12"));
         this.propagate(13, this.getPort("port_d13"));
+        this.propagate(14, this.getPort("port_a0"));
     },
 
+    // eiter read or write....depends on the other side port of the connection
     propagate: function(index, port){
         if(!port.getConnections().isEmpty()){
             var con = port.getConnections().first();
             var other = con.getSource()===port?con.getTarget():con.getSource()
             if(other instanceof draw2d.InputPort){
-                
+                port.setValue(hardware.arduino.get(index))
             }
             else {
                 hardware.arduino.set(index,other.getBooleanValue())
