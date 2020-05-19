@@ -466,14 +466,13 @@ exports.default = draw2d.InputPort.extend({
     this.decoration.setStick(true);
   },
 
-  setValue: function setValue(value) {
+  setValue: function setValue() {
+    var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0.0;
+
     // convert boolean values to 5volt TTL pegel logic
     //
     if (typeof value === "boolean") {
       value = value ? 5.0 : 0.0;
-    } else if (value === null) {
-      value = 0.0;
-      debugger;
     }
 
     this.hasChanged = this.value !== value;
@@ -2943,6 +2942,14 @@ exports.default = draw2d.policy.canvas.DropInterceptorPolicy.extend({
       return connectIntent;
     }
 
+    // Ports accepts only Ports from the same semanticGroup as DropTarget
+    //
+    if (connectIntent instanceof draw2d.Port && connectInquirer instanceof draw2d.Port) {
+      if (connectIntent.getSemanticGroup() !== connectInquirer.getSemanticGroup()) {
+        return null;
+      }
+    }
+
     // Ports accepts only Ports as DropTarget
     //
     if (!(connectIntent instanceof draw2d.Port) || !(connectInquirer instanceof draw2d.Port)) {
@@ -3396,7 +3403,7 @@ var ProbeWindow = function () {
     // the tick function if the oszi goes from left to the right
     //
     this.rightShiftTick = function (entry) {
-      entry.data.unshift(entry.probe.getValue() ? 5 : 0);
+      entry.data.unshift(entry.probe.getValue());
       entry.vis.selectAll("path").attr("transform", "translate(-" + _this2.xScale(1) + ")").attr("d", entry.path).transition().ease(d3.easeLinear)
       //.ease("linear")
       .duration(_this2.intervalTime).attr("transform", "translate(0)");
@@ -3404,7 +3411,7 @@ var ProbeWindow = function () {
     };
 
     this.leftShiftTick = function (entry) {
-      entry.data.push(entry.probe.getValue() ? 5 : 0);
+      entry.data.push(entry.probe.getValue());
       entry.vis.selectAll("path").attr("transform", "translate(" + _this2.xScale(1) + ")").attr("d", entry.path).transition().ease(d3.easeLinear)
       //.ease("linear")
       .duration(_this2.intervalTime).attr("transform", "translate(0)");
@@ -3844,6 +3851,7 @@ exports.default = draw2d.Canvas.extend({
     var router = new _ConnectionRouter2.default();
     router.abortRoutingOnFirstVertexNode = false;
     var createConnection = this.createConnection = function (sourcePort, targetPort) {
+
       var c = new _Connection2.default({
         color: "#000000",
         router: router,
@@ -3854,6 +3862,9 @@ exports.default = draw2d.Canvas.extend({
         c.setSource(sourcePort);
         c.setTarget(targetPort);
       }
+      c.on("connect", function (emitter, event) {
+        emitter.attr("stroke", event.port.getSemanticGroup() === "Image" ? 4 : 1.5);
+      });
       return c;
     };
 
@@ -3866,11 +3877,6 @@ exports.default = draw2d.Canvas.extend({
     // create a connection via Drag&Drop of ports
     //
     new draw2d.policy.connection.DragConnectionCreatePolicy({
-      createConnection: createConnection
-    }),
-    // or via click and point
-    //
-    new draw2d.policy.connection.OrthogonalConnectionCreatePolicy({
       createConnection: createConnection
     })]);
     this.installEditPolicy(this.connectionPolicy);
@@ -4591,9 +4597,11 @@ var Dialog = function () {
       var settings = figure.getParameterSettings().slice(0);
       settings.forEach(function (el) {
         el.value = currentFigure.attr("userData." + el.name);
+        el.input = el.property.type === "string";
+        el.select = el.property.type === "enum";
         el.textarea = el.property.type === "longtext";
       });
-      var compiled = _hogan2.default.compile('  <div class="header">Object Configuration</div>   ' + '  {{#settings}}               ' + '         <div class="form-group">' + '           <label for="figure_property_{{name}}">{{label}}</label>' + '           {{#textarea}}' + '             <textarea type="text" class="form-control" id="figure_property_{{name}}" data-name="{{name}}" placeholder="{{label}}">{{value}}</textarea>' + '           {{/textarea}}          ' + '           {{^textarea}}' + '             <input type="text" class="form-control" id="figure_property_{{name}}" data-name="{{name}}" value="{{value}}" placeholder="{{label}}">' + '          {{/textarea}}           ' + '         </div>                   ' + '  {{/settings}}                   ' + '<button class="submit">Ok</button> ');
+      var compiled = _hogan2.default.compile("\n        <div class=\"header\">Object Configuration</div>\n        {{#settings}}\n               <div class=\"form-group\">\n                 <label for=\"figure_property_{{name}}\">{{label}}</label>\n                 {{#textarea}}\n                   <textarea type=\"text\" class=\"form-control\" id=\"figure_property_{{name}}\" data-name=\"{{name}}\" placeholder=\"{{label}}\">{{value}}</textarea>\n                 {{/textarea}}\n                 {{#input}}\n                   <input type=\"text\" class=\"form-control\" id=\"figure_property_{{name}}\" data-name=\"{{name}}\" value=\"{{value}}\" placeholder=\"{{label}}\">\n                 {{/input}}\n                 {{#select}}\n                   <select class=\"form-control\" id=\"figure_property_{{name}}\" data-name=\"{{name}}\" value=\"{{value}}\">\n                        {{#property.values}}\n                        <option value=\"{{.}}\">{{.}}</option>\n                        {{/property.values}}             \n                   </select>\n                 {{/select}}\n               </div>\n        {{/settings}}\n        <button class=\"submit\">Ok</button>\n      ");
       var output = compiled.render({ settings: settings });
 
       $("#figureConfigDialog").html(output);
@@ -5098,9 +5106,10 @@ exports.default = draw2d.SetFigure.extend({
     //
     memento.labels = [];
     this.children.each(function (i, e) {
-      var labelJSON = e.figure.getPersistentAttributes();
-      labelJSON.locator = e.locator.NAME;
-      memento.labels.push(labelJSON);
+      var childJSON = e.figure.getPersistentAttributes();
+      childJSON.locator = e.locator.NAME;
+      childJSON.locatorAttr = e.locator.attr();
+      memento.labels.push(childJSON);
     });
 
     return memento;
@@ -5129,13 +5138,14 @@ exports.default = draw2d.SetFigure.extend({
     $.each(memento.labels, $.proxy(function (i, json) {
       // create the figure stored in the JSON
       var figure = eval("new " + json.type + "()");
-
       // apply all attributes
       figure.attr(json);
 
       // instantiate the locator
       var locator = eval("new " + json.locator + "()");
-
+      if (json.locatorAttr) {
+        locator.attr(json.locatorAttr);
+      }
       // add the new figure as child to this figure
       this.add(figure, locator);
     }, this));

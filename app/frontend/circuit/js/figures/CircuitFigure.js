@@ -145,9 +145,10 @@ export default draw2d.SetFigure.extend({
     //
     memento.labels = []
     this.children.each(function (i, e) {
-      let labelJSON = e.figure.getPersistentAttributes()
-      labelJSON.locator = e.locator.NAME
-      memento.labels.push(labelJSON)
+      let childJSON = e.figure.getPersistentAttributes()
+      childJSON.locator = e.locator.NAME
+      childJSON.locatorAttr= e.locator.attr()
+      memento.labels.push(childJSON)
     })
 
     return memento
@@ -176,13 +177,14 @@ export default draw2d.SetFigure.extend({
     $.each(memento.labels, $.proxy(function (i, json) {
       // create the figure stored in the JSON
       let figure = eval("new " + json.type + "()")
-
       // apply all attributes
       figure.attr(json)
 
       // instantiate the locator
       let locator = eval("new " + json.locator + "()")
-
+      if(json.locatorAttr) {
+        locator.attr(json.locatorAttr)
+      }
       // add the new figure as child to this figure
       this.add(figure, locator)
     }, this))

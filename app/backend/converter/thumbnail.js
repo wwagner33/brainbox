@@ -1,11 +1,13 @@
-const puppeteer = require('puppeteer');
+const DEBUGGING = false
+
+const puppeteer = require('puppeteer')
 const path = require("path")
 const fs = require("fs")
 const glob = require("glob")
 const thisDir = path.normalize(__dirname)
 const shapeAppDir = path.normalize(__dirname + '/../../repository/shapes/')
-const version =  process.env.VERSION || "local-version";
-const isPi = require('detect-rpi');
+const version =  process.env.VERSION || "local-version"
+const isPi = require('detect-rpi')
 
 function fileToPackage(file) {
   return file
@@ -72,12 +74,11 @@ module.exports = {
         "let pkg='" + pkg + "';\n" +
         code;
 
-
       let browser = null
       if ( isPi())
         browser = await puppeteer.launch({args:['--no-sandbox'], executablePath:'chromium-browser'})
       else
-        browser = await puppeteer.launch()
+        browser = await puppeteer.launch( DEBUGGING ? { headless: false, devtools: true,slowMo: 250}: {})
 
       const page = await browser.newPage()
       await page.goto('http://localhost:7400/designer')
@@ -107,7 +108,9 @@ module.exports = {
       fs.writeFileSync(markdownFilePath, markdown, 'utf8');
       fs.writeFileSync(pngFilePath, Buffer.from(img, 'base64'), 'binary');
 
-      browser.close()
+      if(!DEBUGGING) {
+        browser.close()
+      }
 
       concatFiles(shapeAppDir)
     }

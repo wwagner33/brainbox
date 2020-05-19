@@ -57,6 +57,7 @@ export default draw2d.Canvas.extend({
     let router = new ConnectionRouter()
     router.abortRoutingOnFirstVertexNode = false
     let createConnection = this.createConnection = (sourcePort, targetPort) => {
+
       let c = new Connection({
         color: "#000000",
         router: router,
@@ -67,6 +68,9 @@ export default draw2d.Canvas.extend({
         c.setSource(sourcePort)
         c.setTarget(targetPort)
       }
+      c.on("connect", (emitter, event)=>{
+        emitter.attr("stroke", event.port.getSemanticGroup()==="Image"?4:1.5)
+      })
       return c
     }
 
@@ -80,11 +84,6 @@ export default draw2d.Canvas.extend({
         // create a connection via Drag&Drop of ports
         //
         new draw2d.policy.connection.DragConnectionCreatePolicy({
-          createConnection: createConnection
-        }),
-        // or via click and point
-        //
-        new draw2d.policy.connection.OrthogonalConnectionCreatePolicy({
           createConnection: createConnection
         })
       ])

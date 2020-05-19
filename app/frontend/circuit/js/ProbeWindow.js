@@ -10,7 +10,7 @@ export default class ProbeWindow {
     // the tick function if the oszi goes from left to the right
     //
     this.rightShiftTick = entry => {
-      entry.data.unshift(entry.probe.getValue() ? 5 : 0)
+      entry.data.unshift(entry.probe.getValue())
       entry.vis
         .selectAll("path")
         .attr("transform", "translate(-" + this.xScale(1) + ")")
@@ -24,7 +24,7 @@ export default class ProbeWindow {
     }
 
     this.leftShiftTick = entry => {
-      entry.data.push(entry.probe.getValue() ? 5 : 0)
+      entry.data.push(entry.probe.getValue())
       entry.vis
         .selectAll("path")
         .attr("transform", "translate(" + this.xScale(1) + ")")

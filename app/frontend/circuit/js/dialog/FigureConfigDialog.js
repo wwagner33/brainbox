@@ -19,22 +19,32 @@ class Dialog {
     let settings = figure.getParameterSettings().slice(0)
     settings.forEach((el) => {
       el.value = currentFigure.attr("userData." + el.name)
+      el.input = el.property.type === "string"
+      el.select = el.property.type === "enum"
       el.textarea = el.property.type === "longtext"
     })
-    let compiled = Hogan.compile(
-      '  <div class="header">Object Configuration</div>   ' +
-      '  {{#settings}}               ' +
-      '         <div class="form-group">' +
-      '           <label for="figure_property_{{name}}">{{label}}</label>' +
-      '           {{#textarea}}' +
-      '             <textarea type="text" class="form-control" id="figure_property_{{name}}" data-name="{{name}}" placeholder="{{label}}">{{value}}</textarea>' +
-      '           {{/textarea}}          ' +
-      '           {{^textarea}}' +
-      '             <input type="text" class="form-control" id="figure_property_{{name}}" data-name="{{name}}" value="{{value}}" placeholder="{{label}}">' +
-      '          {{/textarea}}           ' +
-      '         </div>                   ' +
-      '  {{/settings}}                   ' +
-      '<button class="submit">Ok</button> '
+    let compiled = Hogan.compile(`
+        <div class="header">Object Configuration</div>
+        {{#settings}}
+               <div class="form-group">
+                 <label for="figure_property_{{name}}">{{label}}</label>
+                 {{#textarea}}
+                   <textarea type="text" class="form-control" id="figure_property_{{name}}" data-name="{{name}}" placeholder="{{label}}">{{value}}</textarea>
+                 {{/textarea}}
+                 {{#input}}
+                   <input type="text" class="form-control" id="figure_property_{{name}}" data-name="{{name}}" value="{{value}}" placeholder="{{label}}">
+                 {{/input}}
+                 {{#select}}
+                   <select class="form-control" id="figure_property_{{name}}" data-name="{{name}}" value="{{value}}">
+                        {{#property.values}}
+                        <option value="{{.}}">{{.}}</option>
+                        {{/property.values}}             
+                   </select>
+                 {{/select}}
+               </div>
+        {{/settings}}
+        <button class="submit">Ok</button>
+      `
     )
     let output = compiled.render({ settings: settings})
 

@@ -341,6 +341,12 @@ var {{{className}}} = CircuitFigure.extend({
 <link href='../_common/js/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
 <link href="../_common/js/anno.js/anno.css" rel='stylesheet' type='text/css'/>
 
+<!-- Load TensorFlow.js. This is required to use coco-ssd model. -->
+<script src="//cdn.jsdelivr.net/npm/@tensorflow/tfjs"> </script>
+<!-- Load the coco-ssd model. -->
+<script src="//cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"> </script>
+
+
 <!-- "include" files in a world of ES6 is not perfect. Unfortunately draw2d.js isn't complete
      ES6 and therefore I run into some compatibility issues with jQuery and prerequisite
 -->

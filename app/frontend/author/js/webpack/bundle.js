@@ -466,14 +466,13 @@ exports.default = draw2d.InputPort.extend({
     this.decoration.setStick(true);
   },
 
-  setValue: function setValue(value) {
+  setValue: function setValue() {
+    var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0.0;
+
     // convert boolean values to 5volt TTL pegel logic
     //
     if (typeof value === "boolean") {
       value = value ? 5.0 : 0.0;
-    } else if (value === null) {
-      value = 0.0;
-      debugger;
     }
 
     this.hasChanged = this.value !== value;
