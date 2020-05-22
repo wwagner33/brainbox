@@ -3772,7 +3772,9 @@ var FigureCodeEdit = function () {
     value: function show() {
       Mousetrap.pause();
       var code = shape_designer.app.getConfiguration("code");
-      var splash = $("\n          <div id=\"codeDialog\">\n            <pre class=\"codeContainer\">" + code + "</pre>\n              <div class=\"tinyFlyoverMenu codeOverlay\">\n                <div id=\"test_run\"    class=\"fa fa-play\"></div>\n                <div id=\"test_commit\" class=\"fa fa-check-square-o\"></div>\n                <div id=\"test_cancel\" class='fa fa-minus-square-o' ></div>\n              </div>\n          </div>\n            ");
+
+      var splash = $("\n          <div id=\"codeDialog\">\n            <pre class=\"codeContainer\">\n            </pre>\n              <div class=\"tinyFlyoverMenu codeOverlay\">\n                <div id=\"test_run\"    class=\"fa fa-play\"></div>\n                <div id=\"test_commit\" class=\"fa fa-check-square-o\"></div>\n                <div id=\"test_cancel\" class='fa fa-minus-square-o' ></div>\n              </div>\n          </div>\n            ");
+
       splash.hide();
       $("body").append(splash);
       splash.fadeIn();
@@ -3810,6 +3812,7 @@ var FigureCodeEdit = function () {
           range = new Range(0, 0, first, lines[first].length),
           range2 = new Range(last, 0, last, lines[last].length);
 
+      editor.setValue(code);
       session.addMarker(range, "readonly-highlight");
       session.addMarker(range2, "readonly-highlight");
       session.setMode("ace/mode/javascript");

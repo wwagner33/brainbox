@@ -97,10 +97,12 @@ export default {
       ].join("")
 
       // https://github.com/arduino/ArduinoCore-avr/blob/master/variants/standard/pins_arduino.h#L56-L72
-      usbPort.send(new TextEncoder().encode(cmd))
-        .catch((e) => {
-          console.log(e)
-        })
+      if (usbPort) {
+        usbPort.send(new TextEncoder().encode(cmd))
+          .catch((e) => {
+            console.log(e)
+          })
+      }
       return values[pin]
     }
 

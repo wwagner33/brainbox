@@ -3632,16 +3632,15 @@ module.exports = exports["default"];
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = draw2d.policy.canvas.ReadOnlySelectionPolicy.extend({
+//export default draw2d.policy.canvas.ReadOnlySelectionPolicy.extend({
+//export default draw2d.policy.canvas.BoundingboxSelectionPolicy.extend({
+exports.default = draw2d.policy.canvas.SingleSelectionPolicy.extend({
 
   init: function init() {
     this._super();
     this.mouseDownElement = null;
+    this.panningElement = null;
   },
-
-  onInstall: function onInstall(canvas) {},
-
-  onUninstall: function onUninstall(canvas) {},
 
   /**
    * @method
@@ -3653,6 +3652,7 @@ exports.default = draw2d.policy.canvas.ReadOnlySelectionPolicy.extend({
    * @param {Boolean} ctrlKey true if the ctrl key has been pressed during the event
    */
   onMouseDown: function onMouseDown(canvas, x, y, shiftKey, ctrlKey) {
+
     var figure = canvas.getBestFigure(x, y);
 
     // may the figure is assigned to a composite. In this case the composite can
@@ -3676,6 +3676,15 @@ exports.default = draw2d.policy.canvas.ReadOnlySelectionPolicy.extend({
     if (this.mouseDownElement !== null) {
       this.mouseDownElement.fireEvent("mousedown", { x: x, y: y, shiftKey: shiftKey, ctrlKey: ctrlKey });
     }
+
+    if (figure instanceof draw2d.shape.widget.Widget) {
+      // just panning event is allowed.
+      var canDragStart = figure.onDragStart(x - figure.getAbsoluteX(), y - figure.getAbsoluteY(), shiftKey, ctrlKey);
+      if (canDragStart === false) {
+        this.panningElement = figure;
+        this._super(canvas, x, y, shiftKey, ctrlKey);
+      }
+    }
   },
 
   /**
@@ -3692,13 +3701,18 @@ exports.default = draw2d.policy.canvas.ReadOnlySelectionPolicy.extend({
       this.mouseDownElement.fireEvent("mouseup", { x: x, y: y, shiftKey: shiftKey, ctrlKey: ctrlKey });
     }
     this.mouseDownElement = null;
+
+    if (this.panningElement !== null) {
+      this._super(canvas, x, y, shiftKey, ctrlKey);
+    }
+    this.panningElement = null;
   },
 
   /**
    * @method
    * Called by the canvas if the user click on a figure.
    *
-   * @param {draw2d.Figure} the figure under the click event. Can be null
+   * @param {draw2d.Figure} figure the figure under the click event. Can be null
    * @param {Number} mouseX the x coordinate of the mouse during the click event
    * @param {Number} mouseY the y coordinate of the mouse during the click event
    * @param {Boolean} shiftKey true if the shift key has been pressed during this event
@@ -5757,9 +5771,11 @@ exports.default = {
         "/"].join("");
 
         // https://github.com/arduino/ArduinoCore-avr/blob/master/variants/standard/pins_arduino.h#L56-L72
-        usbPort.send(new TextEncoder().encode(cmd)).catch(function (e) {
-          console.log(e);
-        });
+        if (usbPort) {
+          usbPort.send(new TextEncoder().encode(cmd)).catch(function (e) {
+            console.log(e);
+          });
+        }
         return values[pin];
       }
     }, {

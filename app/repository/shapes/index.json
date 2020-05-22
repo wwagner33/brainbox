@@ -6,7 +6,7 @@
       "74LSXX",
       "74LS90"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "74LS90.js",
     "displayName": "74LS90",
     "basedir": "circuit/74LSXX",
@@ -21,7 +21,7 @@
       "alu",
       "FullAdder"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "FullAdder.js",
     "displayName": "FullAdder",
     "basedir": "circuit/digital/alu",
@@ -36,7 +36,7 @@
       "alu",
       "FullAdder4Bit"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "FullAdder4Bit.js",
     "displayName": "FullAdder4Bit",
     "basedir": "circuit/digital/alu",
@@ -51,7 +51,7 @@
       "buttons",
       "HighLow"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "HighLow.js",
     "displayName": "HighLow",
     "basedir": "circuit/digital/buttons",
@@ -66,7 +66,7 @@
       "buttons",
       "HighLowArray"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "HighLowArray.js",
     "displayName": "HighLowArray",
     "basedir": "circuit/digital/buttons",
@@ -81,7 +81,7 @@
       "buttons",
       "PushButton"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "PushButton.js",
     "displayName": "PushButton",
     "basedir": "circuit/digital/buttons",
@@ -96,7 +96,7 @@
       "counter",
       "BCDCounter"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "BCDCounter.js",
     "displayName": "BCDCounter",
     "basedir": "circuit/digital/counter",
@@ -111,7 +111,7 @@
       "decoder",
       "BCDto7Seg"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "BCDto7Seg.js",
     "displayName": "BCDto7Seg",
     "basedir": "circuit/digital/decoder",
@@ -126,7 +126,7 @@
       "display",
       "7Segment"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "7Segment.js",
     "displayName": "7Segment",
     "basedir": "circuit/digital/display",
@@ -141,7 +141,7 @@
       "display",
       "Led"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "Led.js",
     "displayName": "Led",
     "basedir": "circuit/digital/display",
@@ -156,7 +156,7 @@
       "flipflop",
       "DFlipFlop"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "DFlipFlop.js",
     "displayName": "DFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -171,7 +171,7 @@
       "flipflop",
       "JKFlipFlop"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "JKFlipFlop.js",
     "displayName": "JKFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -186,7 +186,7 @@
       "flipflop",
       "JKRFlipFlop"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "JKRFlipFlop.js",
     "displayName": "JKRFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -201,7 +201,7 @@
       "flipflop",
       "SRFlipFlop"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "SRFlipFlop.js",
     "displayName": "SRFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -216,7 +216,7 @@
       "flipflop",
       "TFlipFlop"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "TFlipFlop.js",
     "displayName": "TFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -232,7 +232,7 @@
       "DIN40700",
       "AND"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "AND.js",
     "displayName": "AND",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -248,7 +248,7 @@
       "DIN40700",
       "NAND"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "NAND.js",
     "displayName": "NAND",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -264,7 +264,7 @@
       "DIN40700",
       "NOR"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "NOR.js",
     "displayName": "NOR",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -280,7 +280,7 @@
       "DIN40700",
       "OR"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "OR.js",
     "displayName": "OR",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -296,7 +296,7 @@
       "DIN40700",
       "XNOR"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "XNOR.js",
     "displayName": "XNOR",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -312,7 +312,7 @@
       "DIN40700",
       "XOR"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "XOR.js",
     "displayName": "XOR",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -329,7 +329,7 @@
       "12",
       "AND"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "AND.js",
     "displayName": "AND",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -346,7 +346,7 @@
       "12",
       "NAND"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "NAND.js",
     "displayName": "NAND",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -363,7 +363,7 @@
       "12",
       "NOR"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "NOR.js",
     "displayName": "NOR",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -380,7 +380,7 @@
       "12",
       "NOT"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "NOT.js",
     "displayName": "NOT",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -397,7 +397,7 @@
       "12",
       "OR"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "OR.js",
     "displayName": "OR",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -414,7 +414,7 @@
       "12",
       "XNOR"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "XNOR.js",
     "displayName": "XNOR",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -431,7 +431,7 @@
       "12",
       "XOR"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "XOR.js",
     "displayName": "XOR",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -446,7 +446,7 @@
       "pulse",
       "10hz"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "10hz.js",
     "displayName": "10hz",
     "basedir": "circuit/digital/pulse",
@@ -461,7 +461,7 @@
       "pulse",
       "1hz"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "1hz.js",
     "displayName": "1hz",
     "basedir": "circuit/digital/pulse",
@@ -476,7 +476,7 @@
       "pulse",
       "50hz"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "50hz.js",
     "displayName": "50hz",
     "basedir": "circuit/digital/pulse",
@@ -491,7 +491,7 @@
       "pulse",
       "Delay"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "Delay.js",
     "displayName": "Delay",
     "basedir": "circuit/digital/pulse",
@@ -499,64 +499,34 @@
     "image": "circuit/digital/pulse/Delay.png"
   },
   {
-    "name": "circuit_digital_signals_High",
+    "name": "circuit_digital_signal_High",
     "tags": [
       "circuit",
       "digital",
-      "signals",
+      "signal",
       "High"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "High.js",
     "displayName": "High",
-    "basedir": "circuit/digital/signals",
-    "filePath": "circuit/digital/signals/High.shape",
-    "image": "circuit/digital/signals/High.png"
+    "basedir": "circuit/digital/signal",
+    "filePath": "circuit/digital/signal/High.shape",
+    "image": "circuit/digital/signal/High.png"
   },
   {
-    "name": "circuit_digital_signals_Low",
+    "name": "circuit_digital_signal_Low",
     "tags": [
       "circuit",
       "digital",
-      "signals",
+      "signal",
       "Low"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "Low.js",
     "displayName": "Low",
-    "basedir": "circuit/digital/signals",
-    "filePath": "circuit/digital/signals/Low.shape",
-    "image": "circuit/digital/signals/Low.png"
-  },
-  {
-    "name": "circuit_digital_signals_SignalSource",
-    "tags": [
-      "circuit",
-      "digital",
-      "signals",
-      "SignalSource"
-    ],
-    "version": "2.0.78_486",
-    "basename": "SignalSource.js",
-    "displayName": "SignalSource",
-    "basedir": "circuit/digital/signals",
-    "filePath": "circuit/digital/signals/SignalSource.shape",
-    "image": "circuit/digital/signals/SignalSource.png"
-  },
-  {
-    "name": "circuit_digital_signals_SignalTarget",
-    "tags": [
-      "circuit",
-      "digital",
-      "signals",
-      "SignalTarget"
-    ],
-    "version": "2.0.78_486",
-    "basename": "SignalTarget.js",
-    "displayName": "SignalTarget",
-    "basedir": "circuit/digital/signals",
-    "filePath": "circuit/digital/signals/SignalTarget.shape",
-    "image": "circuit/digital/signals/SignalTarget.png"
+    "basedir": "circuit/digital/signal",
+    "filePath": "circuit/digital/signal/Low.shape",
+    "image": "circuit/digital/signal/Low.png"
   },
   {
     "name": "circuit_digital_timer_Delay",
@@ -566,7 +536,7 @@
       "timer",
       "Delay"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "Delay.js",
     "displayName": "Delay",
     "basedir": "circuit/digital/timer",
@@ -581,7 +551,7 @@
       "arduino",
       "Arduino"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "Arduino.js",
     "displayName": "Arduino",
     "basedir": "circuit/hardware/arduino",
@@ -596,7 +566,7 @@
       "arduino",
       "Led"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "Led.js",
     "displayName": "Led",
     "basedir": "circuit/hardware/arduino",
@@ -611,7 +581,7 @@
       "raspi",
       "GPIORead"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "GPIORead.js",
     "displayName": "GPIORead",
     "basedir": "circuit/hardware/raspi",
@@ -626,7 +596,7 @@
       "raspi",
       "GPIOWrite"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "GPIOWrite.js",
     "displayName": "GPIOWrite",
     "basedir": "circuit/hardware/raspi",
@@ -634,12 +604,25 @@
     "image": "circuit/hardware/raspi/GPIOWrite.png"
   },
   {
+    "name": "controls_Slider",
+    "tags": [
+      "controls",
+      "Slider"
+    ],
+    "version": "2.0.119_589",
+    "basename": "Slider.js",
+    "displayName": "Slider",
+    "basedir": "controls",
+    "filePath": "controls/Slider.shape",
+    "image": "controls/Slider.png"
+  },
+  {
     "name": "diagram_Sparkline",
     "tags": [
       "diagram",
       "Sparkline"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "Sparkline.js",
     "displayName": "Sparkline",
     "basedir": "diagram",
@@ -652,7 +635,7 @@
       "documentation",
       "Markdown"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "Markdown.js",
     "displayName": "Markdown",
     "basedir": "documentation",
@@ -665,7 +648,7 @@
       "documentation",
       "Text"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "Text.js",
     "displayName": "Text",
     "basedir": "documentation",
@@ -678,7 +661,7 @@
       "math",
       "Median"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "Median.js",
     "displayName": "Median",
     "basedir": "math",
@@ -691,7 +674,7 @@
       "messaging",
       "HiveMQ"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "HiveMQ.js",
     "displayName": "HiveMQ",
     "basedir": "messaging",
@@ -699,12 +682,77 @@
     "image": "messaging/HiveMQ.png"
   },
   {
+    "name": "signal_SignalSource",
+    "tags": [
+      "signal",
+      "SignalSource"
+    ],
+    "version": "2.0.119_589",
+    "basename": "SignalSource.js",
+    "displayName": "SignalSource",
+    "basedir": "signal",
+    "filePath": "signal/SignalSource.shape",
+    "image": "signal/SignalSource.png"
+  },
+  {
+    "name": "signal_SignalTarget",
+    "tags": [
+      "signal",
+      "SignalTarget"
+    ],
+    "version": "2.0.119_589",
+    "basename": "SignalTarget.js",
+    "displayName": "SignalTarget",
+    "basedir": "signal",
+    "filePath": "signal/SignalTarget.shape",
+    "image": "signal/SignalTarget.png"
+  },
+  {
+    "name": "video_BlackWhite",
+    "tags": [
+      "video",
+      "BlackWhite"
+    ],
+    "version": "2.0.119_589",
+    "basename": "BlackWhite.js",
+    "displayName": "BlackWhite",
+    "basedir": "video",
+    "filePath": "video/BlackWhite.shape",
+    "image": "video/BlackWhite.png"
+  },
+  {
+    "name": "video_Blur",
+    "tags": [
+      "video",
+      "Blur"
+    ],
+    "version": "2.0.119_589",
+    "basename": "Blur.js",
+    "displayName": "Blur",
+    "basedir": "video",
+    "filePath": "video/Blur.shape",
+    "image": "video/Blur.png"
+  },
+  {
+    "name": "video_Brighter",
+    "tags": [
+      "video",
+      "Brighter"
+    ],
+    "version": "2.0.119_589",
+    "basename": "Brighter.js",
+    "displayName": "Brighter",
+    "basedir": "video",
+    "filePath": "video/Brighter.shape",
+    "image": "video/Brighter.png"
+  },
+  {
     "name": "video_Detector",
     "tags": [
       "video",
       "Detector"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "Detector.js",
     "displayName": "Detector",
     "basedir": "video",
@@ -712,12 +760,64 @@
     "image": "video/Detector.png"
   },
   {
+    "name": "video_Edge",
+    "tags": [
+      "video",
+      "Edge"
+    ],
+    "version": "2.0.119_589",
+    "basename": "Edge.js",
+    "displayName": "Edge",
+    "basedir": "video",
+    "filePath": "video/Edge.shape",
+    "image": "video/Edge.png"
+  },
+  {
+    "name": "video_Grayscale",
+    "tags": [
+      "video",
+      "Grayscale"
+    ],
+    "version": "2.0.119_589",
+    "basename": "Grayscale.js",
+    "displayName": "Grayscale",
+    "basedir": "video",
+    "filePath": "video/Grayscale.shape",
+    "image": "video/Grayscale.png"
+  },
+  {
+    "name": "video_Preview",
+    "tags": [
+      "video",
+      "Preview"
+    ],
+    "version": "2.0.119_589",
+    "basename": "Preview.js",
+    "displayName": "Preview",
+    "basedir": "video",
+    "filePath": "video/Preview.shape",
+    "image": "video/Preview.png"
+  },
+  {
+    "name": "video_Sharpen",
+    "tags": [
+      "video",
+      "Sharpen"
+    ],
+    "version": "2.0.119_589",
+    "basename": "Sharpen.js",
+    "displayName": "Sharpen",
+    "basedir": "video",
+    "filePath": "video/Sharpen.shape",
+    "image": "video/Sharpen.png"
+  },
+  {
     "name": "video_WebCam",
     "tags": [
       "video",
       "WebCam"
     ],
-    "version": "2.0.78_486",
+    "version": "2.0.119_589",
     "basename": "WebCam.js",
     "displayName": "WebCam",
     "basedir": "video",

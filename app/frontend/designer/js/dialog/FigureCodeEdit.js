@@ -7,9 +7,11 @@ export default class FigureCodeEdit {
   show() {
     Mousetrap.pause()
     let code = shape_designer.app.getConfiguration("code")
+
     let splash = $(`
           <div id="codeDialog">
-            <pre class="codeContainer">${code}</pre>
+            <pre class="codeContainer">
+            </pre>
               <div class="tinyFlyoverMenu codeOverlay">
                 <div id="test_run"    class="fa fa-play"></div>
                 <div id="test_commit" class="fa fa-check-square-o"></div>
@@ -18,6 +20,7 @@ export default class FigureCodeEdit {
           </div>
             `
     )
+
     splash.hide()
     $("body").append(splash)
     splash.fadeIn()
@@ -55,6 +58,7 @@ export default class FigureCodeEdit {
       range = new Range(0, 0, first, lines[first].length),
       range2 = new Range(last, 0, last, lines[last].length)
 
+    editor.setValue(code)
     session.addMarker(range, "readonly-highlight")
     session.addMarker(range2, "readonly-highlight")
     session.setMode("ace/mode/javascript")

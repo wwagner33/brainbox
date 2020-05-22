@@ -1,17 +1,12 @@
-export default draw2d.policy.canvas.ReadOnlySelectionPolicy.extend({
+//export default draw2d.policy.canvas.ReadOnlySelectionPolicy.extend({
+//export default draw2d.policy.canvas.BoundingboxSelectionPolicy.extend({
+export default draw2d.policy.canvas.SingleSelectionPolicy.extend({
 
 
   init: function () {
-    this._super();
-    this.mouseDownElement = null;
-  },
-
-
-  onInstall: function (canvas) {
-  },
-
-
-  onUninstall: function (canvas) {
+    this._super()
+    this.mouseDownElement = null
+    this.panningElement = null
   },
 
   /**
@@ -24,6 +19,7 @@ export default draw2d.policy.canvas.ReadOnlySelectionPolicy.extend({
    * @param {Boolean} ctrlKey true if the ctrl key has been pressed during the event
    */
   onMouseDown: function (canvas, x, y, shiftKey, ctrlKey) {
+
     var figure = canvas.getBestFigure(x, y);
 
     // may the figure is assigned to a composite. In this case the composite can
@@ -47,6 +43,16 @@ export default draw2d.policy.canvas.ReadOnlySelectionPolicy.extend({
     if (this.mouseDownElement !== null) {
       this.mouseDownElement.fireEvent("mousedown", {x: x, y: y, shiftKey: shiftKey, ctrlKey: ctrlKey});
     }
+
+    if(figure instanceof draw2d.shape.widget.Widget) {
+      // just panning event is allowed.
+      let canDragStart = figure.onDragStart(x - figure.getAbsoluteX(), y - figure.getAbsoluteY(), shiftKey, ctrlKey)
+      if(canDragStart === false) {
+        this.panningElement = figure
+        this._super(canvas, x, y, shiftKey, ctrlKey)
+      }
+
+    }
   },
 
   /**
@@ -63,6 +69,11 @@ export default draw2d.policy.canvas.ReadOnlySelectionPolicy.extend({
       this.mouseDownElement.fireEvent("mouseup", {x: x, y: y, shiftKey: shiftKey, ctrlKey: ctrlKey});
     }
     this.mouseDownElement = null;
+
+    if(this.panningElement!==null) {
+      this._super(canvas, x, y, shiftKey, ctrlKey)
+    }
+    this.panningElement = null
   },
 
 
@@ -70,7 +81,7 @@ export default draw2d.policy.canvas.ReadOnlySelectionPolicy.extend({
    * @method
    * Called by the canvas if the user click on a figure.
    *
-   * @param {draw2d.Figure} the figure under the click event. Can be null
+   * @param {draw2d.Figure} figure the figure under the click event. Can be null
    * @param {Number} mouseX the x coordinate of the mouse during the click event
    * @param {Number} mouseY the y coordinate of the mouse during the click event
    * @param {Boolean} shiftKey true if the shift key has been pressed during this event

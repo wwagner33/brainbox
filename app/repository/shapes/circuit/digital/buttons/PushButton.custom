@@ -21,7 +21,7 @@ circuit_digital_buttons_PushButton = circuit_digital_buttons_PushButton.extend({
             this.getOutputPort(0).setValue(true);
         });
         this.on("mouseup",()=>{            
-            this.value = !_this.value;
+            this.value = !this.value;
             this.layerShow("low" , true,  100);
             this.layerShow("high", false, 100);
             this.getOutputPort(0).setValue(false);

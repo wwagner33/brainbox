@@ -7,7 +7,7 @@
 var circuit_74LSXX_74LS90 = CircuitFigure.extend({
 
    NAME: "circuit_74LSXX_74LS90",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -311,7 +311,7 @@ circuit_74LSXX_74LS90 = circuit_74LSXX_74LS90.extend({
 var circuit_digital_alu_FullAdder = CircuitFigure.extend({
 
    NAME: "circuit_digital_alu_FullAdder",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -481,7 +481,7 @@ circuit_digital_alu_FullAdder = circuit_digital_alu_FullAdder.extend({
 var circuit_digital_alu_FullAdder4Bit = CircuitFigure.extend({
 
    NAME: "circuit_digital_alu_FullAdder4Bit",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -797,7 +797,7 @@ circuit_digital_alu_FullAdder4Bit = circuit_digital_alu_FullAdder4Bit.extend({
 var circuit_digital_buttons_HighLow = CircuitFigure.extend({
 
    NAME: "circuit_digital_buttons_HighLow",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -908,7 +908,7 @@ circuit_digital_buttons_HighLow = circuit_digital_buttons_HighLow.extend({
 var circuit_digital_buttons_HighLowArray = CircuitFigure.extend({
 
    NAME: "circuit_digital_buttons_HighLowArray",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -1073,7 +1073,7 @@ circuit_digital_buttons_HighLowArray = circuit_digital_buttons_HighLowArray.exte
 var circuit_digital_buttons_PushButton = CircuitFigure.extend({
 
    NAME: "circuit_digital_buttons_PushButton",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -1159,7 +1159,7 @@ circuit_digital_buttons_PushButton = circuit_digital_buttons_PushButton.extend({
             this.getOutputPort(0).setValue(true);
         });
         this.on("mouseup",()=>{            
-            this.value = !_this.value;
+            this.value = !this.value;
             this.layerShow("low" , true,  100);
             this.layerShow("high", false, 100);
             this.getOutputPort(0).setValue(false);
@@ -1189,7 +1189,7 @@ circuit_digital_buttons_PushButton = circuit_digital_buttons_PushButton.extend({
 var circuit_digital_counter_BCDCounter = CircuitFigure.extend({
 
    NAME: "circuit_digital_counter_BCDCounter",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -1373,7 +1373,7 @@ circuit_digital_counter_BCDCounter = circuit_digital_counter_BCDCounter.extend({
 var circuit_digital_decoder_BCDto7Seg = CircuitFigure.extend({
 
    NAME: "circuit_digital_decoder_BCDto7Seg",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -1612,7 +1612,7 @@ circuit_digital_decoder_BCDto7Seg = circuit_digital_decoder_BCDto7Seg.extend({
 var circuit_digital_display_7Segment = CircuitFigure.extend({
 
    NAME: "circuit_digital_display_7Segment",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -1774,7 +1774,7 @@ circuit_digital_display_7Segment = circuit_digital_display_7Segment.extend({
 var circuit_digital_display_Led = CircuitFigure.extend({
 
    NAME: "circuit_digital_display_Led",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -1863,7 +1863,7 @@ circuit_digital_display_Led = circuit_digital_display_Led.extend({
 var circuit_digital_flipflop_DFlipFlop = CircuitFigure.extend({
 
    NAME: "circuit_digital_flipflop_DFlipFlop",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -1996,7 +1996,7 @@ circuit_digital_flipflop_DFlipFlop = circuit_digital_flipflop_DFlipFlop.extend({
 var circuit_digital_flipflop_JKFlipFlop = CircuitFigure.extend({
 
    NAME: "circuit_digital_flipflop_JKFlipFlop",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -2159,7 +2159,7 @@ circuit_digital_flipflop_JKFlipFlop = circuit_digital_flipflop_JKFlipFlop.extend
 var circuit_digital_flipflop_JKRFlipFlop = CircuitFigure.extend({
 
    NAME: "circuit_digital_flipflop_JKRFlipFlop",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -2340,7 +2340,7 @@ circuit_digital_flipflop_JKRFlipFlop = circuit_digital_flipflop_JKRFlipFlop.exte
 var circuit_digital_flipflop_SRFlipFlop = CircuitFigure.extend({
 
    NAME: "circuit_digital_flipflop_SRFlipFlop",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -2482,7 +2482,7 @@ circuit_digital_flipflop_SRFlipFlop = circuit_digital_flipflop_SRFlipFlop.extend
 var circuit_digital_flipflop_TFlipFlop = CircuitFigure.extend({
 
    NAME: "circuit_digital_flipflop_TFlipFlop",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -2604,7 +2604,7 @@ circuit_digital_flipflop_TFlipFlop = circuit_digital_flipflop_TFlipFlop.extend({
 var circuit_digital_gate_DIN40700_AND = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_DIN40700_AND",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -2736,7 +2736,7 @@ circuit_digital_gate_DIN40700_AND = circuit_digital_gate_DIN40700_AND.extend({
 var circuit_digital_gate_DIN40700_NAND = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_DIN40700_NAND",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -2873,7 +2873,7 @@ circuit_digital_gate_DIN40700_NAND = circuit_digital_gate_DIN40700_NAND.extend({
 var circuit_digital_gate_DIN40700_NOR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_DIN40700_NOR",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -3020,7 +3020,7 @@ circuit_digital_gate_DIN40700_NOR = circuit_digital_gate_DIN40700_NOR.extend({
 var circuit_digital_gate_DIN40700_OR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_DIN40700_OR",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -3162,7 +3162,7 @@ circuit_digital_gate_DIN40700_OR = circuit_digital_gate_DIN40700_OR.extend({
 var circuit_digital_gate_DIN40700_XNOR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_DIN40700_XNOR",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -3309,7 +3309,7 @@ circuit_digital_gate_DIN40700_XNOR = circuit_digital_gate_DIN40700_XNOR.extend({
 var circuit_digital_gate_DIN40700_XOR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_DIN40700_XOR",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -3461,7 +3461,7 @@ circuit_digital_gate_DIN40700_XOR = circuit_digital_gate_DIN40700_XOR.extend({
 var circuit_digital_gate_IEC60617_12_AND = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_AND",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -3559,7 +3559,7 @@ circuit_digital_gate_IEC60617_12_AND = circuit_digital_gate_IEC60617_12_AND.exte
 var circuit_digital_gate_IEC60617_12_NAND = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_NAND",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -3662,7 +3662,7 @@ circuit_digital_gate_IEC60617_12_NAND = circuit_digital_gate_IEC60617_12_NAND.ex
 var circuit_digital_gate_IEC60617_12_NOR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_NOR",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -3770,7 +3770,7 @@ circuit_digital_gate_IEC60617_12_NOR = circuit_digital_gate_IEC60617_12_NOR.exte
 var circuit_digital_gate_IEC60617_12_NOT = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_NOT",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -3867,7 +3867,7 @@ circuit_digital_gate_IEC60617_12_NOT = circuit_digital_gate_IEC60617_12_NOT.exte
 var circuit_digital_gate_IEC60617_12_OR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_OR",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -3970,7 +3970,7 @@ circuit_digital_gate_IEC60617_12_OR = circuit_digital_gate_IEC60617_12_OR.extend
 var circuit_digital_gate_IEC60617_12_XNOR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_XNOR",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -4073,7 +4073,7 @@ circuit_digital_gate_IEC60617_12_XNOR = circuit_digital_gate_IEC60617_12_XNOR.ex
 var circuit_digital_gate_IEC60617_12_XOR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_XOR",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -4171,7 +4171,7 @@ circuit_digital_gate_IEC60617_12_XOR = circuit_digital_gate_IEC60617_12_XOR.exte
 var circuit_digital_pulse_10hz = CircuitFigure.extend({
 
    NAME: "circuit_digital_pulse_10hz",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -4276,7 +4276,7 @@ circuit_digital_pulse_10hz = circuit_digital_pulse_10hz.extend({
 var circuit_digital_pulse_1hz = CircuitFigure.extend({
 
    NAME: "circuit_digital_pulse_1hz",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -4381,7 +4381,7 @@ circuit_digital_pulse_1hz = circuit_digital_pulse_1hz.extend({
 var circuit_digital_pulse_50hz = CircuitFigure.extend({
 
    NAME: "circuit_digital_pulse_50hz",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -4484,7 +4484,7 @@ circuit_digital_pulse_50hz = circuit_digital_pulse_50hz.extend({
 var circuit_digital_pulse_Delay = CircuitFigure.extend({
 
    NAME: "circuit_digital_pulse_Delay",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -4652,10 +4652,10 @@ circuit_digital_pulse_Delay = circuit_digital_pulse_Delay.extend({
 // created with http://www.draw2d.org
 //
 //
-var circuit_digital_signals_High = CircuitFigure.extend({
+var circuit_digital_signal_High = CircuitFigure.extend({
 
-   NAME: "circuit_digital_signals_High",
-   VERSION: "2.0.78_486",
+   NAME: "circuit_digital_signal_High",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -4715,7 +4715,7 @@ var circuit_digital_signals_High = CircuitFigure.extend({
  * Looks disconcerting - extending my own class. But this is a good method to
  * merge basic code and override them with custom methods.
  */
-circuit_digital_signals_High = circuit_digital_signals_High.extend({
+circuit_digital_signal_High = circuit_digital_signal_High.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);
@@ -4734,10 +4734,10 @@ circuit_digital_signals_High = circuit_digital_signals_High.extend({
 // created with http://www.draw2d.org
 //
 //
-var circuit_digital_signals_Low = CircuitFigure.extend({
+var circuit_digital_signal_Low = CircuitFigure.extend({
 
-   NAME: "circuit_digital_signals_Low",
-   VERSION: "2.0.78_486",
+   NAME: "circuit_digital_signal_Low",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -4797,7 +4797,7 @@ var circuit_digital_signals_Low = CircuitFigure.extend({
  * Looks disconcerting - extending my own class. But this is a good method to
  * merge basic code and override them with custom methods.
  */
-circuit_digital_signals_Low = circuit_digital_signals_Low.extend({
+circuit_digital_signal_Low = circuit_digital_signal_Low.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);
@@ -4817,348 +4817,10 @@ circuit_digital_signals_Low = circuit_digital_signals_Low.extend({
 // created with http://www.draw2d.org
 //
 //
-var circuit_digital_signals_SignalSource = CircuitFigure.extend({
-
-   NAME: "circuit_digital_signals_SignalSource",
-   VERSION: "2.0.78_486",
-
-   init:function(attr, setter, getter)
-   {
-     var _this = this;
-
-     this._super( $.extend({stroke:0, bgColor:null, width:65.72720000000481,height:22},attr), setter, getter);
-     var port;
-     // Port
-     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 98.47855986562651, y: 46.56272727272815 }));
-     port.setConnectionDirection(1);
-     port.setBackgroundColor("#37B1DE");
-     port.setName("Port");
-     port.setMaxFanOut(20);
-   },
-
-   createShapeElement : function()
-   {
-      var shape = this._super();
-      this.originalWidth = 65.72720000000481;
-      this.originalHeight= 22;
-      return shape;
-   },
-
-   createSet: function()
-   {
-       this.canvas.paper.setStart();
-       var shape = null;
-       // BoundingBox
-       shape = this.canvas.paper.path("M0,0 L65.72720000000481,0 L65.72720000000481,22 L0,22");
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
-       shape.data("name","BoundingBox");
-       
-       // outline
-       shape = this.canvas.paper.path('M0 0L53.81817921990478 0L65.72720000000481 10L53.81817921990478 20L0.24380000000201107 20.243800000000192Z');
-       shape.attr({"stroke":"rgba(0,120,242,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","outline");
-       
-       // label
-       shape = this.canvas.paper.text(0,0,'Signal_ID');
-       shape.attr({"x":4.773050000005242,"y":11,"text-anchor":"start","text":"Signal_ID","font-family":"\"Arial\"","font-size":12,"stroke":"#000000","fill":"#0078F2","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
-       shape.data("name","label");
-       
-
-       return this.canvas.paper.setFinish();
-   }
-});
-
-/**
- * Generated Code for the Draw2D touch HTML5 lib.
- * File will be generated if you save the *.shape file.
- *
- * by 'Draw2D Shape Designer'
- *
- * Custom JS code to tweak the standard behaviour of the generated
- * shape. add your custom code and event handler here.
- *
- * Looks disconcerting - extending my own class. But this is a good method to
- * merge basic code and override them with custom methods.
- */
-circuit_digital_signals_SignalSource = circuit_digital_signals_SignalSource.extend({
-
-    init: function(attr, setter, getter){
-         this._super(attr, setter, getter);
-
-        this.attr({resizeable:false});
-        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
-        
-        // calculate the outer frame/shape in the correct size in relation to the length of the text
-        //
-        var adjustWidth = ()=>{
-            var width = this.layerGet("label").getBBox().width+15
-
-            this.setWidth(width+5);
-            this.layerAttr("BoundingBox", { path: `M0 0 L${width} 0 L${width} 20 L0 20 Z`})
-            this.layerAttr("outline",     { path: `M0 0 L${width-13} 0 L${width} 10 L${width-13} 20 L0 20 Z`})
-        }
-        this.on("change:userData.signalId",(emitter, event)=>{
-            this.layerAttr("label", {text: event.value})
-            adjustWidth()
-        });
-        this.on("added", ()=>{
-            var signalId = this.attr("userData.signalId")
-            if(!signalId){
-                signalId = "Signal_Id"
-                this.attr("userData.signalId", signalId)
-            }            
-            this.layerAttr("label", {text: signalId})
-            adjustWidth()
-        })
-        
-        // override the "getValue" method of the port and delegate them to the related party (SourceTarget port)
-        this.originalGetValue = this.getOutputPort(0).getBooleanValue
-    },
-
-    /**
-     *  Called by the simulator for every calculation
-     *  loop
-     *  @required
-     **/
-    calculate:function(context)
-    {
-        var signalId = this.attr("userData.signalId")
-        if(context.signalPorts && context.signalPorts[signalId]){
-            this.getOutputPort(0).getBooleanValue = function(){ 
-                if(context.signalPorts[signalId] instanceof draw2d.Port){
-                    return context.signalPorts[signalId].getBooleanValue()
-                }
-                else {
-                    return false
-                }
-            }
-        }
-    },
-
-
-    getParameterSettings: function()
-    {
-        return [
-        {
-            name:"signalId",
-            label:"Signal Id",
-            property:{
-                type: "string"
-            }
-        }];
-    },
-    
-  /**
-   * @private
-   */
-  applyTransformation: function () {
-    let s =
-      // override the base implementation and do not scale the internal SVG elements....this let the arrow looks a like streche...we
-      // calculate the path in the event handler. A lot more code....but the result is much cleaner
-      //"S" + this.scaleX + "," + this.scaleY + ",0,0 " +
-      "R" + this.rotationAngle + "," + ((this.getWidth() / 2) | 0) + "," + ((this.getHeight() / 2) | 0) +
-      "T" + this.getAbsoluteX() + "," + this.getAbsoluteY() +
-      ""
-    this.svgNodes.transform(s)
-    if (this.rotationAngle === 90 || this.rotationAngle === 270) {
-      let before = this.svgNodes.getBBox(true)
-      let ratio = before.height / before.width
-      let reverseRatio = before.width / before.height
-      let rs = "...S" + ratio + "," + reverseRatio + "," + (this.getAbsoluteX() + this.getWidth() / 2) + "," + (this.getAbsoluteY() + this.getHeight() / 2)
-      this.svgNodes.transform(rs)
-    }
-
-    return this
-  }
-
-
-});
-
-
-// Generated Code for the Draw2D touch HTML5 lib.
-// File will be generated if you save the *.shape file.
-//
-// created with http://www.draw2d.org
-//
-//
-var circuit_digital_signals_SignalTarget = CircuitFigure.extend({
-
-   NAME: "circuit_digital_signals_SignalTarget",
-   VERSION: "2.0.78_486",
-
-   init:function(attr, setter, getter)
-   {
-     var _this = this;
-
-     this._super( $.extend({stroke:0, bgColor:null, width:69.55780000000595,height:22},attr), setter, getter);
-     var port;
-     // Port
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.8643487861801238, y: 48.86363636363637 }));
-     port.setConnectionDirection(3);
-     port.setBackgroundColor("#37B1DE");
-     port.setName("Port");
-     port.setMaxFanOut(20);
-   },
-
-   createShapeElement : function()
-   {
-      var shape = this._super();
-      this.originalWidth = 69.55780000000595;
-      this.originalHeight= 22;
-      return shape;
-   },
-
-   createSet: function()
-   {
-       this.canvas.paper.setStart();
-       var shape = null;
-       // BoundingBox
-       shape = this.canvas.paper.path("M0,0 L69.55780000000595,0 L69.55780000000595,22 L0,22");
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
-       shape.data("name","BoundingBox");
-       
-       // outline
-       shape = this.canvas.paper.path('M0 9.932800000005955L13.10158237711039 0.75L69 0.75L69 20.75L11.482077748871234 20.75Z');
-       shape.attr({"stroke":"rgba(0,120,242,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","outline");
-       
-       // label
-       shape = this.canvas.paper.text(0,0,'Signal_ID');
-       shape.attr({"x":13.182800000005955,"y":11,"text-anchor":"start","text":"Signal_ID","font-family":"\"Arial\"","font-size":12,"stroke":"#000000","fill":"#0078F2","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
-       shape.data("name","label");
-       
-
-       return this.canvas.paper.setFinish();
-   }
-});
-
-/**
- * Generated Code for the Draw2D touch HTML5 lib.
- * File will be generated if you save the *.shape file.
- *
- * by 'Draw2D Shape Designer'
- *
- * Custom JS code to tweak the standard behaviour of the generated
- * shape. add your custom code and event handler here.
- *
- * Looks disconcerting - extending my own class. But this is a good method to
- * merge basic code and override them with custom methods.
- */
-circuit_digital_signals_SignalTarget = circuit_digital_signals_SignalTarget.extend({
-
-    init: function(attr, setter, getter){
-         this._super(attr, setter, getter);
-
-         // your special code here
-        this.attr({resizeable:false});
-        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
-        
-        // handle the size of the shape if the label has changed
-        //
-        var adjustWidth = ()=>{
-            var width = this.layerGet("label").getBBox().width+15
-            this.setWidth(width+5);
-            this.layerAttr("BoundingBox", { path: `M0 0 L${width} 0 L${width} 20 L0 20 Z`})
-            this.layerAttr("outline",     { path: `M0 10 L13 0 L${width} 0 L${width} 20 L13 20 Z`})
-        }
-        
-        this.on("change:userData.signalId",(emitter, event)=>{
-            this.layerAttr("label", {text: event.value})
-            adjustWidth()
-        });
-        
-        this.on("added", ()=>{
-            var signalId = this.attr("userData.signalId")
-            if(!signalId){
-                signalId = "Signal_Id"
-                this.attr("userData.signalId", signalId)
-            }            
-            this.layerAttr("label", {text: signalId})
-            adjustWidth()
-        })
-        
-        // get the connected port and forward the port to the related party ( SignalSource shape)
-        //
-        this.getInputPort(0).on("connect", (emitter, event)=>{
-           this.signalPort = event.connection.getSource()
-        })
-        this.getInputPort(0).on("disconnect", (emitter, event)=>{
-            delete this.signalPort
-        })
-    },
-
-    /**
-     *  Called by the simulator for every calculation
-     *  loop
-     *  @required
-     **/
-    calculate:function(context)
-    {
-        var signalId = this.attr("userData.signalId")
-        // first check if any object already create the signal context
-        if(!context.signalPorts){
-            context.signalPorts = { };
-        }
-        
-        // check if my signal port is set 
-        if(this.signalPort){
-            if(!(signalId in context.signalPorts)){
-                context.signalPorts[signalId] = this.signalPort;
-            }
-        }
-        else{
-            delete context.signalPorts[signalId]
-        }
-    },
-
-    getParameterSettings: function()
-    {
-        return [
-        {
-            name:"signalId",
-            label:"Signal Id",
-            property:{
-                type: "string"
-            }
-        }];
-    },
-    
-  /**
-   * @private
-   */
-  applyTransformation: function () {
-    let s =
-      // override the base implementation and do not scale the internal SVG elements....this let the arrow looks a like streche...we
-      // calculate the path in the event handler. A lot more code....but the result is much cleaner
-      //"S" + this.scaleX + "," + this.scaleY + ",0,0 " +
-      "R" + this.rotationAngle + "," + ((this.getWidth() / 2) | 0) + "," + ((this.getHeight() / 2) | 0) +
-      "T" + this.getAbsoluteX() + "," + this.getAbsoluteY() +
-      ""
-    this.svgNodes.transform(s)
-    if (this.rotationAngle === 90 || this.rotationAngle === 270) {
-      let before = this.svgNodes.getBBox(true)
-      let ratio = before.height / before.width
-      let reverseRatio = before.width / before.height
-      let rs = "...S" + ratio + "," + reverseRatio + "," + (this.getAbsoluteX() + this.getWidth() / 2) + "," + (this.getAbsoluteY() + this.getHeight() / 2)
-      this.svgNodes.transform(rs)
-    }
-
-    return this
-  }
-
-});
-
-
-// Generated Code for the Draw2D touch HTML5 lib.
-// File will be generated if you save the *.shape file.
-//
-// created with http://www.draw2d.org
-//
-//
 var circuit_digital_timer_Delay = CircuitFigure.extend({
 
    NAME: "circuit_digital_timer_Delay",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -5327,7 +4989,7 @@ circuit_digital_timer_Delay = circuit_digital_timer_Delay.extend({
 var circuit_hardware_arduino_Arduino = CircuitFigure.extend({
 
    NAME: "circuit_hardware_arduino_Arduino",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -5821,7 +5483,7 @@ circuit_hardware_arduino_Arduino = circuit_hardware_arduino_Arduino.extend({
 var circuit_hardware_arduino_Led = CircuitFigure.extend({
 
    NAME: "circuit_hardware_arduino_Led",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -5925,7 +5587,7 @@ circuit_hardware_arduino_Led = circuit_hardware_arduino_Led.extend({
 var circuit_hardware_raspi_GPIORead = CircuitFigure.extend({
 
    NAME: "circuit_hardware_raspi_GPIORead",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -6182,7 +5844,7 @@ circuit_hardware_raspi_GPIORead = circuit_hardware_raspi_GPIORead.extend({
 var circuit_hardware_raspi_GPIOWrite = CircuitFigure.extend({
 
    NAME: "circuit_hardware_raspi_GPIOWrite",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -6435,6 +6097,64 @@ circuit_hardware_raspi_GPIOWrite = circuit_hardware_raspi_GPIOWrite.extend({
 });
 
 
+var controls_Slider = draw2d.shape.widget.Slider.extend({
+
+    NAME: "controls_Slider",
+    VERSION: "1.0.0",
+
+    init: function () {
+        this._super({bold: false, fontFamily: "Verdana", fontSize: 10, bgColor: "#fafafa"});
+
+        this.persistPorts = false
+
+        this.outputPort = new DecoratedOutputPort()
+        this.outputPort.setName("output")
+        this.addPort(this.outputPort)
+
+        this.on("change:userData.value", (figure, event) => {
+            this.setValue(parseInt(event.value))
+        })
+
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+
+        this.on("change:value", (element, event) => {
+            var value = parseInt(event.value); // 0..100
+            value = 5 / 100 * value;             // 0..5
+            this.getOutputPort(0).setValue(value);
+        });
+
+    },
+
+    calculate: function (context) {
+    },
+
+    onStart: function (context) {
+    },
+
+    onStop: function (context) {
+    },
+
+
+    getPersistentAttributes: function ()
+    {
+        let memento = this._super()
+        memento.value = this.getValue()
+        return memento
+    },
+
+    setPersistentAttributes: function (memento)
+    {
+        this._super(memento)
+        if(memento.value){
+            this.setValue(parseInt(memento.value))
+        }
+    }
+
+});
+
+
+
+
 
 var diagram_Sparkline = draw2d.shape.diagram.Sparkline.extend({
 
@@ -6668,7 +6388,7 @@ var documentation_Text = draw2d.shape.basic.Text.extend({
 var math_Median = CircuitFigure.extend({
 
    NAME: "math_Median",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -6827,7 +6547,7 @@ math_Median = math_Median.extend({
 var messaging_HiveMQ = CircuitFigure.extend({
 
    NAME: "messaging_HiveMQ",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -6948,10 +6668,1063 @@ messaging_HiveMQ = messaging_HiveMQ.extend({
 // created with http://www.draw2d.org
 //
 //
+var signal_SignalSource = CircuitFigure.extend({
+
+   NAME: "signal_SignalSource",
+   VERSION: "2.0.119_589",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:65.72720000000481,height:22},attr), setter, getter);
+     var port;
+     // Port
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 98.47855986562651, y: 46.56272727272815 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("Port");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 65.72720000000481;
+      this.originalHeight= 22;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L65.72720000000481,0 L65.72720000000481,22 L0,22");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // outline
+       shape = this.canvas.paper.path('M0 0L53.81817921990478 0L65.72720000000481 10L53.81817921990478 20L0.24380000000201107 20.243800000000192Z');
+       shape.attr({"stroke":"rgba(0,120,242,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","outline");
+       
+       // label
+       shape = this.canvas.paper.text(0,0,'Signal_ID');
+       shape.attr({"x":4.773050000005242,"y":11,"text-anchor":"start","text":"Signal_ID","font-family":"\"Arial\"","font-size":12,"stroke":"#000000","fill":"#0078F2","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","label");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+signal_SignalSource = signal_SignalSource.extend({
+
+    init: function(attr, setter, getter){
+         this._super(attr, setter, getter);
+
+        this.attr({resizeable:false});
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+        
+        // calculate the outer frame/shape in the correct size in relation to the length of the text
+        //
+        var adjustWidth = ()=>{
+            var width = this.layerGet("label").getBBox().width+15
+
+            this.setWidth(width+5);
+            this.layerAttr("BoundingBox", { path: `M0 0 L${width} 0 L${width} 20 L0 20 Z`})
+            this.layerAttr("outline",     { path: `M0 0 L${width-13} 0 L${width} 10 L${width-13} 20 L0 20 Z`})
+        }
+        this.on("change:userData.signalId",(emitter, event)=>{
+            this.layerAttr("label", {text: event.value})
+            adjustWidth()
+        });
+        this.on("added", ()=>{
+            var signalId = this.attr("userData.signalId")
+            if(!signalId){
+                signalId = "Signal_Id"
+                this.attr("userData.signalId", signalId)
+            }            
+            this.layerAttr("label", {text: signalId})
+            adjustWidth()
+        })
+        
+        // override the "getValue" method of the port and delegate them to the related party (SourceTarget port)
+        this.originalGetValue = this.getOutputPort(0).getBooleanValue
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @required
+     **/
+    calculate:function(context)
+    {
+        var signalId = this.attr("userData.signalId")
+        if(context.signalPorts && context.signalPorts[signalId]){
+            this.getOutputPort(0).getBooleanValue = function(){ 
+                if(context.signalPorts[signalId] instanceof draw2d.Port){
+                    return context.signalPorts[signalId].getBooleanValue()
+                }
+                else {
+                    return false
+                }
+            }
+        }
+    },
+
+
+    getParameterSettings: function()
+    {
+        return [
+        {
+            name:"signalId",
+            label:"Signal Id",
+            property:{
+                type: "string"
+            }
+        }];
+    },
+    
+  /**
+   * @private
+   */
+  applyTransformation: function () {
+    let s =
+      // override the base implementation and do not scale the internal SVG elements....this let the arrow looks a like streche...we
+      // calculate the path in the event handler. A lot more code....but the result is much cleaner
+      //"S" + this.scaleX + "," + this.scaleY + ",0,0 " +
+      "R" + this.rotationAngle + "," + ((this.getWidth() / 2) | 0) + "," + ((this.getHeight() / 2) | 0) +
+      "T" + this.getAbsoluteX() + "," + this.getAbsoluteY() +
+      ""
+    this.svgNodes.transform(s)
+    if (this.rotationAngle === 90 || this.rotationAngle === 270) {
+      let before = this.svgNodes.getBBox(true)
+      let ratio = before.height / before.width
+      let reverseRatio = before.width / before.height
+      let rs = "...S" + ratio + "," + reverseRatio + "," + (this.getAbsoluteX() + this.getWidth() / 2) + "," + (this.getAbsoluteY() + this.getHeight() / 2)
+      this.svgNodes.transform(rs)
+    }
+
+    return this
+  }
+
+
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var signal_SignalTarget = CircuitFigure.extend({
+
+   NAME: "signal_SignalTarget",
+   VERSION: "2.0.119_589",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:69.55780000000595,height:22},attr), setter, getter);
+     var port;
+     // Port
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.8643487861801238, y: 48.86363636363637 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("Port");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 69.55780000000595;
+      this.originalHeight= 22;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L69.55780000000595,0 L69.55780000000595,22 L0,22");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // outline
+       shape = this.canvas.paper.path('M0 9.932800000005955L13.10158237711039 0.75L69 0.75L69 20.75L11.482077748871234 20.75Z');
+       shape.attr({"stroke":"rgba(0,120,242,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","outline");
+       
+       // label
+       shape = this.canvas.paper.text(0,0,'Signal_ID');
+       shape.attr({"x":13.182800000005955,"y":11,"text-anchor":"start","text":"Signal_ID","font-family":"\"Arial\"","font-size":12,"stroke":"#000000","fill":"#0078F2","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","label");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+signal_SignalTarget = signal_SignalTarget.extend({
+
+    init: function(attr, setter, getter){
+         this._super(attr, setter, getter);
+
+         // your special code here
+        this.attr({resizeable:false});
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+        
+        // handle the size of the shape if the label has changed
+        //
+        var adjustWidth = ()=>{
+            var width = this.layerGet("label").getBBox().width+15
+            this.setWidth(width+5);
+            this.layerAttr("BoundingBox", { path: `M0 0 L${width} 0 L${width} 20 L0 20 Z`})
+            this.layerAttr("outline",     { path: `M0 10 L13 0 L${width} 0 L${width} 20 L13 20 Z`})
+        }
+        
+        this.on("change:userData.signalId",(emitter, event)=>{
+            this.layerAttr("label", {text: event.value})
+            adjustWidth()
+        });
+        
+        this.on("added", ()=>{
+            var signalId = this.attr("userData.signalId")
+            if(!signalId){
+                signalId = "Signal_Id"
+                this.attr("userData.signalId", signalId)
+            }            
+            this.layerAttr("label", {text: signalId})
+            adjustWidth()
+        })
+        
+        // get the connected port and forward the port to the related party ( SignalSource shape)
+        //
+        this.getInputPort(0).on("connect", (emitter, event)=>{
+           this.signalPort = event.connection.getSource()
+        })
+        this.getInputPort(0).on("disconnect", (emitter, event)=>{
+            delete this.signalPort
+        })
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @required
+     **/
+    calculate:function(context)
+    {
+        var signalId = this.attr("userData.signalId")
+        // first check if any object already create the signal context
+        if(!context.signalPorts){
+            context.signalPorts = { };
+        }
+        
+        // check if my signal port is set 
+        if(this.signalPort){
+            if(!(signalId in context.signalPorts)){
+                context.signalPorts[signalId] = this.signalPort;
+            }
+        }
+        else{
+            delete context.signalPorts[signalId]
+        }
+    },
+
+    getParameterSettings: function()
+    {
+        return [
+        {
+            name:"signalId",
+            label:"Signal Id",
+            property:{
+                type: "string"
+            }
+        }];
+    },
+    
+  /**
+   * @private
+   */
+  applyTransformation: function () {
+    let s =
+      // override the base implementation and do not scale the internal SVG elements....this let the arrow looks a like streche...we
+      // calculate the path in the event handler. A lot more code....but the result is much cleaner
+      //"S" + this.scaleX + "," + this.scaleY + ",0,0 " +
+      "R" + this.rotationAngle + "," + ((this.getWidth() / 2) | 0) + "," + ((this.getHeight() / 2) | 0) +
+      "T" + this.getAbsoluteX() + "," + this.getAbsoluteY() +
+      ""
+    this.svgNodes.transform(s)
+    if (this.rotationAngle === 90 || this.rotationAngle === 270) {
+      let before = this.svgNodes.getBBox(true)
+      let ratio = before.height / before.width
+      let reverseRatio = before.width / before.height
+      let rs = "...S" + ratio + "," + reverseRatio + "," + (this.getAbsoluteX() + this.getWidth() / 2) + "," + (this.getAbsoluteY() + this.getHeight() / 2)
+      this.svgNodes.transform(rs)
+    }
+
+    return this
+  }
+
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_BlackWhite = CircuitFigure.extend({
+
+   NAME: "video_BlackWhite",
+   VERSION: "2.0.119_589",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:81.98800000000028},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.875, y: 49.38283651266057 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // input_port2
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.875, y: 79.87170188015365 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port2");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 101.86500000000024, y: 49.397472800897525 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 81.98800000000028;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,81.98800000000028 L0,81.98800000000028");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'BlackWhite');
+       shape.attr({"x":5.5,"y":69.98800000000028,"text-anchor":"start","text":"BlackWhite","font-family":"\"Arial\"","font-size":14,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M7.2724609375 45.73301031250048L72.2724609375 45.73301031250048L72.2724609375 4.7330103125004825Z');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(0,0,0,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M53.360640000001695 47.41166200000043L49.16633600000205 55.01383800000076L56.768512000002374 55.01383800000076Z');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,8,41,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'threshold');
+       shape.attr({"x":13.2724609375,"y":52.597375000000284,"text-anchor":"start","text":"threshold","font-family":"\"Arial\"","font-size":8,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Line
+       shape = this.canvas.paper.path('M11.417600000006132 53.26363000000765L7.485440000008566,53.26363000000856L0.4075520000042161,64.01153400000749');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_BlackWhite = video_BlackWhite.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        var threshold = this.getInputPort("input_port2").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.worker.postMessage({imageData: imageData,threshold: threshold}, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data.imageData;
+            var threshold = event.data.threshold;
+            // map offset from 0-5 => 0-255
+            threshold = 255/5*threshold;
+            var pixels = imageData.data;
+            for( let x = 0; x < pixels.length; x += 4 ) {
+
+                let lum = 0.2126 * pixels[x] + 0.7152 * pixels[x+1] + 0.0722 * pixels[x+2];
+                let value= lum>threshold?255:0;
+                pixels[x] = pixels[x+1] = pixels[x+2] = value;
+            }
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => {
+                this.getOutputPort("output_port1").setValue(image);
+            }
+            image.src = this.tmpCanvas.toDataURL();
+        };
+        
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_Blur = CircuitFigure.extend({
+
+   NAME: "video_Blur",
+   VERSION: "2.0.119_589",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:80},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9640000000001692, y: 49.886999999999944 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 100.32506249999983, y: 49.886999999999944 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 80;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,80 L0,80");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Blur');
+       shape.attr({"x":26.228799999999865,"y":66.37877759999992,"text-anchor":"start","text":"Blur","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Circle
+       shape = this.canvas.paper.path('M32.63878406783169 39.46429576295304L32.01261272331885 40.87710770827289L31.629134099395742 42.38285615840232L31.5 43.93578970863655L31.629134099395742 45.48872325886896L32.01261272331885 46.99447170900112L32.63878406783169 48.40728365432369L33.48862223348897 49.68423151878687L34.5363053176643 50.786515887693895L35.75 51.68064440829494L37.09282878173144 52.33944943792994L38.523990489830794 52.742913519146896L40 52.87877759999992L41.476009510169206 52.742913519146896L42.90717121826856 52.33944943792994L44.25 51.68064440829494L45.4636946823357 50.786515887693895L46.51137776651103 49.68423151878687L47.36121593216831 48.40728365432369L47.98738727668115 46.99447170900112L48.37086590060426 45.48872325886896L48.5 43.93578970863655L48.37086590060426 42.38285615840232L47.98738727668115 40.87710770827289L47.36121593216831 39.46429576295304L40.31459911433467 23.87877759999992Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(81,80,82,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+       // Circle
+       shape = this.canvas.paper.path('M19.30384757729189 24.195664876622686L18.861844275284056 25.21873559564574L18.591153481925176 26.309105162982632L18.5 27.433643251079957L18.591153481925176 28.55818133918001L18.861844275284056 29.64855090652054L19.30384757729189 30.671621625544503L19.90373334128708 31.596308010154644L20.643274341881806 32.394513932469636L21.49999999999909 33.04198630945393L22.44787914004519 33.51905202057242L23.458110933996068 33.81121566559068L24.5 33.909599999999955L25.541889066003932 33.81121566559068L26.55212085995481 33.51905202057242L27.50000000000091 33.04198630945393L28.356725658118194 32.394513932469636L29.09626665871292 31.596308010154644L29.69615242270811 30.671621625544503L30.138155724715944 29.64855090652054L30.408846518074824 28.55818133918001L30.5 27.433643251079957L30.408846518074824 26.309105162982632L30.138155724715944 25.21873559564574L29.69615242270811 24.195664876622686L24.722069963059766 12.909599999999955Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(215,213,217,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+       // Circle
+       shape = this.canvas.paper.path('M54.70786677729302 35.16484247662174L54.26586347528519 36.187913195645706L53.995172681927215 37.27828276298078L53.90401920000022 38.40282085108174L53.995172681927215 39.527358939181795L54.26586347528519 40.61772850651869L54.70786677729302 41.64079922554447L55.30775254128639 42.56548561015461L56.04729354188021 43.36369153246778L56.90401920000022 44.01116390945481L57.85189834004541 44.488229620569655L58.86213013399902 44.78039326558974L59.90401920000022 44.87877759999992L60.945908266001425 44.78039326558974L61.95614005995503 44.488229620569655L62.90401920000022 44.01116390945481L63.76074485812023 43.36369153246778L64.50028585871405 42.56548561015461L65.10017162270742 41.64079922554447L65.54217492471525 40.61772850651869L65.81286571807323 39.527358939181795L65.90401920000022 38.40282085108174L65.81286571807323 37.27828276298078L65.54217492471525 36.187913195645706L65.10017162270742 35.16484247662174L60.12608916305999 23.87877759999992Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(172,170,173,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_Blur = video_Blur.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.worker.postMessage(imageData, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data;
+            var opaque = false;
+            var weights =[  1/9, 1/9, 1/9,  
+                            1/9, 1/9, 1/9,  
+                            1/9, 1/9, 1/9 ];
+            var side = Math.round(Math.sqrt(weights.length));
+            var halfSide = Math.floor(side/2);
+
+            var src = imageData.data;
+            var sw = imageData.width;
+            var sh = imageData.height;
+            var w = sw;
+            var h = sh;
+            var dst = new Uint8ClampedArray(w*h*4);
+            var alphaFac = opaque ? 1 : 0;
+
+            for (var y=0; y < h; y++) {
+              for (var x=0; x < w; x++) {
+                var sy = y;
+                var sx = x;
+                var dstOff = (y*w+x)*4;
+                var r=0, g=0, b=0, a=0;
+                for (var cy=0; cy<side; cy++) {
+                  for (var cx=0; cx<side; cx++) {
+                    var scy = Math.min(sh-1, Math.max(0, sy + cy - halfSide));
+                    var scx = Math.min(sw-1, Math.max(0, sx + cx - halfSide));
+                    var srcOff = (scy*sw+scx)*4;
+                    var wt = weights[cy*side+cx];
+                    r += src[srcOff] * wt;
+                    g += src[srcOff+1] * wt;
+                    b += src[srcOff+2] * wt;
+                    a += src[srcOff+3] * wt;
+                  }
+                }
+                dst[dstOff] = r;
+                dst[dstOff+1] = g;
+                dst[dstOff+2] = b;
+                dst[dstOff+3] = a + alphaFac*(255-a);
+              }
+            }
+            imageData.data.set(dst);
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => { this.getOutputPort("output_port1").setValue(image);};
+            image.src = this.tmpCanvas.toDataURL();
+        };
+
+
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_Brighter = CircuitFigure.extend({
+
+   NAME: "video_Brighter",
+   VERSION: "2.0.119_589",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:84.4852109375006},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.875, y: 47.92318034212164 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // input_port2
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.875, y: 77.51085688351353 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port2");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 101.86500000000024, y: 47.93738401145803 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 84.4852109375006;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,84.4852109375006 L0,84.4852109375006");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Brighter');
+       shape.attr({"x":16.417600000006132,"y":72.4852109375006,"text-anchor":"start","text":"Brighter","font-family":"\"Arial\"","font-size":14,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'adjustment');
+       shape.attr({"x":14.2724609375,"y":53.40215900000749,"text-anchor":"start","text":"adjustment","font-family":"\"Arial\"","font-size":8,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":12.5,"ry":12.5,"cx":38.946079999991525,"cy":28.368606000007276,"stroke":"rgba(224,215,88,1)","stroke-width":1,"fill":"rgba(245,229,2,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+       // Line
+       shape = this.canvas.paper.path('M11.417600000006132 53.26363000000765L7.485440000008566,53.26363000000856L0.4075520000042161,64.01153400000749');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M6.699008000003232 15.335102000001825L21.37907200000427,22.150846000003185');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(240,240,38,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M6.980416000002151 31.869438000003356L19.039040000001478,29.510142000003725');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(240,240,38,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M16.961152000002585 44.733758000004855L23.2526080000016,38.44230200000493');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(240,240,38,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M55.25344000000314 14.868606000007276L69.40921600000456,6.217854000004991');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(240,240,38,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M57.36985600000389 26.16006200000811L71.26348800000414,25.897918000008758');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(240,240,38,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M54.505535999998756 34.830078000004505L64.99129599999651,39.81081400000767');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(240,240,38,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M48.7576319999971 43.500094000008175L50.5926399999953,45.597246000008454L52.427647999994406,47.69439800000964');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(240,240,38,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M18.1060479999951 6.557054000005337L21.776063999993312,9.571710000007442L25.446079999991525,12.586366000008638');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(240,240,38,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M39.62111999999979 3.4305900000053953L39.621119999996154,6.052030000006198L39.621119999993425,9.984190000007402');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(240,240,38,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_Brighter = video_Brighter.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        var adjustment = this.getInputPort("input_port2").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.worker.postMessage({imageData: imageData,adjustment: adjustment}, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data.imageData;
+            var adjustment = event.data.adjustment;
+            // map offset from 0-5 => 0-255
+            adjustment = 255/5*adjustment;
+            var pixels = imageData.data;
+            for( let x = 0; x < pixels.length; x += 4 ) {
+                pixels[x]     = Math.min(255,pixels[x  ]+adjustment);
+                pixels[x + 1] = Math.min(255,pixels[x+1]+adjustment);
+                pixels[x + 2] = Math.min(255,pixels[x+2]+adjustment);
+            }
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => {
+                this.getOutputPort("output_port1").setValue(image);
+            }
+            image.src = this.tmpCanvas.toDataURL();
+        };
+        
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
 var video_Detector = CircuitFigure.extend({
 
    NAME: "video_Detector",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
@@ -7309,10 +8082,906 @@ video_Detector = video_Detector.extend({
 // created with http://www.draw2d.org
 //
 //
+var video_Edge = CircuitFigure.extend({
+
+   NAME: "video_Edge",
+   VERSION: "2.0.119_589",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:80},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9640000000001692, y: 49.886999999999944 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 100.32506249999983, y: 49.886999999999944 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 80;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,80 L0,80");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Edge');
+       shape.attr({"x":23.228799999999865,"y":66.37877759999992,"text-anchor":"start","text":"Edge","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Circle
+       shape = this.canvas.paper.path('M32.63878406783169 39.46429576295304L32.01261272331885 40.87710770827289L31.629134099395742 42.38285615840232L31.5 43.93578970863655L31.629134099395742 45.48872325886896L32.01261272331885 46.99447170900112L32.63878406783169 48.40728365432369L33.48862223348897 49.68423151878687L34.5363053176643 50.786515887693895L35.75 51.68064440829494L37.09282878173144 52.33944943792994L38.523990489830794 52.742913519146896L40 52.87877759999992L41.476009510169206 52.742913519146896L42.90717121826856 52.33944943792994L44.25 51.68064440829494L45.4636946823357 50.786515887693895L46.51137776651103 49.68423151878687L47.36121593216831 48.40728365432369L47.98738727668115 46.99447170900112L48.37086590060426 45.48872325886896L48.5 43.93578970863655L48.37086590060426 42.38285615840232L47.98738727668115 40.87710770827289L47.36121593216831 39.46429576295304L40.31459911433467 23.87877759999992Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(81,80,82,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+       // Circle
+       shape = this.canvas.paper.path('M19.30384757729189 24.195664876622686L18.861844275284056 25.21873559564574L18.591153481925176 26.309105162982632L18.5 27.433643251079957L18.591153481925176 28.55818133918001L18.861844275284056 29.64855090652054L19.30384757729189 30.671621625544503L19.90373334128708 31.596308010154644L20.643274341881806 32.394513932469636L21.49999999999909 33.04198630945393L22.44787914004519 33.51905202057242L23.458110933996068 33.81121566559068L24.5 33.909599999999955L25.541889066003932 33.81121566559068L26.55212085995481 33.51905202057242L27.50000000000091 33.04198630945393L28.356725658118194 32.394513932469636L29.09626665871292 31.596308010154644L29.69615242270811 30.671621625544503L30.138155724715944 29.64855090652054L30.408846518074824 28.55818133918001L30.5 27.433643251079957L30.408846518074824 26.309105162982632L30.138155724715944 25.21873559564574L29.69615242270811 24.195664876622686L24.722069963059766 12.909599999999955Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(215,213,217,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+       // Circle
+       shape = this.canvas.paper.path('M54.70786677729302 35.16484247662174L54.26586347528519 36.187913195645706L53.995172681927215 37.27828276298078L53.90401920000022 38.40282085108174L53.995172681927215 39.527358939181795L54.26586347528519 40.61772850651869L54.70786677729302 41.64079922554447L55.30775254128639 42.56548561015461L56.04729354188021 43.36369153246778L56.90401920000022 44.01116390945481L57.85189834004541 44.488229620569655L58.86213013399902 44.78039326558974L59.90401920000022 44.87877759999992L60.945908266001425 44.78039326558974L61.95614005995503 44.488229620569655L62.90401920000022 44.01116390945481L63.76074485812023 43.36369153246778L64.50028585871405 42.56548561015461L65.10017162270742 41.64079922554447L65.54217492471525 40.61772850651869L65.81286571807323 39.527358939181795L65.90401920000022 38.40282085108174L65.81286571807323 37.27828276298078L65.54217492471525 36.187913195645706L65.10017162270742 35.16484247662174L60.12608916305999 23.87877759999992Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(172,170,173,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_Edge = video_Edge.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.worker.postMessage(imageData, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data;
+            var opaque = true;
+            var weights =[  1,   1,  1,  
+                            1, 0.7, -1,  
+                           -1,  -1, -1 ];
+            var side     = Math.round(Math.sqrt(weights.length));
+            var halfSide = Math.floor(side/2);
+
+            var src = imageData.data;
+            var sw = imageData.width;
+            var sh = imageData.height;
+            var w = sw;
+            var h = sh;
+            var dst = new Uint8ClampedArray(w*h*4);
+            var alphaFac = opaque ? 1 : 0;
+
+            for (var y=0; y < h; y++) {
+              for (var x=0; x < w; x++) {
+                var sy = y;
+                var sx = x;
+                var dstOff = (y*w+x)*4;
+                var r=0, g=0, b=0, a=0;
+                for (var cy=0; cy<side; cy++) {
+                  for (var cx=0; cx<side; cx++) {
+                    var scy = Math.min(sh-1, Math.max(0, sy + cy - halfSide));
+                    var scx = Math.min(sw-1, Math.max(0, sx + cx - halfSide));
+                    var srcOff = (scy*sw+scx)*4;
+                    var wt = weights[cy*side+cx];
+                    r += src[srcOff] * wt;
+                    g += src[srcOff+1] * wt;
+                    b += src[srcOff+2] * wt;
+                    a += src[srcOff+3] * wt;
+                  }
+                }
+                dst[dstOff] = r;
+                dst[dstOff+1] = g;
+                dst[dstOff+2] = b;
+                dst[dstOff+3] = a + alphaFac*(255-a);
+              }
+            }
+            imageData.data.set(dst);
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => { this.getOutputPort("output_port1").setValue(image);};
+            image.src = this.tmpCanvas.toDataURL();
+        };
+
+
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_Grayscale = CircuitFigure.extend({
+
+   NAME: "video_Grayscale",
+   VERSION: "2.0.119_589",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80.125,height:82.63839999999982},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9429953198129615, y: 48.29425545509114 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 100.18804992199671, y: 48.29425545509114 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80.125;
+      this.originalHeight= 82.63839999999982;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80.125,0 L80.125,82.63839999999982 L0,82.63839999999982");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0.015625,3Q0.015625,0 3.015625, 0L77.015625,0Q80.015625,0 80.015625, 3L80.015625,77Q80.015625,80 77.015625, 80L3.015625,80Q0.015625,80 0.015625, 77L0.015625,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Grayscale');
+       shape.attr({"x":4,"y":70.13839999999982,"text-anchor":"start","text":"Grayscale","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Circle
+       shape = this.canvas.paper.path('M32.65440906783169 39.46429576295304L32.02823772331885 40.87710770827289L31.644759099395742 42.38285615840232L31.515625 43.93578970863655L31.644759099395742 45.48872325886896L32.02823772331885 46.99447170900112L32.65440906783169 48.40728365432369L33.50424723348897 49.68423151878687L34.5519303176643 50.786515887693895L35.765625 51.68064440829494L37.10845378173144 52.33944943792994L38.539615489830794 52.742913519146896L40.015625 52.87877759999992L41.491634510169206 52.742913519146896L42.92279621826856 52.33944943792994L44.265625 51.68064440829494L45.4793196823357 50.786515887693895L46.52700276651103 49.68423151878687L47.37684093216831 48.40728365432369L48.00301227668115 46.99447170900112L48.38649090060426 45.48872325886896L48.515625 43.93578970863655L48.38649090060426 42.38285615840232L48.00301227668115 40.87710770827289L47.37684093216831 39.46429576295304L40.33022411433467 23.87877759999992Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(81,80,82,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+       // Circle
+       shape = this.canvas.paper.path('M19.31947257729189 24.195664876622686L18.877469275284056 25.21873559564574L18.606778481925176 26.309105162982632L18.515625 27.433643251079957L18.606778481925176 28.55818133918001L18.877469275284056 29.64855090652054L19.31947257729189 30.671621625544503L19.91935834128708 31.596308010154644L20.658899341881806 32.394513932469636L21.51562499999909 33.04198630945393L22.46350414004519 33.51905202057242L23.473735933996068 33.81121566559068L24.515625 33.909599999999955L25.557514066003932 33.81121566559068L26.56774585995481 33.51905202057242L27.51562500000091 33.04198630945393L28.372350658118194 32.394513932469636L29.11189165871292 31.596308010154644L29.71177742270811 30.671621625544503L30.153780724715944 29.64855090652054L30.424471518074824 28.55818133918001L30.515625 27.433643251079957L30.424471518074824 26.309105162982632L30.153780724715944 25.21873559564574L29.71177742270811 24.195664876622686L24.737694963059766 12.909599999999955Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(215,213,217,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+       // Circle
+       shape = this.canvas.paper.path('M54.72349177729302 35.16484247662174L54.28148847528519 36.187913195645706L54.010797681927215 37.27828276298078L53.91964420000022 38.40282085108174L54.010797681927215 39.527358939181795L54.28148847528519 40.61772850651869L54.72349177729302 41.64079922554447L55.32337754128639 42.56548561015461L56.06291854188021 43.36369153246778L56.91964420000022 44.01116390945481L57.86752334004541 44.488229620569655L58.87775513399902 44.78039326558974L59.91964420000022 44.87877759999992L60.961533266001425 44.78039326558974L61.97176505995503 44.488229620569655L62.91964420000022 44.01116390945481L63.77636985812023 43.36369153246778L64.51591085871405 42.56548561015461L65.11579662270742 41.64079922554447L65.55779992471525 40.61772850651869L65.82849071807323 39.527358939181795L65.91964420000022 38.40282085108174L65.82849071807323 37.27828276298078L65.55779992471525 36.187913195645706L65.11579662270742 35.16484247662174L60.14171416305999 23.87877759999992Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(172,170,173,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_Grayscale = video_Grayscale.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.worker.postMessage(imageData, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data;
+            var pixels = imageData.data;
+            for( let x = 0; x < pixels.length; x += 4 ) {
+                // CIE luminance for the RGB
+                // The human eye is bad at seeing red and blue, so we de-emphasize them.
+                let average = 0.2126*pixels[x] + 0.7152*pixels[x+1] + 0.0722*pixels[x+2];
+                //let average = (pixels[x] + pixels[x+1] +pixels[x+2]) / 3;
+    
+                pixels[x]     = average;
+                pixels[x + 1] = average;
+                pixels[x + 2] = average;
+            }
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => {
+                this.getOutputPort("output_port1").setValue(image);
+            }
+            image.src = this.tmpCanvas.toDataURL();
+        };
+        
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_Preview = CircuitFigure.extend({
+
+   NAME: "video_Preview",
+   VERSION: "2.0.119_589",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:80},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.875, y: 50 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 102.5, y: 50 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 80;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,80 L0,80");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M3.5,5.508584000000155Q3.5,3.5085840000001554 5.5, 3.5085840000001554L74.5,3.5085840000001554Q76.5,3.5085840000001554 76.5, 5.508584000000155L76.5,53.508584000000155Q76.5,55.508584000000155 74.5, 55.508584000000155L5.5,55.508584000000155Q3.5,55.508584000000155 3.5, 53.508584000000155L3.5,5.508584000000155');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(240,243,243,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M30.936231463021613,35.76911304131136Q30.872197764576413,36.19697836850173 30.786098882288115, 36.19697836850173L30.786098882288115,36.19697836850173Q30.699999999999818,36.19697836850173 30.02542399975173, 39.120152537087876L28.228848000250217,46.90534583141388Q27.55427200000213,49.828520000000026 30.55427200000213, 49.828520000000026L49.845727999999326,49.828520000000026Q52.845727999999326,49.828520000000026 52.17115199975087, 46.90534583141397L50.374576000248275,39.12015253708779Q49.69999999999982,36.19697836850173 49.61390111771152, 36.19697836850173L49.61390111771152,36.19697836850173Q49.52780223542322,36.19697836850173 49.46376853697802, 35.76911304131136L49.46376853697802,35.76911304131136Q49.39973483853282,35.34124771412098 49.189009825240646, 34.881505982345516L49.189009825240646,34.881505982345516Q48.97828481194847,34.42176425057005 48.63419792766399, 33.99039830073025L48.63419792766399,33.99039830073025Q48.29011104337951,33.55903235089045 47.82311719396512, 33.1691490190874L47.82311719396512,33.1691490190874Q47.356123344550724,32.77926568728435 46.780411901811476, 32.44271138126396L46.780411901811476,32.44271138126396Q46.20470045907223,32.10615707524357 45.5377641238706, 31.833157827294144L45.5377641238706,31.833157827294144Q44.870827788668976,31.560158579344716 44.132931084064694, 31.35900933346511L44.132931084064694,31.35900933346511Q43.39503437946041,31.157860087585505 42.60859792342853, 31.03467266183179L42.60859792342853,31.03467266183179Q41.822161467396654,30.91148523607808 41.011080733698236, 30.870002618039052L41.011080733698236,30.870002618039052Q40.19999999999982,30.828520000000026 39.3889192663014, 30.870002618039052L39.3889192663014,30.870002618039052Q38.57783853260298,30.91148523607808 37.7914020765711, 31.03467266183179L37.7914020765711,31.03467266183179Q37.004965620539224,31.157860087585505 36.26706891593494, 31.35900933346511L36.26706891593494,31.35900933346511Q35.52917221133066,31.560158579344716 34.862235876129034, 31.833157827294144L34.862235876129034,31.833157827294144Q34.19529954092741,32.10615707524357 33.61958809818816, 32.44271138126396L33.61958809818816,32.44271138126396Q33.04387665544891,32.77926568728435 32.57688280603452, 33.1691490190874L32.57688280603452,33.1691490190874Q32.109888956620125,33.55903235089045 31.765802072335646, 33.99039830073025L31.765802072335646,33.99039830073025Q31.421715188051166,34.42176425057005 31.21099017475899, 34.881505982345516L31.21099017475899,34.881505982345516Q31.000265161466814,35.34124771412098 30.936231463021613, 35.76911304131136L30.936231463021613,35.76911304131136');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Preview');
+       shape.attr({"x":15.5,"y":67.50858400000016,"text-anchor":"start","text":"Preview","font-family":"\"Arial\"","font-size":14,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8,"ry":8.5,"cx":39.69999999999982,"cy":19.328520000000026,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_Preview = video_Preview.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        
+        this.TRANSPARENT_PIXEL = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==";
+        this.img = new draw2d.shape.basic.Image({
+            width: this.getWidth()-6, 
+            height: this.getHeight()/4*3-6,
+            selectable: false,
+            deleteable: false,
+            resizeable:false,
+            draggable: false,
+            path: this.TRANSPARENT_PIXEL
+        });
+        this.img.hitTest = ()=>false;
+        this.add(this.img, new draw2d.layout.locator.XYAbsPortLocator({x:3, y:3}));
+
+        this.getInputPort("input_port1").attr({
+            semanticGroup:"Image",
+            bgColor:"#ff0000",
+            diameter:15
+        })
+        this.getOutputPort("output_port1").attr({
+            semanticGroup:"Image",
+            bgColor:"#ff0000",
+            diameter:15
+        })
+        
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var image = this.getInputPort("input_port1").getValue();
+        if (image instanceof HTMLImageElement) {
+            this.img.attr("path", image.src);
+            this.getOutputPort("output_port1").setValue(image);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+    },
+    
+  
+    getPersistentAttributes: function () 
+    {
+       let currentImage = this.img.attr("path");
+       this.img.attr("path", this.TRANSPARENT_PIXEL);
+    
+       let memento = this._super()
+    
+       this.img.attr("path", currentImage);
+
+       return memento
+    },
+
+    setPersistentAttributes: function (memento) 
+    {
+        this._super(memento);
+
+        this.img = this.getChildren().find( child => child instanceof draw2d.shape.basic.Image);
+        this.img.hitTest = ()=>false;
+        
+        this.getInputPort("input_port1").attr({
+            semanticGroup:"Image",
+            bgColor:"#ff0000",
+            diameter:15
+        })
+        this.getOutputPort("output_port1").attr({
+            semanticGroup:"Image",
+            bgColor:"#ff0000",
+            diameter:15
+        })
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_Sharpen = CircuitFigure.extend({
+
+   NAME: "video_Sharpen",
+   VERSION: "2.0.119_589",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:80.87877759999992},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9640000000001692, y: 49.34495943717131 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 100.32506249999983, y: 49.34495943717131 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 80.87877759999992;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,80.87877759999992 L0,80.87877759999992");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Sharpen');
+       shape.attr({"x":10.228799999999865,"y":68.37877759999992,"text-anchor":"start","text":"Sharpen","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M4.315424000003077,7.770740800002386Q4.315424000003077,3.770740800002386 8.315424000003077, 3.770740800002386L71.31542400000308,3.770740800002386Q75.31542400000308,3.770740800002386 75.31542400000308, 7.770740800002386L75.31542400000308,51.770740800002386Q75.31542400000308,55.770740800002386 71.31542400000308, 55.770740800002386L8.315424000003077,55.770740800002386Q4.315424000003077,55.770740800002386 4.315424000003077, 51.770740800002386L4.315424000003077,7.770740800002386');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(237,237,237,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Circle
+       shape = this.canvas.paper.path('M38.3575436800038 6.761013428584192L38.33557151823152 6.75898431823407L36.77273791922926 6.903310664618402L35.25739022830021 7.331904420767387L33.83557151823152 8.031742982281685L32.55048303105286 8.981562108603612L31.441171530160318 10.15250202621246L30.541342884171172 11.50898431823407L29.878337931158057 13.009792956640013L29.472301741121555 14.609326630398755L29.335571518231518 16.25898431823407L29.472301741121555 17.908642006069385L29.878337931158057 19.508175679828128L30.541342884171172 21.00898431823407L31.441171530160318 22.36546661025568L32.55048303105286 23.53640652786453L33.83557151823152 24.486225654186455L35.25739022830021 25.186064215700753L36.77273791922926 25.614657971849738L38.33557151823152 25.75898431823407L38.3575436800038 25.756955207883948L38.3575436800038 6.761013428584192Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":0.25});
+       shape.data("name","Circle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M35.323635168710325,52.22508227661048Q38.32230559823074,52.314388799999506 38.32230559823074, 49.314388799999506L38.32230559823074,30.438490014114905Q38.32230559823074,27.438490014114905 38.301052857797, 27.433087432160846L38.301052857797,27.433087432160846Q38.279800117363266,27.427684850206788 37.59730583340797, 27.371036825103147L37.59730583340797,27.371036825103147Q36.91481154945268,27.314388799999506 36.23231726549511, 27.371036825103147L36.23231726549511,27.371036825103147Q35.549822981537545,27.427684850206788 34.88806594104108, 27.5959077039397L34.88806594104108,27.5959077039397Q34.22630890054461,27.764130557672615 33.605396256316, 28.038816873749056L33.605396256316,28.038816873749056Q32.98448361208739,28.313503189825497 32.42328148062643, 28.68630676353132L32.42328148062643,28.68630676353132Q31.86207934916547,29.059110337237144 31.377639573254783, 29.51870372063013L31.377639573254783,29.51870372063013Q30.893199797344096,29.978297104023113 30.50024183443702, 30.510715784715558L30.50024183443702,30.510715784715558Q30.107283871529944,31.043134465408002 29.817747550480362, 31.632201171204088L29.817747550480362,31.632201171204088Q29.52821122943078,32.22126787700017 28.902015467438314, 35.15518656497751L25.948501360223208,48.993303588943135Q25.32230559823074,51.927222276920475 28.320976027751158, 52.0165288003095L35.323635168710325,52.22508227661048');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":0.1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M38.309039678229965 51.724655359115786L38.309039678229965 27.84379252466624L38.27307350211322 27.833419567314195L37.11808317541818 27.724655359115786L35.96309284872041 27.833419567314195L34.84319631864855 28.156407446482262L33.792421074570484 28.683805173349356L32.84269439055879 29.399588034863882L32.02287323132532 30.28200733097765L31.357867447944045 31.304251197908343L30.867882904630278 32.435259273036536L27.309039678229965 51.352975496960426Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":0.2});
+       shape.data("name","Rectangle");
+       
+       // TOP_Body
+       shape = this.canvas.paper.path('M29.462567472217447,46.776768974949896Q28.81898911823282,50.724655359115786 32.81880873597436, 50.762642534977275L46.90091030048609,50.89638338325396Q50.900729918227626,50.93437055911545 50.01211395841982, 47.03432419067637L48.22418747803842,39.18729409867167Q47.33557151823061,35.28724773023259 47.27480253027943, 34.71745662722515L47.27480253027943,34.71745662722515Q47.21403354232825,34.1476655242177 47.03357301342339, 33.5951872355472L47.03357301342339,33.5951872355472Q46.85311248451853,33.0427089468767 46.558443616512704, 32.52433024577522L46.558443616512704,32.52433024577522Q46.263774748506876,32.005951544673735 45.86385090584463, 31.537423105665766L45.86385090584463,31.537423105665766Q45.46392706318238,31.068894666657798 44.97089972945241, 30.66445248927039L44.97089972945241,30.66445248927039Q44.47787239572244,30.26001031188298 43.906721956976526, 29.931943167022382L43.906721956976526,29.931943167022382Q43.33557151823061,29.603876022161785 42.70365209153351, 29.36215206401357L42.70365209153351,29.36215206401357Q42.07173266483642,29.120428105865358 41.39824480220159, 28.972391994582267L41.39824480220159,28.972391994582267Q40.72475693956676,28.824355883299177 40.03016422889914, 28.77450562120748L40.03016422889914,28.77450562120748Q39.33557151823152,28.724655359115786 38.64097880756344, 28.77450562120748L38.64097880756344,28.77450562120748Q37.94638609689537,28.824355883299177 37.27289823426054, 28.972391994582267L37.27289823426054,28.972391994582267Q36.59941037162571,29.120428105865358 35.96749094492861, 29.36215206401357L35.96749094492861,29.36215206401357Q35.33557151823152,29.603876022161785 34.7644210794856, 29.931943167022382L34.7644210794856,29.931943167022382Q34.193270640739684,30.26001031188298 33.700243307009714, 30.66445248927039L33.700243307009714,30.66445248927039Q33.207215973279745,31.068894666657798 32.8072921306175, 31.537423105665766L32.8072921306175,31.537423105665766Q32.40736828795525,32.005951544673735 32.11269941994942, 32.52433024577522L32.11269941994942,32.52433024577522Q31.818030551943593,33.0427089468767 31.637570023038734, 33.5951872355472L31.637570023038734,33.5951872355472Q31.457109494133874,34.1476655242177 31.396340506182696, 34.71745662722515L31.396340506182696,34.71745662722515Q31.335571518231518,35.28724773023259 30.69199316424689, 39.235134114398484L29.462567472217447,46.776768974949896');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Body");
+       
+       // TOP_Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8.16442848176873,"ry":8.16442848176873,"cx":39.50000000000025,"cy":16.4234128000028,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Circle");
+       
+       // Line
+       shape = this.canvas.paper.path('M38.69640448001155 4.038881344014044L38.864176640010555,55.044239424005355');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(26,12,112,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_Sharpen = video_Sharpen.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.worker.postMessage(imageData, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data;
+            var opaque = false;
+            var weights =[  0, -1,  0,  -1,  5, -1,   0, -1,  0 ];
+            var side = Math.round(Math.sqrt(weights.length));
+            var halfSide = Math.floor(side/2);
+
+            var src = imageData.data;
+            var sw = imageData.width;
+            var sh = imageData.height;
+            var w = sw;
+            var h = sh;
+            var dst = new Uint8ClampedArray(w*h*4);
+            var alphaFac = opaque ? 1 : 0;
+
+            for (var y=0; y < h; y++) {
+              for (var x=0; x < w; x++) {
+                var sy = y;
+                var sx = x;
+                var dstOff = (y*w+x)*4;
+                var r=0, g=0, b=0, a=0;
+                for (var cy=0; cy<side; cy++) {
+                  for (var cx=0; cx<side; cx++) {
+                    var scy = Math.min(sh-1, Math.max(0, sy + cy - halfSide));
+                    var scx = Math.min(sw-1, Math.max(0, sx + cx - halfSide));
+                    var srcOff = (scy*sw+scx)*4;
+                    var wt = weights[cy*side+cx];
+                    r += src[srcOff] * wt;
+                    g += src[srcOff+1] * wt;
+                    b += src[srcOff+2] * wt;
+                    a += src[srcOff+3] * wt;
+                  }
+                }
+                dst[dstOff] = r;
+                dst[dstOff+1] = g;
+                dst[dstOff+2] = b;
+                dst[dstOff+3] = a + alphaFac*(255-a);
+              }
+            }
+            imageData.data.set(dst);
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => { this.getOutputPort("output_port1").setValue(image);};
+            image.src = this.tmpCanvas.toDataURL();
+        };
+
+
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
 var video_WebCam = CircuitFigure.extend({
 
    NAME: "video_WebCam",
-   VERSION: "2.0.78_486",
+   VERSION: "2.0.119_589",
 
    init:function(attr, setter, getter)
    {
