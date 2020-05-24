@@ -79,7 +79,7 @@
       "draggable": true,
       "angle": 0,
       "userData": {
-        "name": "gpio_1",
+        "name": "gpio_7",
         "type": "Input",
         "direction": 3,
         "fanout": 1
@@ -126,7 +126,7 @@
       "stroke": 0,
       "radius": 0,
       "dasharray": null,
-      "text": "1",
+      "text": "7",
       "outlineStroke": 0,
       "outlineColor": "rgba(0,0,0,0)",
       "fontSize": 16,

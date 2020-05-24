@@ -6114,11 +6114,11 @@ var circuit_hardware_raspi_ServoWrite = CircuitFigure.extend({
 
      this._super( $.extend({stroke:0, bgColor:null, width:90,height:85},attr), setter, getter);
      var port;
-     // gpio_1
+     // gpio_7
      port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 1.168733604659388, y: 69.56880579732196 }));
      port.setConnectionDirection(3);
      port.setBackgroundColor("#37B1DE");
-     port.setName("gpio_1");
+     port.setName("gpio_7");
      port.setMaxFanOut(1);
    },
 
@@ -6145,8 +6145,8 @@ var circuit_hardware_raspi_ServoWrite = CircuitFigure.extend({
        shape.data("name","Rectangle");
        
        // Label
-       shape = this.canvas.paper.text(0,0,'1');
-       shape.attr({"x":10.051860244193449,"y":59.13348492772366,"text-anchor":"start","text":"1","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape = this.canvas.paper.text(0,0,'7');
+       shape.attr({"x":10.051860244193449,"y":59.13348492772366,"text-anchor":"start","text":"7","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
        // Label
