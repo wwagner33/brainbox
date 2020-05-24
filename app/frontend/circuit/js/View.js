@@ -406,6 +406,7 @@ export default draw2d.Canvas.extend({
       this.slider.slider("setValue", (((-(timerBase - 11) - 2) * (500 - 100)) / (10 - 2)) + 100)
   },
 
+
   /**
    * @method
    * Clear the canvas and stop the simulation. Be ready for the next clean circuit

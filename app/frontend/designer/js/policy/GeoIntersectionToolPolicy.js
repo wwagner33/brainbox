@@ -8,12 +8,6 @@ export default AbstractGeoToolPolicy.extend({
     this.operation = "intersection"
   },
 
-
-  onInstall: function (canvas) {
-    this.setToolText("Select polygon to intersect with")
-  },
-
-
   /**
    * @method
    *

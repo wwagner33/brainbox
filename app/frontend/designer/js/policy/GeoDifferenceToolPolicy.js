@@ -1,17 +1,11 @@
 import AbstractGeoToolPolicy from "./AbstractGeoToolPolicy"
 
 
-
 export default AbstractGeoToolPolicy.extend({
 
   init: function () {
     this._super()
     this.operation = "difference"
-  },
-
-
-  onInstall: function (canvas) {
-    this.setToolText("Select polygon to subtract from")
   },
 
 

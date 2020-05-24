@@ -1,11 +1,8 @@
-import SelectionToolPolicy from "./SelectionToolPolicy"
+import AbstractToolPolicy from "./AbstractToolPolicy"
 
 import cursor from "../../images/cursors/cursor_port.png"
 
-export default SelectionToolPolicy.extend({
-
-  TITLE: "Port",
-  MESSAGE_STEP1: "Select location to add port.<br>Click on port to move.",
+export default AbstractToolPolicy.extend({
 
   init: function () {
     this._super()
@@ -13,18 +10,18 @@ export default SelectionToolPolicy.extend({
 
 
   onInstall: function (canvas) {
-    this.setToolText(this.MESSAGE_STEP1)
+    this._super(canvas)
     canvas.setCursor(cursor)
   },
 
   onUninstall: function (canvas) {
+    this._super(canvas)
     canvas.setCursor(null)
   },
 
 
   select: function (canvas, figure) {
-    // check if the element an valid polygon. otherwise an boolean operation
-    // isn't possible
+    //
     if (!(figure instanceof shape_designer.figure.ExtPort)) {
       return
     }

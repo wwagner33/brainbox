@@ -129,37 +129,22 @@ export default class Toolbar {
 
     $(".policyRectangleToolPolicy").on("click", () => {
       let p = new RectangleToolPolicy()
-      p.executed = () => {
-        this.selectButton.click()
-      }
-      this.view.installEditPolicy(p)
+       this.view.installEditPolicy(p)
     })
     $(".policyCircleToolPolicy").on("click", () => {
       let p = new CircleToolPolicy()
-      p.executed = () => {
-        this.selectButton.click()
-      }
       this.view.installEditPolicy(p)
     })
     $(".policyLineToolPolicy").on("click", () => {
       let p = new LineToolPolicy()
-      p.executed = () => {
-        this.selectButton.click()
-      }
       this.view.installEditPolicy(p)
     })
     $(".policyTextToolPolicy").on("click", () => {
       let p = new TextToolPolicy()
-      p.executed = () => {
-        this.selectButton.click()
-      }
       this.view.installEditPolicy(p)
     })
     $(".policyPortToolPolicy").on("click", () => {
       let p = new PortToolPolicy()
-      p.executed = () => {
-        this.selectButton.click()
-      }
       this.view.installEditPolicy(p)
     })
 

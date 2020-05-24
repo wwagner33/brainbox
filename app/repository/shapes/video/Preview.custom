@@ -95,6 +95,8 @@ video_Preview = video_Preview.extend({
         this._super(memento);
 
         this.img = this.getChildren().find( child => child instanceof draw2d.shape.basic.Image);
+        this.remove(this.img);
+        this.add(this.img, new draw2d.layout.locator.XYAbsPortLocator({x:3, y:3}));
         this.img.hitTest = ()=>false;
         
         this.getInputPort("input_port1").attr({

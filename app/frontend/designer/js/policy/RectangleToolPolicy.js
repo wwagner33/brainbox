@@ -14,11 +14,12 @@ export default AbstractToolPolicy.extend({
 
 
   onInstall: function (canvas) {
-    this.setToolText("Select first corner of rectangle")
+    this._super(canvas)
     canvas.setCursor(cursor)
   },
 
   onUninstall: function (canvas) {
+    this._super(canvas)
     if (this.boundingBoxFigure1 !== null) {
       this.boundingBoxFigure1.setCanvas(null)
       this.boundingBoxFigure1 = null

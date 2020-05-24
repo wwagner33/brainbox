@@ -7,12 +7,6 @@ export default AbstractGeoToolPolicy.extend({
     this.operation = "union"
   },
 
-
-  onInstall: function (canvas) {
-    this.setToolText("Select polygon to add to..")
-  },
-
-
   /**
    * @method
    *

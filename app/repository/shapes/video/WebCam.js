@@ -7,7 +7,7 @@
 var video_WebCam = CircuitFigure.extend({
 
    NAME: "video_WebCam",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -99,6 +99,7 @@ video_WebCam = video_WebCam.extend({
         
         this.imageCapture = null;
         this.track = null;
+        this.processing = false;
         
         this.attr({resizeable:false});
         this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
@@ -117,9 +118,10 @@ video_WebCam = video_WebCam.extend({
      **/
     calculate:function( context)
     {
-        if(this.imageCapture===null){
+        if(this.imageCapture===null && this.processing === false){
             return
         }
+        this.processing = true;
         this.imageCapture.takePhoto()
             .then((blob) =>{
                 var a = new FileReader();
@@ -128,6 +130,7 @@ video_WebCam = video_WebCam.extend({
                     var image = new Image()
                     image.onload = () => {
                         this.getOutputPort("output_port1").setValue(image)
+                        this.processing = false;
                     }
                     image.src = e.target.result
                 }
@@ -145,6 +148,7 @@ video_WebCam = video_WebCam.extend({
     onStart:function( context )
     {
         try{
+            this.processing = false;
             navigator.mediaDevices.getUserMedia({ audio: false, video: true })
                .then((stream) =>{
                     this.track = stream.getVideoTracks()[0];
@@ -171,6 +175,7 @@ video_WebCam = video_WebCam.extend({
             this.track = null;
             this.imageCapture = null;
         }
+        this.processing = false;
     },
     
     getPersistentAttributes: function () 

@@ -11,12 +11,6 @@ export default AbstractToolPolicy.extend({
     this.operation = null
   },
 
-
-  onInstall: function (canvas) {
-    this.setToolHeader("")
-    this.setToolMessage("Select first figure..")
-  },
-
   select: function (canvas, figure) {
 
     if (canvas.getSelection().getAll().contains(figure)) {

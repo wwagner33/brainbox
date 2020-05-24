@@ -7,7 +7,7 @@
 var circuit_74LSXX_74LS90 = CircuitFigure.extend({
 
    NAME: "circuit_74LSXX_74LS90",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -311,7 +311,7 @@ circuit_74LSXX_74LS90 = circuit_74LSXX_74LS90.extend({
 var circuit_digital_alu_FullAdder = CircuitFigure.extend({
 
    NAME: "circuit_digital_alu_FullAdder",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -481,7 +481,7 @@ circuit_digital_alu_FullAdder = circuit_digital_alu_FullAdder.extend({
 var circuit_digital_alu_FullAdder4Bit = CircuitFigure.extend({
 
    NAME: "circuit_digital_alu_FullAdder4Bit",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -797,7 +797,7 @@ circuit_digital_alu_FullAdder4Bit = circuit_digital_alu_FullAdder4Bit.extend({
 var circuit_digital_buttons_HighLow = CircuitFigure.extend({
 
    NAME: "circuit_digital_buttons_HighLow",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -908,7 +908,7 @@ circuit_digital_buttons_HighLow = circuit_digital_buttons_HighLow.extend({
 var circuit_digital_buttons_HighLowArray = CircuitFigure.extend({
 
    NAME: "circuit_digital_buttons_HighLowArray",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -1073,7 +1073,7 @@ circuit_digital_buttons_HighLowArray = circuit_digital_buttons_HighLowArray.exte
 var circuit_digital_buttons_PushButton = CircuitFigure.extend({
 
    NAME: "circuit_digital_buttons_PushButton",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -1189,7 +1189,7 @@ circuit_digital_buttons_PushButton = circuit_digital_buttons_PushButton.extend({
 var circuit_digital_counter_BCDCounter = CircuitFigure.extend({
 
    NAME: "circuit_digital_counter_BCDCounter",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -1373,7 +1373,7 @@ circuit_digital_counter_BCDCounter = circuit_digital_counter_BCDCounter.extend({
 var circuit_digital_decoder_BCDto7Seg = CircuitFigure.extend({
 
    NAME: "circuit_digital_decoder_BCDto7Seg",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -1612,7 +1612,7 @@ circuit_digital_decoder_BCDto7Seg = circuit_digital_decoder_BCDto7Seg.extend({
 var circuit_digital_display_7Segment = CircuitFigure.extend({
 
    NAME: "circuit_digital_display_7Segment",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -1774,7 +1774,7 @@ circuit_digital_display_7Segment = circuit_digital_display_7Segment.extend({
 var circuit_digital_display_Led = CircuitFigure.extend({
 
    NAME: "circuit_digital_display_Led",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -1863,7 +1863,7 @@ circuit_digital_display_Led = circuit_digital_display_Led.extend({
 var circuit_digital_flipflop_DFlipFlop = CircuitFigure.extend({
 
    NAME: "circuit_digital_flipflop_DFlipFlop",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -1996,7 +1996,7 @@ circuit_digital_flipflop_DFlipFlop = circuit_digital_flipflop_DFlipFlop.extend({
 var circuit_digital_flipflop_JKFlipFlop = CircuitFigure.extend({
 
    NAME: "circuit_digital_flipflop_JKFlipFlop",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -2159,7 +2159,7 @@ circuit_digital_flipflop_JKFlipFlop = circuit_digital_flipflop_JKFlipFlop.extend
 var circuit_digital_flipflop_JKRFlipFlop = CircuitFigure.extend({
 
    NAME: "circuit_digital_flipflop_JKRFlipFlop",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -2340,7 +2340,7 @@ circuit_digital_flipflop_JKRFlipFlop = circuit_digital_flipflop_JKRFlipFlop.exte
 var circuit_digital_flipflop_SRFlipFlop = CircuitFigure.extend({
 
    NAME: "circuit_digital_flipflop_SRFlipFlop",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -2482,7 +2482,7 @@ circuit_digital_flipflop_SRFlipFlop = circuit_digital_flipflop_SRFlipFlop.extend
 var circuit_digital_flipflop_TFlipFlop = CircuitFigure.extend({
 
    NAME: "circuit_digital_flipflop_TFlipFlop",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -2604,7 +2604,7 @@ circuit_digital_flipflop_TFlipFlop = circuit_digital_flipflop_TFlipFlop.extend({
 var circuit_digital_gate_DIN40700_AND = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_DIN40700_AND",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -2736,7 +2736,7 @@ circuit_digital_gate_DIN40700_AND = circuit_digital_gate_DIN40700_AND.extend({
 var circuit_digital_gate_DIN40700_NAND = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_DIN40700_NAND",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -2873,7 +2873,7 @@ circuit_digital_gate_DIN40700_NAND = circuit_digital_gate_DIN40700_NAND.extend({
 var circuit_digital_gate_DIN40700_NOR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_DIN40700_NOR",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -3020,7 +3020,7 @@ circuit_digital_gate_DIN40700_NOR = circuit_digital_gate_DIN40700_NOR.extend({
 var circuit_digital_gate_DIN40700_OR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_DIN40700_OR",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -3162,7 +3162,7 @@ circuit_digital_gate_DIN40700_OR = circuit_digital_gate_DIN40700_OR.extend({
 var circuit_digital_gate_DIN40700_XNOR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_DIN40700_XNOR",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -3309,7 +3309,7 @@ circuit_digital_gate_DIN40700_XNOR = circuit_digital_gate_DIN40700_XNOR.extend({
 var circuit_digital_gate_DIN40700_XOR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_DIN40700_XOR",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -3461,7 +3461,7 @@ circuit_digital_gate_DIN40700_XOR = circuit_digital_gate_DIN40700_XOR.extend({
 var circuit_digital_gate_IEC60617_12_AND = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_AND",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -3559,7 +3559,7 @@ circuit_digital_gate_IEC60617_12_AND = circuit_digital_gate_IEC60617_12_AND.exte
 var circuit_digital_gate_IEC60617_12_NAND = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_NAND",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -3662,7 +3662,7 @@ circuit_digital_gate_IEC60617_12_NAND = circuit_digital_gate_IEC60617_12_NAND.ex
 var circuit_digital_gate_IEC60617_12_NOR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_NOR",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -3770,7 +3770,7 @@ circuit_digital_gate_IEC60617_12_NOR = circuit_digital_gate_IEC60617_12_NOR.exte
 var circuit_digital_gate_IEC60617_12_NOT = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_NOT",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -3867,7 +3867,7 @@ circuit_digital_gate_IEC60617_12_NOT = circuit_digital_gate_IEC60617_12_NOT.exte
 var circuit_digital_gate_IEC60617_12_OR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_OR",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -3970,7 +3970,7 @@ circuit_digital_gate_IEC60617_12_OR = circuit_digital_gate_IEC60617_12_OR.extend
 var circuit_digital_gate_IEC60617_12_XNOR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_XNOR",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -4073,7 +4073,7 @@ circuit_digital_gate_IEC60617_12_XNOR = circuit_digital_gate_IEC60617_12_XNOR.ex
 var circuit_digital_gate_IEC60617_12_XOR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_XOR",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -4171,7 +4171,7 @@ circuit_digital_gate_IEC60617_12_XOR = circuit_digital_gate_IEC60617_12_XOR.exte
 var circuit_digital_pulse_10hz = CircuitFigure.extend({
 
    NAME: "circuit_digital_pulse_10hz",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -4276,7 +4276,7 @@ circuit_digital_pulse_10hz = circuit_digital_pulse_10hz.extend({
 var circuit_digital_pulse_1hz = CircuitFigure.extend({
 
    NAME: "circuit_digital_pulse_1hz",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -4381,7 +4381,7 @@ circuit_digital_pulse_1hz = circuit_digital_pulse_1hz.extend({
 var circuit_digital_pulse_50hz = CircuitFigure.extend({
 
    NAME: "circuit_digital_pulse_50hz",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -4484,7 +4484,7 @@ circuit_digital_pulse_50hz = circuit_digital_pulse_50hz.extend({
 var circuit_digital_pulse_Delay = CircuitFigure.extend({
 
    NAME: "circuit_digital_pulse_Delay",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -4655,7 +4655,7 @@ circuit_digital_pulse_Delay = circuit_digital_pulse_Delay.extend({
 var circuit_digital_signal_High = CircuitFigure.extend({
 
    NAME: "circuit_digital_signal_High",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -4737,7 +4737,7 @@ circuit_digital_signal_High = circuit_digital_signal_High.extend({
 var circuit_digital_signal_Low = CircuitFigure.extend({
 
    NAME: "circuit_digital_signal_Low",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -4820,7 +4820,7 @@ circuit_digital_signal_Low = circuit_digital_signal_Low.extend({
 var circuit_digital_timer_Delay = CircuitFigure.extend({
 
    NAME: "circuit_digital_timer_Delay",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -4989,7 +4989,7 @@ circuit_digital_timer_Delay = circuit_digital_timer_Delay.extend({
 var circuit_hardware_arduino_Arduino = CircuitFigure.extend({
 
    NAME: "circuit_hardware_arduino_Arduino",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -5483,7 +5483,7 @@ circuit_hardware_arduino_Arduino = circuit_hardware_arduino_Arduino.extend({
 var circuit_hardware_arduino_Led = CircuitFigure.extend({
 
    NAME: "circuit_hardware_arduino_Led",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -5587,7 +5587,7 @@ circuit_hardware_arduino_Led = circuit_hardware_arduino_Led.extend({
 var circuit_hardware_raspi_GPIORead = CircuitFigure.extend({
 
    NAME: "circuit_hardware_raspi_GPIORead",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -5844,7 +5844,7 @@ circuit_hardware_raspi_GPIORead = circuit_hardware_raspi_GPIORead.extend({
 var circuit_hardware_raspi_GPIOWrite = CircuitFigure.extend({
 
    NAME: "circuit_hardware_raspi_GPIOWrite",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -6388,7 +6388,7 @@ var documentation_Text = draw2d.shape.basic.Text.extend({
 var math_Median = CircuitFigure.extend({
 
    NAME: "math_Median",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -6547,7 +6547,7 @@ math_Median = math_Median.extend({
 var messaging_HiveMQ = CircuitFigure.extend({
 
    NAME: "messaging_HiveMQ",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -6671,7 +6671,7 @@ messaging_HiveMQ = messaging_HiveMQ.extend({
 var signal_SignalSource = CircuitFigure.extend({
 
    NAME: "signal_SignalSource",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -6835,7 +6835,7 @@ signal_SignalSource = signal_SignalSource.extend({
 var signal_SignalTarget = CircuitFigure.extend({
 
    NAME: "signal_SignalTarget",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -7006,31 +7006,31 @@ signal_SignalTarget = signal_SignalTarget.extend({
 // created with http://www.draw2d.org
 //
 //
-var video_BlackWhite = CircuitFigure.extend({
+var video_converter_BlackWhite = CircuitFigure.extend({
 
-   NAME: "video_BlackWhite",
-   VERSION: "2.0.119_589",
+   NAME: "video_converter_BlackWhite",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
      var _this = this;
 
-     this._super( $.extend({stroke:0, bgColor:null, width:80,height:81.98800000000028},attr), setter, getter);
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:84.12910056640976},attr), setter, getter);
      var port;
      // input_port1
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.875, y: 49.38283651266057 }));
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.875, y: 48.126034543826854 }));
      port.setConnectionDirection(3);
      port.setBackgroundColor("#37B1DE");
      port.setName("input_port1");
      port.setMaxFanOut(20);
      // input_port2
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.875, y: 79.87170188015365 }));
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.875, y: 77.8389528672162 }));
      port.setConnectionDirection(3);
      port.setBackgroundColor("#37B1DE");
      port.setName("input_port2");
      port.setMaxFanOut(20);
      // output_port1
-     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 101.86500000000024, y: 49.397472800897525 }));
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 101.86500000000024, y: 48.14029833592497 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
      port.setName("output_port1");
@@ -7041,7 +7041,7 @@ var video_BlackWhite = CircuitFigure.extend({
    {
       var shape = this._super();
       this.originalWidth = 80;
-      this.originalHeight= 81.98800000000028;
+      this.originalHeight= 84.12910056640976;
       return shape;
    },
 
@@ -7050,7 +7050,7 @@ var video_BlackWhite = CircuitFigure.extend({
        this.canvas.paper.setStart();
        var shape = null;
        // BoundingBox
-       shape = this.canvas.paper.path("M0,0 L80,0 L80,81.98800000000028 L0,81.98800000000028");
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,84.12910056640976 L0,84.12910056640976");
        shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
        shape.data("name","BoundingBox");
        
@@ -7059,29 +7059,54 @@ var video_BlackWhite = CircuitFigure.extend({
        shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Rectangle");
        
+       // Rectangle
+       shape = this.canvas.paper.path('M4.5,8.3799680000011Q4.5,4.379968000001099 8.5, 4.379968000001099L71.5,4.379968000001099Q75.5,4.379968000001099 75.5, 8.3799680000011L75.5,48.3799680000011Q75.5,52.3799680000011 71.5, 52.3799680000011L8.5,52.3799680000011Q4.5,52.3799680000011 4.5, 48.3799680000011L4.5,8.3799680000011');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(235,235,235,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
        // Label
        shape = this.canvas.paper.text(0,0,'BlackWhite');
-       shape.attr({"x":5.5,"y":69.98800000000028,"text-anchor":"start","text":"BlackWhite","font-family":"\"Arial\"","font-size":14,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":5.407552000004216,"y":72.12910056640976,"text-anchor":"start","text":"BlackWhite","font-family":"\"Arial\"","font-size":14,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
-       // Rectangle
-       shape = this.canvas.paper.path('M7.2724609375 45.73301031250048L72.2724609375 45.73301031250048L72.2724609375 4.7330103125004825Z');
-       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(0,0,0,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Rectangle");
-       
-       // Rectangle
-       shape = this.canvas.paper.path('M53.360640000001695 47.41166200000043L49.16633600000205 55.01383800000076L56.768512000002374 55.01383800000076Z');
-       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,8,41,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Rectangle");
+       // Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8,"ry":8,"cx":38.136293579453195,"cy":17.499523579457673,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
        
        // Label
        shape = this.canvas.paper.text(0,0,'threshold');
-       shape.attr({"x":13.2724609375,"y":52.597375000000284,"text-anchor":"start","text":"threshold","font-family":"\"Arial\"","font-size":8,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":12,"y":57.59737500000119,"text-anchor":"start","text":"threshold","font-family":"\"Arial\"","font-size":8,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
+       // Rectangle
+       shape = this.canvas.paper.path('M28.136293579453195 49.8799680000011L49.136293579453195 49.8799680000011L47.66478056057895 35.49000926909139L47.26481464287099 34.55069784112129L46.61172166499273 33.6693617814999L45.72534552659636 32.87278004043219L44.63261831811906 32.18515635102449L43.366742002848696 31.627383811124673L41.96617959205287 31.216410057117173L40.47348646586943 30.96472231855296L38.9340173495948 30.8799680000011L37.394548233321984 30.96472231855296L35.90185510713491 31.216410057117173L34.50129269633908 31.627383811124673L33.23541638106508 32.18515635102449L32.142689172593236 32.87278004043219L31.256313034195045 33.6693617814999L30.603220056320424 34.55069784112129L30.203254138608827 35.49000926909139Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M39.13421670400021,48.3799680000011Q39.13421670400021,52.3799680000011 43.13421670400021, 52.3799680000011L71.13421670400021,52.3799680000011Q75.13421670400021,52.3799680000011 75.13421670400021, 48.3799680000011L75.13421670400021,8.3799680000011Q75.13421670400021,4.379968000001099 71.13421670400021, 4.379968000001099L43.13421670400021,4.379968000001099Q39.13421670400021,4.379968000001099 39.13421670400021, 8.3799680000011L39.13421670400021,48.3799680000011');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(0,0,0,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M40.84867200000008 49.8799680000011L49.651728947199445 49.8799680000011L48.46050412239856 35.49000926909139L48.13672218901411 34.55069784112129L47.60802787358989 33.6693617814999L46.890485285362956 32.87278004043219L46.00589659279103 32.18515635102449L44.98113957566238 31.627383811124673L43.84735095739961 31.216410057117173L42.6389803314396 30.96472231855296L41.392743427790265 30.8799680000011L40.84867200000008 30.916969314093876L40.84867200000008 49.8799680000011Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Circle
+       shape = this.canvas.paper.path('M39.92918400000053 25.470542254553948L40.260442059450725 25.499523579457673L41.64962748078506 25.377985603554407L42.996603206054715 25.01706454574378L44.260442059450725 24.42772680973212L45.40274293694165 23.627879124409446L46.3887976044025 22.641824456950417L47.18864528972517 21.499523579457673L47.77798302573683 20.235684726063482L48.13890408354746 18.888709000792005L48.260442059450725 17.499523579457673L48.13890408354746 16.11033815812334L47.77798302573683 14.763362432851864L47.18864528972517 13.499523579457673L46.3887976044025 12.357222701964929L45.40274293694165 11.3711680345059L44.260442059450725 10.571320349183225L42.996603206054715 9.981982613171567L41.64962748078506 9.621061555360939L40.260442059450725 9.499523579457673L39.92918400000053 9.528504904361398L39.92918400000053 25.470542254553948Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
        // Line
-       shape = this.canvas.paper.path('M11.417600000006132 53.26363000000765L7.485440000008566,53.26363000000856L0.4075520000042161,64.01153400000749');
+       shape = this.canvas.paper.path('M9.377490534403478 57.12910056640976L5.757806182406057,57.53049545921385L0.4075520000042161,64.0115340000084');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M39.586528000003455 5.1831660000025295L39.84867200000008,51.83221508800125');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
 
@@ -7101,13 +7126,14 @@ var video_BlackWhite = CircuitFigure.extend({
  * Looks disconcerting - extending my own class. But this is a good method to
  * merge basic code and override them with custom methods.
  */
-video_BlackWhite = video_BlackWhite.extend({
+video_converter_BlackWhite = video_converter_BlackWhite.extend({
 
     init: function(attr, setter, getter){
         this._super(attr, setter, getter);
         this.worker= null;
         this.tmpCanvas = null;
         this.tmpContext = null;
+        this.processing = false;
         this.getInputPort("input_port1").setSemanticGroup("Image");
         this.getOutputPort("output_port1").setSemanticGroup("Image");
         this.attr({
@@ -7126,11 +7152,12 @@ video_BlackWhite = video_BlackWhite.extend({
     {
         var img = this.getInputPort("input_port1").getValue();
         var threshold = this.getInputPort("input_port2").getValue();
-        if(img instanceof HTMLImageElement && this.worker!==null){
+        if(img instanceof HTMLImageElement && this.worker!==null && this.processing === false){
             var imageData = this.imageToData(img);
             // Push it to the WebWorker with "Transferable Objects"
             // Passing data by reference instead of structure clone
             //
+            this.processing = true;
             this.worker.postMessage({imageData: imageData,threshold: threshold}, [imageData.data.buffer]);
         }
     },
@@ -7153,8 +7180,485 @@ video_BlackWhite = video_BlackWhite.extend({
             for( let x = 0; x < pixels.length; x += 4 ) {
 
                 let lum = 0.2126 * pixels[x] + 0.7152 * pixels[x+1] + 0.0722 * pixels[x+2];
-                let value= lum>threshold?255:0;
+                let value= lum>threshold?0:255;
                 pixels[x] = pixels[x+1] = pixels[x+2] = value;
+            }
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => {
+                this.getOutputPort("output_port1").setValue(image);
+                this.processing = false;
+            }
+            image.src = this.tmpCanvas.toDataURL();
+        };
+        
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction
+        this.processing = false;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.progressing = false;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_converter_Grayscale = CircuitFigure.extend({
+
+   NAME: "video_converter_Grayscale",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80.125,height:80.63839999999982},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9429953198129615, y: 49.49205341375826 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 100.18804992199671, y: 49.49205341375826 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80.125;
+      this.originalHeight= 80.63839999999982;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80.125,0 L80.125,80.63839999999982 L0,80.63839999999982");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0.015625,3Q0.015625,0 3.015625, 0L77.015625,0Q80.015625,0 80.015625, 3L80.015625,77Q80.015625,80 77.015625, 80L3.015625,80Q0.015625,80 0.015625, 77L0.015625,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Grayscale');
+       shape.attr({"x":4,"y":68.13839999999982,"text-anchor":"start","text":"Grayscale","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M5.244424999999865,10.63839999999982Q5.244424999999865,5.63839999999982 10.244424999999865, 5.63839999999982L69.24442499999986,5.63839999999982Q74.24442499999986,5.63839999999982 74.24442499999986, 10.63839999999982L74.24442499999986,51.63839999999982Q74.24442499999986,56.63839999999982 69.24442499999986, 56.63839999999982L10.244424999999865,56.63839999999982Q5.244424999999865,56.63839999999982 5.244424999999865, 51.63839999999982L5.244424999999865,10.63839999999982');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(214,247,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Body
+       shape = this.canvas.paper.path('M28.889806062430115,49.23713714420617Q27.95386041812526,53.12609661312672 31.95386041812526, 53.12609661312672L49.95386041812526,53.12609661312672Q53.95386041812526,53.12609661312672 52.928477872059354, 49.25975588393285L50.91922757615705,41.68361146446987Q49.89384503009114,37.817270735276 49.684272505307035, 37.033719425669005L49.684272505307035,37.033719425669005Q49.47469998052293,36.250168116062014 49.1324949619634, 35.51497848336794L49.1324949619634,35.51497848336794Q48.79028994340388,34.77978885067387 48.32585015739369, 34.11529925985769L48.32585015739369,34.11529925985769Q47.8614103713835,33.45080966904152 47.288847585802614, 32.877210300071965L47.288847585802614,32.877210300071965Q46.71628480022173,32.30361093110241 46.052996045579675, 31.8383303105511L46.052996045579675,31.8383303105511Q45.38970729093762,31.37304968999979 44.65584626040345, 31.03022513407859L44.65584626040345,31.03022513407859Q43.92198522986928,30.687400578157394 43.139849919504286, 30.477448637519956L43.139849919504286,30.477448637519956Q42.35771460913929,30.267496696882517 41.55106980456958, 30.19679665500462L41.55106980456958,30.19679665500462Q40.744424999999865,30.12609661312672 39.93778019543015, 30.19679665500462L39.93778019543015,30.19679665500462Q39.131135390860436,30.267496696882517 38.34900008049544, 30.477448637519956L38.34900008049544,30.477448637519956Q37.56686477013045,30.687400578157394 36.83300373959628, 31.03022513407859L36.83300373959628,31.03022513407859Q36.09914270906211,31.37304968999979 35.435853954420054, 31.8383303105511L35.435853954420054,31.8383303105511Q34.772565199778,32.30361093110241 34.200002414197115, 32.877210300071965L34.200002414197115,32.877210300071965Q33.62743962861623,33.45080966904152 33.16299984260604, 34.11529925985769L33.16299984260604,34.11529925985769Q32.69856005659585,34.77978885067387 32.35635503803633, 35.51497848336794L32.35635503803633,35.51497848336794Q32.0141500194768,36.250168116062014 31.79227831889102, 37.17455415865879L31.79227831889102,37.17455415865879Q31.570406618305242,38.09894020125557 30.634460974000387, 41.98789967017612L28.889806062430115,49.23713714420617');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Body");
+       
+       // Head
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":9.290564581874843,"ry":9.290564581874843,"cx":39.744425000000106,"cy":19.835532031251443,"stroke":"none","stroke-width":0,"fill":"rgba(26,177,232,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Head");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M40.06486093750391,9.63839999999982Q40.06486093750391,5.63839999999982 44.06486093750391, 5.63839999999982L70.06486093750391,5.63839999999982Q74.06486093750391,5.63839999999982 74.06486093750391, 9.63839999999982L74.06486093750391,52.63839999999982Q74.06486093750391,56.63839999999982 70.06486093750391, 56.63839999999982L44.06486093750391,56.63839999999982Q40.06486093750391,56.63839999999982 40.06486093750391, 52.63839999999982L40.06486093750391,9.63839999999982');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(237,237,237,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Shadow_Body
+       shape = this.canvas.paper.path('M39.40606093750375,49.06802542650166Q39.40606093750375,53.06802542650166 43.40606093750375, 53.06802542650166L48.4268250000041,53.06802542650166Q52.4268250000041,53.06802542650166 51.39970837135936, 49.20214500528304L49.393926240614725,41.65274540233118Q48.366809611969984,37.78686498111256 48.15723708718588, 37.004729670747565L48.15723708718588,37.004729670747565Q47.94766456240177,36.22259436038257 47.605459543842244, 35.4887333298484L47.605459543842244,35.4887333298484Q47.26325452528272,34.75487229931423 46.79881473927253, 34.091583544672176L46.79881473927253,34.091583544672176Q46.33437495326234,33.42829479003012 45.761812167681455, 32.85573200444924L45.761812167681455,32.85573200444924Q45.18924938210057,32.28316921886835 44.52596062745852, 31.818729432858163L44.52596062745852,31.818729432858163Q43.86267187281646,31.354289646847974 43.12881084228229, 31.01208462828845L43.12881084228229,31.01208462828845Q42.39494981174812,30.669879609728923 41.61281450138313, 30.460307084944816L41.61281450138313,30.460307084944816Q40.830679191018135,30.25073456016071 40.118370064260944, 30.188415586643714L40.118370064260944,30.188415586643714Q39.40606093750375,30.12609661312672 39.40606093750375, 34.12609661312672L39.40606093750375,49.06802542650166');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(179,179,179,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow_Body");
+       
+       // Shadow_Head
+       shape = this.canvas.paper.path('M40.06486093750391 29.11315439741429L41.60418544539334 28.978480953486724L43.168456066123326 28.55933590391851L44.63617812719167 27.874925866799458L45.96275563647578 26.94604629477908L47.10788120763755 25.80092072361731L48.036760779657925 24.474343214333203L48.721170816776976 23.00662115326486L49.14031586634519 21.442350532534874L49.28146041812852 19.829060923395446L49.14031586634519 18.215771314256017L48.721170816776976 16.65150069352603L48.036760779657925 15.183778632457688L47.10788120763755 13.857201123173581L45.96275563647578 12.712075552011811L44.63617812719167 11.783195979991433L43.168456066123326 11.098785942872382L41.60418544539334 10.679640893304168L40.06486093750391 10.5449674493766L40.06486093750391 29.11315439741429Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(105,106,107,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow_Head");
+       
+       // Line
+       shape = this.canvas.paper.path('M39.72936093750377 7.1828968750005515L40.01586093750393,30.57539687499957L40.56486093750391,55.28039687499859L40.56486093750391,54.841196874998786');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":3,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_converter_Grayscale = video_converter_Grayscale.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.worker.postMessage(imageData, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data;
+            var pixels = imageData.data;
+            for( let x = 0; x < pixels.length; x += 4 ) {
+                // normal grayscale conversion
+                let average = 0.3*pixels[x] + 0.59*pixels[x+1] + 0.11*pixels[x+2];
+
+                pixels[x]     = average;
+                pixels[x + 1] = average;
+                pixels[x + 2] = average;
+            }
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => {
+                this.getOutputPort("output_port1").setValue(image);
+            }
+            image.src = this.tmpCanvas.toDataURL();
+        };
+        
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+        
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_converter_GrayscaleAvg = CircuitFigure.extend({
+
+   NAME: "video_converter_GrayscaleAvg",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:82.484375,height:80},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 0.29632885016085125, y: 49.886999999999944 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 98.53463155900722, y: 49.886999999999944 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 82.484375;
+      this.originalHeight= 80;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L82.484375,0 L82.484375,80 L0,80");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M1.015625,3Q1.015625,0 4.015625, 0L78.015625,0Q81.015625,0 81.015625, 3L81.015625,77Q81.015625,80 78.015625, 80L4.015625,80Q1.015625,80 1.015625, 77L1.015625,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'GrayscaleAvg');
+       shape.attr({"x":4,"y":67.63839999999982,"text-anchor":"start","text":"GrayscaleAvg","font-family":"\"Arial\"","font-size":12,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M6.244424999999865,10.63839999999982Q6.244424999999865,5.63839999999982 11.244424999999865, 5.63839999999982L70.24442499999986,5.63839999999982Q75.24442499999986,5.63839999999982 75.24442499999986, 10.63839999999982L75.24442499999986,51.63839999999982Q75.24442499999986,56.63839999999982 70.24442499999986, 56.63839999999982L11.244424999999865,56.63839999999982Q6.244424999999865,56.63839999999982 6.244424999999865, 51.63839999999982L6.244424999999865,10.63839999999982');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(214,247,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Body
+       shape = this.canvas.paper.path('M29.889806062430115,49.23713714420617Q28.95386041812526,53.12609661312672 32.95386041812526, 53.12609661312672L50.95386041812526,53.12609661312672Q54.95386041812526,53.12609661312672 53.928477872059354, 49.25975588393285L51.91922757615705,41.68361146446987Q50.89384503009114,37.817270735276 50.684272505307035, 37.033719425669005L50.684272505307035,37.033719425669005Q50.47469998052293,36.250168116062014 50.1324949619634, 35.51497848336794L50.1324949619634,35.51497848336794Q49.79028994340388,34.77978885067387 49.32585015739369, 34.11529925985769L49.32585015739369,34.11529925985769Q48.8614103713835,33.45080966904152 48.288847585802614, 32.877210300071965L48.288847585802614,32.877210300071965Q47.71628480022173,32.30361093110241 47.052996045579675, 31.8383303105511L47.052996045579675,31.8383303105511Q46.38970729093762,31.37304968999979 45.65584626040345, 31.03022513407859L45.65584626040345,31.03022513407859Q44.92198522986928,30.687400578157394 44.139849919504286, 30.477448637519956L44.139849919504286,30.477448637519956Q43.35771460913929,30.267496696882517 42.55106980456958, 30.19679665500462L42.55106980456958,30.19679665500462Q41.744424999999865,30.12609661312672 40.93778019543015, 30.19679665500462L40.93778019543015,30.19679665500462Q40.131135390860436,30.267496696882517 39.34900008049544, 30.477448637519956L39.34900008049544,30.477448637519956Q38.56686477013045,30.687400578157394 37.83300373959628, 31.03022513407859L37.83300373959628,31.03022513407859Q37.09914270906211,31.37304968999979 36.435853954420054, 31.8383303105511L36.435853954420054,31.8383303105511Q35.772565199778,32.30361093110241 35.200002414197115, 32.877210300071965L35.200002414197115,32.877210300071965Q34.62743962861623,33.45080966904152 34.16299984260604, 34.11529925985769L34.16299984260604,34.11529925985769Q33.69856005659585,34.77978885067387 33.35635503803633, 35.51497848336794L33.35635503803633,35.51497848336794Q33.0141500194768,36.250168116062014 32.79227831889102, 37.17455415865879L32.79227831889102,37.17455415865879Q32.57040661830524,38.09894020125557 31.634460974000387, 41.98789967017612L29.889806062430115,49.23713714420617');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Body");
+       
+       // Head
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":9.290564581874843,"ry":9.290564581874843,"cx":40.744425000000106,"cy":19.835532031251443,"stroke":"none","stroke-width":0,"fill":"rgba(26,177,232,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Head");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M41.06486093750391,9.63839999999982Q41.06486093750391,5.63839999999982 45.06486093750391, 5.63839999999982L71.06486093750391,5.63839999999982Q75.06486093750391,5.63839999999982 75.06486093750391, 9.63839999999982L75.06486093750391,52.63839999999982Q75.06486093750391,56.63839999999982 71.06486093750391, 56.63839999999982L45.06486093750391,56.63839999999982Q41.06486093750391,56.63839999999982 41.06486093750391, 52.63839999999982L41.06486093750391,9.63839999999982');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Shadow_Body
+       shape = this.canvas.paper.path('M40.40606093750375,49.06802542650166Q40.40606093750375,53.06802542650166 44.40606093750375, 53.06802542650166L49.4268250000041,53.06802542650166Q53.4268250000041,53.06802542650166 52.39970837135936, 49.20214500528304L50.393926240614725,41.65274540233118Q49.366809611969984,37.78686498111256 49.15723708718588, 37.004729670747565L49.15723708718588,37.004729670747565Q48.94766456240177,36.22259436038257 48.605459543842244, 35.4887333298484L48.605459543842244,35.4887333298484Q48.26325452528272,34.75487229931423 47.79881473927253, 34.091583544672176L47.79881473927253,34.091583544672176Q47.33437495326234,33.42829479003012 46.761812167681455, 32.85573200444924L46.761812167681455,32.85573200444924Q46.18924938210057,32.28316921886835 45.52596062745852, 31.818729432858163L45.52596062745852,31.818729432858163Q44.86267187281646,31.354289646847974 44.12881084228229, 31.01208462828845L44.12881084228229,31.01208462828845Q43.39494981174812,30.669879609728923 42.61281450138313, 30.460307084944816L42.61281450138313,30.460307084944816Q41.830679191018135,30.25073456016071 41.118370064260944, 30.188415586643714L41.118370064260944,30.188415586643714Q40.40606093750375,30.12609661312672 40.40606093750375, 34.12609661312672L40.40606093750375,49.06802542650166');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(117,117,117,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow_Body");
+       
+       // Shadow_Head
+       shape = this.canvas.paper.path('M41.06486093750391 29.11315439741429L42.60418544539334 28.978480953486724L44.168456066123326 28.55933590391851L45.63617812719167 27.874925866799458L46.96275563647578 26.94604629477908L48.10788120763755 25.80092072361731L49.036760779657925 24.474343214333203L49.721170816776976 23.00662115326486L50.14031586634519 21.442350532534874L50.28146041812852 19.829060923395446L50.14031586634519 18.215771314256017L49.721170816776976 16.65150069352603L49.036760779657925 15.183778632457688L48.10788120763755 13.857201123173581L46.96275563647578 12.712075552011811L45.63617812719167 11.783195979991433L44.168456066123326 11.098785942872382L42.60418544539334 10.679640893304168L41.06486093750391 10.5449674493766L41.06486093750391 29.11315439741429Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(208,210,212,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow_Head");
+       
+       // Line
+       shape = this.canvas.paper.path('M40.72936093750377 7.1828968750005515L41.01586093750393,30.57539687499957L41.56486093750391,55.28039687499859L41.56486093750391,54.841196874998786');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":3,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_converter_GrayscaleAvg = video_converter_GrayscaleAvg.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.worker.postMessage(imageData, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data;
+            var pixels = imageData.data;
+            for( let x = 0; x < pixels.length; x += 4 ) {
+                // average grayscale conversion
+                let average = (pixels[x] + pixels[x+1] + pixels[x+2])/3;
+
+                pixels[x]     = average;
+                pixels[x + 1] = average;
+                pixels[x + 2] = average;
             }
             self.postMessage(imageData, [imageData.data.buffer]);
         };
@@ -7207,6 +7711,14 @@ video_BlackWhite = video_BlackWhite.extend({
     imageToData: function(image){
         var width = image.naturalWidth;
         var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
         // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
         //
         if(this.tmpContext === null ) {
@@ -7227,25 +7739,31 @@ video_BlackWhite = video_BlackWhite.extend({
 // created with http://www.draw2d.org
 //
 //
-var video_Blur = CircuitFigure.extend({
+var video_converter_HSV_Colorspace = CircuitFigure.extend({
 
-   NAME: "video_Blur",
-   VERSION: "2.0.119_589",
+   NAME: "video_converter_HSV_Colorspace",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
      var _this = this;
 
-     this._super( $.extend({stroke:0, bgColor:null, width:80,height:80},attr), setter, getter);
+     this._super( $.extend({stroke:0, bgColor:null, width:80.40294399999675,height:84.62910056640976},attr), setter, getter);
      var port;
      // input_port1
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9640000000001692, y: 49.886999999999944 }));
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.3644475505813487, y: 47.84169952063797 }));
      port.setConnectionDirection(3);
      port.setBackgroundColor("#37B1DE");
      port.setName("input_port1");
      port.setMaxFanOut(20);
+     // input_port2
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.3644475505813487, y: 78.1876804894442 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port2");
+     port.setMaxFanOut(20);
      // output_port1
-     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 100.32506249999983, y: 49.886999999999944 }));
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 101.8556534447299, y: 47.85587904035329 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
      port.setName("output_port1");
@@ -7255,8 +7773,8 @@ var video_Blur = CircuitFigure.extend({
    createShapeElement : function()
    {
       var shape = this._super();
-      this.originalWidth = 80;
-      this.originalHeight= 80;
+      this.originalWidth = 80.40294399999675;
+      this.originalHeight= 84.62910056640976;
       return shape;
    },
 
@@ -7265,34 +7783,64 @@ var video_Blur = CircuitFigure.extend({
        this.canvas.paper.setStart();
        var shape = null;
        // BoundingBox
-       shape = this.canvas.paper.path("M0,0 L80,0 L80,80 L0,80");
+       shape = this.canvas.paper.path("M0,0 L80.40294399999675,0 L80.40294399999675,84.62910056640976 L0,84.62910056640976");
        shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
        shape.data("name","BoundingBox");
        
        // Rectangle
-       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape = this.canvas.paper.path('M0.4029439999967508,3Q0.4029439999967508,0 3.402943999996751, 0L77.40294399999675,0Q80.40294399999675,0 80.40294399999675, 3L80.40294399999675,77Q80.40294399999675,80 77.40294399999675, 80L3.402943999996751,80Q0.4029439999967508,80 0.4029439999967508, 77L0.4029439999967508,3');
        shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Rectangle");
        
+       // Rectangle
+       shape = this.canvas.paper.path('M4.902943999996751,8.37996800000019Q4.902943999996751,4.37996800000019 8.90294399999675, 4.37996800000019L71.90294399999675,4.37996800000019Q75.90294399999675,4.37996800000019 75.90294399999675, 8.37996800000019L75.90294399999675,48.37996800000019Q75.90294399999675,52.37996800000019 71.90294399999675, 52.37996800000019L8.90294399999675,52.37996800000019Q4.902943999996751,52.37996800000019 4.902943999996751, 48.37996800000019L4.902943999996751,8.37996800000019');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(235,235,235,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
        // Label
-       shape = this.canvas.paper.text(0,0,'Blur');
-       shape.attr({"x":26.228799999999865,"y":66.37877759999992,"text-anchor":"start","text":"Blur","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape = this.canvas.paper.text(0,0,'RGB -> HSV');
+       shape.attr({"x":7.810496000000967,"y":73.62910056640976,"text-anchor":"start","text":"RGB -> HSV","font-family":"\"Arial\"","font-size":12,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
        // Circle
-       shape = this.canvas.paper.path('M32.63878406783169 39.46429576295304L32.01261272331885 40.87710770827289L31.629134099395742 42.38285615840232L31.5 43.93578970863655L31.629134099395742 45.48872325886896L32.01261272331885 46.99447170900112L32.63878406783169 48.40728365432369L33.48862223348897 49.68423151878687L34.5363053176643 50.786515887693895L35.75 51.68064440829494L37.09282878173144 52.33944943792994L38.523990489830794 52.742913519146896L40 52.87877759999992L41.476009510169206 52.742913519146896L42.90717121826856 52.33944943792994L44.25 51.68064440829494L45.4636946823357 50.786515887693895L46.51137776651103 49.68423151878687L47.36121593216831 48.40728365432369L47.98738727668115 46.99447170900112L48.37086590060426 45.48872325886896L48.5 43.93578970863655L48.37086590060426 42.38285615840232L47.98738727668115 40.87710770827289L47.36121593216831 39.46429576295304L40.31459911433467 23.87877759999992Z');
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(81,80,82,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8,"ry":8,"cx":38.539237579449946,"cy":17.499523579457673,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Circle");
        
-       // Circle
-       shape = this.canvas.paper.path('M19.30384757729189 24.195664876622686L18.861844275284056 25.21873559564574L18.591153481925176 26.309105162982632L18.5 27.433643251079957L18.591153481925176 28.55818133918001L18.861844275284056 29.64855090652054L19.30384757729189 30.671621625544503L19.90373334128708 31.596308010154644L20.643274341881806 32.394513932469636L21.49999999999909 33.04198630945393L22.44787914004519 33.51905202057242L23.458110933996068 33.81121566559068L24.5 33.909599999999955L25.541889066003932 33.81121566559068L26.55212085995481 33.51905202057242L27.50000000000091 33.04198630945393L28.356725658118194 32.394513932469636L29.09626665871292 31.596308010154644L29.69615242270811 30.671621625544503L30.138155724715944 29.64855090652054L30.408846518074824 28.55818133918001L30.5 27.433643251079957L30.408846518074824 26.309105162982632L30.138155724715944 25.21873559564574L29.69615242270811 24.195664876622686L24.722069963059766 12.909599999999955Z');
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(215,213,217,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Circle");
+       // Rectangle
+       shape = this.canvas.paper.path('M28.539237579449946 49.87996800000019L49.539237579449946 49.87996800000019L48.06772456057661 35.49000926909048L47.66775864286774 34.55069784111947L47.01466566498948 33.6693617814999L46.12828952659402 32.87278004043128L45.03556231811672 32.18515635102358L43.76968600284545 31.627383811123764L42.36912359204962 31.216410057116263L40.87643046586618 30.96472231855114L39.33696134959246 30.87996800000019L37.797492233317826 30.96472231855114L36.30479910713257 31.216410057116263L34.90423669633583 31.627383811123764L33.63836038106183 32.18515635102358L32.54563317258908 32.87278004043128L31.659257034191796 33.6693617814999L31.006164056316265 34.55069784111947L30.606198138605578 35.49000926909048Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M40.33212799999728,47.87996800000019Q40.33212799999728,51.87996800000019 44.33212799999728, 51.87996800000019L71.33212799999728,51.87996800000019Q75.33212799999728,51.87996800000019 75.33212799999728, 47.87996800000019L75.33212799999728,8.87996800000019Q75.33212799999728,4.87996800000019 71.33212799999728, 4.87996800000019L44.33212799999728,4.87996800000019Q40.33212799999728,4.87996800000019 40.33212799999728, 8.87996800000019L40.33212799999728,47.87996800000019');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(34,61,199,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M41.25161599999592 49.87996800000019L50.054672947195286 49.87996800000019L48.86344812239349 35.49000926909048L48.53966618900904 34.55069784111947L48.01097187358573 33.6693617814999L47.29342928535789 32.87278004043128L46.40884059278687 32.18515635102358L45.384083575658224 31.627383811123764L44.250294957394544 31.216410057116263L43.04192433143544 30.96472231855114L41.795687427787016 30.87996800000019L41.25161599999592 30.916969314092967L41.25161599999592 49.87996800000019Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(51,255,207,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
        
        // Circle
-       shape = this.canvas.paper.path('M54.70786677729302 35.16484247662174L54.26586347528519 36.187913195645706L53.995172681927215 37.27828276298078L53.90401920000022 38.40282085108174L53.995172681927215 39.527358939181795L54.26586347528519 40.61772850651869L54.70786677729302 41.64079922554447L55.30775254128639 42.56548561015461L56.04729354188021 43.36369153246778L56.90401920000022 44.01116390945481L57.85189834004541 44.488229620569655L58.86213013399902 44.78039326558974L59.90401920000022 44.87877759999992L60.945908266001425 44.78039326558974L61.95614005995503 44.488229620569655L62.90401920000022 44.01116390945481L63.76074485812023 43.36369153246778L64.50028585871405 42.56548561015461L65.10017162270742 41.64079922554447L65.54217492471525 40.61772850651869L65.81286571807323 39.527358939181795L65.90401920000022 38.40282085108174L65.81286571807323 37.27828276298078L65.54217492471525 36.187913195645706L65.10017162270742 35.16484247662174L60.12608916305999 23.87877759999992Z');
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(172,170,173,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape = this.canvas.paper.path('M40.33212799999728 25.470542254553948L40.663386059446566 25.499523579457673L42.05257148078181 25.377985603555317L43.399547206051466 25.017064545744688L44.663386059446566 24.42772680973303L45.80568693693931 23.627879124409446L46.79174160439834 22.641824456950417L47.591589289721924 21.499523579457673L48.18092702573358 20.235684726062573L48.54184808354421 18.888709000792915L48.663386059446566 17.499523579457673L48.54184808354421 16.11033815812243L48.18092702573358 14.763362432852773L47.591589289721924 13.499523579457673L46.79174160439834 12.357222701964929L45.80568693693931 11.3711680345059L44.663386059446566 10.571320349182315L43.399547206051466 9.981982613170658L42.05257148078181 9.62106155536003L40.663386059446566 9.499523579457673L40.33212799999728 9.528504904361398L40.33212799999728 25.470542254553948Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(51,255,207,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Circle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'hue');
+       shape.attr({"x":9.121535999996922,"y":58.609375,"text-anchor":"start","text":"hue","font-family":"\"Arial\"","font-size":9,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Line
+       shape = this.canvas.paper.path('M8.936960000001818 58.87394028320887L0.024064000000180386,66.07112428320761L0,66.19042028320837');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M40.440896000001885 5.1831660000025295L40.650611199997,52.945802799990815');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
        
 
        return this.canvas.paper.setFinish();
@@ -7311,13 +7859,14 @@ var video_Blur = CircuitFigure.extend({
  * Looks disconcerting - extending my own class. But this is a good method to
  * merge basic code and override them with custom methods.
  */
-video_Blur = video_Blur.extend({
+video_converter_HSV_Colorspace = video_converter_HSV_Colorspace.extend({
 
     init: function(attr, setter, getter){
         this._super(attr, setter, getter);
         this.worker= null;
         this.tmpCanvas = null;
         this.tmpContext = null;
+        this.processing = false;
         this.getInputPort("input_port1").setSemanticGroup("Image");
         this.getOutputPort("output_port1").setSemanticGroup("Image");
         this.attr({
@@ -7335,11 +7884,523 @@ video_Blur = video_Blur.extend({
     calculate:function( context)
     {
         var img = this.getInputPort("input_port1").getValue();
-        if(img instanceof HTMLImageElement && this.worker!==null){
+        if(img instanceof HTMLImageElement && this.worker!==null && this.processing === false){
             var imageData = this.imageToData(img);
             // Push it to the WebWorker with "Transferable Objects"
             // Passing data by reference instead of structure clone
             //
+            this.processing = true;
+            var hue = this.getInputPort("input_port2").getValue();
+            this.worker.postMessage( {imageData, hue}, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data.imageData;
+            var hue = event.data.hue;
+            
+            // mapping of [0..5] => [0..359]
+            hue = 359/5*hue;
+            
+            var pixels = imageData.data;
+            var nPixels = pixels.length,
+              v = 2, // Math.pow(2, this.value()),
+              s = 1.5, // Math.pow(2, this.saturation()),
+              h = Math.abs(hue + 360) % 360,
+              i;
+
+            // Precompute the values in the matrix:
+            var vsu = v * s * Math.cos((h * Math.PI) / 180),
+                vsw = v * s * Math.sin((h * Math.PI) / 180);
+            // (result spot)(source spot)
+            var rr = 0.299 * v + 0.701 * vsu + 0.167 * vsw,
+                rg = 0.587 * v - 0.587 * vsu + 0.33 * vsw,
+                rb = 0.114 * v - 0.114 * vsu - 0.497 * vsw;
+            var gr = 0.299 * v - 0.299 * vsu - 0.328 * vsw,
+                gg = 0.587 * v + 0.413 * vsu + 0.035 * vsw,
+                gb = 0.114 * v - 0.114 * vsu + 0.293 * vsw;
+            var br = 0.299 * v - 0.3 * vsu + 1.25 * vsw,
+                bg = 0.587 * v - 0.586 * vsu - 1.05 * vsw,
+                bb = 0.114 * v + 0.886 * vsu - 0.2 * vsw;
+
+            var r, g, b, a;
+
+            for (i = 0; i < nPixels; i += 4) {
+              r = pixels[i + 0];
+              g = pixels[i + 1];
+              b = pixels[i + 2];
+              a = pixels[i + 3];
+
+              pixels[i + 0] = rr * r + rg * g + rb * b;
+              pixels[i + 1] = gr * r + gg * g + gb * b;
+              pixels[i + 2] = br * r + bg * g + bb * b;
+              pixels[i + 3] = a; // alpha
+            }
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            this.processing = false;
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => {
+                this.getOutputPort("output_port1").setValue(image);
+            }
+            image.src = this.tmpCanvas.toDataURL();
+        };
+        
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction
+        this.processing = false;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_converter_Invert = CircuitFigure.extend({
+
+   NAME: "video_converter_Invert",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:82.12910056640976},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.875, y: 49.29799513299382 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 101.86500000000024, y: 49.31260627559365 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 82.12910056640976;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,82.12910056640976 L0,82.12910056640976");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M4.5,8.37996800000019Q4.5,4.37996800000019 8.5, 4.37996800000019L71.5,4.37996800000019Q75.5,4.37996800000019 75.5, 8.37996800000019L75.5,54.37996800000019Q75.5,58.37996800000019 71.5, 58.37996800000019L8.5,58.37996800000019Q4.5,58.37996800000019 4.5, 54.37996800000019L4.5,8.37996800000019');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(235,235,235,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Invert');
+       shape.attr({"x":22.407552000004216,"y":70.12910056640976,"text-anchor":"start","text":"Invert","font-family":"\"Arial\"","font-size":14,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8,"ry":8,"cx":38.136293579453195,"cy":17.499523579457673,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M28.136293579453195 49.87996800000019L49.136293579453195 49.87996800000019L47.66478056057986 35.49000926909048L47.26481464287099 34.55069784111947L46.61172166499273 33.6693617814999L45.725345526597266 32.87278004043128L44.63261831811997 32.18515635102358L43.366742002848696 31.627383811123764L41.96617959205287 31.216410057116263L40.47348646586943 30.96472231855114L38.934017349595706 30.87996800000019L37.394548233321075 30.96472231855114L35.901855107135816 31.216410057116263L34.50129269633908 31.627383811123764L33.23541638106508 32.18515635102358L32.14268917259233 32.87278004043128L31.256313034195045 33.6693617814999L30.603220056319515 34.55069784111947L30.203254138608827 35.49000926909048Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M39.42918400000053,53.87996800000019Q39.42918400000053,57.87996800000019 43.42918400000053, 57.87996800000019L71,57.87996800000019Q75,57.87996800000019 75, 53.87996800000019L75,8.87996800000019Q75,4.87996800000019 71, 4.87996800000019L43.42918400000053,4.87996800000019Q39.42918400000053,4.87996800000019 39.42918400000053, 8.87996800000019L39.42918400000053,53.87996800000019');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M40.84867199999917 49.87996800000019L49.651728947198535 49.87996800000019L48.46050412239674 35.49000926909048L48.13672218901229 34.55069784111947L47.60802787358898 33.6693617814999L46.89048528536114 32.87278004043128L46.00589659279012 32.18515635102358L44.98113957566147 31.627383811123764L43.84735095739779 31.216410057116263L42.63898033143869 30.96472231855114L41.392743427790265 30.87996800000019L40.84867199999917 30.916969314092967L40.84867199999917 49.87996800000019Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Circle
+       shape = this.canvas.paper.path('M39.92918400000053 25.470542254553948L40.260442059449815 25.499523579457673L41.64962748078506 25.377985603555317L42.996603206054715 25.017064545744688L44.260442059449815 24.42772680973303L45.40274293694256 23.627879124409446L46.38879760440159 22.641824456950417L47.18864528972517 21.499523579457673L47.77798302573683 20.235684726062573L48.13890408354746 18.888709000792915L48.260442059449815 17.499523579457673L48.13890408354746 16.11033815812243L47.77798302573683 14.763362432852773L47.18864528972517 13.499523579457673L46.38879760440159 12.357222701964929L45.40274293694256 11.3711680345059L44.260442059449815 10.571320349182315L42.996603206054715 9.981982613170658L41.64962748078506 9.62106155536003L40.260442059449815 9.499523579457673L39.92918400000053 9.528504904361398L39.92918400000053 25.470542254553948Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(227,227,227,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+       // Line
+       shape = this.canvas.paper.path('M39.537952000005134 5.1831660000025295L40.00981120000051,58.45082679999632');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_converter_Invert = video_converter_Invert.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null && this.processing ===false){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.processing = true;
+            this.worker.postMessage( imageData, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data;
+            var pixels = imageData.data;
+            for( let x = 0; x < pixels.length; x += 4 ) {
+                pixels[x]   = 255-pixels[x];
+                pixels[x+1] = 255-pixels[x+1];
+                pixels[x+2] = 255-pixels[x+2];
+            }
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => {
+                this.getOutputPort("output_port1").setValue(image);
+                this.processing = false;
+            }
+            image.src = this.tmpCanvas.toDataURL();
+        };
+        
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction
+        this.processing = false;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_converter_Luminance = CircuitFigure.extend({
+
+   NAME: "video_converter_Luminance",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:86.375,height:80.63839999999982},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 2.5984659913167754, y: 49.49205341375826 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 96.4117800289434, y: 49.49205341375826 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 86.375;
+      this.originalHeight= 80.63839999999982;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L86.375,0 L86.375,80.63839999999982 L0,80.63839999999982");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M3.015625,3Q3.015625,0 6.015625, 0L80.015625,0Q83.015625,0 83.015625, 3L83.015625,77Q83.015625,80 80.015625, 80L6.015625,80Q3.015625,80 3.015625, 77L3.015625,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Luminance');
+       shape.attr({"x":4,"y":68.13839999999982,"text-anchor":"start","text":"Luminance","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M8.244424999999865,10.63839999999982Q8.244424999999865,5.63839999999982 13.244424999999865, 5.63839999999982L72.24442499999986,5.63839999999982Q77.24442499999986,5.63839999999982 77.24442499999986, 10.63839999999982L77.24442499999986,51.63839999999982Q77.24442499999986,56.63839999999982 72.24442499999986, 56.63839999999982L13.244424999999865,56.63839999999982Q8.244424999999865,56.63839999999982 8.244424999999865, 51.63839999999982L8.244424999999865,10.63839999999982');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(214,247,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Body
+       shape = this.canvas.paper.path('M31.889806062430115,49.23713714420617Q30.95386041812526,53.12609661312672 34.95386041812526, 53.12609661312672L52.95386041812526,53.12609661312672Q56.95386041812526,53.12609661312672 55.928477872059354, 49.25975588393285L53.91922757615705,41.68361146446987Q52.89384503009114,37.817270735276 52.684272505307035, 37.033719425669005L52.684272505307035,37.033719425669005Q52.47469998052293,36.250168116062014 52.1324949619634, 35.51497848336794L52.1324949619634,35.51497848336794Q51.79028994340388,34.77978885067387 51.32585015739369, 34.11529925985769L51.32585015739369,34.11529925985769Q50.8614103713835,33.45080966904152 50.288847585802614, 32.877210300071965L50.288847585802614,32.877210300071965Q49.71628480022173,32.30361093110241 49.052996045579675, 31.8383303105511L49.052996045579675,31.8383303105511Q48.38970729093762,31.37304968999979 47.65584626040345, 31.03022513407859L47.65584626040345,31.03022513407859Q46.92198522986928,30.687400578157394 46.139849919504286, 30.477448637519956L46.139849919504286,30.477448637519956Q45.35771460913929,30.267496696882517 44.55106980456958, 30.19679665500462L44.55106980456958,30.19679665500462Q43.744424999999865,30.12609661312672 42.93778019543015, 30.19679665500462L42.93778019543015,30.19679665500462Q42.131135390860436,30.267496696882517 41.34900008049544, 30.477448637519956L41.34900008049544,30.477448637519956Q40.56686477013045,30.687400578157394 39.83300373959628, 31.03022513407859L39.83300373959628,31.03022513407859Q39.09914270906211,31.37304968999979 38.435853954420054, 31.8383303105511L38.435853954420054,31.8383303105511Q37.772565199778,32.30361093110241 37.200002414197115, 32.877210300071965L37.200002414197115,32.877210300071965Q36.62743962861623,33.45080966904152 36.16299984260604, 34.11529925985769L36.16299984260604,34.11529925985769Q35.69856005659585,34.77978885067387 35.35635503803633, 35.51497848336794L35.35635503803633,35.51497848336794Q35.0141500194768,36.250168116062014 34.79227831889102, 37.17455415865879L34.79227831889102,37.17455415865879Q34.57040661830524,38.09894020125557 33.63446097400039, 41.98789967017612L31.889806062430115,49.23713714420617');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Body");
+       
+       // Head
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":9.290564581874843,"ry":9.290564581874843,"cx":42.744425000000106,"cy":19.835532031251443,"stroke":"none","stroke-width":0,"fill":"rgba(26,177,232,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Head");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M43.06486093750391,9.63839999999982Q43.06486093750391,5.63839999999982 47.06486093750391, 5.63839999999982L73.06486093750391,5.63839999999982Q77.06486093750391,5.63839999999982 77.06486093750391, 9.63839999999982L77.06486093750391,52.63839999999982Q77.06486093750391,56.63839999999982 73.06486093750391, 56.63839999999982L47.06486093750391,56.63839999999982Q43.06486093750391,56.63839999999982 43.06486093750391, 52.63839999999982L43.06486093750391,9.63839999999982');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Shadow_Body
+       shape = this.canvas.paper.path('M42.40606093750375,49.06802542650166Q42.40606093750375,53.06802542650166 46.40606093750375, 53.06802542650166L51.4268250000041,53.06802542650166Q55.4268250000041,53.06802542650166 54.39970837135936, 49.20214500528304L52.393926240614725,41.65274540233118Q51.366809611969984,37.78686498111256 51.15723708718588, 37.004729670747565L51.15723708718588,37.004729670747565Q50.94766456240177,36.22259436038257 50.605459543842244, 35.4887333298484L50.605459543842244,35.4887333298484Q50.26325452528272,34.75487229931423 49.79881473927253, 34.091583544672176L49.79881473927253,34.091583544672176Q49.33437495326234,33.42829479003012 48.761812167681455, 32.85573200444924L48.761812167681455,32.85573200444924Q48.18924938210057,32.28316921886835 47.52596062745852, 31.818729432858163L47.52596062745852,31.818729432858163Q46.86267187281646,31.354289646847974 46.12881084228229, 31.01208462828845L46.12881084228229,31.01208462828845Q45.39494981174812,30.669879609728923 44.61281450138313, 30.460307084944816L44.61281450138313,30.460307084944816Q43.830679191018135,30.25073456016071 43.118370064260944, 30.188415586643714L43.118370064260944,30.188415586643714Q42.40606093750375,30.12609661312672 42.40606093750375, 34.12609661312672L42.40606093750375,49.06802542650166');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(92,92,92,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow_Body");
+       
+       // Shadow_Head
+       shape = this.canvas.paper.path('M43.06486093750391 29.11315439741429L44.60418544539334 28.978480953486724L46.168456066123326 28.55933590391851L47.63617812719167 27.874925866799458L48.96275563647578 26.94604629477908L50.10788120763755 25.80092072361731L51.036760779657925 24.474343214333203L51.721170816776976 23.00662115326486L52.14031586634519 21.442350532534874L52.28146041812852 19.829060923395446L52.14031586634519 18.215771314256017L51.721170816776976 16.65150069352603L51.036760779657925 15.183778632457688L50.10788120763755 13.857201123173581L48.96275563647578 12.712075552011811L47.63617812719167 11.783195979991433L46.168456066123326 11.098785942872382L44.60418544539334 10.679640893304168L43.06486093750391 10.5449674493766L43.06486093750391 29.11315439741429Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(210,212,214,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow_Head");
+       
+       // Line
+       shape = this.canvas.paper.path('M42.72936093750377 7.1828968750005515L43.01586093750393,30.57539687499957L43.56486093750391,55.28039687499859L43.56486093750391,54.841196874998786');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":3,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_converter_Luminance = video_converter_Luminance.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null && this.processing===false){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.processing = true;
             this.worker.postMessage(imageData, [imageData.data.buffer]);
         }
     },
@@ -7355,11 +8416,711 @@ video_Blur = video_Blur.extend({
         //
         var workerFunction = function(event){
             var imageData = event.data;
-            var opaque = false;
-            var weights =[  1/9, 1/9, 1/9,  
-                            1/9, 1/9, 1/9,  
-                            1/9, 1/9, 1/9 ];
-            var side = Math.round(Math.sqrt(weights.length));
+            var pixels = imageData.data;
+            for( let x = 0; x < pixels.length; x += 4 ) {
+                // CIE luminance for the RGB
+                let average = 0.2126*pixels[x] + 0.7152*pixels[x+1] + 0.0722*pixels[x+2];
+              
+                pixels[x]     = average;
+                pixels[x + 1] = average;
+                pixels[x + 2] = average;
+            }
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => {
+                this.getOutputPort("output_port1").setValue(image);
+                this.processing = false;
+            };
+            image.src = this.tmpCanvas.toDataURL();
+        };
+        
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction;
+        this.processing = false;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_converter_Scale = CircuitFigure.extend({
+
+   NAME: "video_converter_Scale",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:81.59580028320488},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 0.4546330256835063, y: 47.74105968884587 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // input_port2
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 0.4546330256835063, y: 78.37647333849256 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port2");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 104.19463302568374, y: 47.75576632810568 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 81.59580028320488;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,81.59580028320488 L0,81.59580028320488");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M6.363706420546805,6.846667716796219Q6.363706420546805,2.846667716796219 10.363706420546805, 2.846667716796219L47.363706420546805,2.846667716796219Q51.363706420546805,2.846667716796219 51.363706420546805, 6.846667716796219L51.363706420546805,46.84666771679622Q51.363706420546805,50.84666771679622 47.363706420546805, 50.84666771679622L10.363706420546805,50.84666771679622Q6.363706420546805,50.84666771679622 6.363706420546805, 46.84666771679622L6.363706420546805,6.846667716796219');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(235,235,235,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Scale');
+       shape.attr({"x":25.27125842055102,"y":69.59580028320488,"text-anchor":"start","text":"Scale","font-family":"\"Arial\"","font-size":14,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Head
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8,"ry":8,"cx":40,"cy":15.966223296252792,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Head");
+       
+       // factor_label
+       shape = this.canvas.paper.text(0,0,'factor');
+       shape.attr({"x":13.863706420546805,"y":56.06407471679631,"text-anchor":"start","text":"factor","font-family":"\"Arial\"","font-size":8,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","factor_label");
+       
+       // Body
+       shape = this.canvas.paper.path('M30 48.34666771679622L51 48.34666771679622L49.52848698112575 33.95670898588651L49.12852106341779 33.01739755791641L48.475428085539534 32.13606149829502L47.58905194714316 31.33947975722731L46.49632473866586 30.651856067819608L45.2304484233955 30.094083527919793L43.82988601259967 29.683109773912292L42.33719288641623 29.431422035348078L40.7977237701416 29.34666771679622L39.25825465386879 29.431422035348078L37.76556152768171 29.683109773912292L36.36499911688588 30.094083527919793L35.099122801611884 30.651856067819608L34.00639559314004 31.33947975722731L33.12001945474185 32.13606149829502L32.46692647686723 33.01739755791641L32.06696055915563 33.95670898588651Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Body");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M41.863706420546805 52L72.8637064205468 52L72.8637064205468 2L41.863706420546805 2L41.863706420546805 52Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M41.41650485804712,15.712932812500185Q41.41650485804712,12.712932812500185 44.41650485804712, 12.712932812500185L62.696904858046764,12.712932812500185Q65.69690485804676,12.712932812500185 65.69690485804676, 15.712932812500185L65.69690485804676,41.686132812499636Q65.69690485804676,44.686132812499636 62.696904858046764, 44.686132812499636L44.41650485804712,44.686132812499636Q41.41650485804712,44.686132812499636 41.41650485804712, 41.686132812499636L41.41650485804712,15.712932812500185');
+       shape.attr({"stroke":"rgba(0,0,0,1)","stroke-width":1,"fill":"rgba(235,235,235,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Shadow_Body
+       shape = this.canvas.paper.path('M42.712378420546884 42.34666771679622L48.712378420546884 42.34666771679622L47.9004617202836 32.500906479855985L47.67977797235835 31.85821971335099L47.31942975337279 31.25520030413736L46.83036606161386 30.710170691827443L46.227446849882654 30.239691325390595L45.52899151332713 29.858057482302684L44.75622226392079 29.576864913768986L43.9326193042607 29.404657513698112L43.08320739351802 29.34666771679622L42.712378420546884 29.371984405384865L42.712378420546884 42.34666771679622Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow_Body");
+       
+       // Shadow_Head
+       shape = this.canvas.paper.path('M42.79289042054734 25.948109968187964L42.99169476503266 25.966223296252792L43.82541364123517 25.890262061314388L44.63380039126514 25.66468640018047L45.39229259279 25.296350315175005L46.077843844077506 24.796445511849015L46.66962401726596 24.180161344686894L47.149652171247 23.466223296252792L47.50334289346756 22.676324012882105L47.7199494703118 21.834464184587887L47.79289042054734 20.966223296252792L47.7199494703118 20.097982407917698L47.50334289346756 19.25612257962348L47.149652171247 18.466223296252792L46.66962401726596 17.75228524781869L46.077843844077506 17.13600108065657L45.39229259279 16.63609627733058L44.63380039126514 16.267760192325113L43.82541364123517 16.042184531191197L42.99169476503266 15.966223296252792L42.79289042054734 15.98433662431762L42.79289042054734 25.948109968187964Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow_Head");
+       
+       // width_height
+       shape = this.canvas.paper.text(0,0,'w x h');
+       shape.attr({"x":44.5,"y":56.14219971679631,"text-anchor":"start","text":"w x h","font-family":"\"Arial\"","font-size":9,"stroke":"#000000","fill":"#EB213C","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","width_height");
+       
+       // Line
+       shape = this.canvas.paper.path('M11.241196954950283 55.59580028320488L7.621512602952862,55.99719517600897L2.271258420551021,62.478233716803516');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M41.95023442055026 3.649865716797649L42.212378420546884,50.835785716797545');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_converter_Scale = video_converter_Scale.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        
+        this.processing = false;
+        
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.processing ===false){
+            this.processing = true;
+            var factor = this.getInputPort("input_port2").getValue();
+
+            var w = img.naturalWidth;
+            var h = img.naturalHeight;
+            // map factor from 0-5 => 1-20
+            factor = 19/5*factor+1;
+
+            w = Math.max(10,parseInt(w/factor));
+            h = Math.max(parseInt(h/factor));
+            this.layerAttr("width_height", {"text": w+"x"+h});
+            var scaleCanvas = document.createElement("canvas");
+            scaleCanvas.height = h;
+            scaleCanvas.width = w;
+            var scaleCtx = scaleCanvas.getContext('2d');
+            scaleCtx.drawImage(img, 0, 0, w, h);
+            var scaledImage = document.createElement("img");
+            scaledImage.onload = () => {
+                this.getOutputPort("output_port1").setValue(scaledImage)
+                this.processing = false;
+            }
+	   	    scaledImage.src = scaleCanvas.toDataURL();
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        this.processing = false;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.processing = false;
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_converter_WhiteBlack = CircuitFigure.extend({
+
+   NAME: "video_converter_WhiteBlack",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80.43880200000422,height:84.12910056640976},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.8647716807119048, y: 48.126034543826854 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // input_port2
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.8647716807119048, y: 77.8389528672162 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port2");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 101.3093158697166, y: 48.14029833592497 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80.43880200000422;
+      this.originalHeight= 84.12910056640976;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80.43880200000422,0 L80.43880200000422,84.12910056640976 L0,84.12910056640976");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M4.5,8.3799680000011Q4.5,4.379968000001099 8.5, 4.379968000001099L71.5,4.379968000001099Q75.5,4.379968000001099 75.5, 8.3799680000011L75.5,48.3799680000011Q75.5,52.3799680000011 71.5, 52.3799680000011L8.5,52.3799680000011Q4.5,52.3799680000011 4.5, 48.3799680000011L4.5,8.3799680000011');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(235,235,235,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'WhiteBlack');
+       shape.attr({"x":5.407552000004216,"y":72.12910056640976,"text-anchor":"start","text":"WhiteBlack","font-family":"\"Arial\"","font-size":14,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8,"ry":8,"cx":38.136293579453195,"cy":17.499523579457673,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'threshold');
+       shape.attr({"x":12,"y":57.59737500000119,"text-anchor":"start","text":"threshold","font-family":"\"Arial\"","font-size":8,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M28.136293579453195 49.8799680000011L49.136293579453195 49.8799680000011L47.66478056057895 35.49000926909139L47.26481464287099 34.55069784112129L46.61172166499273 33.6693617814999L45.72534552659636 32.87278004043219L44.63261831811906 32.18515635102449L43.366742002848696 31.627383811124673L41.96617959205287 31.216410057117173L40.47348646586943 30.96472231855296L38.9340173495948 30.8799680000011L37.394548233321984 30.96472231855296L35.90185510713491 31.216410057117173L34.50129269633908 31.627383811124673L33.23541638106508 32.18515635102449L32.142689172593236 32.87278004043219L31.256313034195045 33.6693617814999L30.603220056320424 34.55069784112129L30.203254138608827 35.49000926909139Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M39.92918400000053,47.3799680000011Q39.92918400000053,51.3799680000011 43.92918400000053, 51.3799680000011L70.92918400000053,51.3799680000011Q74.92918400000053,51.3799680000011 74.92918400000053, 47.3799680000011L74.92918400000053,9.3799680000011Q74.92918400000053,5.379968000001099 70.92918400000053, 5.379968000001099L43.92918400000053,5.379968000001099Q39.92918400000053,5.379968000001099 39.92918400000053, 9.3799680000011L39.92918400000053,47.3799680000011');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M40.84867200000008 49.8799680000011L49.651728947199445 49.8799680000011L48.46050412239856 35.49000926909139L48.13672218901411 34.55069784112129L47.60802787358989 33.6693617814999L46.890485285362956 32.87278004043219L46.00589659279103 32.18515635102449L44.98113957566238 31.627383811124673L43.84735095739961 31.216410057117173L42.6389803314396 30.96472231855296L41.392743427790265 30.8799680000011L40.84867200000008 30.916969314093876L40.84867200000008 49.8799680000011Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(0,0,0,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Circle
+       shape = this.canvas.paper.path('M39.92918400000053 25.470542254553948L40.260442059450725 25.499523579457673L41.64962748078506 25.377985603554407L42.996603206054715 25.01706454574378L44.260442059450725 24.42772680973212L45.40274293694165 23.627879124409446L46.3887976044025 22.641824456950417L47.18864528972517 21.499523579457673L47.77798302573683 20.235684726063482L48.13890408354746 18.888709000792005L48.260442059450725 17.499523579457673L48.13890408354746 16.11033815812334L47.77798302573683 14.763362432851864L47.18864528972517 13.499523579457673L46.3887976044025 12.357222701964929L45.40274293694165 11.3711680345059L44.260442059450725 10.571320349183225L42.996603206054715 9.981982613171567L41.64962748078506 9.621061555360939L40.260442059450725 9.499523579457673L39.92918400000053 9.528504904361398L39.92918400000053 25.470542254553948Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(0,0,0,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+       // Line
+       shape = this.canvas.paper.path('M9.377490534403478 57.12910056640976L5.757806182406057,57.53049545921385L0.4075520000042161,64.0115340000084');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M40.086528000003455 5.1831660000025295L40.34867200000008,52.369086000002426');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_converter_WhiteBlack = video_converter_WhiteBlack.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        var threshold = this.getInputPort("input_port2").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null && this.processing === false){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.processing = true;
+            this.worker.postMessage({imageData: imageData,threshold: threshold}, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data.imageData;
+            var threshold = event.data.threshold;
+            // map offset from 0-5 => 0-255
+            threshold = 255/5*threshold;
+            var pixels = imageData.data;
+            for( let x = 0; x < pixels.length; x += 4 ) {
+                let lum = 0.2126 * pixels[x] + 0.7152 * pixels[x+1] + 0.0722 * pixels[x+2];
+                pixels[x] = pixels[x+1] = pixels[x+2] = lum>threshold?255:0;
+            }
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => {
+                this.getOutputPort("output_port1").setValue(image);
+                this.processing = false;
+            };
+            image.src = this.tmpCanvas.toDataURL();
+        };
+        
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction;
+        this.processing = false;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.progressing = false;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_detector_Edge = CircuitFigure.extend({
+
+   NAME: "video_detector_Edge",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:80.87877759999992},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9640000000001692, y: 49.34495943717131 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 100.32506249999983, y: 49.34495943717131 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 80.87877759999992;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,80.87877759999992 L0,80.87877759999992");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Edge');
+       shape.attr({"x":21.228799999999865,"y":68.37877759999992,"text-anchor":"start","text":"Edge","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M4.315424000003077,7.770740800002386Q4.315424000003077,3.770740800002386 8.315424000003077, 3.770740800002386L71.31542400000308,3.770740800002386Q75.31542400000308,3.770740800002386 75.31542400000308, 7.770740800002386L75.31542400000308,51.770740800002386Q75.31542400000308,55.770740800002386 71.31542400000308, 55.770740800002386L8.315424000003077,55.770740800002386Q4.315424000003077,55.770740800002386 4.315424000003077, 51.770740800002386L4.315424000003077,7.770740800002386');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(237,237,237,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Shadow
+       shape = this.canvas.paper.path('M37.31898911823282,49.08107850869237Q37.31898911823282,51.08107850869237 39.31888395146733, 51.10158840878765L49.319094284998314,51.20414545902051Q51.31898911823282,51.224655359115786 50.90607867073568, 49.267743260336765L48.31286185049548,36.977675520356634Q47.89995140299834,35.02076342157761 47.84167307749067, 34.43069753144073L47.84167307749067,34.43069753144073Q47.783394751982996,33.840631641303844 47.6103305328902, 33.268494604651096L47.6103305328902,33.268494604651096Q47.43726631379741,32.69635756799835 47.154674669841825, 32.15953347917139L47.154674669841825,32.15953347917139Q46.87208302588624,31.622709390344426 46.48855036117084, 31.137509377641436L46.48855036117084,31.137509377641436Q46.105017696455434,30.652309364938446 45.6321974569214, 30.23347598521468L45.6321974569214,30.23347598521468Q45.15937721738737,29.814642605490917 44.61163580675429, 29.474901899055112L44.61163580675429,29.474901899055112Q44.06389439612121,29.135161192619307 43.45787465998001, 28.884836008916864L43.45787465998001,28.884836008916864Q42.8518549238388,28.63451082521442 42.205970465211976, 28.48120716828589L42.205970465211976,28.48120716828589Q41.56008600658515,28.327903511357363 40.89396169791462, 28.276279435236574L40.89396169791462,28.276279435236574Q40.22783738924409,28.224655359115786 39.5617130805731, 28.276279435236574L39.5617130805731,28.276279435236574Q38.89558877190211,28.327903511357363 38.24970431327529, 28.48120716828589L38.24970431327529,28.48120716828589Q37.603819854648464,28.63451082521442 37.46140448644064, 28.693337545011218L37.46140448644064,28.693337545011218Q37.31898911823282,28.752164264808016 37.31898911823282, 30.752164264808016L37.31898911823282,49.08107850869237');
+       shape.attr({"stroke":"rgba(255,255,255,1)","stroke-width":2,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow");
+       
+       // TOP_Circle
+       shape = this.canvas.paper.path('M38.67362344960475 24.54496882107196L38.98139389101925 24.629850218838328L40.415416481778266 24.75898431823407L41.84943907253819 24.629850218838328L43.239889612527804 24.246371594914308L44.54451996569151 23.620200250402377L45.723689598924466 22.77036208474601L46.74157003960863 21.72267900056977L47.567233505626064 20.50898431823407L48.175592630367646 19.16615553650263L48.548162729673095 17.734993828403276L48.67362344960475 16.25898431823407L48.548162729673095 14.782974808064864L48.175592630367646 13.351813099965511L47.567233505626064 12.00898431823407L46.74157003960863 10.79528963589837L45.723689598924466 9.747606551722129L44.54451996569151 8.897768386065763L43.239889612527804 8.271597041553832L41.84943907253819 7.888118417629812L40.415416481778266 7.75898431823407L38.98139389101925 7.888118417629812L38.67362344960475 7.972999815396179L38.67362344960475 24.54496882107196Z');
+       shape.attr({"stroke":"rgba(255,255,255,1)","stroke-width":2,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Circle");
+       
+       // TOP_Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8.16442848176873,"ry":8.16442848176873,"cx":39.50000000000025,"cy":16.4234128000028,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Circle");
+       
+       // TOP_Body
+       shape = this.canvas.paper.path('M29.462567472217447,46.776768974949896Q28.81898911823282,50.724655359115786 32.81880873597436, 50.762642534977275L46.90091030048609,50.89638338325396Q50.900729918227626,50.93437055911545 50.01211395841982, 47.03432419067637L48.22418747803842,39.18729409867167Q47.33557151823061,35.28724773023259 47.27480253027943, 34.71745662722515L47.27480253027943,34.71745662722515Q47.21403354232825,34.1476655242177 47.03357301342339, 33.5951872355472L47.03357301342339,33.5951872355472Q46.85311248451853,33.0427089468767 46.558443616512704, 32.52433024577522L46.558443616512704,32.52433024577522Q46.263774748506876,32.005951544673735 45.86385090584463, 31.537423105665766L45.86385090584463,31.537423105665766Q45.46392706318238,31.068894666657798 44.97089972945241, 30.66445248927039L44.97089972945241,30.66445248927039Q44.47787239572244,30.26001031188298 43.906721956976526, 29.931943167022382L43.906721956976526,29.931943167022382Q43.33557151823061,29.603876022161785 42.70365209153351, 29.36215206401357L42.70365209153351,29.36215206401357Q42.07173266483642,29.120428105865358 41.39824480220159, 28.972391994582267L41.39824480220159,28.972391994582267Q40.72475693956676,28.824355883299177 40.03016422889914, 28.77450562120748L40.03016422889914,28.77450562120748Q39.33557151823152,28.724655359115786 38.64097880756344, 28.77450562120748L38.64097880756344,28.77450562120748Q37.94638609689537,28.824355883299177 37.27289823426054, 28.972391994582267L37.27289823426054,28.972391994582267Q36.59941037162571,29.120428105865358 35.96749094492861, 29.36215206401357L35.96749094492861,29.36215206401357Q35.33557151823152,29.603876022161785 34.7644210794856, 29.931943167022382L34.7644210794856,29.931943167022382Q34.193270640739684,30.26001031188298 33.700243307009714, 30.66445248927039L33.700243307009714,30.66445248927039Q33.207215973279745,31.068894666657798 32.8072921306175, 31.537423105665766L32.8072921306175,31.537423105665766Q32.40736828795525,32.005951544673735 32.11269941994942, 32.52433024577522L32.11269941994942,32.52433024577522Q31.818030551943593,33.0427089468767 31.637570023038734, 33.5951872355472L31.637570023038734,33.5951872355472Q31.457109494133874,34.1476655242177 31.396340506182696, 34.71745662722515L31.396340506182696,34.71745662722515Q31.335571518231518,35.28724773023259 30.69199316424689, 39.235134114398484L29.462567472217447,46.776768974949896');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Body");
+       
+       // Line
+       shape = this.canvas.paper.path('M38.69640448001155 4.038881344014044L38.864176640010555,55.044239424005355');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(26,12,112,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_detector_Edge = video_detector_Edge.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null && this.processing ===false){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.processing = true;
+            this.worker.postMessage(imageData, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data;
+            var opaque = true;
+            var weights =[  1,   1,  1,  
+                            1, 0.7, -1,  
+                           -1,  -1, -1 ];
+            var side     = Math.round(Math.sqrt(weights.length));
             var halfSide = Math.floor(side/2);
 
             var src = imageData.data;
@@ -7404,7 +9165,10 @@ video_Blur = video_Blur.extend({
             var imageData = event.data;
             this.tmpContext.putImageData(imageData,0,0);
             var image = new Image();
-            image.onload = () => { this.getOutputPort("output_port1").setValue(image);};
+            image.onload = () => { 
+                this.getOutputPort("output_port1").setValue(image);
+                this.processing = false;
+            };
             image.src = this.tmpCanvas.toDataURL();
         };
 
@@ -7413,6 +9177,7 @@ video_Blur = video_Blur.extend({
         //
         this.worker = this.createWorker(workerFunction);
         this.worker.onmessage = receiverFunction;
+        this.processing = false;
     },
 
     /**
@@ -7428,6 +9193,7 @@ video_Blur = video_Blur.extend({
         this.worker = null;
         this.tmpCanvas = null;
         this.tmpContext = null;
+        this.processing = false;
     },
     
 
@@ -7445,6 +9211,14 @@ video_Blur = video_Blur.extend({
     imageToData: function(image){
         var width = image.naturalWidth;
         var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
         // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
         //
         if(this.tmpContext === null ) {
@@ -7465,31 +9239,25 @@ video_Blur = video_Blur.extend({
 // created with http://www.draw2d.org
 //
 //
-var video_Brighter = CircuitFigure.extend({
+var video_detector_Hough = CircuitFigure.extend({
 
-   NAME: "video_Brighter",
-   VERSION: "2.0.119_589",
+   NAME: "video_detector_Hough",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
      var _this = this;
 
-     this._super( $.extend({stroke:0, bgColor:null, width:80,height:84.4852109375006},attr), setter, getter);
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:80.04423942400535},attr), setter, getter);
      var port;
      // input_port1
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.875, y: 47.92318034212164 }));
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9640000000001692, y: 49.859428095247814 }));
      port.setConnectionDirection(3);
      port.setBackgroundColor("#37B1DE");
      port.setName("input_port1");
      port.setMaxFanOut(20);
-     // input_port2
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.875, y: 77.51085688351353 }));
-     port.setConnectionDirection(3);
-     port.setBackgroundColor("#37B1DE");
-     port.setName("input_port2");
-     port.setMaxFanOut(20);
      // output_port1
-     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 101.86500000000024, y: 47.93738401145803 }));
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 100.32506249999983, y: 49.859428095247814 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
      port.setName("output_port1");
@@ -7500,7 +9268,7 @@ var video_Brighter = CircuitFigure.extend({
    {
       var shape = this._super();
       this.originalWidth = 80;
-      this.originalHeight= 84.4852109375006;
+      this.originalHeight= 80.04423942400535;
       return shape;
    },
 
@@ -7509,7 +9277,7 @@ var video_Brighter = CircuitFigure.extend({
        this.canvas.paper.setStart();
        var shape = null;
        // BoundingBox
-       shape = this.canvas.paper.path("M0,0 L80,0 L80,84.4852109375006 L0,84.4852109375006");
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,80.04423942400535 L0,80.04423942400535");
        shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
        shape.data("name","BoundingBox");
        
@@ -7519,68 +9287,43 @@ var video_Brighter = CircuitFigure.extend({
        shape.data("name","Rectangle");
        
        // Label
-       shape = this.canvas.paper.text(0,0,'Brighter');
-       shape.attr({"x":16.417600000006132,"y":72.4852109375006,"text-anchor":"start","text":"Brighter","font-family":"\"Arial\"","font-size":14,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape = this.canvas.paper.text(0,0,'Line Detect');
+       shape.attr({"x":4.3266039182290115,"y":68.04423942400535,"text-anchor":"start","text":"Line Detect","font-family":"\"Arial\"","font-size":14,"stroke":"#000000","fill":"#000000","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
-       // Label
-       shape = this.canvas.paper.text(0,0,'adjustment');
-       shape.attr({"x":14.2724609375,"y":53.40215900000749,"text-anchor":"start","text":"adjustment","font-family":"\"Arial\"","font-size":8,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
-       shape.data("name","Label");
+       // PictureFrame
+       shape = this.canvas.paper.path('M4.228799999999865,8.044239424005355Q4.228799999999865,4.0442394240053545 8.228799999999865, 4.0442394240053545L71.22879999999986,4.0442394240053545Q75.22879999999986,4.0442394240053545 75.22879999999986, 8.044239424005355L75.22879999999986,52.044239424005355Q75.22879999999986,56.044239424005355 71.22879999999986, 56.044239424005355L8.228799999999865,56.044239424005355Q4.228799999999865,56.044239424005355 4.228799999999865, 52.044239424005355L4.228799999999865,8.044239424005355');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","PictureFrame");
        
-       // Circle
+       // Head
        shape = this.canvas.paper.ellipse();
-       shape.attr({"rx":12.5,"ry":12.5,"cx":38.946079999991525,"cy":28.368606000007276,"stroke":"rgba(224,215,88,1)","stroke-width":1,"fill":"rgba(245,229,2,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Circle");
+       shape.attr({"rx":5,"ry":5,"cx":54.29535391822901,"cy":39.909599999999955,"stroke":"rgba(0,0,0,1)","stroke-width":1,"fill":"rgba(0,0,0,0)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Head");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M18.566656000002695 8.730641212006049L27.741696000002776 20.789265212005375L18.566656000002695 20.789265212005375Z');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":2,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
        
        // Line
-       shape = this.canvas.paper.path('M11.417600000006132 53.26363000000765L7.485440000008566,53.26363000000856L0.4075520000042161,64.01153400000749');
+       shape = this.canvas.paper.path('M41.89747200000329 6.109201212002517L40.97996800000374,9.517073212003197Q40.062464000004184,12.924945212003877 37.30995200000325, 20.65819321200479L37.30995200000325,20.65819321200479Q34.557440000002316,28.391441212005702 33.20585518239518, 37.289374594584714L31.4117120000019,49.100817212005495');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M25.139520000010634 48.333649211997L26.84345600000779,42.43540921199883Q28.547392000004947,36.53716921200066 23.885079773487288, 28.8389327449607L21.937512226522248,25.62318167904202Q17.275200000004588,17.924945212002058 13.503676402846846, 26.09657967250519L13.182403597159013,26.79267075149505Q9.41088000000127,34.96430521199818 10.983744000002844, 41.386833212000056L12.556608000004417,47.80936121200193');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line
-       shape = this.canvas.paper.path('M6.699008000003232 15.335102000001825L21.37907200000427,22.150846000003185');
-       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(240,240,38,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape = this.canvas.paper.path('M59.947317759990256 26.990202171997225L42.03763967999657,21.684407612005998');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(255,15,31,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
        // Line
-       shape = this.canvas.paper.path('M6.980416000002151 31.869438000003356L19.039040000001478,29.510142000003725');
-       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(240,240,38,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Line");
-       
-       // Line
-       shape = this.canvas.paper.path('M16.961152000002585 44.733758000004855L23.2526080000016,38.44230200000493');
-       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(240,240,38,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Line");
-       
-       // Line
-       shape = this.canvas.paper.path('M55.25344000000314 14.868606000007276L69.40921600000456,6.217854000004991');
-       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(240,240,38,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Line");
-       
-       // Line
-       shape = this.canvas.paper.path('M57.36985600000389 26.16006200000811L71.26348800000414,25.897918000008758');
-       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(240,240,38,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Line");
-       
-       // Line
-       shape = this.canvas.paper.path('M54.505535999998756 34.830078000004505L64.99129599999651,39.81081400000767');
-       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(240,240,38,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Line");
-       
-       // Line
-       shape = this.canvas.paper.path('M48.7576319999971 43.500094000008175L50.5926399999953,45.597246000008454L52.427647999994406,47.69439800000964');
-       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(240,240,38,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Line");
-       
-       // Line
-       shape = this.canvas.paper.path('M18.1060479999951 6.557054000005337L21.776063999993312,9.571710000007442L25.446079999991525,12.586366000008638');
-       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(240,240,38,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Line");
-       
-       // Line
-       shape = this.canvas.paper.path('M39.62111999999979 3.4305900000053953L39.621119999996154,6.052030000006198L39.621119999993425,9.984190000007402');
-       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(240,240,38,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape = this.canvas.paper.path('M43.619281919998684 28.46698681199905L39.8653798400037,21.032582972004093L46.513351680005144,16.785850172007486');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(255,15,31,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
        
 
@@ -7600,15 +9343,20 @@ var video_Brighter = CircuitFigure.extend({
  * Looks disconcerting - extending my own class. But this is a good method to
  * merge basic code and override them with custom methods.
  */
-video_Brighter = video_Brighter.extend({
+video_detector_Hough = video_detector_Hough.extend({
 
     init: function(attr, setter, getter){
         this._super(attr, setter, getter);
         this.worker= null;
         this.tmpCanvas = null;
         this.tmpContext = null;
+        this.processing = false;
         this.getInputPort("input_port1").setSemanticGroup("Image");
         this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
     },
 
     /**
@@ -7620,13 +9368,13 @@ video_Brighter = video_Brighter.extend({
     calculate:function( context)
     {
         var img = this.getInputPort("input_port1").getValue();
-        var adjustment = this.getInputPort("input_port2").getValue();
-        if(img instanceof HTMLImageElement && this.worker!==null){
+        if(img instanceof HTMLImageElement && this.worker!==null && this.processing===false){
             var imageData = this.imageToData(img);
             // Push it to the WebWorker with "Transferable Objects"
             // Passing data by reference instead of structure clone
             //
-            this.worker.postMessage({imageData: imageData,adjustment: adjustment}, [imageData.data.buffer]);
+            this.processing = true;
+            this.worker.postMessage(imageData, [imageData.data.buffer]);
         }
     },
 
@@ -7640,35 +9388,126 @@ video_Brighter = video_Brighter.extend({
         // the method which runs as WebWorker
         //
         var workerFunction = function(event){
-            var imageData = event.data.imageData;
-            var adjustment = event.data.adjustment;
-            // map offset from 0-5 => 0-255
-            adjustment = 255/5*adjustment;
-            var pixels = imageData.data;
-            for( let x = 0; x < pixels.length; x += 4 ) {
-                pixels[x]     = Math.min(255,pixels[x  ]+adjustment);
-                pixels[x + 1] = Math.min(255,pixels[x+1]+adjustment);
-                pixels[x + 2] = Math.min(255,pixels[x+2]+adjustment);
+            var imageData = event.data;
+            var pixels    = imageData.data;
+            var width     = imageData.width;
+            var height    = imageData.height;
+            var angles    = 360;
+            var rhoMax    = Math.sqrt(width*width + height*height);
+            var accum     = Array(angles);
+            var houghAccCalled=false;
+            
+            // Precalculate tables.
+            if(self.cosTable===undefined){
+                self.cosTable = new Float64Array(angles);
+                self.sinTable = new Float64Array(angles);
+                var theta = 0;
+                var piSteps = Math.PI / angles;
+                for (var i = 0; i < angles; i++) {
+                    self.cosTable[i] = Math.cos(theta);
+                    self.sinTable[i] = Math.sin(theta);
+                    theta += piSteps;
+                }
             }
-            self.postMessage(imageData, [imageData.data.buffer]);
+           
+            function findMaxInHough() {
+                var max = 0;
+                var bestRho = 0;
+                var bestTheta = 0;
+                for (var i = 0; i < angles; i++) {
+                    for (var j = 0; j < accum[i].length; j++) {
+                        if (accum[i][j] > max) {
+                            max = accum[i][j];
+                            bestRho = j;
+                            bestTheta = i;
+                        }
+                    }
+                }
+
+                if (max > height) {
+                    bestRho <<= 1; // accumulator is bitshifted
+                    bestRho -= rhoMax; /// accumulator has rhoMax added
+                    var a = self.cosTable[bestTheta];
+                    var b = self.sinTable[bestTheta];
+
+                    var x1 = a * bestRho + 1000 * (-b);
+                    var y1 = b * bestRho + 1000 * ( a);
+                    var x2 = a * bestRho - 1000 * (-b);
+                    var y2 = b * bestRho - 1000 * ( a);
+                    // return a line with P1(x1,y1) and P2(x2,y2)
+                    return {x1,y1, x2,y2};
+                }
+                return null;
+            }
+            
+            function houghAcc(x, y) {
+                houghAccCalled= true;
+                var rho;
+                x -= width  / 2;
+                y -= height / 2;
+                for (var index = 0; index < angles; index++) {
+                    rho = rhoMax + x * self.cosTable[index] + y * self.sinTable[index];
+                    rho >>= 1;
+                    if (accum[index] === undefined) accum[index] = [];
+                    if (accum[index][rho] === undefined) {
+                       accum[index][rho] = 1;
+                    } else {
+                       accum[index][rho]++;
+                    }
+                }
+            }
+            for (var index=0; index<pixels.length; index+=4) {
+                // because we NEED a black/white image we can just use the RED part
+                // if the RGBA color
+                if(pixels[index]<80){
+                    var x = (index/4) % width;
+                    var y = (index/4) / width;
+                    houghAcc(x,y);
+                }
+            }
+
+            var line = houghAccCalled?findMaxInHough():null;
+            
+            var canvas = new OffscreenCanvas(width, height);
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = 'rgba(255,255,255,1)';
+            ctx.beginPath();
+            ctx.fillRect(0,0,width, height);
+            ctx.closePath();
+
+            if(line){
+                ctx.beginPath();
+                ctx.strokeStyle = 'rgba(255,0,0,1)';
+                ctx.lineWidth = Math.max(2,(width/25)|0);
+                ctx.moveTo(line.x1 + width / 2, line.y1 + height / 2);
+                ctx.lineTo(line.x2 + width / 2, line.y2 + height / 2);
+                ctx.stroke();
+                ctx.closePath();
+            }
+            imageData = ctx.getImageData(0, 0, width, height);
+            self.postMessage({imageData, line}, [imageData.data.buffer]);
         };
         
         // the method which receives the WebWorker result
         //
        var receiverFunction = (event) => {
-            var imageData = event.data;
+            var imageData = event.data.imageData;
+            var line = event.data.line;
             this.tmpContext.putImageData(imageData,0,0);
             var image = new Image();
-            image.onload = () => {
+            image.onload = () => { 
                 this.getOutputPort("output_port1").setValue(image);
-            }
+                this.processing = false;
+            };
             image.src = this.tmpCanvas.toDataURL();
         };
-        
+
+
         // convert a js function to a WebWorker
         //
         this.worker = this.createWorker(workerFunction);
-        this.worker.onmessage = receiverFunction
+        this.worker.onmessage = receiverFunction;
+        this.processing = false;
     },
 
     /**
@@ -7684,6 +9523,7 @@ video_Brighter = video_Brighter.extend({
         this.worker = null;
         this.tmpCanvas = null;
         this.tmpContext = null;
+        this.processing = false;
     },
     
 
@@ -7721,10 +9561,10 @@ video_Brighter = video_Brighter.extend({
 // created with http://www.draw2d.org
 //
 //
-var video_Detector = CircuitFigure.extend({
+var video_detector_Object = CircuitFigure.extend({
 
-   NAME: "video_Detector",
-   VERSION: "2.0.119_589",
+   NAME: "video_detector_Object",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -7769,23 +9609,23 @@ var video_Detector = CircuitFigure.extend({
        shape.data("name","Rectangle");
        
        // Rectangle
-       shape = this.canvas.paper.path('M4.5,3.5085840000001554Q4.5,1.5085840000001554 6.5, 1.5085840000001554L75.5,1.5085840000001554Q77.5,1.5085840000001554 77.5, 3.5085840000001554L77.5,51.508584000000155Q77.5,53.508584000000155 75.5, 53.508584000000155L6.5,53.508584000000155Q4.5,53.508584000000155 4.5, 51.508584000000155L4.5,3.5085840000001554');
+       shape = this.canvas.paper.path('M4.5,5.508584000000155Q4.5,3.5085840000001554 6.5, 3.5085840000001554L75.5,3.5085840000001554Q77.5,3.5085840000001554 77.5, 5.508584000000155L77.5,53.508584000000155Q77.5,55.508584000000155 75.5, 55.508584000000155L6.5,55.508584000000155Q4.5,55.508584000000155 4.5, 53.508584000000155L4.5,5.508584000000155');
        shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(240,243,243,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Rectangle");
        
        // Rectangle
-       shape = this.canvas.paper.path('M24.872197764576413 34.69697836850173L24.699999999999818 34.69697836850173L24.699999999999818 48.328520000000026L43.69999999999982 48.328520000000026L43.69999999999982 34.69697836850173L43.52780223542322 34.69697836850173L43.39973483853282 33.84124771412098L42.97828481194847 32.92176425057005L42.29011104337951 32.05903235089045L41.356123344550724 31.27926568728435L40.20470045907223 30.606157075243573L38.870827788668976 30.060158579344716L37.39503437946041 29.657860087585505L35.822161467396654 29.41148523607808L34.19999999999982 29.328520000000026L32.57783853260298 29.41148523607808L31.004965620539224 29.657860087585505L29.52917221133066 30.060158579344716L28.195299540927408 30.606157075243573L27.043876655448912 31.27926568728435L26.109888956620125 32.05903235089045L25.421715188051166 32.92176425057005L25.000265161466814 33.84124771412098L24.872197764576413 34.69697836850173Z');
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(149,192,106,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape = this.canvas.paper.path('M22.199999999999818 48.49629215999994L46.822380625916594 48.410392814080296L43.248545078531606 33.84124771412098L42.82709505194725 32.92176425057005L42.138921283378295 32.05903235089045L41.20493358454951 31.27926568728435L40.05351069907101 30.606157075243573L38.71963802866776 30.060158579344716L37.243844619459196 29.657860087585505L35.67097170739544 29.41148523607808L34.0488102399986 29.328520000000026L32.426648772601766 29.41148523607808L30.853775860538008 29.657860087585505L29.377982451329444 30.060158579344716L28.044109780926192 30.606157075243573L26.892686895447696 31.27926568728435L25.95869919661891 32.05903235089045L25.27052542804995 32.92176425057005L24.849075401465598 33.84124771412098Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Rectangle");
        
        // Circle
        shape = this.canvas.paper.ellipse();
-       shape.attr({"rx":8,"ry":8.5,"cx":33.69999999999982,"cy":17.828520000000026,"stroke":"none","stroke-width":0,"fill":"rgba(149,192,106,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.attr({"rx":8,"ry":8.5,"cx":33.69999999999982,"cy":17.828520000000026,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Circle");
        
        // Rectangle
        shape = this.canvas.paper.path('M19.199999999999818 8.450120000000425L48.19999999999982 8.450120000000425L48.19999999999982 32.450120000000425L19.199999999999818 32.450120000000425Z');
-       shape.attr({"stroke":"rgba(255,23,77,1)","stroke-width":2,"fill":"rgba(0,0,0,0)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.attr({"stroke":"rgba(70,176,25,1)","stroke-width":2,"fill":"rgba(0,0,0,0)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Rectangle");
        
        // Label
@@ -7795,7 +9635,7 @@ var video_Detector = CircuitFigure.extend({
        
        // objectClass
        shape = this.canvas.paper.text(0,0,'person');
-       shape.attr({"x":50,"y":66.96170900000016,"text-anchor":"start","text":"person","font-family":"\"Arial\"","font-size":14,"stroke":"#000000","fill":"#FF0A2B","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":50,"y":66.96170900000016,"text-anchor":"start","text":"person","font-family":"\"Arial\"","font-size":14,"stroke":"#000000","fill":"#C71D3D","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","objectClass");
        
        // Label
@@ -7820,7 +9660,7 @@ var video_Detector = CircuitFigure.extend({
  * Looks disconcerting - extending my own class. But this is a good method to
  * merge basic code and override them with custom methods.
  */
-video_Detector = video_Detector.extend({
+video_detector_Object = video_detector_Object.extend({
 
     init: function(attr, setter, getter){
         this._super(attr, setter, getter);
@@ -8082,10 +9922,1144 @@ video_Detector = video_Detector.extend({
 // created with http://www.draw2d.org
 //
 //
-var video_Edge = CircuitFigure.extend({
+var video_detector_Prewitt = CircuitFigure.extend({
 
-   NAME: "video_Edge",
-   VERSION: "2.0.119_589",
+   NAME: "video_detector_Prewitt",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:81.04423942400535},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9640000000001692, y: 49.24421560822089 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 100.32506249999983, y: 49.24421560822089 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 81.04423942400535;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,81.04423942400535 L0,81.04423942400535");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Prewitt');
+       shape.attr({"x":15.228799999999865,"y":68.54423942400535,"text-anchor":"start","text":"Prewitt","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M4.315424000003077,7.770740800002386Q4.315424000003077,3.770740800002386 8.315424000003077, 3.770740800002386L71.31542400000308,3.770740800002386Q75.31542400000308,3.770740800002386 75.31542400000308, 7.770740800002386L75.31542400000308,51.770740800002386Q75.31542400000308,55.770740800002386 71.31542400000308, 55.770740800002386L8.315424000003077,55.770740800002386Q4.315424000003077,55.770740800002386 4.315424000003077, 51.770740800002386L4.315424000003077,7.770740800002386');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(237,237,237,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // TOP_Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8.16442848176873,"ry":8.16442848176873,"cx":39.50000000000025,"cy":16.4234128000028,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Circle");
+       
+       // TOP_Body
+       shape = this.canvas.paper.path('M29.462567472217447,46.776768974949896Q28.81898911823282,50.724655359115786 32.81880873597436, 50.762642534977275L46.90091030048609,50.89638338325396Q50.900729918227626,50.93437055911545 50.01211395841982, 47.03432419067637L48.22418747803842,39.18729409867167Q47.33557151823061,35.28724773023259 47.27480253027943, 34.71745662722515L47.27480253027943,34.71745662722515Q47.21403354232825,34.1476655242177 47.03357301342339, 33.5951872355472L47.03357301342339,33.5951872355472Q46.85311248451853,33.0427089468767 46.558443616512704, 32.52433024577522L46.558443616512704,32.52433024577522Q46.263774748506876,32.005951544673735 45.86385090584463, 31.537423105665766L45.86385090584463,31.537423105665766Q45.46392706318238,31.068894666657798 44.97089972945241, 30.66445248927039L44.97089972945241,30.66445248927039Q44.47787239572244,30.26001031188298 43.906721956976526, 29.931943167022382L43.906721956976526,29.931943167022382Q43.33557151823061,29.603876022161785 42.70365209153351, 29.36215206401357L42.70365209153351,29.36215206401357Q42.07173266483642,29.120428105865358 41.39824480220159, 28.972391994582267L41.39824480220159,28.972391994582267Q40.72475693956676,28.824355883299177 40.03016422889914, 28.77450562120748L40.03016422889914,28.77450562120748Q39.33557151823152,28.724655359115786 38.64097880756344, 28.77450562120748L38.64097880756344,28.77450562120748Q37.94638609689537,28.824355883299177 37.27289823426054, 28.972391994582267L37.27289823426054,28.972391994582267Q36.59941037162571,29.120428105865358 35.96749094492861, 29.36215206401357L35.96749094492861,29.36215206401357Q35.33557151823152,29.603876022161785 34.7644210794856, 29.931943167022382L34.7644210794856,29.931943167022382Q34.193270640739684,30.26001031188298 33.700243307009714, 30.66445248927039L33.700243307009714,30.66445248927039Q33.207215973279745,31.068894666657798 32.8072921306175, 31.537423105665766L32.8072921306175,31.537423105665766Q32.40736828795525,32.005951544673735 32.11269941994942, 32.52433024577522L32.11269941994942,32.52433024577522Q31.818030551943593,33.0427089468767 31.637570023038734, 33.5951872355472L31.637570023038734,33.5951872355472Q31.457109494133874,34.1476655242177 31.396340506182696, 34.71745662722515L31.396340506182696,34.71745662722515Q31.335571518231518,35.28724773023259 30.69199316424689, 39.235134114398484L29.462567472217447,46.776768974949896');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Body");
+       
+       // Shadow
+       shape = this.canvas.paper.path('M38.81898911823282,48.09356345220658Q38.81898911823282,50.09356345220658 40.81886978802416, 50.11541079975606L48.81910844844148,50.202808011566304Q50.81898911823282,50.224655359115786 50.43037456504294, 48.26277393327756L48.276999915507304,37.391678928941374Q47.88838536231742,35.429797503103146 47.838432511882274, 34.89104169036955L47.838432511882274,34.89104169036955Q47.78847966144713,34.35228587763595 47.64013890222441, 33.829899887648025L47.64013890222441,33.829899887648025Q47.49179814300169,33.3075138976601 47.24957673389736, 32.81737016438365L47.24957673389736,32.81737016438365Q47.007355324793025,32.32722643110719 46.678613040751316, 31.884217723856636L46.678613040751316,31.884217723856636Q46.349870756709606,31.44120901660608 45.9445962656805, 31.05879593077134L45.9445962656805,31.05879593077134Q45.5393217746514,30.676382844936597 45.069829136965836, 30.36618480862535L45.069829136965836,30.36618480862535Q44.600336499280274,30.0559867723141 44.08089101115911, 29.827428995890386L44.08089101115911,29.827428995890386Q43.561445523037946,29.598871219466673 43.00783027278612, 29.4588983153144L43.00783027278612,29.4588983153144Q42.4542150225343,29.318925411162127 41.88325132938871, 29.271790385138956L41.88325132938871,29.271790385138956Q41.31228763624313,29.224655359115786 40.74132394309618, 29.271790385138956L40.74132394309618,29.271790385138956Q40.170360249949226,29.318925411162127 39.6167449996974, 29.4588983153144L39.6167449996974,29.4588983153144Q39.06312974944558,29.598871219466673 38.9410594338392, 29.652582572324718L38.9410594338392,29.652582572324718Q38.81898911823282,29.706293925182763 38.81898911823282, 31.706293925182763L38.81898911823282,48.09356345220658');
+       shape.attr({"stroke":"rgba(0,0,0,1)","stroke-width":2,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow");
+       
+       // TOP_Circle
+       shape = this.canvas.paper.path('M39.17362344960475 23.57014711485499L39.41983980273653 23.64504246582692L40.56705787534429 23.75898431823407L41.71427594795114 23.64504246582692L42.82663637994392 23.306678974127863L43.87034066247361 22.754174846618298L44.813676369059976 22.004317641627495L45.627980721607855 21.07989139088386L46.28851149442198 20.00898431823407L46.7751987942147 18.82413539317713L47.0732548736587 17.561345650736257L47.17362344960475 16.25898431823407L47.0732548736587 14.956622985731883L46.7751987942147 13.69383324329101L46.28851149442198 12.50898431823407L45.627980721607855 11.438077245584282L44.813676369059976 10.513650994840646L43.87034066247361 9.763793789849842L42.82663637994392 9.211289662340278L41.71427594795114 8.872926170641222L40.56705787534429 8.75898431823407L39.41983980273653 8.872926170641222L39.17362344960475 8.94782152161315L39.17362344960475 23.57014711485499Z');
+       shape.attr({"stroke":"rgba(13,13,13,1)","stroke-width":2,"fill":"rgba(255,253,253,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Circle");
+       
+       // Line
+       shape = this.canvas.paper.path('M38.69640448001155 4.038881344014044L38.864176640010555,55.044239424005355');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_detector_Prewitt = video_detector_Prewitt.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null && this.processing===false){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.processing = true;
+            this.worker.postMessage(imageData, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data;
+            var pixels    = imageData.data;
+            var w = imageData.width;
+            var h = imageData.height;
+
+            var kernelX   =[ -1, 0,  1,  
+                             -1, 0,  1,  
+                             -1, 0,  1 ];
+                             
+            var kernelY   =[ -1, -1, -1,  
+                              0,  0,  0,  
+                              1,  1,  1 ];
+                           
+            function convolut(weights, src, w, h){
+                var side     = Math.round(Math.sqrt(weights.length));
+                var halfSide = Math.floor(side/2);
+                var sw = w;
+                var sh = h;
+
+                var dst = new Uint8ClampedArray(w*h*4);
+
+                for (var y=0; y < h; y++) {
+                    for (var x=0; x < w; x++) {
+                        var sy = y;
+                        var sx = x;
+                        var dstOff = (y*w+x)*4;
+                        var r=0, g=0, b=0, a=0;
+                        for (var cy=0; cy<side; cy++) {
+                            for (var cx=0; cx<side; cx++) {
+                                var scy = Math.min(sh-1, Math.max(0, sy + cy - halfSide));
+                                var scx = Math.min(sw-1, Math.max(0, sx + cx - halfSide));
+                                var srcOff = (scy*sw+scx)*4;
+                                var wt = weights[cy*side+cx];
+                                r += src[srcOff] * wt;
+                                g += src[srcOff+1] * wt;
+                                b += src[srcOff+2] * wt;
+                            }
+                        }
+                        dst[dstOff]   = r;
+                        dst[dstOff+1] = g;
+                        dst[dstOff+2] = b;
+                        dst[dstOff+3] = src[dstOff+3];
+                    }
+                }
+                return dst;
+            }
+
+            var dstX = convolut(kernelX, pixels, w, h);
+            var dstY = convolut(kernelY, pixels, w, h);
+            for (var i=0; i < dstX.length; i++) {
+                var edgeX = dstX[i];
+                var edgeY = dstY[i]; 
+                dstX[i] = Math.min(255,Math.round(Math.sqrt(edgeX * edgeX + edgeY * edgeY)));
+            }
+            
+            imageData.data.set(dstX);
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => { 
+                this.getOutputPort("output_port1").setValue(image);
+                this.processing = false;
+            };
+            image.src = this.tmpCanvas.toDataURL();
+
+        };
+
+
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction;
+        this.processing = false;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_detector_PrewittInvers = CircuitFigure.extend({
+
+   NAME: "video_detector_PrewittInvers",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:81.04423942400535},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9640000000001692, y: 49.24421560822089 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 100.32506249999983, y: 49.24421560822089 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 81.04423942400535;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,81.04423942400535 L0,81.04423942400535");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Prewitt');
+       shape.attr({"x":15.228799999999865,"y":68.54423942400535,"text-anchor":"start","text":"Prewitt","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M4.315424000003077,7.770740800002386Q4.315424000003077,3.770740800002386 8.315424000003077, 3.770740800002386L71.31542400000308,3.770740800002386Q75.31542400000308,3.770740800002386 75.31542400000308, 7.770740800002386L75.31542400000308,51.770740800002386Q75.31542400000308,55.770740800002386 71.31542400000308, 55.770740800002386L8.315424000003077,55.770740800002386Q4.315424000003077,55.770740800002386 4.315424000003077, 51.770740800002386L4.315424000003077,7.770740800002386');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(237,237,237,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // TOP_Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8.16442848176873,"ry":8.16442848176873,"cx":39.50000000000025,"cy":16.4234128000028,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Circle");
+       
+       // TOP_Body
+       shape = this.canvas.paper.path('M29.462567472217447,46.776768974949896Q28.81898911823282,50.724655359115786 32.81880873597436, 50.762642534977275L46.90091030048609,50.89638338325396Q50.900729918227626,50.93437055911545 50.01211395841982, 47.03432419067637L48.22418747803842,39.18729409867167Q47.33557151823061,35.28724773023259 47.27480253027943, 34.71745662722515L47.27480253027943,34.71745662722515Q47.21403354232825,34.1476655242177 47.03357301342339, 33.5951872355472L47.03357301342339,33.5951872355472Q46.85311248451853,33.0427089468767 46.558443616512704, 32.52433024577522L46.558443616512704,32.52433024577522Q46.263774748506876,32.005951544673735 45.86385090584463, 31.537423105665766L45.86385090584463,31.537423105665766Q45.46392706318238,31.068894666657798 44.97089972945241, 30.66445248927039L44.97089972945241,30.66445248927039Q44.47787239572244,30.26001031188298 43.906721956976526, 29.931943167022382L43.906721956976526,29.931943167022382Q43.33557151823061,29.603876022161785 42.70365209153351, 29.36215206401357L42.70365209153351,29.36215206401357Q42.07173266483642,29.120428105865358 41.39824480220159, 28.972391994582267L41.39824480220159,28.972391994582267Q40.72475693956676,28.824355883299177 40.03016422889914, 28.77450562120748L40.03016422889914,28.77450562120748Q39.33557151823152,28.724655359115786 38.64097880756344, 28.77450562120748L38.64097880756344,28.77450562120748Q37.94638609689537,28.824355883299177 37.27289823426054, 28.972391994582267L37.27289823426054,28.972391994582267Q36.59941037162571,29.120428105865358 35.96749094492861, 29.36215206401357L35.96749094492861,29.36215206401357Q35.33557151823152,29.603876022161785 34.7644210794856, 29.931943167022382L34.7644210794856,29.931943167022382Q34.193270640739684,30.26001031188298 33.700243307009714, 30.66445248927039L33.700243307009714,30.66445248927039Q33.207215973279745,31.068894666657798 32.8072921306175, 31.537423105665766L32.8072921306175,31.537423105665766Q32.40736828795525,32.005951544673735 32.11269941994942, 32.52433024577522L32.11269941994942,32.52433024577522Q31.818030551943593,33.0427089468767 31.637570023038734, 33.5951872355472L31.637570023038734,33.5951872355472Q31.457109494133874,34.1476655242177 31.396340506182696, 34.71745662722515L31.396340506182696,34.71745662722515Q31.335571518231518,35.28724773023259 30.69199316424689, 39.235134114398484L29.462567472217447,46.776768974949896');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Body");
+       
+       // Shadow
+       shape = this.canvas.paper.path('M38.81898911823282,48.09356345220658Q38.81898911823282,50.09356345220658 40.81886978802416, 50.11541079975606L48.81910844844148,50.202808011566304Q50.81898911823282,50.224655359115786 50.43037456504294, 48.26277393327756L48.276999915507304,37.391678928941374Q47.88838536231742,35.429797503103146 47.838432511882274, 34.89104169036955L47.838432511882274,34.89104169036955Q47.78847966144713,34.35228587763595 47.64013890222441, 33.829899887648025L47.64013890222441,33.829899887648025Q47.49179814300169,33.3075138976601 47.24957673389736, 32.81737016438365L47.24957673389736,32.81737016438365Q47.007355324793025,32.32722643110719 46.678613040751316, 31.884217723856636L46.678613040751316,31.884217723856636Q46.349870756709606,31.44120901660608 45.9445962656805, 31.05879593077134L45.9445962656805,31.05879593077134Q45.5393217746514,30.676382844936597 45.069829136965836, 30.36618480862535L45.069829136965836,30.36618480862535Q44.600336499280274,30.0559867723141 44.08089101115911, 29.827428995890386L44.08089101115911,29.827428995890386Q43.561445523037946,29.598871219466673 43.00783027278612, 29.4588983153144L43.00783027278612,29.4588983153144Q42.4542150225343,29.318925411162127 41.88325132938871, 29.271790385138956L41.88325132938871,29.271790385138956Q41.31228763624313,29.224655359115786 40.74132394309618, 29.271790385138956L40.74132394309618,29.271790385138956Q40.170360249949226,29.318925411162127 39.6167449996974, 29.4588983153144L39.6167449996974,29.4588983153144Q39.06312974944558,29.598871219466673 38.9410594338392, 29.652582572324718L38.9410594338392,29.652582572324718Q38.81898911823282,29.706293925182763 38.81898911823282, 31.706293925182763L38.81898911823282,48.09356345220658');
+       shape.attr({"stroke":"rgba(0,0,0,1)","stroke-width":2,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow");
+       
+       // TOP_Circle
+       shape = this.canvas.paper.path('M39.17362344960475 23.57014711485499L39.41983980273653 23.64504246582692L40.56705787534429 23.75898431823407L41.71427594795114 23.64504246582692L42.82663637994392 23.306678974127863L43.87034066247361 22.754174846618298L44.813676369059976 22.004317641627495L45.627980721607855 21.07989139088386L46.28851149442198 20.00898431823407L46.7751987942147 18.82413539317713L47.0732548736587 17.561345650736257L47.17362344960475 16.25898431823407L47.0732548736587 14.956622985731883L46.7751987942147 13.69383324329101L46.28851149442198 12.50898431823407L45.627980721607855 11.438077245584282L44.813676369059976 10.513650994840646L43.87034066247361 9.763793789849842L42.82663637994392 9.211289662340278L41.71427594795114 8.872926170641222L40.56705787534429 8.75898431823407L39.41983980273653 8.872926170641222L39.17362344960475 8.94782152161315L39.17362344960475 23.57014711485499Z');
+       shape.attr({"stroke":"rgba(13,13,13,1)","stroke-width":2,"fill":"rgba(255,253,253,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Circle");
+       
+       // Line
+       shape = this.canvas.paper.path('M38.69640448001155 4.038881344014044L38.864176640010555,55.044239424005355');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_detector_PrewittInvers = video_detector_PrewittInvers.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null && this.processing===false){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.processing = true;
+            this.worker.postMessage(imageData, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data;
+            var pixels    = imageData.data;
+            var w = imageData.width;
+            var h = imageData.height;
+
+            var kernelX   =[ -1, 0,  1,  
+                             -1, 0,  1,  
+                             -1, 0,  1 ];
+                             
+            var kernelY   =[ -1, -1, -1,  
+                              0,  0,  0,  
+                              1,  1,  1 ];
+                           
+            function convolut(weights, src, w, h){
+                var side     = Math.round(Math.sqrt(weights.length));
+                var halfSide = Math.floor(side/2);
+                var sw = w;
+                var sh = h;
+
+                var dst = new Uint8ClampedArray(w*h*4);
+
+                for (var y=0; y < h; y++) {
+                    for (var x=0; x < w; x++) {
+                        var sy = y;
+                        var sx = x;
+                        var dstOff = (y*w+x)*4;
+                        var r=0, g=0, b=0, a=0;
+                        for (var cy=0; cy<side; cy++) {
+                            for (var cx=0; cx<side; cx++) {
+                                var scy = Math.min(sh-1, Math.max(0, sy + cy - halfSide));
+                                var scx = Math.min(sw-1, Math.max(0, sx + cx - halfSide));
+                                var srcOff = (scy*sw+scx)*4;
+                                var wt = weights[cy*side+cx];
+                                r += src[srcOff] * wt;
+                                g += src[srcOff+1] * wt;
+                                b += src[srcOff+2] * wt;
+                            }
+                        }
+                        dst[dstOff]   = r;
+                        dst[dstOff+1] = g;
+                        dst[dstOff+2] = b;
+                        dst[dstOff+3] = 0;
+                    }
+                }
+                return dst;
+            }
+
+            var dstX = convolut(kernelX, pixels, w, h);
+            var dstY = convolut(kernelY, pixels, w, h);
+            for (var i=0; i < dstX.length; i++) {
+                var edgeX = dstX[i];
+                var edgeY = dstY[i]; 
+                dstX[i] = 255-Math.min(255,Math.round(Math.sqrt(edgeX * edgeX + edgeY * edgeY)));
+            }
+            
+            imageData.data.set(dstX);
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => { 
+                this.getOutputPort("output_port1").setValue(image);
+                this.processing = false;
+            };
+            image.src = this.tmpCanvas.toDataURL();
+
+        };
+
+
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction;
+        this.processing = false;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_detector_Roberts = CircuitFigure.extend({
+
+   NAME: "video_detector_Roberts",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:81.04423942400535},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9640000000001692, y: 49.24421560822089 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 100.32506249999983, y: 49.24421560822089 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 81.04423942400535;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,81.04423942400535 L0,81.04423942400535");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Roberts');
+       shape.attr({"x":13.228799999999865,"y":68.54423942400535,"text-anchor":"start","text":"Roberts","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M4.315424000003077,7.770740800002386Q4.315424000003077,3.770740800002386 8.315424000003077, 3.770740800002386L71.31542400000308,3.770740800002386Q75.31542400000308,3.770740800002386 75.31542400000308, 7.770740800002386L75.31542400000308,51.770740800002386Q75.31542400000308,55.770740800002386 71.31542400000308, 55.770740800002386L8.315424000003077,55.770740800002386Q4.315424000003077,55.770740800002386 4.315424000003077, 51.770740800002386L4.315424000003077,7.770740800002386');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(237,237,237,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // TOP_Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8.16442848176873,"ry":8.16442848176873,"cx":39.50000000000025,"cy":16.4234128000028,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Circle");
+       
+       // TOP_Body
+       shape = this.canvas.paper.path('M29.462567472217447,46.776768974949896Q28.81898911823282,50.724655359115786 32.81880873597436, 50.762642534977275L46.90091030048609,50.89638338325396Q50.900729918227626,50.93437055911545 50.01211395841982, 47.03432419067637L48.22418747803842,39.18729409867167Q47.33557151823061,35.28724773023259 47.27480253027943, 34.71745662722515L47.27480253027943,34.71745662722515Q47.21403354232825,34.1476655242177 47.03357301342339, 33.5951872355472L47.03357301342339,33.5951872355472Q46.85311248451853,33.0427089468767 46.558443616512704, 32.52433024577522L46.558443616512704,32.52433024577522Q46.263774748506876,32.005951544673735 45.86385090584463, 31.537423105665766L45.86385090584463,31.537423105665766Q45.46392706318238,31.068894666657798 44.97089972945241, 30.66445248927039L44.97089972945241,30.66445248927039Q44.47787239572244,30.26001031188298 43.906721956976526, 29.931943167022382L43.906721956976526,29.931943167022382Q43.33557151823061,29.603876022161785 42.70365209153351, 29.36215206401357L42.70365209153351,29.36215206401357Q42.07173266483642,29.120428105865358 41.39824480220159, 28.972391994582267L41.39824480220159,28.972391994582267Q40.72475693956676,28.824355883299177 40.03016422889914, 28.77450562120748L40.03016422889914,28.77450562120748Q39.33557151823152,28.724655359115786 38.64097880756344, 28.77450562120748L38.64097880756344,28.77450562120748Q37.94638609689537,28.824355883299177 37.27289823426054, 28.972391994582267L37.27289823426054,28.972391994582267Q36.59941037162571,29.120428105865358 35.96749094492861, 29.36215206401357L35.96749094492861,29.36215206401357Q35.33557151823152,29.603876022161785 34.7644210794856, 29.931943167022382L34.7644210794856,29.931943167022382Q34.193270640739684,30.26001031188298 33.700243307009714, 30.66445248927039L33.700243307009714,30.66445248927039Q33.207215973279745,31.068894666657798 32.8072921306175, 31.537423105665766L32.8072921306175,31.537423105665766Q32.40736828795525,32.005951544673735 32.11269941994942, 32.52433024577522L32.11269941994942,32.52433024577522Q31.818030551943593,33.0427089468767 31.637570023038734, 33.5951872355472L31.637570023038734,33.5951872355472Q31.457109494133874,34.1476655242177 31.396340506182696, 34.71745662722515L31.396340506182696,34.71745662722515Q31.335571518231518,35.28724773023259 30.69199316424689, 39.235134114398484L29.462567472217447,46.776768974949896');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Body");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M38.728320000003805,7.16335971200624Q38.728320000003805,3.1633597120062404 42.728320000003805, 3.1633597120062404L71.42848000000322,3.1633597120062404Q75.42848000000322,3.1633597120062404 75.42848000000322, 7.16335971200624L75.42848000000322,51.91983971200625Q75.42848000000322,55.91983971200625 71.42848000000322, 55.91983971200625L42.728320000003805,55.91983971200625Q38.728320000003805,55.91983971200625 38.728320000003805, 51.91983971200625L38.728320000003805,7.16335971200624');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(0,0,0,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Shadow_Body
+       shape = this.canvas.paper.path('M38.81898911823282,48.09356345220658Q38.81898911823282,50.09356345220658 40.81886978802416, 50.11541079975606L48.81910844844148,50.202808011566304Q50.81898911823282,50.224655359115786 50.43037456504294, 48.26277393327756L48.276999915507304,37.391678928941374Q47.88838536231742,35.429797503103146 47.838432511882274, 34.89104169036955L47.838432511882274,34.89104169036955Q47.78847966144713,34.35228587763595 47.64013890222441, 33.829899887648025L47.64013890222441,33.829899887648025Q47.49179814300169,33.3075138976601 47.24957673389736, 32.81737016438365L47.24957673389736,32.81737016438365Q47.007355324793025,32.32722643110719 46.678613040751316, 31.884217723856636L46.678613040751316,31.884217723856636Q46.349870756709606,31.44120901660608 45.9445962656805, 31.05879593077134L45.9445962656805,31.05879593077134Q45.5393217746514,30.676382844936597 45.069829136965836, 30.36618480862535L45.069829136965836,30.36618480862535Q44.600336499280274,30.0559867723141 44.08089101115911, 29.827428995890386L44.08089101115911,29.827428995890386Q43.561445523037946,29.598871219466673 43.00783027278612, 29.4588983153144L43.00783027278612,29.4588983153144Q42.4542150225343,29.318925411162127 41.88325132938871, 29.271790385138956L41.88325132938871,29.271790385138956Q41.31228763624313,29.224655359115786 40.74132394309618, 29.271790385138956L40.74132394309618,29.271790385138956Q40.170360249949226,29.318925411162127 39.6167449996974, 29.4588983153144L39.6167449996974,29.4588983153144Q39.06312974944558,29.598871219466673 38.9410594338392, 29.652582572324718L38.9410594338392,29.652582572324718Q38.81898911823282,29.706293925182763 38.81898911823282, 31.706293925182763L38.81898911823282,48.09356345220658');
+       shape.attr({"stroke":"rgba(110,110,110,1)","stroke-width":1,"fill":"rgba(0,0,0,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow_Body");
+       
+       // Show_Circle
+       shape = this.canvas.paper.path('M38.67362344960475 23.57014711485499L38.91983980273653 23.64504246582692L40.06705787534429 23.75898431823407L41.21427594795114 23.64504246582692L42.32663637994392 23.306678974127863L43.37034066247361 22.754174846618298L44.313676369059976 22.004317641627495L45.127980721607855 21.07989139088386L45.78851149442198 20.00898431823407L46.2751987942147 18.82413539317713L46.5732548736587 17.561345650736257L46.67362344960475 16.25898431823407L46.5732548736587 14.956622985731883L46.2751987942147 13.69383324329101L45.78851149442198 12.50898431823407L45.127980721607855 11.438077245584282L44.313676369059976 10.513650994840646L43.37034066247361 9.763793789849842L42.32663637994392 9.211289662340278L41.21427594795114 8.872926170641222L40.06705787534429 8.75898431823407L38.91983980273653 8.872926170641222L38.67362344960475 8.94782152161315L38.67362344960475 23.57014711485499Z');
+       shape.attr({"stroke":"rgba(107,107,107,1)","stroke-width":1,"fill":"rgba(0,0,0,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Show_Circle");
+       
+       // Line
+       shape = this.canvas.paper.path('M38.69640448001155 4.038881344014044L38.864176640010555,55.044239424005355');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_detector_Roberts = video_detector_Roberts.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null && this.processing===false){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.processing = true;
+            this.worker.postMessage(imageData, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data;
+            var pixels    = imageData.data;
+            var w = imageData.width;
+            var h = imageData.height;
+
+            var kernelX   =[ 1,  0,
+                             0, -1 ];
+                             
+            var kernelY   =[ 0, 1,
+                            -1, 0 ];
+                           
+            function convolut(weights, src, w, h){
+                var side     = Math.round(Math.sqrt(weights.length));
+                var halfSide = Math.floor(side/2);
+                var sw = w;
+                var sh = h;
+
+                var dst = new Uint8ClampedArray(w*h*4);
+
+                for (var y=0; y < h; y++) {
+                    for (var x=0; x < w; x++) {
+                        var sy = y;
+                        var sx = x;
+                        var dstOff = (y*w+x)*4;
+                        var r=0, g=0, b=0, a=0;
+                        for (var cy=0; cy<side; cy++) {
+                            for (var cx=0; cx<side; cx++) {
+                                var scy = Math.min(sh-1, Math.max(0, sy + cy - halfSide));
+                                var scx = Math.min(sw-1, Math.max(0, sx + cx - halfSide));
+                                var srcOff = (scy*sw+scx)*4;
+                                var wt = weights[cy*side+cx];
+                                r += src[srcOff] * wt;
+                                g += src[srcOff+1] * wt;
+                                b += src[srcOff+2] * wt;
+                            }
+                        }
+                        dst[dstOff]   = r;
+                        dst[dstOff+1] = g;
+                        dst[dstOff+2] = b;
+                        dst[dstOff+3] = src[dstOff+3];
+                    }
+                }
+                return dst;
+            }
+
+            var dstX = convolut(kernelX, pixels, w, h);
+            var dstY = convolut(kernelY, pixels, w, h);
+            for (var i=0; i < dstX.length; i++) {
+                var edgeX = dstX[i];
+                var edgeY = dstY[i]; 
+                dstX[i] = Math.min(255,Math.round(Math.sqrt(edgeX * edgeX + edgeY * edgeY)));
+            }
+            
+            imageData.data.set(dstX);
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => { 
+                this.getOutputPort("output_port1").setValue(image);
+                this.processing = false;
+            };
+            image.src = this.tmpCanvas.toDataURL();
+
+        };
+
+
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction;
+        this.processing = false;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_detector_RobertsInvers = CircuitFigure.extend({
+
+   NAME: "video_detector_RobertsInvers",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:81.04423942400535},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9640000000001692, y: 49.24421560822089 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 100.32506249999983, y: 49.24421560822089 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 81.04423942400535;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,81.04423942400535 L0,81.04423942400535");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Roberts');
+       shape.attr({"x":13.228799999999865,"y":68.54423942400535,"text-anchor":"start","text":"Roberts","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // PictureFrame
+       shape = this.canvas.paper.path('M4.315424000003077,7.770740800002386Q4.315424000003077,3.770740800002386 8.315424000003077, 3.770740800002386L71.31542400000308,3.770740800002386Q75.31542400000308,3.770740800002386 75.31542400000308, 7.770740800002386L75.31542400000308,51.770740800002386Q75.31542400000308,55.770740800002386 71.31542400000308, 55.770740800002386L8.315424000003077,55.770740800002386Q4.315424000003077,55.770740800002386 4.315424000003077, 51.770740800002386L4.315424000003077,7.770740800002386');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(237,237,237,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","PictureFrame");
+       
+       // TOP_Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8.16442848176873,"ry":8.16442848176873,"cx":39.50000000000025,"cy":16.4234128000028,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Circle");
+       
+       // TOP_Body
+       shape = this.canvas.paper.path('M29.462567472217447,46.776768974949896Q28.81898911823282,50.724655359115786 32.81880873597436, 50.762642534977275L46.90091030048609,50.89638338325396Q50.900729918227626,50.93437055911545 50.01211395841982, 47.03432419067637L48.22418747803842,39.18729409867167Q47.33557151823061,35.28724773023259 47.27480253027943, 34.71745662722515L47.27480253027943,34.71745662722515Q47.21403354232825,34.1476655242177 47.03357301342339, 33.5951872355472L47.03357301342339,33.5951872355472Q46.85311248451853,33.0427089468767 46.558443616512704, 32.52433024577522L46.558443616512704,32.52433024577522Q46.263774748506876,32.005951544673735 45.86385090584463, 31.537423105665766L45.86385090584463,31.537423105665766Q45.46392706318238,31.068894666657798 44.97089972945241, 30.66445248927039L44.97089972945241,30.66445248927039Q44.47787239572244,30.26001031188298 43.906721956976526, 29.931943167022382L43.906721956976526,29.931943167022382Q43.33557151823061,29.603876022161785 42.70365209153351, 29.36215206401357L42.70365209153351,29.36215206401357Q42.07173266483642,29.120428105865358 41.39824480220159, 28.972391994582267L41.39824480220159,28.972391994582267Q40.72475693956676,28.824355883299177 40.03016422889914, 28.77450562120748L40.03016422889914,28.77450562120748Q39.33557151823152,28.724655359115786 38.64097880756344, 28.77450562120748L38.64097880756344,28.77450562120748Q37.94638609689537,28.824355883299177 37.27289823426054, 28.972391994582267L37.27289823426054,28.972391994582267Q36.59941037162571,29.120428105865358 35.96749094492861, 29.36215206401357L35.96749094492861,29.36215206401357Q35.33557151823152,29.603876022161785 34.7644210794856, 29.931943167022382L34.7644210794856,29.931943167022382Q34.193270640739684,30.26001031188298 33.700243307009714, 30.66445248927039L33.700243307009714,30.66445248927039Q33.207215973279745,31.068894666657798 32.8072921306175, 31.537423105665766L32.8072921306175,31.537423105665766Q32.40736828795525,32.005951544673735 32.11269941994942, 32.52433024577522L32.11269941994942,32.52433024577522Q31.818030551943593,33.0427089468767 31.637570023038734, 33.5951872355472L31.637570023038734,33.5951872355472Q31.457109494133874,34.1476655242177 31.396340506182696, 34.71745662722515L31.396340506182696,34.71745662722515Q31.335571518231518,35.28724773023259 30.69199316424689, 39.235134114398484L29.462567472217447,46.776768974949896');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Body");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M38.19640448001155,8.038881344014044Q38.19640448001155,4.038881344014044 42.19640448001155, 4.038881344014044L71.19640448001155,4.038881344014044Q75.19640448001155,4.038881344014044 75.19640448001155, 8.038881344014044L75.19640448001155,51.038881344014044Q75.19640448001155,55.038881344014044 71.19640448001155, 55.038881344014044L42.19640448001155,55.038881344014044Q38.19640448001155,55.038881344014044 38.19640448001155, 51.038881344014044L38.19640448001155,8.038881344014044');
+       shape.attr({"stroke":"rgba(0,0,0,1)","stroke-width":2,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Shadow_Body
+       shape = this.canvas.paper.path('M38.81898911823282,48.09356345220658Q38.81898911823282,50.09356345220658 40.81886978802416, 50.11541079975606L48.81910844844148,50.202808011566304Q50.81898911823282,50.224655359115786 50.43037456504294, 48.26277393327756L48.276999915507304,37.391678928941374Q47.88838536231742,35.429797503103146 47.838432511882274, 34.89104169036955L47.838432511882274,34.89104169036955Q47.78847966144713,34.35228587763595 47.64013890222441, 33.829899887648025L47.64013890222441,33.829899887648025Q47.49179814300169,33.3075138976601 47.24957673389736, 32.81737016438365L47.24957673389736,32.81737016438365Q47.007355324793025,32.32722643110719 46.678613040751316, 31.884217723856636L46.678613040751316,31.884217723856636Q46.349870756709606,31.44120901660608 45.9445962656805, 31.05879593077134L45.9445962656805,31.05879593077134Q45.5393217746514,30.676382844936597 45.069829136965836, 30.36618480862535L45.069829136965836,30.36618480862535Q44.600336499280274,30.0559867723141 44.08089101115911, 29.827428995890386L44.08089101115911,29.827428995890386Q43.561445523037946,29.598871219466673 43.00783027278612, 29.4588983153144L43.00783027278612,29.4588983153144Q42.4542150225343,29.318925411162127 41.88325132938871, 29.271790385138956L41.88325132938871,29.271790385138956Q41.31228763624313,29.224655359115786 40.74132394309618, 29.271790385138956L40.74132394309618,29.271790385138956Q40.170360249949226,29.318925411162127 39.6167449996974, 29.4588983153144L39.6167449996974,29.4588983153144Q39.06312974944558,29.598871219466673 38.9410594338392, 29.652582572324718L38.9410594338392,29.652582572324718Q38.81898911823282,29.706293925182763 38.81898911823282, 31.706293925182763L38.81898911823282,48.09356345220658');
+       shape.attr({"stroke":"rgba(219,219,219,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow_Body");
+       
+       // Shadow_Circle
+       shape = this.canvas.paper.path('M39.17362344960475 23.57014711485499L39.41983980273653 23.64504246582692L40.56705787534429 23.75898431823407L41.71427594795114 23.64504246582692L42.82663637994392 23.306678974127863L43.87034066247361 22.754174846618298L44.813676369059976 22.004317641627495L45.627980721607855 21.07989139088386L46.28851149442198 20.00898431823407L46.7751987942147 18.82413539317713L47.0732548736587 17.561345650736257L47.17362344960475 16.25898431823407L47.0732548736587 14.956622985731883L46.7751987942147 13.69383324329101L46.28851149442198 12.50898431823407L45.627980721607855 11.438077245584282L44.813676369059976 10.513650994840646L43.87034066247361 9.763793789849842L42.82663637994392 9.211289662340278L41.71427594795114 8.872926170641222L40.56705787534429 8.75898431823407L39.41983980273653 8.872926170641222L39.17362344960475 8.94782152161315L39.17362344960475 23.57014711485499Z');
+       shape.attr({"stroke":"rgba(115,115,115,1)","stroke-width":1,"fill":"rgba(255,253,253,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow_Circle");
+       
+       // Line
+       shape = this.canvas.paper.path('M38.69640448001155 4.5874573440150925L38.864176640010555,54.544239424005355');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":3,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_detector_RobertsInvers = video_detector_RobertsInvers.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null && this.processing===false){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.processing = true;
+            this.worker.postMessage(imageData, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data;
+            var pixels    = imageData.data;
+            var w = imageData.width;
+            var h = imageData.height;
+
+            var kernelX   =[ 1,  0,
+                             0, -1 ];
+                             
+            var kernelY   =[ 0, 1,
+                            -1, 0 ];
+                           
+            function convolut(weights, src, w, h){
+                var side     = Math.round(Math.sqrt(weights.length));
+                var halfSide = Math.floor(side/2);
+                var sw = w;
+                var sh = h;
+
+                var dst = new Uint8ClampedArray(w*h*4);
+
+                for (var y=0; y < h; y++) {
+                    for (var x=0; x < w; x++) {
+                        var sy = y;
+                        var sx = x;
+                        var dstOff = (y*w+x)*4;
+                        var r=0, g=0, b=0, a=0;
+                        for (var cy=0; cy<side; cy++) {
+                            for (var cx=0; cx<side; cx++) {
+                                var scy = Math.min(sh-1, Math.max(0, sy + cy - halfSide));
+                                var scx = Math.min(sw-1, Math.max(0, sx + cx - halfSide));
+                                var srcOff = (scy*sw+scx)*4;
+                                var wt = weights[cy*side+cx];
+                                r += src[srcOff] * wt;
+                                g += src[srcOff+1] * wt;
+                                b += src[srcOff+2] * wt;
+                            }
+                        }
+                        dst[dstOff]   = r;
+                        dst[dstOff+1] = g;
+                        dst[dstOff+2] = b;
+                        dst[dstOff+3] = 0;
+                    }
+                }
+                return dst;
+            }
+
+            var dstX = convolut(kernelX, pixels, w, h);
+            var dstY = convolut(kernelY, pixels, w, h);
+            for (var i=0; i < dstX.length; i++) {
+                var edgeX = dstX[i];
+                var edgeY = dstY[i]; 
+                dstX[i] = 255-Math.min(255,Math.round(Math.sqrt(edgeX * edgeX + edgeY * edgeY)));
+            }
+            
+            imageData.data.set(dstX);
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => { 
+                this.getOutputPort("output_port1").setValue(image);
+                this.processing = false;
+            };
+            image.src = this.tmpCanvas.toDataURL();
+
+        };
+
+
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction;
+        this.processing = false;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_detector_Sobel = CircuitFigure.extend({
+
+   NAME: "video_detector_Sobel",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -8130,24 +11104,44 @@ var video_Edge = CircuitFigure.extend({
        shape.data("name","Rectangle");
        
        // Label
-       shape = this.canvas.paper.text(0,0,'Edge');
-       shape.attr({"x":23.228799999999865,"y":66.37877759999992,"text-anchor":"start","text":"Edge","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape = this.canvas.paper.text(0,0,'Sobel');
+       shape.attr({"x":20.228799999999865,"y":67.37877759999992,"text-anchor":"start","text":"Sobel","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
-       // Circle
-       shape = this.canvas.paper.path('M32.63878406783169 39.46429576295304L32.01261272331885 40.87710770827289L31.629134099395742 42.38285615840232L31.5 43.93578970863655L31.629134099395742 45.48872325886896L32.01261272331885 46.99447170900112L32.63878406783169 48.40728365432369L33.48862223348897 49.68423151878687L34.5363053176643 50.786515887693895L35.75 51.68064440829494L37.09282878173144 52.33944943792994L38.523990489830794 52.742913519146896L40 52.87877759999992L41.476009510169206 52.742913519146896L42.90717121826856 52.33944943792994L44.25 51.68064440829494L45.4636946823357 50.786515887693895L46.51137776651103 49.68423151878687L47.36121593216831 48.40728365432369L47.98738727668115 46.99447170900112L48.37086590060426 45.48872325886896L48.5 43.93578970863655L48.37086590060426 42.38285615840232L47.98738727668115 40.87710770827289L47.36121593216831 39.46429576295304L40.31459911433467 23.87877759999992Z');
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(81,80,82,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Circle");
+       // Rectangle
+       shape = this.canvas.paper.path('M4.315424000003077,7.770740800002386Q4.315424000003077,3.770740800002386 8.315424000003077, 3.770740800002386L71.31542400000308,3.770740800002386Q75.31542400000308,3.770740800002386 75.31542400000308, 7.770740800002386L75.31542400000308,51.770740800002386Q75.31542400000308,55.770740800002386 71.31542400000308, 55.770740800002386L8.315424000003077,55.770740800002386Q4.315424000003077,55.770740800002386 4.315424000003077, 51.770740800002386L4.315424000003077,7.770740800002386');
+       shape.attr({"stroke":"rgba(0,0,0,1)","stroke-width":1,"fill":"rgba(237,237,237,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
        
-       // Circle
-       shape = this.canvas.paper.path('M19.30384757729189 24.195664876622686L18.861844275284056 25.21873559564574L18.591153481925176 26.309105162982632L18.5 27.433643251079957L18.591153481925176 28.55818133918001L18.861844275284056 29.64855090652054L19.30384757729189 30.671621625544503L19.90373334128708 31.596308010154644L20.643274341881806 32.394513932469636L21.49999999999909 33.04198630945393L22.44787914004519 33.51905202057242L23.458110933996068 33.81121566559068L24.5 33.909599999999955L25.541889066003932 33.81121566559068L26.55212085995481 33.51905202057242L27.50000000000091 33.04198630945393L28.356725658118194 32.394513932469636L29.09626665871292 31.596308010154644L29.69615242270811 30.671621625544503L30.138155724715944 29.64855090652054L30.408846518074824 28.55818133918001L30.5 27.433643251079957L30.408846518074824 26.309105162982632L30.138155724715944 25.21873559564574L29.69615242270811 24.195664876622686L24.722069963059766 12.909599999999955Z');
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(215,213,217,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Circle");
+       // TOP_Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8.16442848176873,"ry":8.16442848176873,"cx":39.50000000000025,"cy":16.4234128000028,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Circle");
        
-       // Circle
-       shape = this.canvas.paper.path('M54.70786677729302 35.16484247662174L54.26586347528519 36.187913195645706L53.995172681927215 37.27828276298078L53.90401920000022 38.40282085108174L53.995172681927215 39.527358939181795L54.26586347528519 40.61772850651869L54.70786677729302 41.64079922554447L55.30775254128639 42.56548561015461L56.04729354188021 43.36369153246778L56.90401920000022 44.01116390945481L57.85189834004541 44.488229620569655L58.86213013399902 44.78039326558974L59.90401920000022 44.87877759999992L60.945908266001425 44.78039326558974L61.95614005995503 44.488229620569655L62.90401920000022 44.01116390945481L63.76074485812023 43.36369153246778L64.50028585871405 42.56548561015461L65.10017162270742 41.64079922554447L65.54217492471525 40.61772850651869L65.81286571807323 39.527358939181795L65.90401920000022 38.40282085108174L65.81286571807323 37.27828276298078L65.54217492471525 36.187913195645706L65.10017162270742 35.16484247662174L60.12608916305999 23.87877759999992Z');
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(172,170,173,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Circle");
+       // TOP_Body
+       shape = this.canvas.paper.path('M29.462567472217447,46.776768974949896Q28.81898911823282,50.724655359115786 32.81880873597436, 50.762642534977275L46.90091030048609,50.89638338325396Q50.900729918227626,50.93437055911545 50.01211395841982, 47.03432419067637L48.22418747803842,39.18729409867167Q47.33557151823061,35.28724773023259 47.27480253027943, 34.71745662722515L47.27480253027943,34.71745662722515Q47.21403354232825,34.1476655242177 47.03357301342339, 33.5951872355472L47.03357301342339,33.5951872355472Q46.85311248451853,33.0427089468767 46.558443616512704, 32.52433024577522L46.558443616512704,32.52433024577522Q46.263774748506876,32.005951544673735 45.86385090584463, 31.537423105665766L45.86385090584463,31.537423105665766Q45.46392706318238,31.068894666657798 44.97089972945241, 30.66445248927039L44.97089972945241,30.66445248927039Q44.47787239572244,30.26001031188298 43.906721956976526, 29.931943167022382L43.906721956976526,29.931943167022382Q43.33557151823061,29.603876022161785 42.70365209153351, 29.36215206401357L42.70365209153351,29.36215206401357Q42.07173266483642,29.120428105865358 41.39824480220159, 28.972391994582267L41.39824480220159,28.972391994582267Q40.72475693956676,28.824355883299177 40.03016422889914, 28.77450562120748L40.03016422889914,28.77450562120748Q39.33557151823152,28.724655359115786 38.64097880756344, 28.77450562120748L38.64097880756344,28.77450562120748Q37.94638609689537,28.824355883299177 37.27289823426054, 28.972391994582267L37.27289823426054,28.972391994582267Q36.59941037162571,29.120428105865358 35.96749094492861, 29.36215206401357L35.96749094492861,29.36215206401357Q35.33557151823152,29.603876022161785 34.7644210794856, 29.931943167022382L34.7644210794856,29.931943167022382Q34.193270640739684,30.26001031188298 33.700243307009714, 30.66445248927039L33.700243307009714,30.66445248927039Q33.207215973279745,31.068894666657798 32.8072921306175, 31.537423105665766L32.8072921306175,31.537423105665766Q32.40736828795525,32.005951544673735 32.11269941994942, 32.52433024577522L32.11269941994942,32.52433024577522Q31.818030551943593,33.0427089468767 31.637570023038734, 33.5951872355472L31.637570023038734,33.5951872355472Q31.457109494133874,34.1476655242177 31.396340506182696, 34.71745662722515L31.396340506182696,34.71745662722515Q31.335571518231518,35.28724773023259 30.69199316424689, 39.235134114398484L29.462567472217447,46.776768974949896');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Body");
+       
+       // Shadow_Background
+       shape = this.canvas.paper.path('M37.864176640010555,7.770740800002386Q37.864176640010555,3.770740800002386 41.864176640010555, 3.770740800002386L70.86417664001056,3.770740800002386Q74.86417664001056,3.770740800002386 74.86417664001056, 7.770740800002386L74.86417664001056,51.770740800002386Q74.86417664001056,55.770740800002386 70.86417664001056, 55.770740800002386L41.864176640010555,55.770740800002386Q37.864176640010555,55.770740800002386 37.864176640010555, 51.770740800002386L37.864176640010555,7.770740800002386');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(0,0,0,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow_Background");
+       
+       // Shadow_Circle
+       shape = this.canvas.paper.path('M38.67362344960475 23.57014711485499L38.91983980273653 23.64504246582692L40.06705787534429 23.75898431823407L41.21427594795114 23.64504246582692L42.32663637994392 23.306678974127863L43.37034066247361 22.754174846618298L44.313676369059976 22.004317641627495L45.127980721607855 21.07989139088386L45.78851149442198 20.00898431823407L46.2751987942147 18.82413539317713L46.5732548736587 17.561345650736257L46.67362344960475 16.25898431823407L46.5732548736587 14.956622985731883L46.2751987942147 13.69383324329101L45.78851149442198 12.50898431823407L45.127980721607855 11.438077245584282L44.313676369059976 10.513650994840646L43.37034066247361 9.763793789849842L42.32663637994392 9.211289662340278L41.21427594795114 8.872926170641222L40.06705787534429 8.75898431823407L38.91983980273653 8.872926170641222L38.67362344960475 8.94782152161315L38.67362344960475 23.57014711485499Z');
+       shape.attr({"stroke":"rgba(117,117,117,1)","stroke-width":3,"fill":"rgba(0,0,0,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow_Circle");
+       
+       // Shadow_Body
+       shape = this.canvas.paper.path('M38.81898911823282,48.09356345220658Q38.81898911823282,50.09356345220658 40.81886978802416, 50.11541079975606L48.81910844844148,50.202808011566304Q50.81898911823282,50.224655359115786 50.43037456504294, 48.26277393327756L48.276999915507304,37.391678928941374Q47.88838536231742,35.429797503103146 47.838432511882274, 34.89104169036955L47.838432511882274,34.89104169036955Q47.78847966144713,34.35228587763595 47.64013890222441, 33.829899887648025L47.64013890222441,33.829899887648025Q47.49179814300169,33.3075138976601 47.24957673389736, 32.81737016438365L47.24957673389736,32.81737016438365Q47.007355324793025,32.32722643110719 46.678613040751316, 31.884217723856636L46.678613040751316,31.884217723856636Q46.349870756709606,31.44120901660608 45.9445962656805, 31.05879593077134L45.9445962656805,31.05879593077134Q45.5393217746514,30.676382844936597 45.069829136965836, 30.36618480862535L45.069829136965836,30.36618480862535Q44.600336499280274,30.0559867723141 44.08089101115911, 29.827428995890386L44.08089101115911,29.827428995890386Q43.561445523037946,29.598871219466673 43.00783027278612, 29.4588983153144L43.00783027278612,29.4588983153144Q42.4542150225343,29.318925411162127 41.88325132938871, 29.271790385138956L41.88325132938871,29.271790385138956Q41.31228763624313,29.224655359115786 40.74132394309618, 29.271790385138956L40.74132394309618,29.271790385138956Q40.170360249949226,29.318925411162127 39.6167449996974, 29.4588983153144L39.6167449996974,29.4588983153144Q39.06312974944558,29.598871219466673 38.9410594338392, 29.652582572324718L38.9410594338392,29.652582572324718Q38.81898911823282,29.706293925182763 38.81898911823282, 31.706293925182763L38.81898911823282,48.09356345220658');
+       shape.attr({"stroke":"rgba(196,196,196,1)","stroke-width":3,"fill":"rgba(0,0,0,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow_Body");
+       
+       // Line
+       shape = this.canvas.paper.path('M38.69640448001155 4.709969984015515L38.864176640010555,55.044239424005355');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
        
 
        return this.canvas.paper.setFinish();
@@ -8166,7 +11160,580 @@ var video_Edge = CircuitFigure.extend({
  * Looks disconcerting - extending my own class. But this is a good method to
  * merge basic code and override them with custom methods.
  */
-video_Edge = video_Edge.extend({
+video_detector_Sobel = video_detector_Sobel.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null && this.processing===false){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.processing = true;
+            this.worker.postMessage(imageData, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data;
+            var pixels    = imageData.data;
+            var w = imageData.width;
+            var h = imageData.height;
+
+            var kernelX   =[ -1, 0,  1,  
+                             -2, 0,  2,  
+                             -1, 0,  1 ];
+                             
+            var kernelY   =[ -1, -2, -1,  
+                              0,  0,  0,  
+                              1,  2,  1 ];
+                           
+            function convolut(weights, src, w, h){
+                var side     = Math.round(Math.sqrt(weights.length));
+                var halfSide = Math.floor(side/2);
+                var sw = w;
+                var sh = h;
+
+                var dst = new Uint8ClampedArray(w*h*4);
+
+                for (var y=0; y < h; y++) {
+                    for (var x=0; x < w; x++) {
+                        var sy = y;
+                        var sx = x;
+                        var dstOff = (y*w+x)*4;
+                        var r=0, g=0, b=0, a=0;
+                        for (var cy=0; cy<side; cy++) {
+                            for (var cx=0; cx<side; cx++) {
+                                var scy = Math.min(sh-1, Math.max(0, sy + cy - halfSide));
+                                var scx = Math.min(sw-1, Math.max(0, sx + cx - halfSide));
+                                var srcOff = (scy*sw+scx)*4;
+                                var wt = weights[cy*side+cx];
+                                r += src[srcOff] * wt;
+                                g += src[srcOff+1] * wt;
+                                b += src[srcOff+2] * wt;
+                            }
+                        }
+                        dst[dstOff]   = r;
+                        dst[dstOff+1] = g;
+                        dst[dstOff+2] = b;
+                        dst[dstOff+3] = src[dstOff+3];
+                    }
+                }
+                return dst;
+            }
+
+            var dstX = convolut(kernelX, pixels, w, h);
+            var dstY = convolut(kernelY, pixels, w, h);
+            for (var i=0; i < dstX.length; i++) {
+                var edgeX = dstX[i];
+                var edgeY = dstY[i]; 
+                dstX[i] = Math.min(255,Math.round(Math.sqrt(edgeX * edgeX + edgeY * edgeY)));
+            }
+            
+            imageData.data.set(dstX);
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => { 
+                this.getOutputPort("output_port1").setValue(image);
+                this.processing = false;
+            };
+            image.src = this.tmpCanvas.toDataURL();
+
+        };
+
+
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction;
+        this.processing = false;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_detector_SobelInvers = CircuitFigure.extend({
+
+   NAME: "video_detector_SobelInvers",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:80},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9640000000001692, y: 49.886999999999944 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 100.32506249999983, y: 49.886999999999944 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 80;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,80 L0,80");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Sobel');
+       shape.attr({"x":20.228799999999865,"y":67.37877759999992,"text-anchor":"start","text":"Sobel","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M4.315424000003077,7.770740800002386Q4.315424000003077,3.770740800002386 8.315424000003077, 3.770740800002386L71.31542400000308,3.770740800002386Q75.31542400000308,3.770740800002386 75.31542400000308, 7.770740800002386L75.31542400000308,51.770740800002386Q75.31542400000308,55.770740800002386 71.31542400000308, 55.770740800002386L8.315424000003077,55.770740800002386Q4.315424000003077,55.770740800002386 4.315424000003077, 51.770740800002386L4.315424000003077,7.770740800002386');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(237,237,237,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // TOP_Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8.16442848176873,"ry":8.16442848176873,"cx":39.50000000000025,"cy":16.4234128000028,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Circle");
+       
+       // TOP_Body
+       shape = this.canvas.paper.path('M29.462567472217447,47.276768974949896Q28.81898911823282,51.224655359115786 32.81880873597436, 51.262642534977275L46.90091030048609,51.39638338325396Q50.900729918227626,51.43437055911545 50.01211395841982, 47.53432419067637L48.22418747803842,39.68729409867167Q47.33557151823061,35.78724773023259 47.27480253027943, 35.21745662722515L47.27480253027943,35.21745662722515Q47.21403354232825,34.6476655242177 47.03357301342339, 34.0951872355472L47.03357301342339,34.0951872355472Q46.85311248451853,33.5427089468767 46.558443616512704, 33.02433024577522L46.558443616512704,33.02433024577522Q46.263774748506876,32.505951544673735 45.86385090584463, 32.037423105665766L45.86385090584463,32.037423105665766Q45.46392706318238,31.568894666657798 44.97089972945241, 31.16445248927039L44.97089972945241,31.16445248927039Q44.47787239572244,30.76001031188298 43.906721956976526, 30.431943167022382L43.906721956976526,30.431943167022382Q43.33557151823061,30.103876022161785 42.70365209153351, 29.86215206401357L42.70365209153351,29.86215206401357Q42.07173266483642,29.620428105865358 41.39824480220159, 29.472391994582267L41.39824480220159,29.472391994582267Q40.72475693956676,29.324355883299177 40.03016422889914, 29.27450562120748L40.03016422889914,29.27450562120748Q39.33557151823152,29.224655359115786 38.64097880756344, 29.27450562120748L38.64097880756344,29.27450562120748Q37.94638609689537,29.324355883299177 37.27289823426054, 29.472391994582267L37.27289823426054,29.472391994582267Q36.59941037162571,29.620428105865358 35.96749094492861, 29.86215206401357L35.96749094492861,29.86215206401357Q35.33557151823152,30.103876022161785 34.7644210794856, 30.431943167022382L34.7644210794856,30.431943167022382Q34.193270640739684,30.76001031188298 33.700243307009714, 31.16445248927039L33.700243307009714,31.16445248927039Q33.207215973279745,31.568894666657798 32.8072921306175, 32.037423105665766L32.8072921306175,32.037423105665766Q32.40736828795525,32.505951544673735 32.11269941994942, 33.02433024577522L32.11269941994942,33.02433024577522Q31.818030551943593,33.5427089468767 31.637570023038734, 34.0951872355472L31.637570023038734,34.0951872355472Q31.457109494133874,34.6476655242177 31.396340506182696, 35.21745662722515L31.396340506182696,35.21745662722515Q31.335571518231518,35.78724773023259 30.69199316424689, 39.735134114398484L29.462567472217447,47.276768974949896');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Body");
+       
+       // Shadow_Background
+       shape = this.canvas.paper.path('M38.69640448001155,8.770740800002386Q38.69640448001155,3.770740800002386 43.69640448001155, 3.770740800002386L70.69640448001155,3.770740800002386Q75.69640448001155,3.770740800002386 75.69640448001155, 8.770740800002386L75.69640448001155,50.770740800002386Q75.69640448001155,55.770740800002386 70.69640448001155, 55.770740800002386L43.69640448001155,55.770740800002386Q38.69640448001155,55.770740800002386 38.69640448001155, 50.770740800002386L38.69640448001155,8.770740800002386');
+       shape.attr({"stroke":"rgba(0,0,0,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow_Background");
+       
+       // Shadow_Body
+       shape = this.canvas.paper.path('M38.81898911823282,48.09356345220658Q38.81898911823282,50.09356345220658 40.81886978802416, 50.11541079975606L48.81910844844148,50.202808011566304Q50.81898911823282,50.224655359115786 50.43037456504294, 48.26277393327756L48.276999915507304,37.391678928941374Q47.88838536231742,35.429797503103146 47.838432511882274, 34.89104169036955L47.838432511882274,34.89104169036955Q47.78847966144713,34.35228587763595 47.64013890222441, 33.829899887648025L47.64013890222441,33.829899887648025Q47.49179814300169,33.3075138976601 47.24957673389736, 32.81737016438365L47.24957673389736,32.81737016438365Q47.007355324793025,32.32722643110719 46.678613040751316, 31.884217723856636L46.678613040751316,31.884217723856636Q46.349870756709606,31.44120901660608 45.9445962656805, 31.05879593077134L45.9445962656805,31.05879593077134Q45.5393217746514,30.676382844936597 45.069829136965836, 30.36618480862535L45.069829136965836,30.36618480862535Q44.600336499280274,30.0559867723141 44.08089101115911, 29.827428995890386L44.08089101115911,29.827428995890386Q43.561445523037946,29.598871219466673 43.00783027278612, 29.4588983153144L43.00783027278612,29.4588983153144Q42.4542150225343,29.318925411162127 41.88325132938871, 29.271790385138956L41.88325132938871,29.271790385138956Q41.31228763624313,29.224655359115786 40.74132394309618, 29.271790385138956L40.74132394309618,29.271790385138956Q40.170360249949226,29.318925411162127 39.6167449996974, 29.4588983153144L39.6167449996974,29.4588983153144Q39.06312974944558,29.598871219466673 38.9410594338392, 29.652582572324718L38.9410594338392,29.652582572324718Q38.81898911823282,29.706293925182763 38.81898911823282, 31.706293925182763L38.81898911823282,48.09356345220658');
+       shape.attr({"stroke":"rgba(166,166,166,1)","stroke-width":3,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow_Body");
+       
+       // Shadow_Circle
+       shape = this.canvas.paper.path('M39.17362344960475 23.57014711485499L39.41983980273653 23.64504246582692L40.56705787534429 23.75898431823407L41.71427594795114 23.64504246582692L42.82663637994392 23.306678974127863L43.87034066247361 22.754174846618298L44.813676369059976 22.004317641627495L45.627980721607855 21.07989139088386L46.28851149442198 20.00898431823407L46.7751987942147 18.82413539317713L47.0732548736587 17.561345650736257L47.17362344960475 16.25898431823407L47.0732548736587 14.956622985731883L46.7751987942147 13.69383324329101L46.28851149442198 12.50898431823407L45.627980721607855 11.438077245584282L44.813676369059976 10.513650994840646L43.87034066247361 9.763793789849842L42.82663637994392 9.211289662340278L41.71427594795114 8.872926170641222L40.56705787534429 8.75898431823407L39.41983980273653 8.872926170641222L39.17362344960475 8.94782152161315L39.17362344960475 23.57014711485499Z');
+       shape.attr({"stroke":"rgba(161,161,161,1)","stroke-width":3,"fill":"rgba(255,253,253,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Shadow_Circle");
+       
+       // Line
+       shape = this.canvas.paper.path('M39.19640448001155 4.038881344014044L39.364176640010555,55.044239424005355');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_detector_SobelInvers = video_detector_SobelInvers.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null && this.processing===false){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.processing = true;
+            this.worker.postMessage(imageData, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data;
+            var pixels    = imageData.data;
+            var w = imageData.width;
+            var h = imageData.height;
+
+            var kernelX   =[ -1, 0,  1,  
+                             -2, 0,  2,  
+                             -1, 0,  1 ];
+                             
+            var kernelY   =[ -1, -2, -1,  
+                              0,  0,  0,  
+                              1,  2,  1 ];
+                           
+            function convolut(weights, src, w, h){
+                var side     = Math.round(Math.sqrt(weights.length));
+                var halfSide = Math.floor(side/2);
+                var sw = w;
+                var sh = h;
+
+                var dst = new Uint8ClampedArray(w*h*4);
+
+                for (var y=0; y < h; y++) {
+                    for (var x=0; x < w; x++) {
+                        var sy = y;
+                        var sx = x;
+                        var dstOff = (y*w+x)*4;
+                        var r=0, g=0, b=0, a=0;
+                        for (var cy=0; cy<side; cy++) {
+                            for (var cx=0; cx<side; cx++) {
+                                var scy = Math.min(sh-1, Math.max(0, sy + cy - halfSide));
+                                var scx = Math.min(sw-1, Math.max(0, sx + cx - halfSide));
+                                var srcOff = (scy*sw+scx)*4;
+                                var wt = weights[cy*side+cx];
+                                r += src[srcOff] * wt;
+                                g += src[srcOff+1] * wt;
+                                b += src[srcOff+2] * wt;
+                            }
+                        }
+                        dst[dstOff]   = r;
+                        dst[dstOff+1] = g;
+                        dst[dstOff+2] = b;
+                        dst[dstOff+3] = 0;
+                    }
+                }
+                return dst;
+            }
+
+            var dstX = convolut(kernelX, pixels, w, h);
+            var dstY = convolut(kernelY, pixels, w, h);
+            for (var i=0; i < dstX.length; i++) {
+                var edgeX = dstX[i];
+                var edgeY = dstY[i]; 
+                dstX[i] = 255-Math.min(255,Math.round(Math.sqrt(edgeX * edgeX + edgeY * edgeY)));
+            }
+            
+            imageData.data.set(dstX);
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => { 
+                this.getOutputPort("output_port1").setValue(image);
+                this.processing = false;
+            };
+            image.src = this.tmpCanvas.toDataURL();
+
+        };
+
+
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction;
+        this.processing = false;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_filter_Blur = CircuitFigure.extend({
+
+   NAME: "video_filter_Blur",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:80.87877759999992},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9640000000001692, y: 49.34495943717131 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 100.32506249999983, y: 49.34495943717131 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 80.87877759999992;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,80.87877759999992 L0,80.87877759999992");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Blur');
+       shape.attr({"x":25.228799999999865,"y":68.37877759999992,"text-anchor":"start","text":"Blur","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M4.315424000003077,7.770740800002386Q4.315424000003077,3.770740800002386 8.315424000003077, 3.770740800002386L71.31542400000308,3.770740800002386Q75.31542400000308,3.770740800002386 75.31542400000308, 7.770740800002386L75.31542400000308,51.770740800002386Q75.31542400000308,55.770740800002386 71.31542400000308, 55.770740800002386L8.315424000003077,55.770740800002386Q4.315424000003077,55.770740800002386 4.315424000003077, 51.770740800002386L4.315424000003077,7.770740800002386');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(237,237,237,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Shadow
+       shape = this.canvas.paper.path('M38.31898911823282,51.06235109342106Q38.31898911823282,53.06235109342106 40.3188720499583, 53.083990395468334L51.31910618650734,53.20301605706851Q53.31898911823282,53.224655359115786 52.92678092918581, 51.26348919164184L50.04794261238581,36.86837846676326Q49.6557344233388,34.90721229928931 49.593293360294865, 34.2401812930475L49.593293360294865,34.2401812930475Q49.53085229725093,33.573150286805685 49.3454263482231, 32.9263866801557L49.3454263482231,32.9263866801557Q49.16000039919527,32.27962307350572 48.85722363781406, 31.67277845135368L48.85722363781406,31.67277845135368Q48.55444687643285,31.06593382920164 48.1435190213806, 30.51744685832L48.1435190213806,30.51744685832Q47.73259116632835,29.96895988743836 47.225998052541854, 29.49549606688106L47.225998052541854,29.49549606688106Q46.71940493875536,29.02203224632376 46.13253914164852, 28.63797753470044L46.13253914164852,28.63797753470044Q45.54567334454168,28.25392282307712 44.896366484390455, 27.97094652845726L44.896366484390455,27.97094652845726Q44.24705962423923,27.687970233837405 43.5550405614249, 27.51467044774381L43.5550405614249,27.51467044774381Q42.86302149861058,27.341370661650217 42.14931688217757, 27.283013010383L42.14931688217757,27.283013010383Q41.43561226574457,27.224655359115786 40.72190764931156, 27.283013010383L40.72190764931156,27.283013010383Q40.008203032878555,27.341370661650217 39.31618397006423, 27.51467044774381L39.31618397006423,27.51467044774381Q38.624164907249906,27.687970233837405 38.47157701274136, 27.75447000404165L38.47157701274136,27.75447000404165Q38.31898911823282,27.820969774245896 38.31898911823282, 29.820969774245896L38.31898911823282,51.06235109342106');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":0.2});
+       shape.data("name","Shadow");
+       
+       // TOP_Circle
+       shape = this.canvas.paper.path('M38.67362344960475 25.032379674180447L39.00903935568749 25.122254095344033L40.57187295468975 25.25898431823407L42.13470655369201 25.122254095344033L43.65005424462106 24.71621790530753L45.07187295468975 24.053212952294416L46.35696144186841 23.15338430630527L47.46627294276095 22.044072805412725L48.3661015887501 20.75898431823407L49.02910654176321 19.337165608165378L49.435142731799715 17.82181791723633L49.57187295468975 16.25898431823407L49.435142731799715 14.69615071923181L49.02910654176321 13.180803028302762L48.3661015887501 11.75898431823407L47.46627294276095 10.473895831055415L46.35696144186841 9.36458433016287L45.07187295468975 8.464755684173724L43.65005424462106 7.80175073116061L42.13470655369201 7.395714541124107L40.57187295468975 7.25898431823407L39.00903935568749 7.395714541124107L38.67362344960475 7.485588962287693L38.67362344960475 25.032379674180447Z');
+       shape.attr({"stroke":"rgba(27,27,27,1)","stroke-width":1,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":0.15});
+       shape.data("name","TOP_Circle");
+       
+       // TOP_Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8.16442848176873,"ry":8.16442848176873,"cx":39.50000000000025,"cy":16.4234128000028,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Circle");
+       
+       // TOP_Body
+       shape = this.canvas.paper.path('M29.462567472217447,46.776768974949896Q28.81898911823282,50.724655359115786 32.81880873597436, 50.762642534977275L46.90091030048609,50.89638338325396Q50.900729918227626,50.93437055911545 50.01211395841982, 47.03432419067637L48.22418747803842,39.18729409867167Q47.33557151823061,35.28724773023259 47.27480253027943, 34.71745662722515L47.27480253027943,34.71745662722515Q47.21403354232825,34.1476655242177 47.03357301342339, 33.5951872355472L47.03357301342339,33.5951872355472Q46.85311248451853,33.0427089468767 46.558443616512704, 32.52433024577522L46.558443616512704,32.52433024577522Q46.263774748506876,32.005951544673735 45.86385090584463, 31.537423105665766L45.86385090584463,31.537423105665766Q45.46392706318238,31.068894666657798 44.97089972945241, 30.66445248927039L44.97089972945241,30.66445248927039Q44.47787239572244,30.26001031188298 43.906721956976526, 29.931943167022382L43.906721956976526,29.931943167022382Q43.33557151823061,29.603876022161785 42.70365209153351, 29.36215206401357L42.70365209153351,29.36215206401357Q42.07173266483642,29.120428105865358 41.39824480220159, 28.972391994582267L41.39824480220159,28.972391994582267Q40.72475693956676,28.824355883299177 40.03016422889914, 28.77450562120748L40.03016422889914,28.77450562120748Q39.33557151823152,28.724655359115786 38.64097880756344, 28.77450562120748L38.64097880756344,28.77450562120748Q37.94638609689537,28.824355883299177 37.27289823426054, 28.972391994582267L37.27289823426054,28.972391994582267Q36.59941037162571,29.120428105865358 35.96749094492861, 29.36215206401357L35.96749094492861,29.36215206401357Q35.33557151823152,29.603876022161785 34.7644210794856, 29.931943167022382L34.7644210794856,29.931943167022382Q34.193270640739684,30.26001031188298 33.700243307009714, 30.66445248927039L33.700243307009714,30.66445248927039Q33.207215973279745,31.068894666657798 32.8072921306175, 31.537423105665766L32.8072921306175,31.537423105665766Q32.40736828795525,32.005951544673735 32.11269941994942, 32.52433024577522L32.11269941994942,32.52433024577522Q31.818030551943593,33.0427089468767 31.637570023038734, 33.5951872355472L31.637570023038734,33.5951872355472Q31.457109494133874,34.1476655242177 31.396340506182696, 34.71745662722515L31.396340506182696,34.71745662722515Q31.335571518231518,35.28724773023259 30.69199316424689, 39.235134114398484L29.462567472217447,46.776768974949896');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Body");
+       
+       // Line
+       shape = this.canvas.paper.path('M38.69640448001155 4.038881344014044L38.864176640010555,55.044239424005355');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(26,12,112,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_filter_Blur = video_filter_Blur.extend({
 
     init: function(attr, setter, getter){
         this._super(attr, setter, getter);
@@ -8210,11 +11777,11 @@ video_Edge = video_Edge.extend({
         //
         var workerFunction = function(event){
             var imageData = event.data;
-            var opaque = true;
-            var weights =[  1,   1,  1,  
-                            1, 0.7, -1,  
-                           -1,  -1, -1 ];
-            var side     = Math.round(Math.sqrt(weights.length));
+            var opaque = false;
+            var weights =[  1/9, 1/9, 1/9,  
+                            1/9, 1/9, 1/9,  
+                            1/9, 1/9, 1/9 ];
+            var side = Math.round(Math.sqrt(weights.length));
             var halfSide = Math.floor(side/2);
 
             var src = imageData.data;
@@ -8300,6 +11867,14 @@ video_Edge = video_Edge.extend({
     imageToData: function(image){
         var width = image.naturalWidth;
         var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
         // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
         //
         if(this.tmpContext === null ) {
@@ -8320,25 +11895,31 @@ video_Edge = video_Edge.extend({
 // created with http://www.draw2d.org
 //
 //
-var video_Grayscale = CircuitFigure.extend({
+var video_filter_Brighter = CircuitFigure.extend({
 
-   NAME: "video_Grayscale",
-   VERSION: "2.0.119_589",
+   NAME: "video_filter_Brighter",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
      var _this = this;
 
-     this._super( $.extend({stroke:0, bgColor:null, width:80.125,height:82.63839999999982},attr), setter, getter);
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:82.9852109375006},attr), setter, getter);
      var port;
      // input_port1
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9429953198129615, y: 48.29425545509114 }));
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.875, y: 48.78941626176425 }));
      port.setConnectionDirection(3);
      port.setBackgroundColor("#37B1DE");
      port.setName("input_port1");
      port.setMaxFanOut(20);
+     // input_port2
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.875, y: 78.9119051427369 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port2");
+     port.setMaxFanOut(20);
      // output_port1
-     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 100.18804992199671, y: 48.29425545509114 }));
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 101.86500000000024, y: 48.80387666966603 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
      port.setName("output_port1");
@@ -8348,8 +11929,8 @@ var video_Grayscale = CircuitFigure.extend({
    createShapeElement : function()
    {
       var shape = this._super();
-      this.originalWidth = 80.125;
-      this.originalHeight= 82.63839999999982;
+      this.originalWidth = 80;
+      this.originalHeight= 82.9852109375006;
       return shape;
    },
 
@@ -8358,34 +11939,64 @@ var video_Grayscale = CircuitFigure.extend({
        this.canvas.paper.setStart();
        var shape = null;
        // BoundingBox
-       shape = this.canvas.paper.path("M0,0 L80.125,0 L80.125,82.63839999999982 L0,82.63839999999982");
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,82.9852109375006 L0,82.9852109375006");
        shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
        shape.data("name","BoundingBox");
        
        // Rectangle
-       shape = this.canvas.paper.path('M0.015625,3Q0.015625,0 3.015625, 0L77.015625,0Q80.015625,0 80.015625, 3L80.015625,77Q80.015625,80 77.015625, 80L3.015625,80Q0.015625,80 0.015625, 77L0.015625,3');
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
        shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Rectangle");
        
+       // Rectangle
+       shape = this.canvas.paper.path('M4.5,8.37996800000019Q4.5,4.37996800000019 8.5, 4.37996800000019L71.5,4.37996800000019Q75.5,4.37996800000019 75.5, 8.37996800000019L75.5,48.37996800000019Q75.5,52.37996800000019 71.5, 52.37996800000019L8.5,52.37996800000019Q4.5,52.37996800000019 4.5, 48.37996800000019L4.5,8.37996800000019');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(235,235,235,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
        // Label
-       shape = this.canvas.paper.text(0,0,'Grayscale');
-       shape.attr({"x":4,"y":70.13839999999982,"text-anchor":"start","text":"Grayscale","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape = this.canvas.paper.text(0,0,'Brighter');
+       shape.attr({"x":19.466176000004452,"y":70.9852109375006,"text-anchor":"start","text":"Brighter","font-family":"\"Arial\"","font-size":14,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
        // Circle
-       shape = this.canvas.paper.path('M32.65440906783169 39.46429576295304L32.02823772331885 40.87710770827289L31.644759099395742 42.38285615840232L31.515625 43.93578970863655L31.644759099395742 45.48872325886896L32.02823772331885 46.99447170900112L32.65440906783169 48.40728365432369L33.50424723348897 49.68423151878687L34.5519303176643 50.786515887693895L35.765625 51.68064440829494L37.10845378173144 52.33944943792994L38.539615489830794 52.742913519146896L40.015625 52.87877759999992L41.491634510169206 52.742913519146896L42.92279621826856 52.33944943792994L44.265625 51.68064440829494L45.4793196823357 50.786515887693895L46.52700276651103 49.68423151878687L47.37684093216831 48.40728365432369L48.00301227668115 46.99447170900112L48.38649090060426 45.48872325886896L48.515625 43.93578970863655L48.38649090060426 42.38285615840232L48.00301227668115 40.87710770827289L47.37684093216831 39.46429576295304L40.33022411433467 23.87877759999992Z');
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(81,80,82,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8,"ry":8,"cx":38.136293579453195,"cy":17.499523579457673,"stroke":"none","stroke-width":0,"fill":"rgba(168,25,52,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Circle");
        
-       // Circle
-       shape = this.canvas.paper.path('M19.31947257729189 24.195664876622686L18.877469275284056 25.21873559564574L18.606778481925176 26.309105162982632L18.515625 27.433643251079957L18.606778481925176 28.55818133918001L18.877469275284056 29.64855090652054L19.31947257729189 30.671621625544503L19.91935834128708 31.596308010154644L20.658899341881806 32.394513932469636L21.51562499999909 33.04198630945393L22.46350414004519 33.51905202057242L23.473735933996068 33.81121566559068L24.515625 33.909599999999955L25.557514066003932 33.81121566559068L26.56774585995481 33.51905202057242L27.51562500000091 33.04198630945393L28.372350658118194 32.394513932469636L29.11189165871292 31.596308010154644L29.71177742270811 30.671621625544503L30.153780724715944 29.64855090652054L30.424471518074824 28.55818133918001L30.515625 27.433643251079957L30.424471518074824 26.309105162982632L30.153780724715944 25.21873559564574L29.71177742270811 24.195664876622686L24.737694963059766 12.909599999999955Z');
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(215,213,217,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Circle");
+       // Rectangle
+       shape = this.canvas.paper.path('M28.136293579453195 49.87996800000019L49.136293579453195 49.87996800000019L47.66478056057986 35.49000926909048L47.26481464287099 34.55069784111947L46.61172166499273 33.6693617814999L45.725345526597266 32.87278004043128L44.63261831811997 32.18515635102358L43.366742002848696 31.627383811123764L41.96617959205287 31.216410057116263L40.47348646586943 30.96472231855114L38.934017349595706 30.87996800000019L37.394548233321075 30.96472231855114L35.901855107135816 31.216410057116263L34.50129269633908 31.627383811123764L33.23541638106508 32.18515635102358L32.14268917259233 32.87278004043128L31.256313034195045 33.6693617814999L30.603220056319515 34.55069784111947L30.203254138608827 35.49000926909048Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(163,24,50,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'adjustment');
+       shape.attr({"x":12,"y":57.597375000000284,"text-anchor":"start","text":"adjustment","font-family":"\"Arial\"","font-size":8,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M39.92918400000053,47.37996800000019Q39.92918400000053,51.37996800000019 43.92918400000053, 51.37996800000019L70.92918400000053,51.37996800000019Q74.92918400000053,51.37996800000019 74.92918400000053, 47.37996800000019L74.92918400000053,9.37996800000019Q74.92918400000053,5.37996800000019 70.92918400000053, 5.37996800000019L43.92918400000053,5.37996800000019Q39.92918400000053,5.37996800000019 39.92918400000053, 9.37996800000019L39.92918400000053,47.37996800000019');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M40.84867199999917 49.87996800000019L49.651728947198535 49.87996800000019L48.46050412239674 35.49000926909048L48.13672218901229 34.55069784111947L47.60802787358898 33.6693617814999L46.89048528536114 32.87278004043128L46.00589659279012 32.18515635102358L44.98113957566147 31.627383811123764L43.84735095739779 31.216410057116263L42.63898033143869 30.96472231855114L41.392743427790265 30.87996800000019L40.84867199999917 30.916969314092967L40.84867199999917 49.87996800000019Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(252,37,77,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
        
        // Circle
-       shape = this.canvas.paper.path('M54.72349177729302 35.16484247662174L54.28148847528519 36.187913195645706L54.010797681927215 37.27828276298078L53.91964420000022 38.40282085108174L54.010797681927215 39.527358939181795L54.28148847528519 40.61772850651869L54.72349177729302 41.64079922554447L55.32337754128639 42.56548561015461L56.06291854188021 43.36369153246778L56.91964420000022 44.01116390945481L57.86752334004541 44.488229620569655L58.87775513399902 44.78039326558974L59.91964420000022 44.87877759999992L60.961533266001425 44.78039326558974L61.97176505995503 44.488229620569655L62.91964420000022 44.01116390945481L63.77636985812023 43.36369153246778L64.51591085871405 42.56548561015461L65.11579662270742 41.64079922554447L65.55779992471525 40.61772850651869L65.82849071807323 39.527358939181795L65.91964420000022 38.40282085108174L65.82849071807323 37.27828276298078L65.55779992471525 36.187913195645706L65.11579662270742 35.16484247662174L60.14171416305999 23.87877759999992Z');
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(172,170,173,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape = this.canvas.paper.path('M39.92918400000053 25.470542254553948L40.260442059449815 25.499523579457673L41.64962748078506 25.377985603555317L42.996603206054715 25.017064545744688L44.260442059449815 24.42772680973303L45.40274293694256 23.627879124409446L46.38879760440159 22.641824456950417L47.18864528972517 21.499523579457673L47.77798302573683 20.235684726062573L48.13890408354746 18.888709000792915L48.260442059449815 17.499523579457673L48.13890408354746 16.11033815812243L47.77798302573683 14.763362432852773L47.18864528972517 13.499523579457673L46.38879760440159 12.357222701964929L45.40274293694256 11.3711680345059L44.260442059449815 10.571320349182315L42.996603206054715 9.981982613170658L41.64962748078506 9.62106155536003L40.260442059449815 9.499523579457673L39.92918400000053 9.528504904361398L39.92918400000053 25.470542254553948Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(237,35,73,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Circle");
+       
+       // Line
+       shape = this.canvas.paper.path('M9.377490534402568 58.62910056640976L5.757806182406966,59.03049545921385L0.4075520000042161,65.51153400000749');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M39.586528000003455 5.1831660000025295L39.84867199999917,52.369086000002426');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
        
 
        return this.canvas.paper.setFinish();
@@ -8404,20 +12015,22 @@ var video_Grayscale = CircuitFigure.extend({
  * Looks disconcerting - extending my own class. But this is a good method to
  * merge basic code and override them with custom methods.
  */
-video_Grayscale = video_Grayscale.extend({
+video_filter_Brighter = video_filter_Brighter.extend({
 
     init: function(attr, setter, getter){
         this._super(attr, setter, getter);
         this.worker= null;
         this.tmpCanvas = null;
         this.tmpContext = null;
+        this.processing = false;
         this.getInputPort("input_port1").setSemanticGroup("Image");
         this.getOutputPort("output_port1").setSemanticGroup("Image");
-
+        
         this.attr({
             resizeable:false
         });
         this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+  
     },
 
     /**
@@ -8429,12 +12042,14 @@ video_Grayscale = video_Grayscale.extend({
     calculate:function( context)
     {
         var img = this.getInputPort("input_port1").getValue();
-        if(img instanceof HTMLImageElement && this.worker!==null){
+        var adjustment = this.getInputPort("input_port2").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null && this.processing === false){
             var imageData = this.imageToData(img);
             // Push it to the WebWorker with "Transferable Objects"
             // Passing data by reference instead of structure clone
             //
-            this.worker.postMessage(imageData, [imageData.data.buffer]);
+            this.processing = true;
+            this.worker.postMessage({imageData: imageData,adjustment: adjustment}, [imageData.data.buffer]);
         }
     },
 
@@ -8448,17 +12063,291 @@ video_Grayscale = video_Grayscale.extend({
         // the method which runs as WebWorker
         //
         var workerFunction = function(event){
-            var imageData = event.data;
+            var imageData = event.data.imageData;
+            var adjustment = event.data.adjustment;
+            // map offset from 0-5 => 0-255
+            adjustment = 255/5*adjustment;
             var pixels = imageData.data;
             for( let x = 0; x < pixels.length; x += 4 ) {
-                // CIE luminance for the RGB
-                // The human eye is bad at seeing red and blue, so we de-emphasize them.
-                let average = 0.2126*pixels[x] + 0.7152*pixels[x+1] + 0.0722*pixels[x+2];
-                //let average = (pixels[x] + pixels[x+1] +pixels[x+2]) / 3;
+                pixels[x]     = Math.min(255,pixels[x  ]+adjustment);
+                pixels[x + 1] = Math.min(255,pixels[x+1]+adjustment);
+                pixels[x + 2] = Math.min(255,pixels[x+2]+adjustment);
+            }
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => {
+                this.getOutputPort("output_port1").setValue(image);
+                this.processing = false;
+            }
+            image.src = this.tmpCanvas.toDataURL();
+        };
+        
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction
+        this.processing = false;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+    },
     
-                pixels[x]     = average;
-                pixels[x + 1] = average;
-                pixels[x + 2] = average;
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_filter_Contrast = CircuitFigure.extend({
+
+   NAME: "video_filter_Contrast",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:82.9852109375006},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.875, y: 48.78941626176425 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // input_port2
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.875, y: 78.9119051427369 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port2");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 101.86500000000024, y: 48.80387666966603 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 82.9852109375006;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,82.9852109375006 L0,82.9852109375006");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M4.5,8.37996800000019Q4.5,4.37996800000019 8.5, 4.37996800000019L71.5,4.37996800000019Q75.5,4.37996800000019 75.5, 8.37996800000019L75.5,48.37996800000019Q75.5,52.37996800000019 71.5, 52.37996800000019L8.5,52.37996800000019Q4.5,52.37996800000019 4.5, 48.37996800000019L4.5,8.37996800000019');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(199,199,199,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Contrast');
+       shape.attr({"x":13.466176000004452,"y":70.9852109375006,"text-anchor":"start","text":"Contrast","font-family":"\"Arial\"","font-size":14,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8,"ry":8,"cx":38.136293579453195,"cy":17.499523579457673,"stroke":"none","stroke-width":0,"fill":"rgba(240,36,74,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M28.136293579453195 49.87996800000019L49.136293579453195 49.87996800000019L47.66478056057986 35.49000926909048L47.26481464287099 34.55069784111947L46.61172166499273 33.6693617814999L45.725345526597266 32.87278004043128L44.63261831811997 32.18515635102358L43.366742002848696 31.627383811123764L41.96617959205287 31.216410057116263L40.47348646586943 30.96472231855114L38.934017349595706 30.87996800000019L37.394548233321075 30.96472231855114L35.901855107135816 31.216410057116263L34.50129269633908 31.627383811123764L33.23541638106508 32.18515635102358L32.14268917259233 32.87278004043128L31.256313034195045 33.6693617814999L30.603220056319515 34.55069784111947L30.203254138608827 35.49000926909048Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(232,34,71,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'adjustment');
+       shape.attr({"x":12,"y":57.597375000000284,"text-anchor":"start","text":"adjustment","font-family":"\"Arial\"","font-size":8,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M39.92918400000053,47.87996800000019Q39.92918400000053,51.87996800000019 43.92918400000053, 51.87996800000019L70.92918400000053,51.87996800000019Q74.92918400000053,51.87996800000019 74.92918400000053, 47.87996800000019L74.92918400000053,8.87996800000019Q74.92918400000053,4.87996800000019 70.92918400000053, 4.87996800000019L43.92918400000053,4.87996800000019Q39.92918400000053,4.87996800000019 39.92918400000053, 8.87996800000019L39.92918400000053,47.87996800000019');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(250,250,250,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M40.34867199999917 49.87996800000019L49.151728947198535 49.87996800000019L47.96050412239674 35.49000926909048L47.63672218901229 34.55069784111947L47.10802787358898 33.6693617814999L46.39048528536114 32.87278004043128L45.50589659279012 32.18515635102358L44.48113957566147 31.627383811123764L43.34735095739779 31.216410057116263L42.13898033143869 30.96472231855114L40.892743427790265 30.87996800000019L40.34867199999917 30.916969314092967L40.34867199999917 49.87996800000019Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(143,21,44,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Circle
+       shape = this.canvas.paper.path('M39.92918400000053 25.470542254553948L40.260442059449815 25.499523579457673L41.64962748078506 25.377985603555317L42.996603206054715 25.017064545744688L44.260442059449815 24.42772680973303L45.40274293694256 23.627879124409446L46.38879760440159 22.641824456950417L47.18864528972517 21.499523579457673L47.77798302573683 20.235684726062573L48.13890408354746 18.888709000792915L48.260442059449815 17.499523579457673L48.13890408354746 16.11033815812243L47.77798302573683 14.763362432852773L47.18864528972517 13.499523579457673L46.38879760440159 12.357222701964929L45.40274293694256 11.3711680345059L44.260442059449815 10.571320349182315L42.996603206054715 9.981982613170658L41.64962748078506 9.62106155536003L40.260442059449815 9.499523579457673L39.92918400000053 9.528504904361398L39.92918400000053 25.470542254553948Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(163,24,50,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+       // Line
+       shape = this.canvas.paper.path('M9.377490534402568 58.62910056640976L5.757806182406966,59.03049545921385L0.4075520000042161,65.51153400000749');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M39.586528000003455 5.1831660000025295L39.84867199999917,52.369086000002426');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_filter_Contrast = video_filter_Contrast.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        var adjustment = this.getInputPort("input_port2").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.worker.postMessage({imageData: imageData,adjustment: adjustment}, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data.imageData;
+            var adjustment = event.data.adjustment; // 0..5
+            
+            var pixels = imageData.data;
+            for( let x = 0; x < pixels.length; x += 4 ) {
+                let red = pixels[x];
+                let green = pixels[x + 1];
+                let blue = pixels[x + 2];
+
+                //Red channel
+                red /= 255;
+                red -= 0.5;
+                red *= adjustment;
+                red += 0.5;
+                red *= 255;
+
+                //Green channel
+                green /= 255;
+                green -= 0.5;
+                green *= adjustment;
+                green += 0.5;
+                green *= 255;
+
+                //Blue channel
+                blue /= 255;
+                blue -= 0.5;
+                blue *= adjustment;
+                blue += 0.5;
+                blue *= 255;
+
+                pixels[x]     = red < 0 ? 0 : red > 255 ? 255 : red;
+                pixels[x + 1] = green < 0 ? 0 : green > 255 ? 255 : green;
+                pixels[x + 2] = blue < 0 ? 0 : blue > 255 ? 255 : blue;
             }
             self.postMessage(imageData, [imageData.data.buffer]);
         };
@@ -8511,6 +12400,1835 @@ video_Grayscale = video_Grayscale.extend({
     imageToData: function(image){
         var width = image.naturalWidth;
         var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_filter_Darker = CircuitFigure.extend({
+
+   NAME: "video_filter_Darker",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:82.9852109375006},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.875, y: 48.78941626176425 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // input_port2
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -1.875, y: 78.9119051427369 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port2");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 101.86500000000024, y: 48.80387666966603 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 82.9852109375006;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,82.9852109375006 L0,82.9852109375006");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M4.5,8.37996800000019Q4.5,4.37996800000019 8.5, 4.37996800000019L71.5,4.37996800000019Q75.5,4.37996800000019 75.5, 8.37996800000019L75.5,48.37996800000019Q75.5,52.37996800000019 71.5, 52.37996800000019L8.5,52.37996800000019Q4.5,52.37996800000019 4.5, 48.37996800000019L4.5,8.37996800000019');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(252,252,252,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Darker');
+       shape.attr({"x":19.466176000004452,"y":70.9852109375006,"text-anchor":"start","text":"Darker","font-family":"\"Arial\"","font-size":14,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8,"ry":8,"cx":38.136293579453195,"cy":17.499523579457673,"stroke":"none","stroke-width":0,"fill":"rgba(240,36,74,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M28.136293579453195 49.87996800000019L49.136293579453195 49.87996800000019L47.66478056057986 35.49000926909048L47.26481464287099 34.55069784111947L46.61172166499273 33.6693617814999L45.725345526597266 32.87278004043128L44.63261831811997 32.18515635102358L43.366742002848696 31.627383811123764L41.96617959205287 31.216410057116263L40.47348646586943 30.96472231855114L38.934017349595706 30.87996800000019L37.394548233321075 30.96472231855114L35.901855107135816 31.216410057116263L34.50129269633908 31.627383811123764L33.23541638106508 32.18515635102358L32.14268917259233 32.87278004043128L31.256313034195045 33.6693617814999L30.603220056319515 34.55069784111947L30.203254138608827 35.49000926909048Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(232,34,71,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'adjustment');
+       shape.attr({"x":12,"y":57.597375000000284,"text-anchor":"start","text":"adjustment","font-family":"\"Arial\"","font-size":8,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M39.92918400000053,47.87996800000019Q39.92918400000053,51.87996800000019 43.92918400000053, 51.87996800000019L70.92918400000053,51.87996800000019Q74.92918400000053,51.87996800000019 74.92918400000053, 47.87996800000019L74.92918400000053,8.87996800000019Q74.92918400000053,4.87996800000019 70.92918400000053, 4.87996800000019L43.92918400000053,4.87996800000019Q39.92918400000053,4.87996800000019 39.92918400000053, 8.87996800000019L39.92918400000053,47.87996800000019');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(189,189,189,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M40.34867199999917 49.87996800000019L49.151728947198535 49.87996800000019L47.96050412239674 35.49000926909048L47.63672218901229 34.55069784111947L47.10802787358898 33.6693617814999L46.39048528536114 32.87278004043128L45.50589659279012 32.18515635102358L44.48113957566147 31.627383811123764L43.34735095739779 31.216410057116263L42.13898033143869 30.96472231855114L40.892743427790265 30.87996800000019L40.34867199999917 30.916969314092967L40.34867199999917 49.87996800000019Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(143,21,44,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Circle
+       shape = this.canvas.paper.path('M39.92918400000053 25.470542254553948L40.260442059449815 25.499523579457673L41.64962748078506 25.377985603555317L42.996603206054715 25.017064545744688L44.260442059449815 24.42772680973303L45.40274293694256 23.627879124409446L46.38879760440159 22.641824456950417L47.18864528972517 21.499523579457673L47.77798302573683 20.235684726062573L48.13890408354746 18.888709000792915L48.260442059449815 17.499523579457673L48.13890408354746 16.11033815812243L47.77798302573683 14.763362432852773L47.18864528972517 13.499523579457673L46.38879760440159 12.357222701964929L45.40274293694256 11.3711680345059L44.260442059449815 10.571320349182315L42.996603206054715 9.981982613170658L41.64962748078506 9.62106155536003L40.260442059449815 9.499523579457673L39.92918400000053 9.528504904361398L39.92918400000053 25.470542254553948Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(163,24,50,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+       // Line
+       shape = this.canvas.paper.path('M9.377490534402568 58.62910056640976L5.757806182406966,59.03049545921385L0.4075520000042161,65.51153400000749');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M39.586528000003455 5.1831660000025295L39.84867199999917,52.369086000002426');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_filter_Darker = video_filter_Darker.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        var adjustment = this.getInputPort("input_port2").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.worker.postMessage({imageData: imageData,adjustment: adjustment}, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data.imageData;
+            var adjustment = event.data.adjustment;
+            // map offset from 0-5 => 0-255
+            adjustment = 255/5*adjustment;
+            var pixels = imageData.data;
+            for( let x = 0; x < pixels.length; x += 4 ) {
+                pixels[x]     = Math.max(0,pixels[x  ]-adjustment);
+                pixels[x + 1] = Math.max(0,pixels[x+1]-adjustment);
+                pixels[x + 2] = Math.max(0,pixels[x+2]-adjustment);
+            }
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => {
+                this.getOutputPort("output_port1").setValue(image);
+            }
+            image.src = this.tmpCanvas.toDataURL();
+        };
+        
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_filter_FlipHorizontal = CircuitFigure.extend({
+
+   NAME: "video_filter_FlipHorizontal",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80.35023911823282,height:80},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9597980148700479, y: 49.886999999999944 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 99.88775500953986, y: 49.886999999999944 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80.35023911823282;
+      this.originalHeight= 80;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80.35023911823282,0 L80.35023911823282,80 L0,80");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Flip Horizontal');
+       shape.attr({"x":6.037739118232821,"y":67.91215535911579,"text-anchor":"start","text":"Flip Horizontal","font-family":"\"Arial\"","font-size":11,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M4.315424000003077,7.770740800002386Q4.315424000003077,3.770740800002386 8.315424000003077, 3.770740800002386L71.31542400000308,3.770740800002386Q75.31542400000308,3.770740800002386 75.31542400000308, 7.770740800002386L75.31542400000308,49.770740800002386Q75.31542400000308,53.770740800002386 71.31542400000308, 53.770740800002386L8.315424000003077,53.770740800002386Q4.315424000003077,53.770740800002386 4.315424000003077, 49.770740800002386L4.315424000003077,7.770740800002386');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(237,237,237,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // TOP_Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8.16442848176873,"ry":8.16442848176873,"cx":39.50000000000025,"cy":16.4234128000028,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Circle");
+       
+       // TOP_Body
+       shape = this.canvas.paper.path('M29.462567472217447,46.776768974949896Q28.81898911823282,50.724655359115786 32.81880873597436, 50.762642534977275L46.90091030048609,50.89638338325396Q50.900729918227626,50.93437055911545 50.01211395841982, 47.03432419067637L48.22418747803842,39.18729409867167Q47.33557151823061,35.28724773023259 47.27480253027943, 34.71745662722515L47.27480253027943,34.71745662722515Q47.21403354232825,34.1476655242177 47.03357301342339, 33.5951872355472L47.03357301342339,33.5951872355472Q46.85311248451853,33.0427089468767 46.558443616512704, 32.52433024577522L46.558443616512704,32.52433024577522Q46.263774748506876,32.005951544673735 45.86385090584463, 31.537423105665766L45.86385090584463,31.537423105665766Q45.46392706318238,31.068894666657798 44.97089972945241, 30.66445248927039L44.97089972945241,30.66445248927039Q44.47787239572244,30.26001031188298 43.906721956976526, 29.931943167022382L43.906721956976526,29.931943167022382Q43.33557151823061,29.603876022161785 42.70365209153351, 29.36215206401357L42.70365209153351,29.36215206401357Q42.07173266483642,29.120428105865358 41.39824480220159, 28.972391994582267L41.39824480220159,28.972391994582267Q40.72475693956676,28.824355883299177 40.03016422889914, 28.77450562120748L40.03016422889914,28.77450562120748Q39.33557151823152,28.724655359115786 38.64097880756344, 28.77450562120748L38.64097880756344,28.77450562120748Q37.94638609689537,28.824355883299177 37.27289823426054, 28.972391994582267L37.27289823426054,28.972391994582267Q36.59941037162571,29.120428105865358 35.96749094492861, 29.36215206401357L35.96749094492861,29.36215206401357Q35.33557151823152,29.603876022161785 34.7644210794856, 29.931943167022382L34.7644210794856,29.931943167022382Q34.193270640739684,30.26001031188298 33.700243307009714, 30.66445248927039L33.700243307009714,30.66445248927039Q33.207215973279745,31.068894666657798 32.8072921306175, 31.537423105665766L32.8072921306175,31.537423105665766Q32.40736828795525,32.005951544673735 32.11269941994942, 32.52433024577522L32.11269941994942,32.52433024577522Q31.818030551943593,33.0427089468767 31.637570023038734, 33.5951872355472L31.637570023038734,33.5951872355472Q31.457109494133874,34.1476655242177 31.396340506182696, 34.71745662722515L31.396340506182696,34.71745662722515Q31.335571518231518,35.28724773023259 30.69199316424689, 39.235134114398484L29.462567472217447,46.776768974949896');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Body");
+       
+       // Line
+       shape = this.canvas.paper.path('M39.48283648001234 4.038881344014044L39.65060864001134,53.47137542400378');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M56.886569500003134 28.18538080000235L48.497961500003385,35.787556800005405Q40.109353500003635,43.38973280000846 30.147881500003223, 35.78755680000495L20.18640950000281,28.18538080000144');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(112,150,255,1)","stroke-width":3,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M49.28439350000281 24.156068800002686L60.294441500002904,26.253220800002964L56.62442550000287,36.476836800002275');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(112,150,255,1)","stroke-width":3,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M21.035657500005982 37.13680480000221L17.88992949999556,26.651044800002637L27.06496949999928,24.02960479999456');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(112,150,255,1)","stroke-width":3,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_filter_FlipHorizontal = video_filter_FlipHorizontal.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null && this.processing === false){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.processing = true;
+            this.worker.postMessage(imageData, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        this.progressing = false;
+        
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data;
+            var pixels = imageData.data;
+            var width  = imageData.width;
+            var height = imageData.height;
+            
+            var dst = new Uint8ClampedArray(width*height*4);
+            for (var y=0; y<height; y++) {
+              for (var x=0; x<width; x++) {
+                var off = (y*width+x)*4;
+                var dstOff = (y*width+(width-x-1))*4;
+                dst[dstOff  ] = pixels[off];
+                dst[dstOff+1] = pixels[off+1];
+                dst[dstOff+2] = pixels[off+2];
+                dst[dstOff+3] = pixels[off+3];
+              }
+            }
+            imageData.data.set(dst);
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            this.processing = false;
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => { this.getOutputPort("output_port1").setValue(image);};
+            image.src = this.tmpCanvas.toDataURL();
+        };
+
+
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction;
+        this.processing = false;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.progressing = false;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_filter_FlipVertical = CircuitFigure.extend({
+
+   NAME: "video_filter_FlipVertical",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:80.22465535911579},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9640000000001692, y: 49.7473000305823 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 100.32506249999983, y: 49.7473000305823 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 80.22465535911579;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,80.22465535911579 L0,80.22465535911579");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Flip Vertical');
+       shape.attr({"x":10.037739118232821,"y":69.22465535911579,"text-anchor":"start","text":"Flip Vertical","font-family":"\"Arial\"","font-size":12,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M4.315424000003077,7.770740800002386Q4.315424000003077,3.770740800002386 8.315424000003077, 3.770740800002386L71.31542400000308,3.770740800002386Q75.31542400000308,3.770740800002386 75.31542400000308, 7.770740800002386L75.31542400000308,49.770740800002386Q75.31542400000308,53.770740800002386 71.31542400000308, 53.770740800002386L8.315424000003077,53.770740800002386Q4.315424000003077,53.770740800002386 4.315424000003077, 49.770740800002386L4.315424000003077,7.770740800002386');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(237,237,237,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // TOP_Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8.16442848176873,"ry":8.16442848176873,"cx":39.50000000000025,"cy":16.4234128000028,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Circle");
+       
+       // TOP_Body
+       shape = this.canvas.paper.path('M29.462567472217447,46.776768974949896Q28.81898911823282,50.724655359115786 32.81880873597436, 50.762642534977275L46.90091030048609,50.89638338325396Q50.900729918227626,50.93437055911545 50.01211395841982, 47.03432419067637L48.22418747803842,39.18729409867167Q47.33557151823061,35.28724773023259 47.27480253027943, 34.71745662722515L47.27480253027943,34.71745662722515Q47.21403354232825,34.1476655242177 47.03357301342339, 33.5951872355472L47.03357301342339,33.5951872355472Q46.85311248451853,33.0427089468767 46.558443616512704, 32.52433024577522L46.558443616512704,32.52433024577522Q46.263774748506876,32.005951544673735 45.86385090584463, 31.537423105665766L45.86385090584463,31.537423105665766Q45.46392706318238,31.068894666657798 44.97089972945241, 30.66445248927039L44.97089972945241,30.66445248927039Q44.47787239572244,30.26001031188298 43.906721956976526, 29.931943167022382L43.906721956976526,29.931943167022382Q43.33557151823061,29.603876022161785 42.70365209153351, 29.36215206401357L42.70365209153351,29.36215206401357Q42.07173266483642,29.120428105865358 41.39824480220159, 28.972391994582267L41.39824480220159,28.972391994582267Q40.72475693956676,28.824355883299177 40.03016422889914, 28.77450562120748L40.03016422889914,28.77450562120748Q39.33557151823152,28.724655359115786 38.64097880756344, 28.77450562120748L38.64097880756344,28.77450562120748Q37.94638609689537,28.824355883299177 37.27289823426054, 28.972391994582267L37.27289823426054,28.972391994582267Q36.59941037162571,29.120428105865358 35.96749094492861, 29.36215206401357L35.96749094492861,29.36215206401357Q35.33557151823152,29.603876022161785 34.7644210794856, 29.931943167022382L34.7644210794856,29.931943167022382Q34.193270640739684,30.26001031188298 33.700243307009714, 30.66445248927039L33.700243307009714,30.66445248927039Q33.207215973279745,31.068894666657798 32.8072921306175, 31.537423105665766L32.8072921306175,31.537423105665766Q32.40736828795525,32.005951544673735 32.11269941994942, 32.52433024577522L32.11269941994942,32.52433024577522Q31.818030551943593,33.0427089468767 31.637570023038734, 33.5951872355472L31.637570023038734,33.5951872355472Q31.457109494133874,34.1476655242177 31.396340506182696, 34.71745662722515L31.396340506182696,34.71745662722515Q31.335571518231518,35.28724773023259 30.69199316424689, 39.235134114398484L29.462567472217447,46.776768974949896');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Body");
+       
+       // Line
+       shape = this.canvas.paper.path('M5.141972480008917 31.03971334401649L75.0400486400149,30.140559424007733');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":0.5});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M23.944361499994557 15.864612799999122L14.63824949999389,23.204644800003734Q5.332137499993223,30.544676800008347 14.507177499993304, 37.884708800003864L23.682217499993385,45.22474079999938');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(112,150,255,1)","stroke-width":3,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M15.555753499995262 14.981028800004424L26.30365750000601,13.932452800004285L23.01112885999828,24.009268160004467');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(112,150,255,1)","stroke-width":3,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M16.929289500008963 46.836132800000996L25.842185499998777,46.836132800005544L23.482889499998237,37.66109279999819');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(112,150,255,1)","stroke-width":3,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_filter_FlipVertical = video_filter_FlipVertical.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null && this.processing === false){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.processing = true;
+            this.worker.postMessage(imageData, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        this.progressing = false;
+        
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data;
+            var pixels = imageData.data;
+            var width  = imageData.width;
+            var height = imageData.height;
+            
+            var dst = new Uint8ClampedArray(width*height*4);
+            for (var y=0; y<height; y++) {
+                for (var x=0; x<width; x++) {
+                  var off = (y*width+x)*4;
+                  var dstOff = ((height-y-1)*width+x)*4;
+                  dst[dstOff  ] = pixels[off  ];
+                  dst[dstOff+1] = pixels[off+1];
+                  dst[dstOff+2] = pixels[off+2];
+                  dst[dstOff+3] = pixels[off+3];
+                }
+            }
+            imageData.data.set(dst);
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            this.processing = false;
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => { this.getOutputPort("output_port1").setValue(image);};
+            image.src = this.tmpCanvas.toDataURL();
+        };
+
+
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction;
+        this.processing = false;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.progressing = false;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_filter_GaussBlur = CircuitFigure.extend({
+
+   NAME: "video_filter_GaussBlur",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:83.375,height:84.37877759999992},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 0.5997001499250375, y: 47.298149054958564 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // input_port2
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 0.5997001499250375, y: 79.13214993055605 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port2");
+     port.setMaxFanOut(1);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 97.78860569715143, y: 47.298149054958564 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 83.375;
+      this.originalHeight= 84.37877759999992;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L83.375,0 L83.375,84.37877759999992 L0,84.37877759999992");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M1.2712000000001353,3Q1.2712000000001353,0 4.271200000000135, 0L78.27120000000014,0Q81.27120000000014,0 81.27120000000014, 3L81.27120000000014,77Q81.27120000000014,80 78.27120000000014, 80L4.271200000000135,80Q1.2712000000001353,80 1.2712000000001353, 77L1.2712000000001353,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'GaussBlur');
+       shape.attr({"x":4,"y":71.87877759999992,"text-anchor":"start","text":"GaussBlur","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M5.586624000003212,7.770740800002386Q5.586624000003212,3.770740800002386 9.586624000003212, 3.770740800002386L72.58662400000321,3.770740800002386Q76.58662400000321,3.770740800002386 76.58662400000321, 7.770740800002386L76.58662400000321,49.770740800002386Q76.58662400000321,53.770740800002386 72.58662400000321, 53.770740800002386L9.586624000003212,53.770740800002386Q5.586624000003212,53.770740800002386 5.586624000003212, 49.770740800002386L5.586624000003212,7.770740800002386');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(237,237,237,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Shadow_Body
+       shape = this.canvas.paper.path('M40.090189118232956,51.06235109342106Q40.090189118232956,53.06235109342106 42.0900547303779, 53.08553585911158L52.09032350608801,53.20147059342526Q54.090189118232956,53.224655359115786 53.72321753600035, 51.25861063484482L51.038122985231084,36.87325702356028Q50.671151402998476,34.90721229928931 50.61287307749126, 34.2401812930475L50.61287307749126,34.2401812930475Q50.55459475198404,33.573150286805685 50.38153053289079, 32.9263866801557L50.38153053289079,32.9263866801557Q50.208466313797544,32.27962307350572 49.92587466984196, 31.67277845135368L49.92587466984196,31.67277845135368Q49.643283025886376,31.06593382920164 49.25975036117052, 30.51744685832L49.25975036117052,30.51744685832Q48.87621769645466,29.96895988743836 48.403397456921084, 29.49549606688106L48.403397456921084,29.49549606688106Q47.93057721738751,29.02203224632376 47.38283580675443, 28.63797753470044L47.38283580675443,28.63797753470044Q46.83509439612135,28.25392282307712 46.22907465998014, 27.97094652845726L46.22907465998014,27.97094652845726Q45.623054923838936,27.687970233837405 44.97717046521211, 27.51467044774381L44.97717046521211,27.51467044774381Q44.33128600658529,27.341370661650217 43.665161697914755, 27.283013010383L43.665161697914755,27.283013010383Q42.99903738924422,27.224655359115786 42.332913080573235, 27.283013010383L42.332913080573235,27.283013010383Q41.66678877190225,27.341370661650217 41.02090431327542, 27.51467044774381L41.02090431327542,27.51467044774381Q40.3750198546486,27.687970233837405 40.23260448644078, 27.75447000404165L40.23260448644078,27.75447000404165Q40.090189118232956,27.820969774245896 40.090189118232956, 29.820969774245896L40.090189118232956,51.06235109342106');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":0.2});
+       shape.data("name","Shadow_Body");
+       
+       // Shadow_Body
+       shape = this.canvas.paper.path('M40.090189118232956,52.04986614990685Q40.090189118232956,54.04986614990685 42.09008341288485, 54.07042849945177L55.09029482358106,54.20409300957086Q57.090189118232956,54.224655359115786 56.67828728064497, 52.26753071408378L53.350402301607836,36.45530286279578Q52.93850046401985,34.49817821776378 52.86773392590385, 33.77983713411868L52.86773392590385,33.77983713411868Q52.796967387787845,33.06149605047358 52.586817978889485, 32.36498139715877L52.586817978889485,32.36498139715877Q52.376668569991125,31.668466743843965 52.03352157375866, 31.014941766141874L52.03352157375866,31.014941766141874Q51.6903745775262,30.361416788439783 51.2246563417998, 29.77073851210571L51.2246563417998,29.77073851210571Q50.7589381060734,29.180060235771634 50.184799243782436, 28.670176121325312L50.184799243782436,28.670176121325312Q49.61066038149147,28.16029200687899 48.945545811437114, 27.746694625130658L48.945545811437114,27.746694625130658Q48.28043124138276,27.333097243382326 47.54455013321149, 27.028353541484194L47.54455013321149,27.028353541484194Q46.80866902504022,26.72360983958606 46.02438075385089, 26.536979300715757L46.02438075385089,26.536979300715757Q45.24009248266157,26.350348761845453 44.431227250703614, 26.28750206048062L44.431227250703614,26.28750206048062Q43.62236201874566,26.224655359115786 42.81349678678862, 26.28750206048062L42.81349678678862,26.28750206048062Q42.004631554831576,26.350348761845453 41.22034328364225, 26.536979300715757L41.22034328364225,26.536979300715757Q40.436055012452925,26.72360983958606 40.26312206534294, 26.795224976728605L40.26312206534294,26.795224976728605Q40.090189118232956,26.86684011387115 40.090189118232956, 28.86684011387115L40.090189118232956,52.04986614990685');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":0.15});
+       shape.data("name","Shadow_Body");
+       
+       // Shadow_Circle
+       shape = this.canvas.paper.path('M40.94482344960488 26.00720138039742L41.314147979302106 26.107061848355443L43.03497508821329 26.25898431823407L44.75580219712447 26.107061848355443L46.42434284511182 25.655910526093976L47.98989926890954 24.919238356078495L49.40490282878818 23.919428749423787L50.626359357608635 22.686860415098636L51.61715551683028 21.25898431823407L52.347186466520725 19.679185751490877L52.79427058568763 17.99546609490244L52.94482344960488 16.25898431823407L52.79427058568763 14.5225025415657L52.347186466520725 12.838782884977263L51.61715551683028 11.25898431823407L50.626359357608635 9.831108221369504L49.40490282878818 8.598539887044353L47.98989926890954 7.5987302803896455L46.42434284511182 6.862058110374164L44.75580219712447 6.4109067881126975L43.03497508821329 6.25898431823407L41.314147979302106 6.4109067881126975L40.94482344960488 6.5107672560707215L40.94482344960488 26.00720138039742Z');
+       shape.attr({"stroke":"rgba(27,27,27,1)","stroke-width":1,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":0.1});
+       shape.data("name","Shadow_Circle");
+       
+       // Shadow_Circle
+       shape = this.canvas.paper.path('M39.44482344960488 25.032379674180447L39.78023935568763 25.122254095344033L41.34307295468989 25.25898431823407L42.90590655369215 25.122254095344033L44.421254244621196 24.71621790530753L45.84307295468989 24.053212952294416L47.12816144186854 23.15338430630527L48.23747294276109 22.044072805412725L49.13730158875023 20.75898431823407L49.80030654176335 19.337165608165378L50.20634273179985 17.82181791723633L50.34307295468989 16.25898431823407L50.20634273179985 14.69615071923181L49.80030654176335 13.180803028302762L49.13730158875023 11.75898431823407L48.23747294276109 10.473895831055415L47.12816144186854 9.36458433016287L45.84307295468989 8.464755684173724L44.421254244621196 7.80175073116061L42.90590655369215 7.395714541124107L41.34307295468989 7.25898431823407L39.78023935568763 7.395714541124107L39.44482344960488 7.485588962287693L39.44482344960488 25.032379674180447Z');
+       shape.attr({"stroke":"rgba(27,27,27,1)","stroke-width":1,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":0.15});
+       shape.data("name","Shadow_Circle");
+       
+       // TOP_Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8.16442848176873,"ry":8.16442848176873,"cx":40.771200000000384,"cy":16.4234128000028,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Circle");
+       
+       // TOP_Body
+       shape = this.canvas.paper.path('M30.733767472217583,46.776768974949896Q30.090189118232956,50.724655359115786 34.09000873597449, 50.762642534977275L48.172110300486224,50.89638338325396Q52.17192991822776,50.93437055911545 51.28331395841995, 47.03432419067637L49.49538747803855,39.18729409867167Q48.606771518230744,35.28724773023259 48.546002530279566, 34.71745662722515L48.546002530279566,34.71745662722515Q48.48523354232839,34.1476655242177 48.30477301342353, 33.5951872355472L48.30477301342353,33.5951872355472Q48.12431248451867,33.0427089468767 47.82964361651284, 32.52433024577522L47.82964361651284,32.52433024577522Q47.53497474850701,32.005951544673735 47.135050905844764, 31.537423105665766L47.135050905844764,31.537423105665766Q46.73512706318252,31.068894666657798 46.24209972945255, 30.66445248927039L46.24209972945255,30.66445248927039Q45.74907239572258,30.26001031188298 45.17792195697666, 29.931943167022382L45.17792195697666,29.931943167022382Q44.606771518230744,29.603876022161785 43.97485209153365, 29.36215206401357L43.97485209153365,29.36215206401357Q43.34293266483655,29.120428105865358 42.669444802201724, 28.972391994582267L42.669444802201724,28.972391994582267Q41.995956939566895,28.824355883299177 41.301364228899274, 28.77450562120748L41.301364228899274,28.77450562120748Q40.60677151823165,28.724655359115786 39.91217880756358, 28.77450562120748L39.91217880756358,28.77450562120748Q39.2175860968955,28.824355883299177 38.54409823426067, 28.972391994582267L38.54409823426067,28.972391994582267Q37.870610371625844,29.120428105865358 37.23869094492875, 29.36215206401357L37.23869094492875,29.36215206401357Q36.60677151823165,29.603876022161785 36.035621079485736, 29.931943167022382L36.035621079485736,29.931943167022382Q35.46447064073982,30.26001031188298 34.97144330700985, 30.66445248927039L34.97144330700985,30.66445248927039Q34.47841597327988,31.068894666657798 34.07849213061763, 31.537423105665766L34.07849213061763,31.537423105665766Q33.678568287955386,32.005951544673735 33.38389941994956, 32.52433024577522L33.38389941994956,32.52433024577522Q33.08923055194373,33.0427089468767 32.90877002303887, 33.5951872355472L32.90877002303887,33.5951872355472Q32.72830949413401,34.1476655242177 32.66754050618283, 34.71745662722515L32.66754050618283,34.71745662722515Q32.60677151823165,35.28724773023259 31.963193164247027, 39.235134114398484L30.733767472217583,46.776768974949896');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Body");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'radius');
+       shape.attr({"x":12.9609375,"y":59.423763799999506,"text-anchor":"start","text":"radius","font-family":"\"Arial\"","font-size":9,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Line
+       shape = this.canvas.paper.path('M12.259241500002645 59.67813280000246L7.8027935000027355,60.464564800002336L0.9870495000031951,67.44414879999931');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M39.96760448001169 4.038881344014044L40.13537664001069,53.47137542400378');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_filter_GaussBlur = video_filter_GaussBlur.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null && this.processing === false){
+            var radius = this.getInputPort("input_port2").getValue();
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.processing = true;
+            this.worker.postMessage({imageData, radius}, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        this.progressing = false;
+        
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data.imageData;
+            var radius = event.data.radius;
+            var pixels = imageData.data;
+            var width  = imageData.width;
+            var height = imageData.height;
+
+            // map values from [0..5] => [0..30]
+            radius = Math.max(3,parseInt(30/5 * radius));
+
+            var BlurStack = function() {
+              this.r = 0;
+              this.g = 0;
+              this.b = 0;
+              this.a = 0;
+              this.next = null;
+            };
+
+            var mulTable = [
+              512, 512, 456, 512, 328, 456, 335, 512, 405, 328, 271, 456, 388, 335, 292, 512,
+              454, 405, 364, 328, 298, 271, 496, 456, 420, 388, 360, 335, 312, 292, 273, 512,
+              482, 454, 428, 405, 383, 364, 345, 328, 312, 298, 284, 271, 259, 496, 475, 456,
+              437, 420, 404, 388, 374, 360, 347, 335, 323, 312, 302, 292, 282, 273, 265, 512,
+              497, 482, 468, 454, 441, 428, 417, 405, 394, 383, 373, 364, 354, 345, 337, 328,
+              320, 312, 305, 298, 291, 284, 278, 271, 265, 259, 507, 496, 485, 475, 465, 456,
+              446, 437, 428, 420, 412, 404, 396, 388, 381, 374, 367, 360, 354, 347, 341, 335,
+              329, 323, 318, 312, 307, 302, 297, 292, 287, 282, 278, 273, 269, 265, 261, 512,
+              505, 497, 489, 482, 475, 468, 461, 454, 447, 441, 435, 428, 422, 417, 411, 405,
+              399, 394, 389, 383, 378, 373, 368, 364, 359, 354, 350, 345, 341, 337, 332, 328,
+              324, 320, 316, 312, 309, 305, 301, 298, 294, 291, 287, 284, 281, 278, 274, 271,
+              268, 265, 262, 259, 257, 507, 501, 496, 491, 485, 480, 475, 470, 465, 460, 456,
+              451, 446, 442, 437, 433, 428, 424, 420, 416, 412, 408, 404, 400, 396, 392, 388,
+              385, 381, 377, 374, 370, 367, 363, 360, 357, 354, 350, 347, 344, 341, 338, 335,
+              332, 329, 326, 323, 320, 318, 315, 312, 310, 307, 304, 302, 299, 297, 294, 292,
+              289, 287, 285, 282, 280, 278, 275, 273, 271, 269, 267, 265, 263, 261, 259
+            ];
+
+            var shgTable = [
+              9, 11, 12, 13, 13, 14, 14, 15, 15, 15, 15, 16, 16, 16, 16, 17,
+              17, 17, 17, 17, 17, 17, 18, 18, 18, 18, 18, 18, 18, 18, 18, 19,
+              19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 20, 20, 20,
+              20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 21,
+              21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+              21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 22, 22, 22, 22, 22, 22,
+              22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22,
+              22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 23,
+              23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+              23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+              23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+              23, 23, 23, 23, 23, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24,
+              24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24,
+              24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24,
+              24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24,
+              24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24
+            ];
+
+          let x, y, i, p, yp, yi, yw, rSum, gSum, bSum, aSum,
+            rOutSum, gOutSum, bOutSum, aOutSum,
+            rInSum, gInSum, bInSum, aInSum,
+            pr, pg, pb, pa, rbs;
+
+          const div = 2 * radius + 1;
+          // const w4 = width << 2;
+          const widthMinus1 = width - 1;
+          const heightMinus1 = height - 1;
+          const radiusPlus1 = radius + 1;
+          const sumFactor = radiusPlus1 * (radiusPlus1 + 1) / 2;
+
+          const stackStart = new BlurStack();
+          let stack = stackStart;
+          let stackEnd;
+          for (i = 1; i < div; i++) {
+            stack = stack.next = new BlurStack();
+            if (i === radiusPlus1) {
+              stackEnd = stack;
+            }
+          }
+          stack.next = stackStart;
+          let stackIn = null;
+          let stackOut = null;
+
+          yw = yi = 0;
+
+          const mulSum = mulTable[radius];
+          const shgSum = shgTable[radius];
+
+          for (y = 0; y < height; y++) {
+            rInSum = gInSum = bInSum = aInSum = rSum = gSum = bSum = aSum = 0;
+
+            rOutSum = radiusPlus1 * (pr = pixels[yi]);
+            gOutSum = radiusPlus1 * (pg = pixels[yi + 1]);
+            bOutSum = radiusPlus1 * (pb = pixels[yi + 2]);
+            aOutSum = radiusPlus1 * (pa = pixels[yi + 3]);
+
+            rSum += sumFactor * pr;
+            gSum += sumFactor * pg;
+            bSum += sumFactor * pb;
+            aSum += sumFactor * pa;
+
+            stack = stackStart;
+
+            for (i = 0; i < radiusPlus1; i++) {
+              stack.r = pr;
+              stack.g = pg;
+              stack.b = pb;
+              stack.a = pa;
+              stack = stack.next;
+            }
+
+            for (i = 1; i < radiusPlus1; i++) {
+              p = yi + ((widthMinus1 < i ? widthMinus1 : i) << 2);
+              rSum += (stack.r = (pr = pixels[p])) * (rbs = radiusPlus1 - i);
+              gSum += (stack.g = (pg = pixels[p + 1])) * rbs;
+              bSum += (stack.b = (pb = pixels[p + 2])) * rbs;
+              aSum += (stack.a = (pa = pixels[p + 3])) * rbs;
+
+              rInSum += pr;
+              gInSum += pg;
+              bInSum += pb;
+              aInSum += pa;
+
+              stack = stack.next;
+            }
+
+            stackIn = stackStart;
+            stackOut = stackEnd;
+            for (x = 0; x < width; x++) {
+              pixels[yi + 3] = pa = (aSum * mulSum) >> shgSum;
+              if (pa !== 0) {
+                pa = 255 / pa;
+                pixels[yi] = ((rSum * mulSum) >> shgSum) * pa;
+                pixels[yi + 1] = ((gSum * mulSum) >> shgSum) * pa;
+                pixels[yi + 2] = ((bSum * mulSum) >> shgSum) * pa;
+              } else {
+                pixels[yi] = pixels[yi + 1] = pixels[yi + 2] = 0;
+              }
+
+              rSum -= rOutSum;
+              gSum -= gOutSum;
+              bSum -= bOutSum;
+              aSum -= aOutSum;
+
+              rOutSum -= stackIn.r;
+              gOutSum -= stackIn.g;
+              bOutSum -= stackIn.b;
+              aOutSum -= stackIn.a;
+
+              p = (yw + ((p = x + radius + 1) < widthMinus1
+                ? p
+                : widthMinus1)) << 2;
+
+              rInSum += (stackIn.r = pixels[p]);
+              gInSum += (stackIn.g = pixels[p + 1]);
+              bInSum += (stackIn.b = pixels[p + 2]);
+              aInSum += (stackIn.a = pixels[p + 3]);
+
+              rSum += rInSum;
+              gSum += gInSum;
+              bSum += bInSum;
+              aSum += aInSum;
+
+              stackIn = stackIn.next;
+
+              rOutSum += (pr = stackOut.r);
+              gOutSum += (pg = stackOut.g);
+              bOutSum += (pb = stackOut.b);
+              aOutSum += (pa = stackOut.a);
+
+              rInSum -= pr;
+              gInSum -= pg;
+              bInSum -= pb;
+              aInSum -= pa;
+
+              stackOut = stackOut.next;
+
+              yi += 4;
+            }
+            yw += width;
+          }
+
+          for (x = 0; x < width; x++) {
+            gInSum = bInSum = aInSum = rInSum = gSum = bSum = aSum = rSum = 0;
+
+            yi = x << 2;
+            rOutSum = radiusPlus1 * (pr = pixels[yi]);
+            gOutSum = radiusPlus1 * (pg = pixels[yi + 1]);
+            bOutSum = radiusPlus1 * (pb = pixels[yi + 2]);
+            aOutSum = radiusPlus1 * (pa = pixels[yi + 3]);
+
+            rSum += sumFactor * pr;
+            gSum += sumFactor * pg;
+            bSum += sumFactor * pb;
+            aSum += sumFactor * pa;
+
+            stack = stackStart;
+
+            for (i = 0; i < radiusPlus1; i++) {
+              stack.r = pr;
+              stack.g = pg;
+              stack.b = pb;
+              stack.a = pa;
+              stack = stack.next;
+            }
+
+            yp = width;
+
+            for (i = 1; i <= radius; i++) {
+              yi = (yp + x) << 2;
+
+              rSum += (stack.r = (pr = pixels[yi])) * (rbs = radiusPlus1 - i);
+              gSum += (stack.g = (pg = pixels[yi + 1])) * rbs;
+              bSum += (stack.b = (pb = pixels[yi + 2])) * rbs;
+              aSum += (stack.a = (pa = pixels[yi + 3])) * rbs;
+
+              rInSum += pr;
+              gInSum += pg;
+              bInSum += pb;
+              aInSum += pa;
+
+              stack = stack.next;
+
+              if (i < heightMinus1) {
+                yp += width;
+              }
+            }
+
+            yi = x;
+            stackIn = stackStart;
+            stackOut = stackEnd;
+            for (y = 0; y < height; y++) {
+              p = yi << 2;
+              pixels[p + 3] = pa = (aSum * mulSum) >> shgSum;
+              if (pa > 0) {
+                pa = 255 / pa;
+                pixels[p] = ((rSum * mulSum) >> shgSum) * pa;
+                pixels[p + 1] = ((gSum * mulSum) >> shgSum) * pa;
+                pixels[p + 2] = ((bSum * mulSum) >> shgSum) * pa;
+              } else {
+                pixels[p] = pixels[p + 1] = pixels[p + 2] = 0;
+              }
+
+              rSum -= rOutSum;
+              gSum -= gOutSum;
+              bSum -= bOutSum;
+              aSum -= aOutSum;
+
+              rOutSum -= stackIn.r;
+              gOutSum -= stackIn.g;
+              bOutSum -= stackIn.b;
+              aOutSum -= stackIn.a;
+
+              p = (x + (
+                ((p = y + radiusPlus1) < heightMinus1 ? p : heightMinus1) *
+                width
+              )) << 2;
+
+              rSum += (rInSum += (stackIn.r = pixels[p]));
+              gSum += (gInSum += (stackIn.g = pixels[p + 1]));
+              bSum += (bInSum += (stackIn.b = pixels[p + 2]));
+              aSum += (aInSum += (stackIn.a = pixels[p + 3]));
+
+              stackIn = stackIn.next;
+
+              rOutSum += (pr = stackOut.r);
+              gOutSum += (pg = stackOut.g);
+              bOutSum += (pb = stackOut.b);
+              aOutSum += (pa = stackOut.a);
+
+              rInSum -= pr;
+              gInSum -= pg;
+              bInSum -= pb;
+              aInSum -= pa;
+
+              stackOut = stackOut.next;
+
+              yi += width;
+            }
+          }
+            //imageData.data.set(dst);
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            this.processing = false;
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => { this.getOutputPort("output_port1").setValue(image);};
+            image.src = this.tmpCanvas.toDataURL();
+        };
+
+
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction;
+        this.processing = false;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.progressing = false;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_filter_Histogram = CircuitFigure.extend({
+
+   NAME: "video_filter_Histogram",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:81.13504999999986,height:80.87877759999992},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9505139887140474, y: 49.34495943717131 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 98.92155116685083, y: 49.34495943717131 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 81.13504999999986;
+      this.originalHeight= 80.87877759999992;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L81.13504999999986,0 L81.13504999999986,80.87877759999992 L0,80.87877759999992");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Histogram');
+       shape.attr({"x":4.228799999999865,"y":68.37877759999992,"text-anchor":"start","text":"Histogram","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M4.315424000003077,7.770740800002386Q4.315424000003077,3.770740800002386 8.315424000003077, 3.770740800002386L71.31542400000308,3.770740800002386Q75.31542400000308,3.770740800002386 75.31542400000308, 7.770740800002386L75.31542400000308,51.770740800002386Q75.31542400000308,55.770740800002386 71.31542400000308, 55.770740800002386L8.315424000003077,55.770740800002386Q4.315424000003077,55.770740800002386 4.315424000003077, 51.770740800002386L4.315424000003077,7.770740800002386');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(237,237,237,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Shadow
+       shape = this.canvas.paper.path('M38.31898911823282,51.06235109342106Q38.31898911823282,53.06235109342106 40.3188720499583, 53.083990395468334L51.31910618650734,53.20301605706851Q53.31898911823282,53.224655359115786 52.92678092918581, 51.26348919164184L50.04794261238581,36.86837846676326Q49.6557344233388,34.90721229928931 49.593293360294865, 34.2401812930475L49.593293360294865,34.2401812930475Q49.53085229725093,33.573150286805685 49.3454263482231, 32.9263866801557L49.3454263482231,32.9263866801557Q49.16000039919527,32.27962307350572 48.85722363781406, 31.67277845135368L48.85722363781406,31.67277845135368Q48.55444687643285,31.06593382920164 48.1435190213806, 30.51744685832L48.1435190213806,30.51744685832Q47.73259116632835,29.96895988743836 47.225998052541854, 29.49549606688106L47.225998052541854,29.49549606688106Q46.71940493875536,29.02203224632376 46.13253914164852, 28.63797753470044L46.13253914164852,28.63797753470044Q45.54567334454168,28.25392282307712 44.896366484390455, 27.97094652845726L44.896366484390455,27.97094652845726Q44.24705962423923,27.687970233837405 43.5550405614249, 27.51467044774381L43.5550405614249,27.51467044774381Q42.86302149861058,27.341370661650217 42.14931688217757, 27.283013010383L42.14931688217757,27.283013010383Q41.43561226574457,27.224655359115786 40.72190764931156, 27.283013010383L40.72190764931156,27.283013010383Q40.008203032878555,27.341370661650217 39.31618397006423, 27.51467044774381L39.31618397006423,27.51467044774381Q38.624164907249906,27.687970233837405 38.47157701274136, 27.75447000404165L38.47157701274136,27.75447000404165Q38.31898911823282,27.820969774245896 38.31898911823282, 29.820969774245896L38.31898911823282,51.06235109342106');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":0.2});
+       shape.data("name","Shadow");
+       
+       // TOP_Circle
+       shape = this.canvas.paper.path('M38.67362344960475 25.032379674180447L39.00903935568749 25.122254095344033L40.57187295468975 25.25898431823407L42.13470655369201 25.122254095344033L43.65005424462106 24.71621790530753L45.07187295468975 24.053212952294416L46.35696144186841 23.15338430630527L47.46627294276095 22.044072805412725L48.3661015887501 20.75898431823407L49.02910654176321 19.337165608165378L49.435142731799715 17.82181791723633L49.57187295468975 16.25898431823407L49.435142731799715 14.69615071923181L49.02910654176321 13.180803028302762L48.3661015887501 11.75898431823407L47.46627294276095 10.473895831055415L46.35696144186841 9.36458433016287L45.07187295468975 8.464755684173724L43.65005424462106 7.80175073116061L42.13470655369201 7.395714541124107L40.57187295468975 7.25898431823407L39.00903935568749 7.395714541124107L38.67362344960475 7.485588962287693L38.67362344960475 25.032379674180447Z');
+       shape.attr({"stroke":"rgba(27,27,27,1)","stroke-width":1,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":0.15});
+       shape.data("name","TOP_Circle");
+       
+       // TOP_Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8.16442848176873,"ry":8.16442848176873,"cx":39.50000000000025,"cy":16.4234128000028,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Circle");
+       
+       // TOP_Body
+       shape = this.canvas.paper.path('M29.462567472217447,46.776768974949896Q28.81898911823282,50.724655359115786 32.81880873597436, 50.762642534977275L46.90091030048609,50.89638338325396Q50.900729918227626,50.93437055911545 50.01211395841982, 47.03432419067637L48.22418747803842,39.18729409867167Q47.33557151823061,35.28724773023259 47.27480253027943, 34.71745662722515L47.27480253027943,34.71745662722515Q47.21403354232825,34.1476655242177 47.03357301342339, 33.5951872355472L47.03357301342339,33.5951872355472Q46.85311248451853,33.0427089468767 46.558443616512704, 32.52433024577522L46.558443616512704,32.52433024577522Q46.263774748506876,32.005951544673735 45.86385090584463, 31.537423105665766L45.86385090584463,31.537423105665766Q45.46392706318238,31.068894666657798 44.97089972945241, 30.66445248927039L44.97089972945241,30.66445248927039Q44.47787239572244,30.26001031188298 43.906721956976526, 29.931943167022382L43.906721956976526,29.931943167022382Q43.33557151823061,29.603876022161785 42.70365209153351, 29.36215206401357L42.70365209153351,29.36215206401357Q42.07173266483642,29.120428105865358 41.39824480220159, 28.972391994582267L41.39824480220159,28.972391994582267Q40.72475693956676,28.824355883299177 40.03016422889914, 28.77450562120748L40.03016422889914,28.77450562120748Q39.33557151823152,28.724655359115786 38.64097880756344, 28.77450562120748L38.64097880756344,28.77450562120748Q37.94638609689537,28.824355883299177 37.27289823426054, 28.972391994582267L37.27289823426054,28.972391994582267Q36.59941037162571,29.120428105865358 35.96749094492861, 29.36215206401357L35.96749094492861,29.36215206401357Q35.33557151823152,29.603876022161785 34.7644210794856, 29.931943167022382L34.7644210794856,29.931943167022382Q34.193270640739684,30.26001031188298 33.700243307009714, 30.66445248927039L33.700243307009714,30.66445248927039Q33.207215973279745,31.068894666657798 32.8072921306175, 31.537423105665766L32.8072921306175,31.537423105665766Q32.40736828795525,32.005951544673735 32.11269941994942, 32.52433024577522L32.11269941994942,32.52433024577522Q31.818030551943593,33.0427089468767 31.637570023038734, 33.5951872355472L31.637570023038734,33.5951872355472Q31.457109494133874,34.1476655242177 31.396340506182696, 34.71745662722515L31.396340506182696,34.71745662722515Q31.335571518231518,35.28724773023259 30.69199316424689, 39.235134114398484L29.462567472217447,46.776768974949896');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Body");
+       
+       // Line
+       shape = this.canvas.paper.path('M38.69640448001155 4.038881344014044L38.864176640010555,55.044239424005355');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(26,12,112,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_filter_Histogram = video_filter_Histogram.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null && this.processing===false){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.processing = true;
+            this.worker.postMessage(imageData, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            const  HISTOGRAM_SIZE = 256; // for 8-bit image
+            const  MAX_VALUE = 255;      // max value in 8-bit image
+
+            var imageData = event.data;
+            var pixels = imageData.data;
+            var width  = imageData.width;
+            var height = imageData.height;
+            var imageSize = width * height;
+            var scale = MAX_VALUE / imageSize;    // scale factor ,so the values in LUT are from 0 to MAX_VALUE
+            var lutR   = new Uint8Array(HISTOGRAM_SIZE);
+            var lutG   = new Uint8Array(HISTOGRAM_SIZE);
+            var lutB   = new Uint8Array(HISTOGRAM_SIZE);
+            var histR  = new Uint32Array(HISTOGRAM_SIZE);
+            var histG  = new Uint32Array(HISTOGRAM_SIZE);
+            var histB  = new Uint32Array(HISTOGRAM_SIZE);
+            histR.fill(0);
+            histG.fill(0);
+            histB.fill(0);
+            
+            // collect the distribution of the RGB values 
+            //
+            for (var index=0; index < pixels.length; index+=4) {
+                histR[pixels[index  ]]++; // red
+                histG[pixels[index+1]]++; // green
+                histB[pixels[index+2]]++; // blue
+            }
+
+            var sumR = 0;
+            var sumG = 0;
+            var sumB = 0;
+            var i = 0;
+            while(i < HISTOGRAM_SIZE)
+            {
+                // cumulative sum is used as LUT
+                sumR += histR[i];
+                sumG += histG[i];
+                sumB += histB[i];
+       
+                // build look-up table
+                lutR[i] = (sumR * scale+0.5)|0;
+                lutG[i] = (sumG * scale+0.5)|0;
+                lutB[i] = (sumB * scale+0.5)|0;
+                ++i;
+            }
+
+            // re-map input pixels by using LUT
+            for (index=0; index < pixels.length; index+=4) {
+                pixels[index  ] = lutR[pixels[index  ]];
+                pixels[index+1] = lutG[pixels[index+1]];
+                pixels[index+2] = lutB[pixels[index+2]];
+            }
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => { 
+                this.getOutputPort("output_port1").setValue(image);
+                this.processing = false;
+            };
+            image.src = this.tmpCanvas.toDataURL();
+        };
+
+
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction;
+        this.processing = false;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.processing = false;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
+        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
+        //
+        if(this.tmpContext === null ) {
+            this.tmpCanvas = document.createElement('canvas');
+            this.tmpCanvas.width = width;
+            this.tmpCanvas.height = height;
+            this.tmpContext = this.tmpCanvas.getContext('2d');
+        }
+        this.tmpContext.drawImage(image, 0, 0, width, height);
+        return this.tmpContext.getImageData(0, 0, width, height);
+    }
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
+var video_filter_Sharpen = CircuitFigure.extend({
+
+   NAME: "video_filter_Sharpen",
+   VERSION: "2.0.211_836",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:80.87877759999992},attr), setter, getter);
+     var port;
+     // input_port1
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9640000000001692, y: 49.34495943717131 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_port1");
+     port.setMaxFanOut(20);
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 100.32506249999983, y: 49.34495943717131 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 80.87877759999992;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,80.87877759999992 L0,80.87877759999992");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'Sharpen');
+       shape.attr({"x":10.228799999999865,"y":68.37877759999992,"text-anchor":"start","text":"Sharpen","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M4.315424000003077,7.770740800002386Q4.315424000003077,3.770740800002386 8.315424000003077, 3.770740800002386L71.31542400000308,3.770740800002386Q75.31542400000308,3.770740800002386 75.31542400000308, 7.770740800002386L75.31542400000308,51.770740800002386Q75.31542400000308,55.770740800002386 71.31542400000308, 55.770740800002386L8.315424000003077,55.770740800002386Q4.315424000003077,55.770740800002386 4.315424000003077, 51.770740800002386L4.315424000003077,7.770740800002386');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(237,237,237,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Circle
+       shape = this.canvas.paper.path('M38.3575436800038 6.761013428584192L38.33557151823152 6.75898431823407L36.77273791922926 6.903310664618402L35.25739022830021 7.331904420767387L33.83557151823152 8.031742982281685L32.55048303105286 8.981562108603612L31.441171530160318 10.15250202621246L30.541342884171172 11.50898431823407L29.878337931158057 13.009792956640013L29.472301741121555 14.609326630398755L29.335571518231518 16.25898431823407L29.472301741121555 17.908642006069385L29.878337931158057 19.508175679828128L30.541342884171172 21.00898431823407L31.441171530160318 22.36546661025568L32.55048303105286 23.53640652786453L33.83557151823152 24.486225654186455L35.25739022830021 25.186064215700753L36.77273791922926 25.614657971849738L38.33557151823152 25.75898431823407L38.3575436800038 25.756955207883948L38.3575436800038 6.761013428584192Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":0.25});
+       shape.data("name","Circle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M35.323635168710325,52.22508227661048Q38.32230559823074,52.314388799999506 38.32230559823074, 49.314388799999506L38.32230559823074,30.438490014114905Q38.32230559823074,27.438490014114905 38.301052857797, 27.433087432160846L38.301052857797,27.433087432160846Q38.279800117363266,27.427684850206788 37.59730583340797, 27.371036825103147L37.59730583340797,27.371036825103147Q36.91481154945268,27.314388799999506 36.23231726549511, 27.371036825103147L36.23231726549511,27.371036825103147Q35.549822981537545,27.427684850206788 34.88806594104108, 27.5959077039397L34.88806594104108,27.5959077039397Q34.22630890054461,27.764130557672615 33.605396256316, 28.038816873749056L33.605396256316,28.038816873749056Q32.98448361208739,28.313503189825497 32.42328148062643, 28.68630676353132L32.42328148062643,28.68630676353132Q31.86207934916547,29.059110337237144 31.377639573254783, 29.51870372063013L31.377639573254783,29.51870372063013Q30.893199797344096,29.978297104023113 30.50024183443702, 30.510715784715558L30.50024183443702,30.510715784715558Q30.107283871529944,31.043134465408002 29.817747550480362, 31.632201171204088L29.817747550480362,31.632201171204088Q29.52821122943078,32.22126787700017 28.902015467438314, 35.15518656497751L25.948501360223208,48.993303588943135Q25.32230559823074,51.927222276920475 28.320976027751158, 52.0165288003095L35.323635168710325,52.22508227661048');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":0.1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M38.309039678229965 51.724655359115786L38.309039678229965 27.84379252466624L38.27307350211322 27.833419567314195L37.11808317541818 27.724655359115786L35.96309284872041 27.833419567314195L34.84319631864855 28.156407446482262L33.792421074570484 28.683805173349356L32.84269439055879 29.399588034863882L32.02287323132532 30.28200733097765L31.357867447944045 31.304251197908343L30.867882904630278 32.435259273036536L27.309039678229965 51.352975496960426Z');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":0.2});
+       shape.data("name","Rectangle");
+       
+       // TOP_Body
+       shape = this.canvas.paper.path('M29.462567472217447,46.776768974949896Q28.81898911823282,50.724655359115786 32.81880873597436, 50.762642534977275L46.90091030048609,50.89638338325396Q50.900729918227626,50.93437055911545 50.01211395841982, 47.03432419067637L48.22418747803842,39.18729409867167Q47.33557151823061,35.28724773023259 47.27480253027943, 34.71745662722515L47.27480253027943,34.71745662722515Q47.21403354232825,34.1476655242177 47.03357301342339, 33.5951872355472L47.03357301342339,33.5951872355472Q46.85311248451853,33.0427089468767 46.558443616512704, 32.52433024577522L46.558443616512704,32.52433024577522Q46.263774748506876,32.005951544673735 45.86385090584463, 31.537423105665766L45.86385090584463,31.537423105665766Q45.46392706318238,31.068894666657798 44.97089972945241, 30.66445248927039L44.97089972945241,30.66445248927039Q44.47787239572244,30.26001031188298 43.906721956976526, 29.931943167022382L43.906721956976526,29.931943167022382Q43.33557151823061,29.603876022161785 42.70365209153351, 29.36215206401357L42.70365209153351,29.36215206401357Q42.07173266483642,29.120428105865358 41.39824480220159, 28.972391994582267L41.39824480220159,28.972391994582267Q40.72475693956676,28.824355883299177 40.03016422889914, 28.77450562120748L40.03016422889914,28.77450562120748Q39.33557151823152,28.724655359115786 38.64097880756344, 28.77450562120748L38.64097880756344,28.77450562120748Q37.94638609689537,28.824355883299177 37.27289823426054, 28.972391994582267L37.27289823426054,28.972391994582267Q36.59941037162571,29.120428105865358 35.96749094492861, 29.36215206401357L35.96749094492861,29.36215206401357Q35.33557151823152,29.603876022161785 34.7644210794856, 29.931943167022382L34.7644210794856,29.931943167022382Q34.193270640739684,30.26001031188298 33.700243307009714, 30.66445248927039L33.700243307009714,30.66445248927039Q33.207215973279745,31.068894666657798 32.8072921306175, 31.537423105665766L32.8072921306175,31.537423105665766Q32.40736828795525,32.005951544673735 32.11269941994942, 32.52433024577522L32.11269941994942,32.52433024577522Q31.818030551943593,33.0427089468767 31.637570023038734, 33.5951872355472L31.637570023038734,33.5951872355472Q31.457109494133874,34.1476655242177 31.396340506182696, 34.71745662722515L31.396340506182696,34.71745662722515Q31.335571518231518,35.28724773023259 30.69199316424689, 39.235134114398484L29.462567472217447,46.776768974949896');
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Body");
+       
+       // TOP_Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":8.16442848176873,"ry":8.16442848176873,"cx":39.50000000000025,"cy":16.4234128000028,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","TOP_Circle");
+       
+       // Line
+       shape = this.canvas.paper.path('M38.69640448001155 4.038881344014044L38.864176640010555,55.044239424005355');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(26,12,112,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+video_filter_Sharpen = video_filter_Sharpen.extend({
+
+    init: function(attr, setter, getter){
+        this._super(attr, setter, getter);
+        this.worker= null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+        this.getInputPort("input_port1").setSemanticGroup("Image");
+        this.getOutputPort("output_port1").setSemanticGroup("Image");
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var img = this.getInputPort("input_port1").getValue();
+        if(img instanceof HTMLImageElement && this.worker!==null){
+            var imageData = this.imageToData(img);
+            // Push it to the WebWorker with "Transferable Objects"
+            // Passing data by reference instead of structure clone
+            //
+            this.worker.postMessage(imageData, [imageData.data.buffer]);
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        // the method which runs as WebWorker
+        //
+        var workerFunction = function(event){
+            var imageData = event.data;
+            var opaque = false;
+            var weights =[  0, -1,  0,  -1,  5, -1,   0, -1,  0 ];
+            var side = Math.round(Math.sqrt(weights.length));
+            var halfSide = Math.floor(side/2);
+
+            var src = imageData.data;
+            var sw = imageData.width;
+            var sh = imageData.height;
+            var w = sw;
+            var h = sh;
+            var dst = new Uint8ClampedArray(w*h*4);
+            var alphaFac = opaque ? 1 : 0;
+
+            for (var y=0; y < h; y++) {
+              for (var x=0; x < w; x++) {
+                var sy = y;
+                var sx = x;
+                var dstOff = (y*w+x)*4;
+                var r=0, g=0, b=0, a=0;
+                for (var cy=0; cy<side; cy++) {
+                  for (var cx=0; cx<side; cx++) {
+                    var scy = Math.min(sh-1, Math.max(0, sy + cy - halfSide));
+                    var scx = Math.min(sw-1, Math.max(0, sx + cx - halfSide));
+                    var srcOff = (scy*sw+scx)*4;
+                    var wt = weights[cy*side+cx];
+                    r += src[srcOff] * wt;
+                    g += src[srcOff+1] * wt;
+                    b += src[srcOff+2] * wt;
+                    a += src[srcOff+3] * wt;
+                  }
+                }
+                dst[dstOff] = r;
+                dst[dstOff+1] = g;
+                dst[dstOff+2] = b;
+                dst[dstOff+3] = a + alphaFac*(255-a);
+              }
+            }
+            imageData.data.set(dst);
+            self.postMessage(imageData, [imageData.data.buffer]);
+        };
+        
+        // the method which receives the WebWorker result
+        //
+       var receiverFunction = (event) => {
+            var imageData = event.data;
+            this.tmpContext.putImageData(imageData,0,0);
+            var image = new Image();
+            image.onload = () => { this.getOutputPort("output_port1").setValue(image);};
+            image.src = this.tmpCanvas.toDataURL();
+        };
+
+
+        // convert a js function to a WebWorker
+        //
+        this.worker = this.createWorker(workerFunction);
+        this.worker.onmessage = receiverFunction;
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        this.worker.terminate();
+        delete this.worker;
+        delete this.tmpContext;
+        delete this.tmpCanvas;
+        this.worker = null;
+        this.tmpCanvas = null;
+        this.tmpContext = null;
+    },
+    
+
+    /**
+     *  Helper function to dynamically create Web Workers.
+     */
+    createWorker: function(fn) {
+        var blob = new Blob(["self.onmessage = ", fn.toString()], {
+           type: "text/javascript"
+        });
+        var url = window.URL.createObjectURL(blob);
+        return new Worker(url);
+    },
+    
+    imageToData: function(image){
+        var width = image.naturalWidth;
+        var height= image.naturalHeight;
+
+        if(this.tmpContext !==null && this.tmpContext.width!== width){
+            delete this.tmpContext;
+            delete this.tmpCanvas;
+            this.tmpCanvas = null;
+            this.tmpContext = null;
+        }
+
         // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
         //
         if(this.tmpContext === null ) {
@@ -8534,7 +14252,7 @@ video_Grayscale = video_Grayscale.extend({
 var video_Preview = CircuitFigure.extend({
 
    NAME: "video_Preview",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -8700,6 +14418,8 @@ video_Preview = video_Preview.extend({
         this._super(memento);
 
         this.img = this.getChildren().find( child => child instanceof draw2d.shape.basic.Image);
+        this.remove(this.img);
+        this.add(this.img, new draw2d.layout.locator.XYAbsPortLocator({x:3, y:3}));
         this.img.hitTest = ()=>false;
         
         this.getInputPort("input_port1").attr({
@@ -8722,266 +14442,10 @@ video_Preview = video_Preview.extend({
 // created with http://www.draw2d.org
 //
 //
-var video_Sharpen = CircuitFigure.extend({
-
-   NAME: "video_Sharpen",
-   VERSION: "2.0.119_589",
-
-   init:function(attr, setter, getter)
-   {
-     var _this = this;
-
-     this._super( $.extend({stroke:0, bgColor:null, width:80,height:80.87877759999992},attr), setter, getter);
-     var port;
-     // input_port1
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: -0.9640000000001692, y: 49.34495943717131 }));
-     port.setConnectionDirection(3);
-     port.setBackgroundColor("#37B1DE");
-     port.setName("input_port1");
-     port.setMaxFanOut(20);
-     // output_port1
-     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 100.32506249999983, y: 49.34495943717131 }));
-     port.setConnectionDirection(1);
-     port.setBackgroundColor("#37B1DE");
-     port.setName("output_port1");
-     port.setMaxFanOut(20);
-   },
-
-   createShapeElement : function()
-   {
-      var shape = this._super();
-      this.originalWidth = 80;
-      this.originalHeight= 80.87877759999992;
-      return shape;
-   },
-
-   createSet: function()
-   {
-       this.canvas.paper.setStart();
-       var shape = null;
-       // BoundingBox
-       shape = this.canvas.paper.path("M0,0 L80,0 L80,80.87877759999992 L0,80.87877759999992");
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
-       shape.data("name","BoundingBox");
-       
-       // Rectangle
-       shape = this.canvas.paper.path('M0,3Q0,0 3, 0L77,0Q80,0 80, 3L80,77Q80,80 77, 80L3,80Q0,80 0, 77L0,3');
-       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Rectangle");
-       
-       // Label
-       shape = this.canvas.paper.text(0,0,'Sharpen');
-       shape.attr({"x":10.228799999999865,"y":68.37877759999992,"text-anchor":"start","text":"Sharpen","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
-       shape.data("name","Label");
-       
-       // Rectangle
-       shape = this.canvas.paper.path('M4.315424000003077,7.770740800002386Q4.315424000003077,3.770740800002386 8.315424000003077, 3.770740800002386L71.31542400000308,3.770740800002386Q75.31542400000308,3.770740800002386 75.31542400000308, 7.770740800002386L75.31542400000308,51.770740800002386Q75.31542400000308,55.770740800002386 71.31542400000308, 55.770740800002386L8.315424000003077,55.770740800002386Q4.315424000003077,55.770740800002386 4.315424000003077, 51.770740800002386L4.315424000003077,7.770740800002386');
-       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(237,237,237,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Rectangle");
-       
-       // Circle
-       shape = this.canvas.paper.path('M38.3575436800038 6.761013428584192L38.33557151823152 6.75898431823407L36.77273791922926 6.903310664618402L35.25739022830021 7.331904420767387L33.83557151823152 8.031742982281685L32.55048303105286 8.981562108603612L31.441171530160318 10.15250202621246L30.541342884171172 11.50898431823407L29.878337931158057 13.009792956640013L29.472301741121555 14.609326630398755L29.335571518231518 16.25898431823407L29.472301741121555 17.908642006069385L29.878337931158057 19.508175679828128L30.541342884171172 21.00898431823407L31.441171530160318 22.36546661025568L32.55048303105286 23.53640652786453L33.83557151823152 24.486225654186455L35.25739022830021 25.186064215700753L36.77273791922926 25.614657971849738L38.33557151823152 25.75898431823407L38.3575436800038 25.756955207883948L38.3575436800038 6.761013428584192Z');
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":0.25});
-       shape.data("name","Circle");
-       
-       // Rectangle
-       shape = this.canvas.paper.path('M35.323635168710325,52.22508227661048Q38.32230559823074,52.314388799999506 38.32230559823074, 49.314388799999506L38.32230559823074,30.438490014114905Q38.32230559823074,27.438490014114905 38.301052857797, 27.433087432160846L38.301052857797,27.433087432160846Q38.279800117363266,27.427684850206788 37.59730583340797, 27.371036825103147L37.59730583340797,27.371036825103147Q36.91481154945268,27.314388799999506 36.23231726549511, 27.371036825103147L36.23231726549511,27.371036825103147Q35.549822981537545,27.427684850206788 34.88806594104108, 27.5959077039397L34.88806594104108,27.5959077039397Q34.22630890054461,27.764130557672615 33.605396256316, 28.038816873749056L33.605396256316,28.038816873749056Q32.98448361208739,28.313503189825497 32.42328148062643, 28.68630676353132L32.42328148062643,28.68630676353132Q31.86207934916547,29.059110337237144 31.377639573254783, 29.51870372063013L31.377639573254783,29.51870372063013Q30.893199797344096,29.978297104023113 30.50024183443702, 30.510715784715558L30.50024183443702,30.510715784715558Q30.107283871529944,31.043134465408002 29.817747550480362, 31.632201171204088L29.817747550480362,31.632201171204088Q29.52821122943078,32.22126787700017 28.902015467438314, 35.15518656497751L25.948501360223208,48.993303588943135Q25.32230559823074,51.927222276920475 28.320976027751158, 52.0165288003095L35.323635168710325,52.22508227661048');
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":0.1});
-       shape.data("name","Rectangle");
-       
-       // Rectangle
-       shape = this.canvas.paper.path('M38.309039678229965 51.724655359115786L38.309039678229965 27.84379252466624L38.27307350211322 27.833419567314195L37.11808317541818 27.724655359115786L35.96309284872041 27.833419567314195L34.84319631864855 28.156407446482262L33.792421074570484 28.683805173349356L32.84269439055879 29.399588034863882L32.02287323132532 30.28200733097765L31.357867447944045 31.304251197908343L30.867882904630278 32.435259273036536L27.309039678229965 51.352975496960426Z');
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":0.2});
-       shape.data("name","Rectangle");
-       
-       // TOP_Body
-       shape = this.canvas.paper.path('M29.462567472217447,46.776768974949896Q28.81898911823282,50.724655359115786 32.81880873597436, 50.762642534977275L46.90091030048609,50.89638338325396Q50.900729918227626,50.93437055911545 50.01211395841982, 47.03432419067637L48.22418747803842,39.18729409867167Q47.33557151823061,35.28724773023259 47.27480253027943, 34.71745662722515L47.27480253027943,34.71745662722515Q47.21403354232825,34.1476655242177 47.03357301342339, 33.5951872355472L47.03357301342339,33.5951872355472Q46.85311248451853,33.0427089468767 46.558443616512704, 32.52433024577522L46.558443616512704,32.52433024577522Q46.263774748506876,32.005951544673735 45.86385090584463, 31.537423105665766L45.86385090584463,31.537423105665766Q45.46392706318238,31.068894666657798 44.97089972945241, 30.66445248927039L44.97089972945241,30.66445248927039Q44.47787239572244,30.26001031188298 43.906721956976526, 29.931943167022382L43.906721956976526,29.931943167022382Q43.33557151823061,29.603876022161785 42.70365209153351, 29.36215206401357L42.70365209153351,29.36215206401357Q42.07173266483642,29.120428105865358 41.39824480220159, 28.972391994582267L41.39824480220159,28.972391994582267Q40.72475693956676,28.824355883299177 40.03016422889914, 28.77450562120748L40.03016422889914,28.77450562120748Q39.33557151823152,28.724655359115786 38.64097880756344, 28.77450562120748L38.64097880756344,28.77450562120748Q37.94638609689537,28.824355883299177 37.27289823426054, 28.972391994582267L37.27289823426054,28.972391994582267Q36.59941037162571,29.120428105865358 35.96749094492861, 29.36215206401357L35.96749094492861,29.36215206401357Q35.33557151823152,29.603876022161785 34.7644210794856, 29.931943167022382L34.7644210794856,29.931943167022382Q34.193270640739684,30.26001031188298 33.700243307009714, 30.66445248927039L33.700243307009714,30.66445248927039Q33.207215973279745,31.068894666657798 32.8072921306175, 31.537423105665766L32.8072921306175,31.537423105665766Q32.40736828795525,32.005951544673735 32.11269941994942, 32.52433024577522L32.11269941994942,32.52433024577522Q31.818030551943593,33.0427089468767 31.637570023038734, 33.5951872355472L31.637570023038734,33.5951872355472Q31.457109494133874,34.1476655242177 31.396340506182696, 34.71745662722515L31.396340506182696,34.71745662722515Q31.335571518231518,35.28724773023259 30.69199316424689, 39.235134114398484L29.462567472217447,46.776768974949896');
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","TOP_Body");
-       
-       // TOP_Circle
-       shape = this.canvas.paper.ellipse();
-       shape.attr({"rx":8.16442848176873,"ry":8.16442848176873,"cx":39.50000000000025,"cy":16.4234128000028,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","TOP_Circle");
-       
-       // Line
-       shape = this.canvas.paper.path('M38.69640448001155 4.038881344014044L38.864176640010555,55.044239424005355');
-       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(26,12,112,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Line");
-       
-
-       return this.canvas.paper.setFinish();
-   }
-});
-
-/**
- * Generated Code for the Draw2D touch HTML5 lib.
- * File will be generated if you save the *.shape file.
- *
- * by 'Draw2D Shape Designer'
- *
- * Custom JS code to tweak the standard behaviour of the generated
- * shape. add your custom code and event handler here.
- *
- * Looks disconcerting - extending my own class. But this is a good method to
- * merge basic code and override them with custom methods.
- */
-video_Sharpen = video_Sharpen.extend({
-
-    init: function(attr, setter, getter){
-        this._super(attr, setter, getter);
-        this.worker= null;
-        this.tmpCanvas = null;
-        this.tmpContext = null;
-        this.getInputPort("input_port1").setSemanticGroup("Image");
-        this.getOutputPort("output_port1").setSemanticGroup("Image");
-        this.attr({
-            resizeable:false
-        });
-        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
-    },
-
-    /**
-     *  Called by the simulator for every calculation
-     *  loop
-     *  @param {Object} context context where objects can store or handover global variables to other objects.
-     *  @required
-     **/
-    calculate:function( context)
-    {
-        var img = this.getInputPort("input_port1").getValue();
-        if(img instanceof HTMLImageElement && this.worker!==null){
-            var imageData = this.imageToData(img);
-            // Push it to the WebWorker with "Transferable Objects"
-            // Passing data by reference instead of structure clone
-            //
-            this.worker.postMessage(imageData, [imageData.data.buffer]);
-        }
-    },
-
-
-    /**
-     *  Called if the simulation mode is starting
-     *  @required
-     **/
-    onStart:function( context )
-    {
-        // the method which runs as WebWorker
-        //
-        var workerFunction = function(event){
-            var imageData = event.data;
-            var opaque = false;
-            var weights =[  0, -1,  0,  -1,  5, -1,   0, -1,  0 ];
-            var side = Math.round(Math.sqrt(weights.length));
-            var halfSide = Math.floor(side/2);
-
-            var src = imageData.data;
-            var sw = imageData.width;
-            var sh = imageData.height;
-            var w = sw;
-            var h = sh;
-            var dst = new Uint8ClampedArray(w*h*4);
-            var alphaFac = opaque ? 1 : 0;
-
-            for (var y=0; y < h; y++) {
-              for (var x=0; x < w; x++) {
-                var sy = y;
-                var sx = x;
-                var dstOff = (y*w+x)*4;
-                var r=0, g=0, b=0, a=0;
-                for (var cy=0; cy<side; cy++) {
-                  for (var cx=0; cx<side; cx++) {
-                    var scy = Math.min(sh-1, Math.max(0, sy + cy - halfSide));
-                    var scx = Math.min(sw-1, Math.max(0, sx + cx - halfSide));
-                    var srcOff = (scy*sw+scx)*4;
-                    var wt = weights[cy*side+cx];
-                    r += src[srcOff] * wt;
-                    g += src[srcOff+1] * wt;
-                    b += src[srcOff+2] * wt;
-                    a += src[srcOff+3] * wt;
-                  }
-                }
-                dst[dstOff] = r;
-                dst[dstOff+1] = g;
-                dst[dstOff+2] = b;
-                dst[dstOff+3] = a + alphaFac*(255-a);
-              }
-            }
-            imageData.data.set(dst);
-            self.postMessage(imageData, [imageData.data.buffer]);
-        };
-        
-        // the method which receives the WebWorker result
-        //
-       var receiverFunction = (event) => {
-            var imageData = event.data;
-            this.tmpContext.putImageData(imageData,0,0);
-            var image = new Image();
-            image.onload = () => { this.getOutputPort("output_port1").setValue(image);};
-            image.src = this.tmpCanvas.toDataURL();
-        };
-
-
-        // convert a js function to a WebWorker
-        //
-        this.worker = this.createWorker(workerFunction);
-        this.worker.onmessage = receiverFunction;
-    },
-
-    /**
-     *  Called if the simulation mode is stopping
-     *  @required
-     **/
-    onStop:function( context )
-    {
-        this.worker.terminate();
-        delete this.worker;
-        delete this.tmpContext;
-        delete this.tmpCanvas;
-        this.worker = null;
-        this.tmpCanvas = null;
-        this.tmpContext = null;
-    },
-    
-
-    /**
-     *  Helper function to dynamically create Web Workers.
-     */
-    createWorker: function(fn) {
-        var blob = new Blob(["self.onmessage = ", fn.toString()], {
-           type: "text/javascript"
-        });
-        var url = window.URL.createObjectURL(blob);
-        return new Worker(url);
-    },
-    
-    imageToData: function(image){
-        var width = image.naturalWidth;
-        var height= image.naturalHeight;
-        // convert the HTMLImageElement to an ImageData object. Required for the WebWorker
-        //
-        if(this.tmpContext === null ) {
-            this.tmpCanvas = document.createElement('canvas');
-            this.tmpCanvas.width = width;
-            this.tmpCanvas.height = height;
-            this.tmpContext = this.tmpCanvas.getContext('2d');
-        }
-        this.tmpContext.drawImage(image, 0, 0, width, height);
-        return this.tmpContext.getImageData(0, 0, width, height);
-    }
-});
-
-
-// Generated Code for the Draw2D touch HTML5 lib.
-// File will be generated if you save the *.shape file.
-//
-// created with http://www.draw2d.org
-//
-//
 var video_WebCam = CircuitFigure.extend({
 
    NAME: "video_WebCam",
-   VERSION: "2.0.119_589",
+   VERSION: "2.0.211_836",
 
    init:function(attr, setter, getter)
    {
@@ -9073,6 +14537,7 @@ video_WebCam = video_WebCam.extend({
         
         this.imageCapture = null;
         this.track = null;
+        this.processing = false;
         
         this.attr({resizeable:false});
         this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
@@ -9091,9 +14556,10 @@ video_WebCam = video_WebCam.extend({
      **/
     calculate:function( context)
     {
-        if(this.imageCapture===null){
+        if(this.imageCapture===null && this.processing === false){
             return
         }
+        this.processing = true;
         this.imageCapture.takePhoto()
             .then((blob) =>{
                 var a = new FileReader();
@@ -9102,6 +14568,7 @@ video_WebCam = video_WebCam.extend({
                     var image = new Image()
                     image.onload = () => {
                         this.getOutputPort("output_port1").setValue(image)
+                        this.processing = false;
                     }
                     image.src = e.target.result
                 }
@@ -9119,6 +14586,7 @@ video_WebCam = video_WebCam.extend({
     onStart:function( context )
     {
         try{
+            this.processing = false;
             navigator.mediaDevices.getUserMedia({ audio: false, video: true })
                .then((stream) =>{
                     this.track = stream.getVideoTracks()[0];
@@ -9145,6 +14613,7 @@ video_WebCam = video_WebCam.extend({
             this.track = null;
             this.imageCapture = null;
         }
+        this.processing = false;
     },
     
     getPersistentAttributes: function () 

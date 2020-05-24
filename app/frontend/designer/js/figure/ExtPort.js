@@ -90,6 +90,8 @@ export default shape_designer.figure.ExtPort = draw2d.shape.basic.Circle.extend(
     if (figure !== null) {
       this.add(figure, locator)
       this.decoration = figure
+      locator.relocate(0,figure)
+
     }
   },
 

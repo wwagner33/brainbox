@@ -49,14 +49,6 @@ export default shape_designer.filter.PortTypeFilter = class PortTypeFilter exten
   onInstall(figure) {
   }
 
-  getPersistentAttributes(relatedFigure) {
-    return super.getPersistentAttributes(relatedFigure)
-
-  }
-
-  setPersistentAttributes(relatedFigure, memento) {
-    return super.setPersistentAttributes(relatedFigure, memento)
-  }
 }
 
 

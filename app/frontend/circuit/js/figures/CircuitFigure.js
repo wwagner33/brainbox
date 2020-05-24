@@ -19,11 +19,6 @@ export default draw2d.SetFigure.extend({
     })
   },
 
-  setCanvas: function (canvas) {
-    if (this.canvas !== null) this.canvas.off(this.zoomCallback)
-    this._super(canvas)
-    if (this.canvas !== null) this.canvas.on("zoom", this.zoomCallback)
-  },
 
   applyAlpha: function () {
   },

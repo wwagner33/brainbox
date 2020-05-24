@@ -1,23 +1,10 @@
 
 export default draw2d.policy.canvas.BoundingboxSelectionPolicy.extend({
 
-  init: function () {
-    this._super()
+  init: function (attr, setter, getter) {
+    this._super(attr, setter, getter)
   },
 
-  onInstall: function (canvas) {
-    this.setToolText("Click on shape to select<br>Double click to edit")
-  },
-
-
-  setToolHeader: function (heading, icon) {
-    $("#currentTool_image").attr({"src": icon})
-    $("#currentTool_heading").text(heading)
-  },
-
-  setToolText: function (message) {
-    $("#currentTool_message").html(message)
-  },
 
   /**
    * @method

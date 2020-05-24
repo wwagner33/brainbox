@@ -4,9 +4,6 @@ import cursor from "../../images/cursors/cursor_text.png"
 
 export default AbstractToolPolicy.extend({
 
-  TITLE: "Text",
-  MESSAGE_STEP1: "Select location for text",
-  MESSAGE_STEP2: "Enter Text",
 
   init: function () {
     this._super()
@@ -16,11 +13,12 @@ export default AbstractToolPolicy.extend({
 
 
   onInstall: function (canvas) {
-    this.setToolText(this.MESSAGE_STEP1)
+    this._super(canvas)
     canvas.setCursor(cursor)
   },
 
   onUninstall: function (canvas) {
+    this._super(canvas)
     canvas.setCursor(null)
   },
 
@@ -72,15 +70,14 @@ export default AbstractToolPolicy.extend({
    * @template
    */
   onMouseUp: function (canvas, x, y) {
-       this.setToolText(this.MESSAGE_STEP2)
 
       this.newFigure = new shape_designer.figure.ExtLabel({
         text :"Text",
         stroke: 0,
         padding: 5,
         fontSize: 16,
-        x:parseInt(x),
-        y: parseInt(y)
+        x: x|0,
+        y: y|0
       })
 
       let command = new draw2d.command.CommandAdd(canvas, this.newFigure, parseInt(x), parseInt(y))

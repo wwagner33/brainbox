@@ -65,17 +65,6 @@ export default shape_designer.filter.PortDirectionFilter = class PortDirectionFi
   onInstall(figure) {
   }
 
-  getPersistentAttributes(relatedFigure) {
-    var memento = super.getPersistentAttributes(relatedFigure)
-
-    return memento
-  }
-
-  setPersistentAttributes(relatedFigure, memento) {
-    super.setPersistentAttributes(relatedFigure, memento)
-
-    return memento
-  }
 }
 
 

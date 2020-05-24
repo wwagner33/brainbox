@@ -4,24 +4,21 @@ import cursor from "../../images/cursors/cursor_line.png"
 
 export default AbstractToolPolicy.extend({
 
-  MESSAGE_STEP1: "Select start point of the line.",
-  MESSAGE_STEP2: "Click to add additional vertex.<br>Double click to finish line.",
-
   init: function () {
     this._super()
 
     this.lineFigure = null
-    this.canvas = null
   },
 
 
   onInstall: function (canvas) {
-    this.setToolText(this.MESSAGE_STEP1)
-    this.canvas = canvas
+    this._super(canvas)
     canvas.setCursor(cursor)
   },
 
   onUninstall: function (canvas) {
+    this._super(canvas)
+
     if (this.lineFigure !== null) {
       if (this.lineFigure.getVertices().getSize() < 2) {
         canvas.remove(this.lineFigure)
@@ -33,7 +30,7 @@ export default AbstractToolPolicy.extend({
         this.onDoubleClick(this.lineFigure, last.x, last.y, false, false)
       }
     }
-    this.canvas = null
+
     canvas.setCursor(null)
   },
 
@@ -99,6 +96,7 @@ export default AbstractToolPolicy.extend({
       beforeLast = this.lineFigure.vertices.get(this.lineFigure.vertices.getSize() - 2)
     }
 
+    this.canvas.setCurrentSelection(this.lineFigure)
     this.lineFigure = null
     this.executed()
   },
@@ -116,14 +114,16 @@ export default AbstractToolPolicy.extend({
    */
   onClick: function (figure, x, y, shiftKey, ctrlKey) {
     if (this.lineFigure === null) {
-      this.setToolText(this.MESSAGE_STEP2)
 
       this.lineFigure = new shape_designer.figure.ExtLine()
       this.lineFigure.setStartPoint(x, y)
       this.lineFigure.setEndPoint(x, y)
       let command = new draw2d.command.CommandAdd(this.canvas, this.lineFigure, x, y)
       this.canvas.getCommandStack().execute(command)
-      this.canvas.setCurrentSelection(this.lineFigure)
+      // don't select the line. This is done in the doubleClickEvent. Otherwise the doubleClick goes the the
+      // ResizeSelectionHandles.
+      //
+      //this.canvas.setCurrentSelection(this.lineFigure)
     }
     else {
       this.lineFigure.addVertex(x, y)

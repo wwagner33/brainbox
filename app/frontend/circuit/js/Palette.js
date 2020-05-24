@@ -82,7 +82,7 @@ export default class Palette {
         for (let j = 0; j < path.length; j++) {
           let part = path[j]
           let existingPath = findWhere(currentLevel, 'name', part)
-          rootPath = rootPath? rootPath+"/"+part:part
+          rootPath = rootPath ? rootPath + "/" + part : part
           if (existingPath) {
             currentLevel = existingPath.children
           } else {
@@ -129,13 +129,12 @@ export default class Palette {
         let $grid = $("#paletteElements");
 
         $grid.shuffle('shuffle', function ($el, shuffle) {
-          let text = $.trim($el.data("path")).toLowerCase();
-          return text.startsWith(path)
+          let text = $.trim($el.data("dir")).toLowerCase();
+          return text=== path
         });
 
         return false
-      }
-      catch(e){
+      } catch (e) {
         console.log(e)
       }
     })
