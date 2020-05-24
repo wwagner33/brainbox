@@ -1,0 +1,38 @@
+/**
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custome code and event handler here.
+ *
+ *
+ */
+circuit_hardware_raspi_ServoWrite = circuit_hardware_raspi_ServoWrite.extend({
+
+    init: function(attr, setter, getter){
+         this._super(attr, setter, getter);
+
+         // your special code here
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        this.getInputPorts().each(function(index,port){
+            if(port.hasChangedValue() && port.getConnections().getSize()>0){
+                hardware.raspi.pwm(port.getName(), port.getValue());
+            }
+        });
+    },
+    
+    getRequiredHardware: function(){
+      return {
+        raspi: true,
+        arduino: false
+      }
+    }
+    
+});

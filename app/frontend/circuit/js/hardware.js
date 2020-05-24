@@ -173,6 +173,13 @@ export default {
       })
     }
 
+    pwm(pin, value) {
+      socket.emit('gpio:pwm', {
+        pin: pin,
+        value: value
+      })
+    }
+
     get(pin) {
       return values[pin]
     }

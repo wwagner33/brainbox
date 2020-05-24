@@ -1,7 +1,7 @@
 const isPi = require('detect-rpi')
 
 let Gpio = null
-if(isPi) {
+if(isPi()) {
   Gpio = require('pigpio').Gpio
 }
 else {
@@ -11,9 +11,9 @@ else {
 module.exports = {
 
   connect: function(socketio){
-    if(!isPi()){
-      return // silently
-    }
+    //if(!isPi()){
+    //  return // silently
+    //}
 
     // =================================================================
 
@@ -46,24 +46,26 @@ module.exports = {
       })
       socket.on('gpio:pwm',  msg => {
         let pin = pins[msg.pin]
-        // for servos the frequency is 50Hz and the duty cycle is between 2% and 12% which is mapped
+        // for servos the frequency is 50Hz and the duty cycle is between 500..2500 which is mapped
         // within the servo to 0° and 180° depending on the servo type. (0° - 270° is possible as well)
-        // map [0..5] => [2..12]
-        let dutyCyle= 10/5*parseFloat(msg.value)+2
-        pin.writeSync(dutyCycle)
+        // map [0..5] => [500..2500]
+        let dutyCycle= 2000/5*parseFloat(msg.value)+5000
+        pin.servoWrite(dutyCycle)
       })
     })
 
-    // GPIO input pin => Browser
-    //
-    pins.gpio_9.on("interrupt",  (val) => socketio.sockets.emit("gpio:change", {pin: "gpio_9",  value: val?5.0:0.0}));
-    pins.gpio_10.on("interrupt", (val) => socketio.sockets.emit("gpio:change", {pin: "gpio_10", value: val?5.0:0.0}));
-    pins.gpio_11.on("interrupt", (val) => socketio.sockets.emit("gpio:change", {pin: "gpio_11", value: val?5.0:0.0}));
-    pins.gpio_12.on("interrupt", (val) => socketio.sockets.emit("gpio:change", {pin: "gpio_12", value: val?5.0:0.0}));
-    pins.gpio_13.on("interrupt", (val) => socketio.sockets.emit("gpio:change", {pin: "gpio_13", value: val?5.0:0.0}));
-    pins.gpio_14.on("interrupt", (val) => socketio.sockets.emit("gpio:change", {pin: "gpio_14", value: val?5.0:0.0}));
-    pins.gpio_15.on("interrupt", (val) => socketio.sockets.emit("gpio:change", {pin: "gpio_15", value: val?5.0:0.0}));
-    pins.gpio_16.on("interrupt", (val) => socketio.sockets.emit("gpio:change", {pin: "gpio_16", value: val?5.0:0.0}));
+    // Forward GPIO interrupt => Browser (via WebSocket)
+    // (not available in the MOCK mode)
+    if(pins.gpio_9.on) {
+      pins.gpio_9.on("interrupt",  (val) => socketio.sockets.emit("gpio:change", {pin: "gpio_9",  value: val?5.0:0.0}));
+      pins.gpio_10.on("interrupt", (val) => socketio.sockets.emit("gpio:change", {pin: "gpio_10", value: val?5.0:0.0}));
+      pins.gpio_11.on("interrupt", (val) => socketio.sockets.emit("gpio:change", {pin: "gpio_11", value: val?5.0:0.0}));
+      pins.gpio_12.on("interrupt", (val) => socketio.sockets.emit("gpio:change", {pin: "gpio_12", value: val?5.0:0.0}));
+      pins.gpio_13.on("interrupt", (val) => socketio.sockets.emit("gpio:change", {pin: "gpio_13", value: val?5.0:0.0}));
+      pins.gpio_14.on("interrupt", (val) => socketio.sockets.emit("gpio:change", {pin: "gpio_14", value: val?5.0:0.0}));
+      pins.gpio_15.on("interrupt", (val) => socketio.sockets.emit("gpio:change", {pin: "gpio_15", value: val?5.0:0.0}));
+      pins.gpio_16.on("interrupt", (val) => socketio.sockets.emit("gpio:change", {pin: "gpio_16", value: val?5.0:0.0}));
+    }
 
     return this;
   }

@@ -2741,6 +2741,7 @@ exports.default = {
 
   raspi: {
     set: function set(pin, value) {},
+    pwm: function pwm(pin, value) {},
     get: function get(pin) {
       return false;
     },
@@ -2750,6 +2751,7 @@ exports.default = {
 
   arduino: {
     set: function set(pin, value) {},
+    pwm: function pwm(pin, value) {},
     get: function get(pin) {
       return false;
     },

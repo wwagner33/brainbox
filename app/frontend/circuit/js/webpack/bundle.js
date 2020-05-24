@@ -5859,6 +5859,14 @@ exports.default = {
         });
       }
     }, {
+      key: "pwm",
+      value: function pwm(pin, value) {
+        socket.emit('gpio:pwm', {
+          pin: pin,
+          value: value
+        });
+      }
+    }, {
       key: "get",
       value: function get(pin) {
         return values[pin];

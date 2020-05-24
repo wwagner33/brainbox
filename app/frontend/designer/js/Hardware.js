@@ -6,6 +6,8 @@ export default {
   raspi: {
     set: function (pin, value) {
     },
+    pwm: function (pin, value) {
+    },
     get: function (pin) {
       return false
     },
@@ -16,6 +18,8 @@ export default {
 
   arduino: {
     set: function (pin, value) {
+    },
+    pwm: function (pin, value) {
     },
     get: function (pin) {
       return false
