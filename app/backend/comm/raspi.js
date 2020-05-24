@@ -37,6 +37,14 @@ module.exports = {
         let pin = pins[msg.pin]
         pin.writeSync(msg.value>1.2?1:0)
       })
+      socket.on('gpio:pwm',  msg => {
+        let pin = pins[msg.pin]
+        // for servos the frequency is 50Hz and the duty cycle is between 2% and 12% which is mapped
+        // within the servo to 0° and 180° depending on the servo type. (0° - 270° is possible as well)
+        // map [0..5] => [2..12]
+        let dutyCyle= 10/5*parseFloat(msg.value)+2
+        pin.writeSync(dutyCycle)
+      })
     })
 
     // GPIO input pin => Browser

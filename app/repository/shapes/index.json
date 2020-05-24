@@ -6,7 +6,7 @@
       "74LSXX",
       "74LS90"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "74LS90.js",
     "displayName": "74LS90",
     "basedir": "circuit/74LSXX",
@@ -21,7 +21,7 @@
       "alu",
       "FullAdder"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "FullAdder.js",
     "displayName": "FullAdder",
     "basedir": "circuit/digital/alu",
@@ -36,7 +36,7 @@
       "alu",
       "FullAdder4Bit"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "FullAdder4Bit.js",
     "displayName": "FullAdder4Bit",
     "basedir": "circuit/digital/alu",
@@ -51,7 +51,7 @@
       "buttons",
       "HighLow"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "HighLow.js",
     "displayName": "HighLow",
     "basedir": "circuit/digital/buttons",
@@ -66,7 +66,7 @@
       "buttons",
       "HighLowArray"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "HighLowArray.js",
     "displayName": "HighLowArray",
     "basedir": "circuit/digital/buttons",
@@ -81,7 +81,7 @@
       "buttons",
       "PushButton"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "PushButton.js",
     "displayName": "PushButton",
     "basedir": "circuit/digital/buttons",
@@ -96,7 +96,7 @@
       "counter",
       "BCDCounter"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "BCDCounter.js",
     "displayName": "BCDCounter",
     "basedir": "circuit/digital/counter",
@@ -111,7 +111,7 @@
       "decoder",
       "BCDto7Seg"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "BCDto7Seg.js",
     "displayName": "BCDto7Seg",
     "basedir": "circuit/digital/decoder",
@@ -126,7 +126,7 @@
       "display",
       "7Segment"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "7Segment.js",
     "displayName": "7Segment",
     "basedir": "circuit/digital/display",
@@ -141,7 +141,7 @@
       "display",
       "Led"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Led.js",
     "displayName": "Led",
     "basedir": "circuit/digital/display",
@@ -156,7 +156,7 @@
       "flipflop",
       "DFlipFlop"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "DFlipFlop.js",
     "displayName": "DFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -171,7 +171,7 @@
       "flipflop",
       "JKFlipFlop"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "JKFlipFlop.js",
     "displayName": "JKFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -186,7 +186,7 @@
       "flipflop",
       "JKRFlipFlop"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "JKRFlipFlop.js",
     "displayName": "JKRFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -201,7 +201,7 @@
       "flipflop",
       "SRFlipFlop"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "SRFlipFlop.js",
     "displayName": "SRFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -216,7 +216,7 @@
       "flipflop",
       "TFlipFlop"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "TFlipFlop.js",
     "displayName": "TFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -232,7 +232,7 @@
       "DIN40700",
       "AND"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "AND.js",
     "displayName": "AND",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -248,7 +248,7 @@
       "DIN40700",
       "NAND"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "NAND.js",
     "displayName": "NAND",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -264,7 +264,7 @@
       "DIN40700",
       "NOR"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "NOR.js",
     "displayName": "NOR",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -280,7 +280,7 @@
       "DIN40700",
       "OR"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "OR.js",
     "displayName": "OR",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -296,7 +296,7 @@
       "DIN40700",
       "XNOR"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "XNOR.js",
     "displayName": "XNOR",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -312,7 +312,7 @@
       "DIN40700",
       "XOR"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "XOR.js",
     "displayName": "XOR",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -329,7 +329,7 @@
       "12",
       "AND"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "AND.js",
     "displayName": "AND",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -346,7 +346,7 @@
       "12",
       "NAND"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "NAND.js",
     "displayName": "NAND",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -363,7 +363,7 @@
       "12",
       "NOR"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "NOR.js",
     "displayName": "NOR",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -380,7 +380,7 @@
       "12",
       "NOT"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "NOT.js",
     "displayName": "NOT",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -397,7 +397,7 @@
       "12",
       "OR"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "OR.js",
     "displayName": "OR",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -414,7 +414,7 @@
       "12",
       "XNOR"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "XNOR.js",
     "displayName": "XNOR",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -431,7 +431,7 @@
       "12",
       "XOR"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "XOR.js",
     "displayName": "XOR",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -446,7 +446,7 @@
       "pulse",
       "10hz"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "10hz.js",
     "displayName": "10hz",
     "basedir": "circuit/digital/pulse",
@@ -461,7 +461,7 @@
       "pulse",
       "1hz"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "1hz.js",
     "displayName": "1hz",
     "basedir": "circuit/digital/pulse",
@@ -476,7 +476,7 @@
       "pulse",
       "50hz"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "50hz.js",
     "displayName": "50hz",
     "basedir": "circuit/digital/pulse",
@@ -491,7 +491,7 @@
       "pulse",
       "Delay"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Delay.js",
     "displayName": "Delay",
     "basedir": "circuit/digital/pulse",
@@ -506,7 +506,7 @@
       "signal",
       "High"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "High.js",
     "displayName": "High",
     "basedir": "circuit/digital/signal",
@@ -521,7 +521,7 @@
       "signal",
       "Low"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Low.js",
     "displayName": "Low",
     "basedir": "circuit/digital/signal",
@@ -536,7 +536,7 @@
       "timer",
       "Delay"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Delay.js",
     "displayName": "Delay",
     "basedir": "circuit/digital/timer",
@@ -551,7 +551,7 @@
       "arduino",
       "Arduino"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Arduino.js",
     "displayName": "Arduino",
     "basedir": "circuit/hardware/arduino",
@@ -566,7 +566,7 @@
       "arduino",
       "Led"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Led.js",
     "displayName": "Led",
     "basedir": "circuit/hardware/arduino",
@@ -581,7 +581,7 @@
       "raspi",
       "GPIORead"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "GPIORead.js",
     "displayName": "GPIORead",
     "basedir": "circuit/hardware/raspi",
@@ -596,7 +596,7 @@
       "raspi",
       "GPIOWrite"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "GPIOWrite.js",
     "displayName": "GPIOWrite",
     "basedir": "circuit/hardware/raspi",
@@ -609,7 +609,7 @@
       "controls",
       "Slider"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Slider.js",
     "displayName": "Slider",
     "basedir": "controls",
@@ -622,7 +622,7 @@
       "diagram",
       "Sparkline"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Sparkline.js",
     "displayName": "Sparkline",
     "basedir": "diagram",
@@ -635,7 +635,7 @@
       "documentation",
       "Markdown"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Markdown.js",
     "displayName": "Markdown",
     "basedir": "documentation",
@@ -648,7 +648,7 @@
       "documentation",
       "Text"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Text.js",
     "displayName": "Text",
     "basedir": "documentation",
@@ -661,7 +661,7 @@
       "math",
       "Median"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Median.js",
     "displayName": "Median",
     "basedir": "math",
@@ -674,7 +674,7 @@
       "messaging",
       "HiveMQ"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "HiveMQ.js",
     "displayName": "HiveMQ",
     "basedir": "messaging",
@@ -687,7 +687,7 @@
       "signal",
       "SignalSource"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "SignalSource.js",
     "displayName": "SignalSource",
     "basedir": "signal",
@@ -700,7 +700,7 @@
       "signal",
       "SignalTarget"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "SignalTarget.js",
     "displayName": "SignalTarget",
     "basedir": "signal",
@@ -708,369 +708,271 @@
     "image": "signal/SignalTarget.png"
   },
   {
-    "name": "video_converter_BlackWhite",
+    "name": "video_color_BlackWhite",
     "tags": [
       "video",
-      "converter",
+      "color",
       "BlackWhite"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "BlackWhite.js",
     "displayName": "BlackWhite",
-    "basedir": "video/converter",
-    "filePath": "video/converter/BlackWhite.shape",
-    "image": "video/converter/BlackWhite.png"
+    "basedir": "video/color",
+    "filePath": "video/color/BlackWhite.shape",
+    "image": "video/color/BlackWhite.png"
   },
   {
-    "name": "video_converter_Grayscale",
+    "name": "video_color_Grayscale",
     "tags": [
       "video",
-      "converter",
+      "color",
       "Grayscale"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Grayscale.js",
     "displayName": "Grayscale",
-    "basedir": "video/converter",
-    "filePath": "video/converter/Grayscale.shape",
-    "image": "video/converter/Grayscale.png"
+    "basedir": "video/color",
+    "filePath": "video/color/Grayscale.shape",
+    "image": "video/color/Grayscale.png"
   },
   {
-    "name": "video_converter_GrayscaleAvg",
+    "name": "video_color_GrayscaleAvg",
     "tags": [
       "video",
-      "converter",
+      "color",
       "GrayscaleAvg"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "GrayscaleAvg.js",
     "displayName": "GrayscaleAvg",
-    "basedir": "video/converter",
-    "filePath": "video/converter/GrayscaleAvg.shape",
-    "image": "video/converter/GrayscaleAvg.png"
+    "basedir": "video/color",
+    "filePath": "video/color/GrayscaleAvg.shape",
+    "image": "video/color/GrayscaleAvg.png"
   },
   {
-    "name": "video_converter_HSV_Colorspace",
+    "name": "video_color_HSV_Colorspace",
     "tags": [
       "video",
-      "converter",
+      "color",
       "HSV",
       "Colorspace"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "HSV-Colorspace.js",
     "displayName": "HSV-Colorspace",
-    "basedir": "video/converter",
-    "filePath": "video/converter/HSV-Colorspace.shape",
-    "image": "video/converter/HSV-Colorspace.png"
+    "basedir": "video/color",
+    "filePath": "video/color/HSV-Colorspace.shape",
+    "image": "video/color/HSV-Colorspace.png"
   },
   {
-    "name": "video_converter_Invert",
+    "name": "video_color_Invert",
     "tags": [
       "video",
-      "converter",
+      "color",
       "Invert"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Invert.js",
     "displayName": "Invert",
-    "basedir": "video/converter",
-    "filePath": "video/converter/Invert.shape",
-    "image": "video/converter/Invert.png"
+    "basedir": "video/color",
+    "filePath": "video/color/Invert.shape",
+    "image": "video/color/Invert.png"
   },
   {
-    "name": "video_converter_Luminance",
+    "name": "video_color_Luminance",
     "tags": [
       "video",
-      "converter",
+      "color",
       "Luminance"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Luminance.js",
     "displayName": "Luminance",
-    "basedir": "video/converter",
-    "filePath": "video/converter/Luminance.shape",
-    "image": "video/converter/Luminance.png"
+    "basedir": "video/color",
+    "filePath": "video/color/Luminance.shape",
+    "image": "video/color/Luminance.png"
   },
   {
-    "name": "video_converter_Scale",
+    "name": "video_color_WhiteBlack",
     "tags": [
       "video",
-      "converter",
-      "Scale"
-    ],
-    "version": "2.0.211_836",
-    "basename": "Scale.js",
-    "displayName": "Scale",
-    "basedir": "video/converter",
-    "filePath": "video/converter/Scale.shape",
-    "image": "video/converter/Scale.png"
-  },
-  {
-    "name": "video_converter_WhiteBlack",
-    "tags": [
-      "video",
-      "converter",
+      "color",
       "WhiteBlack"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "WhiteBlack.js",
     "displayName": "WhiteBlack",
-    "basedir": "video/converter",
-    "filePath": "video/converter/WhiteBlack.shape",
-    "image": "video/converter/WhiteBlack.png"
+    "basedir": "video/color",
+    "filePath": "video/color/WhiteBlack.shape",
+    "image": "video/color/WhiteBlack.png"
   },
   {
-    "name": "video_detector_Edge",
+    "name": "video_features_LineAngle",
     "tags": [
       "video",
-      "detector",
-      "Edge"
+      "features",
+      "LineAngle"
     ],
-    "version": "2.0.211_836",
-    "basename": "Edge.js",
-    "displayName": "Edge",
-    "basedir": "video/detector",
-    "filePath": "video/detector/Edge.shape",
-    "image": "video/detector/Edge.png"
+    "version": "2.0.214_839",
+    "basename": "LineAngle.js",
+    "displayName": "LineAngle",
+    "basedir": "video/features",
+    "filePath": "video/features/LineAngle.shape",
+    "image": "video/features/LineAngle.png"
   },
   {
-    "name": "video_detector_Hough",
+    "name": "video_features_Object",
     "tags": [
       "video",
-      "detector",
-      "Hough"
-    ],
-    "version": "2.0.211_836",
-    "basename": "Hough.js",
-    "displayName": "Hough",
-    "basedir": "video/detector",
-    "filePath": "video/detector/Hough.shape",
-    "image": "video/detector/Hough.png"
-  },
-  {
-    "name": "video_detector_Object",
-    "tags": [
-      "video",
-      "detector",
+      "features",
       "Object"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Object.js",
     "displayName": "Object",
-    "basedir": "video/detector",
-    "filePath": "video/detector/Object.shape",
-    "image": "video/detector/Object.png"
+    "basedir": "video/features",
+    "filePath": "video/features/Object.shape",
+    "image": "video/features/Object.png"
   },
   {
-    "name": "video_detector_Prewitt",
+    "name": "video_filter_Embose",
     "tags": [
       "video",
-      "detector",
+      "filter",
+      "Embose"
+    ],
+    "version": "2.0.214_839",
+    "basename": "Embose.js",
+    "displayName": "Embose",
+    "basedir": "video/filter",
+    "filePath": "video/filter/Embose.shape",
+    "image": "video/filter/Embose.png"
+  },
+  {
+    "name": "video_filter_Prewitt",
+    "tags": [
+      "video",
+      "filter",
       "Prewitt"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Prewitt.js",
     "displayName": "Prewitt",
-    "basedir": "video/detector",
-    "filePath": "video/detector/Prewitt.shape",
-    "image": "video/detector/Prewitt.png"
+    "basedir": "video/filter",
+    "filePath": "video/filter/Prewitt.shape",
+    "image": "video/filter/Prewitt.png"
   },
   {
-    "name": "video_detector_PrewittInvers",
+    "name": "video_filter_PrewittInvers",
     "tags": [
       "video",
-      "detector",
+      "filter",
       "PrewittInvers"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "PrewittInvers.js",
     "displayName": "PrewittInvers",
-    "basedir": "video/detector",
-    "filePath": "video/detector/PrewittInvers.shape",
-    "image": "video/detector/PrewittInvers.png"
+    "basedir": "video/filter",
+    "filePath": "video/filter/PrewittInvers.shape",
+    "image": "video/filter/PrewittInvers.png"
   },
   {
-    "name": "video_detector_Roberts",
+    "name": "video_filter_Roberts",
     "tags": [
       "video",
-      "detector",
+      "filter",
       "Roberts"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Roberts.js",
     "displayName": "Roberts",
-    "basedir": "video/detector",
-    "filePath": "video/detector/Roberts.shape",
-    "image": "video/detector/Roberts.png"
+    "basedir": "video/filter",
+    "filePath": "video/filter/Roberts.shape",
+    "image": "video/filter/Roberts.png"
   },
   {
-    "name": "video_detector_RobertsInvers",
+    "name": "video_filter_RobertsInvers",
     "tags": [
       "video",
-      "detector",
+      "filter",
       "RobertsInvers"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "RobertsInvers.js",
     "displayName": "RobertsInvers",
-    "basedir": "video/detector",
-    "filePath": "video/detector/RobertsInvers.shape",
-    "image": "video/detector/RobertsInvers.png"
+    "basedir": "video/filter",
+    "filePath": "video/filter/RobertsInvers.shape",
+    "image": "video/filter/RobertsInvers.png"
   },
   {
-    "name": "video_detector_Sobel",
+    "name": "video_filter_Sobel",
     "tags": [
       "video",
-      "detector",
+      "filter",
       "Sobel"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Sobel.js",
     "displayName": "Sobel",
-    "basedir": "video/detector",
-    "filePath": "video/detector/Sobel.shape",
-    "image": "video/detector/Sobel.png"
+    "basedir": "video/filter",
+    "filePath": "video/filter/Sobel.shape",
+    "image": "video/filter/Sobel.png"
   },
   {
-    "name": "video_detector_SobelInvers",
+    "name": "video_filter_SobelInvers",
     "tags": [
       "video",
-      "detector",
+      "filter",
       "SobelInvers"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "SobelInvers.js",
     "displayName": "SobelInvers",
-    "basedir": "video/detector",
-    "filePath": "video/detector/SobelInvers.shape",
-    "image": "video/detector/SobelInvers.png"
-  },
-  {
-    "name": "video_filter_Blur",
-    "tags": [
-      "video",
-      "filter",
-      "Blur"
-    ],
-    "version": "2.0.211_836",
-    "basename": "Blur.js",
-    "displayName": "Blur",
     "basedir": "video/filter",
-    "filePath": "video/filter/Blur.shape",
-    "image": "video/filter/Blur.png"
+    "filePath": "video/filter/SobelInvers.shape",
+    "image": "video/filter/SobelInvers.png"
   },
   {
-    "name": "video_filter_Brighter",
+    "name": "video_geometry_FlipHorizontal",
     "tags": [
       "video",
-      "filter",
-      "Brighter"
-    ],
-    "version": "2.0.211_836",
-    "basename": "Brighter.js",
-    "displayName": "Brighter",
-    "basedir": "video/filter",
-    "filePath": "video/filter/Brighter.shape",
-    "image": "video/filter/Brighter.png"
-  },
-  {
-    "name": "video_filter_Contrast",
-    "tags": [
-      "video",
-      "filter",
-      "Contrast"
-    ],
-    "version": "2.0.211_836",
-    "basename": "Contrast.js",
-    "displayName": "Contrast",
-    "basedir": "video/filter",
-    "filePath": "video/filter/Contrast.shape",
-    "image": "video/filter/Contrast.png"
-  },
-  {
-    "name": "video_filter_Darker",
-    "tags": [
-      "video",
-      "filter",
-      "Darker"
-    ],
-    "version": "2.0.211_836",
-    "basename": "Darker.js",
-    "displayName": "Darker",
-    "basedir": "video/filter",
-    "filePath": "video/filter/Darker.shape",
-    "image": "video/filter/Darker.png"
-  },
-  {
-    "name": "video_filter_FlipHorizontal",
-    "tags": [
-      "video",
-      "filter",
+      "geometry",
       "FlipHorizontal"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "FlipHorizontal.js",
     "displayName": "FlipHorizontal",
-    "basedir": "video/filter",
-    "filePath": "video/filter/FlipHorizontal.shape",
-    "image": "video/filter/FlipHorizontal.png"
+    "basedir": "video/geometry",
+    "filePath": "video/geometry/FlipHorizontal.shape",
+    "image": "video/geometry/FlipHorizontal.png"
   },
   {
-    "name": "video_filter_FlipVertical",
+    "name": "video_geometry_FlipVertical",
     "tags": [
       "video",
-      "filter",
+      "geometry",
       "FlipVertical"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "FlipVertical.js",
     "displayName": "FlipVertical",
-    "basedir": "video/filter",
-    "filePath": "video/filter/FlipVertical.shape",
-    "image": "video/filter/FlipVertical.png"
+    "basedir": "video/geometry",
+    "filePath": "video/geometry/FlipVertical.shape",
+    "image": "video/geometry/FlipVertical.png"
   },
   {
-    "name": "video_filter_GaussBlur",
+    "name": "video_geometry_Scale",
     "tags": [
       "video",
-      "filter",
-      "GaussBlur"
+      "geometry",
+      "Scale"
     ],
-    "version": "2.0.211_836",
-    "basename": "GaussBlur.js",
-    "displayName": "GaussBlur",
-    "basedir": "video/filter",
-    "filePath": "video/filter/GaussBlur.shape",
-    "image": "video/filter/GaussBlur.png"
-  },
-  {
-    "name": "video_filter_Histogram",
-    "tags": [
-      "video",
-      "filter",
-      "Histogram"
-    ],
-    "version": "2.0.211_836",
-    "basename": "Histogram.js",
-    "displayName": "Histogram",
-    "basedir": "video/filter",
-    "filePath": "video/filter/Histogram.shape",
-    "image": "video/filter/Histogram.png"
-  },
-  {
-    "name": "video_filter_Sharpen",
-    "tags": [
-      "video",
-      "filter",
-      "Sharpen"
-    ],
-    "version": "2.0.211_836",
-    "basename": "Sharpen.js",
-    "displayName": "Sharpen",
-    "basedir": "video/filter",
-    "filePath": "video/filter/Sharpen.shape",
-    "image": "video/filter/Sharpen.png"
+    "version": "2.0.214_839",
+    "basename": "Scale.js",
+    "displayName": "Scale",
+    "basedir": "video/geometry",
+    "filePath": "video/geometry/Scale.shape",
+    "image": "video/geometry/Scale.png"
   },
   {
     "name": "video_Preview",
@@ -1078,7 +980,7 @@
       "video",
       "Preview"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "Preview.js",
     "displayName": "Preview",
     "basedir": "video",
@@ -1086,12 +988,110 @@
     "image": "video/Preview.png"
   },
   {
+    "name": "video_quality_Blur",
+    "tags": [
+      "video",
+      "quality",
+      "Blur"
+    ],
+    "version": "2.0.214_839",
+    "basename": "Blur.js",
+    "displayName": "Blur",
+    "basedir": "video/quality",
+    "filePath": "video/quality/Blur.shape",
+    "image": "video/quality/Blur.png"
+  },
+  {
+    "name": "video_quality_Brighter",
+    "tags": [
+      "video",
+      "quality",
+      "Brighter"
+    ],
+    "version": "2.0.214_839",
+    "basename": "Brighter.js",
+    "displayName": "Brighter",
+    "basedir": "video/quality",
+    "filePath": "video/quality/Brighter.shape",
+    "image": "video/quality/Brighter.png"
+  },
+  {
+    "name": "video_quality_Contrast",
+    "tags": [
+      "video",
+      "quality",
+      "Contrast"
+    ],
+    "version": "2.0.214_839",
+    "basename": "Contrast.js",
+    "displayName": "Contrast",
+    "basedir": "video/quality",
+    "filePath": "video/quality/Contrast.shape",
+    "image": "video/quality/Contrast.png"
+  },
+  {
+    "name": "video_quality_Darker",
+    "tags": [
+      "video",
+      "quality",
+      "Darker"
+    ],
+    "version": "2.0.214_839",
+    "basename": "Darker.js",
+    "displayName": "Darker",
+    "basedir": "video/quality",
+    "filePath": "video/quality/Darker.shape",
+    "image": "video/quality/Darker.png"
+  },
+  {
+    "name": "video_quality_GaussBlur",
+    "tags": [
+      "video",
+      "quality",
+      "GaussBlur"
+    ],
+    "version": "2.0.214_839",
+    "basename": "GaussBlur.js",
+    "displayName": "GaussBlur",
+    "basedir": "video/quality",
+    "filePath": "video/quality/GaussBlur.shape",
+    "image": "video/quality/GaussBlur.png"
+  },
+  {
+    "name": "video_quality_Histogram",
+    "tags": [
+      "video",
+      "quality",
+      "Histogram"
+    ],
+    "version": "2.0.214_839",
+    "basename": "Histogram.js",
+    "displayName": "Histogram",
+    "basedir": "video/quality",
+    "filePath": "video/quality/Histogram.shape",
+    "image": "video/quality/Histogram.png"
+  },
+  {
+    "name": "video_quality_Sharpen",
+    "tags": [
+      "video",
+      "quality",
+      "Sharpen"
+    ],
+    "version": "2.0.214_839",
+    "basename": "Sharpen.js",
+    "displayName": "Sharpen",
+    "basedir": "video/quality",
+    "filePath": "video/quality/Sharpen.shape",
+    "image": "video/quality/Sharpen.png"
+  },
+  {
     "name": "video_WebCam",
     "tags": [
       "video",
       "WebCam"
     ],
-    "version": "2.0.211_836",
+    "version": "2.0.214_839",
     "basename": "WebCam.js",
     "displayName": "WebCam",
     "basedir": "video",
