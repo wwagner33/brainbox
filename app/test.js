@@ -9,9 +9,9 @@ setInterval(() => {
   motor.servoWrite(pulseWidth);
 
   pulseWidth += increment;
-  if (pulseWidth >= 2000) {
+  if (pulseWidth >= 2500) {
     increment = -10;
-  } else if (pulseWidth <= 1000) {
+  } else if (pulseWidth <= 500) {
     increment = 10;
   }
-}, 30);
+}, 5);
