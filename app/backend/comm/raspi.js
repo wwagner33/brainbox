@@ -2,10 +2,10 @@ const isPi = require('detect-rpi')
 
 let Gpio = null
 if(isPi) {
-  Gpio = require('gpio').Gpio
+  Gpio = require('pigpio').Gpio
 }
 else {
-  Gpio = require('gpio-mock').Gpio
+  Gpio = require('pigpio-mock').Gpio
 }
 
 module.exports = {
