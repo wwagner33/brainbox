@@ -574,6 +574,21 @@
     "image": "circuit/hardware/arduino/Led.png"
   },
   {
+    "name": "circuit_hardware_raspi_Camera",
+    "tags": [
+      "circuit",
+      "hardware",
+      "raspi",
+      "Camera"
+    ],
+    "version": "local-version",
+    "basename": "Camera.js",
+    "displayName": "Camera",
+    "basedir": "circuit/hardware/raspi",
+    "filePath": "circuit/hardware/raspi/Camera.shape",
+    "image": "circuit/hardware/raspi/Camera.png"
+  },
+  {
     "name": "circuit_hardware_raspi_GPIORead",
     "tags": [
       "circuit",

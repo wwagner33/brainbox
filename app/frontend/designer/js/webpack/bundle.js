@@ -2757,6 +2757,14 @@ exports.default = {
     },
     on: function on(event, callback) {},
     connected: false
+  },
+
+  camera: {
+    start: function start() {},
+    stop: function stop() {},
+    image: function image() {
+      return null;
+    }
   }
 };
 module.exports = exports["default"];

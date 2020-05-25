@@ -8,10 +8,12 @@
 import serial from "./serial"
 import EventEmitter from "./util/EventEmitter"
 
+const TRANSPARENT_PIXEL = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==";
+
 let values = {}
 let socket = null
 let usbPort = null
-
+let currentImage = TRANSPARENT_PIXEL
 
 export default {
   /**
@@ -187,6 +189,23 @@ export default {
     get connected() {
       return socket && socket.connected
     }
-  }
+  },
 
+
+  camera: {
+    start: function () {
+      socket.emit('camera:start', {})
+      socket.on("camera:capture", msg => {
+        console.log("got image")
+        currentImage = msg.data
+      })
+    },
+    stop: function () {
+      socket.emit('camera:stop', {})
+      socket.off("camera:capture")
+    },
+    image: function(){
+      return currentImage
+    }
+  }
 }

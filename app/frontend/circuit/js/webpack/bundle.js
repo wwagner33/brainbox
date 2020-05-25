@@ -5667,9 +5667,12 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 */
 
 
+var TRANSPARENT_PIXEL = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==";
+
 var values = {};
 var socket = null;
 var usbPort = null;
+var currentImage = TRANSPARENT_PIXEL;
 
 exports.default = {
   /**
@@ -5879,8 +5882,24 @@ exports.default = {
     }]);
 
     return _class2;
-  }(_EventEmitter4.default))()
+  }(_EventEmitter4.default))(),
 
+  camera: {
+    start: function start() {
+      socket.emit('camera:start', {});
+      socket.on("camera:capture", function (msg) {
+        console.log("got image");
+        currentImage = msg.data;
+      });
+    },
+    stop: function stop() {
+      socket.emit('camera:stop', {});
+      socket.off("camera:capture");
+    },
+    image: function image() {
+      return currentImage;
+    }
+  }
 };
 module.exports = exports["default"];
 

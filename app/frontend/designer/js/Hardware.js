@@ -27,5 +27,15 @@ export default {
     on: function(event, callback){
     },
     connected: false
+  },
+
+  camera: {
+    start: function () {
+    },
+    stop: function () {
+    },
+    image: function(){
+      return null
+    }
   }
 }

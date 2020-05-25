@@ -1,0 +1,92 @@
+/**
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custome code and event handler here.
+ *
+ *
+ */
+circuit_hardware_raspi_Camera = circuit_hardware_raspi_Camera.extend({
+
+    init: function(attr, setter, getter){
+         this._super(attr, setter, getter);
+
+        this.TRANSPARENT_PIXEL = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==";
+   
+        this.img = new draw2d.shape.basic.Image({
+            width: this.getWidth()-6, 
+            height: this.getHeight()/4*3 -6,
+            path: this.TRANSPARENT_PIXEL
+        });
+        this.img.hitTest = ()=>false;
+        this.add(this.img, new draw2d.layout.locator.XYAbsPortLocator({x:3,y:3}));
+
+        
+        this.processing = false;
+        
+        this.attr({resizeable:false});
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+        this.getOutputPort("output_port1").attr({
+            semanticGroup:"Image",
+            bgColor:"#ff0000",
+            diameter:15
+        });
+
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        if(this.processing === false){
+            var image = new Image();
+            image.onload = () => {
+                this.getOutputPort("output_port1").setValue(image);
+                this.processing = false;
+            };
+            this.processing = true;
+            image.src = hardware.camera.image();
+        }
+    },
+    
+    
+    onStart: function(context ){
+        this.processing = false;
+        hardware.camera.start();
+    },
+    
+    
+    onStop: function(context){
+        this.processing = false;
+        hardware.camera.stop();
+    },
+    
+    getPersistentAttributes: function () 
+    {
+       let currentImage = this.img.attr("path");
+       this.img.attr("path", this.TRANSPARENT_PIXEL);
+    
+       let memento = this._super()
+    
+       this.img.attr("path", currentImage);
+
+       return memento
+    },
+    
+    setPersistentAttributes: function (memento) {
+        this._super(memento)
+        
+        this.img = this.getChildren().find( child => child instanceof draw2d.shape.basic.Image)
+        this.img.hitTest = ()=>false
+        
+        this.getOutputPort("output_port1").attr({
+            semanticGroup:"Image",
+            bgColor:"#ff0000",
+            diameter:15
+        })
+    }
+    
+});
