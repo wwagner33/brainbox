@@ -11,13 +11,15 @@
   let track = null;
   let imageCapture = null;
   let interval = 0;
+  let running = false;
 
   function start(){
     navigator.mediaDevices.getUserMedia({ audio: false, video: true })
       .then((stream) =>{
         track = stream.getVideoTracks()[0];
         imageCapture = new ImageCapture(track);
-        interval = setInterval(capture,100);
+        setTimeout(capture,100);
+        running = true;
       })
       .catch((err) =>{
         console.log("no permission to use VideoCam");
@@ -25,7 +27,7 @@
   }
 
   function stop(){
-    clearInterval(interval);
+    running = false;
     if(track) track.stop();
     delete track; track = null;
     delete imageCapture; imageCapture = null;
@@ -37,6 +39,7 @@
         let a = new FileReader();
         a.onload = (e) => {
           image = e.target.result;
+          if(running)  setTimeout(capture,100);
         };
         a.readAsDataURL(blob);
       }).catch((error) =>{
