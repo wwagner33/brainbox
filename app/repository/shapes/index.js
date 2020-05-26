@@ -14918,7 +14918,7 @@ video_quality_Sharpen = video_quality_Sharpen.extend({
 var video_WebCam = CircuitFigure.extend({
 
    NAME: "video_WebCam",
-   VERSION: "2.0.214_839",
+   VERSION: "local-version",
 
    init:function(attr, setter, getter)
    {
@@ -15004,7 +15004,7 @@ video_WebCam = video_WebCam.extend({
             height: this.getHeight()/4*3 -6,
             path: this.TRANSPARENT_PIXEL
         });
-        this.img.hitTest = ()=>false
+        this.img.hitTest = ()=>false;
         this.add(this.img, new draw2d.layout.locator.XYAbsPortLocator({x:3,y:3}));
 
         
@@ -15018,7 +15018,7 @@ video_WebCam = video_WebCam.extend({
             semanticGroup:"Image",
             bgColor:"#ff0000",
             diameter:15
-        })
+        });
     },
 
     /**
@@ -15030,21 +15030,21 @@ video_WebCam = video_WebCam.extend({
     calculate:function( context)
     {
         if(this.imageCapture===null && this.processing === false){
-            return
+            return;
         }
         this.processing = true;
         this.imageCapture.takePhoto()
             .then((blob) =>{
                 var a = new FileReader();
                 a.onload = (e) => {
-                    this.img.attr("path", e.target.result)
-                    var image = new Image()
+                    this.img.attr("path", e.target.result);
+                    var image = new Image();
                     image.onload = () => {
-                        this.getOutputPort("output_port1").setValue(image)
+                        this.getOutputPort("output_port1").setValue(image);
                         this.processing = false;
-                    }
-                    image.src = e.target.result
-                }
+                    };
+                    image.src = e.target.result;
+                };
                 a.readAsDataURL(blob);
             }).catch((error) =>{
                 //console.log('takePhoto() error: ', error);
@@ -15067,10 +15067,10 @@ video_WebCam = video_WebCam.extend({
                 })
                 .catch((err) =>{
                     console.log("no permission to use VideoCam");
-                })
+                });
         }
         catch(e){
-            console.log("didn't support mediaDevices")
+            console.log("didn't support mediaDevices");
         }
 
     },
@@ -15094,24 +15094,24 @@ video_WebCam = video_WebCam.extend({
        let currentImage = this.img.attr("path");
        this.img.attr("path", this.TRANSPARENT_PIXEL);
     
-       let memento = this._super()
+       let memento = this._super();
     
        this.img.attr("path", currentImage);
 
-       return memento
+       return memento;
     },
     
     setPersistentAttributes: function (memento) {
-        this._super(memento)
+        this._super(memento);
         
-        this.img = this.getChildren().find( child => child instanceof draw2d.shape.basic.Image)
-        this.img.hitTest = ()=>false
+        this.img = this.getChildren().find( child => child instanceof draw2d.shape.basic.Image);
+        this.img.hitTest = ()=>false;
         
         this.getOutputPort("output_port1").attr({
             semanticGroup:"Image",
             bgColor:"#ff0000",
             diameter:15
-        })
+        });
     }
 
 });

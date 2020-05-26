@@ -1,76 +1,70 @@
-var NodeWebcam = require( "node-webcam" );
+const DEBUGGING = false
 
-//Default options
+const puppeteer = require('puppeteer')
+const path = require("path")
+const fs = require("fs")
+const thisDir = path.normalize(__dirname)
+const isPi = require('detect-rpi')
+const http = require('http');
 
-var opts = {
-
-  //Picture related
-  width: 640,
-  height: 480,
-
-
-  // Number of frames to capture
-  // More the frames, longer it takes to capture
-  // Use higher framerate for quality. Ex: 60
-  frames: 1,
-
-  //Delay in seconds to take shot
-  //if the platform supports miliseconds
-  //use a float (0.1)
-  //Currently only on windows
-  delay: 0,
-
-  //Save shots in memory
-  saveShots: false,
-
-  // [jpeg, png] support varies
-  // Webcam.OutputTypes
-  output: "png",
-
-  //Which camera to use
-  //Use Webcam.list() for results
-  //false for default device
-  device: false,
-
-  // [location, buffer, base64]
-  // Webcam.CallbackReturnTypes
-  callbackReturn: "base64",
-
-  //Logging
-  verbose: false
-};
-
-
-//Creates webcam instance
-
-var camera = NodeWebcam.create( opts );
 
 var running = false
+var browser = null
+var page = null;
 
 module.exports = {
 
   connect: async function (socketio) {
+    let html = fs.readFileSync(thisDir + "/camera.html", 'utf8');
+    var httpServer = http.createServer((req, res) =>{
+      res.statusCode = 200;
+      res.write(html);
+      return res.end();
+    });
+    httpServer.listen(7401);
 
-    function capture(){
+    async function capture(){
       try {
-        console.log("...")
-        camera.capture("", function( err, data ) {
+        data =  await page.evaluate(() => { return image})
           socketio.sockets.emit("camera:capture", {data: data});
           if (running) {
-            setTimeout(capture, 10)
+            setTimeout(capture, 50)
           }
-        });
       }
       catch(e){
         // ignore silently
       }
     }
+
+
     socketio.on('connection', socket => {
-      socket.on('camera:start', () => {
+      socket.on('camera:start', async () => {
+
+        if(browser ==null) {
+          if (isPi())
+            browser = await puppeteer.launch({
+              args: ['--use-fake-ui-for-media-stream', '--no-sandbox'],
+              executablePath: 'chromium-browser'
+            })
+          else
+            browser = await puppeteer.launch(DEBUGGING ? {
+              args: ['--use-fake-ui-for-media-stream'],
+              headless: false,
+              devtools: true,
+              slowMo: 250
+            } : {args: ['--use-fake-ui-for-media-stream']})
+
+          page = await browser.newPage()
+          await page.goto('http:localhost:7401')
+        }
+        await page.evaluate(() => { start()})
         running = true
         capture()
       })
-      socket.on('camera:stop', msg => {
+
+
+      socket.on('camera:stop', async msg => {
+        await page.evaluate(() => { stop()})
         running = false
       })
     })
