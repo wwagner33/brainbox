@@ -42,17 +42,31 @@ module.exports = {
 
         if(browser ==null) {
           if (isPi())
-            browser = await puppeteer.launch({
-              args: ['--use-fake-ui-for-media-stream', '--no-sandbox'],
-              executablePath: 'chromium-browser'
-            })
+            browser = await puppeteer.launch(
+              DEBUGGING ?
+                {
+                  args: ['--use-fake-ui-for-media-stream', '--no-sandbox'],
+                  executablePath: 'chromium-browser',
+                  headless: false,
+                  devtools: true,
+                  slowMo: 250
+                }:
+                {
+                  args: ['--use-fake-ui-for-media-stream', '--no-sandbox'],
+                  executablePath: 'chromium-browser'
+                })
           else
-            browser = await puppeteer.launch(DEBUGGING ? {
-              args: ['--use-fake-ui-for-media-stream'],
-              headless: false,
-              devtools: true,
-              slowMo: 250
-            } : {args: ['--use-fake-ui-for-media-stream']})
+            browser = await puppeteer.launch(
+              DEBUGGING ?
+                {
+                  args: ['--use-fake-ui-for-media-stream'],
+                  headless: false,
+                  devtools: true,
+                  slowMo: 250
+                } :
+                {
+                  args: ['--use-fake-ui-for-media-stream']
+                })
 
           page = await browser.newPage()
           await page.goto('http:localhost:7401')
