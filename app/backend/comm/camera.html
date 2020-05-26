@@ -43,8 +43,9 @@
         };
         a.readAsDataURL(blob);
       }).catch((error) =>{
-      //console.log('takePhoto() error: ', error);
-    });
+        console.log('takePhoto() error: ', error);
+        if(running)  setTimeout(capture,10);
+      });
   }
 
 </script>
