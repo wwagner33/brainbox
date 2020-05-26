@@ -18,7 +18,7 @@
       .then((stream) =>{
         track = stream.getVideoTracks()[0];
         imageCapture = new ImageCapture(track);
-        setTimeout(capture,10);
+        setTimeout(capture,1);
         running = true;
       })
       .catch((err) =>{
@@ -39,12 +39,12 @@
         let a = new FileReader();
         a.onload = (e) => {
           image = e.target.result;
-          if(running)  setTimeout(capture,10);
+          if(running)  setTimeout(capture,1);
         };
         a.readAsDataURL(blob);
       }).catch((error) =>{
         console.log('takePhoto() error: ', error);
-        if(running)  setTimeout(capture,10);
+        if(running)  setTimeout(capture,1);
       });
   }
 
