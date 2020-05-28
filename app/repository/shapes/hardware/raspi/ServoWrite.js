@@ -4,10 +4,10 @@
 // created with http://www.draw2d.org
 //
 //
-var circuit_hardware_raspi_ServoWrite = CircuitFigure.extend({
+var hardware_raspi_ServoWrite = CircuitFigure.extend({
 
-   NAME: "circuit_hardware_raspi_ServoWrite",
-   VERSION: "local-version",
+   NAME: "hardware_raspi_ServoWrite",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -148,7 +148,7 @@ var circuit_hardware_raspi_ServoWrite = CircuitFigure.extend({
  *
  *
  */
-circuit_hardware_raspi_ServoWrite = circuit_hardware_raspi_ServoWrite.extend({
+hardware_raspi_ServoWrite = hardware_raspi_ServoWrite.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);

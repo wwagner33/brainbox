@@ -6,7 +6,7 @@
  *
  *
  */
-circuit_hardware_raspi_GPIOWrite = circuit_hardware_raspi_GPIOWrite.extend({
+hardware_raspi_GPIORead = hardware_raspi_GPIORead.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);
@@ -19,15 +19,10 @@ circuit_hardware_raspi_GPIOWrite = circuit_hardware_raspi_GPIOWrite.extend({
      *  loop
      *  @required
      **/
-    calculate:function( context)
+    calculate:function(context)
     {
-        this.getInputPorts().each(function(index,port){
-            if(port.hasChangedValue() && port.getConnections().getSize()>0){
-                hardware.raspi.set(port.getName(), port.getValue());
-            }
-        });
         this.getOutputPorts().each(function(index,port){
-            port.setValue(hardware.gpio.get(port.getName()));
+            port.setValue(hardware.raspi.get(port.getName()));
         });
     },
     

@@ -4,10 +4,10 @@
 // created with http://www.draw2d.org
 //
 //
-var circuit_hardware_raspi_GPIORead = CircuitFigure.extend({
+var hardware_raspi_GPIORead = CircuitFigure.extend({
 
-   NAME: "circuit_hardware_raspi_GPIORead",
-   VERSION: "2.0.214_839",
+   NAME: "hardware_raspi_GPIORead",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -225,7 +225,7 @@ var circuit_hardware_raspi_GPIORead = CircuitFigure.extend({
  *
  *
  */
-circuit_hardware_raspi_GPIORead = circuit_hardware_raspi_GPIORead.extend({
+hardware_raspi_GPIORead = hardware_raspi_GPIORead.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);

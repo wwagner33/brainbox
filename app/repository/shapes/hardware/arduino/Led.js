@@ -4,10 +4,10 @@
 // created with http://www.draw2d.org
 //
 //
-var circuit_hardware_arduino_Led = CircuitFigure.extend({
+var hardware_arduino_Led = CircuitFigure.extend({
 
-   NAME: "circuit_hardware_arduino_Led",
-   VERSION: "2.0.214_839",
+   NAME: "hardware_arduino_Led",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -68,7 +68,7 @@ var circuit_hardware_arduino_Led = CircuitFigure.extend({
  *
  *
  */
-circuit_hardware_arduino_Led = circuit_hardware_arduino_Led.extend({
+hardware_arduino_Led = hardware_arduino_Led.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);

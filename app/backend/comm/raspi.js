@@ -50,7 +50,6 @@ module.exports = {
         // within the servo to 0° and 180° depending on the servo type. (0° - 270° is possible as well)
         // map [0..5] => [500..2500]
         let dutyCycle= (2000/5*parseFloat(msg.value)+500)|0
-        console.log(dutyCycle)
         pin.servoWrite(dutyCycle)
       })
     })

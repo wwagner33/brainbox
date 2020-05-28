@@ -53,9 +53,9 @@ video_geometry_Scale = video_geometry_Scale.extend({
             scaleCtx.drawImage(img, 0, 0, w, h);
             var scaledImage = document.createElement("img");
             scaledImage.onload = () => {
-                this.getOutputPort("output_port1").setValue(scaledImage)
-                this.processing = false;
+                this.getOutputPort("output_port1").setValue(scaledImage);
             }
+            this.processing = false;
 	   	    scaledImage.src = scaleCanvas.toDataURL();
         }
     },

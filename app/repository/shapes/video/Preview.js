@@ -7,7 +7,7 @@
 var video_Preview = CircuitFigure.extend({
 
    NAME: "video_Preview",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -20,7 +20,7 @@ var video_Preview = CircuitFigure.extend({
      port.setConnectionDirection(3);
      port.setBackgroundColor("#37B1DE");
      port.setName("input_port1");
-     port.setMaxFanOut(20);
+     port.setMaxFanOut(1);
      // output_port1
      port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 102.5, y: 50 }));
      port.setConnectionDirection(1);

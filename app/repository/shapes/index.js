@@ -7,7 +7,7 @@
 var circuit_74LSXX_74LS90 = CircuitFigure.extend({
 
    NAME: "circuit_74LSXX_74LS90",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -311,7 +311,7 @@ circuit_74LSXX_74LS90 = circuit_74LSXX_74LS90.extend({
 var circuit_digital_alu_FullAdder = CircuitFigure.extend({
 
    NAME: "circuit_digital_alu_FullAdder",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -481,7 +481,7 @@ circuit_digital_alu_FullAdder = circuit_digital_alu_FullAdder.extend({
 var circuit_digital_alu_FullAdder4Bit = CircuitFigure.extend({
 
    NAME: "circuit_digital_alu_FullAdder4Bit",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -797,7 +797,7 @@ circuit_digital_alu_FullAdder4Bit = circuit_digital_alu_FullAdder4Bit.extend({
 var circuit_digital_buttons_HighLow = CircuitFigure.extend({
 
    NAME: "circuit_digital_buttons_HighLow",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -908,7 +908,7 @@ circuit_digital_buttons_HighLow = circuit_digital_buttons_HighLow.extend({
 var circuit_digital_buttons_HighLowArray = CircuitFigure.extend({
 
    NAME: "circuit_digital_buttons_HighLowArray",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -1073,7 +1073,7 @@ circuit_digital_buttons_HighLowArray = circuit_digital_buttons_HighLowArray.exte
 var circuit_digital_buttons_PushButton = CircuitFigure.extend({
 
    NAME: "circuit_digital_buttons_PushButton",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -1189,7 +1189,7 @@ circuit_digital_buttons_PushButton = circuit_digital_buttons_PushButton.extend({
 var circuit_digital_counter_BCDCounter = CircuitFigure.extend({
 
    NAME: "circuit_digital_counter_BCDCounter",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -1373,7 +1373,7 @@ circuit_digital_counter_BCDCounter = circuit_digital_counter_BCDCounter.extend({
 var circuit_digital_decoder_BCDto7Seg = CircuitFigure.extend({
 
    NAME: "circuit_digital_decoder_BCDto7Seg",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -1612,7 +1612,7 @@ circuit_digital_decoder_BCDto7Seg = circuit_digital_decoder_BCDto7Seg.extend({
 var circuit_digital_display_7Segment = CircuitFigure.extend({
 
    NAME: "circuit_digital_display_7Segment",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -1774,7 +1774,7 @@ circuit_digital_display_7Segment = circuit_digital_display_7Segment.extend({
 var circuit_digital_display_Led = CircuitFigure.extend({
 
    NAME: "circuit_digital_display_Led",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -1863,7 +1863,7 @@ circuit_digital_display_Led = circuit_digital_display_Led.extend({
 var circuit_digital_flipflop_DFlipFlop = CircuitFigure.extend({
 
    NAME: "circuit_digital_flipflop_DFlipFlop",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -1996,7 +1996,7 @@ circuit_digital_flipflop_DFlipFlop = circuit_digital_flipflop_DFlipFlop.extend({
 var circuit_digital_flipflop_JKFlipFlop = CircuitFigure.extend({
 
    NAME: "circuit_digital_flipflop_JKFlipFlop",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -2159,7 +2159,7 @@ circuit_digital_flipflop_JKFlipFlop = circuit_digital_flipflop_JKFlipFlop.extend
 var circuit_digital_flipflop_JKRFlipFlop = CircuitFigure.extend({
 
    NAME: "circuit_digital_flipflop_JKRFlipFlop",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -2340,7 +2340,7 @@ circuit_digital_flipflop_JKRFlipFlop = circuit_digital_flipflop_JKRFlipFlop.exte
 var circuit_digital_flipflop_SRFlipFlop = CircuitFigure.extend({
 
    NAME: "circuit_digital_flipflop_SRFlipFlop",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -2482,7 +2482,7 @@ circuit_digital_flipflop_SRFlipFlop = circuit_digital_flipflop_SRFlipFlop.extend
 var circuit_digital_flipflop_TFlipFlop = CircuitFigure.extend({
 
    NAME: "circuit_digital_flipflop_TFlipFlop",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -2604,7 +2604,7 @@ circuit_digital_flipflop_TFlipFlop = circuit_digital_flipflop_TFlipFlop.extend({
 var circuit_digital_gate_DIN40700_AND = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_DIN40700_AND",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -2736,7 +2736,7 @@ circuit_digital_gate_DIN40700_AND = circuit_digital_gate_DIN40700_AND.extend({
 var circuit_digital_gate_DIN40700_NAND = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_DIN40700_NAND",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -2873,7 +2873,7 @@ circuit_digital_gate_DIN40700_NAND = circuit_digital_gate_DIN40700_NAND.extend({
 var circuit_digital_gate_DIN40700_NOR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_DIN40700_NOR",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -3020,7 +3020,7 @@ circuit_digital_gate_DIN40700_NOR = circuit_digital_gate_DIN40700_NOR.extend({
 var circuit_digital_gate_DIN40700_OR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_DIN40700_OR",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -3162,7 +3162,7 @@ circuit_digital_gate_DIN40700_OR = circuit_digital_gate_DIN40700_OR.extend({
 var circuit_digital_gate_DIN40700_XNOR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_DIN40700_XNOR",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -3309,7 +3309,7 @@ circuit_digital_gate_DIN40700_XNOR = circuit_digital_gate_DIN40700_XNOR.extend({
 var circuit_digital_gate_DIN40700_XOR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_DIN40700_XOR",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -3461,7 +3461,7 @@ circuit_digital_gate_DIN40700_XOR = circuit_digital_gate_DIN40700_XOR.extend({
 var circuit_digital_gate_IEC60617_12_AND = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_AND",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -3559,7 +3559,7 @@ circuit_digital_gate_IEC60617_12_AND = circuit_digital_gate_IEC60617_12_AND.exte
 var circuit_digital_gate_IEC60617_12_NAND = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_NAND",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -3662,7 +3662,7 @@ circuit_digital_gate_IEC60617_12_NAND = circuit_digital_gate_IEC60617_12_NAND.ex
 var circuit_digital_gate_IEC60617_12_NOR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_NOR",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -3770,7 +3770,7 @@ circuit_digital_gate_IEC60617_12_NOR = circuit_digital_gate_IEC60617_12_NOR.exte
 var circuit_digital_gate_IEC60617_12_NOT = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_NOT",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -3867,7 +3867,7 @@ circuit_digital_gate_IEC60617_12_NOT = circuit_digital_gate_IEC60617_12_NOT.exte
 var circuit_digital_gate_IEC60617_12_OR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_OR",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -3970,7 +3970,7 @@ circuit_digital_gate_IEC60617_12_OR = circuit_digital_gate_IEC60617_12_OR.extend
 var circuit_digital_gate_IEC60617_12_XNOR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_XNOR",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -4073,7 +4073,7 @@ circuit_digital_gate_IEC60617_12_XNOR = circuit_digital_gate_IEC60617_12_XNOR.ex
 var circuit_digital_gate_IEC60617_12_XOR = CircuitFigure.extend({
 
    NAME: "circuit_digital_gate_IEC60617_12_XOR",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -4171,7 +4171,7 @@ circuit_digital_gate_IEC60617_12_XOR = circuit_digital_gate_IEC60617_12_XOR.exte
 var circuit_digital_pulse_10hz = CircuitFigure.extend({
 
    NAME: "circuit_digital_pulse_10hz",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -4276,7 +4276,7 @@ circuit_digital_pulse_10hz = circuit_digital_pulse_10hz.extend({
 var circuit_digital_pulse_1hz = CircuitFigure.extend({
 
    NAME: "circuit_digital_pulse_1hz",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -4381,7 +4381,7 @@ circuit_digital_pulse_1hz = circuit_digital_pulse_1hz.extend({
 var circuit_digital_pulse_50hz = CircuitFigure.extend({
 
    NAME: "circuit_digital_pulse_50hz",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -4484,7 +4484,7 @@ circuit_digital_pulse_50hz = circuit_digital_pulse_50hz.extend({
 var circuit_digital_pulse_Delay = CircuitFigure.extend({
 
    NAME: "circuit_digital_pulse_Delay",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -4655,7 +4655,7 @@ circuit_digital_pulse_Delay = circuit_digital_pulse_Delay.extend({
 var circuit_digital_signal_High = CircuitFigure.extend({
 
    NAME: "circuit_digital_signal_High",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -4737,7 +4737,7 @@ circuit_digital_signal_High = circuit_digital_signal_High.extend({
 var circuit_digital_signal_Low = CircuitFigure.extend({
 
    NAME: "circuit_digital_signal_Low",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -4820,7 +4820,7 @@ circuit_digital_signal_Low = circuit_digital_signal_Low.extend({
 var circuit_digital_timer_Delay = CircuitFigure.extend({
 
    NAME: "circuit_digital_timer_Delay",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -4980,16 +4980,298 @@ circuit_digital_timer_Delay = circuit_digital_timer_Delay.extend({
 });
 
 
+var controls_Slider = draw2d.shape.widget.Slider.extend({
+
+    NAME: "controls_Slider",
+    VERSION: "1.0.0",
+
+    init: function () {
+        this._super({bold: false, fontFamily: "Verdana", fontSize: 10, bgColor: "#fafafa"});
+
+        this.persistPorts = false
+
+        this.outputPort = new DecoratedOutputPort()
+        this.outputPort.setName("output")
+        this.addPort(this.outputPort)
+
+        this.on("change:userData.value", (figure, event) => {
+            this.setValue(parseInt(event.value))
+        })
+
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+
+        this.on("change:value", (element, event) => {
+            var value = parseInt(event.value); // 0..100
+            value = 5 / 100 * value;             // 0..5
+            this.getOutputPort(0).setValue(value);
+        });
+
+    },
+
+    calculate: function (context) {
+    },
+
+    onStart: function (context) {
+    },
+
+    onStop: function (context) {
+    },
+
+
+    getPersistentAttributes: function ()
+    {
+        let memento = this._super()
+        memento.value = this.getValue()
+        return memento
+    },
+
+    setPersistentAttributes: function (memento)
+    {
+        this._super(memento)
+        if(memento.value){
+            this.setValue(parseInt(memento.value))
+        }
+    }
+
+});
+
+
+
+
+
+var diagram_Sparkline = draw2d.shape.diagram.Sparkline.extend({
+
+    NAME : "diagram_Sparkline",
+
+    init : function(attr)
+    {
+        this._super(attr)
+        this.maxValues = 100
+        this.min = 0
+        this.max = 5
+        this.padding=4
+        this.persistPorts = false
+
+        this.inputPort = new DecoratedInputPort()
+        this.inputPort.setName("input")
+        this.inputPort.setMaxFanOut(1)
+
+        this.outputPort = new DecoratedOutputPort()
+        this.outputPort.setName("output")
+
+        this.setBackgroundColor("#FF765E")
+        this.setRadius(5)
+        this.addPort(this.inputPort)
+        this.addPort(this.outputPort)
+        this.setDimension(250,50)
+
+        // get the connected port and forward the port to the related party ( SignalSource shape)
+        // The Sparkline forwards the original signal without any delay. The signal runtime is the same if the
+        // Sparkline in between a connect or not
+        this.inputPort.on("connect", (emitter, event)=>{
+            let signalPort = event.connection.getSource()
+            this.outputPort.originalGetValue = this.outputPort.getValue
+            this.outputPort.originalGetBooleanValue = this.outputPort.getBooleanValue
+            this.outputPort.getValue = ()=>{
+                return signalPort.getValue()
+            }
+            this.outputPort.getBooleanValue = ()=>{
+                return signalPort.getBooleanValue()
+            }
+        })
+        this.inputPort.on("disconnect", (emitter, event)=>{
+            this.outputPort.getValue = this.outputPort.originalGetValue
+            this.outputPort.getBooleanValue = this.outputPort.originalGetBooleanValue
+        })
+    },
+
+    setData:function( data)
+    {
+        this._super(data)
+        this.cache= {}
+        this.min = 0
+        this.max = 5
+        this.repaint()
+    },
+
+
+    /**
+     * @method
+     *
+     * Update the chart with the current value of the input port.
+     *
+     */
+    calculate:function(context)
+    {
+        let port = this.getInputPort(0)
+        let value=port.getValue() || 0.0
+        this.data.push(value===null?0:value)
+        if(this.data.length>this.maxValues) {
+            this.data.shift()
+        }
+        this.setData(this.data)
+    },
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+    },
+
+    /**
+     * Get the simulator a hint which kind of hardware the shapes requires or supports
+     * This helps the simulator to bring up some dialogs and messages if any new hardware is connected/get lost
+     * and your are running a circuit which needs this kind of hardware...
+     **/
+    getRequiredHardware: function(){
+        return {
+            raspi: false,
+            arduino: false
+        }
+    }
+});
+
+
+
+
+var documentation_Markdown = draw2d.shape.basic.Rectangle.extend({
+    NAME: "documentation_Markdown",
+    VERSION: "1.0.0",
+
+    init: function (attr) {
+        this._super($.extend({bgColor: "#FDFDFD", color: "#1B1B1B"}, attr));
+
+        this
+            .on("change:userData.text", (figure, event) => {
+                let rendered = markdown.render(this.attr("userData.text"))
+                if(this.overlay) {
+                    this.overlay.html(rendered)
+                }
+            })
+            .on("added", (emitter, event) => {
+                let rendered = markdown.render(this.attr("userData.text"))
+                this.overlay = $(`<div id="${this.id}" style="padding:5px;font-size:80%;overflow:hidden;position:absolute; top:${this.getY()}px;left:${this.getY()}px">
+                        ${rendered}
+                        </div>`)
+                event.canvas.html.append(this.overlay)
+                this.overlay.css({
+                    width: this.getWidth(),
+                    height: this.getHeight(),
+                    top: this.getY(),
+                    left: this.getX()
+                })
+            })
+            .on("removed", (emitter, event) => {
+                this.overlay.remove()
+            })
+            .on("change:dimension", (emitter, event) => {
+                if(this.overlay) {
+                    this.overlay.css({width: event.width, height: event.height})
+                }
+            })
+            .on("move", (emitter, event) => {
+                if(this.overlay) {
+                    this.overlay.css({top: event.y, left: event.x})
+                }
+            })
+
+        this.attr("userData.text", "The quick brown fox $ **jumps** over the *lazy* dog")
+    },
+
+    calculate: function( context )
+    {
+    },
+
+    onStart: function(context)
+    {
+    },
+
+    onStop:function(context)
+    {
+    },
+
+    getParameterSettings: function () {
+        return [
+            {
+                name: "text",
+                label: "Markdown Text",
+                property: {
+                    type: "longtext"
+                }
+
+            }];
+    }
+
+});
+
+
+
+
+var documentation_Text = draw2d.shape.basic.Text.extend({
+
+    NAME: "documentation_Text",
+    VERSION: "1.0.0",
+
+    init: function () {
+        this._super({bold: false, fontFamily: "Verdana", fontSize: 10, bgColor: "#fafafa"});
+
+
+        this.on("change:userData.text", (figure, event) => {
+            this.setText(event.value)
+        })
+
+        this.attr("userData.text", "The quick brown fox $ jumps over the lazy dog")
+    },
+
+    calculate: function( context )
+    {
+    },
+
+    onStart: function(context)
+    {
+    },
+
+    onStop:function(context)
+    {
+    },
+
+    getParameterSettings: function () {
+        return [
+            {
+                name: "text",
+                label: "Text",
+                property: {
+                    type: "longtext"
+                }
+
+            }];
+    }
+
+});
+
+
+
+
 // Generated Code for the Draw2D touch HTML5 lib.
 // File will be generated if you save the *.shape file.
 //
 // created with http://www.draw2d.org
 //
 //
-var circuit_hardware_arduino_Arduino = CircuitFigure.extend({
+var hardware_arduino_Arduino = CircuitFigure.extend({
 
-   NAME: "circuit_hardware_arduino_Arduino",
-   VERSION: "2.0.214_839",
+   NAME: "hardware_arduino_Arduino",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -5377,7 +5659,7 @@ var circuit_hardware_arduino_Arduino = CircuitFigure.extend({
  *
  *
  */
-circuit_hardware_arduino_Arduino = circuit_hardware_arduino_Arduino.extend({
+hardware_arduino_Arduino = hardware_arduino_Arduino.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);
@@ -5480,10 +5762,10 @@ circuit_hardware_arduino_Arduino = circuit_hardware_arduino_Arduino.extend({
 // created with http://www.draw2d.org
 //
 //
-var circuit_hardware_arduino_Led = CircuitFigure.extend({
+var hardware_arduino_Led = CircuitFigure.extend({
 
-   NAME: "circuit_hardware_arduino_Led",
-   VERSION: "2.0.214_839",
+   NAME: "hardware_arduino_Led",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -5544,7 +5826,7 @@ var circuit_hardware_arduino_Led = CircuitFigure.extend({
  *
  *
  */
-circuit_hardware_arduino_Led = circuit_hardware_arduino_Led.extend({
+hardware_arduino_Led = hardware_arduino_Led.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);
@@ -5584,161 +5866,10 @@ circuit_hardware_arduino_Led = circuit_hardware_arduino_Led.extend({
 // created with http://www.draw2d.org
 //
 //
-var circuit_hardware_raspi_Camera = CircuitFigure.extend({
+var hardware_raspi_GPIORead = CircuitFigure.extend({
 
-   NAME: "circuit_hardware_raspi_Camera",
-   VERSION: "local-version",
-
-   init:function(attr, setter, getter)
-   {
-     var _this = this;
-
-     this._super( $.extend({stroke:0, bgColor:null, width:90,height:85},attr), setter, getter);
-     var port;
-     // output_port1
-     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 98.78472222221818, y: 52.949029872945495 }));
-     port.setConnectionDirection(1);
-     port.setBackgroundColor("#37B1DE");
-     port.setName("output_port1");
-     port.setMaxFanOut(1);
-   },
-
-   createShapeElement : function()
-   {
-      var shape = this._super();
-      this.originalWidth = 90;
-      this.originalHeight= 85;
-      return shape;
-   },
-
-   createSet: function()
-   {
-       this.canvas.paper.setStart();
-       var shape = null;
-       // BoundingBox
-       shape = this.canvas.paper.path("M0,0 L90,0 L90,85 L0,85");
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
-       shape.data("name","BoundingBox");
-       
-       // Rectangle
-       shape = this.canvas.paper.path('M89.9937281586122,17.067437371045315Q89.99354350956855,15.067437379569128 89.99354350956855, 13.067437379569128L89.99354350956855,2Q89.99354350956855,0 87.9935519880414, 0.005823557293633486L1.99999152152715,0.25621883190854555Q0,0.26204238920217904 0.007970959933697841, 2.262026505088528L0.32975315477993955,83.00001588411365Q0.3377241147136374,85 2.3377241147136374, 85L88,85Q90,85 89.99981535095635, 83.00000000852381L89.9937281586122,17.067437371045315');
-       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Rectangle");
-       
-       // Label
-       shape = this.canvas.paper.text(0,0,'Camera');
-       shape.attr({"x":23.65625,"y":15.788525392002157,"text-anchor":"start","text":"Camera","font-family":"\"Arial\"","font-size":12,"stroke":"#000000","fill":"#BD2466","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
-       shape.data("name","Label");
-       
-
-       return this.canvas.paper.setFinish();
-   }
-});
-
-/**
- * by 'Draw2D Shape Designer'
- *
- * Custom JS code to tweak the standard behaviour of the generated
- * shape. add your custome code and event handler here.
- *
- *
- */
-circuit_hardware_raspi_Camera = circuit_hardware_raspi_Camera.extend({
-
-    init: function(attr, setter, getter){
-         this._super(attr, setter, getter);
-
-        this.TRANSPARENT_PIXEL = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==";
-   
-        this.img = new draw2d.shape.basic.Image({
-            width: this.getWidth()-6, 
-            height: this.getHeight()/4*3 -6,
-            path: this.TRANSPARENT_PIXEL
-        });
-        this.img.hitTest = ()=>false;
-        this.add(this.img, new draw2d.layout.locator.XYAbsPortLocator({x:3,y:3}));
-
-        
-        this.processing = false;
-        
-        this.attr({resizeable:false});
-        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
-        this.getOutputPort("output_port1").attr({
-            semanticGroup:"Image",
-            bgColor:"#ff0000",
-            diameter:15
-        });
-
-    },
-
-    /**
-     *  Called by the simulator for every calculation
-     *  loop
-     *  @required
-     **/
-    calculate:function( context)
-    {
-        if(this.processing === false){
-            var image = new Image();
-            image.onload = () => {
-                this.getOutputPort("output_port1").setValue(image);
-                this.processing = false;
-            };
-            this.processing = true;
-            image.src = hardware.camera.image();
-        }
-    },
-    
-    
-    onStart: function(context ){
-        this.processing = false;
-        hardware.camera.start();
-    },
-    
-    
-    onStop: function(context){
-        this.processing = false;
-        hardware.camera.stop();
-    },
-    
-    getPersistentAttributes: function () 
-    {
-       let currentImage = this.img.attr("path");
-       this.img.attr("path", this.TRANSPARENT_PIXEL);
-    
-       let memento = this._super()
-    
-       this.img.attr("path", currentImage);
-
-       return memento
-    },
-    
-    setPersistentAttributes: function (memento) {
-        this._super(memento)
-        
-        this.img = this.getChildren().find( child => child instanceof draw2d.shape.basic.Image)
-        this.img.hitTest = ()=>false
-        
-        this.getOutputPort("output_port1").attr({
-            semanticGroup:"Image",
-            bgColor:"#ff0000",
-            diameter:15
-        })
-    }
-    
-});
-
-
-// Generated Code for the Draw2D touch HTML5 lib.
-// File will be generated if you save the *.shape file.
-//
-// created with http://www.draw2d.org
-//
-//
-var circuit_hardware_raspi_GPIORead = CircuitFigure.extend({
-
-   NAME: "circuit_hardware_raspi_GPIORead",
-   VERSION: "2.0.214_839",
+   NAME: "hardware_raspi_GPIORead",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -5956,7 +6087,7 @@ var circuit_hardware_raspi_GPIORead = CircuitFigure.extend({
  *
  *
  */
-circuit_hardware_raspi_GPIORead = circuit_hardware_raspi_GPIORead.extend({
+hardware_raspi_GPIORead = hardware_raspi_GPIORead.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);
@@ -5992,10 +6123,10 @@ circuit_hardware_raspi_GPIORead = circuit_hardware_raspi_GPIORead.extend({
 // created with http://www.draw2d.org
 //
 //
-var circuit_hardware_raspi_GPIOWrite = CircuitFigure.extend({
+var hardware_raspi_GPIOWrite = CircuitFigure.extend({
 
-   NAME: "circuit_hardware_raspi_GPIOWrite",
-   VERSION: "2.0.214_839",
+   NAME: "hardware_raspi_GPIOWrite",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -6213,7 +6344,7 @@ var circuit_hardware_raspi_GPIOWrite = CircuitFigure.extend({
  *
  *
  */
-circuit_hardware_raspi_GPIOWrite = circuit_hardware_raspi_GPIOWrite.extend({
+hardware_raspi_GPIOWrite = hardware_raspi_GPIOWrite.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);
@@ -6254,10 +6385,10 @@ circuit_hardware_raspi_GPIOWrite = circuit_hardware_raspi_GPIOWrite.extend({
 // created with http://www.draw2d.org
 //
 //
-var circuit_hardware_raspi_ServoWrite = CircuitFigure.extend({
+var hardware_raspi_ServoWrite = CircuitFigure.extend({
 
-   NAME: "circuit_hardware_raspi_ServoWrite",
-   VERSION: "local-version",
+   NAME: "hardware_raspi_ServoWrite",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -6398,7 +6529,7 @@ var circuit_hardware_raspi_ServoWrite = CircuitFigure.extend({
  *
  *
  */
-circuit_hardware_raspi_ServoWrite = circuit_hardware_raspi_ServoWrite.extend({
+hardware_raspi_ServoWrite = hardware_raspi_ServoWrite.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);
@@ -6430,288 +6561,6 @@ circuit_hardware_raspi_ServoWrite = circuit_hardware_raspi_ServoWrite.extend({
 });
 
 
-var controls_Slider = draw2d.shape.widget.Slider.extend({
-
-    NAME: "controls_Slider",
-    VERSION: "1.0.0",
-
-    init: function () {
-        this._super({bold: false, fontFamily: "Verdana", fontSize: 10, bgColor: "#fafafa"});
-
-        this.persistPorts = false
-
-        this.outputPort = new DecoratedOutputPort()
-        this.outputPort.setName("output")
-        this.addPort(this.outputPort)
-
-        this.on("change:userData.value", (figure, event) => {
-            this.setValue(parseInt(event.value))
-        })
-
-        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
-
-        this.on("change:value", (element, event) => {
-            var value = parseInt(event.value); // 0..100
-            value = 5 / 100 * value;             // 0..5
-            this.getOutputPort(0).setValue(value);
-        });
-
-    },
-
-    calculate: function (context) {
-    },
-
-    onStart: function (context) {
-    },
-
-    onStop: function (context) {
-    },
-
-
-    getPersistentAttributes: function ()
-    {
-        let memento = this._super()
-        memento.value = this.getValue()
-        return memento
-    },
-
-    setPersistentAttributes: function (memento)
-    {
-        this._super(memento)
-        if(memento.value){
-            this.setValue(parseInt(memento.value))
-        }
-    }
-
-});
-
-
-
-
-
-var diagram_Sparkline = draw2d.shape.diagram.Sparkline.extend({
-
-    NAME : "diagram_Sparkline",
-
-    init : function(attr)
-    {
-        this._super(attr)
-        this.maxValues = 100
-        this.min = 0
-        this.max = 5
-        this.padding=4
-        this.persistPorts = false
-
-        this.inputPort = new DecoratedInputPort()
-        this.inputPort.setName("input")
-        this.inputPort.setMaxFanOut(1)
-
-        this.outputPort = new DecoratedOutputPort()
-        this.outputPort.setName("output")
-
-        this.setBackgroundColor("#FF765E")
-        this.setRadius(5)
-        this.addPort(this.inputPort)
-        this.addPort(this.outputPort)
-        this.setDimension(250,50)
-
-        // get the connected port and forward the port to the related party ( SignalSource shape)
-        // The Sparkline forwards the original signal without any delay. The signal runtime is the same if the
-        // Sparkline in between a connect or not
-        this.inputPort.on("connect", (emitter, event)=>{
-            let signalPort = event.connection.getSource()
-            this.outputPort.originalGetValue = this.outputPort.getValue
-            this.outputPort.originalGetBooleanValue = this.outputPort.getBooleanValue
-            this.outputPort.getValue = ()=>{
-                return signalPort.getValue()
-            }
-            this.outputPort.getBooleanValue = ()=>{
-                return signalPort.getBooleanValue()
-            }
-        })
-        this.inputPort.on("disconnect", (emitter, event)=>{
-            this.outputPort.getValue = this.outputPort.originalGetValue
-            this.outputPort.getBooleanValue = this.outputPort.originalGetBooleanValue
-        })
-    },
-
-    setData:function( data)
-    {
-        this._super(data)
-        this.cache= {}
-        this.min = 0
-        this.max = 5
-        this.repaint()
-    },
-
-
-    /**
-     * @method
-     *
-     * Update the chart with the current value of the input port.
-     *
-     */
-    calculate:function(context)
-    {
-        let port = this.getInputPort(0)
-        let value=port.getValue() || 0.0
-        this.data.push(value===null?0:value)
-        if(this.data.length>this.maxValues) {
-            this.data.shift()
-        }
-        this.setData(this.data)
-    },
-
-    /**
-     *  Called if the simulation mode is starting
-     *  @required
-     **/
-    onStart:function( context )
-    {
-    },
-
-    /**
-     *  Called if the simulation mode is stopping
-     *  @required
-     **/
-    onStop:function( context )
-    {
-    },
-
-    /**
-     * Get the simulator a hint which kind of hardware the shapes requires or supports
-     * This helps the simulator to bring up some dialogs and messages if any new hardware is connected/get lost
-     * and your are running a circuit which needs this kind of hardware...
-     **/
-    getRequiredHardware: function(){
-        return {
-            raspi: false,
-            arduino: false
-        }
-    }
-});
-
-
-
-
-var documentation_Markdown = draw2d.shape.basic.Rectangle.extend({
-    NAME: "documentation_Markdown",
-    VERSION: "1.0.0",
-
-    init: function (attr) {
-        this._super($.extend({bgColor: "#FDFDFD", color: "#1B1B1B"}, attr));
-
-        this
-            .on("change:userData.text", (figure, event) => {
-                let rendered = markdown.render(this.attr("userData.text"))
-                if(this.overlay) {
-                    this.overlay.html(rendered)
-                }
-            })
-            .on("added", (emitter, event) => {
-                let rendered = markdown.render(this.attr("userData.text"))
-                this.overlay = $(`<div id="${this.id}" style="padding:5px;font-size:80%;overflow:hidden;position:absolute; top:${this.getY()}px;left:${this.getY()}px">
-                        ${rendered}
-                        </div>`)
-                event.canvas.html.append(this.overlay)
-                this.overlay.css({
-                    width: this.getWidth(),
-                    height: this.getHeight(),
-                    top: this.getY(),
-                    left: this.getX()
-                })
-            })
-            .on("removed", (emitter, event) => {
-                this.overlay.remove()
-            })
-            .on("change:dimension", (emitter, event) => {
-                if(this.overlay) {
-                    this.overlay.css({width: event.width, height: event.height})
-                }
-            })
-            .on("move", (emitter, event) => {
-                if(this.overlay) {
-                    this.overlay.css({top: event.y, left: event.x})
-                }
-            })
-
-        this.attr("userData.text", "The quick brown fox $ **jumps** over the *lazy* dog")
-    },
-
-    calculate: function( context )
-    {
-    },
-
-    onStart: function(context)
-    {
-    },
-
-    onStop:function(context)
-    {
-    },
-
-    getParameterSettings: function () {
-        return [
-            {
-                name: "text",
-                label: "Markdown Text",
-                property: {
-                    type: "longtext"
-                }
-
-            }];
-    }
-
-});
-
-
-
-
-var documentation_Text = draw2d.shape.basic.Text.extend({
-
-    NAME: "documentation_Text",
-    VERSION: "1.0.0",
-
-    init: function () {
-        this._super({bold: false, fontFamily: "Verdana", fontSize: 10, bgColor: "#fafafa"});
-
-
-        this.on("change:userData.text", (figure, event) => {
-            this.setText(event.value)
-        })
-
-        this.attr("userData.text", "The quick brown fox $ jumps over the lazy dog")
-    },
-
-    calculate: function( context )
-    {
-    },
-
-    onStart: function(context)
-    {
-    },
-
-    onStop:function(context)
-    {
-    },
-
-    getParameterSettings: function () {
-        return [
-            {
-                name: "text",
-                label: "Text",
-                property: {
-                    type: "longtext"
-                }
-
-            }];
-    }
-
-});
-
-
-
-
 // Generated Code for the Draw2D touch HTML5 lib.
 // File will be generated if you save the *.shape file.
 //
@@ -6721,7 +6570,7 @@ var documentation_Text = draw2d.shape.basic.Text.extend({
 var math_Median = CircuitFigure.extend({
 
    NAME: "math_Median",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -6880,7 +6729,7 @@ math_Median = math_Median.extend({
 var messaging_HiveMQ = CircuitFigure.extend({
 
    NAME: "messaging_HiveMQ",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -7004,7 +6853,7 @@ messaging_HiveMQ = messaging_HiveMQ.extend({
 var signal_SignalSource = CircuitFigure.extend({
 
    NAME: "signal_SignalSource",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -7168,7 +7017,7 @@ signal_SignalSource = signal_SignalSource.extend({
 var signal_SignalTarget = CircuitFigure.extend({
 
    NAME: "signal_SignalTarget",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -7342,7 +7191,7 @@ signal_SignalTarget = signal_SignalTarget.extend({
 var video_color_BlackWhite = CircuitFigure.extend({
 
    NAME: "video_color_BlackWhite",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -7601,7 +7450,7 @@ video_color_BlackWhite = video_color_BlackWhite.extend({
 var video_color_Grayscale = CircuitFigure.extend({
 
    NAME: "video_color_Grayscale",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -7838,7 +7687,7 @@ video_color_Grayscale = video_color_Grayscale.extend({
 var video_color_GrayscaleAvg = CircuitFigure.extend({
 
    NAME: "video_color_GrayscaleAvg",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -8075,7 +7924,7 @@ video_color_GrayscaleAvg = video_color_GrayscaleAvg.extend({
 var video_color_HSV_Colorspace = CircuitFigure.extend({
 
    NAME: "video_color_HSV_Colorspace",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -8363,7 +8212,7 @@ video_color_HSV_Colorspace = video_color_HSV_Colorspace.extend({
 var video_color_Invert = CircuitFigure.extend({
 
    NAME: "video_color_Invert",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -8601,7 +8450,7 @@ video_color_Invert = video_color_Invert.extend({
 var video_color_Luminance = CircuitFigure.extend({
 
    NAME: "video_color_Luminance",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -8843,7 +8692,7 @@ video_color_Luminance = video_color_Luminance.extend({
 var video_color_WhiteBlack = CircuitFigure.extend({
 
    NAME: "video_color_WhiteBlack",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -9100,7 +8949,7 @@ video_color_WhiteBlack = video_color_WhiteBlack.extend({
 var video_features_LineAngle = CircuitFigure.extend({
 
    NAME: "video_features_LineAngle",
-   VERSION: "local-version",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -9165,6 +9014,11 @@ var video_features_LineAngle = CircuitFigure.extend({
        shape.attr({"rx":5,"ry":5,"cx":54.29535391822901,"cy":39.909599999999955,"stroke":"rgba(0,0,0,1)","stroke-width":1,"fill":"rgba(0,0,0,0)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Head");
        
+       // Rectangle
+       shape = this.canvas.paper.path('M18.566656000002695 8.730641212006049L27.741696000002776 20.789265212005375L18.566656000002695 20.789265212005375Z');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":2,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
        // Line
        shape = this.canvas.paper.path('M41.89747200000329 6.109201212002517L40.97996800000374,9.517073212003197Q40.062464000004184,12.924945212003877 37.30995200000325, 20.65819321200479L37.30995200000325,20.65819321200479Q34.557440000002316,28.391441212005702 33.20585518239518, 37.289374594584714L31.4117120000019,49.100817212005495');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
@@ -9174,11 +9028,6 @@ var video_features_LineAngle = CircuitFigure.extend({
        shape = this.canvas.paper.path('M25.139520000010634 48.333649211997L26.84345600000779,42.43540921199883Q28.547392000004947,36.53716921200066 23.885079773487288, 28.8389327449607L21.937512226522248,25.62318167904202Q17.275200000004588,17.924945212002058 13.503676402846846, 26.09657967250519L13.182403597159013,26.79267075149505Q9.41088000000127,34.96430521199818 10.983744000002844, 41.386833212000056L12.556608000004417,47.80936121200193');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
-       
-       // Rectangle
-       shape = this.canvas.paper.path('M18.566656000002695 8.730641212006049L27.741696000002776 20.789265212005375L18.566656000002695 20.789265212005375Z');
-       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":2,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Rectangle");
        
        // Line
        shape = this.canvas.paper.path('M59.947317759990256 26.990202171997225L42.03763967999657,21.684407612005998');
@@ -9562,7 +9411,7 @@ video_features_LineAngle = video_features_LineAngle.extend({
 var video_features_Object = CircuitFigure.extend({
 
    NAME: "video_features_Object",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -9923,7 +9772,7 @@ video_features_Object = video_features_Object.extend({
 var video_filter_Embose = CircuitFigure.extend({
 
    NAME: "video_filter_Embose",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -10191,7 +10040,7 @@ video_filter_Embose = video_filter_Embose.extend({
 var video_filter_Prewitt = CircuitFigure.extend({
 
    NAME: "video_filter_Prewitt",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -10467,7 +10316,7 @@ video_filter_Prewitt = video_filter_Prewitt.extend({
 var video_filter_PrewittInvers = CircuitFigure.extend({
 
    NAME: "video_filter_PrewittInvers",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -10751,7 +10600,7 @@ video_filter_PrewittInvers = video_filter_PrewittInvers.extend({
 var video_filter_Roberts = CircuitFigure.extend({
 
    NAME: "video_filter_Roberts",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -11038,7 +10887,7 @@ video_filter_Roberts = video_filter_Roberts.extend({
 var video_filter_RobertsInvers = CircuitFigure.extend({
 
    NAME: "video_filter_RobertsInvers",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -11325,7 +11174,7 @@ video_filter_RobertsInvers = video_filter_RobertsInvers.extend({
 var video_filter_Sobel = CircuitFigure.extend({
 
    NAME: "video_filter_Sobel",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -11614,7 +11463,7 @@ video_filter_Sobel = video_filter_Sobel.extend({
 var video_filter_SobelInvers = CircuitFigure.extend({
 
    NAME: "video_filter_SobelInvers",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -11903,7 +11752,7 @@ video_filter_SobelInvers = video_filter_SobelInvers.extend({
 var video_geometry_FlipHorizontal = CircuitFigure.extend({
 
    NAME: "video_geometry_FlipHorizontal",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -12152,7 +12001,7 @@ video_geometry_FlipHorizontal = video_geometry_FlipHorizontal.extend({
 var video_geometry_FlipVertical = CircuitFigure.extend({
 
    NAME: "video_geometry_FlipVertical",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -12401,7 +12250,7 @@ video_geometry_FlipVertical = video_geometry_FlipVertical.extend({
 var video_geometry_Scale = CircuitFigure.extend({
 
    NAME: "video_geometry_Scale",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -12571,9 +12420,9 @@ video_geometry_Scale = video_geometry_Scale.extend({
             scaleCtx.drawImage(img, 0, 0, w, h);
             var scaledImage = document.createElement("img");
             scaledImage.onload = () => {
-                this.getOutputPort("output_port1").setValue(scaledImage)
-                this.processing = false;
+                this.getOutputPort("output_port1").setValue(scaledImage);
             }
+            this.processing = false;
 	   	    scaledImage.src = scaleCanvas.toDataURL();
         }
     },
@@ -12605,10 +12454,182 @@ video_geometry_Scale = video_geometry_Scale.extend({
 // created with http://www.draw2d.org
 //
 //
+var video_IPCamera = CircuitFigure.extend({
+
+   NAME: "video_IPCamera",
+   VERSION: "2.0.247_920",
+
+   init:function(attr, setter, getter)
+   {
+     var _this = this;
+
+     this._super( $.extend({stroke:0, bgColor:null, width:80,height:80.125},attr), setter, getter);
+     var port;
+     // output_port1
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 98.7890625, y: 49.921996879875195 }));
+     port.setConnectionDirection(1);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("output_port1");
+     port.setMaxFanOut(20);
+   },
+
+   createShapeElement : function()
+   {
+      var shape = this._super();
+      this.originalWidth = 80;
+      this.originalHeight= 80.125;
+      return shape;
+   },
+
+   createSet: function()
+   {
+       this.canvas.paper.setStart();
+       var shape = null;
+       // BoundingBox
+       shape = this.canvas.paper.path("M0,0 L80,0 L80,80.125 L0,80.125");
+       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
+       shape.data("name","BoundingBox");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M79.9944352881578,16.18111752610946Q79.99426089739427,14.181117533712495 79.99426089739427, 12.181117533712495L79.99426089739427,2Q79.99426089739427,0 77.99427040266448, 0.006166116321677656L1.9999904947297864,0.2404620146918169Q0,0.24662813101349457 0.007528135284914805, 2.24661396275809L0.2926710777935708,78.0000141682554Q0.3001992130784856,80 2.3001992130784856, 80L78,80Q80,80 79.99982560923647, 78.00000000760303L79.9944352881578,16.18111752610946');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'NetworkCam');
+       shape.attr({"x":5.640625,"y":69.125,"text-anchor":"start","text":"NetworkCam","font-family":"\"Arial\"","font-size":12,"stroke":"#000000","fill":"#BD2466","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M7.077599999998711,25.322299999999814Q7.077599999998711,21.322299999999814 11.07759999999871, 21.322299999999814L47.07759999999871,21.322299999999814Q51.07759999999871,21.322299999999814 51.07759999999871, 25.322299999999814L51.07759999999871,47.322299999999814Q51.07759999999871,51.322299999999814 47.07759999999871, 51.322299999999814L11.07759999999871,51.322299999999814Q7.077599999998711,51.322299999999814 7.077599999998711, 47.322299999999814L7.077599999998711,25.322299999999814');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Rectangle
+       shape = this.canvas.paper.path('M50.88073469083684,32.45000459669621Q50.86119999999755,30.450100000008206 52.560817500210284, 29.39591768514487L63.87798249978598,22.37648231486315Q65.57759999999871,21.322299999999814 65.57759999999871, 23.322299999999814L65.57759999999871,49.322299999999814Q65.57759999999871,51.322299999999814 63.91645483821974, 50.20847921033106L52.63054516177801,42.641120789660306Q50.96939999999904,41.527299999991556 50.949865309159755, 39.52739540330355L50.88073469083684,32.45000459669621');
+       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Rectangle");
+       
+       // Circle
+       shape = this.canvas.paper.ellipse();
+       shape.attr({"rx":3,"ry":3,"cx":45.86119999999755,"cy":25.958674805342525,"stroke":"none","stroke-width":0,"fill":"rgba(199,29,61,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Circle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'http://<address>:<port>');
+       shape.attr({"x":6.640625,"y":13.109375,"text-anchor":"start","text":"http://<address>:<port>","font-family":"\"Arial\"","font-size":6,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+
+       return this.canvas.paper.setFinish();
+   }
+});
+
+/**
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custome code and event handler here.
+ *
+ *
+ */
+video_IPCamera = video_IPCamera.extend({
+
+    init: function(attr, setter, getter){
+         this._super(attr, setter, getter);
+
+        this.TRANSPARENT_PIXEL = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==";
+   
+        this.img = new draw2d.shape.basic.Image({
+            width: this.getWidth()-6, 
+            height: this.getHeight()/4*3 -6,
+            path: this.TRANSPARENT_PIXEL
+        });
+        this.img.hitTest = ()=>false;
+        this.add(this.img, new draw2d.layout.locator.XYAbsPortLocator({x:3,y:3}));
+        
+        this.attr({resizeable:false});
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+        this.getOutputPort("output_port1").attr({
+            semanticGroup:"Image",
+            bgColor:"#ff0000",
+            diameter:15
+        });
+
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        var image = new Image();
+        image.onload = () => {
+            this.getOutputPort("output_port1").setValue(image);
+        };
+        image.src = hardware.camera.image(this.attr("userData.ipAddress"));
+    },
+    
+    
+    onStart: function(context ){
+        hardware.camera.start(this.attr("userData.ipAddress"));
+    },
+    
+    
+    onStop: function(context){
+        hardware.camera.stop(this.attr("userData.ipAddress"));
+    },
+    
+    getPersistentAttributes: function () 
+    {
+       let currentImage = this.img.attr("path");
+       this.img.attr("path", this.TRANSPARENT_PIXEL);
+    
+       let memento = this._super()
+    
+       this.img.attr("path", currentImage);
+
+       return memento
+    },
+    
+    setPersistentAttributes: function (memento) {
+        this._super(memento)
+        
+        this.img = this.getChildren().find( child => child instanceof draw2d.shape.basic.Image)
+        this.img.hitTest = ()=>false
+        
+        this.getOutputPort("output_port1").attr({
+            semanticGroup:"Image",
+            bgColor:"#ff0000",
+            diameter:15
+        })
+    },
+    
+    getParameterSettings: function () {
+        return [{
+                name: "ipAddress",
+                label: "IP-Address of the MJPEG Web Camera",
+                property: {
+                    type: "string"
+                }
+            }]
+    }
+    
+});
+
+
+// Generated Code for the Draw2D touch HTML5 lib.
+// File will be generated if you save the *.shape file.
+//
+// created with http://www.draw2d.org
+//
+//
 var video_Preview = CircuitFigure.extend({
 
    NAME: "video_Preview",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -12621,7 +12642,7 @@ var video_Preview = CircuitFigure.extend({
      port.setConnectionDirection(3);
      port.setBackgroundColor("#37B1DE");
      port.setName("input_port1");
-     port.setMaxFanOut(20);
+     port.setMaxFanOut(1);
      // output_port1
      port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 102.5, y: 50 }));
      port.setConnectionDirection(1);
@@ -12801,7 +12822,7 @@ video_Preview = video_Preview.extend({
 var video_quality_Blur = CircuitFigure.extend({
 
    NAME: "video_quality_Blur",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -13062,7 +13083,7 @@ video_quality_Blur = video_quality_Blur.extend({
 var video_quality_Brighter = CircuitFigure.extend({
 
    NAME: "video_quality_Brighter",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -13322,7 +13343,7 @@ video_quality_Brighter = video_quality_Brighter.extend({
 var video_quality_Contrast = CircuitFigure.extend({
 
    NAME: "video_quality_Contrast",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -13595,7 +13616,7 @@ video_quality_Contrast = video_quality_Contrast.extend({
 var video_quality_Darker = CircuitFigure.extend({
 
    NAME: "video_quality_Darker",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -13844,7 +13865,7 @@ video_quality_Darker = video_quality_Darker.extend({
 var video_quality_GaussBlur = CircuitFigure.extend({
 
    NAME: "video_quality_GaussBlur",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -14376,7 +14397,7 @@ video_quality_GaussBlur = video_quality_GaussBlur.extend({
 var video_quality_Histogram = CircuitFigure.extend({
 
    NAME: "video_quality_Histogram",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -14654,7 +14675,7 @@ video_quality_Histogram = video_quality_Histogram.extend({
 var video_quality_Sharpen = CircuitFigure.extend({
 
    NAME: "video_quality_Sharpen",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -14918,7 +14939,7 @@ video_quality_Sharpen = video_quality_Sharpen.extend({
 var video_WebCam = CircuitFigure.extend({
 
    NAME: "video_WebCam",
-   VERSION: "local-version",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -15004,7 +15025,7 @@ video_WebCam = video_WebCam.extend({
             height: this.getHeight()/4*3 -6,
             path: this.TRANSPARENT_PIXEL
         });
-        this.img.hitTest = ()=>false;
+        this.img.hitTest = ()=>false
         this.add(this.img, new draw2d.layout.locator.XYAbsPortLocator({x:3,y:3}));
 
         
@@ -15018,7 +15039,7 @@ video_WebCam = video_WebCam.extend({
             semanticGroup:"Image",
             bgColor:"#ff0000",
             diameter:15
-        });
+        })
     },
 
     /**
@@ -15030,21 +15051,21 @@ video_WebCam = video_WebCam.extend({
     calculate:function( context)
     {
         if(this.imageCapture===null && this.processing === false){
-            return;
+            return
         }
         this.processing = true;
         this.imageCapture.takePhoto()
             .then((blob) =>{
                 var a = new FileReader();
                 a.onload = (e) => {
-                    this.img.attr("path", e.target.result);
-                    var image = new Image();
+                    this.img.attr("path", e.target.result)
+                    var image = new Image()
                     image.onload = () => {
-                        this.getOutputPort("output_port1").setValue(image);
+                        this.getOutputPort("output_port1").setValue(image)
                         this.processing = false;
-                    };
-                    image.src = e.target.result;
-                };
+                    }
+                    image.src = e.target.result
+                }
                 a.readAsDataURL(blob);
             }).catch((error) =>{
                 //console.log('takePhoto() error: ', error);
@@ -15067,10 +15088,10 @@ video_WebCam = video_WebCam.extend({
                 })
                 .catch((err) =>{
                     console.log("no permission to use VideoCam");
-                });
+                })
         }
         catch(e){
-            console.log("didn't support mediaDevices");
+            console.log("didn't support mediaDevices")
         }
 
     },
@@ -15094,24 +15115,24 @@ video_WebCam = video_WebCam.extend({
        let currentImage = this.img.attr("path");
        this.img.attr("path", this.TRANSPARENT_PIXEL);
     
-       let memento = this._super();
+       let memento = this._super()
     
        this.img.attr("path", currentImage);
 
-       return memento;
+       return memento
     },
     
     setPersistentAttributes: function (memento) {
-        this._super(memento);
+        this._super(memento)
         
-        this.img = this.getChildren().find( child => child instanceof draw2d.shape.basic.Image);
-        this.img.hitTest = ()=>false;
+        this.img = this.getChildren().find( child => child instanceof draw2d.shape.basic.Image)
+        this.img.hitTest = ()=>false
         
         this.getOutputPort("output_port1").attr({
             semanticGroup:"Image",
             bgColor:"#ff0000",
             diameter:15
-        });
+        })
     }
 
 });
