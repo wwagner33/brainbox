@@ -78,7 +78,7 @@
         "name": "input_port1",
         "type": "Input",
         "direction": 3,
-        "fanout": null
+        "fanout": 1
       },
       "cssClass": "shape_designer_figure_ExtPort",
       "ports": [],

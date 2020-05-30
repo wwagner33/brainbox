@@ -36,7 +36,6 @@ module.exports = {
       }
     }
 
-
     socketio.on('connection', socket => {
       socket.on('camera:start', async () => {
 

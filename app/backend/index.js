@@ -10,7 +10,9 @@ const colors = require('colors')
 const io = require('./comm/websocket').connect(http, {path: '/socket.io'})
 const mqtt = require('./comm/hive-mqtt').connect(io, "freegroup/brainbox")
 const raspi = require("./comm/raspi").connect(io)
-const camera = require("./comm/camera").connect(io)
+//const camera = require("./comm/camera").connect(io)
+const ip_camera = require("./comm/ip-camera").connect(io)
+
 
 
 program

@@ -7,7 +7,7 @@
 var video_geometry_Scale = CircuitFigure.extend({
 
    NAME: "video_geometry_Scale",
-   VERSION: "2.0.214_839",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -177,9 +177,9 @@ video_geometry_Scale = video_geometry_Scale.extend({
             scaleCtx.drawImage(img, 0, 0, w, h);
             var scaledImage = document.createElement("img");
             scaledImage.onload = () => {
-                this.getOutputPort("output_port1").setValue(scaledImage)
-                this.processing = false;
+                this.getOutputPort("output_port1").setValue(scaledImage);
             }
+            this.processing = false;
 	   	    scaledImage.src = scaleCanvas.toDataURL();
         }
     },

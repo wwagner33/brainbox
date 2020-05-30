@@ -5672,7 +5672,9 @@ var TRANSPARENT_PIXEL = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAA
 var values = {};
 var socket = null;
 var usbPort = null;
-var currentImage = TRANSPARENT_PIXEL;
+var currentImage = {
+  "webcam": TRANSPARENT_PIXEL
+};
 
 exports.default = {
   /**
@@ -5885,19 +5887,25 @@ exports.default = {
   }(_EventEmitter4.default))(),
 
   camera: {
-    start: function start() {
-      socket.emit('camera:start', {});
+    start: function start(ipAddress) {
+      socket.emit('camera:start', { ipAddress: ipAddress });
       socket.on("camera:capture", function (msg) {
-        console.log("got image");
-        currentImage = msg.data;
+        if (msg.ipAddress) {
+          currentImage[msg.ipAddress] = msg.data;
+        } else {
+          currentImage["webcam"] = msg.data;
+        }
       });
     },
-    stop: function stop() {
-      socket.emit('camera:stop', {});
+    stop: function stop(ipAddress) {
+      socket.emit('camera:stop', { ipAddress: ipAddress });
       socket.off("camera:capture");
     },
-    image: function image() {
-      return currentImage;
+    image: function image(ipAddress) {
+      if (ipAddress) {
+        return currentImage[ipAddress] || TRANSPARENT_PIXEL;
+      }
+      return currentImage["webcam"];
     }
   }
 };

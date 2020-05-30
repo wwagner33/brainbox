@@ -4,10 +4,10 @@
 // created with http://www.draw2d.org
 //
 //
-var circuit_hardware_raspi_GPIOWrite = CircuitFigure.extend({
+var hardware_raspi_GPIOWrite = CircuitFigure.extend({
 
-   NAME: "circuit_hardware_raspi_GPIOWrite",
-   VERSION: "2.0.214_839",
+   NAME: "hardware_raspi_GPIOWrite",
+   VERSION: "2.0.247_920",
 
    init:function(attr, setter, getter)
    {
@@ -225,7 +225,7 @@ var circuit_hardware_raspi_GPIOWrite = CircuitFigure.extend({
  *
  *
  */
-circuit_hardware_raspi_GPIOWrite = circuit_hardware_raspi_GPIOWrite.extend({
+hardware_raspi_GPIOWrite = hardware_raspi_GPIOWrite.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);

@@ -6,7 +6,7 @@
       "74LSXX",
       "74LS90"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "74LS90.js",
     "displayName": "74LS90",
     "basedir": "circuit/74LSXX",
@@ -21,7 +21,7 @@
       "alu",
       "FullAdder"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "FullAdder.js",
     "displayName": "FullAdder",
     "basedir": "circuit/digital/alu",
@@ -36,7 +36,7 @@
       "alu",
       "FullAdder4Bit"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "FullAdder4Bit.js",
     "displayName": "FullAdder4Bit",
     "basedir": "circuit/digital/alu",
@@ -51,7 +51,7 @@
       "buttons",
       "HighLow"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "HighLow.js",
     "displayName": "HighLow",
     "basedir": "circuit/digital/buttons",
@@ -66,7 +66,7 @@
       "buttons",
       "HighLowArray"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "HighLowArray.js",
     "displayName": "HighLowArray",
     "basedir": "circuit/digital/buttons",
@@ -81,7 +81,7 @@
       "buttons",
       "PushButton"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "PushButton.js",
     "displayName": "PushButton",
     "basedir": "circuit/digital/buttons",
@@ -96,7 +96,7 @@
       "counter",
       "BCDCounter"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "BCDCounter.js",
     "displayName": "BCDCounter",
     "basedir": "circuit/digital/counter",
@@ -111,7 +111,7 @@
       "decoder",
       "BCDto7Seg"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "BCDto7Seg.js",
     "displayName": "BCDto7Seg",
     "basedir": "circuit/digital/decoder",
@@ -126,7 +126,7 @@
       "display",
       "7Segment"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "7Segment.js",
     "displayName": "7Segment",
     "basedir": "circuit/digital/display",
@@ -141,7 +141,7 @@
       "display",
       "Led"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Led.js",
     "displayName": "Led",
     "basedir": "circuit/digital/display",
@@ -156,7 +156,7 @@
       "flipflop",
       "DFlipFlop"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "DFlipFlop.js",
     "displayName": "DFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -171,7 +171,7 @@
       "flipflop",
       "JKFlipFlop"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "JKFlipFlop.js",
     "displayName": "JKFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -186,7 +186,7 @@
       "flipflop",
       "JKRFlipFlop"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "JKRFlipFlop.js",
     "displayName": "JKRFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -201,7 +201,7 @@
       "flipflop",
       "SRFlipFlop"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "SRFlipFlop.js",
     "displayName": "SRFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -216,7 +216,7 @@
       "flipflop",
       "TFlipFlop"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "TFlipFlop.js",
     "displayName": "TFlipFlop",
     "basedir": "circuit/digital/flipflop",
@@ -232,7 +232,7 @@
       "DIN40700",
       "AND"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "AND.js",
     "displayName": "AND",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -248,7 +248,7 @@
       "DIN40700",
       "NAND"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "NAND.js",
     "displayName": "NAND",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -264,7 +264,7 @@
       "DIN40700",
       "NOR"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "NOR.js",
     "displayName": "NOR",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -280,7 +280,7 @@
       "DIN40700",
       "OR"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "OR.js",
     "displayName": "OR",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -296,7 +296,7 @@
       "DIN40700",
       "XNOR"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "XNOR.js",
     "displayName": "XNOR",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -312,7 +312,7 @@
       "DIN40700",
       "XOR"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "XOR.js",
     "displayName": "XOR",
     "basedir": "circuit/digital/gate/DIN40700",
@@ -329,7 +329,7 @@
       "12",
       "AND"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "AND.js",
     "displayName": "AND",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -346,7 +346,7 @@
       "12",
       "NAND"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "NAND.js",
     "displayName": "NAND",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -363,7 +363,7 @@
       "12",
       "NOR"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "NOR.js",
     "displayName": "NOR",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -380,7 +380,7 @@
       "12",
       "NOT"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "NOT.js",
     "displayName": "NOT",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -397,7 +397,7 @@
       "12",
       "OR"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "OR.js",
     "displayName": "OR",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -414,7 +414,7 @@
       "12",
       "XNOR"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "XNOR.js",
     "displayName": "XNOR",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -431,7 +431,7 @@
       "12",
       "XOR"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "XOR.js",
     "displayName": "XOR",
     "basedir": "circuit/digital/gate/IEC60617-12",
@@ -446,7 +446,7 @@
       "pulse",
       "10hz"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "10hz.js",
     "displayName": "10hz",
     "basedir": "circuit/digital/pulse",
@@ -461,7 +461,7 @@
       "pulse",
       "1hz"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "1hz.js",
     "displayName": "1hz",
     "basedir": "circuit/digital/pulse",
@@ -476,7 +476,7 @@
       "pulse",
       "50hz"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "50hz.js",
     "displayName": "50hz",
     "basedir": "circuit/digital/pulse",
@@ -491,7 +491,7 @@
       "pulse",
       "Delay"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Delay.js",
     "displayName": "Delay",
     "basedir": "circuit/digital/pulse",
@@ -506,7 +506,7 @@
       "signal",
       "High"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "High.js",
     "displayName": "High",
     "basedir": "circuit/digital/signal",
@@ -521,7 +521,7 @@
       "signal",
       "Low"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Low.js",
     "displayName": "Low",
     "basedir": "circuit/digital/signal",
@@ -536,7 +536,7 @@
       "timer",
       "Delay"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Delay.js",
     "displayName": "Delay",
     "basedir": "circuit/digital/timer",
@@ -544,102 +544,12 @@
     "image": "circuit/digital/timer/Delay.png"
   },
   {
-    "name": "circuit_hardware_arduino_Arduino",
-    "tags": [
-      "circuit",
-      "hardware",
-      "arduino",
-      "Arduino"
-    ],
-    "version": "local-version",
-    "basename": "Arduino.js",
-    "displayName": "Arduino",
-    "basedir": "circuit/hardware/arduino",
-    "filePath": "circuit/hardware/arduino/Arduino.shape",
-    "image": "circuit/hardware/arduino/Arduino.png"
-  },
-  {
-    "name": "circuit_hardware_arduino_Led",
-    "tags": [
-      "circuit",
-      "hardware",
-      "arduino",
-      "Led"
-    ],
-    "version": "local-version",
-    "basename": "Led.js",
-    "displayName": "Led",
-    "basedir": "circuit/hardware/arduino",
-    "filePath": "circuit/hardware/arduino/Led.shape",
-    "image": "circuit/hardware/arduino/Led.png"
-  },
-  {
-    "name": "circuit_hardware_raspi_Camera",
-    "tags": [
-      "circuit",
-      "hardware",
-      "raspi",
-      "Camera"
-    ],
-    "version": "local-version",
-    "basename": "Camera.js",
-    "displayName": "Camera",
-    "basedir": "circuit/hardware/raspi",
-    "filePath": "circuit/hardware/raspi/Camera.shape",
-    "image": "circuit/hardware/raspi/Camera.png"
-  },
-  {
-    "name": "circuit_hardware_raspi_GPIORead",
-    "tags": [
-      "circuit",
-      "hardware",
-      "raspi",
-      "GPIORead"
-    ],
-    "version": "local-version",
-    "basename": "GPIORead.js",
-    "displayName": "GPIORead",
-    "basedir": "circuit/hardware/raspi",
-    "filePath": "circuit/hardware/raspi/GPIORead.shape",
-    "image": "circuit/hardware/raspi/GPIORead.png"
-  },
-  {
-    "name": "circuit_hardware_raspi_GPIOWrite",
-    "tags": [
-      "circuit",
-      "hardware",
-      "raspi",
-      "GPIOWrite"
-    ],
-    "version": "local-version",
-    "basename": "GPIOWrite.js",
-    "displayName": "GPIOWrite",
-    "basedir": "circuit/hardware/raspi",
-    "filePath": "circuit/hardware/raspi/GPIOWrite.shape",
-    "image": "circuit/hardware/raspi/GPIOWrite.png"
-  },
-  {
-    "name": "circuit_hardware_raspi_ServoWrite",
-    "tags": [
-      "circuit",
-      "hardware",
-      "raspi",
-      "ServoWrite"
-    ],
-    "version": "local-version",
-    "basename": "ServoWrite.js",
-    "displayName": "ServoWrite",
-    "basedir": "circuit/hardware/raspi",
-    "filePath": "circuit/hardware/raspi/ServoWrite.shape",
-    "image": "circuit/hardware/raspi/ServoWrite.png"
-  },
-  {
     "name": "controls_Slider",
     "tags": [
       "controls",
       "Slider"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Slider.js",
     "displayName": "Slider",
     "basedir": "controls",
@@ -652,7 +562,7 @@
       "diagram",
       "Sparkline"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Sparkline.js",
     "displayName": "Sparkline",
     "basedir": "diagram",
@@ -665,7 +575,7 @@
       "documentation",
       "Markdown"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Markdown.js",
     "displayName": "Markdown",
     "basedir": "documentation",
@@ -678,7 +588,7 @@
       "documentation",
       "Text"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Text.js",
     "displayName": "Text",
     "basedir": "documentation",
@@ -686,12 +596,82 @@
     "image": "documentation/Text.png"
   },
   {
+    "name": "hardware_arduino_Arduino",
+    "tags": [
+      "hardware",
+      "arduino",
+      "Arduino"
+    ],
+    "version": "2.0.247_920",
+    "basename": "Arduino.js",
+    "displayName": "Arduino",
+    "basedir": "hardware/arduino",
+    "filePath": "hardware/arduino/Arduino.shape",
+    "image": "hardware/arduino/Arduino.png"
+  },
+  {
+    "name": "hardware_arduino_Led",
+    "tags": [
+      "hardware",
+      "arduino",
+      "Led"
+    ],
+    "version": "2.0.247_920",
+    "basename": "Led.js",
+    "displayName": "Led",
+    "basedir": "hardware/arduino",
+    "filePath": "hardware/arduino/Led.shape",
+    "image": "hardware/arduino/Led.png"
+  },
+  {
+    "name": "hardware_raspi_GPIORead",
+    "tags": [
+      "hardware",
+      "raspi",
+      "GPIORead"
+    ],
+    "version": "2.0.247_920",
+    "basename": "GPIORead.js",
+    "displayName": "GPIORead",
+    "basedir": "hardware/raspi",
+    "filePath": "hardware/raspi/GPIORead.shape",
+    "image": "hardware/raspi/GPIORead.png"
+  },
+  {
+    "name": "hardware_raspi_GPIOWrite",
+    "tags": [
+      "hardware",
+      "raspi",
+      "GPIOWrite"
+    ],
+    "version": "2.0.247_920",
+    "basename": "GPIOWrite.js",
+    "displayName": "GPIOWrite",
+    "basedir": "hardware/raspi",
+    "filePath": "hardware/raspi/GPIOWrite.shape",
+    "image": "hardware/raspi/GPIOWrite.png"
+  },
+  {
+    "name": "hardware_raspi_ServoWrite",
+    "tags": [
+      "hardware",
+      "raspi",
+      "ServoWrite"
+    ],
+    "version": "2.0.247_920",
+    "basename": "ServoWrite.js",
+    "displayName": "ServoWrite",
+    "basedir": "hardware/raspi",
+    "filePath": "hardware/raspi/ServoWrite.shape",
+    "image": "hardware/raspi/ServoWrite.png"
+  },
+  {
     "name": "math_Median",
     "tags": [
       "math",
       "Median"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Median.js",
     "displayName": "Median",
     "basedir": "math",
@@ -704,7 +684,7 @@
       "messaging",
       "HiveMQ"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "HiveMQ.js",
     "displayName": "HiveMQ",
     "basedir": "messaging",
@@ -717,7 +697,7 @@
       "signal",
       "SignalSource"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "SignalSource.js",
     "displayName": "SignalSource",
     "basedir": "signal",
@@ -730,7 +710,7 @@
       "signal",
       "SignalTarget"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "SignalTarget.js",
     "displayName": "SignalTarget",
     "basedir": "signal",
@@ -744,7 +724,7 @@
       "color",
       "BlackWhite"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "BlackWhite.js",
     "displayName": "BlackWhite",
     "basedir": "video/color",
@@ -758,7 +738,7 @@
       "color",
       "Grayscale"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Grayscale.js",
     "displayName": "Grayscale",
     "basedir": "video/color",
@@ -772,7 +752,7 @@
       "color",
       "GrayscaleAvg"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "GrayscaleAvg.js",
     "displayName": "GrayscaleAvg",
     "basedir": "video/color",
@@ -787,7 +767,7 @@
       "HSV",
       "Colorspace"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "HSV-Colorspace.js",
     "displayName": "HSV-Colorspace",
     "basedir": "video/color",
@@ -801,7 +781,7 @@
       "color",
       "Invert"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Invert.js",
     "displayName": "Invert",
     "basedir": "video/color",
@@ -815,7 +795,7 @@
       "color",
       "Luminance"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Luminance.js",
     "displayName": "Luminance",
     "basedir": "video/color",
@@ -829,7 +809,7 @@
       "color",
       "WhiteBlack"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "WhiteBlack.js",
     "displayName": "WhiteBlack",
     "basedir": "video/color",
@@ -843,7 +823,7 @@
       "features",
       "LineAngle"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "LineAngle.js",
     "displayName": "LineAngle",
     "basedir": "video/features",
@@ -857,7 +837,7 @@
       "features",
       "Object"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Object.js",
     "displayName": "Object",
     "basedir": "video/features",
@@ -871,7 +851,7 @@
       "filter",
       "Embose"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Embose.js",
     "displayName": "Embose",
     "basedir": "video/filter",
@@ -885,7 +865,7 @@
       "filter",
       "Prewitt"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Prewitt.js",
     "displayName": "Prewitt",
     "basedir": "video/filter",
@@ -899,7 +879,7 @@
       "filter",
       "PrewittInvers"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "PrewittInvers.js",
     "displayName": "PrewittInvers",
     "basedir": "video/filter",
@@ -913,7 +893,7 @@
       "filter",
       "Roberts"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Roberts.js",
     "displayName": "Roberts",
     "basedir": "video/filter",
@@ -927,7 +907,7 @@
       "filter",
       "RobertsInvers"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "RobertsInvers.js",
     "displayName": "RobertsInvers",
     "basedir": "video/filter",
@@ -941,7 +921,7 @@
       "filter",
       "Sobel"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Sobel.js",
     "displayName": "Sobel",
     "basedir": "video/filter",
@@ -955,7 +935,7 @@
       "filter",
       "SobelInvers"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "SobelInvers.js",
     "displayName": "SobelInvers",
     "basedir": "video/filter",
@@ -969,7 +949,7 @@
       "geometry",
       "FlipHorizontal"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "FlipHorizontal.js",
     "displayName": "FlipHorizontal",
     "basedir": "video/geometry",
@@ -983,7 +963,7 @@
       "geometry",
       "FlipVertical"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "FlipVertical.js",
     "displayName": "FlipVertical",
     "basedir": "video/geometry",
@@ -997,7 +977,7 @@
       "geometry",
       "Scale"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Scale.js",
     "displayName": "Scale",
     "basedir": "video/geometry",
@@ -1005,12 +985,25 @@
     "image": "video/geometry/Scale.png"
   },
   {
+    "name": "video_IPCamera",
+    "tags": [
+      "video",
+      "IPCamera"
+    ],
+    "version": "2.0.247_920",
+    "basename": "IPCamera.js",
+    "displayName": "IPCamera",
+    "basedir": "video",
+    "filePath": "video/IPCamera.shape",
+    "image": "video/IPCamera.png"
+  },
+  {
     "name": "video_Preview",
     "tags": [
       "video",
       "Preview"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Preview.js",
     "displayName": "Preview",
     "basedir": "video",
@@ -1024,7 +1017,7 @@
       "quality",
       "Blur"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Blur.js",
     "displayName": "Blur",
     "basedir": "video/quality",
@@ -1038,7 +1031,7 @@
       "quality",
       "Brighter"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Brighter.js",
     "displayName": "Brighter",
     "basedir": "video/quality",
@@ -1052,7 +1045,7 @@
       "quality",
       "Contrast"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Contrast.js",
     "displayName": "Contrast",
     "basedir": "video/quality",
@@ -1066,7 +1059,7 @@
       "quality",
       "Darker"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Darker.js",
     "displayName": "Darker",
     "basedir": "video/quality",
@@ -1080,7 +1073,7 @@
       "quality",
       "GaussBlur"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "GaussBlur.js",
     "displayName": "GaussBlur",
     "basedir": "video/quality",
@@ -1094,7 +1087,7 @@
       "quality",
       "Histogram"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Histogram.js",
     "displayName": "Histogram",
     "basedir": "video/quality",
@@ -1108,7 +1101,7 @@
       "quality",
       "Sharpen"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "Sharpen.js",
     "displayName": "Sharpen",
     "basedir": "video/quality",
@@ -1121,7 +1114,7 @@
       "video",
       "WebCam"
     ],
-    "version": "local-version",
+    "version": "2.0.247_920",
     "basename": "WebCam.js",
     "displayName": "WebCam",
     "basedir": "video",

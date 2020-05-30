@@ -22,7 +22,7 @@
       "labels": []
     },
     {
-      "type": "circuit_hardware_arduino_Arduino",
+      "type": "hardware_arduino_Arduino",
       "id": "9600cfaf-443b-59f0-20f9-0fbd3a9942d9",
       "x": 201.765625,
       "y": 365.890625,
@@ -35,7 +35,7 @@
       "userData": {
         "file": "circuit/hardware/arduino/Arduino.shape"
       },
-      "cssClass": "circuit_hardware_arduino_Arduino",
+      "cssClass": "hardware_arduino_Arduino",
       "bgColor": "rgba(0,0,0,0)",
       "color": "rgba(27,27,27,1)",
       "stroke": 0,

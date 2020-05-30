@@ -6,7 +6,7 @@
  *
  *
  */
-circuit_hardware_raspi_ServoWrite = circuit_hardware_raspi_ServoWrite.extend({
+hardware_raspi_GPIOWrite = hardware_raspi_GPIOWrite.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);
@@ -23,8 +23,11 @@ circuit_hardware_raspi_ServoWrite = circuit_hardware_raspi_ServoWrite.extend({
     {
         this.getInputPorts().each(function(index,port){
             if(port.hasChangedValue() && port.getConnections().getSize()>0){
-                hardware.raspi.pwm(port.getName(), port.getValue());
+                hardware.raspi.set(port.getName(), port.getValue());
             }
+        });
+        this.getOutputPorts().each(function(index,port){
+            port.setValue(hardware.gpio.get(port.getName()));
         });
     },
     

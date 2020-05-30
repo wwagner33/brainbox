@@ -13,7 +13,9 @@ const TRANSPARENT_PIXEL = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAE
 let values = {}
 let socket = null
 let usbPort = null
-let currentImage = TRANSPARENT_PIXEL
+let currentImage = {
+  "webcam": TRANSPARENT_PIXEL
+}
 
 export default {
   /**
@@ -193,19 +195,26 @@ export default {
 
 
   camera: {
-    start: function () {
-      socket.emit('camera:start', {})
+    start: function (ipAddress) {
+      socket.emit('camera:start', {ipAddress})
       socket.on("camera:capture", msg => {
-        console.log("got image")
-        currentImage = msg.data
+        if(msg.ipAddress) {
+          currentImage[msg.ipAddress] = msg.data
+        }
+        else{
+          currentImage["webcam"] = msg.data
+        }
       })
     },
-    stop: function () {
-      socket.emit('camera:stop', {})
+    stop: function (ipAddress) {
+      socket.emit('camera:stop', {ipAddress})
       socket.off("camera:capture")
     },
-    image: function(){
-      return currentImage
+    image: function(ipAddress){
+      if(ipAddress){
+        return currentImage[ipAddress] || TRANSPARENT_PIXEL
+      }
+      return currentImage["webcam"]
     }
   }
 }
