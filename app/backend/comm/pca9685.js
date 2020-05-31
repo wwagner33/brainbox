@@ -26,7 +26,7 @@ module.exports = {
 
       pwm = new Pca9685Driver(options, function(err) {
         if (err) {
-          console.error("Error initializing PCA9685")
+          console.error("Error initializing PCA9685", err)
         }
       })
     }
