@@ -19,7 +19,7 @@ module.exports = {
     // =================================================================
 
     let pins = {
-      gpio_1:  new Gpio( 1, {mode: Gpio.OUTPUT} ),
+      //gpio_1:  new Gpio( 1, {mode: Gpio.OUTPUT} ),
       gpio_2:  new Gpio( 2, {mode: Gpio.OUTPUT} ),
       gpio_3:  new Gpio( 3, {mode: Gpio.OUTPUT} ),
       gpio_4:  new Gpio( 4, {mode: Gpio.OUTPUT} ),
