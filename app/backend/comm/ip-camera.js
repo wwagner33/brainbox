@@ -1,7 +1,7 @@
-const fs = require('fs');
-const MjpegDecoder = require('mjpeg-decoder');
+const MJPEGDecoder = require('mjpeg-decoder')
 
-let decoders = [];
+// active started encoders connect with with an IP-Camera
+let decoders = []
 
 module.exports = {
 
@@ -18,7 +18,7 @@ module.exports = {
         decoders = decoders.filter( decoderEntry => {
           if (decoderEntry.clientId===clientId){
             decoderEntry.decoder.stop()
-            console.log("stop decoder due of disconnect fromclient")
+            //console.log("stop decoder due of disconnect fromclient")
             return false
           }
           return true
@@ -34,7 +34,7 @@ module.exports = {
         let decoderEntry = decoders.find( decoderEntry => (decoderEntry.ipAddress===data.ipAddress && decoderEntry.clientId===clientId))
 
         if(decoderEntry){
-        console.log("decoder found")
+          // console.log("decoder found")
           // already started....just return silently
           return
         }
@@ -44,7 +44,7 @@ module.exports = {
         decoderEntry = {
           ipAddress: data.ipAddress,
           clientId: clientId,
-          decoder: new MjpegDecoder(data.ipAddress, {interval: 100})
+          decoder: new MJPEGDecoder(data.ipAddress, {interval: 100})
         }
 
         decoders.push(decoderEntry)
@@ -64,19 +64,18 @@ module.exports = {
 
       client.on('camera:stop', async msg => {
         if(!msg.ipAddress){
-          console.log("no ip address")
+          // console.log("no ip address")
           return // silently ignore
         }
 
         decoders = decoders.filter( decoderEntry => {
           if (decoderEntry.ipAddress===msg.ipAddress && decoderEntry.clientId===clientId){
             decoderEntry.decoder.stop()
-            console.log("stop decoder", clientId)
+            // console.log("stop decoder", clientId)
             return false
           }
           return true
         });
-        console.log(decoders)
       })
     })
 
