@@ -122,7 +122,9 @@
     "truncate-utf8-bytes": "^1.0.2",
     "tslib": "^1.11.1",
     "unzip": "^0.1.11",
-    "webpage": "0.3.0",
+    "webpage": "0.3.0"
+  },
+  "optionalDependencies": {
     "wiring-pi": "^2.2.1"
   },
   "homepage": "https://github.com/freegroup/brainbox#readme"

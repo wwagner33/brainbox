@@ -5907,6 +5907,21 @@ exports.default = {
       }
       return currentImage["webcam"];
     }
+  },
+
+  pca9685: {
+    set: function set(channel, value) {
+      socket.emit('pca9685:set', {
+        channel: channel,
+        value: value
+      });
+    },
+    pwm: function pwm(channel, value) {
+      socket.emit('pca9685:pwm', {
+        channel: channel,
+        value: value
+      });
+    }
   }
 };
 module.exports = exports["default"];

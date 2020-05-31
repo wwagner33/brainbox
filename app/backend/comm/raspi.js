@@ -1,6 +1,7 @@
 const isPi = require('detect-rpi')
 
 let Gpio = null
+
 if(isPi()) {
   Gpio = require('pigpio').Gpio
 }
@@ -11,9 +12,9 @@ else {
 module.exports = {
 
   connect: function(socketio){
-    //if(!isPi()){
-    //  return // silently
-    //}
+    if(!isPi()){
+      console.log("Running on a non RaspberryPi. GPIO is in emulation mode only available.")
+    }
 
     // =================================================================
 
