@@ -15,13 +15,13 @@ hardware_raspi_PCA9685 = hardware_raspi_PCA9685.extend({
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);
 
-        this.gpioPin = "0"
+        this.channel = "0"
         this.on("change:userData.channel",(emitter, event)=>{
             this.layerAttr("", {text: "PWM channel "+event.value})
             this.channel = event.value;
         });
         this.on("added",(emitter, event)=>{
-             this.layerAttr("channelLabel", {text: this.attr("userData.channel")})
+             this.layerAttr("channelLabel", {text:  "PWM channel "+this.attr("userData.channel")})
         });
         this.attr("userData.channel",this.channel)
         
