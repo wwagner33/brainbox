@@ -6197,11 +6197,8 @@ hardware_raspi_PCA9685 = hardware_raspi_PCA9685.extend({
     {
         let port_pwm   = this.getInputPort("input_channel_pwm");
         let port_onoff = this.getInputPort("input_channel_onoff");
-        if(port_pwm.hasChangedValue()){
+        if(port_pwm.hasChangedValue() || port_onoff.hasChangedValue()){
             hardware.pca9685.pwm(parseInt(this.channel), port_pwm.getValue());
-        }
-        
-        if(port_onoff.hasChangedValue()){
             hardware.pca9685.set(parseInt(this.channel), port_onoff.getValue());
         }
     },
