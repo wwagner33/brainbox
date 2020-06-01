@@ -10,7 +10,7 @@
  * Looks disconcerting - extending my own class. But this is a good method to
  * merge basic code and override them with custom methods.
  */
-hardware_raspi_PCA9685 = hardware_raspi_PCA9685.extend({
+hardware_raspi_PCA9685Servo = hardware_raspi_PCA9685Servo.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);
@@ -42,7 +42,7 @@ hardware_raspi_PCA9685 = hardware_raspi_PCA9685.extend({
         let port_pwm   = this.getInputPort("input_channel_pwm");
         let port_onoff = this.getInputPort("input_channel_onoff");
         if(port_pwm.hasChangedValue() || port_onoff.hasChangedValue()){
-            let pwm  = port_pwm.getValue();
+            let pwm  = this.toServoPWM(port_pwm.getValue());
             let onoff = port_onoff.getValue();
             if(onoff){
                 hardware.pca9685.set(parseInt(this.channel), onoff);
@@ -64,7 +64,7 @@ hardware_raspi_PCA9685 = hardware_raspi_PCA9685.extend({
         let port_pwm   = this.getInputPort("input_channel_pwm");
         let port_onoff = this.getInputPort("input_channel_onoff");
 
-        let pwm  = port_pwm.getValue();
+        let pwm  = this.toServoPWM(port_pwm.getValue());
         let onoff = port_onoff.getValue();
         if(onoff){
             hardware.pca9685.set(parseInt(this.channel), onoff);
@@ -75,6 +75,12 @@ hardware_raspi_PCA9685 = hardware_raspi_PCA9685.extend({
         }
     },
 
+    toServoPWM: function(pwm){
+        // 2%-12% for a full servo range. We must map 0-5 values to the 0.1..0.51 to this range
+        //
+        return (pwm/10.0)+0.1
+    },
+    
     /**
      *  Called if the simulation mode is stopping
      *  @required

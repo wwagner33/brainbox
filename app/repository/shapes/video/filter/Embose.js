@@ -7,7 +7,7 @@
 var video_filter_Embose = CircuitFigure.extend({
 
    NAME: "video_filter_Embose",
-   VERSION: "2.0.263_957",
+   VERSION: "2.0.264_965",
 
    init:function(attr, setter, getter)
    {

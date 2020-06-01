@@ -1,76 +1,3 @@
-// Generated Code for the Draw2D touch HTML5 lib.
-// File will be generated if you save the *.shape file.
-//
-// created with http://www.draw2d.org
-//
-//
-var hardware_raspi_PCA9685 = CircuitFigure.extend({
-
-   NAME: "hardware_raspi_PCA9685",
-   VERSION: "2.0.263_957",
-
-   init:function(attr, setter, getter)
-   {
-     var _this = this;
-
-     this._super( $.extend({stroke:0, bgColor:null, width:103,height:80},attr), setter, getter);
-     var port;
-     // input_channel_pwm
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 0, y: 26.015090042113798 }));
-     port.setConnectionDirection(3);
-     port.setBackgroundColor("#37B1DE");
-     port.setName("input_channel_pwm");
-     port.setMaxFanOut(1);
-     // input_channel_onoff
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 0, y: 75.73036016845663 }));
-     port.setConnectionDirection(3);
-     port.setBackgroundColor("#37B1DE");
-     port.setName("input_channel_onoff");
-     port.setMaxFanOut(1);
-   },
-
-   createShapeElement : function()
-   {
-      var shape = this._super();
-      this.originalWidth = 103;
-      this.originalHeight= 80;
-      return shape;
-   },
-
-   createSet: function()
-   {
-       this.canvas.paper.setStart();
-       var shape = null;
-       // BoundingBox
-       shape = this.canvas.paper.path("M0,0 L103,0 L103,80 L0,80");
-       shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
-       shape.data("name","BoundingBox");
-       
-       // Rectangle
-       shape = this.canvas.paper.path('M0 0L103 0L103 80L0 80Z');
-       shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Rectangle");
-       
-       // channelLabel
-       shape = this.canvas.paper.text(0,0,'pwm');
-       shape.attr({"x":11.5,"y":21.714972033691083,"text-anchor":"start","text":"pwm","font-family":"\"Arial\"","font-size":10,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
-       shape.data("name","channelLabel");
-       
-       // Label
-       shape = this.canvas.paper.text(0,0,'enable');
-       shape.attr({"x":10,"y":60.46497203369108,"text-anchor":"start","text":"enable","font-family":"\"Arial\"","font-size":10,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
-       shape.data("name","Label");
-       
-       // Label
-       shape = this.canvas.paper.text(0,0,'PCA9865');
-       shape.attr({"x":11,"y":40.31207203369104,"text-anchor":"start","text":"PCA9865","font-family":"\"Arial\"","font-size":19,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
-       shape.data("name","Label");
-       
-
-       return this.canvas.paper.setFinish();
-   }
-});
-
 /**
  * Generated Code for the Draw2D touch HTML5 lib.
  * File will be generated if you save the *.shape file.
@@ -83,7 +10,7 @@ var hardware_raspi_PCA9685 = CircuitFigure.extend({
  * Looks disconcerting - extending my own class. But this is a good method to
  * merge basic code and override them with custom methods.
  */
-hardware_raspi_PCA9685 = hardware_raspi_PCA9685.extend({
+hardware_raspi_PCA9685Motor = hardware_raspi_PCA9685Motor.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);

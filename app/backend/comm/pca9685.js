@@ -1,7 +1,7 @@
 const isPi = require('detect-rpi')
 const Pca9685Driver = require("pca9685").Pca9685Driver
 
-const PULSE_LENGTH = 4000
+
 let pwm = null
 
 module.exports = {
