@@ -1,7 +1,7 @@
 
-var diagram_Sparkline = draw2d.shape.diagram.Sparkline.extend({
+var widget_Sparkline = draw2d.shape.diagram.Sparkline.extend({
 
-    NAME : "diagram_Sparkline",
+    NAME : "widget_Sparkline",
 
     init : function(attr)
     {

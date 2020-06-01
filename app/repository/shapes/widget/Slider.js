@@ -1,6 +1,6 @@
-var controls_Slider = draw2d.shape.widget.Slider.extend({
+var widget_Slider = draw2d.shape.widget.Slider.extend({
 
-    NAME: "controls_Slider",
+    NAME: "widget_Slider",
     VERSION: "1.0.0",
 
     init: function () {
@@ -21,7 +21,6 @@ var controls_Slider = draw2d.shape.widget.Slider.extend({
         this.on("change:value", (element, event) => {
             let value = parseInt(event.value); // 0..100
             value = 5.0 / 100.0 * value;       // 0..5
-            console.log(value)
             this.getOutputPort(0).setValue(value);
         });
 
@@ -40,7 +39,6 @@ var controls_Slider = draw2d.shape.widget.Slider.extend({
     onPanning: function (dx, dy, dx2, dy2) {
         // calculate the current position of the mouse pos
         //
-        let thumbW2 = this.slideBoundingBox.w / 2
         let width = this.getWidth()
         let sliderWidth = width - this.padding.left - this.padding.right
 
