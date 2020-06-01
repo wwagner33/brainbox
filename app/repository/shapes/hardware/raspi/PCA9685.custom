@@ -42,8 +42,15 @@ hardware_raspi_PCA9685 = hardware_raspi_PCA9685.extend({
         let port_pwm   = this.getInputPort("input_channel_pwm");
         let port_onoff = this.getInputPort("input_channel_onoff");
         if(port_pwm.hasChangedValue() || port_onoff.hasChangedValue()){
-            hardware.pca9685.pwm(parseInt(this.channel), port_pwm.getValue());
-            hardware.pca9685.set(parseInt(this.channel), port_onoff.getValue());
+            let pwm  = port_pwm.getValue();
+            let onoff = port_onoff.getValue();
+            if(onoff){
+                hardware.pca9685.set(parseInt(this.channel), onoff);
+                hardware.pca9685.pwm(parseInt(this.channel), pwm);
+            }
+            else{
+                hardware.pca9685.set(parseInt(this.channel), onoff);
+            }
         }
     },
 
@@ -57,8 +64,15 @@ hardware_raspi_PCA9685 = hardware_raspi_PCA9685.extend({
         let port_pwm   = this.getInputPort("input_channel_pwm");
         let port_onoff = this.getInputPort("input_channel_onoff");
 
-        hardware.pca9685.set(parseInt(this.channel), port_onoff.getValue());
-        hardware.pca9685.pwm(parseInt(this.channel), port_pwm.getValue());
+        let pwm  = port_pwm.getValue();
+        let onoff = port_onoff.getValue();
+        if(onoff){
+            hardware.pca9685.set(parseInt(this.channel), onoff);
+            hardware.pca9685.pwm(parseInt(this.channel), pwm);
+        }
+        else{
+            hardware.pca9685.set(parseInt(this.channel), onoff);
+        }
     },
 
     /**
