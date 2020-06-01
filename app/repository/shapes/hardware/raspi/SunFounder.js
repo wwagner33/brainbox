@@ -7,7 +7,7 @@
 var hardware_raspi_SunFounder = CircuitFigure.extend({
 
    NAME: "hardware_raspi_SunFounder",
-   VERSION: "local-version",
+   VERSION: "2.0.256_941",
 
    init:function(attr, setter, getter)
    {
@@ -53,7 +53,7 @@ var hardware_raspi_SunFounder = CircuitFigure.extend({
        
        // Label
        shape = this.canvas.paper.text(0,0,'pwm');
-       shape.attr({"x":13,"y":25.446022033691406,"text-anchor":"start","text":"pwm","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":13,"y":25.352272033691406,"text-anchor":"start","text":"pwm","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
        // Label

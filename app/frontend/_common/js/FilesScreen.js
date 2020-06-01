@@ -196,6 +196,7 @@ export default class Files {
     // load demo files
     //
     function loadPane(path) {
+      if(path==="/") path = ""
       storage.getFiles( path, scope).then((files) => {
         files = files.filter(file => file.name.endsWith(_this.conf.fileSuffix) || file.type === "dir")
         files = files.map(file => {
@@ -209,6 +210,7 @@ export default class Files {
           }
         })
 
+        console.log(path)
         if (path.length !== 0) {
           files.unshift({
             name: fs.dirname(path),

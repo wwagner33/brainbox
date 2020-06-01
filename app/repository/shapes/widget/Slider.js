@@ -19,8 +19,9 @@ var controls_Slider = draw2d.shape.widget.Slider.extend({
         this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
 
         this.on("change:value", (element, event) => {
-            var value = parseInt(event.value); // 0..100
-            value = 5 / 100 * value;             // 0..5
+            let value = parseInt(event.value); // 0..100
+            value = 5.0 / 100.0 * value;       // 0..5
+            console.log(value)
             this.getOutputPort(0).setValue(value);
         });
 
@@ -33,6 +34,20 @@ var controls_Slider = draw2d.shape.widget.Slider.extend({
     },
 
     onStop: function (context) {
+    },
+
+
+    onPanning: function (dx, dy, dx2, dy2) {
+        // calculate the current position of the mouse pos
+        //
+        let thumbW2 = this.slideBoundingBox.w / 2
+        let width = this.getWidth()
+        let sliderWidth = width - this.padding.left - this.padding.right
+
+        let figurePos = Math.min(width, Math.max(0, this.panningX + dx))
+        let sliderPos = Math.min(width - this.padding.left - this.padding.right, figurePos)
+
+        this.setValue(100 / sliderWidth * sliderPos)
     },
 
 

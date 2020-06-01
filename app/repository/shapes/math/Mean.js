@@ -4,10 +4,10 @@
 // created with http://www.draw2d.org
 //
 //
-var math_Median = CircuitFigure.extend({
+var math_Mean = CircuitFigure.extend({
 
-   NAME: "math_Median",
-   VERSION: "2.0.247_920",
+   NAME: "math_Mean",
+   VERSION: "2.0.256_941",
 
    init:function(attr, setter, getter)
    {
@@ -78,7 +78,7 @@ var math_Median = CircuitFigure.extend({
  * Looks disconcerting - extending my own class. But this is a good method to
  * merge basic code and override them with custom methods.
  */
-math_Median = math_Median.extend({
+math_Mean = math_Mean.extend({
 
     init: function(attr, setter, getter){
         this._super(attr, setter, getter);

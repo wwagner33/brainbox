@@ -6,6 +6,8 @@ export default {
   raspi: {
     set: function (pin, value) {
     },
+    mode: function (pin, value) {
+    },
     pwm: function (pin, value) {
     },
     get: function (pin) {

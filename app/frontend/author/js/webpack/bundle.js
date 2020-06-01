@@ -872,6 +872,7 @@ var Files = function () {
       // load demo files
       //
       function loadPane(path) {
+        if (path === "/") path = "";
         storage.getFiles(path, scope).then(function (files) {
           files = files.filter(function (file) {
             return file.name.endsWith(_this.conf.fileSuffix) || file.type === "dir";
@@ -886,6 +887,7 @@ var Files = function () {
             });
           });
 
+          console.log(path);
           if (path.length !== 0) {
             files.unshift({
               name: _path2.default.dirname(path),
