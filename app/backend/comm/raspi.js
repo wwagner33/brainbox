@@ -69,7 +69,7 @@ module.exports = {
             // Forward GPIO interrupt => Browser (via WebSocket)
             // (not available in the MOCK mode)
             if(pins.gpio_9.on) {
-              pin.off("interrupt")
+              pin.removeAllListeners("interrupt")
               pin.mode(Gpio.INPUT)
               pin.pullUpDown(Gpio.PUD_DOWN)
               pin.enableInterrupt(Gpio.EITHER_EDGE)
@@ -78,7 +78,7 @@ module.exports = {
           }
           else{
             if(pins.gpio_9.off) {
-              pin.off("interrupt")
+              pin.removeAllListeners("interrupt")
               pin.mode(Gpio.OUTPUT)
             }
           }
