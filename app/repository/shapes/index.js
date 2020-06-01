@@ -6173,7 +6173,7 @@ hardware_raspi_PCA9685 = hardware_raspi_PCA9685.extend({
 
         this.channel = "0"
         this.on("change:userData.channel",(emitter, event)=>{
-            this.layerAttr("", {text: "PWM channel "+event.value})
+            this.layerAttr("channelLabel", {text: "PWM channel "+event.value})
             this.channel = event.value;
         });
         this.on("added",(emitter, event)=>{
@@ -6216,8 +6216,8 @@ hardware_raspi_PCA9685 = hardware_raspi_PCA9685.extend({
         let port_pwm   = this.getInputPort("input_channel_pwm");
         let port_onoff = this.getInputPort("input_channel_onoff");
 
-        hardware.pca9685.pwm(parseInt(this.channel), port_pwm.getValue());
         hardware.pca9685.set(parseInt(this.channel), port_onoff.getValue());
+        hardware.pca9685.pwm(parseInt(this.channel), port_pwm.getValue());
     },
 
     /**
