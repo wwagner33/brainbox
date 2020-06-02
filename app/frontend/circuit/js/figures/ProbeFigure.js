@@ -8,10 +8,9 @@ export default draw2d.shape.basic.Label.extend({
     init : function(attr, setter, getter)
     {
         this._super($.extend({
-                padding:{left:5, top:2, bottom:2, right:10},
+                padding:{left:5, top:2, bottom:1, right:10},
                 bgColor:"#FFFFFF",
-                stroke:0,
-                color:"#000000",
+                radius: 2,
                 fontSize:8
             },attr),
             setter,

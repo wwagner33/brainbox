@@ -7,7 +7,7 @@
 var hardware_raspi_GPIOWrite = CircuitFigure.extend({
 
    NAME: "hardware_raspi_GPIOWrite",
-   VERSION: "2.0.264_965",
+   VERSION: "2.0.290_1020",
 
    init:function(attr, setter, getter)
    {
@@ -82,15 +82,15 @@ hardware_raspi_GPIOWrite = hardware_raspi_GPIOWrite.extend({
         this.img.hitTest = ()=>false;
         this.add(this.img, new draw2d.layout.locator.XYAbsPortLocator({x:68, y:3}));
 
-        this.gpioPin = "gpio_5"
+        this.gpioPin = "gpio_5";
         this.on("change:userData.gpioPin",(emitter, event)=>{
-            this.layerAttr("gpioPinLabel", {text: event.value})
+            this.layerAttr("gpioPinLabel", {text: this.getLabel(event.value)});
             this.gpioPin = event.value;
         });
         this.on("added",(emitter, event)=>{
-             this.layerAttr("gpioPinLabel", {text: this.attr("userData.gpioPin")})
+             this.layerAttr("gpioPinLabel", {text: this.getLabel(this.attr("userData.gpioPin"))});
         });
-        this.attr("userData.gpioPin",this.gpioPin)
+        this.attr("userData.gpioPin",this.gpioPin);
         
         this.attr({
             resizeable:false
@@ -132,7 +132,10 @@ hardware_raspi_GPIOWrite = hardware_raspi_GPIOWrite.extend({
     {
     },
     
-  
+    getLabel: function(pin){
+        return "GPIO "+pin.split("_")[1];
+    },
+    
     getRequiredHardware: function(){
       return {
         raspi: true,
@@ -146,6 +149,8 @@ hardware_raspi_GPIOWrite = hardware_raspi_GPIOWrite.extend({
         this._super(memento);
 
         this.img = this.getChildren().find( child => child instanceof draw2d.shape.basic.Image);
+        this.remove(this.img);
+        this.add(this.img, new draw2d.layout.locator.XYAbsPortLocator({x:68, y:3}));
         this.img.hitTest = ()=>false;
 
         this.gpioPin = this.attr("userData.gpioPin");

@@ -4,10 +4,10 @@
 // created with http://www.draw2d.org
 //
 //
-var video_IPCamera = CircuitFigure.extend({
+var video_source_IPCamera = CircuitFigure.extend({
 
-   NAME: "video_IPCamera",
-   VERSION: "2.0.264_965",
+   NAME: "video_source_IPCamera",
+   VERSION: "2.0.290_1020",
 
    init:function(attr, setter, getter)
    {
@@ -83,7 +83,7 @@ var video_IPCamera = CircuitFigure.extend({
  *
  *
  */
-video_IPCamera = video_IPCamera.extend({
+video_source_IPCamera = video_source_IPCamera.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);

@@ -2865,7 +2865,7 @@ exports.default = draw2d.policy.line.OrthogonalSelectionFeedbackPolicy.extend({
           case "probe":
             var text = prompt("Probe Signal Label");
             if (text) {
-              var label = new _ProbeFigure2.default({ text: text, stroke: 0, x: -20, y: -40 });
+              var label = new _ProbeFigure2.default({ text: text, x: -20, y: -40 });
               var locator = new draw2d.layout.locator.ManhattanMidpointLocator();
               label.installEditor(new draw2d.ui.LabelInplaceEditor());
               conn.add(label, locator);
@@ -5350,10 +5350,9 @@ exports.default = draw2d.shape.basic.Label.extend({
      */
     init: function init(attr, setter, getter) {
         this._super($.extend({
-            padding: { left: 5, top: 2, bottom: 2, right: 10 },
+            padding: { left: 5, top: 2, bottom: 1, right: 10 },
             bgColor: "#FFFFFF",
-            stroke: 0,
-            color: "#000000",
+            radius: 2,
             fontSize: 8
         }, attr), setter, getter);
 

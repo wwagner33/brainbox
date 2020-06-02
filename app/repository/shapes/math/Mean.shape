@@ -6,7 +6,7 @@
       "x": 7980,
       "y": 7979,
       "width": 40,
-      "height": 42,
+      "height": 40,
       "alpha": 1,
       "selectable": true,
       "draggable": true,
@@ -21,7 +21,7 @@
       "bgColor": "rgba(255,255,255,1)",
       "color": "rgba(48,48,48,1)",
       "stroke": 1,
-      "radius": 0,
+      "radius": 2,
       "dasharray": null,
       "vertices": [
         {
@@ -34,11 +34,11 @@
         },
         {
           "x": 8020,
-          "y": 8021
+          "y": 8019
         },
         {
           "x": 7980,
-          "y": 8021
+          "y": 8019
         }
       ],
       "blur": 0,
@@ -54,6 +54,9 @@
         },
         {
           "name": "shape_designer.filter.FillColorFilter"
+        },
+        {
+          "name": "shape_designer.filter.RadiusFilter"
         }
       ]
     },

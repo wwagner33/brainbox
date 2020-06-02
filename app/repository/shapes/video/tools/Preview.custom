@@ -10,7 +10,7 @@
  * Looks disconcerting - extending my own class. But this is a good method to
  * merge basic code and override them with custom methods.
  */
-video_Preview = video_Preview.extend({
+video_tools_Preview = video_tools_Preview.extend({
 
     init: function(attr, setter, getter){
         this._super(attr, setter, getter);

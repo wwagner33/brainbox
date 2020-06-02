@@ -27,11 +27,11 @@ hardware_raspi_GPIORead = hardware_raspi_GPIORead.extend({
 
         this.gpioPin = "gpio_5"
         this.on("change:userData.gpioPin",(emitter, event)=>{
-            this.layerAttr("gpioPinLabel", {text: event.value})
+            this.layerAttr("gpioPinLabel", {text: this.getLabel(event.value)})
             this.gpioPin = event.value;
         });
         this.on("added",(emitter, event)=>{
-             this.layerAttr("gpioPinLabel", {text: this.attr("userData.gpioPin")})
+             this.layerAttr("gpioPinLabel", {text: this.getLabel(this.attr("userData.gpioPin"))})
         });
         this.attr("userData.gpioPin",this.gpioPin)
         
@@ -49,22 +49,22 @@ hardware_raspi_GPIORead = hardware_raspi_GPIORead.extend({
      **/
     calculate:function( context)
     {
-        var port = this.getInputPort("output_port1");
-        if(port.hasChangedValue()){
-            hardware.raspi.set(this.gpioPin, port.getValue());
-        }
+        var port = this.getOutputPort("output_port1");
+       
+        port.setValue(hardware.raspi.get(this.gpioPin);
+
     },
     
-
+    getLabel:function(pin){
+        return "GPIO "+pin.split("_")[1];
+    },
+    
     /**
      *  Called if the simulation mode is starting
      *  @required
      **/
     onStart:function( context )
     {
-        var port = this.getInputPort("output_port1");
-        hardware.raspi.mode(this.gpioPin, "INPUT");
-        hardware.raspi.set(this.gpioPin, port.getValue());
     },
 
     /**
@@ -83,12 +83,13 @@ hardware_raspi_GPIORead = hardware_raspi_GPIORead.extend({
       };
     },
         
-        
     setPersistentAttributes: function (memento) 
     {
         this._super(memento);
 
         this.img = this.getChildren().find( child => child instanceof draw2d.shape.basic.Image);
+        this.remove(this.img);
+        this.add(this.img, new draw2d.layout.locator.XYAbsPortLocator({x:3, y:3}));
         this.img.hitTest = ()=>false;
 
         this.gpioPin = this.attr("userData.gpioPin");

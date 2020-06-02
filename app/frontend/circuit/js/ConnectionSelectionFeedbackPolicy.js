@@ -82,7 +82,7 @@ export default draw2d.policy.line.OrthogonalSelectionFeedbackPolicy.extend({
           case "probe":
             let text = prompt("Probe Signal Label")
             if (text) {
-              let label = new ProbeFigure({text: text, stroke: 0, x: -20, y: -40})
+              let label = new ProbeFigure({text: text, x: -20, y: -40})
               let locator = new draw2d.layout.locator.ManhattanMidpointLocator()
               label.installEditor(new draw2d.ui.LabelInplaceEditor())
               conn.add(label, locator)

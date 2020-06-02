@@ -6,7 +6,7 @@
  *
  *
  */
-video_IPCamera = video_IPCamera.extend({
+video_source_IPCamera = video_source_IPCamera.extend({
 
     init: function(attr, setter, getter){
          this._super(attr, setter, getter);
