@@ -20,6 +20,7 @@ class Dialog {
     settings.forEach((el) => {
       el.value = currentFigure.attr("userData." + el.name)
       el.input = el.property.type === "string"
+      el.number = el.property.type === "integer"
       el.select = el.property.type === "enum"
       el.textarea = el.property.type === "longtext"
     })
@@ -34,6 +35,9 @@ class Dialog {
                  {{#input}}
                    <input type="text" class="form-control" id="figure_property_{{name}}" data-name="{{name}}" value="{{value}}" placeholder="{{label}}">
                  {{/input}}
+                 {{#number}}
+                   <input type="number" class="form-control" id="figure_property_{{name}}" data-name="{{name}}" value="{{value}}" placeholder="{{label}}">
+                 {{/number}}
                  {{#select}}
                    <select class="form-control" id="figure_property_{{name}}" data-name="{{name}}" value="{{value}}">
                         {{#property.values}}
