@@ -68,6 +68,7 @@ module.exports = {
       })
       client.on('pca9685:set', msg => {
         let channel = msg.channel
+        console.log("setting channel on via websocket")
         //    0               => off
         // everything else    => on
         if (msg.value) {
