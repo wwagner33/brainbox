@@ -831,6 +831,20 @@
     "image": "video/color/Invert.png"
   },
   {
+    "name": "video_color_JustBlack",
+    "tags": [
+      "video",
+      "color",
+      "JustBlack"
+    ],
+    "version": "local-version",
+    "basename": "JustBlack.js",
+    "displayName": "JustBlack",
+    "basedir": "video/color",
+    "filePath": "video/color/JustBlack.shape",
+    "image": "video/color/JustBlack.png"
+  },
+  {
     "name": "video_color_Luminance",
     "tags": [
       "video",
@@ -915,18 +929,18 @@
     "image": "video/features/Object.png"
   },
   {
-    "name": "video_filter_Embose",
+    "name": "video_filter_Emboss",
     "tags": [
       "video",
       "filter",
-      "Embose"
+      "Emboss"
     ],
     "version": "local-version",
-    "basename": "Embose.js",
-    "displayName": "Embose",
+    "basename": "Emboss.js",
+    "displayName": "Emboss",
     "basedir": "video/filter",
-    "filePath": "video/filter/Embose.shape",
-    "image": "video/filter/Embose.png"
+    "filePath": "video/filter/Emboss.shape",
+    "image": "video/filter/Emboss.png"
   },
   {
     "name": "video_filter_Prewitt",
@@ -1053,6 +1067,48 @@
     "basedir": "video/geometry",
     "filePath": "video/geometry/Scale.shape",
     "image": "video/geometry/Scale.png"
+  },
+  {
+    "name": "video_morphological_Dilate",
+    "tags": [
+      "video",
+      "morphological",
+      "Dilate"
+    ],
+    "version": "local-version",
+    "basename": "Dilate.js",
+    "displayName": "Dilate",
+    "basedir": "video/morphological",
+    "filePath": "video/morphological/Dilate.shape",
+    "image": "video/morphological/Dilate.png"
+  },
+  {
+    "name": "video_morphological_Erode",
+    "tags": [
+      "video",
+      "morphological",
+      "Erode"
+    ],
+    "version": "local-version",
+    "basename": "Erode.js",
+    "displayName": "Erode",
+    "basedir": "video/morphological",
+    "filePath": "video/morphological/Erode.shape",
+    "image": "video/morphological/Erode.png"
+  },
+  {
+    "name": "video_morphological_Thinning",
+    "tags": [
+      "video",
+      "morphological",
+      "Thinning"
+    ],
+    "version": "local-version",
+    "basename": "Thinning.js",
+    "displayName": "Thinning",
+    "basedir": "video/morphological",
+    "filePath": "video/morphological/Thinning.shape",
+    "image": "video/morphological/Thinning.png"
   },
   {
     "name": "video_quality_Blur",

@@ -98,6 +98,7 @@
     "node-cache": "^5.1.0",
     "node-ttl": "0.0.5",
     "node-webcam": "^0.6.2",
+    "nodemailer": "^6.4.8",
     "onoff": "^5.0.1",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",

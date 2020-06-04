@@ -7,16 +7,16 @@
 var hardware_raspi_GPIORead = CircuitFigure.extend({
 
    NAME: "hardware_raspi_GPIORead",
-   VERSION: "local-version",
+   VERSION: "2.0.324_1090",
 
    init:function(attr, setter, getter)
    {
      var _this = this;
 
-     this._super( $.extend({stroke:0, bgColor:null, width:92.86816376471506,height:22},attr), setter, getter);
+     this._super( $.extend({stroke:0, bgColor:null, width:92.86816376471506,height:22.015625},attr), setter, getter);
      var port;
      // output_port1
-     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 98.76604011183862, y: 48.72778990909204 }));
+     port = this.addPort(new DecoratedOutputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 98.76604011183862, y: 48.69320666572149 }));
      port.setConnectionDirection(1);
      port.setBackgroundColor("#37B1DE");
      port.setName("output_port1");
@@ -27,7 +27,7 @@ var hardware_raspi_GPIORead = CircuitFigure.extend({
    {
       var shape = this._super();
       this.originalWidth = 92.86816376471506;
-      this.originalHeight= 22;
+      this.originalHeight= 22.015625;
       return shape;
    },
 
@@ -36,7 +36,7 @@ var hardware_raspi_GPIORead = CircuitFigure.extend({
        this.canvas.paper.setStart();
        var shape = null;
        // BoundingBox
-       shape = this.canvas.paper.path("M0,0 L92.86816376471506,0 L92.86816376471506,22 L0,22");
+       shape = this.canvas.paper.path("M0,0 L92.86816376471506,0 L92.86816376471506,22.015625 L0,22.015625");
        shape.attr({"stroke":"none","stroke-width":0,"fill":"none"});
        shape.data("name","BoundingBox");
        
@@ -47,7 +47,7 @@ var hardware_raspi_GPIORead = CircuitFigure.extend({
        
        // gpioPinLabel
        shape = this.canvas.paper.text(0,0,'GPIO Pin#');
-       shape.attr({"x":26.362832874986452,"y":11,"text-anchor":"start","text":"GPIO Pin#","font-family":"\"Arial\"","font-size":12,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":26.362832874986452,"y":11.0078125,"text-anchor":"start","text":"GPIO Pin#","font-family":"\"Arial\"","font-size":12,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","gpioPinLabel");
        
 
