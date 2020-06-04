@@ -929,6 +929,20 @@
     "image": "video/features/Object.png"
   },
   {
+    "name": "video_features_Scanner",
+    "tags": [
+      "video",
+      "features",
+      "Scanner"
+    ],
+    "version": "local-version",
+    "basename": "Scanner.js",
+    "displayName": "Scanner",
+    "basedir": "video/features",
+    "filePath": "video/features/Scanner.shape",
+    "image": "video/features/Scanner.png"
+  },
+  {
     "name": "video_filter_Emboss",
     "tags": [
       "video",

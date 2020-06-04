@@ -7,7 +7,7 @@
 var video_color_JustBlack = CircuitFigure.extend({
 
    NAME: "video_color_JustBlack",
-   VERSION: "local-version",
+   VERSION: "2.0.330_1103",
 
    init:function(attr, setter, getter)
    {
@@ -57,11 +57,6 @@ var video_color_JustBlack = CircuitFigure.extend({
        shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Rectangle");
        
-       // Line
-       shape = this.canvas.paper.path('M9.377490534403478 57.12910056640976L5.757806182406057,57.53049545921385L0.4075520000042161,64.0115340000084');
-       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Line");
-       
        // Rectangle
        shape = this.canvas.paper.path('M4.5,8.3799680000011Q4.5,4.379968000001099 8.5, 4.379968000001099L71.5,4.379968000001099Q75.5,4.379968000001099 75.5, 8.3799680000011L75.5,48.3799680000011Q75.5,52.3799680000011 71.5, 52.3799680000011L8.5,52.3799680000011Q4.5,52.3799680000011 4.5, 48.3799680000011L4.5,8.3799680000011');
        shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(235,235,235,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
@@ -92,20 +87,10 @@ var video_color_JustBlack = CircuitFigure.extend({
        shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Rectangle");
        
-       // Line
-       shape = this.canvas.paper.path('M40.086528000003455 5.1831660000025295L40.34867200000008,52.369086000002426');
-       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Line");
-       
        // Rectangle
        shape = this.canvas.paper.path('M34.208593749999636,9.296581533205426Q34.208593749999636,7.296581533205426 36.208593749999636, 7.296581533205426L44.208593749999636,7.296581533205426Q46.208593749999636,7.296581533205426 46.208593749999636, 9.296581533205426L46.208593749999636,10.296581533205426Q46.208593749999636,12.296581533205426 44.208593749999636, 12.296581533205426L36.208593749999636,12.296581533205426Q34.208593749999636,12.296581533205426 34.208593749999636, 10.296581533205426L34.208593749999636,9.296581533205426');
        shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(32,32,32,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Rectangle");
-       
-       // Line
-       shape = this.canvas.paper.path('M52.00859375000255 12.296581533203607L29.208593750002365,12.09658153320379');
-       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(32,32,32,1)","stroke-width":3,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Line");
        
        // Circle
        shape = this.canvas.paper.ellipse();
@@ -116,6 +101,21 @@ var video_color_JustBlack = CircuitFigure.extend({
        shape = this.canvas.paper.ellipse();
        shape.attr({"rx":2.5,"ry":2.5,"cx":43.84867200000008,"cy":16.796581533205426,"stroke":"none","stroke-width":0,"fill":"rgba(0,0,0,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Circle");
+       
+       // Line
+       shape = this.canvas.paper.path('M9.377490534403478 57.12910056640976L5.757806182406057,57.53049545921385L0.4075520000042161,64.0115340000084');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M40.086528000003455 5.1831660000025295L40.34867200000008,52.369086000002426');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
+       
+       // Line
+       shape = this.canvas.paper.path('M52.00859375000255 12.296581533203607L29.208593750002365,12.09658153320379');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(32,32,32,1)","stroke-width":3,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
        
        // Line
        shape = this.canvas.paper.path('M41.317968750000546 16.760644033205608L38.017968750000364,16.760644033205608');
