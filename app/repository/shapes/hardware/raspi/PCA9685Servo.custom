@@ -46,7 +46,9 @@ hardware_raspi_PCA9685Servo = hardware_raspi_PCA9685Servo.extend({
             let pwm  = this.toServoPWM(port_pwm, port_damping);
             let onoff = port_onoff.getValue();
             if(onoff){
-                hardware.pca9685.set(parseInt(this.channel), onoff);
+                if(port_onoff.hasChangedValue()){
+                    hardware.pca9685.set(parseInt(this.channel), onoff);
+                }
                 hardware.pca9685.pwm(parseInt(this.channel), pwm);
             }
             else{
