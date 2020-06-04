@@ -42,7 +42,8 @@ hardware_raspi_PCA9685Servo = hardware_raspi_PCA9685Servo.extend({
         let port_pwm   = this.getInputPort("input_channel_pwm");
         let port_onoff = this.getInputPort("input_channel_onoff");
         if(port_pwm.hasChangedValue() || port_onoff.hasChangedValue()){
-            let pwm  = this.toServoPWM(port_pwm.getValue());
+            let port_damping = this.getInputPort("input_damping");
+            let pwm  = this.toServoPWM(port_pwm, port_damping);
             let onoff = port_onoff.getValue();
             if(onoff){
                 hardware.pca9685.set(parseInt(this.channel), onoff);
@@ -61,10 +62,11 @@ hardware_raspi_PCA9685Servo = hardware_raspi_PCA9685Servo.extend({
      **/
     onStart:function( context )
     {
-        let port_pwm   = this.getInputPort("input_channel_pwm");
-        let port_onoff = this.getInputPort("input_channel_onoff");
+        let port_pwm     = this.getInputPort("input_channel_pwm");
+        let port_onoff   = this.getInputPort("input_channel_onoff");
+        let port_damping = this.getInputPort("input_damping");
 
-        let pwm  = this.toServoPWM(port_pwm.getValue());
+        let pwm  = this.toServoPWM(port_pwm, port_damping);
         let onoff = port_onoff.getValue();
         if(onoff){
             hardware.pca9685.set(parseInt(this.channel), onoff);
@@ -75,7 +77,16 @@ hardware_raspi_PCA9685Servo = hardware_raspi_PCA9685Servo.extend({
         }
     },
 
-    toServoPWM: function(pwm){
+    toServoPWM: function(pwm, damping){
+        pwm = pwm.getValue();
+        
+        //apply damping only if a source is connected to the port
+        //
+        if(damping.getConnections().length>0){
+            damping = damping.getValue();
+            pwm = ((pwm - 2.5)/damping)+2.5
+        }
+        
         // 4%-14% for a full servo range. We must map 0-5 values to the 0.1..0.51 to this range
         //
         return (pwm/10.0)+0.2;

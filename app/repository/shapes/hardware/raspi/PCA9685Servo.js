@@ -7,7 +7,7 @@
 var hardware_raspi_PCA9685Servo = CircuitFigure.extend({
 
    NAME: "hardware_raspi_PCA9685Servo",
-   VERSION: "2.0.330_1103",
+   VERSION: "local-version",
 
    init:function(attr, setter, getter)
    {
@@ -16,16 +16,22 @@ var hardware_raspi_PCA9685Servo = CircuitFigure.extend({
      this._super( $.extend({stroke:0, bgColor:null, width:103,height:80},attr), setter, getter);
      var port;
      // input_channel_pwm
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 0, y: 28.515090042113798 }));
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 0, y: 18.780090042114352 }));
      port.setConnectionDirection(3);
      port.setBackgroundColor("#37B1DE");
      port.setName("input_channel_pwm");
      port.setMaxFanOut(1);
      // input_channel_onoff
-     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 0, y: 75.73036016845663 }));
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 0.3436893203886109, y: 49.20286016845694 }));
      port.setConnectionDirection(3);
      port.setBackgroundColor("#37B1DE");
      port.setName("input_channel_onoff");
+     port.setMaxFanOut(1);
+     // input_damping
+     port = this.addPort(new DecoratedInputPort(), new draw2d.layout.locator.XYRelPortLocator({x: 0.3436893203886109, y: 83.16464004211412 }));
+     port.setConnectionDirection(3);
+     port.setBackgroundColor("#37B1DE");
+     port.setName("input_damping");
      port.setMaxFanOut(1);
    },
 
@@ -53,22 +59,27 @@ var hardware_raspi_PCA9685Servo = CircuitFigure.extend({
        
        // channelLabel
        shape = this.canvas.paper.text(0,0,'PWM');
-       shape.attr({"x":11,"y":22.714972033691083,"text-anchor":"start","text":"PWM","font-family":"\"Arial\"","font-size":10,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":10,"y":14.624572033691038,"text-anchor":"start","text":"PWM","font-family":"\"Arial\"","font-size":10,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","channelLabel");
        
        // Label
        shape = this.canvas.paper.text(0,0,'on/off');
-       shape.attr({"x":10,"y":60.5842881347653,"text-anchor":"start","text":"on/off","font-family":"\"Arial\"","font-size":10,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":10,"y":38.3967881347653,"text-anchor":"start","text":"on/off","font-family":"\"Arial\"","font-size":10,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
        // Label
        shape = this.canvas.paper.text(0,0,'PCA9865');
-       shape.attr({"x":59.06247499999972,"y":49.93796203369129,"text-anchor":"start","text":"PCA9865","font-family":"\"Arial\"","font-size":7,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":57.56247499999972,"y":44.43796203369129,"text-anchor":"start","text":"PCA9865","font-family":"\"Arial\"","font-size":9,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
        // Label
        shape = this.canvas.paper.text(0,0,'Servo Driver');
-       shape.attr({"x":35.89059999999972,"y":39.40582203369104,"text-anchor":"start","text":"Servo Driver","font-family":"\"Arial\"","font-size":10,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.attr({"x":41.39059999999972,"y":30.405822033691038,"text-anchor":"start","text":"Servo Driver","font-family":"\"Arial\"","font-size":10,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'damping');
+       shape.attr({"x":9.85400000000027,"y":65.21921203369129,"text-anchor":"start","text":"damping","font-family":"\"Arial\"","font-size":10,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
 
@@ -120,7 +131,8 @@ hardware_raspi_PCA9685Servo = hardware_raspi_PCA9685Servo.extend({
         let port_pwm   = this.getInputPort("input_channel_pwm");
         let port_onoff = this.getInputPort("input_channel_onoff");
         if(port_pwm.hasChangedValue() || port_onoff.hasChangedValue()){
-            let pwm  = this.toServoPWM(port_pwm.getValue());
+            let port_damping = this.getInputPort("input_damping");
+            let pwm  = this.toServoPWM(port_pwm, port_damping);
             let onoff = port_onoff.getValue();
             if(onoff){
                 hardware.pca9685.set(parseInt(this.channel), onoff);
@@ -139,10 +151,11 @@ hardware_raspi_PCA9685Servo = hardware_raspi_PCA9685Servo.extend({
      **/
     onStart:function( context )
     {
-        let port_pwm   = this.getInputPort("input_channel_pwm");
-        let port_onoff = this.getInputPort("input_channel_onoff");
+        let port_pwm     = this.getInputPort("input_channel_pwm");
+        let port_onoff   = this.getInputPort("input_channel_onoff");
+        let port_damping = this.getInputPort("input_damping");
 
-        let pwm  = this.toServoPWM(port_pwm.getValue());
+        let pwm  = this.toServoPWM(port_pwm, port_damping);
         let onoff = port_onoff.getValue();
         if(onoff){
             hardware.pca9685.set(parseInt(this.channel), onoff);
@@ -153,7 +166,16 @@ hardware_raspi_PCA9685Servo = hardware_raspi_PCA9685Servo.extend({
         }
     },
 
-    toServoPWM: function(pwm){
+    toServoPWM: function(pwm, damping){
+        pwm = pwm.getValue();
+        
+        //apply damping only if a source is connected to the port
+        //
+        if(damping.getConnections().length>0){
+            damping = damping.getValue();
+            pwm = ((pwm - 2.5)/damping)+2.5
+        }
+        
         // 4%-14% for a full servo range. We must map 0-5 values to the 0.1..0.51 to this range
         //
         return (pwm/10.0)+0.2;
