@@ -53,6 +53,7 @@ module.exports = {
           pwm.setDutyCycle(channel, nextDutyCycle, 0, () => {
             console.log("done")
             waitForCallback = false;
+            console.log(nextDutyCycle ,dutyCycle)
             if(nextDutyCycle !== dutyCycle){
               process.nextTick(ccc);
             }
