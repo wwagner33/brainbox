@@ -40,7 +40,10 @@ module.exports = {
         // within the servo to 0° and 180° depending on the servo type. (0° - 270° is possible as well)
         // map [0..5] => [0..1]
         let dutyCycle = (parseInt((1.0 / 5.0 * parseFloat(msg.value))*1000))/1000
-        pwm.setDutyCycle(channel, dutyCycle)
+        console.log("next call")
+        pwm.setDutyCycle(channel, dutyCycle, 0, ()=>{
+          console.log("done")
+        })
       })
       client.on('pca9685:set', msg => {
         let channel = msg.channel
