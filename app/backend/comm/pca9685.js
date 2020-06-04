@@ -51,11 +51,11 @@ module.exports = {
           pwm.setDutyCycle(channel, nextDutyCycles.shift(), 0, () => {
             console.log("done")
             if(nextDutyCycles.length>0) {
-              process.nextTick(ccc);
+              ccc();
             }
           })
         }
-        process.nextTick(ccc);
+        ccc();
       })
       client.on('pca9685:set', msg => {
         let channel = msg.channel
