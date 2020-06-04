@@ -34,7 +34,8 @@ module.exports = {
     // Browser => GPIO output pin
     //
     socketio.on('connection', client => {
-      let nextDutyCycles = []
+      let nextDutyCycles = [];
+      let currentDutyCycle = 0;
       client.on('pca9685:pwm', msg => {
         let channel = msg.channel
         // for servos the frequency is 50Hz and the duty cycle is between 500..2500 which is mapped
@@ -46,16 +47,24 @@ module.exports = {
         if(nextDutyCycles.length>1){
           return;
         }
-        function ccc() {
+
+        function ccc(duty) {
           console.log("next call")
-          pwm.setDutyCycle(channel, nextDutyCycles.shift(), 0, () => {
+          if(duty===currentDutyCycle){
+            if(nextDutyCycles.length>0) {
+              ccc(nextDutyCycles.shift());
+            }
+            return;
+          }
+          pwm.setDutyCycle(channel, duty, 0, () => {
+            currentDutyCycle = duty
             console.log("done")
             if(nextDutyCycles.length>0) {
-              ccc();
+              ccc(nextDutyCycles.shift());
             }
           })
         }
-        ccc();
+        ccc(nextDutyCycles.shift());
       })
       client.on('pca9685:set', msg => {
         let channel = msg.channel
