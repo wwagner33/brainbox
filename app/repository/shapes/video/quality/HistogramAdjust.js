@@ -7,7 +7,7 @@
 var video_quality_HistogramAdjust = CircuitFigure.extend({
 
    NAME: "video_quality_HistogramAdjust",
-   VERSION: "2.0.290_1020",
+   VERSION: "2.0.310_1064",
 
    init:function(attr, setter, getter)
    {

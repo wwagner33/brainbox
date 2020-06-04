@@ -1,19 +1,14 @@
-## Full Adder
+# Luminance Conversion
 
-Full adder is developed to overcome the drawback of 
-Half Adder circuit. It can add two one-bit numbers 
-A and B, and carry c. The full adder is a three 
-input and two output combinational circuit.
+One of the most frequently applied low-level operations
+in computer vision is the conversion of an RGB camera image into its luminance 
+representation. This is also one of the most incorrectly applied operations. 
 
+```math
+luminance = 0.2126*pixel[red] + 0.7152*pixel[green] + 0.0722*pixel[blue];
 
+pixel[red]   = luminance;
+pixel[green] = luminance;
+pixel[blue]  = luminance;
 
-|  A    |    B    |  Cin     |    S    |    C   |
-|:-----:|:-------:|:--------:|:--------:|:-------|
-|   0   |    0    |     0    |     0    |     0  |
-|   0   |    0    |     1    |     1    |     0  |
-|   0   |    1    |     0    |     1    |     0  |
-|   0   |    1    |     1    |     0    |     1  |
-|   1   |    0    |     0    |     0    |     1  |
-|   1   |    0    |     1    |     0    |     1  |
-|   1   |    1    |     0    |     0    |     1  |
-|   1   |    1    |     1    |     0    |     1  |
+```

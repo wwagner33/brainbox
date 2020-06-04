@@ -1,19 +1,13 @@
-## Full Adder
+## Object Detector
 
-Full adder is developed to overcome the drawback of 
-Half Adder circuit. It can add two one-bit numbers 
-A and B, and carry c. The full adder is a three 
-input and two output combinational circuit.
+Object detection model that aims to localize and identify a object in a single 
+image.
 
+In the configuration dialog you can select one of 90 object types to detect.
 
+This model detects objects defined in the **COCO** dataset, which is a large-scale 
+object detection, segmentation, and captioning dataset. You can find more 
+information [here](http://cocodataset.org/#home). The model is capable of 
+detecting 90 classes of objects. 
 
-|  A    |    B    |  Cin     |    S    |    C   |
-|:-----:|:-------:|:--------:|:--------:|:-------|
-|   0   |    0    |     0    |     0    |     0  |
-|   0   |    0    |     1    |     1    |     0  |
-|   0   |    1    |     0    |     1    |     0  |
-|   0   |    1    |     1    |     0    |     1  |
-|   1   |    0    |     0    |     0    |     1  |
-|   1   |    0    |     1    |     0    |     1  |
-|   1   |    1    |     0    |     0    |     1  |
-|   1   |    1    |     1    |     0    |     1  |
+**COCO - Common Objects in Context**

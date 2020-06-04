@@ -1,19 +1,10 @@
-## Full Adder
+## Color Inversion
 
-Full adder is developed to overcome the drawback of 
-Half Adder circuit. It can add two one-bit numbers 
-A and B, and carry c. The full adder is a three 
-input and two output combinational circuit.
-
+Colour inversion, also known as the negative effect, is one of the easiest 
+effects to achieve in image processing. Colour inversion is achieved by 
+subtracting each RGB colour value from the maximum possible value (usually 255).
 
 
-|  A    |    B    |  Cin     |    S    |    C   |
-|:-----:|:-------:|:--------:|:--------:|:-------|
-|   0   |    0    |     0    |     0    |     0  |
-|   0   |    0    |     1    |     1    |     0  |
-|   0   |    1    |     0    |     1    |     0  |
-|   0   |    1    |     1    |     0    |     1  |
-|   1   |    0    |     0    |     0    |     1  |
-|   1   |    0    |     1    |     0    |     1  |
-|   1   |    1    |     0    |     0    |     1  |
-|   1   |    1    |     1    |     0    |     1  |
+Inversion can be necessary to perform some operations such as morphological 
+operations. For example, erosion shrinks the boundaries of white/foreground 
+regions so it matters which pixels are white/foreground.

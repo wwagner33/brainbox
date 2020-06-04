@@ -1,19 +1,12 @@
-## Full Adder
+## Line Angle detector
 
-Full adder is developed to overcome the drawback of 
-Half Adder circuit. It can add two one-bit numbers 
-A and B, and carry c. The full adder is a three 
-input and two output combinational circuit.
+Finds the most prominent Line in the Image and returns the angle of the line.
 
+This is done by a "Hough Transformation"
 
+You can test it on [https://freegroup.github.io/hough-transform-visualizer/](https://freegroup.github.io/hough-transform-visualizer/)
+and inspect how the algorithm works.
 
-|  A    |    B    |  Cin     |    S    |    C   |
-|:-----:|:-------:|:--------:|:--------:|:-------|
-|   0   |    0    |     0    |     0    |     0  |
-|   0   |    0    |     1    |     1    |     0  |
-|   0   |    1    |     0    |     1    |     0  |
-|   0   |    1    |     1    |     0    |     1  |
-|   1   |    0    |     0    |     0    |     1  |
-|   1   |    0    |     1    |     0    |     1  |
-|   1   |    1    |     0    |     0    |     1  |
-|   1   |    1    |     1    |     0    |     1  |
+Draw on the left area a line. You can see on the right the **Hough Transformation**.
+Point with the mouse on one hospot. This is the location of a line on the left.
+
