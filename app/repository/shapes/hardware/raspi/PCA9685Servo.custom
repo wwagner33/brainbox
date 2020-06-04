@@ -82,9 +82,9 @@ hardware_raspi_PCA9685Servo = hardware_raspi_PCA9685Servo.extend({
         
         //apply damping only if a source is connected to the port
         //
-        if(damping.getConnections().length>0){
-            damping = damping.getValue();
-            pwm = ((pwm - 2.5)/damping)+2.5
+        if(damping.getConnections().getSize()>0){
+            damping = Math.max(1,damping.getValue());
+            pwm = ((pwm - 2.5)/damping)+2.5;
         }
         
         // 4%-14% for a full servo range. We must map 0-5 values to the 0.1..0.51 to this range
