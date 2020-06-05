@@ -51,7 +51,7 @@ module.exports = {
           console.log("next call")
           // skip it...same value as before
           if (duty === currentDutyCycle) {
-            console.log("skipped...same value")
+            console.log("skipped...same value", duty)
             if (nextDutyCycles.length > 0) {
               ccc(nextDutyCycles.shift());
             }
