@@ -7,7 +7,7 @@
 var video_features_Scanner = CircuitFigure.extend({
 
    NAME: "video_features_Scanner",
-   VERSION: "local-version",
+   VERSION: "2.0.343_1136",
 
    init:function(attr, setter, getter)
    {
@@ -62,11 +62,6 @@ var video_features_Scanner = CircuitFigure.extend({
        shape.attr({"x":14.41088000000127,"y":71.453125,"text-anchor":"start","text":"Scanner","font-family":"\"Arial\"","font-size":14,"stroke":"#000000","fill":"#000000","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
        shape.data("name","Label");
        
-       // Line
-       shape = this.canvas.paper.path('M65.57327558593806 56.11871406249975L69.7862755859378,56.11871406249975L76.94837558593736,65.80861406250006');
-       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
-       shape.data("name","Line");
-       
        // PictureFrame
        shape = this.canvas.paper.path('M4.228799999999865,8.044239424005355Q4.228799999999865,4.0442394240053545 8.228799999999865, 4.0442394240053545L71.22879999999986,4.0442394240053545Q75.22879999999986,4.0442394240053545 75.22879999999986, 8.044239424005355L75.22879999999986,46.044239424005355Q75.22879999999986,50.044239424005355 71.22879999999986, 50.044239424005355L8.228799999999865,50.044239424005355Q4.228799999999865,50.044239424005355 4.228799999999865, 46.044239424005355L4.228799999999865,8.044239424005355');
        shape.attr({"stroke":"rgba(48,48,48,1)","stroke-width":1,"fill":"rgba(255,255,255,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
@@ -76,6 +71,21 @@ var video_features_Scanner = CircuitFigure.extend({
        shape = this.canvas.paper.path('M31.46390011292715 4.418223163842413L55.758017759986615 4.0442394240053545L43.250664818812766 12.505621537824481L38.77272364233795 21.527979261401924L38.46390011292624 50.044239424004445L27.758017759986615 50.044239424005355Z');
        shape.attr({"stroke":"none","stroke-width":0,"fill":"rgba(0,0,0,1)","dasharray":null,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Rectangle");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'+');
+       shape.attr({"x":27.816251679999368,"y":37.225817212005495,"text-anchor":"start","text":"+","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#FF0000","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Label
+       shape = this.canvas.paper.text(0,0,'position');
+       shape.attr({"x":35.17650500000127,"y":55.972099999999955,"text-anchor":"start","text":"position","font-family":"\"Arial\"","font-size":8,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
+       shape.data("name","Label");
+       
+       // Line
+       shape = this.canvas.paper.path('M65.57327558593806 56.11871406249975L69.7862755859378,56.11871406249975L76.94837558593736,65.80861406250006');
+       shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(0,0,0,1)","stroke-width":1,"stroke-dasharray":null,"opacity":1});
+       shape.data("name","Line");
        
        // Line
        shape = this.canvas.paper.path('M73.05801775999316 39.18620217199896L40.84053967998898,38.858807612009514');
@@ -96,16 +106,6 @@ var video_features_Scanner = CircuitFigure.extend({
        shape = this.canvas.paper.path('M26.758017759986615 38.3862021719915L5.540539679985159,38.35880761200315');
        shape.attr({"stroke-linecap":"round","stroke-linejoin":"round","stroke":"rgba(255,15,31,1)","stroke-width":2,"stroke-dasharray":null,"opacity":1});
        shape.data("name","Line");
-       
-       // Label
-       shape = this.canvas.paper.text(0,0,'+');
-       shape.attr({"x":27.816251679999368,"y":37.225817212005495,"text-anchor":"start","text":"+","font-family":"\"Arial\"","font-size":16,"stroke":"#000000","fill":"#FF0000","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
-       shape.data("name","Label");
-       
-       // Label
-       shape = this.canvas.paper.text(0,0,'position');
-       shape.attr({"x":35.17650500000127,"y":55.972099999999955,"text-anchor":"start","text":"position","font-family":"\"Arial\"","font-size":8,"stroke":"#000000","fill":"#080808","stroke-scale":true,"font-weight":"normal","stroke-width":0,"opacity":1});
-       shape.data("name","Label");
        
 
        return this.canvas.paper.setFinish();

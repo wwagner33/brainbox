@@ -7,7 +7,7 @@
 var math_Mean = CircuitFigure.extend({
 
    NAME: "math_Mean",
-   VERSION: "2.0.330_1103",
+   VERSION: "2.0.343_1136",
 
    init:function(attr, setter, getter)
    {
@@ -120,7 +120,7 @@ math_Mean = math_Mean.extend({
         this.readings[this.readIndex] = this.getInputPort(0).getValue() || 0;
         this.total = this.total + this.readings[this.readIndex];
         this.readIndex = (this.readIndex+1)%this.readings.length;
-        this.average = this.total / this.readings.length;
+        this.average = parseInt((this.total / this.readings.length)*1000)/1000;
         this.getOutputPort(0).setValue(this.average);
     },
 
