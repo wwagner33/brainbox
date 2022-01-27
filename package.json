@@ -6,7 +6,11 @@
   "scripts": {
     "build": "webpack --env dev && webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
-    "dev:server": "nodemon --ignore sessions/ ./app/backend/index.js --storage single-user"
+    "dev:server": "nodemon --ignore sessions/ ./app/backend/index.js --storage single-user",
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.9"
   },
   "bin": {
     "brainbox": "./app/backend/index.js"
@@ -60,11 +64,11 @@
   },
   "dependencies": {
     "@octokit/rest": "^17.1.0",
-    "axios": "^0.19.2",
+    "axios": "^0.24.0",
     "bcrypt": "^4.0.1",
     "body-parser": "1.18.3",
     "bootstrap-toggle": "^2.2.2",
-    "codemirror": "^5.26.0",
+    "codemirror": "^5.65.0",
     "colors": "^1.4.0",
     "commander": "^5.0.0",
     "connect-ensure-login": "^0.1.1",
@@ -74,7 +78,7 @@
     "express-session": "^1.17.0",
     "fs-extra": "^8.1.0",
     "glob": "^7.0.3",
-    "handlebars": "4.3.0",
+    "handlebars": "^4.7.7",
     "i2c-bus": "^5.2.0",
     "js-treeview": "^1.1.5",
     "jsdom": "9.0.0",
@@ -84,7 +88,7 @@
     "leveldown": "^5.5.1",
     "levelgraph": "^2.1.1",
     "levelup": "^4.3.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "lodash.assign": "^4.2.0",
     "lowdb": "^1.0.0",
     "make-dir": "^3.0.2",
@@ -98,13 +102,13 @@
     "node-cache": "^5.1.0",
     "node-ttl": "0.0.5",
     "node-webcam": "^0.6.2",
-    "nodemailer": "^6.4.8",
+    "nodemailer": "^6.7.2",
     "onoff": "^5.0.1",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "path-browserify": "^1.0.1",
     "pca9685": "^4.0.3",
-    "pi-camera-connect": "^0.3.0",
+    "pi-camera-connect": "^0.3.4",
     "pigpio": "^3.2.3",
     "pigpio-mock": "0.0.1",
     "prettify": "0.1.7",
